@@ -1,0 +1,37 @@
+# Data files
+data/
+datamodules/ds/
+datamodules/*.zip
+weights_cache/
+*.zip
+*.tar
+*.tar.gz
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Development containers
+.devcontainer/
+
+# IDE
+.vscode/
+.idea/
+
+# Model checkpoints (large files)
+checkpoints/*.pth
+!checkpoints/.gitkeep
+
+# Results and experiments
+results/
+thesis/
+
+# Docker
+.dockerignore
+
+# OS files
+.DS_Store
+Thumbs.db

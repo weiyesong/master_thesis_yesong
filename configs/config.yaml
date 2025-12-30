@@ -1,0 +1,14 @@
+model:
+  name: dofa
+  num_classes: 10
+
+data:
+  root: ./data/eurosat
+
+training:
+  batch_size: 32
+  lr: 1e-4
+  epochs: 20
+
+uq:
+  method: none
