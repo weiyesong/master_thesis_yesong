@@ -1,0 +1,47 @@
+{
+  "created_at": "2026-09-26T00:35:36.672125+00:00",
+  "status": "WAITING_FOR_USER_CONFIRMATION; no thesis sufficiency judgment",
+  "known_evidence": {
+    "core_method_cells": 64,
+    "covered_cells": 52,
+    "NA_cells": 12,
+    "same_checkpoint_MC_controls": 24,
+    "master_records": 136
+  },
+  "unknown_requirements": [
+    "degree/program and formal/advisor contribution requirements",
+    "whether the thesis is an empirical study or requires a new method",
+    "approved proposal/title and advisor commitments",
+    "deadline, language and remaining experiment budget"
+  ],
+  "sources": [
+    {
+      "path": "reports/core_rq_completion_20260921/coverage_matrix.csv",
+      "sha256": "a0bc2e8d7bb2fa648f354f088f1a6b6a47b2be1dcef0e97ff527365fd843cbd1"
+    },
+    {
+      "path": "reports/core_rq_completion_20260921/mc_dropout_three_way.csv",
+      "sha256": "2bb6f4dbcee4a2e0b960dc069ae982ae7113be4a9a4f0b1562bd2ef4f16bedbe"
+    },
+    {
+      "path": "reports/core_rq_completion_20260921/mc_dropout_effect_summaries.csv",
+      "sha256": "bbc6c6320c3dd420f13888dc3c839e31687cf85e33c7546c3a91af9039582b60"
+    },
+    {
+      "path": "reports/core_rq_completion_20260921/published/tables/thesis_master_results.csv",
+      "sha256": "203bd7281f9eb4960c81fa92c7050b630175a90f93313183cabf04002088ed63"
+    },
+    {
+      "path": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "sha256": "2dfee0a608af1ba783f1cdb3a0225b91dee69b2e6b734d80e3858db7a8aaa9bc"
+    },
+    {
+      "path": "reports/core_rq_completion_20260921/provenance_followup.md",
+      "sha256": "6ccb2f4f275206c53bb451d223188238b47564e779fa094d591dd5eea1d1101e"
+    },
+    {
+      "path": "reports/core_rq_completion_20260921/REVIEW_RESOLUTION.md",
+      "sha256": "041724c9d6e766e155ead6dfd56c88d52e5308d73ddf83fa86d4d6229cd83eae"
+    }
+  ]
+}

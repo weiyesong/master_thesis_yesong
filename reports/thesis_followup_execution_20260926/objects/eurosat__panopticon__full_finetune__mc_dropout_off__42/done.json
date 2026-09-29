@@ -1,0 +1,45 @@
+{
+  "label_hash": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+  "ids_hash": "a0cd43df59b97d7158bcf86d28580e8aff146770b4463c2bb0749762037bf17e",
+  "n_samples": 2714,
+  "actual_core_metrics": {
+    "accuracy": 0.9576271186440678,
+    "brier": 0.06423987215799508,
+    "nll": 0.12223473054343428,
+    "nll_logits": 0.12223473255655198
+  },
+  "core_checks": [
+    {
+      "metric": "accuracy",
+      "actual": 0.9576271186440678,
+      "expected": 0.9576271186440678,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "brier",
+      "actual": 0.06423987215799508,
+      "expected": 0.06423987215799508,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "nll",
+      "actual": 0.12223473054343428,
+      "expected": 0.12223473054343428,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    }
+  ],
+  "validation": [],
+  "pmax_exactly_one": 228,
+  "pmax_one_errors": 0,
+  "load_seconds": 0.010483393445611,
+  "ranking_bootstrap_seconds": 0.5457572359591722,
+  "total_seconds": 0.6384002715349197,
+  "peak_rss_GiB": 0.6045074462890625,
+  "status": "COMPLETE"
+}

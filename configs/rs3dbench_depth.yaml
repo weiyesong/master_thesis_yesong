@@ -1,0 +1,33 @@
+seed: 42
+device: auto
+output_dir: ./results/rs3dbench
+results_csv: ./results/rs3dbench/results.csv
+
+task: depth_estimation
+
+data:
+  name: rs3dbench
+  # Expected extracted layout:
+  # RS3DBench/<resolution>/<region>/{png-stretched-unique,DEM-unique}
+  root: ./RS3DBench
+  image_size: 224
+  val_fraction: 0.1
+  num_workers: 4
+  # For a quick smoke test, uncomment these:
+  # max_train_samples: 64
+  # max_val_samples: 16
+
+training:
+  epochs: 20
+  batch_size: 8
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-4
+  limit_train_batches: null
+  limit_val_batches: null
+
+experiments:
+  - name: rs3dbench_resnet18_depth
+    task: depth_estimation
+    model:
+      name: resnet18_depth
+      pretrained: true

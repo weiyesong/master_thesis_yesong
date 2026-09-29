@@ -1,0 +1,82 @@
+[
+  {
+    "figure": "risk_coverage_eurosat",
+    "sources": [
+      "curves.csv"
+    ],
+    "caption": "eurosat; image_top1; all test images; lower risk is better; curves compare different predictors as well as rankings. MC and MC Off curves can overlap closely; Off is dotted. No training-seed confidence claim."
+  },
+  {
+    "figure": "risk_coverage_treesatai",
+    "sources": [
+      "curves.csv"
+    ],
+    "caption": "treesatai; image_hamming; all test images; lower risk is better; curves compare different predictors as well as rankings. MC and MC Off curves can overlap closely; Off is dotted. No training-seed confidence claim."
+  },
+  {
+    "figure": "risk_coverage_cloudsen12",
+    "sources": [
+      "curves.csv"
+    ],
+    "caption": "cloudsen12; image_pixel_error_fraction; all test images; lower risk is better; curves compare different predictors as well as rankings. MC and MC Off curves can overlap closely; Off is dotted. No training-seed confidence claim."
+  },
+  {
+    "figure": "risk_coverage_spacenet7",
+    "sources": [
+      "curves.csv"
+    ],
+    "caption": "spacenet7; image_pixel_error_fraction; all test images; lower risk is better; curves compare different predictors as well as rankings. MC and MC Off curves can overlap closely; Off is dotted. No training-seed confidence claim."
+  },
+  {
+    "figure": "TS_calibration_and_error_ranking",
+    "sources": [
+      "TS_calibration_behavior.csv",
+      "TS_same_checkpoint_verification.csv"
+    ],
+    "caption": "Twelve same-checkpoint pairs; all argmax decisions unchanged. Bars are paired spatial-group bootstrap intervals for fixed trained models, not across-seed intervals."
+  },
+  {
+    "figure": "TS_logit_scale",
+    "sources": [
+      "scale.csv",
+      "TS_same_checkpoint_verification.csv"
+    ],
+    "caption": "Means over 2714 test images per object. Centered norms remove common logit-shift arbitrariness; logit margins are distinct from probability margins. No causal mediation claim."
+  },
+  {
+    "figure": "MI_vs_MSP_error_ranking",
+    "sources": [
+      "within_predictor_score_effects.csv"
+    ],
+    "caption": "Fixed-predictor score contrasts. Conditional group-bootstrap intervals; no universal score ranking is inferred."
+  },
+  {
+    "figure": "spacenet_building_retention",
+    "sources": [
+      "full_image_class_coverage.csv"
+    ],
+    "caption": "Ground truth is used only to diagnose selected image content. Improvement in all-pixel risk is not a building-detection guarantee."
+  },
+  {
+    "figure": "analytic_proxy_reference",
+    "sources": [
+      "toy/condition_means.csv",
+      "toy/verification.json"
+    ],
+    "caption": "Exact binomial-weighted posterior expectations under Beta(1,1); four conditions, two mirror X strata. Nonadditivity does not identify physical AU/EU coupling."
+  },
+  {
+    "figure": "classification_proxy_means",
+    "sources": [
+      "proxy_means.csv"
+    ],
+    "caption": "MC T=30 and DE M=3 describe different empirical prediction distributions. Separate panels have different task semantics."
+  },
+  {
+    "figure": "Shannon_Gini_classification",
+    "sources": [
+      "proxy_means.csv"
+    ],
+    "caption": "Full-test sample means: EuroSAT 2714 images; TreeSat 2000 images, mean over 15 Bernoulli labels. Axes have different scales/units; neither agreement nor differences identify physical uncertainty sources."
+  }
+]

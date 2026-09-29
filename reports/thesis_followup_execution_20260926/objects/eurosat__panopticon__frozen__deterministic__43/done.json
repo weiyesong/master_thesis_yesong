@@ -1,0 +1,45 @@
+{
+  "label_hash": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+  "ids_hash": "a0cd43df59b97d7158bcf86d28580e8aff146770b4463c2bb0749762037bf17e",
+  "n_samples": 2714,
+  "actual_core_metrics": {
+    "accuracy": 0.9830508474576272,
+    "brier": 0.024619526961733276,
+    "nll": 0.046421732448028594,
+    "nll_logits": 0.04642173638765214
+  },
+  "core_checks": [
+    {
+      "metric": "accuracy",
+      "actual": 0.9830508474576272,
+      "expected": 0.9830508474576272,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "brier",
+      "actual": 0.024619526961733276,
+      "expected": 0.024619526961733276,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "nll",
+      "actual": 0.046421732448028594,
+      "expected": 0.046421732448028594,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    }
+  ],
+  "validation": [],
+  "pmax_exactly_one": 10,
+  "pmax_one_errors": 0,
+  "load_seconds": 0.033261409029364586,
+  "ranking_bootstrap_seconds": 0.5420654248446226,
+  "total_seconds": 0.6672454327344894,
+  "peak_rss_GiB": 0.5715713500976562,
+  "status": "COMPLETE"
+}

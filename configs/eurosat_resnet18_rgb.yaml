@@ -1,0 +1,47 @@
+seed: 42
+device: auto
+output_dir: ./results/first_stage_rgb
+results_csv: ./results/first_stage_rgb/results.csv
+
+task: classification
+
+data:
+  name: eurosat
+  input_bands: rgb
+  # Use the same thesis EuroSAT all-band archive and split as DOFA RGB, then
+  # select Sentinel-2 B04/B03/B02 in the transform.
+  source: torchgeo_all_bands
+  root: ./data
+  download: false
+  image_size: 224
+  val_fraction: 0.2
+  normalize: true
+  num_classes: 10
+  num_workers: 4
+
+training:
+  epochs: 1
+  batch_size: 64
+  learning_rate: 1.0e-3
+  weight_decay: 1.0e-4
+  limit_train_batches: null
+  limit_val_batches: null
+
+metrics:
+  n_bins: 15
+
+visualization:
+  enabled: true
+  update_every_epochs: 1
+  track_gradient_norm: true
+
+uq_methods:
+  - name: none
+
+experiments:
+  - name: eurosat_resnet18_rgb
+    task: classification
+    model:
+      name: resnet18
+      pretrained: true
+      freeze_backbone: true

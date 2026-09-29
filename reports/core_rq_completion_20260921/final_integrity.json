@@ -1,0 +1,345 @@
+{
+  "completed_at": "2026-09-23T12:34:55.686882+00:00",
+  "previous_source_files_checked": 2394,
+  "authorized_changes": [
+    {
+      "path": "scripts/c6_build_final_results.py",
+      "previous_sha256": "ce50344187262175ea5ab1f89435d96a8acbf52ddda6be760f2c57f6790d5219",
+      "current_sha256": "9c831f3b6e904536e376ca5e8f9ae11c362b89f2fe535b84183dc12d17cbfeb1"
+    }
+  ],
+  "previous_audit_files_checked": 104,
+  "all_previous_audit_outputs_unchanged": true,
+  "local_link_checks": [
+    {
+      "document": "reports/core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "target": "RESULTS_SECTION.md",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "target": "published/final_thesis_results.md",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "target": "mc_dropout_three_way.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "target": "mc_dropout_effects.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "target": "mc_dropout_effect_summaries.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "target": "checks.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "target": "issue_register.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "target": "coverage_matrix.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "target": "mc_dropout_control_coverage.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "target": "segmentation_off_verification_summary.json",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "target": "targeted_tests.log",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "target": "claude_design_review.md",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "target": "claude_final_review.md",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "target": "REVIEW_RESOLUTION.md",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "COMPLETION_REPORT.md",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/split_checks.json",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/segmentation_verification.json",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/actual_artifacts.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "provenance_numeric_crosscheck.json",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "provenance_numeric_crosscheck.py",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/classification_recomputed_metrics.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/segmentation_recomputed_metrics.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "provenance_followup.md",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/paired_effect_summaries.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/class_diagnostics.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/segmentation_reliability_bins.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/segmentation_class_diagnostics.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/foreground_precision_verification.json",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "published/final_thesis_results.md",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/adaptation_config_pairs.json",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../final_training_protocol.md",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/checkpoint_verification.json",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/paired_effects_from_predictions.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/paired_effect_summaries.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "published/tables/historical_treesatai_temperature_scaling.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "paired_effects_from_predictions.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "paired_effect_summaries.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "mc_dropout_three_way.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "mc_dropout_effects.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "mc_dropout_effect_summaries.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "mc_dropout_ece_sensitivity.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "metric_alignment_resolution.md",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/spacenet7_class_probability_reliability.png",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/segmentation_class_diagnostics.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "../core_rq_audit_20260918/class_diagnostics.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "target": "published/final_thesis_results.md",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "../COMPLETION_REPORT.md",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "../RESULTS_SECTION.md",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "../mc_dropout_three_way.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "figures/classification_reliability_grid.png",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "figures/segmentation_reliability_grid.png",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "figures/treesatai_positive_label_diagnostic.png",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "figures/classification_accuracy_vs_ece.png",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "figures/segmentation_miou_vs_ece.png",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "figures/cloudsen12_mc_uncertainty_maps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "figures/spacenet7_mc_uncertainty_maps.png",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "../../core_rq_audit_20260918/class_diagnostics.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "../../core_rq_audit_20260918/segmentation_class_diagnostics.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "../../core_rq_audit_20260918/classification_reliability_bins.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "../../core_rq_audit_20260918/segmentation_reliability_bins.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/core_rq_completion_20260921/published/final_thesis_results.md",
+      "target": "tables/historical_treesatai_temperature_scaling.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/CORE_RQ_CURRENT.md",
+      "target": "core_rq_completion_20260921/COMPLETION_REPORT.md",
+      "exists": true
+    },
+    {
+      "document": "reports/CORE_RQ_CURRENT.md",
+      "target": "core_rq_completion_20260921/RESULTS_SECTION.md",
+      "exists": true
+    },
+    {
+      "document": "reports/CORE_RQ_CURRENT.md",
+      "target": "core_rq_completion_20260921/published/final_thesis_results.md",
+      "exists": true
+    },
+    {
+      "document": "reports/CORE_RQ_CURRENT.md",
+      "target": "core_rq_completion_20260921/checks.csv",
+      "exists": true
+    },
+    {
+      "document": "reports/CORE_RQ_CURRENT.md",
+      "target": "core_rq_completion_20260921/mc_dropout_three_way.csv",
+      "exists": true
+    }
+  ]
+}

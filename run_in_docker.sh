@@ -1,13 +1,22 @@
 #!/bin/bash
-# Quick script to run Python files in Docker
+set -e
+
+IMAGE_NAME="my-paper-env:latest"
+CONTAINER_NAME="yesong"
+
+if ! docker image inspect "${IMAGE_NAME}" >/dev/null 2>&1; then
+    echo "Docker image ${IMAGE_NAME} not found."
+    echo "Build it first with: docker build -t ${IMAGE_NAME} ."
+    exit 1
+fi
 
 # Ensure container is running
-if ! docker ps | grep -q yesong; then
+if ! docker ps --format '{{.Names}}' | grep -qx "${CONTAINER_NAME}"; then
     echo "Starting Docker container..."
-    docker start yesong 2>/dev/null || \
-    docker run -d --name yesong --gpus all \
+    docker start "${CONTAINER_NAME}" 2>/dev/null || \
+    docker run -d --name "${CONTAINER_NAME}" --gpus all --ipc host \
         -v "$(pwd)":/workspace \
-        my-paper-env:latest tail -f /dev/null
+        "${IMAGE_NAME}" tail -f /dev/null
     sleep 2
 fi
 
@@ -19,4 +28,4 @@ if [ -z "$1" ]; then
 fi
 
 echo "Running $1 in Docker..."
-docker exec -it yesong python /workspace/$1
+docker exec -it "${CONTAINER_NAME}" python /workspace/$1

@@ -1,0 +1,56 @@
+{
+  "created_utc": "2026-09-27T10:16:43.497157+00:00",
+  "objects": 100,
+  "coverage_by_dataset_method": {
+    "('cloudsen12', 'deep_ensemble')": 4,
+    "('cloudsen12', 'deterministic')": 4,
+    "('cloudsen12', 'mc_dropout')": 4,
+    "('cloudsen12', 'mc_dropout_off')": 4,
+    "('eurosat', 'deep_ensemble')": 4,
+    "('eurosat', 'deterministic')": 12,
+    "('eurosat', 'mc_dropout')": 6,
+    "('eurosat', 'mc_dropout_off')": 6,
+    "('eurosat', 'temperature_scaling')": 12,
+    "('spacenet7', 'deep_ensemble')": 4,
+    "('spacenet7', 'deterministic')": 4,
+    "('spacenet7', 'mc_dropout')": 4,
+    "('spacenet7', 'mc_dropout_off')": 4,
+    "('treesatai', 'deep_ensemble')": 4,
+    "('treesatai', 'deterministic')": 12,
+    "('treesatai', 'mc_dropout')": 6,
+    "('treesatai', 'mc_dropout_off')": 6
+  },
+  "scalar_checks": 436,
+  "maximum_primary_metric_difference": 5.760647237007532e-09,
+  "core_verification_status": {
+    "PASS": 544,
+    "NA": 8
+  },
+  "alignment_objects": 100,
+  "MC_raw_classification_checks": 60,
+  "TS_same_checkpoint_pairs": 12,
+  "EuroSAT_original_truth_objects": 40,
+  "scientific_tests": 10,
+  "standalone_figures": 11,
+  "TreeSat_MI_minus_MSP_micro_AUROC_range": [
+    -0.1519673897980352,
+    -0.0190305954358479
+  ],
+  "SpaceNet7_building_retention_at_half_image_coverage_range": [
+    0.1176970970634943,
+    0.1882302902936505
+  ],
+  "TS_ECE_improved_pairs": 8,
+  "markdown_links_checked": 84,
+  "all_links_exist": true,
+  "old_checks": {
+    "UNKNOWN": 2,
+    "PASS": 27
+  },
+  "new_checks": {
+    "PASS": 7,
+    "NA": 1
+  },
+  "model_training_runs": 0,
+  "model_forward_runs": 0
+}

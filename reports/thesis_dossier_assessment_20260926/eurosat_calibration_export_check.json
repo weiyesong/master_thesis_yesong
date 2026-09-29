@@ -1,0 +1,458 @@
+[
+  {
+    "path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/calibration_exports/dofa/frozen/seed42/predictions.parquet",
+    "rows": 2713,
+    "columns": [
+      "sample_id",
+      "label",
+      "logits",
+      "probabilities",
+      "prediction",
+      "correctness",
+      "confidence",
+      "predictive_entropy",
+      "backbone_representation",
+      "true_label",
+      "predicted_label",
+      "correct",
+      "maximum_softmax_probability",
+      "top1_top2_probability_margin",
+      "model_name",
+      "dataset",
+      "adaptation_mode",
+      "seed",
+      "checkpoint",
+      "split",
+      "uq_method",
+      "corruption_type",
+      "corruption_severity"
+    ],
+    "split_values": [
+      "calibration"
+    ],
+    "dataset_values": [
+      "eurosat"
+    ],
+    "uq_method_values": [
+      "deterministic"
+    ]
+  },
+  {
+    "path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/calibration_exports/dofa/frozen/seed43/predictions.parquet",
+    "rows": 2713,
+    "columns": [
+      "sample_id",
+      "label",
+      "logits",
+      "probabilities",
+      "prediction",
+      "correctness",
+      "confidence",
+      "predictive_entropy",
+      "backbone_representation",
+      "true_label",
+      "predicted_label",
+      "correct",
+      "maximum_softmax_probability",
+      "top1_top2_probability_margin",
+      "model_name",
+      "dataset",
+      "adaptation_mode",
+      "seed",
+      "checkpoint",
+      "split",
+      "uq_method",
+      "corruption_type",
+      "corruption_severity"
+    ],
+    "split_values": [
+      "calibration"
+    ],
+    "dataset_values": [
+      "eurosat"
+    ],
+    "uq_method_values": [
+      "deterministic"
+    ]
+  },
+  {
+    "path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/calibration_exports/dofa/frozen/seed44/predictions.parquet",
+    "rows": 2713,
+    "columns": [
+      "sample_id",
+      "label",
+      "logits",
+      "probabilities",
+      "prediction",
+      "correctness",
+      "confidence",
+      "predictive_entropy",
+      "backbone_representation",
+      "true_label",
+      "predicted_label",
+      "correct",
+      "maximum_softmax_probability",
+      "top1_top2_probability_margin",
+      "model_name",
+      "dataset",
+      "adaptation_mode",
+      "seed",
+      "checkpoint",
+      "split",
+      "uq_method",
+      "corruption_type",
+      "corruption_severity"
+    ],
+    "split_values": [
+      "calibration"
+    ],
+    "dataset_values": [
+      "eurosat"
+    ],
+    "uq_method_values": [
+      "deterministic"
+    ]
+  },
+  {
+    "path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/calibration_exports/dofa/full_finetune/seed42/predictions.parquet",
+    "rows": 2713,
+    "columns": [
+      "sample_id",
+      "label",
+      "logits",
+      "probabilities",
+      "prediction",
+      "correctness",
+      "confidence",
+      "predictive_entropy",
+      "backbone_representation",
+      "true_label",
+      "predicted_label",
+      "correct",
+      "maximum_softmax_probability",
+      "top1_top2_probability_margin",
+      "model_name",
+      "dataset",
+      "adaptation_mode",
+      "seed",
+      "checkpoint",
+      "split",
+      "uq_method",
+      "corruption_type",
+      "corruption_severity"
+    ],
+    "split_values": [
+      "calibration"
+    ],
+    "dataset_values": [
+      "eurosat"
+    ],
+    "uq_method_values": [
+      "deterministic"
+    ]
+  },
+  {
+    "path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/calibration_exports/dofa/full_finetune/seed43/predictions.parquet",
+    "rows": 2713,
+    "columns": [
+      "sample_id",
+      "label",
+      "logits",
+      "probabilities",
+      "prediction",
+      "correctness",
+      "confidence",
+      "predictive_entropy",
+      "backbone_representation",
+      "true_label",
+      "predicted_label",
+      "correct",
+      "maximum_softmax_probability",
+      "top1_top2_probability_margin",
+      "model_name",
+      "dataset",
+      "adaptation_mode",
+      "seed",
+      "checkpoint",
+      "split",
+      "uq_method",
+      "corruption_type",
+      "corruption_severity"
+    ],
+    "split_values": [
+      "calibration"
+    ],
+    "dataset_values": [
+      "eurosat"
+    ],
+    "uq_method_values": [
+      "deterministic"
+    ]
+  },
+  {
+    "path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/calibration_exports/dofa/full_finetune/seed44/predictions.parquet",
+    "rows": 2713,
+    "columns": [
+      "sample_id",
+      "label",
+      "logits",
+      "probabilities",
+      "prediction",
+      "correctness",
+      "confidence",
+      "predictive_entropy",
+      "backbone_representation",
+      "true_label",
+      "predicted_label",
+      "correct",
+      "maximum_softmax_probability",
+      "top1_top2_probability_margin",
+      "model_name",
+      "dataset",
+      "adaptation_mode",
+      "seed",
+      "checkpoint",
+      "split",
+      "uq_method",
+      "corruption_type",
+      "corruption_severity"
+    ],
+    "split_values": [
+      "calibration"
+    ],
+    "dataset_values": [
+      "eurosat"
+    ],
+    "uq_method_values": [
+      "deterministic"
+    ]
+  },
+  {
+    "path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/calibration_exports/panopticon/frozen/seed42/predictions.parquet",
+    "rows": 2713,
+    "columns": [
+      "sample_id",
+      "label",
+      "logits",
+      "probabilities",
+      "prediction",
+      "correctness",
+      "confidence",
+      "predictive_entropy",
+      "backbone_representation",
+      "true_label",
+      "predicted_label",
+      "correct",
+      "maximum_softmax_probability",
+      "top1_top2_probability_margin",
+      "model_name",
+      "dataset",
+      "adaptation_mode",
+      "seed",
+      "checkpoint",
+      "split",
+      "uq_method",
+      "corruption_type",
+      "corruption_severity"
+    ],
+    "split_values": [
+      "calibration"
+    ],
+    "dataset_values": [
+      "eurosat"
+    ],
+    "uq_method_values": [
+      "deterministic"
+    ]
+  },
+  {
+    "path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/calibration_exports/panopticon/frozen/seed43/predictions.parquet",
+    "rows": 2713,
+    "columns": [
+      "sample_id",
+      "label",
+      "logits",
+      "probabilities",
+      "prediction",
+      "correctness",
+      "confidence",
+      "predictive_entropy",
+      "backbone_representation",
+      "true_label",
+      "predicted_label",
+      "correct",
+      "maximum_softmax_probability",
+      "top1_top2_probability_margin",
+      "model_name",
+      "dataset",
+      "adaptation_mode",
+      "seed",
+      "checkpoint",
+      "split",
+      "uq_method",
+      "corruption_type",
+      "corruption_severity"
+    ],
+    "split_values": [
+      "calibration"
+    ],
+    "dataset_values": [
+      "eurosat"
+    ],
+    "uq_method_values": [
+      "deterministic"
+    ]
+  },
+  {
+    "path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/calibration_exports/panopticon/frozen/seed44/predictions.parquet",
+    "rows": 2713,
+    "columns": [
+      "sample_id",
+      "label",
+      "logits",
+      "probabilities",
+      "prediction",
+      "correctness",
+      "confidence",
+      "predictive_entropy",
+      "backbone_representation",
+      "true_label",
+      "predicted_label",
+      "correct",
+      "maximum_softmax_probability",
+      "top1_top2_probability_margin",
+      "model_name",
+      "dataset",
+      "adaptation_mode",
+      "seed",
+      "checkpoint",
+      "split",
+      "uq_method",
+      "corruption_type",
+      "corruption_severity"
+    ],
+    "split_values": [
+      "calibration"
+    ],
+    "dataset_values": [
+      "eurosat"
+    ],
+    "uq_method_values": [
+      "deterministic"
+    ]
+  },
+  {
+    "path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/calibration_exports/panopticon/full_finetune/seed42/predictions.parquet",
+    "rows": 2713,
+    "columns": [
+      "sample_id",
+      "label",
+      "logits",
+      "probabilities",
+      "prediction",
+      "correctness",
+      "confidence",
+      "predictive_entropy",
+      "backbone_representation",
+      "true_label",
+      "predicted_label",
+      "correct",
+      "maximum_softmax_probability",
+      "top1_top2_probability_margin",
+      "model_name",
+      "dataset",
+      "adaptation_mode",
+      "seed",
+      "checkpoint",
+      "split",
+      "uq_method",
+      "corruption_type",
+      "corruption_severity"
+    ],
+    "split_values": [
+      "calibration"
+    ],
+    "dataset_values": [
+      "eurosat"
+    ],
+    "uq_method_values": [
+      "deterministic"
+    ]
+  },
+  {
+    "path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/calibration_exports/panopticon/full_finetune/seed43/predictions.parquet",
+    "rows": 2713,
+    "columns": [
+      "sample_id",
+      "label",
+      "logits",
+      "probabilities",
+      "prediction",
+      "correctness",
+      "confidence",
+      "predictive_entropy",
+      "backbone_representation",
+      "true_label",
+      "predicted_label",
+      "correct",
+      "maximum_softmax_probability",
+      "top1_top2_probability_margin",
+      "model_name",
+      "dataset",
+      "adaptation_mode",
+      "seed",
+      "checkpoint",
+      "split",
+      "uq_method",
+      "corruption_type",
+      "corruption_severity"
+    ],
+    "split_values": [
+      "calibration"
+    ],
+    "dataset_values": [
+      "eurosat"
+    ],
+    "uq_method_values": [
+      "deterministic"
+    ]
+  },
+  {
+    "path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/calibration_exports/panopticon/full_finetune/seed44/predictions.parquet",
+    "rows": 2713,
+    "columns": [
+      "sample_id",
+      "label",
+      "logits",
+      "probabilities",
+      "prediction",
+      "correctness",
+      "confidence",
+      "predictive_entropy",
+      "backbone_representation",
+      "true_label",
+      "predicted_label",
+      "correct",
+      "maximum_softmax_probability",
+      "top1_top2_probability_margin",
+      "model_name",
+      "dataset",
+      "adaptation_mode",
+      "seed",
+      "checkpoint",
+      "split",
+      "uq_method",
+      "corruption_type",
+      "corruption_severity"
+    ],
+    "split_values": [
+      "calibration"
+    ],
+    "dataset_values": [
+      "eurosat"
+    ],
+    "uq_method_values": [
+      "deterministic"
+    ]
+  }
+]

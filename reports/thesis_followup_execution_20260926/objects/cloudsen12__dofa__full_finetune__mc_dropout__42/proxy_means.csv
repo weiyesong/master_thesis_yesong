@@ -1,0 +1,9 @@
+score,mean,std_across_samples,score_semantics
+msp,0.08020549800435435,0.05977395081684063,"mean over valid pixels, then images"
+entropy,0.2055891231182761,0.1454303448215107,"mean over valid pixels, then images"
+negative_margin,-0.8516946254617137,0.10870965800621077,"mean over valid pixels, then images"
+gini_total,0.11475799291897991,0.08353479834528486,"mean over valid pixels, then images"
+expected_entropy,0.20076627903099012,0.14308321949595773,"mean over valid pixels, then images"
+mutual_information,0.004822844095048028,0.003047319888639617,"mean over valid pixels, then images"
+gini_disagreement,0.001194825870726566,0.000997733327655038,"mean over valid pixels, then images"
+gini_expected,0.11356316704825332,0.08265715977678324,"mean over valid pixels, then images"

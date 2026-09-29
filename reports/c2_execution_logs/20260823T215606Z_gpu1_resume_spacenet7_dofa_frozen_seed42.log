@@ -1,0 +1,37 @@
+GPU=1 resume=results/final_thesis/segmentation/spacenet7_frozen/runs/20260823T212554554121Z_spacenet7_dofa_frozen_seed42_bb178c28 start=2026-08-23T21:56:06Z
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+[spacenet7_dofa_frozen seed=42] epoch=3 train_loss=0.159283 val_miou=0.469354 best_epoch=1 patience=2/10
+[spacenet7_dofa_frozen seed=42] epoch=4 train_loss=0.154845 val_miou=0.473385 best_epoch=4 patience=0/10
+[spacenet7_dofa_frozen seed=42] epoch=5 train_loss=0.151263 val_miou=0.477487 best_epoch=5 patience=0/10
+[spacenet7_dofa_frozen seed=42] epoch=6 train_loss=0.147640 val_miou=0.475569 best_epoch=5 patience=1/10
+[spacenet7_dofa_frozen seed=42] epoch=7 train_loss=0.144094 val_miou=0.476929 best_epoch=5 patience=2/10
+[spacenet7_dofa_frozen seed=42] epoch=8 train_loss=0.141218 val_miou=0.480930 best_epoch=8 patience=0/10
+[spacenet7_dofa_frozen seed=42] epoch=9 train_loss=0.138671 val_miou=0.474350 best_epoch=8 patience=1/10
+[spacenet7_dofa_frozen seed=42] epoch=10 train_loss=0.135866 val_miou=0.477684 best_epoch=8 patience=2/10
+[spacenet7_dofa_frozen seed=42] epoch=11 train_loss=0.133349 val_miou=0.479366 best_epoch=8 patience=3/10
+[spacenet7_dofa_frozen seed=42] epoch=12 train_loss=0.130880 val_miou=0.478331 best_epoch=8 patience=4/10
+[spacenet7_dofa_frozen seed=42] epoch=13 train_loss=0.128201 val_miou=0.480755 best_epoch=8 patience=5/10
+[spacenet7_dofa_frozen seed=42] epoch=14 train_loss=0.125861 val_miou=0.487357 best_epoch=14 patience=0/10
+[spacenet7_dofa_frozen seed=42] epoch=15 train_loss=0.124060 val_miou=0.484440 best_epoch=14 patience=1/10
+[spacenet7_dofa_frozen seed=42] epoch=16 train_loss=0.122281 val_miou=0.481243 best_epoch=14 patience=2/10
+[spacenet7_dofa_frozen seed=42] epoch=17 train_loss=0.120693 val_miou=0.483234 best_epoch=14 patience=3/10
+[spacenet7_dofa_frozen seed=42] epoch=18 train_loss=0.118102 val_miou=0.484621 best_epoch=14 patience=4/10
+[spacenet7_dofa_frozen seed=42] epoch=19 train_loss=0.116581 val_miou=0.483648 best_epoch=14 patience=5/10
+[spacenet7_dofa_frozen seed=42] epoch=20 train_loss=0.115068 val_miou=0.483872 best_epoch=14 patience=6/10
+[spacenet7_dofa_frozen seed=42] epoch=21 train_loss=0.113455 val_miou=0.483568 best_epoch=14 patience=7/10
+[spacenet7_dofa_frozen seed=42] epoch=22 train_loss=0.112046 val_miou=0.489261 best_epoch=22 patience=0/10
+[spacenet7_dofa_frozen seed=42] epoch=23 train_loss=0.113646 val_miou=0.492283 best_epoch=23 patience=0/10
+[spacenet7_dofa_frozen seed=42] epoch=24 train_loss=0.109313 val_miou=0.486559 best_epoch=23 patience=1/10
+[spacenet7_dofa_frozen seed=42] epoch=25 train_loss=0.107870 val_miou=0.482271 best_epoch=23 patience=2/10
+[spacenet7_dofa_frozen seed=42] epoch=26 train_loss=0.107063 val_miou=0.484431 best_epoch=23 patience=3/10
+[spacenet7_dofa_frozen seed=42] epoch=27 train_loss=0.106495 val_miou=0.488170 best_epoch=23 patience=4/10
+[spacenet7_dofa_frozen seed=42] epoch=28 train_loss=0.104220 val_miou=0.484370 best_epoch=23 patience=5/10
+[spacenet7_dofa_frozen seed=42] epoch=29 train_loss=0.103515 val_miou=0.488638 best_epoch=23 patience=6/10
+[spacenet7_dofa_frozen seed=42] epoch=30 train_loss=0.103078 val_miou=0.491342 best_epoch=23 patience=7/10
+[spacenet7_dofa_frozen seed=42] epoch=31 train_loss=0.101801 val_miou=0.489585 best_epoch=23 patience=8/10
+[spacenet7_dofa_frozen seed=42] epoch=32 train_loss=0.100802 val_miou=0.488084 best_epoch=23 patience=9/10
+[spacenet7_dofa_frozen seed=42] epoch=33 train_loss=0.099740 val_miou=0.490960 best_epoch=23 patience=10/10
+Wrote summary to /workspace/results/final_thesis/segmentation/spacenet7_frozen/summaries/20260823T223305701529Z_resume-summary_seed42_ee2221aa.json
+GPU=1 complete=2026-08-23T22:33:08Z

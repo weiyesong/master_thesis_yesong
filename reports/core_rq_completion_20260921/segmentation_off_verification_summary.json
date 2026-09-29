@@ -1,0 +1,14 @@
+{
+  "expected_count": 12,
+  "verified_count": 12,
+  "passed": 12,
+  "failed": 0,
+  "pending": [],
+  "complete": true,
+  "maximum_absolute_metric_difference": 7.67587519656665e-08,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "78e6e371097ba216eb4542cc3799b78e2e67c644463854bbd4d3284aa04bc3f0",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}

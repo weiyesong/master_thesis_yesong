@@ -1,0 +1,45 @@
+{
+  "sample_id": "sample_5025",
+  "row": 79,
+  "column": 123,
+  "indexing": "zero based",
+  "four_neighbour_transition_with_radius_one": true,
+  "is_boundary": true,
+  "label_patch_radius_two": [
+    [
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      0
+    ]
+  ]
+}

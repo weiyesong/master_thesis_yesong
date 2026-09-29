@@ -1,0 +1,3174 @@
+[
+  {
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260823T212554430984Z_cloudsen12_dofa_frozen_seed42_5d8edd5b/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.6003162432776954,
+      "pixel_accuracy": 0.8322424654958137,
+      "nll": 0.4625481666175915,
+      "brier": 0.24074333193531652,
+      "mean_confidence_minus_accuracy": 0.019294438592290696,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          23531282,
+          777030,
+          926151,
+          787489
+        ],
+        [
+          896048,
+          12098515,
+          422664,
+          606282
+        ],
+        [
+          1182675,
+          805909,
+          2026618,
+          203863
+        ],
+        [
+          788004,
+          635780,
+          175072,
+          3058218
+        ]
+      ],
+      "ece_10": 0.019294438592290696,
+      "ece_15": 0.019294824558505758,
+      "ece_30": 0.019294824558505758,
+      "iou_clear": 0.8145502949442582,
+      "class_probability_ece_clear": 0.021188191938339214,
+      "iou_thick_cloud": 0.7448802590383536,
+      "class_probability_ece_thick_cloud": 0.008570099156463985,
+      "iou_thin_cloud": 0.3528878527976553,
+      "class_probability_ece_thin_cloud": 0.027869940886193056,
+      "iou_cloud_shadow": 0.48894656633051453,
+      "class_probability_ece_cloud_shadow": 0.01182617984485225
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -2.2893943407709116e-09,
+      "brier": -1.5308824485860129e-09,
+      "ece_15": 5.431331877303602e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "89f094d2b0f8f17a47e56ca066ed6313255192a4dcab878e2a83460f8098822e"
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T063305175307Z_cloudsen12_dofa_frozen_seed43_d20a830e/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.6075052712185145,
+      "pixel_accuracy": 0.8362984448587127,
+      "nll": 0.4722835050278589,
+      "brier": 0.23934912449420223,
+      "mean_confidence_minus_accuracy": 0.050078845177803914,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          23615714,
+          718846,
+          938200,
+          749192
+        ],
+        [
+          804920,
+          12167045,
+          628728,
+          422816
+        ],
+        [
+          1180488,
+          671525,
+          2201587,
+          165465
+        ],
+        [
+          784280,
+          772625,
+          171457,
+          2928712
+        ]
+      ],
+      "ece_10": 0.050078845177803914,
+      "ece_15": 0.050078845177803914,
+      "ece_30": 0.050078845177803914,
+      "iou_clear": 0.8202281634530023,
+      "class_probability_ece_clear": 0.03618568157465323,
+      "iou_thick_cloud": 0.7516783271002604,
+      "class_probability_ece_thick_cloud": 0.01972610769253618,
+      "iou_thin_cloud": 0.3695519055971934,
+      "class_probability_ece_thin_cloud": 0.0352027243093906,
+      "iou_cloud_shadow": 0.48856268872360165,
+      "class_probability_ece_cloud_shadow": 0.014866702359675727
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": 1.3741813797985003e-09,
+      "brier": -3.204246312726866e-10,
+      "ece_15": 4.337869161097352e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "ce8594b31abc89fe048fb2a474926d16fd001f7e16a98101160799db67763110",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T135116679838Z_cloudsen12_dofa_frozen_seed44_2cce2dc4/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.6054874516766118,
+      "pixel_accuracy": 0.8331777783228677,
+      "nll": 0.4849438210815431,
+      "brier": 0.2456242040360217,
+      "mean_confidence_minus_accuracy": 0.05067139588559947,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          23926153,
+          516838,
+          796612,
+          782349
+        ],
+        [
+          939438,
+          11490462,
+          1003512,
+          590097
+        ],
+        [
+          1349708,
+          397487,
+          2292184,
+          179686
+        ],
+        [
+          847940,
+          543284,
+          214259,
+          3051591
+        ]
+      ],
+      "ece_10": 0.05067139588559947,
+      "ece_15": 0.05067139588559947,
+      "ece_30": 0.05067139588559947,
+      "iou_clear": 0.8205398614316426,
+      "class_probability_ece_clear": 0.03339239266001696,
+      "iou_thick_cloud": 0.7422243018882745,
+      "class_probability_ece_thick_cloud": 0.02426492438910373,
+      "iou_thin_cloud": 0.3677232889405671,
+      "class_probability_ece_thin_cloud": 0.04065215559153613,
+      "iou_cloud_shadow": 0.491462354445963,
+      "class_probability_ece_cloud_shadow": 0.01589802558486703
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": 1.052404663415274e-09,
+      "brier": 3.2192110088757886e-11,
+      "ece_15": 4.437506889720666e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "ef2c282e084fd2cc676123b0cc577a5f8fffb1170ce2b6d85276811d52033adf",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/segmentation/cloudsen12/dofa/frozen/seed42/aggregate_uncertainty_maps.npz",
+    "metrics": {
+      "miou": 0.6004601669110676,
+      "pixel_accuracy": 0.8308042255363683,
+      "nll": 0.4648071027320641,
+      "brier": 0.24240660037205394,
+      "mean_confidence_minus_accuracy": 0.03306889042990016,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          23603953,
+          637979,
+          998193,
+          781827
+        ],
+        [
+          884834,
+          11827349,
+          685184,
+          626142
+        ],
+        [
+          1196874,
+          650379,
+          2169830,
+          201982
+        ],
+        [
+          857469,
+          584681,
+          171784,
+          3043140
+        ]
+      ],
+      "ece_10": 0.03306889042990016,
+      "ece_15": 0.03306907414178467,
+      "ece_30": 0.03306907414178467,
+      "iou_clear": 0.8150218522212997,
+      "class_probability_ece_clear": 0.027100369284296766,
+      "iou_thick_cloud": 0.7440199595534829,
+      "class_probability_ece_thick_cloud": 0.012140541851231904,
+      "iou_thin_cloud": 0.3572191749203931,
+      "class_probability_ece_thin_cloud": 0.030961482821600397,
+      "iou_cloud_shadow": 0.48557968094909465,
+      "class_probability_ece_cloud_shadow": 0.01163066821523196
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -1.440172425759556e-10,
+      "brier": -2.6869062530465726e-10,
+      "ece_15": 1.5243084572347243e-11,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "5f21fd70eac793b970494b5b9995ce476bad6870dfac2058bf0d531032e616d4",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/segmentation/deep_ensembles/cloudsen12/dofa/frozen/ensemble_predictions.npz",
+    "metrics": {
+      "miou": 0.6207456247860744,
+      "pixel_accuracy": 0.8438226468472004,
+      "nll": 0.4246344796087947,
+      "brier": 0.2238120883830616,
+      "mean_confidence_minus_accuracy": 0.016910793355167545,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          23971216,
+          603602,
+          745040,
+          702094
+        ],
+        [
+          874307,
+          12014970,
+          636877,
+          497355
+        ],
+        [
+          1231369,
+          574903,
+          2253422,
+          159371
+        ],
+        [
+          806211,
+          638405,
+          170912,
+          3041546
+        ]
+      ],
+      "ece_10": 0.016910793355167545,
+      "ece_15": 0.01691129429365032,
+      "ece_30": 0.01691129429365032,
+      "iou_clear": 0.8284837694714483,
+      "class_probability_ece_clear": 0.013350863771817158,
+      "iou_thick_cloud": 0.7585007694556565,
+      "class_probability_ece_thick_cloud": 0.004209549765190532,
+      "iou_thin_cloud": 0.3904129216510213,
+      "class_probability_ece_thin_cloud": 0.02082276213607204,
+      "iou_cloud_shadow": 0.5055850385661715,
+      "class_probability_ece_cloud_shadow": 0.006917413016255317
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": 1.7848376110407571e-09,
+      "brier": -1.0748670009608219e-09,
+      "ece_15": 5.203420680444104e-11,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "e6aa298e82c0b92f0830ce0373e26e05f8b941096fc2832b1ba2b49d1a9691c9",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260823T224711552022Z_cloudsen12_dofa_full_finetune_seed42_9e2211d7/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.656148945112433,
+      "pixel_accuracy": 0.8630831984236003,
+      "nll": 0.4952006490683634,
+      "brier": 0.21245527007407783,
+      "mean_confidence_minus_accuracy": 0.0680183540384278,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          24175275,
+          519250,
+          821828,
+          505599
+        ],
+        [
+          625430,
+          12440229,
+          644770,
+          313080
+        ],
+        [
+          976185,
+          573581,
+          2540797,
+          128502
+        ],
+        [
+          879939,
+          568533,
+          141492,
+          3067110
+        ]
+      ],
+      "ece_10": 0.0680183540384278,
+      "ece_15": 0.0680183540384278,
+      "ece_30": 0.0680183540384278,
+      "iou_clear": 0.848150925714191,
+      "class_probability_ece_clear": 0.04529108917360273,
+      "iou_thick_cloud": 0.7931354624293101,
+      "class_probability_ece_thick_cloud": 0.027919284989132754,
+      "iou_thin_cloud": 0.4360270148983509,
+      "class_probability_ece_thin_cloud": 0.043264538629210605,
+      "iou_cloud_shadow": 0.5472823774078802,
+      "class_probability_ece_cloud_shadow": 0.020409243144525874
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -5.0458213163295795e-09,
+      "brier": -1.1532532429026077e-09,
+      "ece_15": 2.801319870515684e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "403257b4cc229aa5f04bf96d7026a07a6280286025e912c41ccc116ccc650d42",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T041629083560Z_cloudsen12_dofa_full_finetune_seed43_6547906a/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.6637905518125411,
+      "pixel_accuracy": 0.8669656756933543,
+      "nll": 0.47862183940895986,
+      "brier": 0.20720312873556643,
+      "mean_confidence_minus_accuracy": 0.06389967744508117,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          24256719,
+          495459,
+          726984,
+          542790
+        ],
+        [
+          577509,
+          12397725,
+          694516,
+          353759
+        ],
+        [
+          994198,
+          544007,
+          2561061,
+          119799
+        ],
+        [
+          750568,
+          551261,
+          157402,
+          3197843
+        ]
+      ],
+      "ece_10": 0.06389967744508117,
+      "ece_15": 0.06389968995745479,
+      "ece_30": 0.06389968995745479,
+      "iou_clear": 0.8557904577888118,
+      "class_probability_ece_clear": 0.040597689404033785,
+      "iou_thick_cloud": 0.7940013843776923,
+      "class_probability_ece_thick_cloud": 0.02599706155243366,
+      "iou_thin_cloud": 0.4417170708284473,
+      "class_probability_ece_thin_cloud": 0.042811400651608565,
+      "iou_cloud_shadow": 0.5636532942552132,
+      "class_probability_ece_cloud_shadow": 0.019681482548656686
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -1.6943308978056848e-09,
+      "brier": 9.72855268566164e-10,
+      "ece_15": 2.827717088260684e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "ca290f2db7b75a1091c16bd9c54007153d024d280206aa799009fbd776dba47c",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T084553296954Z_cloudsen12_dofa_full_finetune_seed44_9c298bb6/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.6504370791990615,
+      "pixel_accuracy": 0.8575951318027211,
+      "nll": 0.4650155097413431,
+      "brier": 0.21682125436775673,
+      "mean_confidence_minus_accuracy": 0.059130500917446475,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          24060198,
+          375830,
+          950668,
+          635256
+        ],
+        [
+          769763,
+          12073511,
+          756604,
+          423631
+        ],
+        [
+          912671,
+          509630,
+          2631792,
+          164972
+        ],
+        [
+          794187,
+          508098,
+          165364,
+          3189425
+        ]
+      ],
+      "ece_10": 0.059130500917446475,
+      "ece_15": 0.059130500917446475,
+      "ece_30": 0.059130500917446475,
+      "iou_clear": 0.8442597459178044,
+      "class_probability_ece_clear": 0.03690966109895822,
+      "iou_thick_cloud": 0.7831263235737381,
+      "class_probability_ece_thick_cloud": 0.023953766437654397,
+      "iou_thin_cloud": 0.4320290835022927,
+      "class_probability_ece_thin_cloud": 0.044239583776124795,
+      "iou_cloud_shadow": 0.5423331638024103,
+      "class_probability_ece_cloud_shadow": 0.015753818549148774
+    },
+    "metric_differences": {
+      "miou": -2.1471385780458263e-08,
+      "pixel_accuracy": -2.0440868664373113e-08,
+      "nll": -3.5205647286318253e-09,
+      "brier": 1.6357068755024073e-09,
+      "ece_15": 2.0776745435213684e-08,
+      "iou_clear": -3.5089476213556736e-08,
+      "iou_thick_cloud": -5.0796067352365526e-08,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "f071fa61f5800580b6fc38b857312cd7e8237454b880de17a37a5adf34a4e210",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/segmentation/cloudsen12/dofa/full_finetune/seed42/aggregate_uncertainty_maps.npz",
+    "metrics": {
+      "miou": 0.65879639469539,
+      "pixel_accuracy": 0.864361365940607,
+      "nll": 0.4561921504388647,
+      "brier": 0.20656120879771658,
+      "mean_confidence_minus_accuracy": 0.05543313605503863,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          24214280,
+          467974,
+          757038,
+          582660
+        ],
+        [
+          614218,
+          12342874,
+          667495,
+          398922
+        ],
+        [
+          974785,
+          600110,
+          2515929,
+          128241
+        ],
+        [
+          769329,
+          533948,
+          140939,
+          3212858
+        ]
+      ],
+      "ece_10": 0.05543313605503863,
+      "ece_15": 0.05543317512495756,
+      "ece_30": 0.05543317512495756,
+      "iou_clear": 0.8532078114510764,
+      "class_probability_ece_clear": 0.037822815233138914,
+      "iou_thick_cloud": 0.7899165859281289,
+      "class_probability_ece_thick_cloud": 0.020021765815408293,
+      "iou_thin_cloud": 0.43494042824862217,
+      "class_probability_ece_thin_cloud": 0.039460878244060284,
+      "iou_cloud_shadow": 0.5571207531537324,
+      "class_probability_ece_cloud_shadow": 0.015195299996758687
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": 1.1313502357168659e-09,
+      "brier": -8.325259925889839e-10,
+      "ece_15": -3.017434635488314e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "267caa875204b580b5b9f9b1ebe8bf7b7bcb1ba2e9611481a4ecb04eab9fa54f",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/segmentation/deep_ensembles/cloudsen12/dofa/full_finetune/ensemble_predictions.npz",
+    "metrics": {
+      "miou": 0.6713926931032165,
+      "pixel_accuracy": 0.8708693501439038,
+      "nll": 0.3982485584137727,
+      "brier": 0.19197009295346182,
+      "mean_confidence_minus_accuracy": 0.040210878149076784,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          24368542,
+          421968,
+          746464,
+          484978
+        ],
+        [
+          614015,
+          12422427,
+          660948,
+          326119
+        ],
+        [
+          958682,
+          522937,
+          2618465,
+          118981
+        ],
+        [
+          785475,
+          530367,
+          146344,
+          3194888
+        ]
+      ],
+      "ece_10": 0.040210878149076784,
+      "ece_15": 0.04021088255121953,
+      "ece_30": 0.04021088255121953,
+      "iou_clear": 0.8586481863151831,
+      "class_probability_ece_clear": 0.02537542486165792,
+      "iou_thick_cloud": 0.8015099381041645,
+      "class_probability_ece_thick_cloud": 0.015139173051774136,
+      "iou_thin_cloud": 0.45358499769869876,
+      "class_probability_ece_thin_cloud": 0.03163929426730328,
+      "iou_cloud_shadow": 0.5718276502948193,
+      "class_probability_ece_cloud_shadow": 0.009512364418726656
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -2.0061133865212355e-09,
+      "brier": -4.427833932840741e-10,
+      "ece_15": -5.5370652507491513e-11,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "e97a520b50bb580677d6f38be4ca2c5245ec08adc779e5d72f7e768ebd7459c8",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T024636502649Z_cloudsen12_panopticon_frozen_seed42_987db5bf/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.654634748638508,
+      "pixel_accuracy": 0.859185022566719,
+      "nll": 0.4378204701065929,
+      "brier": 0.21070196581135395,
+      "mean_confidence_minus_accuracy": 0.04996056987018257,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          23834747,
+          492630,
+          1006518,
+          688057
+        ],
+        [
+          615490,
+          12187383,
+          574153,
+          646483
+        ],
+        [
+          769118,
+          555933,
+          2720431,
+          173583
+        ],
+        [
+          670951,
+          484540,
+          211438,
+          3290145
+        ]
+      ],
+      "ece_10": 0.04996056987018257,
+      "ece_15": 0.04996056987018257,
+      "ece_30": 0.04996056987018257,
+      "iou_clear": 0.8488910217148522,
+      "class_probability_ece_clear": 0.03347419701443693,
+      "iou_thick_cloud": 0.7834214159226958,
+      "class_probability_ece_thick_cloud": 0.018393745716417397,
+      "iou_thin_cloud": 0.4525623447266707,
+      "class_probability_ece_thin_cloud": 0.03624183261003296,
+      "iou_cloud_shadow": 0.5336642121898132,
+      "class_probability_ece_cloud_shadow": 0.02033968041706872
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": 2.3198688525738476e-09,
+      "brier": 6.709558464379484e-10,
+      "ece_15": 3.5757657945723054e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "f0837e324f96fff3032bea00fa843dc578b7c284bec1dbad008b7c50b94fe158",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T073937493619Z_cloudsen12_panopticon_frozen_seed43_9688327e/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.6537769566901619,
+      "pixel_accuracy": 0.8610903159340659,
+      "nll": 0.4063239765377326,
+      "brier": 0.20424868896168966,
+      "mean_confidence_minus_accuracy": 0.03844469212351427,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          24131122,
+          454040,
+          907115,
+          529675
+        ],
+        [
+          680937,
+          12224122,
+          634759,
+          483691
+        ],
+        [
+          835204,
+          519862,
+          2697983,
+          166016
+        ],
+        [
+          800795,
+          582016,
+          201574,
+          3072689
+        ]
+      ],
+      "ece_10": 0.03844469212351427,
+      "ece_15": 0.03844469212351427,
+      "ece_30": 0.03844469212351427,
+      "iou_clear": 0.8515197208867193,
+      "class_probability_ece_clear": 0.025562421873293266,
+      "iou_thick_cloud": 0.7846323231271599,
+      "class_probability_ece_thick_cloud": 0.013542371085984821,
+      "iou_thin_cloud": 0.45249092119379863,
+      "class_probability_ece_thin_cloud": 0.030806074820203633,
+      "iou_cloud_shadow": 0.5264648615529698,
+      "class_probability_ece_cloud_shadow": 0.010081627757953517
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -7.225675613398153e-10,
+      "brier": -1.0022015439759002e-09,
+      "ece_15": 3.9036286703098e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "cc5e71610e9bf900d943fcc854b28a0dfb0ee9149dc1a274c5fd4445b5e4bb6b",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T150154916514Z_cloudsen12_panopticon_frozen_seed44_953e2ce2/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.6547583055295483,
+      "pixel_accuracy": 0.8606068280677656,
+      "nll": 0.3969944022239774,
+      "brier": 0.2034180244304211,
+      "mean_confidence_minus_accuracy": 0.0364534143294535,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          24044785,
+          384509,
+          805318,
+          787340
+        ],
+        [
+          761155,
+          12143728,
+          515966,
+          602660
+        ],
+        [
+          843874,
+          631745,
+          2587350,
+          156096
+        ],
+        [
+          603274,
+          535686,
+          191714,
+          3326400
+        ]
+      ],
+      "ece_10": 0.0364534143294535,
+      "ece_15": 0.03645374106977747,
+      "ece_30": 0.03645374106977747,
+      "iou_clear": 0.8517381440585641,
+      "class_probability_ece_clear": 0.024183136478887545,
+      "iou_thick_cloud": 0.7796711350022718,
+      "class_probability_ece_thick_cloud": 0.0152851621834772,
+      "iou_thin_cloud": 0.451381989346593,
+      "class_probability_ece_thin_cloud": 0.02716351765962102,
+      "iou_cloud_shadow": 0.536241953710764,
+      "class_probability_ece_cloud_shadow": 0.015876572168906304
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -9.543987822269173e-10,
+      "brier": -5.319677198745154e-10,
+      "ece_15": 4.022908048351148e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "d0cd9f09114821b7cbd6d068c0c5a2d5fa0329889549927a1bd495c4668b7cc1",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/segmentation/cloudsen12/panopticon/frozen/seed42/aggregate_uncertainty_maps.npz",
+    "metrics": {
+      "miou": 0.643685940897448,
+      "pixel_accuracy": 0.8548192209576139,
+      "nll": 0.3966157188925555,
+      "brier": 0.20731677710986648,
+      "mean_confidence_minus_accuracy": 0.01788301036735555,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          23621142,
+          600950,
+          1071516,
+          728344
+        ],
+        [
+          575198,
+          12487954,
+          487088,
+          473269
+        ],
+        [
+          794818,
+          668577,
+          2576765,
+          178905
+        ],
+        [
+          649706,
+          685167,
+          188938,
+          3133263
+        ]
+      ],
+      "ece_10": 0.01788301036735555,
+      "ece_15": 0.01788301036735555,
+      "ece_30": 0.01788301036735555,
+      "iou_clear": 0.842358484019178,
+      "class_probability_ece_clear": 0.021865500042391857,
+      "iou_thick_cloud": 0.7815618564866149,
+      "class_probability_ece_thick_cloud": 0.005489689713658404,
+      "iou_thin_cloud": 0.43186437450966686,
+      "class_probability_ece_thin_cloud": 0.01638180894957747,
+      "iou_cloud_shadow": 0.5189590485743323,
+      "class_probability_ece_cloud_shadow": 0.007892167868757856
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -5.05931074812338e-10,
+      "brier": 1.7105541150197467e-09,
+      "ece_15": 1.0331781610806168e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "35b19251200386e2eaa8a5dc22734a87673408fcd7134be4d9c7bda452e9a632",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "mc_dropout",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/segmentation/cloudsen12/panopticon/frozen/seed43/aggregate_uncertainty_maps.npz",
+    "metrics": {
+      "miou": 0.6499314610369153,
+      "pixel_accuracy": 0.86106897566719,
+      "nll": 0.39937726758425274,
+      "brier": 0.20291187003232503,
+      "mean_confidence_minus_accuracy": 0.03702807440550343,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          24352858,
+          411255,
+          679391,
+          578448
+        ],
+        [
+          827029,
+          12248571,
+          452646,
+          495263
+        ],
+        [
+          1047302,
+          668972,
+          2364208,
+          138583
+        ],
+        [
+          802194,
+          560936,
+          134709,
+          3159235
+        ]
+      ],
+      "ece_10": 0.03702807440550343,
+      "ece_15": 0.03702846510999267,
+      "ece_30": 0.03702846510999267,
+      "iou_clear": 0.8485766683716351,
+      "class_probability_ece_clear": 0.02509461249811186,
+      "iou_thick_cloud": 0.7819232346518331,
+      "class_probability_ece_thick_cloud": 0.014063515823744528,
+      "iou_thin_cloud": 0.43096781861423955,
+      "class_probability_ece_thin_cloud": 0.02807916000860246,
+      "iou_cloud_shadow": 0.5382581225099534,
+      "class_probability_ece_cloud_shadow": 0.00916420296940833
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": 9.633991937540998e-10,
+      "brier": 1.101027297112367e-09,
+      "ece_15": 1.2133183346918486e-11,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "6a381c767ba4ce7ae9becdbf50ad77a8b65e0f0a9c6860e1a44e1c219053ef9f",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "mc_dropout",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/segmentation/cloudsen12/panopticon/frozen/seed44/aggregate_uncertainty_maps.npz",
+    "metrics": {
+      "miou": 0.6533438889039785,
+      "pixel_accuracy": 0.8610527047357405,
+      "nll": 0.3967509856136127,
+      "brier": 0.20251512140907027,
+      "mean_confidence_minus_accuracy": 0.03699413391153271,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          23991124,
+          432320,
+          808708,
+          789800
+        ],
+        [
+          680688,
+          12273565,
+          419852,
+          649404
+        ],
+        [
+          887201,
+          643243,
+          2439330,
+          249291
+        ],
+        [
+          585092,
+          516583,
+          135342,
+          3420057
+        ]
+      ],
+      "ece_10": 0.03699413391153271,
+      "ece_15": 0.03699413391153271,
+      "ece_30": 0.03699413391153271,
+      "iou_clear": 0.8515059822857431,
+      "class_probability_ece_clear": 0.025499460676899274,
+      "iou_thick_cloud": 0.785978237864502,
+      "class_probability_ece_thick_cloud": 0.012945839963299158,
+      "iou_thin_cloud": 0.43692359277781867,
+      "class_probability_ece_thin_cloud": 0.027129279474189597,
+      "iou_cloud_shadow": 0.5389677426878504,
+      "class_probability_ece_cloud_shadow": 0.017768842529781743
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": 2.8390049755522284e-09,
+      "brier": 1.154801199110267e-09,
+      "ece_15": -1.900889931572003e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "d86d3ab78c18ebf54cd1e3b1a8b924351753c12156fe5f0e180cf9c372f21551",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/segmentation/deep_ensembles/cloudsen12/panopticon/frozen/ensemble_predictions.npz",
+    "metrics": {
+      "miou": 0.6672738616537771,
+      "pixel_accuracy": 0.8671299998364731,
+      "nll": 0.3658079075793323,
+      "brier": 0.19271741979573806,
+      "mean_confidence_minus_accuracy": 0.024977562163033182,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          24151323,
+          419296,
+          835587,
+          615746
+        ],
+        [
+          673914,
+          12270466,
+          534041,
+          545088
+        ],
+        [
+          806354,
+          545429,
+          2725766,
+          141516
+        ],
+        [
+          663709,
+          524522,
+          195011,
+          3273832
+        ]
+      ],
+      "ece_10": 0.024982587063264967,
+      "ece_15": 0.02499918648279976,
+      "ece_30": 0.02499918648279976,
+      "iou_clear": 0.8574658765915373,
+      "class_probability_ece_clear": 0.018393531311896676,
+      "iou_thick_cloud": 0.7909920068361805,
+      "class_probability_ece_thick_cloud": 0.010547782562452817,
+      "iou_thin_cloud": 0.47128380013914956,
+      "class_probability_ece_thin_cloud": 0.023212699952515566,
+      "iou_cloud_shadow": 0.5493537630482409,
+      "class_probability_ece_cloud_shadow": 0.009539942458432338
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": 1.6485930953713535e-09,
+      "brier": 1.3346825034066256e-09,
+      "ece_15": 1.1857164555761912e-11,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "4a9b603401cfb1091c84e8fa8b76403264ba67f386e65cbf7cb6b1d16221190e",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T002903622341Z_cloudsen12_panopticon_full_finetune_seed42_797a0b89/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.6704898254541842,
+      "pixel_accuracy": 0.8700848909275248,
+      "nll": 0.39547800780183434,
+      "brier": 0.1928278449242537,
+      "mean_confidence_minus_accuracy": 0.04288938285007745,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          24328547,
+          354240,
+          797575,
+          541590
+        ],
+        [
+          646357,
+          12337647,
+          603698,
+          435807
+        ],
+        [
+          871626,
+          561720,
+          2666681,
+          119038
+        ],
+        [
+          796931,
+          442981,
+          184092,
+          3233070
+        ]
+      ],
+      "ece_10": 0.04288938285007745,
+      "ece_15": 0.04288938285007745,
+      "ece_30": 0.04288938285007745,
+      "iou_clear": 0.8585475542708216,
+      "class_probability_ece_clear": 0.027819848374254753,
+      "iou_thick_cloud": 0.80205994493725,
+      "class_probability_ece_thick_cloud": 0.01610355495612353,
+      "iou_thin_cloud": 0.4594216830937749,
+      "class_probability_ece_thin_cloud": 0.031846470132277545,
+      "iou_cloud_shadow": 0.5619301195148908,
+      "class_probability_ece_cloud_shadow": 0.012487115604051083
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": 4.039006906708664e-10,
+      "brier": -3.791884306547644e-10,
+      "ece_15": 3.426418246355034e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "2c0593e15904105eeebe17cad27cd9f19498da67b752656094fce75dacc6ac9c",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T055703693822Z_cloudsen12_panopticon_full_finetune_seed43_8e8dc6a5/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.6767050537278565,
+      "pixel_accuracy": 0.8725182128139718,
+      "nll": 0.370835032750112,
+      "brier": 0.1872858405875459,
+      "mean_confidence_minus_accuracy": 0.03805115461159726,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          24223095,
+          406803,
+          838202,
+          553852
+        ],
+        [
+          577340,
+          12409720,
+          561229,
+          475220
+        ],
+        [
+          739695,
+          583627,
+          2743058,
+          152685
+        ],
+        [
+          737915,
+          454786,
+          155259,
+          3309114
+        ]
+      ],
+      "ece_10": 0.03805115461159726,
+      "ece_15": 0.03805115461159726,
+      "ece_30": 0.03805115461159726,
+      "iou_clear": 0.8627410175096953,
+      "class_probability_ece_clear": 0.023313131451139505,
+      "iou_thick_cloud": 0.8022458218114292,
+      "class_probability_ece_thick_cloud": 0.014618179200338014,
+      "iou_thin_cloud": 0.4750908204452735,
+      "class_probability_ece_thin_cloud": 0.028351717985900523,
+      "iou_cloud_shadow": 0.5667425551450281,
+      "class_probability_ece_cloud_shadow": 0.013813378978536387
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -5.0801868822780705e-09,
+      "brier": 1.8041659832768175e-09,
+      "ece_15": 3.557959690758672e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "6dbe91093b116d5c326c6175dd8fd252ddd0890d1cb39b3e905ef41c731cb64c",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T102603117304Z_cloudsen12_panopticon_full_finetune_seed44_fde03f5e/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.6702407495033659,
+      "pixel_accuracy": 0.868835953852695,
+      "nll": 0.39788461143072523,
+      "brier": 0.19413296361293264,
+      "mean_confidence_minus_accuracy": 0.04553030588056513,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          24122347,
+          321861,
+          796674,
+          781070
+        ],
+        [
+          623632,
+          12224751,
+          535491,
+          639635
+        ],
+        [
+          742785,
+          645840,
+          2610003,
+          220437
+        ],
+        [
+          625916,
+          370801,
+          112613,
+          3547744
+        ]
+      ],
+      "ece_10": 0.04553030588056513,
+      "ece_15": 0.045530404393033144,
+      "ece_30": 0.045530404393033144,
+      "iou_clear": 0.861073091817264,
+      "class_probability_ece_clear": 0.029321005832564362,
+      "iou_thick_cloud": 0.7957780397371151,
+      "class_probability_ece_thick_cloud": 0.019797461240701367,
+      "iou_thin_cloud": 0.46081838779782563,
+      "class_probability_ece_thin_cloud": 0.030309950178607718,
+      "iou_cloud_shadow": 0.563293478661259,
+      "class_probability_ece_cloud_shadow": 0.02184678470665421
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -1.0793930194097356e-09,
+      "brier": 1.2238754454330092e-09,
+      "ece_15": 3.436597187378432e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "352169f3627bd24f66f02ae04c202ee4a55c4186395dc75100ddacd549648c56",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/segmentation/cloudsen12/panopticon/full_finetune/seed42/aggregate_uncertainty_maps.npz",
+    "metrics": {
+      "miou": 0.6494425890096458,
+      "pixel_accuracy": 0.8603730867346939,
+      "nll": 0.39605474907307475,
+      "brier": 0.20309758568922467,
+      "mean_confidence_minus_accuracy": 0.0353842182882695,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          24097887,
+          476618,
+          823060,
+          624387
+        ],
+        [
+          704257,
+          12454053,
+          548831,
+          316368
+        ],
+        [
+          822638,
+          743959,
+          2496502,
+          155966
+        ],
+        [
+          835128,
+          651306,
+          128254,
+          3042386
+        ]
+      ],
+      "ece_10": 0.0353842182882695,
+      "ece_15": 0.0353842182882695,
+      "ece_30": 0.0353842182882695,
+      "iou_clear": 0.8489962029631156,
+      "class_probability_ece_clear": 0.022279043305534235,
+      "iou_thick_cloud": 0.7835008409984479,
+      "class_probability_ece_thick_cloud": 0.01660301234382521,
+      "iou_thin_cloud": 0.4365116860545425,
+      "class_probability_ece_thin_cloud": 0.025853955139470572,
+      "iou_cloud_shadow": 0.5287616260224773,
+      "class_probability_ece_cloud_shadow": 0.006362845588452324
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": 3.303159412659795e-10,
+      "brier": -1.1496537610788948e-09,
+      "ece_15": -2.3579183050514985e-10,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "748a5b5dff85e80af085d6f311c5028dec7426f417366c1f458c1adc26d90df5",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/segmentation/deep_ensembles/cloudsen12/panopticon/full_finetune/ensemble_predictions.npz",
+    "metrics": {
+      "miou": 0.6902782168680813,
+      "pixel_accuracy": 0.8798423804618001,
+      "nll": 0.3354534583336725,
+      "brier": 0.17470799866003958,
+      "mean_confidence_minus_accuracy": 0.020201371134618715,
+      "valid_pixels": 48921600,
+      "confusion_matrix": [
+        [
+          24445820,
+          324090,
+          700792,
+          551250
+        ],
+        [
+          591570,
+          12431510,
+          520845,
+          479584
+        ],
+        [
+          776842,
+          547240,
+          2754735,
+          140248
+        ],
+        [
+          687760,
+          410304,
+          147778,
+          3411232
+        ]
+      ],
+      "ece_10": 0.020205680262409483,
+      "ece_15": 0.02021422279263739,
+      "ece_30": 0.02021422279263739,
+      "iou_clear": 0.8706358017366117,
+      "class_probability_ece_clear": 0.01254012533457025,
+      "iou_thick_cloud": 0.8122439626993357,
+      "class_probability_ece_thick_cloud": 0.01013169478400784,
+      "iou_thin_cloud": 0.4929309937585891,
+      "class_probability_ece_thin_cloud": 0.019542434608704008,
+      "iou_cloud_shadow": 0.5853021092777887,
+      "class_probability_ece_cloud_shadow": 0.00971732040651179
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -8.585605559829901e-10,
+      "brier": -3.3733579818395754e-10,
+      "ece_15": -2.111314595376612e-11,
+      "iou_clear": 0.0,
+      "iou_thick_cloud": 0.0,
+      "iou_thin_cloud": 0.0,
+      "iou_cloud_shadow": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "a350b3f4d0ec7b2be497e09ad6ca3294cc7377fc1f7cf14c621f9173284fed25",
+      "ordered_valid_mask_sha256": "b1a07c6bed3e982249cf897dc8b5c23d4162a677d632d46bb1766348843db134",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 2.384185791015625e-07,
+      "artifact_sha256": "99c24758dca0b4f77cd774977baa7baea484d70e672a35e7496efd0f54275ca8",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260823T212554554121Z_spacenet7_dofa_frozen_seed42_bb178c28/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.4879173171132102,
+      "pixel_accuracy": 0.9264936728272039,
+      "nll": 0.28227755431969476,
+      "brier": 0.1277050676206929,
+      "mean_confidence_minus_accuracy": 0.030106709128242586,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          53332028,
+          443216
+        ],
+        [
+          3805652,
+          221856
+        ]
+      ],
+      "ece_10": 0.03568138187143702,
+      "ece_15": 0.03568138187143702,
+      "ece_30": 0.03568138187143702,
+      "iou_background": 0.9262104570238018,
+      "class_probability_ece_background": 0.04116861281960961,
+      "iou_building": 0.049624177202618636,
+      "class_probability_ece_building": 0.04116862055160098,
+      "foreground_ece_15": 0.04116862055160098,
+      "foreground_nll": 0.2822775564384936,
+      "foreground_brier": 0.06385253381708446,
+      "boundary_ece_15": 0.1340956174226946,
+      "boundary_foreground_ece_15": 0.1426074613871085,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -1.2717003561313334e-09,
+      "brier": 3.93476362603451e-10,
+      "ece_15": -5.5185300773530344e-11,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -2.6204517722394627e-11,
+      "foreground_nll": -8.761650294175638e-10,
+      "foreground_brier": 2.710551505469283e-10,
+      "boundary_ece_15": -1.5285178678325906e-10,
+      "boundary_foreground_ece_15": -8.31620605712402e-11
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "0ad2df6cb58abd891d1fb0b5257384b0d6bb582f3a8e359e9b7cf51854fc0b33"
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T084249767853Z_spacenet7_dofa_frozen_seed43_30065f6d/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.48765314699430373,
+      "pixel_accuracy": 0.9251974542665373,
+      "nll": 0.3187652716224418,
+      "brier": 0.13050134121784923,
+      "mean_confidence_minus_accuracy": 0.03426678434261146,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          53249440,
+          525804
+        ],
+        [
+          3797989,
+          229519
+        ]
+      ],
+      "ece_10": 0.040292685403145,
+      "ece_15": 0.040292685403145,
+      "ece_30": 0.040292685403145,
+      "iou_background": 0.9248992496217817,
+      "class_probability_ece_background": 0.04723130042481346,
+      "iou_building": 0.05040704436682573,
+      "class_probability_ece_building": 0.04723130104697469,
+      "foreground_ece_15": 0.04723130104697469,
+      "foreground_nll": 0.31875065206131814,
+      "foreground_brier": 0.06525067062028862,
+      "boundary_ece_15": 0.14248410335203823,
+      "boundary_foreground_ece_15": 0.15427768599623437,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -3.5410032683813597e-09,
+      "brier": 2.445125490968536e-10,
+      "ece_15": -6.966713317346773e-11,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -3.1794691879305503e-11,
+      "foreground_nll": 1.4051072111942453e-06,
+      "foreground_brier": 1.3362028150609717e-10,
+      "boundary_ece_15": -1.8580961769210091e-10,
+      "boundary_foreground_ece_15": -1.0304349040701766e-10
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "50cff2caab568ad814fc7ebdaa61060d057cfb37e4c777abbd12f485d19ee617",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T131025872125Z_spacenet7_dofa_frozen_seed44_505d5ab5/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.48926579228719774,
+      "pixel_accuracy": 0.9224325859087125,
+      "nll": 0.33593999934919155,
+      "brier": 0.13403904610929349,
+      "mean_confidence_minus_accuracy": 0.03578375237449911,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          53050846,
+          724398
+        ],
+        [
+          3759212,
+          268296
+        ]
+      ],
+      "ece_10": 0.04142660100670374,
+      "ece_15": 0.041426583706489384,
+      "ece_30": 0.04142660100670374,
+      "iou_background": 0.9220708717572649,
+      "class_probability_ece_background": 0.05110733945021769,
+      "iou_building": 0.056460712817130644,
+      "class_probability_ece_building": 0.05110731919930517,
+      "foreground_ece_15": 0.05110731919930517,
+      "foreground_nll": 0.33585154024669844,
+      "foreground_brier": 0.06701952306226396,
+      "boundary_ece_15": 0.14348525023626812,
+      "boundary_foreground_ece_15": 0.15962068866436982,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -9.03467245461087e-10,
+      "brier": -7.018438608064059e-11,
+      "ece_15": -8.629372216795161e-11,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -3.264840481298492e-11,
+      "foreground_nll": 4.8423815388609626e-06,
+      "foreground_brier": 2.7663035750968845e-10,
+      "boundary_ece_15": -2.2014476352971712e-10,
+      "boundary_foreground_ece_15": -1.0768932967586409e-10
+    },
+    "metric_mismatches_over_2e_6": {
+      "foreground_nll": 4.8423815388609626e-06
+    },
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "9f4e7896a8dc1a5d97133c649b2dee6e5649b87136014e05fd9e3631c804a057",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/segmentation/spacenet7/dofa/frozen/seed42/aggregate_uncertainty_maps.npz",
+    "metrics": {
+      "miou": 0.48537921365646564,
+      "pixel_accuracy": 0.9270778318651679,
+      "nll": 0.27759667987683206,
+      "brier": 0.12730434729197923,
+      "mean_confidence_minus_accuracy": 0.030476082672797798,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          53393992,
+          381252
+        ],
+        [
+          3833850,
+          193658
+        ]
+      ],
+      "ece_10": 0.03659432150704794,
+      "ece_15": 0.03659432150704794,
+      "ece_30": 0.03659432150704794,
+      "iou_background": 0.9268326976293014,
+      "class_probability_ece_background": 0.041210101661112934,
+      "iou_building": 0.043925729683629865,
+      "class_probability_ece_building": 0.041210088659527425,
+      "foreground_ece_15": 0.041210088659527425,
+      "foreground_nll": 0.2775966816511865,
+      "foreground_brier": 0.06365217365455349,
+      "boundary_ece_15": 0.13542261325255142,
+      "boundary_foreground_ece_15": 0.14275921632679917,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -4.0889568952984234e-09,
+      "brier": 8.244820937086672e-10,
+      "ece_15": 2.687505218368358e-10,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -9.127101852079988e-12,
+      "foreground_nll": 1.8415037272845325e-09,
+      "foreground_brier": 1.5471275649492355e-10,
+      "boundary_ece_15": 1.8296753001578736e-12,
+      "boundary_foreground_ece_15": -2.4227564399126322e-12
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "f4d027f1d8fa4fc9600c4cdc4263c57e25e3781215a010fb13c435890bb96646",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/segmentation/deep_ensembles/spacenet7/dofa/frozen/ensemble_predictions.npz",
+    "metrics": {
+      "miou": 0.4817941336768189,
+      "pixel_accuracy": 0.929942314857258,
+      "nll": 0.2410425287047641,
+      "brier": 0.1215494929463001,
+      "mean_confidence_minus_accuracy": 0.024572102422152017,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          53611484,
+          163760
+        ],
+        [
+          3885767,
+          141741
+        ]
+      ],
+      "ece_10": 0.030411115011675538,
+      "ece_15": 0.030411115011675538,
+      "ece_30": 0.030411115011675538,
+      "iou_background": 0.929770100631777,
+      "class_probability_ece_background": 0.032015583547807855,
+      "iou_building": 0.03381816672186078,
+      "class_probability_ece_building": 0.03201558421246282,
+      "foreground_ece_15": 0.03201558421246282,
+      "foreground_nll": 0.24104254739252987,
+      "foreground_brier": 0.0607747464802609,
+      "boundary_ece_15": 0.12289697942520293,
+      "boundary_foreground_ece_15": 0.12536871483718995,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": 2.089971251617584e-10,
+      "brier": 8.061621370458738e-10,
+      "ece_15": -2.056044040230076e-08,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -8.289695319074752e-12,
+      "foreground_nll": 3.633213518927647e-08,
+      "foreground_brier": 1.5677081161014073e-10,
+      "boundary_ece_15": -1.140314925818231e-10,
+      "boundary_foreground_ece_15": 4.407307852005715e-12
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "61888c94ea06356d343372d6ffdea7ed7c514630d920fc5fc69dcca3ed50922c",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T223417473200Z_spacenet7_dofa_full_finetune_seed42_6349d2a1/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.4972244771571725,
+      "pixel_accuracy": 0.9234290609554369,
+      "nll": 0.560001991066894,
+      "brier": 0.1368507791273619,
+      "mean_confidence_minus_accuracy": 0.056913276639448576,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          53036046,
+          739198
+        ],
+        [
+          3686813,
+          340695
+        ]
+      ],
+      "ece_10": 0.056913276639448576,
+      "ece_15": 0.056913276639448576,
+      "ece_30": 0.056913276639448576,
+      "iou_background": 0.9229750685743812,
+      "class_probability_ece_background": 0.06208139653791692,
+      "iou_building": 0.07147388573996383,
+      "class_probability_ece_building": 0.06208139523284534,
+      "foreground_ece_15": 0.06208139523284534,
+      "foreground_nll": 0.5600011971546613,
+      "foreground_brier": 0.06842538955263859,
+      "boundary_ece_15": 0.1882441116635324,
+      "boundary_foreground_ece_15": 0.1982221780744471,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -5.166996386307687e-09,
+      "brier": 1.0125256744153432e-09,
+      "ece_15": 8.484395130903266e-11,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -9.159700775640545e-12,
+      "foreground_nll": 7.336517460210246e-08,
+      "foreground_brier": 2.2490462270319256e-10,
+      "boundary_ece_15": 2.3320592679176855e-10,
+      "boundary_foreground_ece_15": -2.8747199065648488e-11
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "a0440972ce4d23430f28a9b9deffe398514353c569edaf5fc9d5953285aabc01",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T041628970344Z_spacenet7_dofa_full_finetune_seed43_2a812094/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.4965585476640966,
+      "pixel_accuracy": 0.9253547651156817,
+      "nll": 0.41279288707068484,
+      "brier": 0.12959177672140496,
+      "mean_confidence_minus_accuracy": 0.04248857823910247,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          53172390,
+          602854
+        ],
+        [
+          3711846,
+          315662
+        ]
+      ],
+      "ece_10": 0.04473213891812506,
+      "ece_15": 0.04499762440365385,
+      "ece_30": 0.04499762440365385,
+      "iou_background": 0.924944887626074,
+      "class_probability_ece_background": 0.0526017161192705,
+      "iou_building": 0.06817220770211918,
+      "class_probability_ece_building": 0.05260172241116553,
+      "foreground_ece_15": 0.05260172241116553,
+      "foreground_nll": 0.41279288770436895,
+      "foreground_brier": 0.06479588836673911,
+      "boundary_ece_15": 0.15256271712575534,
+      "boundary_foreground_ece_15": 0.16883765332962772,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -2.2672765331854805e-09,
+      "brier": 4.648139373397697e-10,
+      "ece_15": -8.42808670076245e-11,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -3.954330612954138e-11,
+      "foreground_nll": 7.99250221561465e-10,
+      "foreground_brier": -3.187225483536338e-11,
+      "boundary_ece_15": 1.036223329364816e-10,
+      "boundary_foreground_ece_15": -1.17642812158536e-10
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "9053caf05b8225125f665a0768b10279fd8e0ebe6b0c2d64b1cdadf82ed0d37f",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T105029720150Z_spacenet7_dofa_full_finetune_seed44_0e9c0a7e/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.4996375408123507,
+      "pixel_accuracy": 0.9207077718375761,
+      "nll": 0.43743494525417453,
+      "brier": 0.1357861339435857,
+      "mean_confidence_minus_accuracy": 0.04660732903889591,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          52825703,
+          949541
+        ],
+        [
+          3633768,
+          393740
+        ]
+      ],
+      "ece_10": 0.04697380285178044,
+      "ece_15": 0.047032265706370695,
+      "ece_30": 0.047032265706370695,
+      "iou_background": 0.9201639456885271,
+      "class_probability_ece_background": 0.057950204171167585,
+      "iou_building": 0.07911113593617422,
+      "class_probability_ece_building": 0.05795021794272423,
+      "foreground_ece_15": 0.05795021794272423,
+      "foreground_nll": 0.43743491930622264,
+      "foreground_brier": 0.06789306698208372,
+      "boundary_ece_15": 0.16370555507192222,
+      "boundary_foreground_ece_15": 0.18280801226441304,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -5.061318253396507e-09,
+      "brier": -3.73545361309624e-11,
+      "ece_15": 2.309033200059707e-08,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -2.6579148604266578e-11,
+      "foreground_nll": 7.705253102230358e-11,
+      "foreground_brier": -4.217588778221426e-11,
+      "boundary_ece_15": 3.6670233516389317e-10,
+      "boundary_foreground_ece_15": -7.386544154108776e-11
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "b24cb1fac0531a537c59b0d44a4c33b368e285dd8a487c98d79aeb1481462c9b",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/segmentation/spacenet7/dofa/full_finetune/seed42/aggregate_uncertainty_maps.npz",
+    "metrics": {
+      "miou": 0.4898738795158914,
+      "pixel_accuracy": 0.930729803314555,
+      "nll": 0.21915719258217073,
+      "brier": 0.11625808283320647,
+      "mean_confidence_minus_accuracy": 0.012656403593783103,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          53591254,
+          183990
+        ],
+        [
+          3820018,
+          207490
+        ]
+      ],
+      "ece_10": 0.021509722830285974,
+      "ece_15": 0.021509722830285974,
+      "ece_30": 0.021509722830285974,
+      "iou_background": 0.9304802537403164,
+      "class_probability_ece_background": 0.023023596350380017,
+      "iou_building": 0.04926750529146636,
+      "class_probability_ece_building": 0.023023576065925637,
+      "foreground_ece_15": 0.023023576065925637,
+      "foreground_nll": 0.21915719210815646,
+      "foreground_brier": 0.05812904141873412,
+      "boundary_ece_15": 0.08922154920071955,
+      "boundary_foreground_ece_15": 0.091643532486139,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -1.5494555638539964e-09,
+      "brier": 7.961371145670526e-10,
+      "ece_15": 1.3685153402859251e-08,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -6.9422759416126745e-09,
+      "foreground_nll": -1.3138907462018068e-09,
+      "foreground_brier": 3.6640996486925204e-10,
+      "boundary_ece_15": 5.0880688551302455e-12,
+      "boundary_foreground_ece_15": 1.2986417496918534e-12
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "5f0029a4e273a0b0dde207a5eda6372e4dd24595a79d91a3524fa01eb52b1d13",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "mc_dropout",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/segmentation/spacenet7/dofa/full_finetune/seed43/aggregate_uncertainty_maps.npz",
+    "metrics": {
+      "miou": 0.4862782284196407,
+      "pixel_accuracy": 0.9295954109589799,
+      "nll": 0.27928817314281096,
+      "brier": 0.12206742529629136,
+      "mean_confidence_minus_accuracy": 0.030577943961656515,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          53549494,
+          225750
+        ],
+        [
+          3843829,
+          183679
+        ]
+      ],
+      "ece_10": 0.0371628769733211,
+      "ece_15": 0.0371628769733211,
+      "ece_30": 0.0371628769733211,
+      "iou_background": 0.9293709740870006,
+      "class_probability_ece_background": 0.03962792007266611,
+      "iou_building": 0.04318548275228072,
+      "class_probability_ece_building": 0.039627921467917854,
+      "foreground_ece_15": 0.039627921467917854,
+      "foreground_nll": 0.2792881717141041,
+      "foreground_brier": 0.06103371266397897,
+      "boundary_ece_15": 0.12982668328238953,
+      "boundary_foreground_ece_15": 0.13477886930558036,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -2.991789427309044e-09,
+      "brier": 1.1887203166249805e-09,
+      "ece_15": 3.910332405099304e-10,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -1.0642105252589573e-11,
+      "foreground_nll": -1.7849167699424129e-09,
+      "foreground_brier": 8.129303410986388e-10,
+      "boundary_ece_15": 3.9152597830494074e-11,
+      "boundary_foreground_ece_15": 3.68066688238855e-12
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "2b8cd012f0401e4a8e737f6e388ad840102375518a40568ca49ce0ca5dfdd11a",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "mc_dropout",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/segmentation/spacenet7/dofa/full_finetune/seed44/aggregate_uncertainty_maps.npz",
+    "metrics": {
+      "miou": 0.49396892997945824,
+      "pixel_accuracy": 0.9274836602935445,
+      "nll": 0.3582142501734724,
+      "brier": 0.12708231076656293,
+      "mean_confidence_minus_accuracy": 0.0420629757794599,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          53339776,
+          435468
+        ],
+        [
+          3756176,
+          271332
+        ]
+      ],
+      "ece_10": 0.04412292445084902,
+      "ece_15": 0.04440136304192142,
+      "ece_30": 0.04448356873037932,
+      "iou_background": 0.9271416558117286,
+      "class_probability_ece_background": 0.04967993057339271,
+      "iou_building": 0.060796204147187886,
+      "class_probability_ece_building": 0.04967993094087492,
+      "foreground_ece_15": 0.04967993094087492,
+      "foreground_nll": 0.3582142499096537,
+      "foreground_brier": 0.06354115539396284,
+      "boundary_ece_15": 0.15199938806658295,
+      "boundary_foreground_ece_15": 0.1631483216218762,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -3.9733283885290405e-09,
+      "brier": -2.051966929705884e-10,
+      "ece_15": 6.380373590575417e-10,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -7.007935898251105e-12,
+      "foreground_nll": -2.615252014948055e-09,
+      "foreground_brier": -2.2707490054951762e-10,
+      "boundary_ece_15": 1.5704559874762936e-10,
+      "boundary_foreground_ece_15": -1.0299538999447577e-12
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "48625c0511bbc7e7b77706125e7e5ec357d768046e62d0123de27fb9a8d2dc1a",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/segmentation/deep_ensembles/spacenet7/dofa/full_finetune/ensemble_predictions.npz",
+    "metrics": {
+      "miou": 0.48677057533640494,
+      "pixel_accuracy": 0.9306473850933603,
+      "nll": 0.32120561593866914,
+      "brier": 0.12199798289835813,
+      "mean_confidence_minus_accuracy": 0.03505273378454759,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          53613371,
+          161873
+        ],
+        [
+          3846899,
+          180609
+        ]
+      ],
+      "ece_10": 0.039980586625395005,
+      "ece_15": 0.039980586625395005,
+      "ece_30": 0.040048832464525404,
+      "iou_background": 0.9304300084778173,
+      "class_probability_ece_background": 0.04133698996561343,
+      "iou_building": 0.04311114219499253,
+      "class_probability_ece_building": 0.041336989454942984,
+      "foreground_ece_15": 0.041336989454942984,
+      "foreground_nll": 0.32120561644187756,
+      "foreground_brier": 0.0609989914498141,
+      "boundary_ece_15": 0.1406052406604272,
+      "boundary_foreground_ece_15": 0.14370075623831183,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -4.28233043470172e-09,
+      "brier": 7.61503624047144e-10,
+      "ece_15": 5.49048098652527e-10,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -6.928951787332771e-09,
+      "foreground_nll": -1.4814373061611263e-09,
+      "foreground_brier": 5.165447652943911e-10,
+      "boundary_ece_15": 3.0892056163134285e-08,
+      "boundary_foreground_ece_15": 1.2837786389496841e-11
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "61ff7fa4b44f023934e894712116840a541b2e52c860ec3086d635b2608c1e83",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T012909480544Z_spacenet7_panopticon_frozen_seed42_5bc79e91/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.5001099117069657,
+      "pixel_accuracy": 0.9185758837226297,
+      "nll": 0.35448375268828003,
+      "brier": 0.1368182836351938,
+      "mean_confidence_minus_accuracy": 0.03898228397477555,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          52674450,
+          1100794
+        ],
+        [
+          3605744,
+          421764
+        ]
+      ],
+      "ece_10": 0.04087724273019052,
+      "ece_15": 0.041094754292284826,
+      "ece_30": 0.041094754292284826,
+      "iou_background": 0.9179773969733669,
+      "class_probability_ece_background": 0.055100912860516583,
+      "iou_building": 0.08224242644056454,
+      "class_probability_ece_building": 0.055100920029726504,
+      "foreground_ece_15": 0.055100920029726504,
+      "foreground_nll": 0.35430396000900116,
+      "foreground_brier": 0.06840914182044362,
+      "boundary_ece_15": 0.1437124767664018,
+      "boundary_foreground_ece_15": 0.1670928437155003,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -2.6466951963399765e-09,
+      "brier": 1.717097575237858e-10,
+      "ece_15": -1.0884645268438575e-10,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -2.0795400124118402e-11,
+      "foreground_nll": 7.873209470432574e-06,
+      "foreground_brier": 7.18068660088278e-11,
+      "boundary_ece_15": 9.138353962434564e-11,
+      "boundary_foreground_ece_15": -1.0575038067450748e-10
+    },
+    "metric_mismatches_over_2e_6": {
+      "foreground_nll": 7.873209470432574e-06
+    },
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "9ae14f4922350d5f09b8ce1750ddf5808718968f835c66926360e95ef33721a4",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T093212435964Z_spacenet7_panopticon_frozen_seed43_7a04c439/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.503029026895774,
+      "pixel_accuracy": 0.9187161365604184,
+      "nll": 0.3558671532638373,
+      "brier": 0.1354809571213309,
+      "mean_confidence_minus_accuracy": 0.04113609356842854,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          52651052,
+          1124192
+        ],
+        [
+          3574239,
+          453269
+        ]
+      ],
+      "ece_10": 0.04118314228947831,
+      "ece_15": 0.04118314228947831,
+      "ece_30": 0.04118314228947831,
+      "iou_background": 0.9180736991125099,
+      "class_probability_ece_background": 0.05541862708629399,
+      "iou_building": 0.087984354679038,
+      "class_probability_ece_building": 0.05541862729888589,
+      "foreground_ece_15": 0.05541862729888589,
+      "foreground_nll": 0.355866846244884,
+      "foreground_brier": 0.06774047857461704,
+      "boundary_ece_15": 0.14816653583646167,
+      "boundary_foreground_ece_15": 0.17057959648482246,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -2.56163273926191e-09,
+      "brier": 7.716147443215249e-10,
+      "ece_15": 5.697539662286033e-11,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -2.4479175630975902e-11,
+      "foreground_nll": 2.523938286147498e-08,
+      "foreground_brier": 4.842326678522468e-10,
+      "boundary_ece_15": 4.2798209420880085e-10,
+      "boundary_foreground_ece_15": -7.236122812059875e-11
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "ad5eb53dd49dcb17cc78af56034e0e9272e298adcdd901b85d2456e1009bd6e2",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T140818811757Z_spacenet7_panopticon_frozen_seed44_0f56f5e4/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.5008651482694175,
+      "pixel_accuracy": 0.9186355694621599,
+      "nll": 0.35424124042336647,
+      "brier": 0.13655739606068348,
+      "mean_confidence_minus_accuracy": 0.040342248293726,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          52670035,
+          1105209
+        ],
+        [
+          3597879,
+          429629
+        ]
+      ],
+      "ece_10": 0.041550523960739286,
+      "ece_15": 0.04156490162737913,
+      "ece_30": 0.04156490162737913,
+      "iou_background": 0.9180262855832338,
+      "class_probability_ece_background": 0.05517565767896256,
+      "iou_building": 0.0837040109556011,
+      "class_probability_ece_building": 0.055175664771411365,
+      "foreground_ece_15": 0.055175664771411365,
+      "foreground_nll": 0.35407010919821486,
+      "foreground_brier": 0.06827869803347707,
+      "boundary_ece_15": 0.1464771088062603,
+      "boundary_foreground_ece_15": 0.16863193754427272,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -3.716759011673787e-09,
+      "brier": 7.166705007222163e-10,
+      "ece_15": -1.0634796515640588e-10,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -1.8905495224874613e-11,
+      "foreground_nll": 8.966135121579732e-06,
+      "foreground_brier": 2.263126491763856e-10,
+      "boundary_ece_15": 1.4757181587832235e-10,
+      "boundary_foreground_ece_15": -9.312833837427092e-11
+    },
+    "metric_mismatches_over_2e_6": {
+      "foreground_nll": 8.966135121579732e-06
+    },
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "2828042c0402dd079375c24c0ec072eab34118309b0024498c8536eab9f4f666",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/segmentation/spacenet7/panopticon/frozen/seed42/aggregate_uncertainty_maps.npz",
+    "metrics": {
+      "miou": 0.5006550574581251,
+      "pixel_accuracy": 0.9216971191959857,
+      "nll": 0.3173231407893255,
+      "brier": 0.13209153408711677,
+      "mean_confidence_minus_accuracy": 0.03503221000089901,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          52882247,
+          892997
+        ],
+        [
+          3633125,
+          394383
+        ]
+      ],
+      "ece_10": 0.03880127812096801,
+      "ece_15": 0.03880127812096801,
+      "ece_30": 0.0389433853890735,
+      "iou_background": 0.9211591954476185,
+      "class_probability_ece_background": 0.05016718379451075,
+      "iou_building": 0.08015091946863177,
+      "class_probability_ece_building": 0.05016719097420137,
+      "foreground_ece_15": 0.05016719097420137,
+      "foreground_nll": 0.31731742259185086,
+      "foreground_brier": 0.06604576705192938,
+      "boundary_ece_15": 0.1346990243915537,
+      "boundary_foreground_ece_15": 0.15501796301585327,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -1.4805161541175949e-09,
+      "brier": -4.891959060060458e-11,
+      "ece_15": 7.360019885216396e-09,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -8.631012571314045e-12,
+      "foreground_nll": 8.182487198360455e-07,
+      "foreground_brier": -9.633881192794291e-11,
+      "boundary_ece_15": 4.597786040783092e-11,
+      "boundary_foreground_ece_15": 3.3861802251067274e-15
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "07888f7def9e8e9018001837ea1331115819c3739962f05385bda56610414796",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/segmentation/deep_ensembles/spacenet7/panopticon/frozen/ensemble_predictions.npz",
+    "metrics": {
+      "miou": 0.49131418896946405,
+      "pixel_accuracy": 0.9292297017276963,
+      "nll": 0.24814377421027492,
+      "brier": 0.12090862904895236,
+      "mean_confidence_minus_accuracy": 0.021799812188281132,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          53479970,
+          295274
+        ],
+        [
+          3795444,
+          232064
+        ]
+      ],
+      "ece_10": 0.030904291803351153,
+      "ece_15": 0.030904291803351153,
+      "ece_30": 0.030904291803351153,
+      "iou_background": 0.9289444308881631,
+      "class_probability_ece_background": 0.033999168837114194,
+      "iou_building": 0.05368394705076499,
+      "class_probability_ece_building": 0.03399917601275439,
+      "foreground_ece_15": 0.03399917601275439,
+      "foreground_nll": 0.2481437740178804,
+      "foreground_brier": 0.06045431453301262,
+      "boundary_ece_15": 0.11419507348926101,
+      "boundary_foreground_ece_15": 0.12026718606326763,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -3.716758290028821e-09,
+      "brier": 7.360434900460788e-10,
+      "ece_15": -2.7374009677061384e-08,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -1.0681865114658962e-11,
+      "foreground_nll": 1.4558493299787756e-10,
+      "foreground_brier": 7.245285621459985e-11,
+      "boundary_ece_15": -5.558530025151498e-11,
+      "boundary_foreground_ece_15": 9.310566206899296e-12
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "def4dbc0baa94404075ac848ec6b9331aeefabb9bd5a0afa3a00dd896022f73e",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T233635521819Z_spacenet7_panopticon_full_finetune_seed42_b6b452b4/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.5090204123518141,
+      "pixel_accuracy": 0.9132996816483755,
+      "nll": 0.4801957556420711,
+      "brier": 0.1446316983426356,
+      "mean_confidence_minus_accuracy": 0.052909786716539196,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          52199296,
+          1575948
+        ],
+        [
+          3435569,
+          591939
+        ]
+      ],
+      "ece_10": 0.052909786716539196,
+      "ece_15": 0.052909786716539196,
+      "ece_30": 0.052909786716539196,
+      "iou_background": 0.9124026257064377,
+      "class_probability_ece_background": 0.06441336682590346,
+      "iou_building": 0.1056381989971903,
+      "class_probability_ece_building": 0.06441336675785952,
+      "foreground_ece_15": 0.06441336675785952,
+      "foreground_nll": 0.48018564984347223,
+      "foreground_brier": 0.07231584917486503,
+      "boundary_ece_15": 0.1793774682175122,
+      "boundary_foreground_ece_15": 0.19725093589513856,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -5.760647237007532e-09,
+      "brier": 5.78028069853076e-10,
+      "ece_15": 1.4514072582683113e-10,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": 2.375044605429366e-13,
+      "foreground_nll": 4.5238414536630245e-07,
+      "foreground_brier": 3.094560163674487e-10,
+      "boundary_ece_15": 3.6201852626760456e-10,
+      "boundary_foreground_ece_15": -1.616229372558564e-11
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "c9a8bbfd44a5328c8f7446ce911309a2d5dacbb6cece395f9a210cd3d438d43e",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T050749487080Z_spacenet7_panopticon_full_finetune_seed43_efe0a455/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.5046620663506325,
+      "pixel_accuracy": 0.9204024057539683,
+      "nll": 0.4821234588831329,
+      "brier": 0.1358786603901058,
+      "mean_confidence_minus_accuracy": 0.049546868754512,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          52749252,
+          1025992
+        ],
+        [
+          3574968,
+          452540
+        ]
+      ],
+      "ece_10": 0.049546868754512,
+      "ece_15": 0.049546868754512,
+      "ece_30": 0.049546868754512,
+      "iou_background": 0.9197743157427213,
+      "class_probability_ece_background": 0.05915342215014347,
+      "iou_building": 0.08954981695854358,
+      "class_probability_ece_building": 0.05915342140230499,
+      "foreground_ece_15": 0.05915342140230499,
+      "foreground_nll": 0.48211187021952895,
+      "foreground_brier": 0.06793933018823052,
+      "boundary_ece_15": 0.16661387223412344,
+      "boundary_foreground_ece_15": 0.18421966986108562,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -2.8947985120097997e-09,
+      "brier": 2.5896976230121993e-10,
+      "ece_15": 1.3072284227311215e-10,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -1.6362307342365767e-11,
+      "foreground_nll": 1.135959257492214e-06,
+      "foreground_brier": 3.9297835818796756e-10,
+      "boundary_ece_15": 3.5647479412759253e-10,
+      "boundary_foreground_ece_15": -6.324207824093264e-11
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "b928b4f17c26d79f6929234569d3ad1dd7dfcc78511206d94000a0a702bd2685",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T115507474539Z_spacenet7_panopticon_full_finetune_seed44_f73c1ae1/predictions/test/deterministic/predictions.npz",
+    "metrics": {
+      "miou": 0.49925550450079287,
+      "pixel_accuracy": 0.9153644622318329,
+      "nll": 0.3331834745356621,
+      "brier": 0.14300713822537547,
+      "mean_confidence_minus_accuracy": 0.0212190831525814,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          52463084,
+          1312160
+        ],
+        [
+          3580007,
+          447501
+        ]
+      ],
+      "ece_10": 0.032559768832513894,
+      "ece_15": 0.03376175267643199,
+      "ece_30": 0.03376175267643199,
+      "iou_background": 0.9147041131421428,
+      "class_probability_ece_background": 0.05512195483114785,
+      "iou_building": 0.08380689585944294,
+      "class_probability_ece_building": 0.05512195947911979,
+      "foreground_ece_15": 0.05512195947911979,
+      "foreground_nll": 0.33318094715028584,
+      "foreground_brier": 0.07150356911929732,
+      "boundary_ece_15": 0.1304604890134432,
+      "boundary_foreground_ece_15": 0.15239330030890408,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -3.293440631324529e-09,
+      "brier": 4.823922372665379e-10,
+      "ece_15": -1.9844207527208724e-10,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -1.061743193364606e-10,
+      "foreground_nll": 1.395011426930104e-07,
+      "foreground_brier": 4.506882367305565e-11,
+      "boundary_ece_15": 1.1505252306420743e-10,
+      "boundary_foreground_ece_15": -1.0082923385112963e-10
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "d4b01373b9aaa155b6376fa0724980292c53961e8ed293ba6dd6a7318097ccda",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/segmentation/spacenet7/panopticon/full_finetune/seed42/aggregate_uncertainty_maps.npz",
+    "metrics": {
+      "miou": 0.5012782693569223,
+      "pixel_accuracy": 0.9230537155047566,
+      "nll": 0.41473424645197904,
+      "brier": 0.1312503765126023,
+      "mean_confidence_minus_accuracy": 0.04300008461995051,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          52968176,
+          807068
+        ],
+        [
+          3640639,
+          386869
+        ]
+      ],
+      "ece_10": 0.04422193764319429,
+      "ece_15": 0.044222479114191554,
+      "ece_30": 0.044222479114191554,
+      "iou_background": 0.9225352503940417,
+      "class_probability_ece_background": 0.054115929394983775,
+      "iou_building": 0.08002128831980301,
+      "class_probability_ece_building": 0.05411593525115647,
+      "foreground_ece_15": 0.05411593525115647,
+      "foreground_nll": 0.41473332082914316,
+      "foreground_brier": 0.06562518824712935,
+      "boundary_ece_15": 0.15136313145960612,
+      "boundary_foreground_ece_15": 0.17072742115589548,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -5.666220270761357e-09,
+      "brier": 4.371894513077734e-11,
+      "ece_15": 8.4649724035879e-10,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -5.957886961560632e-12,
+      "foreground_nll": 7.769864091011769e-08,
+      "foreground_brier": -5.448387713213876e-10,
+      "boundary_ece_15": 2.362313122894477e-10,
+      "boundary_foreground_ece_15": 2.3966384432583254e-12
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "f1009ed775019f70561091a07f8ed84fb52578b454bd6bb08805479ce4a91d13",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/segmentation/deep_ensembles/spacenet7/panopticon/full_finetune/ensemble_predictions.npz",
+    "metrics": {
+      "miou": 0.49591031634383614,
+      "pixel_accuracy": 0.9296894030235793,
+      "nll": 0.26036416997879364,
+      "brier": 0.12139201329447054,
+      "mean_confidence_minus_accuracy": 0.01742144007976445,
+      "valid_pixels": 57802752,
+      "confusion_matrix": [
+        [
+          53467838,
+          307406
+        ],
+        [
+          3756740,
+          270768
+        ]
+      ],
+      "ece_10": 0.02826913272973779,
+      "ece_15": 0.028379804852040433,
+      "ece_30": 0.028769815849625218,
+      "iou_background": 0.9293584938770754,
+      "class_probability_ece_background": 0.03165726068643677,
+      "iou_building": 0.06246213881059694,
+      "class_probability_ece_building": 0.03165726510932152,
+      "foreground_ece_15": 0.03165726510932152,
+      "foreground_nll": 0.26036414808288066,
+      "foreground_brier": 0.06069600664975742,
+      "boundary_ece_15": 0.11748615986483286,
+      "boundary_foreground_ece_15": 0.12382630439224727,
+      "boundary_pixels": 17396091,
+      "images_without_boundary": 98
+    },
+    "metric_differences": {
+      "miou": 0.0,
+      "pixel_accuracy": 0.0,
+      "nll": -2.2960402468186203e-09,
+      "brier": 1.2380933361866298e-09,
+      "ece_15": 3.99105304360603e-10,
+      "iou_background": 0.0,
+      "iou_building": 0.0,
+      "foreground_ece_15": -2.369222873443988e-12,
+      "foreground_nll": 3.549210814135506e-09,
+      "foreground_brier": 3.850424493134774e-10,
+      "boundary_ece_15": 9.916467647030913e-11,
+      "boundary_foreground_ece_15": 5.496172961194645e-12
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "ordered_labels_sha256": "87687704c21f757fd8c7249046aa5df7a048649ff3d5a89f30bafd29e4041365",
+      "ordered_valid_mask_sha256": "44f00877e4e115acfcb027605d4bbfec475e49fcf10673fe3421bbd675c7e798",
+      "argmax_vs_saved_prediction_pixel_difference": 0,
+      "mask_matches_ignore_contract": true,
+      "finite_probabilities": true,
+      "probability_sum_max_error": 1.1920928955078125e-07,
+      "artifact_sha256": "0adb963052e59882f2325f2a03e9df39fe376ebd8a0511ed3415981e1e4b2856",
+      "labels_and_mask_match_other_methods_models_seeds": true
+    }
+  }
+]

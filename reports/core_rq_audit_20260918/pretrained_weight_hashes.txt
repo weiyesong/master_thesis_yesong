@@ -1,0 +1,2 @@
+4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1  DOFA/checkpoints/DOFA_ViT_base_e100.pth
+55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e  models/pretrained_cache/hub/checkpoints/panopticon_vitb14_teacher.pth

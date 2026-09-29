@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "scope": "C6 aggregation and visualization only; no model training or inference",
+  "validated_source_count": 20,
+  "classification_rows": 32,
+  "segmentation_rows": 32,
+  "mc_robustness_rows": 4,
+  "generated_artifacts": [
+    {
+      "path": "reports/final_thesis_results.md",
+      "sha256": "58c69fece1bc3921fea4ac4c4a3c4a58d9cc5257e12af484a5c5a2515b98bef9",
+      "size_bytes": 15488
+    },
+    {
+      "path": "reports/final_thesis_tables/classification_results.csv",
+      "sha256": "a429030da28622ba3d681b70c2cacb16e1cc9ef882beefaa2c068e9d99bdb046",
+      "size_bytes": 10913
+    },
+    {
+      "path": "reports/final_thesis_tables/mc_dropout_robustness.csv",
+      "sha256": "b92ee493e1587f13fde4586004912e99ce2ec01a10657184823faab8bac7d0a3",
+      "size_bytes": 2715
+    },
+    {
+      "path": "reports/final_thesis_tables/method_applicability.csv",
+      "sha256": "cd8812a3ca355b68cd7170699ba6c7dfb4deb12b7be9a620701c3893873be1e6",
+      "size_bytes": 687
+    },
+    {
+      "path": "reports/final_thesis_tables/segmentation_results.csv",
+      "sha256": "151eb5d6d592a692acce67d22c79a1c264312134d5f937272109ca2551a69c7c",
+      "size_bytes": 15285
+    },
+    {
+      "path": "reports/final_thesis_tables/source_provenance.csv",
+      "sha256": "38ccfc83d3e4ec0de6bbe2c2895e46c7d3e75f1a03e88111c79487202ebf8613",
+      "size_bytes": 3026
+    },
+    {
+      "path": "figures/final/classification_accuracy_vs_ece.png",
+      "sha256": "15f4ee32882b5acc39e28378d8a443f3226c0c36968838c0df78b4a7f2d3e0b9",
+      "size_bytes": 207030
+    },
+    {
+      "path": "figures/final/classification_reliability_grid.png",
+      "sha256": "980e1a3195856ce6e90b2386557a05e0281cd389307554cea2f5c1e7fde2b558",
+      "size_bytes": 534614
+    },
+    {
+      "path": "figures/final/cloudsen12_mc_uncertainty_maps.png",
+      "sha256": "bcb3494c618069ffddd7228fb8eefd1a52fd61e24a7564382494c170d492096c",
+      "size_bytes": 893464
+    },
+    {
+      "path": "figures/final/segmentation_miou_vs_ece.png",
+      "sha256": "cb9c21af33636c7b665807eaacbc06b6f74ac93514c3419606b8fdf9ebf46557",
+      "size_bytes": 206796
+    },
+    {
+      "path": "figures/final/segmentation_reliability_grid.png",
+      "sha256": "f6f61480c24b21406dfeeb6f70e06dc233554524e0af9784e1ce4ec2ecbe4468",
+      "size_bytes": 382239
+    },
+    {
+      "path": "figures/final/spacenet7_mc_uncertainty_maps.png",
+      "sha256": "7559cc8bc64104fc0ebb7c7f3640eea814605ec13bd40141d1876d6196d45258",
+      "size_bytes": 942865
+    }
+  ]
+}

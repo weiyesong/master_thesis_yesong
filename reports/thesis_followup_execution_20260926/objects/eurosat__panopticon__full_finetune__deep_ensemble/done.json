@@ -1,0 +1,59 @@
+{
+  "decomposition_tu_vs_saved_tu_max_abs": 2.8104228055880753e-08,
+  "draw_count": 3,
+  "label_hash": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+  "ids_hash": "a0cd43df59b97d7158bcf86d28580e8aff146770b4463c2bb0749762037bf17e",
+  "n_samples": 2714,
+  "actual_core_metrics": {
+    "accuracy": 0.976418570375829,
+    "brier": 0.036388558739261,
+    "nll": 0.07257433615539373
+  },
+  "core_checks": [
+    {
+      "metric": "accuracy",
+      "actual": 0.976418570375829,
+      "expected": 0.976418570375829,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "brier",
+      "actual": 0.036388558739261,
+      "expected": 0.036388558744387324,
+      "difference": -5.126322977222486e-12,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "nll",
+      "actual": 0.07257433615539373,
+      "expected": 0.07257433586869622,
+      "difference": 2.866975129522942e-10,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    }
+  ],
+  "validation": [
+    {
+      "check": "raw_mean_vs_saved",
+      "max_abs_error": 2.9802322387695312e-08,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "check": "raw_gini_identity",
+      "max_abs_error": 3.655929725621121e-16,
+      "tolerance": 2e-12,
+      "status": "PASS"
+    }
+  ],
+  "pmax_exactly_one": 0,
+  "pmax_one_errors": 0,
+  "load_seconds": 0.04712119325995445,
+  "ranking_bootstrap_seconds": 1.0710608903318644,
+  "total_seconds": 1.210478177294135,
+  "peak_rss_GiB": 0.23796463012695312,
+  "status": "COMPLETE"
+}

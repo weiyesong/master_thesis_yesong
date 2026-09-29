@@ -1,0 +1,1390 @@
+{
+  "scope_source": "/workspace/reports/thesis_master_results.csv",
+  "table_checks": [
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "frozen",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 10,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "frozen",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 10,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "frozen",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "full_finetune",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 10,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "full_finetune",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 10,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "frozen",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 10,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "frozen",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 10,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "frozen",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "full_finetune",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 10,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "full_finetune",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 10,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "dofa",
+        "frozen",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 10,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "dofa",
+        "frozen",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "dofa",
+        "frozen",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "dofa",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "dofa",
+        "full_finetune",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 10,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "dofa",
+        "full_finetune",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "dofa",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "dofa",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "panopticon",
+        "frozen",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 10,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "panopticon",
+        "frozen",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "panopticon",
+        "frozen",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "panopticon",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "panopticon",
+        "full_finetune",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 10,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "panopticon",
+        "full_finetune",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "panopticon",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "treesatai",
+        "panopticon",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 5,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "dofa",
+        "frozen",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 18,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "dofa",
+        "frozen",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "dofa",
+        "frozen",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 9,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "dofa",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 9,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "dofa",
+        "full_finetune",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 18,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "dofa",
+        "full_finetune",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "dofa",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 9,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "dofa",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 9,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "panopticon",
+        "frozen",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 18,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "panopticon",
+        "frozen",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "panopticon",
+        "frozen",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 9,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "panopticon",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 9,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "panopticon",
+        "full_finetune",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 18,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "panopticon",
+        "full_finetune",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "panopticon",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 9,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "panopticon",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 9,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "dofa",
+        "frozen",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 28,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "dofa",
+        "frozen",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "dofa",
+        "frozen",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 14,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "dofa",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 14,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "dofa",
+        "full_finetune",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 28,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "dofa",
+        "full_finetune",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "dofa",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 14,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "dofa",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 14,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "panopticon",
+        "frozen",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 28,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "panopticon",
+        "frozen",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "panopticon",
+        "frozen",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 14,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "panopticon",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 14,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "panopticon",
+        "full_finetune",
+        "deterministic"
+      ],
+      "status": "PASS",
+      "metric_count": 28,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "panopticon",
+        "full_finetune",
+        "temperature_scaling"
+      ],
+      "status": "PASS",
+      "metric_count": 0,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "panopticon",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "status": "PASS",
+      "metric_count": 14,
+      "max_absolute_error": 0.0
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "panopticon",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "status": "PASS",
+      "metric_count": 14,
+      "max_absolute_error": 0.0
+    }
+  ],
+  "plot_checks": [
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "frozen",
+        "deterministic"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.004230741814997849,
+      "source_ece_15": 0.004230741814997849,
+      "absolute_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "frozen",
+        "temperature_scaling"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.003991326657091176,
+      "source_ece_15": 0.003991326657090349,
+      "absolute_error": 8.265957363029486e-16,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "frozen",
+        "mc_dropout"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.008761928583561823,
+      "source_ece_15": 0.00876193031855336,
+      "absolute_error": 1.7349915375913794e-09,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.005501114564060795,
+      "source_ece_15": 0.005501114564060799,
+      "absolute_error": 3.469446951953614e-18,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "full_finetune",
+        "deterministic"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.007804339873764473,
+      "source_ece_15": 0.007804339873764473,
+      "absolute_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "full_finetune",
+        "temperature_scaling"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.007662572638294885,
+      "source_ece_15": 0.0076625726382932285,
+      "absolute_error": 1.6566609195578508e-15,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.010823282660942507,
+      "source_ece_15": 0.01082328406650524,
+      "absolute_error": 1.405562732176291e-09,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "dofa",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.027278114652000238,
+      "source_ece_15": 0.02727811465199892,
+      "absolute_error": 1.3183898417423734e-15,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "frozen",
+        "deterministic"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.007695890551291598,
+      "source_ece_15": 0.007695890551291597,
+      "absolute_error": 8.673617379884035e-19,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "frozen",
+        "temperature_scaling"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.0061023066679455175,
+      "source_ece_15": 0.0061023066679448896,
+      "absolute_error": 6.279698983036042e-16,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "frozen",
+        "mc_dropout"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.0046734339670829565,
+      "source_ece_15": 0.004673434032968776,
+      "absolute_error": 6.588581936972648e-11,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.006773317908516566,
+      "source_ece_15": 0.006773317908514648,
+      "absolute_error": 1.9177368026923602e-15,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "full_finetune",
+        "deterministic"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.005855335039344016,
+      "source_ece_15": 0.005855335039344014,
+      "absolute_error": 1.734723475976807e-18,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "full_finetune",
+        "temperature_scaling"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.009531000889945133,
+      "source_ece_15": 0.009531000889945325,
+      "absolute_error": 1.9255430583342559e-16,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.006935682622667813,
+      "source_ece_15": 0.006935682479915314,
+      "absolute_error": 1.4275249819034608e-10,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "eurosat",
+        "panopticon",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "count": 2714,
+      "plot_ece_15": 0.021987375605371423,
+      "source_ece_15": 0.02198737560537172,
+      "absolute_error": 2.983724378680108e-16,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "treesatai",
+        "dofa",
+        "frozen",
+        "deterministic"
+      ],
+      "count": 30000,
+      "plot_ece_15": 0.00997010348659766,
+      "source_ece_15": 0.00997010348659714,
+      "absolute_error": 5.204170427930421e-16,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "treesatai",
+        "dofa",
+        "frozen",
+        "mc_dropout"
+      ],
+      "count": 30000,
+      "plot_ece_15": 0.008882509036529481,
+      "source_ece_15": 0.008882508990783744,
+      "absolute_error": 4.574573705951046e-11,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "treesatai",
+        "dofa",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "count": 30000,
+      "plot_ece_15": 0.010427709272148675,
+      "source_ece_15": 0.010427709272149808,
+      "absolute_error": 1.132774429812855e-15,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "treesatai",
+        "dofa",
+        "full_finetune",
+        "deterministic"
+      ],
+      "count": 30000,
+      "plot_ece_15": 0.014092692175650495,
+      "source_ece_15": 0.014092692175650377,
+      "absolute_error": 1.1796119636642288e-16,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "treesatai",
+        "dofa",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "count": 30000,
+      "plot_ece_15": 0.015531915454342723,
+      "source_ece_15": 0.0155319155209829,
+      "absolute_error": 6.664017601631933e-11,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "treesatai",
+        "dofa",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "count": 30000,
+      "plot_ece_15": 0.01704581256978742,
+      "source_ece_15": 0.017045812569786142,
+      "absolute_error": 1.27675647831893e-15,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "treesatai",
+        "panopticon",
+        "frozen",
+        "deterministic"
+      ],
+      "count": 30000,
+      "plot_ece_15": 0.010479455220324936,
+      "source_ece_15": 0.010479455220324934,
+      "absolute_error": 1.734723475976807e-18,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "treesatai",
+        "panopticon",
+        "frozen",
+        "mc_dropout"
+      ],
+      "count": 30000,
+      "plot_ece_15": 0.010089851286697989,
+      "source_ece_15": 0.010089851264152253,
+      "absolute_error": 2.2545736111379e-11,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "treesatai",
+        "panopticon",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "count": 30000,
+      "plot_ece_15": 0.008805106203287325,
+      "source_ece_15": 0.00880510620328824,
+      "absolute_error": 9.159339953157541e-16,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "treesatai",
+        "panopticon",
+        "full_finetune",
+        "deterministic"
+      ],
+      "count": 30000,
+      "plot_ece_15": 0.011266771733972785,
+      "source_ece_15": 0.011266771733972787,
+      "absolute_error": 1.734723475976807e-18,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "treesatai",
+        "panopticon",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "count": 30000,
+      "plot_ece_15": 0.011061816318613051,
+      "source_ece_15": 0.011061816218940654,
+      "absolute_error": 9.96723970719815e-11,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "treesatai",
+        "panopticon",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "count": 30000,
+      "plot_ece_15": 0.00975409945784179,
+      "source_ece_15": 0.009754099457841166,
+      "absolute_error": 6.227657278756737e-16,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "dofa",
+        "frozen",
+        "deterministic"
+      ],
+      "count": 48921600,
+      "plot_ece_15": 0.019294824558505758,
+      "source_ece_15": 0.01929482401537257,
+      "absolute_error": 5.431331877303602e-10,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "dofa",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "count": 48921600,
+      "plot_ece_15": 0.016911294293650327,
+      "source_ece_15": 0.016911294241616113,
+      "absolute_error": 5.2034213743334945e-11,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "dofa",
+        "frozen",
+        "mc_dropout"
+      ],
+      "count": 48921600,
+      "plot_ece_15": 0.03306907414178465,
+      "source_ece_15": 0.03306907412654159,
+      "absolute_error": 1.524306375566553e-11,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "dofa",
+        "full_finetune",
+        "deterministic"
+      ],
+      "count": 48921600,
+      "plot_ece_15": 0.0680183540384278,
+      "source_ece_15": 0.06801835375829582,
+      "absolute_error": 2.801319870515684e-10,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "dofa",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "count": 48921600,
+      "plot_ece_15": 0.04021088255121956,
+      "source_ece_15": 0.040210882606590184,
+      "absolute_error": 5.53706247519159e-11,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "dofa",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "count": 48921600,
+      "plot_ece_15": 0.05543317512495755,
+      "source_ece_15": 0.05543317542670102,
+      "absolute_error": 3.017434704877253e-10,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "panopticon",
+        "frozen",
+        "deterministic"
+      ],
+      "count": 48921600,
+      "plot_ece_15": 0.04996056987018257,
+      "source_ece_15": 0.04996056951260599,
+      "absolute_error": 3.5757657945723054e-10,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "panopticon",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "count": 48921600,
+      "plot_ece_15": 0.02499918648279979,
+      "source_ece_15": 0.024999186470942597,
+      "absolute_error": 1.1857192311337528e-11,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "panopticon",
+        "frozen",
+        "mc_dropout"
+      ],
+      "count": 48921600,
+      "plot_ece_15": 0.017883010367355567,
+      "source_ece_15": 0.017883010264037734,
+      "absolute_error": 1.0331783345529644e-10,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "panopticon",
+        "full_finetune",
+        "deterministic"
+      ],
+      "count": 48921600,
+      "plot_ece_15": 0.04288938285007743,
+      "source_ece_15": 0.042889382507435625,
+      "absolute_error": 3.426418038188217e-10,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "panopticon",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "count": 48921600,
+      "plot_ece_15": 0.020214222792637376,
+      "source_ece_15": 0.020214222813750536,
+      "absolute_error": 2.111315983155393e-11,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "cloudsen12",
+        "panopticon",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "count": 48921600,
+      "plot_ece_15": 0.035384218288269514,
+      "source_ece_15": 0.03538421852406133,
+      "absolute_error": 2.3579181662736204e-10,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "dofa",
+        "frozen",
+        "deterministic"
+      ],
+      "count": 57802752,
+      "plot_ece_15": 0.035681381871437046,
+      "source_ece_15": 0.03568138192662232,
+      "absolute_error": 5.518527301795473e-11,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "dofa",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "count": 57802752,
+      "plot_ece_15": 0.03041111501167559,
+      "source_ece_15": 0.03041113557211594,
+      "absolute_error": 2.0560440350259057e-08,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "dofa",
+        "frozen",
+        "mc_dropout"
+      ],
+      "count": 57802752,
+      "plot_ece_15": 0.036594321507047924,
+      "source_ece_15": 0.036594321238297416,
+      "absolute_error": 2.68750507959048e-10,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "dofa",
+        "full_finetune",
+        "deterministic"
+      ],
+      "count": 57802752,
+      "plot_ece_15": 0.05691327663944858,
+      "source_ece_15": 0.056913276554604625,
+      "absolute_error": 8.484395824792657e-11,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "dofa",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "count": 57802752,
+      "plot_ece_15": 0.03998058662539501,
+      "source_ece_15": 0.039980586076346906,
+      "absolute_error": 5.490481055914209e-10,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "dofa",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "count": 57802752,
+      "plot_ece_15": 0.021509722830285936,
+      "source_ece_15": 0.02150970914513257,
+      "absolute_error": 1.3685153364695335e-08,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "panopticon",
+        "frozen",
+        "deterministic"
+      ],
+      "count": 57802752,
+      "plot_ece_15": 0.04109475429228486,
+      "source_ece_15": 0.04109475440113128,
+      "absolute_error": 1.0884641798991623e-10,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "panopticon",
+        "frozen",
+        "deep_ensemble"
+      ],
+      "count": 57802752,
+      "plot_ece_15": 0.030904291803351105,
+      "source_ece_15": 0.03090431917736083,
+      "absolute_error": 2.737400972563364e-08,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "panopticon",
+        "frozen",
+        "mc_dropout"
+      ],
+      "count": 57802752,
+      "plot_ece_15": 0.03880127812096801,
+      "source_ece_15": 0.03880127076094812,
+      "absolute_error": 7.360019885216396e-09,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "panopticon",
+        "full_finetune",
+        "deterministic"
+      ],
+      "count": 57802752,
+      "plot_ece_15": 0.05290978671653923,
+      "source_ece_15": 0.05290978657139847,
+      "absolute_error": 1.4514076052130065e-10,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "panopticon",
+        "full_finetune",
+        "deep_ensemble"
+      ],
+      "count": 57802752,
+      "plot_ece_15": 0.028379804852040454,
+      "source_ece_15": 0.02837980445293513,
+      "absolute_error": 3.991053251772847e-10,
+      "status": "PASS"
+    },
+    {
+      "cell": [
+        "spacenet7",
+        "panopticon",
+        "full_finetune",
+        "mc_dropout"
+      ],
+      "count": 57802752,
+      "plot_ece_15": 0.04422247911419159,
+      "source_ece_15": 0.044222478267694314,
+      "absolute_error": 8.464972750532596e-10,
+      "status": "PASS"
+    }
+  ],
+  "na_cells": 12,
+  "historical_ts_rows": 12,
+  "all_passed": true
+}

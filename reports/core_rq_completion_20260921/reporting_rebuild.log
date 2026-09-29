@@ -1,0 +1,8 @@
+{
+  "report": "/workspace/reports/core_rq_completion_20260921/published/final_thesis_results.md",
+  "classification_rows": 32,
+  "segmentation_rows": 32,
+  "na_cells": 12,
+  "historical_ts_rows": 12,
+  "plot_ece_checks": 52
+}

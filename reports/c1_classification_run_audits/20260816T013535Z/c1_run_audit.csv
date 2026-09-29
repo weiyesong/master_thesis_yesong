@@ -1,0 +1,7 @@
+task,dataset,model,adaptation,seed,run_id,run_dir,status,promotion_eligible,best_epoch,best_validation_nll,best_validation_accuracy,best_validation_macro_f1,reported_test_accuracy_excluded,reported_test_macro_f1_excluded,reported_test_nll_excluded,reported_test_brier_excluded,reported_test_ece_excluded,error_count,errors
+classification,eurosat,panopticon,frozen,43,,,MISSING,False,,,,,,,,,,1,No completed non-dry-run candidate was discovered or supplied.
+classification,eurosat,panopticon,full_finetune,43,,,MISSING,False,,,,,,,,,,1,No completed non-dry-run candidate was discovered or supplied.
+classification_multilabel,treesatai,dofa,frozen,43,20260816T012149418043Z_treesatai_dofa_frozen_seed43_d484c9b3,/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260816T012149418043Z_treesatai_dofa_frozen_seed43_d484c9b3,PROMOTABLE,True,14,0.2674366533756256,0.21299999952316284,0.1984168440103531,0.258,0.22691229597688878,0.25505652619165814,0.0737731909845718,0.01071910834213183,0,
+classification_multilabel,treesatai,dofa,full_finetune,43,,,MISSING,False,,,,,,,,,,1,No completed non-dry-run candidate was discovered or supplied.
+classification_multilabel,treesatai,panopticon,frozen,43,,,MISSING,False,,,,,,,,,,1,No completed non-dry-run candidate was discovered or supplied.
+classification_multilabel,treesatai,panopticon,full_finetune,43,,,MISSING,False,,,,,,,,,,1,No completed non-dry-run candidate was discovered or supplied.

@@ -1,0 +1,4 @@
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+[cloudsen12_dofa_frozen seed=42] epoch=1 train_loss=0.789820 val_miou=0.461709 best_epoch=1 patience=0/10

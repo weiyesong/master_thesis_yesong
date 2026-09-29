@@ -1,0 +1,114 @@
+seed: 42
+device: auto
+output_dir: ./results/baselines/treesatai_classification
+results_csv: ./results/baselines/treesatai_classification/results.csv
+
+task: classification_multilabel
+
+data:
+  name: treesatai
+  protocol: geobench2_treesatai
+  source: GEO-Bench-2@fd9d0b664e6fb0faba54636bdff4906634debd4b
+  root: ./datasets/treesatai
+  download: false
+  input_bands: s2
+  channels: [B02, B03, B04, B08, B05, B06, B07, B8A, B11, B12, B01, B09]
+  wavelengths_nm: [490, 560, 665, 842, 705, 740, 783, 865, 1610, 2190, 443, 945]
+  wavelength_source: pinned GeoBenchV2 DatasetBandRegistry.TREESATAI/SENTINEL2
+  native_image_size: 304
+  image_size: 224
+  spatial_resolution_m: 10
+  temporal_protocol: shared_encoder_per_timestamp_then_mean_features
+  official_artifact_available_timestamps: 1
+  temporal_source: official_static_s2_single_timestamp
+  multilabel: true
+  num_classes: 15
+  class_names: [Abies, Acer, Alnus, Betula, Cleared, Fagus, Fraxinus, Larix, Picea, Pinus, Populus, Prunus, Pseudotsuga, Quercus, Tilia]
+  normalize: true
+  normalization:
+    method: channelwise_standardization
+    statistics_split: train
+    raw_units: official_treeSatAI_s2_DN
+    mean: [245.31068420410156, 387.63568115234375, 248.4667205810547, 2825.93603515625, 625.9300537109375, 2118.83740234375, 2709.37890625, 2982.208740234375, 1316.7186279296875, 594.203369140625, 265.8070068359375, 2962.182373046875]
+    std: [117.73491668701172, 130.0995635986328, 129.66375732421875, 756.8175659179688, 191.35238647460938, 517.2822265625, 691.1488037109375, 754.9419555664062, 411.339111328125, 234.48863220214844, 125.9928207397461, 674.169189453125]
+  augmentations: {train: none, val: none, calibration: none, test: none}
+  num_workers: 0
+
+training:
+  epochs: 1
+  batch_size: 2
+  optimizer: {name: adamw}
+  learning_rate: 0.001
+  backbone_learning_rate: 0.001
+  head_learning_rate: 0.001
+  weight_decay: 0.0
+  checkpoint: {split: val, metric: nll, mode: min}
+
+metrics:
+  n_bins: 15
+  multilabel_threshold: 0.5
+uq_methods: [{name: none}]
+reproducibility: {deterministic: true}
+
+prediction_export:
+  enabled: true
+  splits: [test]
+  save_backbone_representation: true
+  save_embeddings: true
+  format: parquet
+  stochastic_format: compressed_npz
+  corruption_type: none
+  corruption_severity: 0
+
+experiments:
+  - name: treesatai_dofa_frozen
+    task: classification_multilabel
+    model:
+      name: dofa
+      actual_wavelengths: [0.490, 0.560, 0.665, 0.842, 0.705, 0.740, 0.783, 0.865, 1.610, 2.190, 0.443, 0.945]
+      actual_wavelength_units: micrometers
+      size: base
+      pretrained: true
+      adaptation_mode: frozen
+      head: {architecture: linear, dropout: 0.0}
+      dofa_root: ./DOFA
+      weights_path: ./DOFA/checkpoints/DOFA_ViT_base_e100.pth
+  - name: treesatai_dofa_full_finetune
+    task: classification_multilabel
+    model:
+      name: dofa
+      actual_wavelengths: [0.490, 0.560, 0.665, 0.842, 0.705, 0.740, 0.783, 0.865, 1.610, 2.190, 0.443, 0.945]
+      actual_wavelength_units: micrometers
+      size: base
+      pretrained: true
+      adaptation_mode: full_finetune
+      expected_frozen_backbone_parameters: [pos_embed]
+      head: {architecture: linear, dropout: 0.0}
+      dofa_root: ./DOFA
+      weights_path: ./DOFA/checkpoints/DOFA_ViT_base_e100.pth
+  - name: treesatai_panopticon_frozen
+    task: classification_multilabel
+    model:
+      name: panopticon
+      actual_wavelengths: [490, 560, 665, 842, 705, 740, 783, 865, 1610, 2190, 443, 945]
+      actual_wavelength_units: nanometers
+      size: base
+      pretrained: true
+      weights: VIT_BASE14
+      adaptation_mode: frozen
+      head: {architecture: linear, dropout: 0.0}
+  - name: treesatai_panopticon_full_finetune
+    task: classification_multilabel
+    model:
+      name: panopticon
+      actual_wavelengths: [490, 560, 665, 842, 705, 740, 783, 865, 1610, 2190, 443, 945]
+      actual_wavelength_units: nanometers
+      size: base
+      pretrained: true
+      weights: VIT_BASE14
+      adaptation_mode: full_finetune
+      expected_frozen_backbone_parameters:
+        - model.patch_embed.chnfus.chnemb.embed_transmit
+        - model.patch_embed.chnfus.chnemb.embed_receive
+        - model.patch_embed.chnfus.chnemb.embed_orbit
+      head: {architecture: linear, dropout: 0.0}

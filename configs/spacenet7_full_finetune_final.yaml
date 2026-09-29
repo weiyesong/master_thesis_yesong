@@ -1,0 +1,94 @@
+seed: 42
+seeds: [42, 43, 44]
+device: auto
+output_dir: ./results/final_thesis/segmentation/spacenet7_full_finetune
+results_csv: ./results/final_thesis/segmentation/spacenet7_full_finetune/results.csv
+task: segmentation
+provenance:
+  require_input_hashes: true
+  protocol_id: B5-2026-08-15-v1
+  protocol_path: ./reports/final_training_protocol.md
+  protocol_sha256: cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711
+data:
+  name: spacenet7
+  protocol: geobench2_spacenet7_static
+  source: GEO-Bench-2@fd9d0b664e6fb0faba54636bdff4906634debd4b
+  root: ./datasets/spacenet7
+  artifact_path: ./datasets/spacenet7/geobench_spacenet7.tortilla
+  artifact_sha256: f202abe270b729f7f2651de64cb5c6b41c5f9915109ec12b6c467afa2abcb5b6
+  extracted_manifest_path: ./reports/dataset_manifests/spacenet7_actual_manifest.csv
+  extracted_manifest_sha256: ef5b1d89883d1cdee9fca81c2c37989f661d93fd21bdfda6dc333204aeefa5ce
+  download: false
+  input_bands: rgb
+  channels: [red, green, blue]
+  wavelengths_nm: [665, 560, 490]
+  wavelength_source: pinned GeoBenchV2 generic RGB registry
+  temporal_modeling: false
+  native_image_size: 512
+  image_size: 224
+  native_gsd_m: 4.777314267
+  crop_rule: official_nonoverlapping_512x512_patches
+  mask_resize: nearest
+  num_classes: 2
+  class_names: [background, building]
+  source_label_mapping: {1: background, 2: building, 0: ignore}
+  foreground_class_index: 1
+  ignore_index: 255
+  split_source: embedded_official_aoi_disjoint_manifest
+  normalization:
+    method: channelwise_standardization
+    source: pinned_geobench2_train_statistics
+    mean: [116.94474029541016, 103.55889129638672, 76.77427673339844]
+    std: [61.655845642089844, 49.64897537231445, 45.88066864013672]
+  augmentations: {train: none, val: none, test: none}
+  num_workers: 4
+training:
+  epochs: 50
+  batch_size: 8
+  optimizer: {name: adamw}
+  learning_rate: 0.001
+  backbone_learning_rate: 0.0001
+  head_learning_rate: 0.001
+  weight_decay: 0.01
+  warmup: {enabled: false, epochs: 0, type: linear}
+  gradient_clipping: {enabled: false}
+  layerwise_lr_decay: {enabled: false}
+  early_stopping: {enabled: true, patience: 15, min_delta: 0.0}
+  checkpoint: {split: val, metric: miou, mode: max}
+  limit_train_batches: null
+  limit_val_batches: null
+metrics:
+  n_bins: 15
+  boundary_radius: 1
+  foreground_metrics: [ece, nll, brier]
+  classwise_calibration: true
+  boundary_calibration: true
+uq_methods: [{name: none}]
+reproducibility: {deterministic: true, warn_only: false}
+prediction_export: {enabled: true, splits: [test], save_backbone_representation: true}
+dry_run_settings: {epochs: 1, limit_train_batches: 1, limit_val_batches: 1, num_workers: 0, output_dir: ./results/final_thesis/segmentation/spacenet7_full_finetune/dry_runs}
+experiments:
+  - name: spacenet7_dofa_full_finetune
+    task: segmentation
+    model:
+      name: dofa
+      size: base
+      pretrained: true
+      adaptation_mode: full_finetune
+      expected_frozen_backbone_parameters: [pos_embed]
+      dofa_root: ./DOFA
+      weights_path: ./DOFA/checkpoints/DOFA_ViT_base_e100.pth
+      weights_sha256: 4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1
+      decoder: &decoder {architecture: unet, channels: [256, 128, 64, 32]}
+  - name: spacenet7_panopticon_full_finetune
+    task: segmentation
+    model:
+      name: panopticon
+      size: base
+      pretrained: true
+      weights: VIT_BASE14
+      weights_cache_path: /home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth
+      weights_sha256: 55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e
+      adaptation_mode: full_finetune
+      expected_frozen_backbone_parameters: [model.patch_embed.chnfus.chnemb.embed_transmit, model.patch_embed.chnfus.chnemb.embed_receive, model.patch_embed.chnfus.chnemb.embed_orbit]
+      decoder: *decoder

@@ -1,0 +1,6 @@
+date,event,source,interpretation
+2026-08-15,最终训练协议冻结48 deterministic，分类val NLL/分割val mIoU,reports/final_training_protocol.md,选择规则先于后续评估；历史DOFA-EuroSAT例外单独披露
+2026-08-24,TreeSatAI validation拟合TS历史诊断完成,reports/c3_treesatai_temperature_scaling.md;reports/c3_treesatai_temperature_scaling_results.csv,test未拟合温度；已可看到正负结果
+2026-08-25,pre-UQ freeze排除TreeSatAI TS并预定MC训练矩阵,reports/pre_uq_protocol_freeze.md,TreeSatAI TS排除不是在所有TS结果前预注册；MC矩阵是前瞻设计
+2026-08-26,C6仍将TreeSatAI TS写为COMPLETE,reports/final_thesis_results.md;reports/final_thesis_tables/classification_results.csv,与现行范围冲突，需统一发布入口
+2026-08-27,master及RQ效应表按freeze将TreeSatAI TS列NA,reports/thesis_master_results.csv;reports/rq3_uq_effects.csv,本审查遵从现行范围，保留历史诊断；分割TS按既定协议NA，不新增原因

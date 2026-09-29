@@ -1,0 +1,8 @@
+{
+  "float64": 0.33585154024669817,
+  "float32": 0.3358466956234146,
+  "p32_upper_clip": 0.9999998807907104,
+  "reported": 0.3358466978651596,
+  "artifact": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T131025872125Z_spacenet7_dofa_frozen_seed44_505d5ab5/predictions/test/deterministic/predictions.npz",
+  "source": "scripts/segmentation_pipeline.py:510"
+}

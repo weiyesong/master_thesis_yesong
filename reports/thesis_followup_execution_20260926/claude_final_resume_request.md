@@ -1,0 +1,5 @@
+上一轮CLI在最终报告生成前以143退出，原始数据抽查的公开工具结果已保存在同一会话。请继续最终审查并给中文最终结论；不要重复已完成的raw数据计算。上次最后一条脚本在读取pixel_paired_effects.csv时因没有model列失败，该表只有object_id/baseline_object_id；请按object_id筛选完成共同有效图检查。
+
+协调者已完成的收尾变化：检查表保留旧minimal_resolution与acceptance_evidence；补充inputs_lineage.csv、resource_summary.json、DATA_DICTIONARY.md、PROTOCOL_CHANGELOG.md；图表现在11幅，补了TS_logit_scale、Shannon_Gini_classification，均由已有数值绘制。scientific_tests_final.log为清洁的10项通过日志。报告风险用词已明确“图像等权有效像素错误比例”。REVIEW_RESOLUTION.md与claude_final_review.md将据你的最终原文整理，不要把尚未生成的这两文件循环当作科学阻断。
+
+请只完成尚缺的配对范围/资源核验，然后输出最终独立发现：PASS/FAIL/UNKNOWN/NA、直接证据、实际抽查局限、是否有必须修代码/重算/补实验的问题。原始数据结论引用你刚完成的MC分类、MC分割、Off、Space建筑物支持重算，不只引用协调者表。不要把返回码143或你自己的筛选脚本列名错误当作指标实现错误。保留所有实质问题，不要求与协调者一致。

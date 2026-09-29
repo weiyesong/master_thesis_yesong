@@ -1,0 +1,9 @@
+metric,difference_in_differences,contrast,interpretation
+oracle_entropy,0.0,"U(.4,200)-U(.4,20)-U(.1,200)+U(.1,20)",nonadditivity of this estimator and scale; not physical source coupling
+shannon_tu,0.06654451903034841,"U(.4,200)-U(.4,20)-U(.1,200)+U(.1,20)",nonadditivity of this estimator and scale; not physical source coupling
+shannon_ee,0.06753592076629789,"U(.4,200)-U(.4,20)-U(.1,200)+U(.1,20)",nonadditivity of this estimator and scale; not physical source coupling
+shannon_mi,-0.0009914017359494189,"U(.4,200)-U(.4,20)-U(.1,200)+U(.1,20)",nonadditivity of this estimator and scale; not physical source coupling
+gini_tu,0.057081180665320835,"U(.4,200)-U(.4,20)-U(.1,200)+U(.1,20)",nonadditivity of this estimator and scale; not physical source coupling
+gini_ee,0.06588045825357836,"U(.4,200)-U(.4,20)-U(.1,200)+U(.1,20)",nonadditivity of this estimator and scale; not physical source coupling
+gini_eu,-0.008799277588257385,"U(.4,200)-U(.4,20)-U(.1,200)+U(.1,20)",nonadditivity of this estimator and scale; not physical source coupling
+ee_minus_oracle,0.06753592076629789,"U(.4,200)-U(.4,20)-U(.1,200)+U(.1,20)",nonadditivity of this estimator and scale; not physical source coupling

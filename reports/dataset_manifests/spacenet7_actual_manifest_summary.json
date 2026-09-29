@@ -1,0 +1,16 @@
+{
+  "dataset": "spacenet7",
+  "geobench2_commit": "fd9d0b664e6fb0faba54636bdff4906634debd4b",
+  "artifact_path": "/workspace/datasets/spacenet7/geobench_spacenet7.tortilla",
+  "artifact_size_bytes": 3056268185,
+  "artifact_sha256": "f202abe270b729f7f2651de64cb5c6b41c5f9915109ec12b6c467afa2abcb5b6",
+  "manifest_path": "/workspace/reports/dataset_manifests/spacenet7_actual_manifest.csv",
+  "manifest_sha256": "ef5b1d89883d1cdee9fca81c2c37989f661d93fd21bdfda6dc333204aeefa5ce",
+  "manifest_rows": 5304,
+  "observed_split_counts": {
+    "train": 3500,
+    "test": 1152,
+    "validation": 652
+  },
+  "sample_id_unique": true
+}

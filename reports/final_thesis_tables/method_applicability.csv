@@ -1,0 +1,9 @@
+task,uq_method,status,reason
+classification,Deterministic,APPLICABLE,Included in frozen classification protocol
+classification,Temperature Scaling,APPLICABLE,Included in frozen classification protocol
+classification,MC Dropout,APPLICABLE,Included in frozen classification protocol
+classification,Deep Ensemble,APPLICABLE,Included in frozen classification protocol
+segmentation,Deterministic,APPLICABLE,Included in frozen segmentation protocol
+segmentation,Temperature Scaling,N/A,Excluded from frozen segmentation protocol
+segmentation,MC Dropout,APPLICABLE,Included in frozen segmentation protocol
+segmentation,Deep Ensemble,APPLICABLE,Included in frozen segmentation protocol

@@ -1,0 +1,7 @@
+issue_id,check_ids,rq,status,finding,resolution,action_type,new_training,acceptance,decision
+I01,C01;C06,RQ1;RQ2;RQ3,UNKNOWN,DOFA-EuroSAT历史六run无训练时代码版本，旧归一化统计来源未知,恢复来源或明确限定；事后source hash不能改写为训练版本,恢复证据/修改表述,否,来源可核对；或在论文保留UNKNOWN及配置比较限制,接受双方交叉核对修正；不称泄漏、不全局INVALID
+I02,C05;R1.3;R1.4,RQ1;RQ2;RQ3,FAIL,旧C6图表ECE对象/分箱不一致且无count；类条件诊断不足,本轮100产物的箱表与类诊断已补，仍需更新正式生成器/发布图表,报告代码修复/已有结果重分析,否,decision与positive-label指标分开；所有图显示counts/seed和分箱；不改写旧产物,数值重算通过；不把图文缺口升级为训练失败
+I03,C09;R3.2;R3.8,RQ3,FAIL,TreeSatAI TS在C6与权威master间COMPLETE/NA矛盾，排除时间晚于历史结果,统一现行范围、公开8-24/8-25时序并保留历史负结果；不擅自恢复核心纳入,报告代码修复/修改表述,否,最终表/图/正文/applicability一致；NA只由既定范围决定；不声称val复用必然无效,接受状态/时序问题；驳回主观cherry-picking推断及为分割TS发明NA原因
+I04,R3.1;R3.4;R3.6;R3.9,RQ3,FAIL,分割12个MC checkpoint缺同权重dropout-off测试对照；分类12个本轮已补齐,复用分割checkpoint单次全test评估，D/Off/MC同ID/标签/mask与指标三方对比,补评估/已有结果重分析,否,12分割Off产物含checkpoint hash、IDs、logits/probabilities和全部主/建筑/边界指标，构成24行三方对照,双方直接复现分类反例，接受缺口；原MC−D全方案结果仍可描述
+I05,R1.6;R2.2;R2.5;R3.9,RQ1;RQ2;RQ3,UNKNOWN,完整论文正文未提供，无法验证范围措辞和是否回答三问,采用本报告答案草稿；EuroSAT配置差异、适配配方差异、单seed/单ensemble边界写入正文,修改表述,否,逐RQ写结论、反例、限制；无全EO普适/等效无损/纯架构因果或未测机制主张,保留UNKNOWN，不因没有正文否定已验证数值
+I06,C05,RQ1;RQ2;RQ3,PASS,SpaceNet7 float64直接概率重算的foreground NLL与原生dtype存在小差,已用明确native clip/dtype独立公式复现；保留两份结果和数值原因,已完成最小数值复现,否,foreground_precision_verification.json所有差值在数值容差内,驳回“指标错误/需重训”；不是新的模型缺陷

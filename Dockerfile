@@ -1,49 +1,68 @@
-# 使用官方带 CUDA 支持的 PyTorch 基础镜像 (Python 3.11, PyTorch 2.5)
+# Development image for the EO UQ thesis experiments.
+#
+# Matches the first-stage EuroSAT RGB baseline:
+# - Python 3.11 from the official PyTorch image
+# - PyTorch 2.5.1 + CUDA 12.4
+# - torchvision for EuroSAT RGB and pretrained ResNet18
+# - TorchGeo / Lightning-UQ-Box kept available for later DOFA and UQ work
 FROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime
 
-# 设置工作目录
-WORKDIR /workspace
-
-# 设置环境变量，避免安装时出现交互式提示
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Shanghai
+ENV PYTHONUNBUFFERED=1
+ENV PIP_NO_CACHE_DIR=1
+ENV MPLCONFIGDIR=/tmp/matplotlib
 
-# 1. 安装系统级依赖
-# 遥感和计算机视觉通常需要以下库：
-# - libgl1-mesa-glx: OpenCV 等图像处理库通常需要它
-# - gdal-bin, libgdal-dev: 处理地理空间数据 (GeoTIFF等) 的核心库
-# - libspatialindex-dev: 某些遥感库 (如 Rtree) 的依赖
-RUN apt-get update && apt-get install -y \
+WORKDIR /workspace
+
+# System packages used by remote-sensing and vision libraries.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl \
     git \
     vim \
     wget \
-    libgl1-mesa-glx \
+    build-essential \
+    libgl1 \
+    libglib2.0-0 \
     gdal-bin \
     libgdal-dev \
     libspatialindex-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# 2. 安装 Python 库
-# 重点安装: torchgeo, lightning-uq-box
-# 以及常用的 tensorboard (用于查看训练曲线)
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir \
+# Keep files created in the bind-mounted workspace owned by the host user.
+ARG USERNAME=yesong
+ARG USER_UID=1025
+ARG USER_GID=1025
+RUN groupadd --gid ${USER_GID} ${USERNAME} \
+    && useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME} \
+    && mkdir -p /workspace /tmp/matplotlib \
+    && chown -R ${USERNAME}:${USERNAME} /workspace /tmp/matplotlib
+
+RUN python -m pip install --upgrade pip setuptools wheel \
+    && python -m pip install \
     numpy \
     pandas \
+    pyarrow \
     scikit-learn \
     matplotlib \
     seaborn \
+    pyyaml \
+    tqdm \
     jupyterlab \
     tensorboard \
-    opencv-python-headless \
     pillow \
+    opencv-python-headless \
     torchgeo \
-    lightning-uq-box \
-    pytorch-lightning \
+    'GeoBenchV2 @ git+https://github.com/The-AI-Alliance/GEO-Bench-2.git@fd9d0b664e6fb0faba54636bdff4906634debd4b' \
     torchmetrics \
-    wandb \
+    lightning \
+    lightning-uq-box \
     timm \
-    kornia
+    kornia \
+    rasterio \
+    wandb
 
-# 默认进入 bash
+USER ${USERNAME}
+
 CMD ["/bin/bash"]

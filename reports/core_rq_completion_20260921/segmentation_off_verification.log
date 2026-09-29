@@ -1,0 +1,497 @@
+{
+  "expected_count": 12,
+  "verified_count": 0,
+  "passed": 0,
+  "failed": 0,
+  "pending": [
+    "cloudsen12/dofa/frozen/42",
+    "cloudsen12/dofa/full_finetune/42",
+    "cloudsen12/panopticon/frozen/42",
+    "cloudsen12/panopticon/frozen/43",
+    "cloudsen12/panopticon/frozen/44",
+    "cloudsen12/panopticon/full_finetune/42",
+    "spacenet7/dofa/frozen/42",
+    "spacenet7/dofa/full_finetune/42",
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": null,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+{
+  "expected_count": 12,
+  "verified_count": 0,
+  "passed": 0,
+  "failed": 0,
+  "pending": [
+    "cloudsen12/dofa/frozen/42",
+    "cloudsen12/dofa/full_finetune/42",
+    "cloudsen12/panopticon/frozen/42",
+    "cloudsen12/panopticon/frozen/43",
+    "cloudsen12/panopticon/frozen/44",
+    "cloudsen12/panopticon/full_finetune/42",
+    "spacenet7/dofa/frozen/42",
+    "spacenet7/dofa/full_finetune/42",
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": null,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+{
+  "expected_count": 12,
+  "verified_count": 0,
+  "passed": 0,
+  "failed": 0,
+  "pending": [
+    "cloudsen12/dofa/frozen/42",
+    "cloudsen12/dofa/full_finetune/42",
+    "cloudsen12/panopticon/frozen/42",
+    "cloudsen12/panopticon/frozen/43",
+    "cloudsen12/panopticon/frozen/44",
+    "cloudsen12/panopticon/full_finetune/42",
+    "spacenet7/dofa/frozen/42",
+    "spacenet7/dofa/full_finetune/42",
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": null,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+VERIFY cloudsen12/dofa/frozen/42
+RESULT cloudsen12/dofa/frozen/42 PASS {}
+VERIFY cloudsen12/dofa/full_finetune/42
+RESULT cloudsen12/dofa/full_finetune/42 PASS {}
+{
+  "expected_count": 12,
+  "verified_count": 2,
+  "passed": 2,
+  "failed": 0,
+  "pending": [
+    "cloudsen12/panopticon/frozen/42",
+    "cloudsen12/panopticon/frozen/43",
+    "cloudsen12/panopticon/frozen/44",
+    "cloudsen12/panopticon/full_finetune/42",
+    "spacenet7/dofa/frozen/42",
+    "spacenet7/dofa/full_finetune/42",
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": 2.642707330746674e-09,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+CACHED cloudsen12/dofa/frozen/42 PASS
+CACHED cloudsen12/dofa/full_finetune/42 PASS
+{
+  "expected_count": 12,
+  "verified_count": 2,
+  "passed": 2,
+  "failed": 0,
+  "pending": [
+    "cloudsen12/panopticon/frozen/42",
+    "cloudsen12/panopticon/frozen/43",
+    "cloudsen12/panopticon/frozen/44",
+    "cloudsen12/panopticon/full_finetune/42",
+    "spacenet7/dofa/frozen/42",
+    "spacenet7/dofa/full_finetune/42",
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": 2.642707330746674e-09,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+CACHED cloudsen12/dofa/frozen/42 PASS
+CACHED cloudsen12/dofa/full_finetune/42 PASS
+{
+  "expected_count": 12,
+  "verified_count": 2,
+  "passed": 2,
+  "failed": 0,
+  "pending": [
+    "cloudsen12/panopticon/frozen/42",
+    "cloudsen12/panopticon/frozen/43",
+    "cloudsen12/panopticon/frozen/44",
+    "cloudsen12/panopticon/full_finetune/42",
+    "spacenet7/dofa/frozen/42",
+    "spacenet7/dofa/full_finetune/42",
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": 2.642707330746674e-09,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+CACHED cloudsen12/dofa/frozen/42 PASS
+CACHED cloudsen12/dofa/full_finetune/42 PASS
+VERIFY cloudsen12/panopticon/frozen/42
+RESULT cloudsen12/panopticon/frozen/42 PASS {}
+VERIFY cloudsen12/panopticon/frozen/43
+RESULT cloudsen12/panopticon/frozen/43 PASS {}
+{
+  "expected_count": 12,
+  "verified_count": 4,
+  "passed": 4,
+  "failed": 0,
+  "pending": [
+    "cloudsen12/panopticon/frozen/44",
+    "cloudsen12/panopticon/full_finetune/42",
+    "spacenet7/dofa/frozen/42",
+    "spacenet7/dofa/full_finetune/42",
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": 2.642707330746674e-09,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+CACHED cloudsen12/dofa/frozen/42 PASS
+CACHED cloudsen12/dofa/full_finetune/42 PASS
+CACHED cloudsen12/panopticon/frozen/42 PASS
+CACHED cloudsen12/panopticon/frozen/43 PASS
+{
+  "expected_count": 12,
+  "verified_count": 4,
+  "passed": 4,
+  "failed": 0,
+  "pending": [
+    "cloudsen12/panopticon/frozen/44",
+    "cloudsen12/panopticon/full_finetune/42",
+    "spacenet7/dofa/frozen/42",
+    "spacenet7/dofa/full_finetune/42",
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": 2.642707330746674e-09,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+CACHED cloudsen12/dofa/frozen/42 PASS
+CACHED cloudsen12/dofa/full_finetune/42 PASS
+CACHED cloudsen12/panopticon/frozen/42 PASS
+CACHED cloudsen12/panopticon/frozen/43 PASS
+{
+  "expected_count": 12,
+  "verified_count": 4,
+  "passed": 4,
+  "failed": 0,
+  "pending": [
+    "cloudsen12/panopticon/frozen/44",
+    "cloudsen12/panopticon/full_finetune/42",
+    "spacenet7/dofa/frozen/42",
+    "spacenet7/dofa/full_finetune/42",
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": 2.642707330746674e-09,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+CACHED cloudsen12/dofa/frozen/42 PASS
+CACHED cloudsen12/dofa/full_finetune/42 PASS
+CACHED cloudsen12/panopticon/frozen/42 PASS
+CACHED cloudsen12/panopticon/frozen/43 PASS
+VERIFY cloudsen12/panopticon/frozen/44
+RESULT cloudsen12/panopticon/frozen/44 PASS {}
+VERIFY cloudsen12/panopticon/full_finetune/42
+RESULT cloudsen12/panopticon/full_finetune/42 PASS {}
+{
+  "expected_count": 12,
+  "verified_count": 6,
+  "passed": 6,
+  "failed": 0,
+  "pending": [
+    "spacenet7/dofa/frozen/42",
+    "spacenet7/dofa/full_finetune/42",
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": 2.9553447467023375e-09,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+CACHED cloudsen12/dofa/frozen/42 PASS
+CACHED cloudsen12/dofa/full_finetune/42 PASS
+CACHED cloudsen12/panopticon/frozen/42 PASS
+CACHED cloudsen12/panopticon/frozen/43 PASS
+CACHED cloudsen12/panopticon/frozen/44 PASS
+CACHED cloudsen12/panopticon/full_finetune/42 PASS
+{
+  "expected_count": 12,
+  "verified_count": 6,
+  "passed": 6,
+  "failed": 0,
+  "pending": [
+    "spacenet7/dofa/frozen/42",
+    "spacenet7/dofa/full_finetune/42",
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": 2.9553447467023375e-09,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+CACHED cloudsen12/dofa/frozen/42 PASS
+CACHED cloudsen12/dofa/full_finetune/42 PASS
+CACHED cloudsen12/panopticon/frozen/42 PASS
+CACHED cloudsen12/panopticon/frozen/43 PASS
+CACHED cloudsen12/panopticon/frozen/44 PASS
+CACHED cloudsen12/panopticon/full_finetune/42 PASS
+{
+  "expected_count": 12,
+  "verified_count": 6,
+  "passed": 6,
+  "failed": 0,
+  "pending": [
+    "spacenet7/dofa/frozen/42",
+    "spacenet7/dofa/full_finetune/42",
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": 2.9553447467023375e-09,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+CACHED cloudsen12/dofa/frozen/42 PASS
+CACHED cloudsen12/dofa/full_finetune/42 PASS
+CACHED cloudsen12/panopticon/frozen/42 PASS
+CACHED cloudsen12/panopticon/frozen/43 PASS
+CACHED cloudsen12/panopticon/frozen/44 PASS
+CACHED cloudsen12/panopticon/full_finetune/42 PASS
+VERIFY spacenet7/dofa/frozen/42
+RESULT spacenet7/dofa/frozen/42 PASS {}
+VERIFY spacenet7/dofa/full_finetune/42
+RESULT spacenet7/dofa/full_finetune/42 PASS {}
+{
+  "expected_count": 12,
+  "verified_count": 8,
+  "passed": 8,
+  "failed": 0,
+  "pending": [
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": 3.0340824852537196e-09,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+CACHED cloudsen12/dofa/frozen/42 PASS
+CACHED cloudsen12/dofa/full_finetune/42 PASS
+CACHED cloudsen12/panopticon/frozen/42 PASS
+CACHED cloudsen12/panopticon/frozen/43 PASS
+CACHED cloudsen12/panopticon/frozen/44 PASS
+CACHED cloudsen12/panopticon/full_finetune/42 PASS
+CACHED spacenet7/dofa/frozen/42 PASS
+CACHED spacenet7/dofa/full_finetune/42 PASS
+{
+  "expected_count": 12,
+  "verified_count": 8,
+  "passed": 8,
+  "failed": 0,
+  "pending": [
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": 3.0340824852537196e-09,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+CACHED cloudsen12/dofa/frozen/42 PASS
+CACHED cloudsen12/dofa/full_finetune/42 PASS
+CACHED cloudsen12/panopticon/frozen/42 PASS
+CACHED cloudsen12/panopticon/frozen/43 PASS
+CACHED cloudsen12/panopticon/frozen/44 PASS
+CACHED cloudsen12/panopticon/full_finetune/42 PASS
+CACHED spacenet7/dofa/frozen/42 PASS
+CACHED spacenet7/dofa/full_finetune/42 PASS
+{
+  "expected_count": 12,
+  "verified_count": 8,
+  "passed": 8,
+  "failed": 0,
+  "pending": [
+    "spacenet7/dofa/full_finetune/43",
+    "spacenet7/dofa/full_finetune/44",
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": 3.0340824852537196e-09,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+CACHED cloudsen12/dofa/frozen/42 PASS
+CACHED cloudsen12/dofa/full_finetune/42 PASS
+CACHED cloudsen12/panopticon/frozen/42 PASS
+CACHED cloudsen12/panopticon/frozen/43 PASS
+CACHED cloudsen12/panopticon/frozen/44 PASS
+CACHED cloudsen12/panopticon/full_finetune/42 PASS
+CACHED spacenet7/dofa/frozen/42 PASS
+CACHED spacenet7/dofa/full_finetune/42 PASS
+VERIFY spacenet7/dofa/full_finetune/43
+RESULT spacenet7/dofa/full_finetune/43 PASS {}
+VERIFY spacenet7/dofa/full_finetune/44
+RESULT spacenet7/dofa/full_finetune/44 PASS {}
+{
+  "expected_count": 12,
+  "verified_count": 10,
+  "passed": 10,
+  "failed": 0,
+  "pending": [
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": 5.321786678003093e-09,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+CACHED cloudsen12/dofa/frozen/42 PASS
+CACHED cloudsen12/dofa/full_finetune/42 PASS
+CACHED cloudsen12/panopticon/frozen/42 PASS
+CACHED cloudsen12/panopticon/frozen/43 PASS
+CACHED cloudsen12/panopticon/frozen/44 PASS
+CACHED cloudsen12/panopticon/full_finetune/42 PASS
+CACHED spacenet7/dofa/frozen/42 PASS
+CACHED spacenet7/dofa/full_finetune/42 PASS
+CACHED spacenet7/dofa/full_finetune/43 PASS
+CACHED spacenet7/dofa/full_finetune/44 PASS
+{
+  "expected_count": 12,
+  "verified_count": 10,
+  "passed": 10,
+  "failed": 0,
+  "pending": [
+    "spacenet7/panopticon/frozen/42",
+    "spacenet7/panopticon/full_finetune/42"
+  ],
+  "complete": false,
+  "maximum_absolute_metric_difference": 5.321786678003093e-09,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}
+CACHED cloudsen12/dofa/frozen/42 PASS
+CACHED cloudsen12/dofa/full_finetune/42 PASS
+CACHED cloudsen12/panopticon/frozen/42 PASS
+CACHED cloudsen12/panopticon/frozen/43 PASS
+CACHED cloudsen12/panopticon/frozen/44 PASS
+CACHED cloudsen12/panopticon/full_finetune/42 PASS
+CACHED spacenet7/dofa/frozen/42 PASS
+CACHED spacenet7/dofa/full_finetune/42 PASS
+CACHED spacenet7/dofa/full_finetune/43 PASS
+CACHED spacenet7/dofa/full_finetune/44 PASS
+VERIFY spacenet7/panopticon/frozen/42
+RESULT spacenet7/panopticon/frozen/42 PASS {}
+VERIFY spacenet7/panopticon/full_finetune/42
+RESULT spacenet7/panopticon/full_finetune/42 FAIL {}
+{
+  "expected_count": 12,
+  "verified_count": 12,
+  "passed": 11,
+  "failed": 1,
+  "pending": [],
+  "complete": true,
+  "maximum_absolute_metric_difference": 7.67587519656665e-08,
+  "verifier_path": "reports/core_rq_completion_20260921/verify_segmentation_off.py",
+  "verifier_sha256": "2860b31bb10edd0a6be055bb8d6589f35ffc22218e5bbe5a9f85a06790bea7ca",
+  "no_project_metric_imports": true,
+  "foreground_convention": "Clip and logarithm retain native probability dtype; float64 accumulation; no log-softmax retransform for dropout-off logits export.",
+  "paired_verification": "Direct complete ID/label/mask arrays and SHA256 from old deterministic and MC source NPZs."
+}

@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-09-23T12:23:23.467027+00:00",
+  "source_hashes_verified": 74,
+  "generated_hashes_verified": 19,
+  "mismatches": [],
+  "generator_sha256": "9c831f3b6e904536e376ca5e8f9ae11c362b89f2fe535b84183dc12d17cbfeb1",
+  "package_manifest_sha256": "86f839fcc75db3ab3b78711d12604596e90eae8c0e064e241ee4957469929255",
+  "portable_link_checks": [
+    {
+      "parent": "/workspace/reports/core_rq_completion_20260921",
+      "links": [
+        "../COMPLETION_REPORT.md",
+        "../RESULTS_SECTION.md",
+        "../mc_dropout_three_way.csv"
+      ],
+      "all_resolve": true,
+      "current_published_body_unchanged": true
+    },
+    {
+      "parent": "/workspace/reports",
+      "links": [
+        "../core_rq_completion_20260921/COMPLETION_REPORT.md",
+        "../core_rq_completion_20260921/RESULTS_SECTION.md",
+        "../core_rq_completion_20260921/mc_dropout_three_way.csv"
+      ],
+      "all_resolve": true,
+      "current_published_body_unchanged": "not applicable"
+    }
+  ]
+}

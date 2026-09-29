@@ -1,0 +1,54 @@
+{
+  "label_hash": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+  "ids_hash": "09bb43cf20bc6d861a4cb1be55f245658da1c487a6ac0e7e4c1f80e8b003bd13",
+  "n_samples": 2000,
+  "actual_core_metrics": {
+    "accuracy": 0.284,
+    "brier": 0.07151831092126501,
+    "nll": 0.24783262935875058,
+    "nll_logits": 0.24783262922640473,
+    "macro_f1": 0.2392380955961864
+  },
+  "core_checks": [
+    {
+      "metric": "accuracy",
+      "actual": 0.284,
+      "expected": 0.284,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "brier",
+      "actual": 0.07151831092126501,
+      "expected": 0.07151831092126501,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "nll",
+      "actual": 0.24783262935875058,
+      "expected": 0.24783262935875058,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "macro_f1",
+      "actual": 0.2392380955961864,
+      "expected": 0.2392380955961864,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    }
+  ],
+  "validation": [],
+  "pmax_exactly_one": 0,
+  "pmax_one_errors": null,
+  "load_seconds": 0.011752765625715256,
+  "ranking_bootstrap_seconds": 2.380048571154475,
+  "total_seconds": 2.5728920586407185,
+  "peak_rss_GiB": 0.6129531860351562,
+  "status": "COMPLETE"
+}

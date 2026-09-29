@@ -1,0 +1,51 @@
+GPU=0 config=cloudsen12_frozen_final start=2026-08-23T21:49:25Z
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+[cloudsen12_dofa_frozen seed=42] epoch=1 train_loss=1.504735 val_miou=0.092932 best_epoch=1 patience=0/10
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Downloading: "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth" to /home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth
+  0%|          | 0.00/378M [00:00<?, ?B/s]  0%|          | 128k/378M [00:00<17:21, 380kB/s]  2%|▏         | 6.50M/378M [00:00<00:19, 19.8MB/s]  3%|▎         | 11.0M/378M [00:00<00:13, 27.8MB/s]  4%|▍         | 15.1M/378M [00:00<00:12, 31.1MB/s]  5%|▌         | 19.9M/378M [00:00<00:10, 36.0MB/s]  7%|▋         | 25.5M/378M [00:00<00:08, 42.5MB/s]  8%|▊         | 31.8M/378M [00:00<00:07, 49.0MB/s] 10%|▉         | 37.4M/378M [00:01<00:06, 51.5MB/s] 11%|█▏        | 42.9M/378M [00:01<00:06, 52.9MB/s] 13%|█▎        | 48.2M/378M [00:01<00:06, 52.6MB/s] 14%|█▍        | 53.5M/378M [00:01<00:06, 50.8MB/s] 15%|█▌        | 58.5M/378M [00:01<00:06, 49.4MB/s] 17%|█▋        | 63.6M/378M [00:01<00:06, 50.2MB/s] 18%|█▊        | 68.5M/378M [00:01<00:07, 43.9MB/s] 19%|█▉        | 72.9M/378M [00:01<00:07, 43.3MB/s] 20%|██        | 77.1M/378M [00:01<00:07, 43.0MB/s] 22%|██▏       | 81.4M/378M [00:02<00:07, 41.4MB/s] 23%|██▎       | 85.5M/378M [00:02<00:07, 41.6MB/s] 24%|██▎       | 89.6M/378M [00:02<00:07, 40.6MB/s] 25%|██▌       | 94.5M/378M [00:02<00:06, 43.5MB/s] 26%|██▌       | 98.8M/378M [00:02<00:07, 38.7MB/s] 27%|██▋       | 104M/378M [00:02<00:06, 41.2MB/s]  29%|██▊       | 108M/378M [00:03<00:26, 10.6MB/s] 29%|██▉       | 111M/378M [00:03<00:23, 12.1MB/s] 30%|███       | 113M/378M [00:05<00:45, 6.14MB/s] 31%|███       | 115M/378M [00:06<01:07, 4.05MB/s] 31%|███▏      | 119M/378M [00:06<00:48, 5.55MB/s] 32%|███▏      | 122M/378M [00:06<00:36, 7.26MB/s] 33%|███▎      | 124M/378M [00:07<00:56, 4.74MB/s] 34%|███▎      | 127M/378M [00:07<00:38, 6.76MB/s] 34%|███▍      | 130M/378M [00:09<01:00, 4.31MB/s] 35%|███▌      | 132M/378M [00:09<00:48, 5.31MB/s] 36%|███▌      | 136M/378M [00:09<00:33, 7.64MB/s] 37%|███▋      | 139M/378M [00:09<00:26, 9.63MB/s] 37%|███▋      | 141M/378M [00:10<00:45, 5.51MB/s] 38%|███▊      | 144M/378M [00:10<00:33, 7.25MB/s] 39%|███▊      | 146M/378M [00:11<00:56, 4.31MB/s] 39%|███▉      | 148M/378M [00:12<01:13, 3.27MB/s] 40%|███▉      | 150M/378M [00:13<00:59, 4.03MB/s] 41%|████      | 153M/378M [00:13<00:40, 5.88MB/s] 41%|████▏     | 156M/378M [00:13<00:27, 8.42MB/s] 42%|████▏     | 159M/378M [00:14<00:50, 4.59MB/s] 43%|████▎     | 163M/378M [00:14<00:31, 7.08MB/s] 44%|████▎     | 165M/378M [00:14<00:25, 8.61MB/s] 44%|████▍     | 167M/378M [00:15<00:43, 5.04MB/s] 45%|████▌     | 171M/378M [00:15<00:28, 7.55MB/s] 46%|████▌     | 174M/378M [00:16<00:44, 4.81MB/s] 46%|████▋     | 175M/378M [00:18<01:05, 3.25MB/s] 47%|████▋     | 178M/378M [00:19<01:12, 2.88MB/s] 47%|████▋     | 179M/378M [00:19<00:59, 3.48MB/s] 48%|████▊     | 183M/378M [00:19<00:34, 5.95MB/s] 49%|████▉     | 186M/378M [00:19<00:20, 9.99MB/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scripts/run_experiments.py", line 2919, in <module>
+    main()
+  File "/workspace/scripts/run_experiments.py", line 2900, in main
+    results.append(run_experiment(seed_config, experiment))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scripts/run_experiments.py", line 2788, in run_experiment
+    return run_segmentation_experiment(config, experiment, resume_run_dir=resume_run_dir)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scripts/run_experiments.py", line 2508, in run_segmentation_experiment
+    model = build_segmentation_model(config, experiment["model"]).to(device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scripts/segmentation_pipeline.py", line 241, in build_segmentation_model
+    backbone = panopticon_vitb14(weights=weights, img_size=image_size)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torchgeo/models/panopticon.py", line 512, in panopticon_vitb14
+    state_dict = weights.get_state_dict(progress=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torchvision/models/_api.py", line 90, in get_state_dict
+    return load_state_dict_from_url(self.url, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torch/hub.py", line 867, in load_state_dict_from_url
+    download_url_to_file(url, cached_file, hash_prefix, progress=progress)
+  File "/opt/conda/lib/python3.11/site-packages/torch/hub.py", line 744, in download_url_to_file
+    buffer = u.read(READ_DATA_CHUNK)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/http/client.py", line 473, in read
+    s = self.fp.read(amt)
+        ^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/socket.py", line 718, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/ssl.py", line 1314, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/ssl.py", line 1166, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

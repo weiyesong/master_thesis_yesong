@@ -1,0 +1,30 @@
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+START cloudsen12:dofa:frozen:42 N= 975 device= cuda:0
+COMPLETE cloudsen12:dofa:frozen:42 {'miou': 0.6005254951886047, 'per_class_iou': {'clear': 0.8150212106123464, 'thick cloud': 0.7440336695099995, 'thin cloud': 0.35760589612057997, 'cloud shadow': 0.4854412045114929}, 'pixel_accuracy': 0.8308220499738357, 'nll': 0.47163298522534014, 'brier': 0.24306364609395442, 'ece_15': 0.03785492937308519, 'valid_pixels': 48921600, 'ignored_pixels': 0, 'confusion_matrix': [[23604769, 636898, 999409, 780876], [885330, 11825689, 684839, 627651], [1195379, 649807, 2172375, 201504], [859492, 583810, 171461, 3042311]]} seconds= 185.86888098716736
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+START cloudsen12:panopticon:frozen:42 N= 975 device= cuda:0
+COMPLETE cloudsen12:panopticon:frozen:42 {'miou': 0.6439082545891586, 'per_class_iou': {'clear': 0.8425457948914116, 'thick cloud': 0.7816238510166326, 'thin cloud': 0.43243540681656023, 'cloud shadow': 0.51902796563203}, 'pixel_accuracy': 0.8549570537349556, 'nll': 0.40103826597683845, 'brier': 0.20766431551962733, 'ece_15': 0.02279342830474753, 'valid_pixels': 48921600, 'ignored_pixels': 0, 'confusion_matrix': [[23624915, 602379, 1067357, 727301], [574237, 12489666, 486266, 473340], [793808, 667826, 2577664, 179767], [649921, 685412, 188119, 3133622]]} seconds= 166.17657208442688
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+START cloudsen12:panopticon:frozen:44 N= 975 device= cuda:0
+COMPLETE cloudsen12:panopticon:frozen:44 {'miou': 0.6535061393278239, 'per_class_iou': {'clear': 0.8515230976745619, 'thick cloud': 0.7861069764516754, 'thin cloud': 0.4371705086653154, 'cloud shadow': 0.5392239745197427}, 'pixel_accuracy': 0.8611158056972789, 'nll': 0.4067233665222775, 'brier': 0.20307091673527133, 'ece_15': 0.040415706669191434, 'valid_pixels': 48921600, 'ignored_pixels': 0, 'confusion_matrix': [[23990558, 432205, 809773, 789416], [680303, 12274757, 419894, 648555], [886450, 642771, 2441154, 248690], [584997, 516129, 135254, 3420694]]} seconds= 163.7610502243042
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+START spacenet7:dofa:frozen:42 N= 1152 device= cuda:0
+COMPLETE spacenet7:dofa:frozen:42 {'miou': 0.48537129248716926, 'per_class_iou': {'background': 0.926834245057272, 'building': 0.04390833991706651}, 'pixel_accuracy': 0.9270792677829596, 'nll': 0.2820808905390114, 'brier': 0.1273888055818016, 'ece_15': 0.03687940150140793, 'valid_pixels': 57802752, 'ignored_pixels': 0, 'confusion_matrix': [[53394159, 381085], [3833934, 193574]], 'foreground_ece_15': 0.041477648302378226, 'classwise_calibration': {'background': {'ece_15': 0.04147764734598652}, 'building': {'ece_15': 0.04147764830256866}}, 'foreground_nll': 0.28207920218000604, 'foreground_brier': 0.06369440277400606, 'boundary_calibration': {'radius_pixels': 1, 'pixel_count': 17396091, 'ece_15': 0.13595207274576376, 'foreground_ece_15': 0.14326662025264778}} seconds= 139.72742414474487
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+START spacenet7:dofa:full_finetune:43 N= 1152 device= cuda:0
+COMPLETE spacenet7:dofa:full_finetune:43 {'miou': 0.4862783154949198, 'per_class_iou': {'background': 0.9293696601765288, 'building': 0.04318697081331085}, 'pixel_accuracy': 0.9295941134429032, 'nll': 0.2860814280926235, 'brier': 0.12212638425178268, 'ece_15': 0.0373677360035725, 'valid_pixels': 57802752, 'ignored_pixels': 0, 'confusion_matrix': [[53549409, 225835], [3843819, 183689]], 'foreground_ece_15': 0.03983411964542411, 'classwise_calibration': {'background': {'ece_15': 0.03983414524584993}, 'building': {'ece_15': 0.03983411964542461}}, 'foreground_nll': 0.28608142434199113, 'foreground_brier': 0.06106319197383868, 'boundary_calibration': {'radius_pixels': 1, 'pixel_count': 17396091, 'ece_15': 0.13020667066380406, 'foreground_ece_15': 0.13515645953633626}} seconds= 144.67691922187805
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+START spacenet7:panopticon:frozen:42 N= 1152 device= cuda:0
+COMPLETE spacenet7:panopticon:frozen:42 {'miou': 0.5006455345754677, 'per_class_iou': {'background': 0.9211589830266852, 'building': 0.08013208612425021}, 'pixel_accuracy': 0.9216967731916985, 'nll': 0.325732664794338, 'brier': 0.13218098654160423, 'ece_15': 0.03901608663195442, 'valid_pixels': 57802752, 'ignored_pixels': 0, 'confusion_matrix': [[52882326, 892918], [3633224, 394284]], 'foreground_ece_15': 0.0503593063832512, 'classwise_calibration': {'background': {'ece_15': 0.050359285332253874}, 'building': {'ece_15': 0.050359306391759444}}, 'foreground_nll': 0.32560919242110653, 'foreground_brier': 0.06609049332148634, 'boundary_calibration': {'radius_pixels': 1, 'pixel_count': 17396091, 'ece_15': 0.13517847552836298, 'foreground_ece_15': 0.15543770105667973}} seconds= 139.26669430732727

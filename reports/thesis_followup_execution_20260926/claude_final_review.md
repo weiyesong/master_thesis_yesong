@@ -1,0 +1,34 @@
+## A/E 最终独立复核（实际 Claude，会话 5afb33d9）
+
+### 实际抽查范围与局限
+
+只读项目与结果目录，CPU 小范围重算，用 numpy/scipy/sklearn 独立实现，未调用协调者的 `RankPlan`/`decomposition` 作为算法。直接读源数据的对象：TreeSat MC 42（分类 MC）、CloudSEN12 DOFA frozen MC 42 一张固定子集图（分割 MC）、EuroSAT DOFA frozen Off 42、SpaceNet7 DOFA frozen D42 建筑物保留，加上前两轮的 EuroSAT/TreeSat/Cloud DE 与 E。100 对象中直接抽源数据 8 个，其余 92 个仅核对表间一致性与计数；报告中的范围数字（40/28/16 对象极值等）我从 metrics.csv 等表重算过，但表本身的其余行未逐一回到源数据。算式与数字已存 `claude_validation/independent_recomputation_summary.md`，临时解压数组已删除。
+
+### 逐项发现
+
+**1. 分类 MC Bernoulli 约定 — PASS。** TreeSat MC 42 raw [2000,30,15] 与 summary 同序；均值差 2.98e-8；逐标签 TU/EE/MI 与保存值差 ≤3e-8，标签和差 ≤2.4e-7；方差 ddof0 差 1.8e-9，而 ddof1 差 2.0e-3，确认保存的是总体方差；MI 全部非负。对象 derived 的 EE/MI/Gini-EU 与我方差 0；保存熵和 ÷15 等于图像均值分数。micro 2888 错误上 MSP AUROC 0.8187549（sklearn）对表 0.8187549，MI AUROC 0.7901984 一致。证据：`objects/treesatai__dofa__frozen__mc_dropout__42/`。
+
+**2. 分割 MC 全图 summary 与 raw — PASS。** 子集图 ROI_05830 的 30 draw 均值与全图保存概率差 2.98e-8；TU/EE/MI 差 ≤6e-8；逐类 variance ddof0 差 2.3e-10；Gini TU−Σvar 与 raw 直接 EE 差 4e-16；valid_mask 全 True 且等于 label≠255。per_image 的 EE 0.2369028、MI 0.0080501、Gini-EU 0.00118657、错误率 0.0544085 一致；像素 MSP AUROC 0.9411131、MI AUROC 0.6554013 与 pixel_metrics 一致。
+
+**3. Off 对象与 MC 同 checkpoint — PASS。** EuroSAT DOFA frozen Off 42 保存概率重算 acc 0.9848931、NLL 0.0504144、Brier 0.0241688、ECE15 0.0043392，与三方表 Off_* 及 done.json 一致；softmax(logits) 与概率差 2e-7。`metrics_and_provenance.json` 标 same_checkpoint_as_mc=True，checkpoint sha ec70e798… 与三方表一致，评估为保存特征+eval head、无 backbone 前向。
+
+**4. SpaceNet7 建筑物保留 — PASS，含表述确认。** D42 在 0.5 覆盖时我方 fractional 接纳 576 图（切点无 tie），保留建筑物像素 580530/4027508 = 0.144141 与表一致；两图 support 从源标签重算（10131、1022）一致；16 对象范围 0.117697–0.188230 对应报告 11.77%–18.82%。该量是真值像素**内容保留比例**：同一接纳集内建筑物 recall 只有 0.0345（全集 0.0551），两者不同，报告与图注写法正确。risk@0.5 = 0.0218396 为图像等权；SpaceNet7 每图有效像素均为 50176，因此等权与像素加权数值相同，Cloud 亦同（975 图全 50176），报告改用“图像等权有效像素错误比例”是准确的。
+
+**5. 配对范围与 NA 传播 — PASS。** pixel_paired MC−Off Cloud DOFA frozen MSP AUROC：共同有效 26/32，均差 0.000836，我方独立组 bootstrap 区间 [-1.3e-5, 2.14e-3] 对表 [-2.8e-5, 2.23e-3]；DE−D42 行共同有效 25/32 且总数保留。paired_effects 分割 contrasts 中没有 DE_minus_mean_D_members，三成员对照只在 `DE_versus_three_member_core_metrics.csv` 引用主表指标，与用户范围一致。checks_delta 为 27 PASS + 2 UNKNOWN（C01/C06）+ FUP01–07 PASS、FUP08 NA；analysis_applicability 704 PASS、412 显式 NA 均附原因。资源：done.json 时长和 16.51 min、峰值 RSS 3.67 GiB 与 resource_summary.json 一致，且已声明不含实现/审阅/制图。
+
+**6. 报告数字与表一致 — PASS。** EuroSAT MSP AUROC 0.9221–0.9781（40 对象）、Tree micro 0.8120–0.8279（28）、Cloud/Space risk@0.5 与基率范围、TreeSat 10 个 MC/DE 的 MI−MSP 全为负（−0.1520 至 −0.0190）、EuroSAT −0.0236 至 +0.0021、TS AUROC 差 −0.002579 至 +0.000126、8/12 ECE 下降、精度敏感性最大 1.75e-5/4.85e-6/3.23e-6 均与 CSV 吻合。
+
+### 需加强表述（非代码/重算问题）
+
+- **图表可读性**：`risk_coverage_spacenet7` 中 MC(T=30) 橙线被 MC Off 紫线完全遮盖（两曲线最大差 3.6e-4），读者看不到 MC 曲线。建议改线型/透明度或在图注写明重合。其余图注单位与数据源已核对。
+- **TreeSat image_hamming 单元的 MI/MSP AUROC 为 NaN**（连续损失）是正确的 NA，但 `within_predictor_score_effects.csv` 中这些行 valid_bootstraps=0，汇总时勿计入“区间跨 0”统计。
+- 报告写 MI−MSP 结论时应保留“head-only dropout p=0.1、单组三成员 DE”的限定，草稿已如此。
+- E 的 EE 差分之差等于 ee_minus_oracle 的差分之差（oracle 交互为 0），本质是有限样本偏差随 a 变号；草稿表述“非加性不证明物理耦合”成立，不应升级为新理论。
+
+### 总体判断
+
+- **阻断问题：无。** 未发现需要修改分析代码、重算任何对象或补充实验/训练/前向的错误。
+- 已确认的实现修订（bool 相关性、class_names 读取、空 CSV 跳过）不影响数值定义；修前完成对象已直接复算一致。
+- 保留边界：C01/C06 DOFA–EuroSAT 来源 UNKNOWN；全部新分析为已查看 test 上的探索性结果；逐项区间为条件区间，不构成校正后的全家族显著性主张；分割像素结论仅覆盖固定 32 图与 seed42 主对象。
+
+状态汇总：抽查的 8 个源数据对象 PASS；E 数学 PASS；配对范围/NA/资源 PASS；C01/C06 UNKNOWN（历史，不由本轮解决）；未抽源数据的 92 对象为表间一致性核对，不宣称逐一复算。

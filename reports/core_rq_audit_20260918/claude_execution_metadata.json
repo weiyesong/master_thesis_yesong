@@ -1,0 +1,24 @@
+{
+  "claude_independent_raw.json": {
+    "session_id": "f9d64e78-5c9d-4cc3-986d-46af9cd0c738",
+    "is_error": false,
+    "stop_reason": "end_turn",
+    "num_turns": 52,
+    "duration_ms": 626985,
+    "permission_denials": [],
+    "models": [
+      "claude-fable-5-1"
+    ]
+  },
+  "claude_cross_review_raw.json": {
+    "session_id": "f9d64e78-5c9d-4cc3-986d-46af9cd0c738",
+    "is_error": false,
+    "stop_reason": "end_turn",
+    "num_turns": 3,
+    "duration_ms": 93935,
+    "permission_denials": [],
+    "models": [
+      "claude-fable-5-1"
+    ]
+  }
+}

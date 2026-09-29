@@ -1,0 +1,82 @@
+{
+  "valid": true,
+  "errors": [],
+  "total_samples": 27000,
+  "split_counts": {
+    "train": 18866,
+    "val": 2707,
+    "calibration": 2713,
+    "test": 2714
+  },
+  "class_distribution": {
+    "train": {
+      "AnnualCrop": 2100,
+      "Forest": 2100,
+      "HerbaceousVegetation": 2100,
+      "Highway": 1750,
+      "Industrial": 1750,
+      "Pasture": 1400,
+      "PermanentCrop": 1750,
+      "Residential": 2100,
+      "River": 1750,
+      "SeaLake": 2066
+    },
+    "val": {
+      "AnnualCrop": 300,
+      "Forest": 300,
+      "HerbaceousVegetation": 300,
+      "Highway": 250,
+      "Industrial": 250,
+      "Pasture": 200,
+      "PermanentCrop": 250,
+      "Residential": 300,
+      "River": 250,
+      "SeaLake": 307
+    },
+    "calibration": {
+      "AnnualCrop": 300,
+      "Forest": 300,
+      "HerbaceousVegetation": 300,
+      "Highway": 250,
+      "Industrial": 250,
+      "Pasture": 200,
+      "PermanentCrop": 250,
+      "Residential": 300,
+      "River": 250,
+      "SeaLake": 313
+    },
+    "test": {
+      "AnnualCrop": 300,
+      "Forest": 300,
+      "HerbaceousVegetation": 300,
+      "Highway": 250,
+      "Industrial": 250,
+      "Pasture": 200,
+      "PermanentCrop": 250,
+      "Residential": 300,
+      "River": 250,
+      "SeaLake": 314
+    }
+  },
+  "duplicate_sample_ids": [],
+  "duplicate_file_paths": [],
+  "missing_files": [],
+  "split_intersections": {
+    "train__val": [],
+    "train__calibration": [],
+    "train__test": [],
+    "val__calibration": [],
+    "val__test": [],
+    "calibration__test": []
+  },
+  "cross_split_duplicate_hashes": [],
+  "cross_split_spatial_groups": [],
+  "generation_seed": 20260803,
+  "ratios": {
+    "train": 0.7,
+    "val": 0.1,
+    "calibration": 0.1,
+    "test": 0.1
+  },
+  "grouped_spatial_edges_within_20m": 20026
+}

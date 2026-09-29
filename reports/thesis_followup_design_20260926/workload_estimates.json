@@ -1,0 +1,388 @@
+{
+  "baseline": {
+    "unique_neural_training_runs": 72,
+    "deterministic_runs": 48,
+    "mc_runs": 24,
+    "deterministic_run_wall_hours": 45.94930672491193,
+    "mc_run_wall_hours": 18.910945097225348,
+    "total_cumulative_run_wall_hours": 64.86025182213727,
+    "warning": "Stored cumulative run wall times; not GPU-hours or project elapsed time. DE reuses D runs; do not double count."
+  },
+  "historical_training_strata": [
+    {
+      "method": "deterministic",
+      "dataset": "eurosat",
+      "adaptation": "frozen",
+      "runs": 6,
+      "cumulative_run_wall_hours": 2.5142176424330684,
+      "median_run_minutes": 23.98518845238431,
+      "min_run_minutes": 16.441444522173455,
+      "max_run_minutes": 34.88502758274165
+    },
+    {
+      "method": "deterministic",
+      "dataset": "eurosat",
+      "adaptation": "full_finetune",
+      "runs": 6,
+      "cumulative_run_wall_hours": 6.308523315869582,
+      "median_run_minutes": 67.2440783870484,
+      "min_run_minutes": 40.259053638624025,
+      "max_run_minutes": 76.35707098057804
+    },
+    {
+      "method": "deterministic",
+      "dataset": "treesatai",
+      "adaptation": "frozen",
+      "runs": 6,
+      "cumulative_run_wall_hours": 1.7014182240440925,
+      "median_run_minutes": 17.857446879233855,
+      "min_run_minutes": 11.986117739137262,
+      "max_run_minutes": 21.943784127384426
+    },
+    {
+      "method": "deterministic",
+      "dataset": "treesatai",
+      "adaptation": "full_finetune",
+      "runs": 6,
+      "cumulative_run_wall_hours": 2.30555580458371,
+      "median_run_minutes": 22.44651486716078,
+      "min_run_minutes": 14.592337051266805,
+      "max_run_minutes": 32.848774883414926
+    },
+    {
+      "method": "deterministic",
+      "dataset": "cloudsen12",
+      "adaptation": "frozen",
+      "runs": 6,
+      "cumulative_run_wall_hours": 6.243547979764278,
+      "median_run_minutes": 63.22216183858303,
+      "min_run_minutes": 48.48723111652459,
+      "max_run_minutes": 82.42616751117943
+    },
+    {
+      "method": "deterministic",
+      "dataset": "cloudsen12",
+      "adaptation": "full_finetune",
+      "runs": 6,
+      "cumulative_run_wall_hours": 12.973056148195433,
+      "median_run_minutes": 129.84604213651426,
+      "min_run_minutes": 96.85429917634465,
+      "max_run_minutes": 162.49562110995564
+    },
+    {
+      "method": "deterministic",
+      "dataset": "spacenet7",
+      "adaptation": "frozen",
+      "runs": 6,
+      "cumulative_run_wall_hours": 6.019189867797411,
+      "median_run_minutes": 64.28934819993252,
+      "min_run_minutes": 36.11390651439627,
+      "max_run_minutes": 75.50736793524896
+    },
+    {
+      "method": "deterministic",
+      "dataset": "spacenet7",
+      "adaptation": "full_finetune",
+      "runs": 6,
+      "cumulative_run_wall_hours": 7.88379774222435,
+      "median_run_minutes": 72.39736886438914,
+      "min_run_minutes": 48.91171679707865,
+      "max_run_minutes": 110.51048439022465
+    },
+    {
+      "method": "mc_dropout",
+      "dataset": "eurosat",
+      "adaptation": "frozen",
+      "runs": 4,
+      "cumulative_run_wall_hours": 1.4702082773569103,
+      "median_run_minutes": 19.93133036961301,
+      "min_run_minutes": 14.660408750145386,
+      "max_run_minutes": 33.68942715204321
+    },
+    {
+      "method": "mc_dropout",
+      "dataset": "eurosat",
+      "adaptation": "full_finetune",
+      "runs": 2,
+      "cumulative_run_wall_hours": 1.991193184092796,
+      "median_run_minutes": 59.73579552278388,
+      "min_run_minutes": 44.25252527866202,
+      "max_run_minutes": 75.21906576690574
+    },
+    {
+      "method": "mc_dropout",
+      "dataset": "treesatai",
+      "adaptation": "frozen",
+      "runs": 2,
+      "cumulative_run_wall_hours": 0.6364804447331052,
+      "median_run_minutes": 19.094413341993157,
+      "min_run_minutes": 15.74477958722661,
+      "max_run_minutes": 22.4440470967597
+    },
+    {
+      "method": "mc_dropout",
+      "dataset": "treesatai",
+      "adaptation": "full_finetune",
+      "runs": 4,
+      "cumulative_run_wall_hours": 1.7785163340715464,
+      "median_run_minutes": 30.502957825548947,
+      "min_run_minutes": 13.929513860695685,
+      "max_run_minutes": 31.775550532499206
+    },
+    {
+      "method": "mc_dropout",
+      "dataset": "cloudsen12",
+      "adaptation": "frozen",
+      "runs": 4,
+      "cumulative_run_wall_hours": 3.910947663616389,
+      "median_run_minutes": 62.63628509946478,
+      "min_run_minutes": 44.28642857793408,
+      "max_run_minutes": 65.0978610401197
+    },
+    {
+      "method": "mc_dropout",
+      "dataset": "cloudsen12",
+      "adaptation": "full_finetune",
+      "runs": 2,
+      "cumulative_run_wall_hours": 4.0698189219164975,
+      "median_run_minutes": 122.09456765749492,
+      "min_run_minutes": 96.11414354971299,
+      "max_run_minutes": 148.07499176527685
+    },
+    {
+      "method": "mc_dropout",
+      "dataset": "spacenet7",
+      "adaptation": "frozen",
+      "runs": 2,
+      "cumulative_run_wall_hours": 1.6740638072147138,
+      "median_run_minutes": 50.22191421644141,
+      "min_run_minutes": 36.849340128991756,
+      "max_run_minutes": 63.594488303891076
+    },
+    {
+      "method": "mc_dropout",
+      "dataset": "spacenet7",
+      "adaptation": "full_finetune",
+      "runs": 4,
+      "cumulative_run_wall_hours": 3.379716464223392,
+      "median_run_minutes": 43.051595305123676,
+      "min_run_minutes": 31.790290919536105,
+      "max_run_minutes": 84.88950632362005
+    }
+  ],
+  "archive": {
+    "records": 208,
+    "classification_GiB": 0.5912872618064284,
+    "segmentation_GiB": 64.70989129971713,
+    "role_sizes": {
+      "checkpoint_free_analysis_script": {
+        "files": 1,
+        "bytes": 7439,
+        "GiB": 6.928108632564545e-06
+      },
+      "classification_ensemble_mean": {
+        "files": 8,
+        "bytes": 1132256,
+        "GiB": 0.0010544955730438232
+      },
+      "classification_ensemble_members": {
+        "files": 8,
+        "bytes": 4535540,
+        "GiB": 0.004224050790071487
+      },
+      "classification_deterministic_predictions": {
+        "files": 24,
+        "bytes": 134900367,
+        "GiB": 0.12563575711101294
+      },
+      "classification_deterministic_embeddings": {
+        "files": 18,
+        "bytes": 229891190,
+        "GiB": 0.21410285495221615
+      },
+      "classification_mc_embeddings": {
+        "files": 12,
+        "bytes": 161421386,
+        "GiB": 0.15033538080751896
+      },
+      "classification_mc_raw_passes": {
+        "files": 12,
+        "bytes": 75821864,
+        "GiB": 0.07061461359262466
+      },
+      "classification_mc_saved_summaries": {
+        "files": 12,
+        "bytes": 5111871,
+        "GiB": 0.004760800860822201
+      },
+      "classification_temperature_scaling_predictions": {
+        "files": 24,
+        "bytes": 22075389,
+        "GiB": 0.020559308119118214
+      },
+      "segmentation_ensemble_mean": {
+        "files": 8,
+        "bytes": 7098534011,
+        "GiB": 6.6110249711200595
+      },
+      "segmentation_ensemble_member_subset": {
+        "files": 8,
+        "bytes": 387034838,
+        "GiB": 0.36045428179204464
+      },
+      "segmentation_deterministic_predictions": {
+        "files": 24,
+        "bytes": 33979258425,
+        "GiB": 31.64565043989569
+      },
+      "segmentation_representations": {
+        "files": 24,
+        "bytes": 72978791,
+        "GiB": 0.06796679552644491
+      },
+      "fixed_subset_definition": {
+        "files": 1,
+        "bytes": 4032,
+        "GiB": 3.7550926208496094e-06
+      },
+      "segmentation_mc_full_maps": {
+        "files": 12,
+        "bytes": 22101068763,
+        "GiB": 20.58322426211089
+      },
+      "segmentation_mc_raw_subset": {
+        "files": 12,
+        "bytes": 5842837855,
+        "GiB": 5.44156679417938
+      }
+    },
+    "note": "Archived compressed bytes, not peak RAM, exact A-package bytes, or new storage requirement. Off controls are stored outside this archive."
+  },
+  "packages": [
+    {
+      "package": "A_existing_predictions",
+      "new_training_min": 0,
+      "new_training_max": 0,
+      "new_backbone_dataset_evaluations": 0,
+      "classification_prediction_objects": 68,
+      "segmentation_primary_prediction_objects": 32,
+      "note": "Full-image statistics and common-subset pixel diagnostics; no new model inference.",
+      "new_training_fraction_of_72": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "package": "B_pooled_CKA",
+      "new_training_min": 0,
+      "new_training_max": 0,
+      "existing_paired_comparisons": 21,
+      "optional_missing_embedding_evaluations": 6,
+      "optional_unique_encoder_evaluations_if_frozen_equivalence_verified": 4,
+      "new_training_fraction_of_72": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "package": "C_corruption_D_only",
+      "new_training_min": 0,
+      "new_training_max": 0,
+      "new_backbone_dataset_evaluations": 8,
+      "new_head_dataset_evaluations": 8,
+      "note": "EuroSAT 4 cells times 2 new severities; each evaluation covers 2714 images.",
+      "new_training_fraction_of_72": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "package": "C_corruption_all_methods",
+      "new_training_min": 0,
+      "new_training_max": 0,
+      "new_backbone_dataset_evaluations": 32,
+      "new_head_dataset_evaluations": 272,
+      "unique_backbone_evaluations_if_frozen_cross_checkpoint_equivalence_verified": 20,
+      "breakdown": {
+        "deterministic_member_backbone": 24,
+        "mc_backbone": 8,
+        "deterministic_member_head": 24,
+        "mc_stochastic_head": 240,
+        "mc_off_head": 8
+      },
+      "note": "Conservative per-checkpoint encoding: 4 cells x 2 severities x (3 D members + 1 MC model); D42 reused from DE member; TS offline. Frozen D/MC encoders may share features only after state/preprocessing/extractor equivalence checks, reducing 32 to 20. The 272 head passes are not 272 backbone passes.",
+      "new_training_fraction_of_72": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "package": "D_module_factorial_2FM",
+      "new_training_min": 24,
+      "new_training_max": 24,
+      "total_training_positions": 24,
+      "note": "Current old endpoints use different recipes; budget all 24 positions under the new common protocol. Reuse requires actual matching evidence, not hypothetical endpoints.",
+      "new_training_fraction_of_72": [
+        0.3333333333333333,
+        0.3333333333333333
+      ]
+    },
+    {
+      "package": "D_module_factorial_1FM",
+      "new_training_min": 12,
+      "new_training_max": 12,
+      "total_training_positions": 12,
+      "new_training_fraction_of_72": [
+        0.16666666666666666,
+        0.16666666666666666
+      ]
+    },
+    {
+      "package": "E_toy",
+      "new_training_min": 0,
+      "new_training_max": 0,
+      "primary_factorial_conditions": 4,
+      "weighted_analytic_beta_terms_two_strata": 888,
+      "optional_sampling_condition_replicates": 80,
+      "optional_sampled_beta_posteriors": 160,
+      "note": "Primary analysis enumerates binomial counts analytically: 2 ambiguity x 2 strata x (21+201) count states. Optional 20 paired-data illustrations are not FM training runs.",
+      "new_training_fraction_of_72": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "package": "F_support_pilot",
+      "new_training_min": 6,
+      "new_training_max": 6,
+      "total_unique_training_positions": 6,
+      "model_input_states": 18,
+      "conditional_legacy_recipe_panopticon_eurosat_frozen_mc_new_runs": 5,
+      "conditional_legacy_recipe_dofa_eurosat_frozen_mc_new_runs": 3,
+      "note": "Budget all 6 under common optimizer-step control. Legacy reuse changes/limits the estimand and requires exact run matching. Panopticon EuroSAT frozen MC has only seed42; DOFA has 42/43/44. Subset and optimizer variation remain combined.",
+      "new_training_fraction_of_72": [
+        0.08333333333333333,
+        0.08333333333333333
+      ]
+    },
+    {
+      "package": "F_support_crossed",
+      "new_training_min": 12,
+      "new_training_max": 12,
+      "total_unique_training_positions": 12,
+      "model_input_states": 36,
+      "conditional_legacy_recipe_panopticon_eurosat_frozen_mc_new_runs": 11,
+      "conditional_legacy_recipe_dofa_eurosat_frozen_mc_new_runs": 9,
+      "note": "Budget all 12 under common optimizer-step control. 3 full-support optimizer seeds plus 3 subsets x 3 optimizer seeds low support; not 18. Conditional old-recipe reuse requires exact matching and carries its claim limitations. New training feature extraction may be needed.",
+      "new_training_fraction_of_72": [
+        0.16666666666666666,
+        0.16666666666666666
+      ]
+    }
+  ],
+  "inference_cost_scope": "C counts exact dataset-wide operations under head-only dropout feature reuse; no measured new end-to-end seconds.",
+  "source_sha256": {
+    "reports/core_rq_completion_20260921/published/tables/thesis_master_results.csv": "203bd7281f9eb4960c81fa92c7050b630175a90f93313183cabf04002088ed63",
+    "research_data/manifest.parquet": "00873ce8ac1d2c83f784f2df05b8573d88eec557c03fcbf3918cbad57217773e"
+  }
+}

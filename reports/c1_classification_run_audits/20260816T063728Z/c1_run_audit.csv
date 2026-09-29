@@ -1,0 +1,7 @@
+task,dataset,model,adaptation,seed,run_id,run_dir,status,promotion_eligible,best_epoch,best_validation_nll,best_validation_accuracy,best_validation_macro_f1,reported_test_accuracy_excluded,reported_test_macro_f1_excluded,reported_test_nll_excluded,reported_test_brier_excluded,reported_test_ece_excluded,error_count,errors
+classification,eurosat,panopticon,frozen,44,,,MISSING,False,,,,,,,,,,1,No completed non-dry-run candidate was discovered or supplied.
+classification,eurosat,panopticon,full_finetune,44,,,MISSING,False,,,,,,,,,,1,No completed non-dry-run candidate was discovered or supplied.
+classification_multilabel,treesatai,dofa,frozen,44,,,MISSING,False,,,,,,,,,,1,No completed non-dry-run candidate was discovered or supplied.
+classification_multilabel,treesatai,dofa,full_finetune,44,,,MISSING,False,,,,,,,,,,1,No completed non-dry-run candidate was discovered or supplied.
+classification_multilabel,treesatai,panopticon,frozen,44,,,MISSING,False,,,,,,,,,,1,No completed non-dry-run candidate was discovered or supplied.
+classification_multilabel,treesatai,panopticon,full_finetune,44,20260816T060624868595Z_treesatai_panopticon_full_finetune_seed44_d6d97c6a,/workspace/results/final_thesis/classification/treesatai_full_finetune/runs/20260816T060624868595Z_treesatai_panopticon_full_finetune_seed44_d6d97c6a,PROMOTABLE,True,1,0.2702595591545105,0.20000000298023224,0.16883984208106995,0.221,0.1960271104495312,0.25520544955130714,0.07494079566163814,0.007464281140166939,0,

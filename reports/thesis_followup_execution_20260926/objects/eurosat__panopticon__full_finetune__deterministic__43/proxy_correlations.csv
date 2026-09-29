@@ -1,0 +1,7 @@
+score_a,score_b,spearman,interpretation
+msp,negative_margin,0.9993310369592968,"proxy association, not source coupling"
+entropy,msp,0.9997700843187804,"proxy association, not source coupling"
+entropy,negative_margin,0.998512045132506,"proxy association, not source coupling"
+entropy,gini_total,0.999798558410836,"proxy association, not source coupling"
+gini_total,msp,0.9999936561189345,"proxy association, not source coupling"
+gini_total,negative_margin,0.9993010571550526,"proxy association, not source coupling"

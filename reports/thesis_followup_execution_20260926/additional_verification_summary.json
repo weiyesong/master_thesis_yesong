@@ -1,0 +1,8 @@
+{
+  "MC_raw_summary_checks": 60,
+  "TS_same_checkpoint_pairs": 12,
+  "EuroSAT_truth_checks": 40,
+  "all_passed": true,
+  "auxiliary_paths": 36,
+  "segmentation_member_mean_RC_scope": "Not executed beyond primary seed42. Three-member comparisons use existing core metrics; classification new RC has all three members."
+}

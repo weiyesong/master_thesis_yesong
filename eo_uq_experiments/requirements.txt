@@ -1,0 +1,6 @@
+torch
+torchvision
+pyarrow
+PyYAML
+timm
+GeoBenchV2 @ git+https://github.com/The-AI-Alliance/GEO-Bench-2.git@fd9d0b664e6fb0faba54636bdff4906634debd4b

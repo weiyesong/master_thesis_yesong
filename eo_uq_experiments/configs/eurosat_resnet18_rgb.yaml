@@ -1,0 +1,40 @@
+experiment:
+  name: eurosat_resnet18_rgb
+  seed: 42
+  device: auto
+
+data:
+  name: eurosat_rgb
+  channels: [B04, B03, B02]
+  wavelengths_nm: [665, 560, 490]
+  root: ./data
+  download: true
+  # Work around local Python CA-chain issues during torchvision downloads.
+  allow_insecure_ssl: true
+  image_size: 224
+  val_fraction: 0.2
+  num_workers: 4
+
+model:
+  name: resnet18
+  pretrained: true
+  freeze_backbone: true
+  num_classes: 10
+
+training:
+  epochs: 1
+  batch_size: 64
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  # Keep these null for full runs. Set small integers for quick local smoke tests.
+  limit_train_batches: null
+  limit_val_batches: null
+
+metrics:
+  ece_bins: 15
+
+outputs:
+  root: ./outputs
+  checkpoint_dir: ./outputs/checkpoints
+  log_dir: ./outputs/logs
+  results_csv: ./outputs/results.csv

@@ -1,0 +1,52 @@
+{
+  "created_at": "2026-09-22T14:05:41.188117+00:00",
+  "reason": "GPU collection softmax versus CPU export softmax at a near-tie pixel; align reporting exactly with stored predictions. Original records preserved.",
+  "canonical_metrics_file": "metrics_export_aligned.json",
+  "canonical_per_image_file": "per_image_metrics_export_aligned.csv",
+  "original_files_unchanged": true,
+  "no_inference_or_training": true,
+  "cpu_recomputed_softmax_max_export_error": 0.0,
+  "cpu_recomputed_argmax_export_difference": 0,
+  "original_confusion_matrix": [
+    [
+      52967931,
+      807313
+    ],
+    [
+      3640568,
+      386940
+    ]
+  ],
+  "canonical_confusion_matrix": [
+    [
+      52967930,
+      807314
+    ],
+    [
+      3640568,
+      386940
+    ]
+  ],
+  "scalar_metric_changes": {
+    "miou": -1.6985017281534454e-08,
+    "pixel_accuracy": -1.730021437218454e-08,
+    "ece_15": -1.7395961837696206e-08,
+    "nll": -2.3314742358948592e-09,
+    "brier": -7.687106784448616e-10,
+    "foreground_nll": 2.3652635405824185e-10,
+    "foreground_brier": 0.0,
+    "foreground_ece_15": -3.7143725595267796e-11
+  },
+  "artifact_hashes": {
+    "predictions.npz": "8b41a6bea41a211acb2c3762a535c5a3e57dcf70b8e0a3783dbcce1b17e3691a",
+    "metrics.json": "8ea79d11af4b6c2c6247f13b807840bb151ff584df907c74fdf164ab8a28edfc",
+    "completion.json": "201a29af0934d86f9cba51033af3f2aa575a3b59aeeac9479ece80dbe8d51c85",
+    "per_image_metrics.csv": "12907102e294a8f9edc575b0c08531c5a35e47a7b21ae549cdbef276a2813ede",
+    "metrics_export_aligned.json": "9056a05574ac718d42a638097d397ad98acb1c60841c6d878184f9f432190fc4",
+    "per_image_metrics_export_aligned.csv": "c6832132f2cdd695bbce75dc36f98e258492225a6002cdd6f32ff84ec189f50e"
+  },
+  "code_sha256": {
+    "reports/core_rq_completion_20260921/align_export_metrics.py": "a949d22236a20713a688d6819e7a80fd0d14ed0a7d1388466280617d35c2f6f4",
+    "scripts/segmentation_pipeline.py": "8d8a33047b0088667e4ae25542575cf682df504b2969dd7c4c602e44d5bd3b92"
+  }
+}

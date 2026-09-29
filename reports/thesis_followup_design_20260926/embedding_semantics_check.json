@@ -1,0 +1,24 @@
+{
+  "scope": "Representative within-file alias identity, not cross-seed equality, CKA or causal analysis",
+  "exporter": "scripts/prediction_export.py:250-255 saves the same embedding_values under both keys",
+  "samples": [
+    {
+      "path": "research_data/artifacts/classification/deterministic/eurosat/panopticon/frozen/seed42/embeddings.npz",
+      "aliases_exactly_equal": true,
+      "dataset": "eurosat",
+      "model": "panopticon"
+    },
+    {
+      "path": "research_data/artifacts/classification/deterministic/treesatai/dofa/frozen/seed42/embeddings.npz",
+      "aliases_exactly_equal": true,
+      "dataset": "treesatai",
+      "model": "dofa"
+    },
+    {
+      "path": "research_data/artifacts/classification/deterministic/treesatai/panopticon/frozen/seed42/embeddings.npz",
+      "aliases_exactly_equal": true,
+      "dataset": "treesatai",
+      "model": "panopticon"
+    }
+  ]
+}

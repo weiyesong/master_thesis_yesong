@@ -1,0 +1,5 @@
+score,mean,std_across_samples,score_semantics
+msp,0.09449748276301262,0.03544685970168983,Bernoulli per-label then mean
+entropy,0.24046478458936005,0.06981397140384955,Bernoulli per-label then mean
+negative_margin,-0.8110050344739749,0.07089371940337964,Bernoulli per-label then mean
+gini_total,0.07154927507699103,0.02380847347908537,Bernoulli per-label then mean

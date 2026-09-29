@@ -1,0 +1,9 @@
+score,mean,std_across_samples,score_semantics
+msp,0.10067237013288323,0.03262356721672916,Bernoulli per-label then mean
+entropy,0.2551144642337698,0.0616816581529588,Bernoulli per-label then mean
+negative_margin,-0.7986552597342336,0.06524713443345832,Bernoulli per-label then mean
+gini_total,0.07612017971385741,0.021464763149384565,Bernoulli per-label then mean
+expected_entropy,0.2528706504061949,0.0611254565994727,Bernoulli per-label then mean
+mutual_information,0.0022438139069572817,0.0008340872287159848,Bernoulli per-label then mean
+gini_expected,0.07549364935303121,0.021256256959629575,Bernoulli per-label then mean
+gini_disagreement,0.0006265303930313534,0.00033736727477220855,Bernoulli per-label then mean

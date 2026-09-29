@@ -1,0 +1,3221 @@
+[
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "seed": "42",
+    "config_paths": [
+      "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/resolved_config.yaml",
+      "results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 100,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.0004,
+      "backbone_learning_rate": 0.0004,
+      "head_learning_rate": 0.004,
+      "weight_decay": 0.0,
+      "warmup": {
+        "enabled": true,
+        "epochs": 5,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "frozen",
+      "head": {
+        "architecture": "batchnorm_linear",
+        "batchnorm_affine": false,
+        "batchnorm_eps": 1e-06,
+        "dropout": 0.0
+      },
+      "global_pool": false,
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "freeze_backbone": true
+    },
+    "full_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "pos_embed"
+      ],
+      "head": {
+        "architecture": "batchnorm_linear",
+        "batchnorm_affine": false,
+        "batchnorm_eps": 1e-06,
+        "dropout": 0.0
+      },
+      "global_pool": false,
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "freeze_backbone": false
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "seed": "43",
+    "config_paths": [
+      "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/resolved_config.yaml",
+      "results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 100,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.0004,
+      "backbone_learning_rate": 0.0004,
+      "head_learning_rate": 0.004,
+      "weight_decay": 0.0,
+      "warmup": {
+        "enabled": true,
+        "epochs": 5,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "frozen",
+      "head": {
+        "architecture": "batchnorm_linear",
+        "batchnorm_affine": false,
+        "batchnorm_eps": 1e-06,
+        "dropout": 0.0
+      },
+      "global_pool": false,
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "freeze_backbone": true
+    },
+    "full_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "pos_embed"
+      ],
+      "head": {
+        "architecture": "batchnorm_linear",
+        "batchnorm_affine": false,
+        "batchnorm_eps": 1e-06,
+        "dropout": 0.0
+      },
+      "global_pool": false,
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "freeze_backbone": false
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "seed": "44",
+    "config_paths": [
+      "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/resolved_config.yaml",
+      "results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 100,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.0004,
+      "backbone_learning_rate": 0.0004,
+      "head_learning_rate": 0.004,
+      "weight_decay": 0.0,
+      "warmup": {
+        "enabled": true,
+        "epochs": 5,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "frozen",
+      "head": {
+        "architecture": "batchnorm_linear",
+        "batchnorm_affine": false,
+        "batchnorm_eps": 1e-06,
+        "dropout": 0.0
+      },
+      "global_pool": false,
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "freeze_backbone": true
+    },
+    "full_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "pos_embed"
+      ],
+      "head": {
+        "architecture": "batchnorm_linear",
+        "batchnorm_affine": false,
+        "batchnorm_eps": 1e-06,
+        "dropout": 0.0
+      },
+      "global_pool": false,
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "freeze_backbone": false
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "seed": "42",
+    "config_paths": [
+      "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8/resolved_config.yaml",
+      "results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      }
+    },
+    "full_training": {
+      "epochs": 100,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.0004,
+      "backbone_learning_rate": 0.0004,
+      "head_learning_rate": 0.004,
+      "weight_decay": 0.0,
+      "warmup": {
+        "enabled": true,
+        "epochs": 5,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "panopticon",
+      "actual_wavelengths": [
+        664.6300422881802,
+        559.5987534818435,
+        492.9971095687347
+      ],
+      "actual_wavelength_units": "nanometers",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "frozen",
+      "head": {
+        "architecture": "batchnorm_linear",
+        "batchnorm_affine": false,
+        "batchnorm_eps": 1e-06,
+        "dropout": 0.0
+      },
+      "freeze_backbone": true
+    },
+    "full_model": {
+      "name": "panopticon",
+      "actual_wavelengths": [
+        664.6300422881802,
+        559.5987534818435,
+        492.9971095687347
+      ],
+      "actual_wavelength_units": "nanometers",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "model.patch_embed.chnfus.chnemb.embed_transmit",
+        "model.patch_embed.chnfus.chnemb.embed_receive",
+        "model.patch_embed.chnfus.chnemb.embed_orbit"
+      ],
+      "head": {
+        "architecture": "batchnorm_linear",
+        "batchnorm_affine": false,
+        "batchnorm_eps": 1e-06,
+        "dropout": 0.0
+      },
+      "freeze_backbone": false
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "seed": "43",
+    "config_paths": [
+      "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/resolved_config.yaml",
+      "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T023205454878Z_eurosat_panopticon_full_finetune_seed43_e304fee6/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      }
+    },
+    "full_training": {
+      "epochs": 100,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.0004,
+      "backbone_learning_rate": 0.0004,
+      "head_learning_rate": 0.004,
+      "weight_decay": 0.0,
+      "warmup": {
+        "enabled": true,
+        "epochs": 5,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "panopticon",
+      "actual_wavelengths": [
+        664.6300422881802,
+        559.5987534818435,
+        492.9971095687347
+      ],
+      "actual_wavelength_units": "nanometers",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "frozen",
+      "head": {
+        "architecture": "batchnorm_linear",
+        "batchnorm_affine": false,
+        "batchnorm_eps": 1e-06,
+        "dropout": 0.0
+      },
+      "freeze_backbone": true
+    },
+    "full_model": {
+      "name": "panopticon",
+      "actual_wavelengths": [
+        664.6300422881802,
+        559.5987534818435,
+        492.9971095687347
+      ],
+      "actual_wavelength_units": "nanometers",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "model.patch_embed.chnfus.chnemb.embed_transmit",
+        "model.patch_embed.chnfus.chnemb.embed_receive",
+        "model.patch_embed.chnfus.chnemb.embed_orbit"
+      ],
+      "head": {
+        "architecture": "batchnorm_linear",
+        "batchnorm_affine": false,
+        "batchnorm_eps": 1e-06,
+        "dropout": 0.0
+      },
+      "freeze_backbone": false
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "seed": "44",
+    "config_paths": [
+      "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260816T004654290690Z_eurosat_panopticon_frozen_bnlinear_seed44_4f21cdf8/resolved_config.yaml",
+      "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T034514128137Z_eurosat_panopticon_full_finetune_seed44_0883c676/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      }
+    },
+    "full_training": {
+      "epochs": 100,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.0004,
+      "backbone_learning_rate": 0.0004,
+      "head_learning_rate": 0.004,
+      "weight_decay": 0.0,
+      "warmup": {
+        "enabled": true,
+        "epochs": 5,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "panopticon",
+      "actual_wavelengths": [
+        664.6300422881802,
+        559.5987534818435,
+        492.9971095687347
+      ],
+      "actual_wavelength_units": "nanometers",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "frozen",
+      "head": {
+        "architecture": "batchnorm_linear",
+        "batchnorm_affine": false,
+        "batchnorm_eps": 1e-06,
+        "dropout": 0.0
+      },
+      "freeze_backbone": true
+    },
+    "full_model": {
+      "name": "panopticon",
+      "actual_wavelengths": [
+        664.6300422881802,
+        559.5987534818435,
+        492.9971095687347
+      ],
+      "actual_wavelength_units": "nanometers",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "model.patch_embed.chnfus.chnemb.embed_transmit",
+        "model.patch_embed.chnfus.chnemb.embed_receive",
+        "model.patch_embed.chnfus.chnemb.embed_orbit"
+      ],
+      "head": {
+        "architecture": "batchnorm_linear",
+        "batchnorm_affine": false,
+        "batchnorm_eps": 1e-06,
+        "dropout": 0.0
+      },
+      "freeze_backbone": false
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "seed": "42",
+    "config_paths": [
+      "results/final_thesis/classification/treesatai_frozen/runs/20260815T202926010453Z_treesatai_dofa_frozen_seed42_3dae0e5b/resolved_config.yaml",
+      "results/final_thesis/classification/treesatai_full_finetune/runs/20260815T222120553265Z_treesatai_dofa_full_finetune_seed42_9845090f/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 100,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.0001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": true,
+        "epochs": 5,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "dofa",
+      "actual_wavelengths": [
+        0.49,
+        0.56,
+        0.665,
+        0.842,
+        0.705,
+        0.74,
+        0.783,
+        0.865,
+        1.61,
+        2.19,
+        0.443,
+        0.945
+      ],
+      "actual_wavelength_units": "micrometers",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "frozen",
+      "head": {
+        "architecture": "linear",
+        "dropout": 0.0
+      },
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "freeze_backbone": true
+    },
+    "full_model": {
+      "name": "dofa",
+      "actual_wavelengths": [
+        0.49,
+        0.56,
+        0.665,
+        0.842,
+        0.705,
+        0.74,
+        0.783,
+        0.865,
+        1.61,
+        2.19,
+        0.443,
+        0.945
+      ],
+      "actual_wavelength_units": "micrometers",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "pos_embed"
+      ],
+      "head": {
+        "architecture": "linear",
+        "dropout": 0.0
+      },
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "freeze_backbone": false
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "seed": "43",
+    "config_paths": [
+      "results/final_thesis/classification/treesatai_frozen/runs/20260816T012149418043Z_treesatai_dofa_frozen_seed43_d484c9b3/resolved_config.yaml",
+      "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T050303117850Z_treesatai_dofa_full_finetune_seed43_e40f79f2/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 100,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.0001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": true,
+        "epochs": 5,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "dofa",
+      "actual_wavelengths": [
+        0.49,
+        0.56,
+        0.665,
+        0.842,
+        0.705,
+        0.74,
+        0.783,
+        0.865,
+        1.61,
+        2.19,
+        0.443,
+        0.945
+      ],
+      "actual_wavelength_units": "micrometers",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "frozen",
+      "head": {
+        "architecture": "linear",
+        "dropout": 0.0
+      },
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "freeze_backbone": true
+    },
+    "full_model": {
+      "name": "dofa",
+      "actual_wavelengths": [
+        0.49,
+        0.56,
+        0.665,
+        0.842,
+        0.705,
+        0.74,
+        0.783,
+        0.865,
+        1.61,
+        2.19,
+        0.443,
+        0.945
+      ],
+      "actual_wavelength_units": "micrometers",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "pos_embed"
+      ],
+      "head": {
+        "architecture": "linear",
+        "dropout": 0.0
+      },
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "freeze_backbone": false
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "seed": "44",
+    "config_paths": [
+      "results/final_thesis/classification/treesatai_frozen/runs/20260816T013516128703Z_treesatai_dofa_frozen_seed44_f16a2a61/resolved_config.yaml",
+      "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T051814359617Z_treesatai_dofa_full_finetune_seed44_6a6f8fd9/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 100,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.0001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": true,
+        "epochs": 5,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "dofa",
+      "actual_wavelengths": [
+        0.49,
+        0.56,
+        0.665,
+        0.842,
+        0.705,
+        0.74,
+        0.783,
+        0.865,
+        1.61,
+        2.19,
+        0.443,
+        0.945
+      ],
+      "actual_wavelength_units": "micrometers",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "frozen",
+      "head": {
+        "architecture": "linear",
+        "dropout": 0.0
+      },
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "freeze_backbone": true
+    },
+    "full_model": {
+      "name": "dofa",
+      "actual_wavelengths": [
+        0.49,
+        0.56,
+        0.665,
+        0.842,
+        0.705,
+        0.74,
+        0.783,
+        0.865,
+        1.61,
+        2.19,
+        0.443,
+        0.945
+      ],
+      "actual_wavelength_units": "micrometers",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "pos_embed"
+      ],
+      "head": {
+        "architecture": "linear",
+        "dropout": 0.0
+      },
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "freeze_backbone": false
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "seed": "42",
+    "config_paths": [
+      "results/final_thesis/classification/treesatai_frozen/runs/20260815T204959852998Z_treesatai_panopticon_frozen_seed42_5c8cc8e4/resolved_config.yaml",
+      "results/final_thesis/classification/treesatai_full_finetune/runs/20260815T223733845323Z_treesatai_panopticon_full_finetune_seed42_432b3047/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 100,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.0001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": true,
+        "epochs": 5,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "panopticon",
+      "actual_wavelengths": [
+        490.0,
+        560.0,
+        665.0,
+        842.0,
+        705.0,
+        740.0,
+        783.0,
+        865.0,
+        1610.0,
+        2190.0,
+        443.0,
+        945.0
+      ],
+      "actual_wavelength_units": "nanometers",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "frozen",
+      "head": {
+        "architecture": "linear",
+        "dropout": 0.0
+      },
+      "freeze_backbone": true
+    },
+    "full_model": {
+      "name": "panopticon",
+      "actual_wavelengths": [
+        490.0,
+        560.0,
+        665.0,
+        842.0,
+        705.0,
+        740.0,
+        783.0,
+        865.0,
+        1610.0,
+        2190.0,
+        443.0,
+        945.0
+      ],
+      "actual_wavelength_units": "nanometers",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "model.patch_embed.chnfus.chnemb.embed_transmit",
+        "model.patch_embed.chnfus.chnemb.embed_receive",
+        "model.patch_embed.chnfus.chnemb.embed_orbit"
+      ],
+      "head": {
+        "architecture": "linear",
+        "dropout": 0.0
+      },
+      "freeze_backbone": false
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "seed": "43",
+    "config_paths": [
+      "results/final_thesis/classification/treesatai_frozen/runs/20260816T014811037405Z_treesatai_panopticon_frozen_seed43_baa4ef7a/resolved_config.yaml",
+      "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T053348883249Z_treesatai_panopticon_full_finetune_seed43_b7ae4087/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 100,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.0001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": true,
+        "epochs": 5,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "panopticon",
+      "actual_wavelengths": [
+        490.0,
+        560.0,
+        665.0,
+        842.0,
+        705.0,
+        740.0,
+        783.0,
+        865.0,
+        1610.0,
+        2190.0,
+        443.0,
+        945.0
+      ],
+      "actual_wavelength_units": "nanometers",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "frozen",
+      "head": {
+        "architecture": "linear",
+        "dropout": 0.0
+      },
+      "freeze_backbone": true
+    },
+    "full_model": {
+      "name": "panopticon",
+      "actual_wavelengths": [
+        490.0,
+        560.0,
+        665.0,
+        842.0,
+        705.0,
+        740.0,
+        783.0,
+        865.0,
+        1610.0,
+        2190.0,
+        443.0,
+        945.0
+      ],
+      "actual_wavelength_units": "nanometers",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "model.patch_embed.chnfus.chnemb.embed_transmit",
+        "model.patch_embed.chnfus.chnemb.embed_receive",
+        "model.patch_embed.chnfus.chnemb.embed_orbit"
+      ],
+      "head": {
+        "architecture": "linear",
+        "dropout": 0.0
+      },
+      "freeze_backbone": false
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "seed": "44",
+    "config_paths": [
+      "results/final_thesis/classification/treesatai_frozen/runs/20260816T020829175076Z_treesatai_panopticon_frozen_seed44_341d0eca/resolved_config.yaml",
+      "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T060624868595Z_treesatai_panopticon_full_finetune_seed44_d6d97c6a/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 100,
+      "batch_size": 64,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.0001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": true,
+        "epochs": 5,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "nll",
+        "mode": "min"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "panopticon",
+      "actual_wavelengths": [
+        490.0,
+        560.0,
+        665.0,
+        842.0,
+        705.0,
+        740.0,
+        783.0,
+        865.0,
+        1610.0,
+        2190.0,
+        443.0,
+        945.0
+      ],
+      "actual_wavelength_units": "nanometers",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "frozen",
+      "head": {
+        "architecture": "linear",
+        "dropout": 0.0
+      },
+      "freeze_backbone": true
+    },
+    "full_model": {
+      "name": "panopticon",
+      "actual_wavelengths": [
+        490.0,
+        560.0,
+        665.0,
+        842.0,
+        705.0,
+        740.0,
+        783.0,
+        865.0,
+        1610.0,
+        2190.0,
+        443.0,
+        945.0
+      ],
+      "actual_wavelength_units": "nanometers",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "model.patch_embed.chnfus.chnemb.embed_transmit",
+        "model.patch_embed.chnfus.chnemb.embed_receive",
+        "model.patch_embed.chnfus.chnemb.embed_orbit"
+      ],
+      "head": {
+        "architecture": "linear",
+        "dropout": 0.0
+      },
+      "freeze_backbone": false
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "seed": "42",
+    "config_paths": [
+      "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260823T212554430984Z_cloudsen12_dofa_frozen_seed42_5d8edd5b/resolved_config.yaml",
+      "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260823T224711552022Z_cloudsen12_dofa_full_finetune_seed42_9e2211d7/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "frozen",
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": true,
+      "actual_wavelengths": [
+        0.443,
+        0.49,
+        0.56,
+        0.665,
+        0.705,
+        0.74,
+        0.783,
+        0.842,
+        0.865,
+        0.945,
+        1.61,
+        2.19
+      ],
+      "actual_wavelength_units": "micrometers"
+    },
+    "full_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "pos_embed"
+      ],
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": false,
+      "actual_wavelengths": [
+        0.443,
+        0.49,
+        0.56,
+        0.665,
+        0.705,
+        0.74,
+        0.783,
+        0.842,
+        0.865,
+        0.945,
+        1.61,
+        2.19
+      ],
+      "actual_wavelength_units": "micrometers"
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "seed": "43",
+    "config_paths": [
+      "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T063305175307Z_cloudsen12_dofa_frozen_seed43_d20a830e/resolved_config.yaml",
+      "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T041629083560Z_cloudsen12_dofa_full_finetune_seed43_6547906a/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "frozen",
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": true,
+      "actual_wavelengths": [
+        0.443,
+        0.49,
+        0.56,
+        0.665,
+        0.705,
+        0.74,
+        0.783,
+        0.842,
+        0.865,
+        0.945,
+        1.61,
+        2.19
+      ],
+      "actual_wavelength_units": "micrometers"
+    },
+    "full_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "pos_embed"
+      ],
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": false,
+      "actual_wavelengths": [
+        0.443,
+        0.49,
+        0.56,
+        0.665,
+        0.705,
+        0.74,
+        0.783,
+        0.842,
+        0.865,
+        0.945,
+        1.61,
+        2.19
+      ],
+      "actual_wavelength_units": "micrometers"
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "seed": "44",
+    "config_paths": [
+      "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T135116679838Z_cloudsen12_dofa_frozen_seed44_2cce2dc4/resolved_config.yaml",
+      "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T084553296954Z_cloudsen12_dofa_full_finetune_seed44_9c298bb6/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "frozen",
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": true,
+      "actual_wavelengths": [
+        0.443,
+        0.49,
+        0.56,
+        0.665,
+        0.705,
+        0.74,
+        0.783,
+        0.842,
+        0.865,
+        0.945,
+        1.61,
+        2.19
+      ],
+      "actual_wavelength_units": "micrometers"
+    },
+    "full_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "pos_embed"
+      ],
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": false,
+      "actual_wavelengths": [
+        0.443,
+        0.49,
+        0.56,
+        0.665,
+        0.705,
+        0.74,
+        0.783,
+        0.842,
+        0.865,
+        0.945,
+        1.61,
+        2.19
+      ],
+      "actual_wavelength_units": "micrometers"
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "seed": "42",
+    "config_paths": [
+      "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T024636502649Z_cloudsen12_panopticon_frozen_seed42_987db5bf/resolved_config.yaml",
+      "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T002903622341Z_cloudsen12_panopticon_full_finetune_seed42_797a0b89/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "panopticon",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "frozen",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": true,
+      "actual_wavelengths": [
+        443.0,
+        490.0,
+        560.0,
+        665.0,
+        705.0,
+        740.0,
+        783.0,
+        842.0,
+        865.0,
+        945.0,
+        1610.0,
+        2190.0
+      ],
+      "actual_wavelength_units": "nanometers"
+    },
+    "full_model": {
+      "name": "panopticon",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "model.patch_embed.chnfus.chnemb.embed_transmit",
+        "model.patch_embed.chnfus.chnemb.embed_receive",
+        "model.patch_embed.chnfus.chnemb.embed_orbit"
+      ],
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": false,
+      "actual_wavelengths": [
+        443.0,
+        490.0,
+        560.0,
+        665.0,
+        705.0,
+        740.0,
+        783.0,
+        842.0,
+        865.0,
+        945.0,
+        1610.0,
+        2190.0
+      ],
+      "actual_wavelength_units": "nanometers"
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "seed": "43",
+    "config_paths": [
+      "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T073937493619Z_cloudsen12_panopticon_frozen_seed43_9688327e/resolved_config.yaml",
+      "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T055703693822Z_cloudsen12_panopticon_full_finetune_seed43_8e8dc6a5/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "panopticon",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "frozen",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": true,
+      "actual_wavelengths": [
+        443.0,
+        490.0,
+        560.0,
+        665.0,
+        705.0,
+        740.0,
+        783.0,
+        842.0,
+        865.0,
+        945.0,
+        1610.0,
+        2190.0
+      ],
+      "actual_wavelength_units": "nanometers"
+    },
+    "full_model": {
+      "name": "panopticon",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "model.patch_embed.chnfus.chnemb.embed_transmit",
+        "model.patch_embed.chnfus.chnemb.embed_receive",
+        "model.patch_embed.chnfus.chnemb.embed_orbit"
+      ],
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": false,
+      "actual_wavelengths": [
+        443.0,
+        490.0,
+        560.0,
+        665.0,
+        705.0,
+        740.0,
+        783.0,
+        842.0,
+        865.0,
+        945.0,
+        1610.0,
+        2190.0
+      ],
+      "actual_wavelength_units": "nanometers"
+    }
+  },
+  {
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "seed": "44",
+    "config_paths": [
+      "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T150154916514Z_cloudsen12_panopticon_frozen_seed44_953e2ce2/resolved_config.yaml",
+      "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T102603117304Z_cloudsen12_panopticon_full_finetune_seed44_fde03f5e/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "panopticon",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "frozen",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": true,
+      "actual_wavelengths": [
+        443.0,
+        490.0,
+        560.0,
+        665.0,
+        705.0,
+        740.0,
+        783.0,
+        842.0,
+        865.0,
+        945.0,
+        1610.0,
+        2190.0
+      ],
+      "actual_wavelength_units": "nanometers"
+    },
+    "full_model": {
+      "name": "panopticon",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "model.patch_embed.chnfus.chnemb.embed_transmit",
+        "model.patch_embed.chnfus.chnemb.embed_receive",
+        "model.patch_embed.chnfus.chnemb.embed_orbit"
+      ],
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": false,
+      "actual_wavelengths": [
+        443.0,
+        490.0,
+        560.0,
+        665.0,
+        705.0,
+        740.0,
+        783.0,
+        842.0,
+        865.0,
+        945.0,
+        1610.0,
+        2190.0
+      ],
+      "actual_wavelength_units": "nanometers"
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "seed": "42",
+    "config_paths": [
+      "results/final_thesis/segmentation/spacenet7_frozen/runs/20260823T212554554121Z_spacenet7_dofa_frozen_seed42_bb178c28/resolved_config.yaml",
+      "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T223417473200Z_spacenet7_dofa_full_finetune_seed42_6349d2a1/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "frozen",
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": true,
+      "actual_wavelengths": [
+        0.665,
+        0.56,
+        0.49
+      ],
+      "actual_wavelength_units": "micrometers"
+    },
+    "full_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "pos_embed"
+      ],
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": false,
+      "actual_wavelengths": [
+        0.665,
+        0.56,
+        0.49
+      ],
+      "actual_wavelength_units": "micrometers"
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "seed": "43",
+    "config_paths": [
+      "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T084249767853Z_spacenet7_dofa_frozen_seed43_30065f6d/resolved_config.yaml",
+      "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T041628970344Z_spacenet7_dofa_full_finetune_seed43_2a812094/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "frozen",
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": true,
+      "actual_wavelengths": [
+        0.665,
+        0.56,
+        0.49
+      ],
+      "actual_wavelength_units": "micrometers"
+    },
+    "full_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "pos_embed"
+      ],
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": false,
+      "actual_wavelengths": [
+        0.665,
+        0.56,
+        0.49
+      ],
+      "actual_wavelength_units": "micrometers"
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "seed": "44",
+    "config_paths": [
+      "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T131025872125Z_spacenet7_dofa_frozen_seed44_505d5ab5/resolved_config.yaml",
+      "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T105029720150Z_spacenet7_dofa_full_finetune_seed44_0e9c0a7e/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "frozen",
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": true,
+      "actual_wavelengths": [
+        0.665,
+        0.56,
+        0.49
+      ],
+      "actual_wavelength_units": "micrometers"
+    },
+    "full_model": {
+      "name": "dofa",
+      "size": "base",
+      "pretrained": true,
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "pos_embed"
+      ],
+      "dofa_root": "./DOFA",
+      "weights_path": "./DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "weights_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": false,
+      "actual_wavelengths": [
+        0.665,
+        0.56,
+        0.49
+      ],
+      "actual_wavelength_units": "micrometers"
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "seed": "42",
+    "config_paths": [
+      "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T012909480544Z_spacenet7_panopticon_frozen_seed42_5bc79e91/resolved_config.yaml",
+      "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T233635521819Z_spacenet7_panopticon_full_finetune_seed42_b6b452b4/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "panopticon",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "frozen",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": true,
+      "actual_wavelengths": [
+        665.0,
+        560.0,
+        490.0
+      ],
+      "actual_wavelength_units": "nanometers"
+    },
+    "full_model": {
+      "name": "panopticon",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "model.patch_embed.chnfus.chnemb.embed_transmit",
+        "model.patch_embed.chnfus.chnemb.embed_receive",
+        "model.patch_embed.chnfus.chnemb.embed_orbit"
+      ],
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": false,
+      "actual_wavelengths": [
+        665.0,
+        560.0,
+        490.0
+      ],
+      "actual_wavelength_units": "nanometers"
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "seed": "43",
+    "config_paths": [
+      "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T093212435964Z_spacenet7_panopticon_frozen_seed43_7a04c439/resolved_config.yaml",
+      "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T050749487080Z_spacenet7_panopticon_full_finetune_seed43_efe0a455/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "panopticon",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "frozen",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": true,
+      "actual_wavelengths": [
+        665.0,
+        560.0,
+        490.0
+      ],
+      "actual_wavelength_units": "nanometers"
+    },
+    "full_model": {
+      "name": "panopticon",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "model.patch_embed.chnfus.chnemb.embed_transmit",
+        "model.patch_embed.chnfus.chnemb.embed_receive",
+        "model.patch_embed.chnfus.chnemb.embed_orbit"
+      ],
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": false,
+      "actual_wavelengths": [
+        665.0,
+        560.0,
+        490.0
+      ],
+      "actual_wavelength_units": "nanometers"
+    }
+  },
+  {
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "seed": "44",
+    "config_paths": [
+      "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T140818811757Z_spacenet7_panopticon_frozen_seed44_0f56f5e4/resolved_config.yaml",
+      "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T115507474539Z_spacenet7_panopticon_full_finetune_seed44_f73c1ae1/resolved_config.yaml"
+    ],
+    "data_equal": true,
+    "frozen_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 10,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "full_training": {
+      "epochs": 50,
+      "batch_size": 8,
+      "optimizer": {
+        "name": "adamw"
+      },
+      "learning_rate": 0.001,
+      "backbone_learning_rate": 0.0001,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "warmup": {
+        "enabled": false,
+        "epochs": 0,
+        "type": "linear"
+      },
+      "gradient_clipping": {
+        "enabled": false
+      },
+      "layerwise_lr_decay": {
+        "enabled": false
+      },
+      "early_stopping": {
+        "enabled": true,
+        "patience": 15,
+        "min_delta": 0.0
+      },
+      "checkpoint": {
+        "split": "val",
+        "metric": "miou",
+        "mode": "max"
+      },
+      "limit_train_batches": null,
+      "limit_val_batches": null
+    },
+    "frozen_model": {
+      "name": "panopticon",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "frozen",
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": true,
+      "actual_wavelengths": [
+        665.0,
+        560.0,
+        490.0
+      ],
+      "actual_wavelength_units": "nanometers"
+    },
+    "full_model": {
+      "name": "panopticon",
+      "size": "base",
+      "pretrained": true,
+      "weights": "VIT_BASE14",
+      "weights_cache_path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+      "weights_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+      "adaptation_mode": "full_finetune",
+      "expected_frozen_backbone_parameters": [
+        "model.patch_embed.chnfus.chnemb.embed_transmit",
+        "model.patch_embed.chnfus.chnemb.embed_receive",
+        "model.patch_embed.chnfus.chnemb.embed_orbit"
+      ],
+      "decoder": {
+        "architecture": "unet",
+        "channels": [
+          256,
+          128,
+          64,
+          32
+        ]
+      },
+      "freeze_backbone": false,
+      "actual_wavelengths": [
+        665.0,
+        560.0,
+        490.0
+      ],
+      "actual_wavelength_units": "nanometers"
+    }
+  }
+]

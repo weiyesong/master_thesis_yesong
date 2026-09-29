@@ -1,0 +1,111 @@
+{
+  "terms": 888,
+  "conditions": 4,
+  "strata_checks": [
+    {
+      "a": 0.1,
+      "n": 20,
+      "x": -1,
+      "weight_sum": 0.9999999999999999,
+      "shannon_identity_residual": 0.0,
+      "gini_identity_residual": 7.32920668600201e-17
+    },
+    {
+      "a": 0.1,
+      "n": 20,
+      "x": 1,
+      "weight_sum": 0.9999999999999997,
+      "shannon_identity_residual": 0.0,
+      "gini_identity_residual": 7.32920668600201e-17
+    },
+    {
+      "a": 0.1,
+      "n": 200,
+      "x": -1,
+      "weight_sum": 0.9999999999999998,
+      "shannon_identity_residual": 0.0,
+      "gini_identity_residual": 9.84455572616838e-17
+    },
+    {
+      "a": 0.1,
+      "n": 200,
+      "x": 1,
+      "weight_sum": 1.0,
+      "shannon_identity_residual": 0.0,
+      "gini_identity_residual": 9.84455572616838e-17
+    },
+    {
+      "a": 0.4,
+      "n": 20,
+      "x": -1,
+      "weight_sum": 1.000000000000001,
+      "shannon_identity_residual": 0.0,
+      "gini_identity_residual": 7.32920668600201e-17
+    },
+    {
+      "a": 0.4,
+      "n": 20,
+      "x": 1,
+      "weight_sum": 1.0000000000000009,
+      "shannon_identity_residual": 0.0,
+      "gini_identity_residual": 7.32920668600201e-17
+    },
+    {
+      "a": 0.4,
+      "n": 200,
+      "x": -1,
+      "weight_sum": 1.0000000000000004,
+      "shannon_identity_residual": 0.0,
+      "gini_identity_residual": 9.84455572616838e-17
+    },
+    {
+      "a": 0.4,
+      "n": 200,
+      "x": 1,
+      "weight_sum": 1.0000000000000002,
+      "shannon_identity_residual": 0.0,
+      "gini_identity_residual": 9.84455572616838e-17
+    }
+  ],
+  "quadrature_checks": [
+    {
+      "alpha": 1,
+      "beta": 1,
+      "numerical_EH": 0.4999999999999996,
+      "analytic_EH": 0.5,
+      "maximum_abs_error": 3.885780586188048e-16
+    },
+    {
+      "alpha": 3,
+      "beta": 19,
+      "numerical_EH": 0.37685627359318463,
+      "analytic_EH": 0.37685627359318596,
+      "maximum_abs_error": 1.3322676295501878e-15
+    },
+    {
+      "alpha": 9,
+      "beta": 13,
+      "numerical_EH": 0.6543381091966798,
+      "analytic_EH": 0.6543381091966798,
+      "maximum_abs_error": 2.7755575615628914e-16
+    },
+    {
+      "alpha": 21,
+      "beta": 181,
+      "numerical_EH": 0.331243347734415,
+      "analytic_EH": 0.3312433477344152,
+      "maximum_abs_error": 2.220446049250313e-16
+    },
+    {
+      "alpha": 81,
+      "beta": 121,
+      "numerical_EH": 0.670942288517635,
+      "analytic_EH": 0.6709422885176339,
+      "maximum_abs_error": 1.1102230246251565e-15
+    }
+  ],
+  "seconds": 0.19677787646651268,
+  "FM_training": 0,
+  "model_inference": 0,
+  "independent_evidence_warning": "two X strata are mirror constructions, not independent experimental replicates"
+}

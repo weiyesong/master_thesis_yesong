@@ -1,0 +1,69 @@
+{
+  "provider": "actual Anthropic Claude Code CLI",
+  "session_id": "5afb33d9-4dac-4ed1-8d17-2e1ec2a65b13",
+  "cli_versions_observed": [
+    "2.1.283"
+  ],
+  "models_observed": [
+    "<synthetic>",
+    "claude-fable-5-1"
+  ],
+  "cli_path": "/home/yesong/.vscode-server/extensions/anthropic.claude-code-2.1.283-linux-x64/resources/native-binary/claude",
+  "transcript_source": "/home/yesong/.claude/projects/-workspace/5afb33d9-4dac-4ed1-8d17-2e1ec2a65b13.jsonl",
+  "transcript_sha256_at_export": "604b5eb7a6eb2e0d785a624bca8183ab7dee5b1271a0c515b3876524eec9d085",
+  "exported_utc": "2026-09-27T10:16:01.471969+00:00",
+  "public_blocks": 150,
+  "tool_calls": {
+    "Read": 23,
+    "Bash": 45,
+    "Grep": 7
+  },
+  "rounds": [
+    {
+      "round": "protocol",
+      "request": "claude_protocol_request.md",
+      "response_path": "claude_protocol_raw.json",
+      "response_sha256": "71a5dcb1a4963dcba282dcfcf99216fb983235af1b94e5ede9642700439a3a0f",
+      "session_id": "5afb33d9-4dac-4ed1-8d17-2e1ec2a65b13",
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 39,
+      "duration_ms": 356691,
+      "duration_api_ms": 335698,
+      "total_cost_usd": 2.56200325
+    },
+    {
+      "round": "code",
+      "request": "claude_code_request.md",
+      "response_path": "claude_code_raw.json",
+      "response_sha256": "42ae53bfa73fdf4f4c565ebef39a4257457b455959e4bdbf5d49363445039c52",
+      "session_id": "5afb33d9-4dac-4ed1-8d17-2e1ec2a65b13",
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 20,
+      "duration_ms": 308092,
+      "duration_api_ms": 614144,
+      "total_cost_usd": 5.909232749999999
+    },
+    {
+      "round": "final",
+      "request": "claude_final_request.md",
+      "response_path": "claude_final_raw.json",
+      "response_sha256": "f37b07d45592f65e2bcc3f18cecbc0caf9b5495b15d932bb65125384c2e9ed3f",
+      "session_id": "5afb33d9-4dac-4ed1-8d17-2e1ec2a65b13",
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 6,
+      "duration_ms": 119404,
+      "duration_api_ms": 733068,
+      "total_cost_usd": 6.661994999999999
+    }
+  ],
+  "final_resume_request": "claude_final_resume_request.md",
+  "interrupted_attempt_record": "claude_final_attempt1_status.json",
+  "final_exit": {
+    "returncode": 0
+  },
+  "evidence_policy": "Only public tool_use/tool_result blocks plus public final responses are exported. No hidden reasoning blocks.",
+  "review_scope": "independent selected original-array calculations, mathematical tests, control and claim review; not duplicate execution of all 100 objects"
+}

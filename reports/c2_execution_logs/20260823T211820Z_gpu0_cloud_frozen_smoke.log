@@ -1,0 +1,9 @@
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+[cloudsen12_dofa_frozen seed=42] epoch=1 train_loss=1.504735 val_miou=0.092932 best_epoch=1 patience=0/10
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+[cloudsen12_panopticon_frozen seed=42] epoch=1 train_loss=1.416608 val_miou=0.209160 best_epoch=1 patience=0/10
+Wrote summary to /workspace/results/final_thesis/segmentation/cloudsen12_frozen/dry_runs/summaries/20260823T211858026484Z_summary_seed42_6e0249ac.json

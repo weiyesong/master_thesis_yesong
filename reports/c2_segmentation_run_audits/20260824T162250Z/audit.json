@@ -1,0 +1,1352 @@
+[
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/cloudsen12_frozen/runs/20260823T212554430984Z_cloudsen12_dofa_frozen_seed42_5d8edd5b",
+    "run_id": "20260823T212554430984Z_cloudsen12_dofa_frozen_seed42_5d8edd5b",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": 42,
+    "best_epoch": 16,
+    "test_metrics": {
+      "miou": 0.6003162432776954,
+      "per_class_iou": {
+        "clear": 0.8145502949442582,
+        "thick cloud": 0.7448802590383536,
+        "thin cloud": 0.3528878527976553,
+        "cloud shadow": 0.48894656633051453
+      },
+      "pixel_accuracy": 0.8322424654958137,
+      "nll": 0.46254816890698586,
+      "brier": 0.24074333346619897,
+      "ece_15": 0.01929482401537257,
+      "valid_pixels": 48921600,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          23531282,
+          777030,
+          926151,
+          787489
+        ],
+        [
+          896048,
+          12098515,
+          422664,
+          606282
+        ],
+        [
+          1182675,
+          805909,
+          2026618,
+          203863
+        ],
+        [
+          788004,
+          635780,
+          175072,
+          3058218
+        ]
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T063305175307Z_cloudsen12_dofa_frozen_seed43_d20a830e",
+    "run_id": "20260824T063305175307Z_cloudsen12_dofa_frozen_seed43_d20a830e",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": 43,
+    "best_epoch": 24,
+    "test_metrics": {
+      "miou": 0.6075052712185145,
+      "per_class_iou": {
+        "clear": 0.8202281634530023,
+        "thick cloud": 0.7516783271002604,
+        "thin cloud": 0.3695519055971934,
+        "cloud shadow": 0.48856268872360165
+      },
+      "pixel_accuracy": 0.8362984448587127,
+      "nll": 0.4722835036536775,
+      "brier": 0.23934912481462686,
+      "ece_15": 0.050078844744017,
+      "valid_pixels": 48921600,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          23615714,
+          718846,
+          938200,
+          749192
+        ],
+        [
+          804920,
+          12167045,
+          628728,
+          422816
+        ],
+        [
+          1180488,
+          671525,
+          2201587,
+          165465
+        ],
+        [
+          784280,
+          772625,
+          171457,
+          2928712
+        ]
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T135116679838Z_cloudsen12_dofa_frozen_seed44_2cce2dc4",
+    "run_id": "20260824T135116679838Z_cloudsen12_dofa_frozen_seed44_2cce2dc4",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": 44,
+    "best_epoch": 24,
+    "test_metrics": {
+      "miou": 0.6054874516766118,
+      "per_class_iou": {
+        "clear": 0.8205398614316426,
+        "thick cloud": 0.7422243018882745,
+        "thin cloud": 0.3677232889405671,
+        "cloud shadow": 0.491462354445963
+      },
+      "pixel_accuracy": 0.8331777783228677,
+      "nll": 0.48494382002913844,
+      "brier": 0.2456242040038296,
+      "ece_15": 0.05067139544184878,
+      "valid_pixels": 48921600,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          23926153,
+          516838,
+          796612,
+          782349
+        ],
+        [
+          939438,
+          11490462,
+          1003512,
+          590097
+        ],
+        [
+          1349708,
+          397487,
+          2292184,
+          179686
+        ],
+        [
+          847940,
+          543284,
+          214259,
+          3051591
+        ]
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T024636502649Z_cloudsen12_panopticon_frozen_seed42_987db5bf",
+    "run_id": "20260824T024636502649Z_cloudsen12_panopticon_frozen_seed42_987db5bf",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": 42,
+    "best_epoch": 29,
+    "test_metrics": {
+      "miou": 0.654634748638508,
+      "per_class_iou": {
+        "clear": 0.8488910217148522,
+        "thick cloud": 0.7834214159226958,
+        "thin cloud": 0.4525623447266707,
+        "cloud shadow": 0.5336642121898132
+      },
+      "pixel_accuracy": 0.859185022566719,
+      "nll": 0.43782046778672407,
+      "brier": 0.2107019651403981,
+      "ece_15": 0.04996056951260599,
+      "valid_pixels": 48921600,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          23834747,
+          492630,
+          1006518,
+          688057
+        ],
+        [
+          615490,
+          12187383,
+          574153,
+          646483
+        ],
+        [
+          769118,
+          555933,
+          2720431,
+          173583
+        ],
+        [
+          670951,
+          484540,
+          211438,
+          3290145
+        ]
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T073937493619Z_cloudsen12_panopticon_frozen_seed43_9688327e",
+    "run_id": "20260824T073937493619Z_cloudsen12_panopticon_frozen_seed43_9688327e",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": 43,
+    "best_epoch": 21,
+    "test_metrics": {
+      "miou": 0.6537769566901619,
+      "per_class_iou": {
+        "clear": 0.8515197208867193,
+        "thick cloud": 0.7846323231271599,
+        "thin cloud": 0.45249092119379863,
+        "cloud shadow": 0.5264648615529698
+      },
+      "pixel_accuracy": 0.8610903159340659,
+      "nll": 0.4063239772603002,
+      "brier": 0.2042486899638912,
+      "ece_15": 0.038444691733151404,
+      "valid_pixels": 48921600,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          24131122,
+          454040,
+          907115,
+          529675
+        ],
+        [
+          680937,
+          12224122,
+          634759,
+          483691
+        ],
+        [
+          835204,
+          519862,
+          2697983,
+          166016
+        ],
+        [
+          800795,
+          582016,
+          201574,
+          3072689
+        ]
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T150154916514Z_cloudsen12_panopticon_frozen_seed44_953e2ce2",
+    "run_id": "20260824T150154916514Z_cloudsen12_panopticon_frozen_seed44_953e2ce2",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": 44,
+    "best_epoch": 16,
+    "test_metrics": {
+      "miou": 0.6547583055295483,
+      "per_class_iou": {
+        "clear": 0.8517381440585641,
+        "thick cloud": 0.7796711350022718,
+        "thin cloud": 0.451381989346593,
+        "cloud shadow": 0.536241953710764
+      },
+      "pixel_accuracy": 0.8606068280677656,
+      "nll": 0.3969944031783762,
+      "brier": 0.2034180249623888,
+      "ece_15": 0.03645374066748667,
+      "valid_pixels": 48921600,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          24044785,
+          384509,
+          805318,
+          787340
+        ],
+        [
+          761155,
+          12143728,
+          515966,
+          602660
+        ],
+        [
+          843874,
+          631745,
+          2587350,
+          156096
+        ],
+        [
+          603274,
+          535686,
+          191714,
+          3326400
+        ]
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260823T224711552022Z_cloudsen12_dofa_full_finetune_seed42_9e2211d7",
+    "run_id": "20260823T224711552022Z_cloudsen12_dofa_full_finetune_seed42_9e2211d7",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": 42,
+    "best_epoch": 50,
+    "test_metrics": {
+      "miou": 0.656148945112433,
+      "per_class_iou": {
+        "clear": 0.848150925714191,
+        "thick cloud": 0.7931354624293101,
+        "thin cloud": 0.4360270148983509,
+        "cloud shadow": 0.5472823774078802
+      },
+      "pixel_accuracy": 0.8630831984236003,
+      "nll": 0.49520065411418474,
+      "brier": 0.21245527122733107,
+      "ece_15": 0.06801835375829582,
+      "valid_pixels": 48921600,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          24175275,
+          519250,
+          821828,
+          505599
+        ],
+        [
+          625430,
+          12440229,
+          644770,
+          313080
+        ],
+        [
+          976185,
+          573581,
+          2540797,
+          128502
+        ],
+        [
+          879939,
+          568533,
+          141492,
+          3067110
+        ]
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [
+      "/workspace/results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260823T211934923213Z_cloudsen12_dofa_full_finetune_seed42_0238c9b8"
+    ],
+    "noncandidate_attempts": [
+      {
+        "run_id": "20260823T211934923213Z_cloudsen12_dofa_full_finetune_seed42_0238c9b8",
+        "run_dir": "/workspace/results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260823T211934923213Z_cloudsen12_dofa_full_finetune_seed42_0238c9b8",
+        "disposition": "NONCANDIDATE_ZERO_EPOCH_INITIALIZATION",
+        "reason": "initialization audits exist, but no completed epoch, checkpoint, gradient audit, or run summary exists",
+        "evidence": {
+          "summary_present": false,
+          "summary_status": null,
+          "completed_epochs": 0,
+          "checkpoints": [],
+          "gradient_audit_present": false,
+          "initialization_audits": [
+            "model_audit.json",
+            "optimizer_group_audit.json"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T041629083560Z_cloudsen12_dofa_full_finetune_seed43_6547906a",
+    "run_id": "20260824T041629083560Z_cloudsen12_dofa_full_finetune_seed43_6547906a",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": 43,
+    "best_epoch": 49,
+    "test_metrics": {
+      "miou": 0.6637905518125411,
+      "per_class_iou": {
+        "clear": 0.8557904577888118,
+        "thick cloud": 0.7940013843776923,
+        "thin cloud": 0.4417170708284473,
+        "cloud shadow": 0.5636532942552132
+      },
+      "pixel_accuracy": 0.8669656756933543,
+      "nll": 0.47862184110329076,
+      "brier": 0.20720312776271116,
+      "ece_15": 0.06389968967468308,
+      "valid_pixels": 48921600,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          24256719,
+          495459,
+          726984,
+          542790
+        ],
+        [
+          577509,
+          12397725,
+          694516,
+          353759
+        ],
+        [
+          994198,
+          544007,
+          2561061,
+          119799
+        ],
+        [
+          750568,
+          551261,
+          157402,
+          3197843
+        ]
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T084553296954Z_cloudsen12_dofa_full_finetune_seed44_9c298bb6",
+    "run_id": "20260824T084553296954Z_cloudsen12_dofa_full_finetune_seed44_9c298bb6",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": 44,
+    "best_epoch": 42,
+    "test_metrics": {
+      "miou": 0.6504371006704472,
+      "per_class_iou": {
+        "clear": 0.8442597810072806,
+        "thick cloud": 0.7831263743698055,
+        "thin cloud": 0.4320290835022927,
+        "cloud shadow": 0.5423331638024103
+      },
+      "pixel_accuracy": 0.8575951522435897,
+      "nll": 0.4650155132619078,
+      "brier": 0.21682125273204986,
+      "ece_15": 0.05913048014070104,
+      "valid_pixels": 48921600,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          24060199,
+          375829,
+          950668,
+          635256
+        ],
+        [
+          769763,
+          12073511,
+          756604,
+          423631
+        ],
+        [
+          912671,
+          509630,
+          2631792,
+          164972
+        ],
+        [
+          794187,
+          508098,
+          165364,
+          3189425
+        ]
+      ]
+    },
+    "errors": [],
+    "warnings": [
+      "deep export confusion matrix has one tolerated cross-device boundary-pixel move"
+    ],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T002903622341Z_cloudsen12_panopticon_full_finetune_seed42_797a0b89",
+    "run_id": "20260824T002903622341Z_cloudsen12_panopticon_full_finetune_seed42_797a0b89",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": 42,
+    "best_epoch": 44,
+    "test_metrics": {
+      "miou": 0.6704898254541842,
+      "per_class_iou": {
+        "clear": 0.8585475542708216,
+        "thick cloud": 0.80205994493725,
+        "thin cloud": 0.4594216830937749,
+        "cloud shadow": 0.5619301195148908
+      },
+      "pixel_accuracy": 0.8700848909275248,
+      "nll": 0.39547800739793365,
+      "brier": 0.19282784530344213,
+      "ece_15": 0.042889382507435625,
+      "valid_pixels": 48921600,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          24328547,
+          354240,
+          797575,
+          541590
+        ],
+        [
+          646357,
+          12337647,
+          603698,
+          435807
+        ],
+        [
+          871626,
+          561720,
+          2666681,
+          119038
+        ],
+        [
+          796931,
+          442981,
+          184092,
+          3233070
+        ]
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T055703693822Z_cloudsen12_panopticon_full_finetune_seed43_8e8dc6a5",
+    "run_id": "20260824T055703693822Z_cloudsen12_panopticon_full_finetune_seed43_8e8dc6a5",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": 43,
+    "best_epoch": 39,
+    "test_metrics": {
+      "miou": 0.6767050537278565,
+      "per_class_iou": {
+        "clear": 0.8627410175096953,
+        "thick cloud": 0.8022458218114292,
+        "thin cloud": 0.4750908204452735,
+        "cloud shadow": 0.5667425551450281
+      },
+      "pixel_accuracy": 0.8725182128139718,
+      "nll": 0.37083503783029886,
+      "brier": 0.18728583878337993,
+      "ece_15": 0.038051154255801294,
+      "valid_pixels": 48921600,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          24223095,
+          406803,
+          838202,
+          553852
+        ],
+        [
+          577340,
+          12409720,
+          561229,
+          475220
+        ],
+        [
+          739695,
+          583627,
+          2743058,
+          152685
+        ],
+        [
+          737915,
+          454786,
+          155259,
+          3309114
+        ]
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T102603117304Z_cloudsen12_panopticon_full_finetune_seed44_fde03f5e",
+    "run_id": "20260824T102603117304Z_cloudsen12_panopticon_full_finetune_seed44_fde03f5e",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": 44,
+    "best_epoch": 44,
+    "test_metrics": {
+      "miou": 0.6702407495033659,
+      "per_class_iou": {
+        "clear": 0.861073091817264,
+        "thick cloud": 0.7957780397371151,
+        "thin cloud": 0.46081838779782563,
+        "cloud shadow": 0.563293478661259
+      },
+      "pixel_accuracy": 0.868835953852695,
+      "nll": 0.39788461251011825,
+      "brier": 0.1941329623890572,
+      "ece_15": 0.045530404049373426,
+      "valid_pixels": 48921600,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          24122347,
+          321861,
+          796674,
+          781070
+        ],
+        [
+          623632,
+          12224751,
+          535491,
+          639635
+        ],
+        [
+          742785,
+          645840,
+          2610003,
+          220437
+        ],
+        [
+          625916,
+          370801,
+          112613,
+          3547744
+        ]
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/spacenet7_frozen/runs/20260823T212554554121Z_spacenet7_dofa_frozen_seed42_bb178c28",
+    "run_id": "20260823T212554554121Z_spacenet7_dofa_frozen_seed42_bb178c28",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": 42,
+    "best_epoch": 23,
+    "test_metrics": {
+      "miou": 0.4879173171132102,
+      "per_class_iou": {
+        "background": 0.9262104570238018,
+        "building": 0.049624177202618636
+      },
+      "pixel_accuracy": 0.9264936728272039,
+      "nll": 0.2822775555913951,
+      "brier": 0.12770506722721653,
+      "ece_15": 0.03568138192662232,
+      "valid_pixels": 57802752,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          53332028,
+          443216
+        ],
+        [
+          3805652,
+          221856
+        ]
+      ],
+      "foreground_ece_15": 0.0411686205778055,
+      "classwise_calibration": {
+        "background": {
+          "ece_15": 0.04116861284386151
+        },
+        "building": {
+          "ece_15": 0.04116862057780668
+        }
+      },
+      "foreground_nll": 0.28227755731465864,
+      "foreground_brier": 0.06385253354602931,
+      "boundary_calibration": {
+        "radius_pixels": 1,
+        "pixel_count": 17396091,
+        "ece_15": 0.1340956175755464,
+        "foreground_ece_15": 0.14260746147027056
+      }
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T084249767853Z_spacenet7_dofa_frozen_seed43_30065f6d",
+    "run_id": "20260824T084249767853Z_spacenet7_dofa_frozen_seed43_30065f6d",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": 43,
+    "best_epoch": 31,
+    "test_metrics": {
+      "miou": 0.48765314699430373,
+      "per_class_iou": {
+        "background": 0.9248992496217817,
+        "building": 0.05040704436682573
+      },
+      "pixel_accuracy": 0.9251974542665373,
+      "nll": 0.31876527516344505,
+      "brier": 0.13050134097333668,
+      "ece_15": 0.04029268547281213,
+      "valid_pixels": 57802752,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          53249440,
+          525804
+        ],
+        [
+          3797989,
+          229519
+        ]
+      ],
+      "foreground_ece_15": 0.04723130107876938,
+      "classwise_calibration": {
+        "background": {
+          "ece_15": 0.04723130045730236
+        },
+        "building": {
+          "ece_15": 0.04723130108035075
+        }
+      },
+      "foreground_nll": 0.31874924695410695,
+      "foreground_brier": 0.06525067048666834,
+      "boundary_calibration": {
+        "radius_pixels": 1,
+        "pixel_count": 17396091,
+        "ece_15": 0.14248410353784785,
+        "foreground_ece_15": 0.15427768609927786
+      }
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T131025872125Z_spacenet7_dofa_frozen_seed44_505d5ab5",
+    "run_id": "20260824T131025872125Z_spacenet7_dofa_frozen_seed44_505d5ab5",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": 44,
+    "best_epoch": 44,
+    "test_metrics": {
+      "miou": 0.48926579228719774,
+      "per_class_iou": {
+        "background": 0.9220708717572649,
+        "building": 0.056460712817130644
+      },
+      "pixel_accuracy": 0.9224325859087125,
+      "nll": 0.3359400002526588,
+      "brier": 0.13403904617947787,
+      "ece_15": 0.041426583792783106,
+      "valid_pixels": 57802752,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          53050846,
+          724398
+        ],
+        [
+          3759212,
+          268296
+        ]
+      ],
+      "foreground_ece_15": 0.05110731923195357,
+      "classwise_calibration": {
+        "background": {
+          "ece_15": 0.05110733948809196
+        },
+        "building": {
+          "ece_15": 0.05110731923725974
+        }
+      },
+      "foreground_nll": 0.3358466978651596,
+      "foreground_brier": 0.0670195227856336,
+      "boundary_calibration": {
+        "radius_pixels": 1,
+        "pixel_count": 17396091,
+        "ece_15": 0.1434852504564129,
+        "foreground_ece_15": 0.15962068877205915
+      }
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T012909480544Z_spacenet7_panopticon_frozen_seed42_5bc79e91",
+    "run_id": "20260824T012909480544Z_spacenet7_panopticon_frozen_seed42_5bc79e91",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": 42,
+    "best_epoch": 43,
+    "test_metrics": {
+      "miou": 0.5001099117069657,
+      "per_class_iou": {
+        "background": 0.9179773969733669,
+        "building": 0.08224242644056454
+      },
+      "pixel_accuracy": 0.9185758837226297,
+      "nll": 0.3544837553349752,
+      "brier": 0.13681828346348404,
+      "ece_15": 0.04109475440113128,
+      "valid_pixels": 57802752,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          52674450,
+          1100794
+        ],
+        [
+          3605744,
+          421764
+        ]
+      ],
+      "foreground_ece_15": 0.055100920050521904,
+      "classwise_calibration": {
+        "background": {
+          "ece_15": 0.05510091289961484
+        },
+        "building": {
+          "ece_15": 0.05510092006701712
+        }
+      },
+      "foreground_nll": 0.35429608679953073,
+      "foreground_brier": 0.06840914174863676,
+      "boundary_calibration": {
+        "radius_pixels": 1,
+        "pixel_count": 17396091,
+        "ece_15": 0.14371247667501827,
+        "foreground_ece_15": 0.16709284382125067
+      }
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T093212435964Z_spacenet7_panopticon_frozen_seed43_7a04c439",
+    "run_id": "20260824T093212435964Z_spacenet7_panopticon_frozen_seed43_7a04c439",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": 43,
+    "best_epoch": 50,
+    "test_metrics": {
+      "miou": 0.503029026895774,
+      "per_class_iou": {
+        "background": 0.9180736991125099,
+        "building": 0.087984354679038
+      },
+      "pixel_accuracy": 0.9187161365604184,
+      "nll": 0.35586715582547,
+      "brier": 0.13548095634971616,
+      "ece_15": 0.04118314223250291,
+      "valid_pixels": 57802752,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          52651052,
+          1124192
+        ],
+        [
+          3574239,
+          453269
+        ]
+      ],
+      "foreground_ece_15": 0.05541862732336507,
+      "classwise_calibration": {
+        "background": {
+          "ece_15": 0.05541862711231141
+        },
+        "building": {
+          "ece_15": 0.05541862732345237
+        }
+      },
+      "foreground_nll": 0.35586682100550115,
+      "foreground_brier": 0.06774047809038437,
+      "boundary_calibration": {
+        "radius_pixels": 1,
+        "pixel_count": 17396091,
+        "ece_15": 0.14816653540847957,
+        "foreground_ece_15": 0.1705795965571837
+      }
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T140818811757Z_spacenet7_panopticon_frozen_seed44_0f56f5e4",
+    "run_id": "20260824T140818811757Z_spacenet7_panopticon_frozen_seed44_0f56f5e4",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": 44,
+    "best_epoch": 49,
+    "test_metrics": {
+      "miou": 0.5008651482694175,
+      "per_class_iou": {
+        "background": 0.9180262855832338,
+        "building": 0.0837040109556011
+      },
+      "pixel_accuracy": 0.9186355694621599,
+      "nll": 0.3542412441401255,
+      "brier": 0.13655739534401298,
+      "ece_15": 0.041564901733727094,
+      "valid_pixels": 57802752,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          52670035,
+          1105209
+        ],
+        [
+          3597879,
+          429629
+        ]
+      ],
+      "foreground_ece_15": 0.05517566479031686,
+      "classwise_calibration": {
+        "background": {
+          "ece_15": 0.05517565771398697
+        },
+        "building": {
+          "ece_15": 0.05517566480456793
+        }
+      },
+      "foreground_nll": 0.3540611430630933,
+      "foreground_brier": 0.06827869780716442,
+      "boundary_calibration": {
+        "radius_pixels": 1,
+        "pixel_count": 17396091,
+        "ece_15": 0.1464771086586885,
+        "foreground_ece_15": 0.16863193763740106
+      }
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T223417473200Z_spacenet7_dofa_full_finetune_seed42_6349d2a1",
+    "run_id": "20260823T223417473200Z_spacenet7_dofa_full_finetune_seed42_6349d2a1",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": 42,
+    "best_epoch": 23,
+    "test_metrics": {
+      "miou": 0.4972244771571725,
+      "per_class_iou": {
+        "background": 0.9229750685743812,
+        "building": 0.07147388573996383
+      },
+      "pixel_accuracy": 0.9234290609554369,
+      "nll": 0.5600019962338904,
+      "brier": 0.13685077811483623,
+      "ece_15": 0.056913276554604625,
+      "valid_pixels": 57802752,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          53036046,
+          739198
+        ],
+        [
+          3686813,
+          340695
+        ]
+      ],
+      "foreground_ece_15": 0.06208139524200504,
+      "classwise_calibration": {
+        "background": {
+          "ece_15": 0.06208139654737742
+        },
+        "building": {
+          "ece_15": 0.06208139524290413
+        }
+      },
+      "foreground_nll": 0.5600011237894867,
+      "foreground_brier": 0.06842538932773397,
+      "boundary_calibration": {
+        "radius_pixels": 1,
+        "pixel_count": 17396091,
+        "ece_15": 0.18824411143032646,
+        "foreground_ece_15": 0.19822217810319429
+      }
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [
+      "/workspace/results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T211934803653Z_spacenet7_dofa_full_finetune_seed42_5e4e4aac"
+    ],
+    "noncandidate_attempts": [
+      {
+        "run_id": "20260823T211934803653Z_spacenet7_dofa_full_finetune_seed42_5e4e4aac",
+        "run_dir": "/workspace/results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T211934803653Z_spacenet7_dofa_full_finetune_seed42_5e4e4aac",
+        "disposition": "NONCANDIDATE_ZERO_EPOCH_INITIALIZATION",
+        "reason": "initialization audits exist, but no completed epoch, checkpoint, gradient audit, or run summary exists",
+        "evidence": {
+          "summary_present": false,
+          "summary_status": null,
+          "completed_epochs": 0,
+          "checkpoints": [],
+          "gradient_audit_present": false,
+          "initialization_audits": [
+            "model_audit.json",
+            "optimizer_group_audit.json"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T041628970344Z_spacenet7_dofa_full_finetune_seed43_2a812094",
+    "run_id": "20260824T041628970344Z_spacenet7_dofa_full_finetune_seed43_2a812094",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": 43,
+    "best_epoch": 16,
+    "test_metrics": {
+      "miou": 0.4965585476640966,
+      "per_class_iou": {
+        "background": 0.924944887626074,
+        "building": 0.06817220770211918
+      },
+      "pixel_accuracy": 0.9253547651156817,
+      "nll": 0.4127928893379614,
+      "brier": 0.12959177625659102,
+      "ece_15": 0.04499762448793472,
+      "valid_pixels": 57802752,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          53172390,
+          602854
+        ],
+        [
+          3711846,
+          315662
+        ]
+      ],
+      "foreground_ece_15": 0.052601722450708835,
+      "classwise_calibration": {
+        "background": {
+          "ece_15": 0.0526017161591992
+        },
+        "building": {
+          "ece_15": 0.05260172245071309
+        }
+      },
+      "foreground_nll": 0.4127928869051187,
+      "foreground_brier": 0.06479588839861136,
+      "boundary_calibration": {
+        "radius_pixels": 1,
+        "pixel_count": 17396091,
+        "ece_15": 0.152562717022133,
+        "foreground_ece_15": 0.16883765344727053
+      }
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T105029720150Z_spacenet7_dofa_full_finetune_seed44_0e9c0a7e",
+    "run_id": "20260824T105029720150Z_spacenet7_dofa_full_finetune_seed44_0e9c0a7e",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": 44,
+    "best_epoch": 24,
+    "test_metrics": {
+      "miou": 0.4996375408123507,
+      "per_class_iou": {
+        "background": 0.9201639456885271,
+        "building": 0.07911113593617422
+      },
+      "pixel_accuracy": 0.9207077718375761,
+      "nll": 0.4374349503154928,
+      "brier": 0.13578613398094025,
+      "ece_15": 0.047032242616038694,
+      "valid_pixels": 57802752,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          52825703,
+          949541
+        ],
+        [
+          3633768,
+          393740
+        ]
+      ],
+      "foreground_ece_15": 0.05795021796930338,
+      "classwise_calibration": {
+        "background": {
+          "ece_15": 0.057950204197900305
+        },
+        "building": {
+          "ece_15": 0.057950217969319644
+        }
+      },
+      "foreground_nll": 0.4374349192291701,
+      "foreground_brier": 0.06789306702425961,
+      "boundary_calibration": {
+        "radius_pixels": 1,
+        "pixel_count": 17396091,
+        "ece_15": 0.16370555470521989,
+        "foreground_ece_15": 0.18280801233827848
+      }
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T233635521819Z_spacenet7_panopticon_full_finetune_seed42_b6b452b4",
+    "run_id": "20260823T233635521819Z_spacenet7_panopticon_full_finetune_seed42_b6b452b4",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": 42,
+    "best_epoch": 40,
+    "test_metrics": {
+      "miou": 0.5090204123518141,
+      "per_class_iou": {
+        "background": 0.9124026257064377,
+        "building": 0.1056381989971903
+      },
+      "pixel_accuracy": 0.9132996816483755,
+      "nll": 0.48019576140271836,
+      "brier": 0.14463169776460752,
+      "ece_15": 0.05290978657139847,
+      "valid_pixels": 57802752,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          52199296,
+          1575948
+        ],
+        [
+          3435569,
+          591939
+        ]
+      ],
+      "foreground_ece_15": 0.06441336675762202,
+      "classwise_calibration": {
+        "background": {
+          "ece_15": 0.06441336682900972
+        },
+        "building": {
+          "ece_15": 0.0644133667611683
+        }
+      },
+      "foreground_nll": 0.48018519745932686,
+      "foreground_brier": 0.07231584886540901,
+      "boundary_calibration": {
+        "radius_pixels": 1,
+        "pixel_count": 17396091,
+        "ece_15": 0.17937746785549366,
+        "foreground_ece_15": 0.19725093591130086
+      }
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T050749487080Z_spacenet7_panopticon_full_finetune_seed43_efe0a455",
+    "run_id": "20260824T050749487080Z_spacenet7_panopticon_full_finetune_seed43_efe0a455",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": 43,
+    "best_epoch": 23,
+    "test_metrics": {
+      "miou": 0.5046620663506325,
+      "per_class_iou": {
+        "background": 0.9197743157427213,
+        "building": 0.08954981695854358
+      },
+      "pixel_accuracy": 0.9204024057539683,
+      "nll": 0.4821234617779314,
+      "brier": 0.13587866013113603,
+      "ece_15": 0.04954686862378916,
+      "valid_pixels": 57802752,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          52749252,
+          1025992
+        ],
+        [
+          3574968,
+          452540
+        ]
+      ],
+      "foreground_ece_15": 0.0591534214186673,
+      "classwise_calibration": {
+        "background": {
+          "ece_15": 0.05915342217242999
+        },
+        "building": {
+          "ece_15": 0.05915342142461077
+        }
+      },
+      "foreground_nll": 0.48211073426027146,
+      "foreground_brier": 0.06793932979525216,
+      "boundary_calibration": {
+        "radius_pixels": 1,
+        "pixel_count": 17396091,
+        "ece_15": 0.16661387187764864,
+        "foreground_ece_15": 0.1842196699243277
+      }
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  },
+  {
+    "status": "PROMOTABLE",
+    "run_dir": "/workspace/results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T115507474539Z_spacenet7_panopticon_full_finetune_seed44_f73c1ae1",
+    "run_id": "20260824T115507474539Z_spacenet7_panopticon_full_finetune_seed44_f73c1ae1",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": 44,
+    "best_epoch": 42,
+    "test_metrics": {
+      "miou": 0.49925550450079287,
+      "per_class_iou": {
+        "background": 0.9147041131421428,
+        "building": 0.08380689585944294
+      },
+      "pixel_accuracy": 0.9153644622318329,
+      "nll": 0.33318347782910274,
+      "brier": 0.14300713774298324,
+      "ece_15": 0.03376175287487407,
+      "valid_pixels": 57802752,
+      "ignored_pixels": 0,
+      "confusion_matrix": [
+        [
+          52463084,
+          1312160
+        ],
+        [
+          3580007,
+          447501
+        ]
+      ],
+      "foreground_ece_15": 0.05512195958529411,
+      "classwise_calibration": {
+        "background": {
+          "ece_15": 0.05512195493915135
+        },
+        "building": {
+          "ece_15": 0.05512195958653315
+        }
+      },
+      "foreground_nll": 0.33318080764914315,
+      "foreground_brier": 0.0715035690742285,
+      "boundary_calibration": {
+        "radius_pixels": 1,
+        "pixel_count": 17396091,
+        "ece_15": 0.13046048889839068,
+        "foreground_ece_15": 0.1523933004097333
+      }
+    },
+    "errors": [],
+    "warnings": [],
+    "incomplete_attempts": [],
+    "noncandidate_attempts": []
+  }
+]

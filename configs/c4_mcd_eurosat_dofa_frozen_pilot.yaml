@@ -1,0 +1,86 @@
+seed: 42
+seeds: [42]
+device: auto
+output_dir: ./results/c4_mc_dropout_pilots/classification/eurosat_dofa_frozen
+results_csv: ./results/c4_mc_dropout_pilots/classification/eurosat_dofa_frozen/results.csv
+task: classification
+
+provenance:
+  require_input_hashes: true
+  protocol_id: C4-MCD-PILOT-2026-08-25-v1
+  protocol_path: ./reports/pre_uq_protocol_freeze.md
+  protocol_sha256: 150caf72c6085e4082a9e8ad619b604cdcbeb93b795226b1b9ec80b1d640d956
+
+data:
+  name: eurosat
+  input_bands: rgb
+  channels: [B04, B03, B02]
+  wavelengths_nm: [664.6300422881802, 559.5987534818435, 492.9971095687347]
+  wavelength_source: https://github.com/geobreeze/geobreeze/blob/main/geobreeze/datasets/metadata/sensors/sentinel2.yaml
+  source: torchgeo_all_bands
+  artifact_path: ./data/EuroSATallBands.zip
+  artifact_sha256: 751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59
+  root: ./data
+  split_manifest: ./splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv
+  split_manifest_sha256: c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22
+  augmentations: {train: none, val: none, calibration: none, test: none}
+  download: false
+  image_size: 224
+  normalize: true
+  normalization:
+    method: channelwise_standardization
+    statistics_split: train
+    statistics_manifest: ./splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv
+    raw_units: Sentinel-2_L2A_DN
+    mean: [936.085209866211, 1031.3388562784282, 1111.4795678522003]
+    std: [589.387623763833, 388.3087839027959, 327.14241012761033]
+    sample_count: 18866
+    pixel_count_per_channel: 77275136
+  num_classes: 10
+  class_names: [AnnualCrop, Forest, HerbaceousVegetation, Highway, Industrial, Pasture, PermanentCrop, Residential, River, SeaLake]
+  num_workers: 0
+
+training:
+  epochs: 1
+  batch_size: 64
+  optimizer: {name: adamw}
+  learning_rate: 0.001
+  backbone_learning_rate: 0.001
+  head_learning_rate: 0.001
+  weight_decay: 0.01
+  early_stopping: {enabled: true, patience: 10, min_delta: 0.0}
+  checkpoint: {split: val, metric: nll, mode: min}
+  limit_train_batches: 1
+  limit_val_batches: 1
+
+metrics: {n_bins: 15}
+reproducibility: {deterministic: true, warn_only: false}
+prediction_export: {enabled: false}
+visualization: {enabled: false, track_gradient_norm: true}
+uq_methods: [{name: none}]
+
+dry_run_settings:
+  epochs: 1
+  limit_train_batches: 1
+  limit_val_batches: 1
+  num_workers: 0
+  output_dir: ./results/c4_mc_dropout_pilots/classification/eurosat_dofa_frozen
+
+experiments:
+  - name: c4_mcd_eurosat_dofa_frozen_pilot
+    task: classification
+    model:
+      name: dofa
+      size: base
+      pretrained: true
+      drop_rate: 0.0
+      adaptation_mode: frozen
+      head:
+        architecture: batchnorm_linear
+        batchnorm_affine: false
+        batchnorm_eps: 1.0e-6
+        dropout: 0.10
+      global_pool: false
+      dofa_root: ./DOFA
+      weights_path: ./DOFA/checkpoints/DOFA_ViT_base_e100.pth
+      weights_sha256: 4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1

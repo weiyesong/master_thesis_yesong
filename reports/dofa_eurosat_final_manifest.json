@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-08-10T00:35:02Z",
+  "status": "FINAL_IMMUTABLE",
+  "immutability": {
+    "mechanism": "write permissions removed recursively from each allowlisted run directory",
+    "verified": true,
+    "warning": "Do not chmod, resume, overwrite, or replace these run directories."
+  },
+  "source_snapshot": {
+    "path": "/workspace/results/final_thesis/dofa_eurosat_freeze_20260810/code_snapshot.json",
+    "code_sha256": "c99c1409e6a01bd4c4e2aca5208e847548b487e3ab8b84a798c796d1e16baa01",
+    "file_count": 77,
+    "provenance_scope": "Post-hoc snapshot of the preserved workspace source. Historical training-time Git commits remain unavailable and are not reconstructed."
+  },
+  "runs": [
+    {
+      "run_id": "20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700",
+      "adaptation": "frozen",
+      "seed": 42,
+      "checkpoint_path": "/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/best.pt",
+      "checkpoint_sha256": "7cb285a3e45dcf6acb67c58e474d0b2bfed1aa78ddb6139ecd1dc261c84b54d0",
+      "test_prediction_path": "/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/predictions/test/deterministic/predictions.parquet",
+      "test_prediction_sha256": "b46b03329a27a8eff9a9b66c4df52714b5c066d25792120b7cd95ca10687ddd1",
+      "config": "/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/resolved_config.yaml",
+      "config_sha256": "742fadd1cc53eae6abb3e579befd5b523a432232a0ad542242e3b1fc97d445f2",
+      "metrics": {"accuracy": 0.9830508474576272, "macro_f1": 0.9820321179321507, "nll": 0.05810932382339024, "brier": 0.026905956161040682, "ece_15": 0.004230741814997849}
+    },
+    {
+      "run_id": "20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c",
+      "adaptation": "frozen",
+      "seed": 43,
+      "checkpoint_path": "/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/best.pt",
+      "checkpoint_sha256": "67b3eb2be1b5f7bd2fb280fd975ac0583fc83bc3d4b3bc0eed2fb9f64c0b7960",
+      "test_prediction_path": "/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/predictions/test/deterministic/predictions.parquet",
+      "test_prediction_sha256": "f44f9619d7eb2a9df6cf2bf88e2dfc272f858d7577f1ab8e6693221259c3b898",
+      "config": "/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/resolved_config.yaml",
+      "config_sha256": "26b254f3a40765aa01484f1d1b2cc562529a3987dc4eb55fc8803705d9374245",
+      "metrics": {"accuracy": 0.9841562269712602, "macro_f1": 0.9831336902774762, "nll": 0.050330715675589256, "brier": 0.024243360452169457, "ece_15": 0.0071251012862563225}
+    },
+    {
+      "run_id": "20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49",
+      "adaptation": "frozen",
+      "seed": 44,
+      "checkpoint_path": "/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/best.pt",
+      "checkpoint_sha256": "22e7fa5dae5d6e50606fc2c0e0707db513962efc13d62d6d71b22e2fe506a0b7",
+      "test_prediction_path": "/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/predictions/test/deterministic/predictions.parquet",
+      "test_prediction_sha256": "2c7f77297da98c634efd09c774de010a13bf1e970034bed3231c8897c03af806",
+      "config": "/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/resolved_config.yaml",
+      "config_sha256": "dba98569c91df2d49c8fc3ebbe5de3ccdaf0dea6a75a18bdcf0d0fc982686589",
+      "metrics": {"accuracy": 0.9830508474576272, "macro_f1": 0.9818590980786087, "nll": 0.05473035796903158, "brier": 0.026847744245377, "ece_15": 0.003668337434464361}
+    },
+    {
+      "run_id": "20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00",
+      "adaptation": "full_finetune",
+      "seed": 42,
+      "checkpoint_path": "/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/best.pt",
+      "checkpoint_sha256": "dc5cbeaaada0ae763de0b916fa9de099613c0ca495156b4984c09105e7010ae6",
+      "test_prediction_path": "/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/predictions/test/deterministic/predictions.parquet",
+      "test_prediction_sha256": "abffc3a6083c562421b9e9a49b68a209e9f4053afbaf5134109037aff71e4bea",
+      "config": "/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/resolved_config.yaml",
+      "config_sha256": "640294e39d2b5043b1696244fcfdf43167524db14b19f9ecea25a74ce04128ac",
+      "metrics": {"accuracy": 0.970891672807664, "macro_f1": 0.9700730838673988, "nll": 0.083690893234053, "brier": 0.043979038164620635, "ece_15": 0.007804339873764473}
+    },
+    {
+      "run_id": "20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069",
+      "adaptation": "full_finetune",
+      "seed": 43,
+      "checkpoint_path": "/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/best.pt",
+      "checkpoint_sha256": "87635a994bd56920a2f0eab0dd1cddde528b2e6a277d57476c7d1dd67eb3d719",
+      "test_prediction_path": "/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/predictions/test/deterministic/predictions.parquet",
+      "test_prediction_sha256": "dbb07c1e0fdd259a50e481690a22fc8034398393e4ac17bec719d7def2237ccd",
+      "config": "/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/resolved_config.yaml",
+      "config_sha256": "15ca82fc04a14055775e5b5aa520375a0b3f72fd8d100284df97537dc95e4ade",
+      "metrics": {"accuracy": 0.9605747973470892, "macro_f1": 0.9602080708560228, "nll": 0.12139354467006654, "brier": 0.05937078197142694, "ece_15": 0.008803532592672287}
+    },
+    {
+      "run_id": "20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9",
+      "adaptation": "full_finetune",
+      "seed": 44,
+      "checkpoint_path": "/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/best.pt",
+      "checkpoint_sha256": "db55348289cad41a30a36365f96585b9dd1d98d877919cacdbc4b65b253fa730",
+      "test_prediction_path": "/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/predictions/test/deterministic/predictions.parquet",
+      "test_prediction_sha256": "a2baefb0228b7ddf32b11bc95e1c906192105f4bedea882eedac3dcff433b4d8",
+      "config": "/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/resolved_config.yaml",
+      "config_sha256": "a85ebe2d124a1be81745d248085d844371072be89e55b284a94b7c1d635c3c5d",
+      "metrics": {"accuracy": 0.9631540162122328, "macro_f1": 0.9609621683383477, "nll": 0.11574802638296275, "brier": 0.056458336931848915, "ece_15": 0.016743802890324323}
+    }
+  ]
+}

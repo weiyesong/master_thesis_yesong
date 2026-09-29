@@ -1,0 +1,173 @@
+seed: 42
+seeds:
+- 42
+device: auto
+output_dir: /workspace/results/final_thesis/mc_dropout/segmentation/cloudsen12/dofa/frozen
+results_csv: /workspace/results/final_thesis/mc_dropout/segmentation/cloudsen12/dofa/frozen/results.csv
+task: segmentation
+provenance:
+  require_input_hashes: true
+  protocol_id: C5-FINAL-MCD-2026-08-26-v1
+  protocol_path: /workspace/reports/mc_dropout_protocol.md
+  protocol_sha256: 5d528c67546bee3faffc48cfd268a9aacce332575af8c23df6beb1b4966d4e17
+data:
+  name: cloudsen12
+  protocol: geobench2_cloudsen12
+  source: GEO-Bench-2@fd9d0b664e6fb0faba54636bdff4906634debd4b
+  root: ./datasets/cloudsen12
+  artifact_path: ./datasets/cloudsen12/geobench_cloudsen12.tortilla
+  artifact_sha256: 16b3c03d7b15cf42f6ef0cee6d453b6ad8ebbe7744674c4b58657511f7f5d0c0
+  extracted_manifest_path: ./reports/dataset_manifests/cloudsen12_actual_manifest.csv
+  extracted_manifest_sha256: af395425e531b213e59f49290bb3101715557583cefb48d6efc7b02465d95f1a
+  download: false
+  input_bands: optical
+  channels:
+  - B01
+  - B02
+  - B03
+  - B04
+  - B05
+  - B06
+  - B07
+  - B08
+  - B8A
+  - B09
+  - B11
+  - B12
+  wavelengths_nm:
+  - 443
+  - 490
+  - 560
+  - 665
+  - 705
+  - 740
+  - 783
+  - 842
+  - 865
+  - 945
+  - 1610
+  - 2190
+  wavelength_source: pinned GeoBenchV2 DatasetBandRegistry.CLOUDSEN12/SENTINEL2
+  native_image_size: 512
+  image_size: 224
+  native_gsd_m: 10
+  mask_resize: nearest
+  num_classes: 4
+  class_names:
+  - clear
+  - thick cloud
+  - thin cloud
+  - cloud shadow
+  ignore_index: null
+  split_source: embedded_official_manifest
+  normalization:
+    method: channelwise_standardization
+    source: pinned_geobench2_train_statistics
+    mean:
+    - 2030.244384765625
+    - 2074.817138671875
+    - 2209.807373046875
+    - 2247.927490234375
+    - 2589.593505859375
+    - 3103.521240234375
+    - 3277.909423828125
+    - 3331.6318359375
+    - 3377.544677734375
+    - 4038.193115234375
+    - 2448.748046875
+    - 1907.728515625
+    std:
+    - 2723.43603515625
+    - 2691.302734375
+    - 2539.91357421875
+    - 2538.520751953125
+    - 2504.328369140625
+    - 2241.74462890625
+    - 2145.667724609375
+    - 2176.997802734375
+    - 2066.763671875
+    - 3083.179931640625
+    - 1595.065185546875
+    - 1474.11767578125
+  augmentations:
+    train: none
+    val: none
+    test: none
+  num_workers: 4
+training:
+  epochs: 50
+  batch_size: 8
+  optimizer:
+    name: adamw
+  learning_rate: 0.001
+  backbone_learning_rate: 0.0001
+  head_learning_rate: 0.001
+  weight_decay: 0.01
+  warmup:
+    enabled: false
+    epochs: 0
+    type: linear
+  gradient_clipping:
+    enabled: false
+  layerwise_lr_decay:
+    enabled: false
+  early_stopping:
+    enabled: true
+    patience: 10
+    min_delta: 0.0
+  checkpoint:
+    split: val
+    metric: miou
+    mode: max
+  limit_train_batches: null
+  limit_val_batches: null
+metrics:
+  n_bins: 15
+uq_methods:
+- name: downstream_mc_dropout
+  dropout_probability: 0.1
+  stochastic_passes: 30
+  aggregation: arithmetic_mean_probabilities
+reproducibility:
+  deterministic: true
+  warn_only: false
+prediction_export:
+  enabled: false
+dry_run_settings:
+  epochs: 1
+  limit_train_batches: 1
+  limit_val_batches: 1
+  num_workers: 0
+  output_dir: ./results/final_thesis/segmentation/cloudsen12_frozen/dry_runs
+experiments:
+- name: c5_mcd_cloudsen12_dofa_frozen
+  task: segmentation
+  model:
+    name: dofa
+    size: base
+    pretrained: true
+    adaptation_mode: frozen
+    dofa_root: ./DOFA
+    weights_path: ./DOFA/checkpoints/DOFA_ViT_base_e100.pth
+    weights_sha256: 4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1
+    decoder:
+      architecture: unet
+      channels:
+      - 256
+      - 128
+      - 64
+      - 32
+      dropout: 0.1
+evaluation:
+  test_enabled: false
+visualization:
+  enabled: false
+  track_gradient_norm: true
+c5_frozen_protocol:
+  pre_uq_protocol_path: /workspace/reports/pre_uq_protocol_freeze.md
+  pre_uq_protocol_sha256: 150caf72c6085e4082a9e8ad619b604cdcbeb93b795226b1b9ec80b1d640d956
+  pilot_validation_path: /workspace/reports/mc_dropout_pilot_validation.md
+  pilot_validation_sha256: 7a4c7c9390460bd20a8a20f9fc5ff56c40ab65de2151921a11c963835c7e4aae
+  source_deterministic_config: /workspace/configs/cloudsen12_frozen_final.yaml
+  source_deterministic_config_sha256: dbfd8e9c1e0f6b2185dd932c74ee17b1df9de081bb7e59e1d37c4da33f4c094d
+  test_embargo_during_training: true

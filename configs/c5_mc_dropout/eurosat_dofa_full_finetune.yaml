@@ -1,0 +1,133 @@
+seed: 42
+seeds:
+- 42
+device: auto
+output_dir: /workspace/results/final_thesis/mc_dropout/classification/eurosat/dofa/full_finetune
+results_csv: /workspace/results/final_thesis/mc_dropout/classification/eurosat/dofa/full_finetune/results.csv
+task: classification
+data:
+  name: eurosat
+  input_bands: rgb
+  channels:
+  - B04
+  - B03
+  - B02
+  wavelengths_nm:
+  - 665
+  - 560
+  - 490
+  source: torchgeo_all_bands
+  root: ./data
+  split_manifest: ./splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv
+  augmentations:
+    train: none
+    val: none
+    calibration: none
+    test: none
+  download: false
+  image_size: 224
+  normalize: true
+  num_classes: 10
+  class_names:
+  - AnnualCrop
+  - Forest
+  - HerbaceousVegetation
+  - Highway
+  - Industrial
+  - Pasture
+  - PermanentCrop
+  - Residential
+  - River
+  - SeaLake
+  num_workers: 4
+  artifact_path: ./data/EuroSATallBands.zip
+  artifact_sha256: 751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59
+  split_manifest_sha256: c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22
+  wavelength_source: immutable historical nominal Sentinel-2 RGB centers
+training:
+  epochs: 100
+  batch_size: 64
+  optimizer:
+    name: adamw
+  learning_rate: 0.0004
+  backbone_learning_rate: 0.0004
+  head_learning_rate: 0.004
+  weight_decay: 0.0
+  warmup:
+    enabled: true
+    epochs: 5
+    type: linear
+  gradient_clipping:
+    enabled: false
+  layerwise_lr_decay:
+    enabled: false
+  early_stopping:
+    enabled: true
+    patience: 15
+    min_delta: 0.0
+  checkpoint:
+    split: val
+    metric: nll
+    mode: min
+  limit_train_batches: null
+  limit_val_batches: null
+metrics:
+  n_bins: 15
+reproducibility:
+  deterministic: true
+prediction_export:
+  enabled: false
+dry_run_settings:
+  epochs: 1
+  limit_train_batches: 1
+  limit_val_batches: 1
+  num_workers: 0
+  output_dir: ./results/baselines/dofa_eurosat_full_finetune/dry_runs
+visualization:
+  enabled: false
+  track_gradient_norm: true
+uq_methods:
+- name: downstream_mc_dropout
+  dropout_probability: 0.1
+  stochastic_passes: 30
+  aggregation: arithmetic_mean_probabilities
+experiments:
+- name: c5_mcd_eurosat_dofa_full_finetune
+  task: classification
+  model:
+    name: dofa
+    actual_wavelengths:
+    - 0.665
+    - 0.56
+    - 0.49
+    actual_wavelength_units: micrometers
+    size: base
+    pretrained: true
+    drop_rate: 0.0
+    adaptation_mode: full_finetune
+    expected_frozen_backbone_parameters:
+    - pos_embed
+    head:
+      architecture: batchnorm_linear
+      batchnorm_affine: false
+      batchnorm_eps: 1.0e-06
+      dropout: 0.1
+    global_pool: false
+    dofa_root: ./DOFA
+    weights_path: ./DOFA/checkpoints/DOFA_ViT_base_e100.pth
+    weights_sha256: 4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1
+evaluation:
+  test_enabled: false
+provenance:
+  require_input_hashes: true
+  protocol_id: C5-FINAL-MCD-2026-08-26-v1
+  protocol_path: /workspace/reports/mc_dropout_protocol.md
+  protocol_sha256: 5d528c67546bee3faffc48cfd268a9aacce332575af8c23df6beb1b4966d4e17
+c5_frozen_protocol:
+  pre_uq_protocol_path: /workspace/reports/pre_uq_protocol_freeze.md
+  pre_uq_protocol_sha256: 150caf72c6085e4082a9e8ad619b604cdcbeb93b795226b1b9ec80b1d640d956
+  pilot_validation_path: /workspace/reports/mc_dropout_pilot_validation.md
+  pilot_validation_sha256: 7a4c7c9390460bd20a8a20f9fc5ff56c40ab65de2151921a11c963835c7e4aae
+  source_deterministic_config: /workspace/configs/eurosat_dofa_full_finetune.yaml
+  source_deterministic_config_sha256: 8e1573974beebc9d18098adee456f6f8e3c660eb2da51579b66e6297d648b9bb
+  test_embargo_during_training: true

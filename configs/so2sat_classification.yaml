@@ -1,0 +1,172 @@
+seed: 42
+seeds: [42, 43, 44]
+device: auto
+output_dir: ./results/baselines/so2sat_classification
+results_csv: ./results/baselines/so2sat_classification/results.csv
+
+task: classification
+
+data:
+  name: so2sat
+  protocol: geobench2_m-so2sat
+  source: GEO-Bench-2@fd9d0b664e6fb0faba54636bdff4906634debd4b
+  source_dataset: So2Sat_LCZ42_version_2
+  root: ./datasets/so2sat
+  download: false
+  verify_checksum: true
+  expected_sha256: 2f9aa3a0cbf7f5071d2fafee24156a6041a9c732f0f979881b8db582201aa7bc
+  input_bands: s2
+  channels: [B02, B03, B04, B05, B06, B07, B08, B8A, B11, B12]
+  wavelengths_nm:
+    - 492.9971095687347
+    - 559.5987534818435
+    - 664.6300422881802
+    - 704.0059319834206
+    - 740.5521320760564
+    - 782.4190761493182
+    - 827.5394062383036
+    - 864.7801257644385
+    - 1613.8624163477282
+    - 2203.6182057820033
+  wavelength_source: https://github.com/geobreeze/geobreeze/blob/main/geobreeze/datasets/metadata/sensors/sentinel2.yaml
+  native_image_size: 32
+  image_size: 224
+  spatial_resolution_m: 10
+  normalize: true
+  normalization:
+    method: channelwise_standardization
+    statistics_split: train
+    raw_units: decimal_reflectance
+    mean:
+      - 0.12951050698757172
+      - 0.11724399030208588
+      - 0.11381018161773682
+      - 0.12716519832611084
+      - 0.17067235708236694
+      - 0.19281364977359772
+      - 0.185484379529953
+      - 0.20729145407676697
+      - 0.1768450140953064
+      - 0.12849585711956024
+    std:
+      - 0.041423603892326355
+      - 0.05196256563067436
+      - 0.0733252465724945
+      - 0.06936437636613846
+      - 0.07505552470684052
+      - 0.0855887159705162
+      - 0.0865049883723259
+      - 0.09397122263908386
+      - 0.10238894075155258
+      - 0.09227467328310013
+  num_classes: 17
+  class_names:
+    - Compact high-rise
+    - Compact middle-rise
+    - Compact low-rise
+    - Open high-rise
+    - Open middle-rise
+    - Open low-rise
+    - Lightweight low-rise
+    - Large low-rise
+    - Sparsely built
+    - Heavy industry
+    - Dense Trees
+    - Scattered trees
+    - Bush, scrub
+    - Low plants
+    - Bare rock or paved
+    - Bare soil or sand
+    - Water
+  augmentations:
+    train: none
+    val: none
+    test: none
+  num_workers: 4
+
+training:
+  epochs: 50
+  batch_size: 64
+  optimizer:
+    name: adamw
+  learning_rate: 1.0e-3
+  backbone_learning_rate: 1.0e-3
+  head_learning_rate: 1.0e-3
+  weight_decay: 0.01
+  early_stopping:
+    enabled: true
+    patience: 10
+    min_delta: 0.0
+  checkpoint:
+    split: val
+    metric: nll
+    mode: min
+  limit_train_batches: null
+  limit_val_batches: null
+
+metrics:
+  n_bins: 15
+
+reproducibility:
+  deterministic: true
+
+prediction_export:
+  enabled: true
+  splits: [test]
+  save_backbone_representation: true
+  save_embeddings: true
+  format: parquet
+  stochastic_format: compressed_npz
+  corruption_type: none
+  corruption_severity: 0
+
+dry_run_settings:
+  epochs: 1
+  limit_train_batches: 1
+  limit_val_batches: 1
+  num_workers: 0
+  output_dir: ./results/baselines/so2sat_classification/dry_runs
+
+visualization:
+  enabled: true
+  update_every_epochs: 1
+  track_gradient_norm: true
+
+uq_methods:
+  - name: none
+
+experiments:
+  - name: so2sat_dofa_frozen_bnlinear
+    task: classification
+    model:
+      name: dofa
+      actual_wavelengths: [0.4929971095687347, 0.5595987534818435, 0.6646300422881802, 0.7040059319834206, 0.7405521320760564, 0.7824190761493182, 0.8275394062383036, 0.8647801257644385, 1.6138624163477282, 2.2036182057820033]
+      actual_wavelength_units: micrometers
+      size: base
+      pretrained: true
+      drop_rate: 0.0
+      adaptation_mode: frozen
+      head:
+        architecture: batchnorm_linear
+        batchnorm_affine: false
+        batchnorm_eps: 1.0e-6
+        dropout: 0.0
+      global_pool: false
+      dofa_root: ./DOFA
+      weights_path: ./DOFA/checkpoints/DOFA_ViT_base_e100.pth
+
+  - name: so2sat_panopticon_frozen_bnlinear
+    task: classification
+    model:
+      name: panopticon
+      actual_wavelengths: [492.9971095687347, 559.5987534818435, 664.6300422881802, 704.0059319834206, 740.5521320760564, 782.4190761493182, 827.5394062383036, 864.7801257644385, 1613.8624163477282, 2203.6182057820033]
+      actual_wavelength_units: nanometers
+      size: base
+      pretrained: true
+      weights: VIT_BASE14
+      adaptation_mode: frozen
+      head:
+        architecture: batchnorm_linear
+        batchnorm_affine: false
+        batchnorm_eps: 1.0e-6
+        dropout: 0.0

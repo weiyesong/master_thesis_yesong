@@ -1,0 +1,27 @@
+skip eurosat__dofa__frozen__deep_ensemble
+skip eurosat__dofa__full_finetune__deep_ensemble
+done eurosat__panopticon__frozen__deep_ensemble seconds 1.17
+done eurosat__panopticon__full_finetune__deep_ensemble seconds 1.21
+Traceback (most recent call last):
+  File "/workspace/reports/thesis_followup_execution_20260926/code/analyze.py", line 352, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/reports/thesis_followup_execution_20260926/code/analyze.py", line 347, in main
+    if args.task=='classification':analyze_classification(r)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/reports/thesis_followup_execution_20260926/code/analyze.py", line 156, in analyze_classification
+    rr,cc,co,rp=analyze_rank_unit(r,'micro_label_decision',err.ravel(),{k:v.ravel() for k,v in scores.items()},np.repeat(groups,y.shape[1]),True);records+=rr;curves+=cc;reps.update(rp)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/reports/thesis_followup_execution_20260926/code/analyze.py", line 86, in analyze_rank_unit
+    'mean_uncertainty':float(np.mean(u)),'spearman_uncertainty_loss':correlation(u,loss),'oracle_aurc':oracle,
+                                                                     ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/reports/thesis_followup_execution_20260926/code/analyze.py", line 21, in correlation
+    if np.ptp(x)==0 or np.ptp(y)==0:return np.nan
+                       ^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/numpy/_core/fromnumeric.py", line 3072, in ptp
+    return _methods._ptp(a, axis=axis, out=out, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/numpy/_core/_methods.py", line 240, in _ptp
+    return um.subtract(
+           ^^^^^^^^^^^^
+TypeError: numpy boolean subtract, the `-` operator, is not supported, use the bitwise_xor, the `^` operator, or the logical_xor function instead.

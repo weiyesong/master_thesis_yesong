@@ -1,0 +1,76 @@
+{
+  "actual_core_metrics": {
+    "pixel_accuracy": 0.9185758837226297,
+    "miou": 0.5001099117069657,
+    "nll": 0.3544837526882801,
+    "brier": 0.13681828363519394,
+    "iou_background": 0.9179773969733669,
+    "iou_building": 0.08224242644056454
+  },
+  "core_checks": [
+    {
+      "metric": "pixel_accuracy",
+      "actual": 0.9185758837226297,
+      "expected": 0.9185758837226297,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "miou",
+      "actual": 0.5001099117069657,
+      "expected": 0.5001099117069657,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "nll",
+      "actual": 0.3544837526882801,
+      "expected": 0.3544837553349752,
+      "difference": -2.6466951408288253e-09,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "brier",
+      "actual": 0.13681828363519394,
+      "expected": 0.13681828346348404,
+      "difference": 1.717098963016639e-10,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "iou_background",
+      "actual": 0.9179773969733669,
+      "expected": 0.9179773969733669,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "iou_building",
+      "actual": 0.08224242644056454,
+      "expected": 0.08224242644056454,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    }
+  ],
+  "validation": [],
+  "n_samples": 1152,
+  "subset_images": 32,
+  "ids_hash": "3972808bcac4aba75a7316d250c9cdc91213d3ef3a08e18414e299299ffa49d1",
+  "label_hash": "6716d9daeb61b76363f0efaf329dd949f0b8bc12143f6f2de59e6a4c79349651",
+  "mask_hash": "affbf225d6f700eb463d5d6f945712a28b2355007c53188ab76ae882d1653b55",
+  "saved_prediction_mismatches": 0,
+  "load_seconds": 4.488360900431871,
+  "decompression_seconds": 4.450871270149946,
+  "uncompressed_bytes_read": 1445120128,
+  "image_aggregation_seconds": 11.589453620836139,
+  "pixel_ranking_seconds": 2.4708291739225388,
+  "ranking_bootstrap_seconds": 0.1583618801087141,
+  "total_seconds": 18.821388764306903,
+  "peak_rss_GiB": 1.8288764953613281,
+  "status": "COMPLETE"
+}

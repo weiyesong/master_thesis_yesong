@@ -1,0 +1,12 @@
+{
+  "artifact_path": "results/final_thesis/core_rq_completion_20260921/segmentation/spacenet7/panopticon/full_finetune/seed42/predictions.npz",
+  "valid_pixels": 57802752,
+  "protocol": "clip p(building) to float32 [1e-12, 1-1e-7], then binary log likelihood over all valid pixels",
+  "reviewer_alternative": "select true-class probability first, then clip to float32 [1e-7, 1-1e-7]; different lower bound and clipping position",
+  "independent_protocol_foreground_nll": 0.4324517296592825,
+  "reported_canonical_foreground_nll": 0.43245172892568334,
+  "difference_from_reported": 7.335991814017007e-10,
+  "reviewer_alternative_foreground_nll": 0.41346555106397953,
+  "alternative_minus_protocol": -0.018986178595303008,
+  "passed_protocol_reproduction": true
+}

@@ -1,0 +1,16 @@
+{
+  "dataset": "treesatai",
+  "geobench2_commit": "fd9d0b664e6fb0faba54636bdff4906634debd4b",
+  "artifact_path": "/workspace/datasets/treesatai/geobench_treesatai.tortilla",
+  "artifact_size_bytes": 1771492601,
+  "artifact_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+  "manifest_path": "/workspace/reports/dataset_manifests/treesatai_actual_manifest.csv",
+  "manifest_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+  "manifest_rows": 7000,
+  "observed_split_counts": {
+    "train": 4000,
+    "test": 2000,
+    "validation": 1000
+  },
+  "sample_id_unique": true
+}

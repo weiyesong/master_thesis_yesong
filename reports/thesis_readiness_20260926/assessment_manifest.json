@@ -1,0 +1,143 @@
+{
+  "created_at": "2026-09-26T00:51:22.015688+00:00",
+  "scope": "Thesis sufficiency assessment and outline only; no new training or inference; previous sealed deliverables not modified",
+  "evidence_inputs_unchanged": [
+    {
+      "path": "reports/core_rq_completion_20260921/coverage_matrix.csv",
+      "unchanged": true
+    },
+    {
+      "path": "reports/core_rq_completion_20260921/mc_dropout_three_way.csv",
+      "unchanged": true
+    },
+    {
+      "path": "reports/core_rq_completion_20260921/mc_dropout_effect_summaries.csv",
+      "unchanged": true
+    },
+    {
+      "path": "reports/core_rq_completion_20260921/published/tables/thesis_master_results.csv",
+      "unchanged": true
+    },
+    {
+      "path": "reports/core_rq_completion_20260921/RESULTS_SECTION.md",
+      "unchanged": true
+    },
+    {
+      "path": "reports/core_rq_completion_20260921/provenance_followup.md",
+      "unchanged": true
+    },
+    {
+      "path": "reports/core_rq_completion_20260921/REVIEW_RESOLUTION.md",
+      "unchanged": true
+    }
+  ],
+  "local_links_checked": 26,
+  "missing_local_links": [],
+  "files": [
+    {
+      "path": "reports/thesis_readiness_20260926/REVIEW_RESOLUTION.md",
+      "bytes": 2900,
+      "sha256": "882398539b3cb4d0b4275dbbad27550cd9120893ae9708217cc856681c27e741"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/THESIS_READINESS_AND_OUTLINE.md",
+      "bytes": 17186,
+      "sha256": "16019eacb5992fa18dfa422f54c35428e15c85ff03e1a094fa2c7ef6aca517b3"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/claude_assessment.md",
+      "bytes": 8492,
+      "sha256": "cfcd9cef8a61b6b046ec3ce9c530372cecc66ffa6f6d6cb786dcf2fa0e76dab1"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/claude_assessment_evidence_trace.jsonl",
+      "bytes": 175865,
+      "sha256": "14ddcb5502e4fa0ea9553ae2df757b632ac15d5e0abfb872c29ac3160ea1fd57"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/claude_assessment_raw.json",
+      "bytes": 10403,
+      "sha256": "ecb9a2cc9e1c0b128fb2fabf3d5cfe1db16aacaac2a6cb8ab3952c91220c3914"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/claude_assessment_request.md",
+      "bytes": 3754,
+      "sha256": "4441bcda252a6ae1f2f927e00110c040b7049450bf0d71c8a474e1118b45e5bd"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/claude_assessment_stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/claude_followup.md",
+      "bytes": 4135,
+      "sha256": "8149f5337febb4d839f7037e3d9de1fa10cacedf83ec9a759e76be556323cee5"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/claude_followup_raw.json",
+      "bytes": 5976,
+      "sha256": "2b4b61466e8a82f8b107924074cd358234669c96bb92a213338ee8e82830157f"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/claude_followup_request.md",
+      "bytes": 2783,
+      "sha256": "a8d8649b038565d1d8fd4832c2669175cd3c488b750d79b89b25ce435b264cb8"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/claude_followup_stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/claude_preparation.md",
+      "bytes": 4967,
+      "sha256": "283f3b7def6e6964d1584ccd13f458acc0409188438ccf70981ac8136c27a3da"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/claude_preparation_raw.json",
+      "bytes": 6841,
+      "sha256": "9d70fbf06f158ee388c780b1311e2990f70e28d02dda224125ba60e284691387"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/claude_preparation_request.md",
+      "bytes": 1967,
+      "sha256": "98e78dc76dce253e89a5977b5f788a1f3e9724b6d55ee41c90cdd935f4c9b6f9"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/claude_preparation_stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/collaboration_metadata.json",
+      "bytes": 2602,
+      "sha256": "0d4015c1a869aaa78e8c66aeb63ff5390bdc6f70d462d48c60f0e1fecade61a8"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/confirmed_context.json",
+      "bytes": 999,
+      "sha256": "5692bdcd69520a3f10ba70442c8c8e4eb511e7e55427e5c415746d6a3881a230"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/independent_evidence_check.json",
+      "bytes": 17800,
+      "sha256": "23a49166528c7aee95c8abedd92b1184acf9d76511328c028c66b6993b3e1ff0"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/literature_positioning.md",
+      "bytes": 3032,
+      "sha256": "cbdb4129cbf2f6fbe662f559e14d8ff60b9070739282e32bdf9dcccbda2ab26b"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/preparation_context.json",
+      "bytes": 1827,
+      "sha256": "3239a3fae9468f9da92e42a7e801315b91bd79da15bd52df3dca80b6092a5fb5"
+    },
+    {
+      "path": "reports/thesis_readiness_20260926/verify_assessment_numbers.py",
+      "bytes": 5145,
+      "sha256": "63b5a2b9e4ade4a168bcb6f4ed882768e843ab60eaf402e92a3c30ff1b0ad043"
+    }
+  ]
+}

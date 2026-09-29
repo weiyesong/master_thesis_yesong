@@ -1,0 +1,45 @@
+cloudsen12/dofa/frozen/deterministic/42 metric_mismatches {} failed_checks {}
+cloudsen12/dofa/frozen/deterministic/43 metric_mismatches {} failed_checks {}
+cloudsen12/dofa/frozen/deterministic/44 metric_mismatches {} failed_checks {}
+cloudsen12/dofa/frozen/mc_dropout/42 metric_mismatches {} failed_checks {}
+cloudsen12/dofa/frozen/deep_ensemble/ metric_mismatches {} failed_checks {}
+cloudsen12/dofa/full_finetune/deterministic/42 metric_mismatches {} failed_checks {}
+cloudsen12/dofa/full_finetune/deterministic/43 metric_mismatches {} failed_checks {}
+cloudsen12/dofa/full_finetune/deterministic/44 metric_mismatches {} failed_checks {}
+cloudsen12/dofa/full_finetune/mc_dropout/42 metric_mismatches {} failed_checks {}
+cloudsen12/dofa/full_finetune/deep_ensemble/ metric_mismatches {} failed_checks {}
+cloudsen12/panopticon/frozen/deterministic/42 metric_mismatches {} failed_checks {}
+cloudsen12/panopticon/frozen/deterministic/43 metric_mismatches {} failed_checks {}
+cloudsen12/panopticon/frozen/deterministic/44 metric_mismatches {} failed_checks {}
+cloudsen12/panopticon/frozen/mc_dropout/42 metric_mismatches {} failed_checks {}
+cloudsen12/panopticon/frozen/mc_dropout/43 metric_mismatches {} failed_checks {}
+cloudsen12/panopticon/frozen/mc_dropout/44 metric_mismatches {} failed_checks {}
+cloudsen12/panopticon/frozen/deep_ensemble/ metric_mismatches {} failed_checks {}
+cloudsen12/panopticon/full_finetune/deterministic/42 metric_mismatches {} failed_checks {}
+cloudsen12/panopticon/full_finetune/deterministic/43 metric_mismatches {} failed_checks {}
+cloudsen12/panopticon/full_finetune/deterministic/44 metric_mismatches {} failed_checks {}
+cloudsen12/panopticon/full_finetune/mc_dropout/42 metric_mismatches {} failed_checks {}
+cloudsen12/panopticon/full_finetune/deep_ensemble/ metric_mismatches {} failed_checks {}
+spacenet7/dofa/frozen/deterministic/42 metric_mismatches {} failed_checks {}
+spacenet7/dofa/frozen/deterministic/43 metric_mismatches {} failed_checks {}
+spacenet7/dofa/frozen/deterministic/44 metric_mismatches {'foreground_nll': 4.8423815388609626e-06} failed_checks {}
+spacenet7/dofa/frozen/mc_dropout/42 metric_mismatches {} failed_checks {}
+spacenet7/dofa/frozen/deep_ensemble/ metric_mismatches {} failed_checks {}
+spacenet7/dofa/full_finetune/deterministic/42 metric_mismatches {} failed_checks {}
+spacenet7/dofa/full_finetune/deterministic/43 metric_mismatches {} failed_checks {}
+spacenet7/dofa/full_finetune/deterministic/44 metric_mismatches {} failed_checks {}
+spacenet7/dofa/full_finetune/mc_dropout/42 metric_mismatches {} failed_checks {}
+spacenet7/dofa/full_finetune/mc_dropout/43 metric_mismatches {} failed_checks {}
+spacenet7/dofa/full_finetune/mc_dropout/44 metric_mismatches {} failed_checks {}
+spacenet7/dofa/full_finetune/deep_ensemble/ metric_mismatches {} failed_checks {}
+spacenet7/panopticon/frozen/deterministic/42 metric_mismatches {'foreground_nll': 7.873209470432574e-06} failed_checks {}
+spacenet7/panopticon/frozen/deterministic/43 metric_mismatches {} failed_checks {}
+spacenet7/panopticon/frozen/deterministic/44 metric_mismatches {'foreground_nll': 8.966135121579732e-06} failed_checks {}
+spacenet7/panopticon/frozen/mc_dropout/42 metric_mismatches {} failed_checks {}
+spacenet7/panopticon/frozen/deep_ensemble/ metric_mismatches {} failed_checks {}
+spacenet7/panopticon/full_finetune/deterministic/42 metric_mismatches {} failed_checks {}
+spacenet7/panopticon/full_finetune/deterministic/43 metric_mismatches {} failed_checks {}
+spacenet7/panopticon/full_finetune/deterministic/44 metric_mismatches {} failed_checks {}
+spacenet7/panopticon/full_finetune/mc_dropout/42 metric_mismatches {} failed_checks {}
+spacenet7/panopticon/full_finetune/deep_ensemble/ metric_mismatches {} failed_checks {}
+DONE segmentation 44

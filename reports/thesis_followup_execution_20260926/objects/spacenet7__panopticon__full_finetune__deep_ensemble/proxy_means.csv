@@ -1,0 +1,5 @@
+score,mean,std_across_samples,score_semantics
+msp,0.052889156896656325,0.03402576112885054,"mean over valid pixels, then images"
+entropy,0.1400973415276318,0.0740772563358862,"mean over valid pixels, then images"
+negative_margin,-0.8942216860152615,0.0680515222465741,"mean over valid pixels, then images"
+gini_total,0.08181642043446767,0.04857203891069514,"mean over valid pixels, then images"

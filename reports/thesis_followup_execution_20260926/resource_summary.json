@@ -1,0 +1,184 @@
+{
+  "sum_object_wall_seconds": 990.4853148423135,
+  "by_task_wall_seconds": {
+    "classification": 181.32230523973703,
+    "segmentation": 809.1630096025765
+  },
+  "peak_process_rss_GiB": 3.6677207946777344,
+  "segmentation_primary_uncompressed_npy_bytes": 57351447488,
+  "segmentation_raw_uncompressed_npy_bytes": 5305076736,
+  "raw_byte_details": [
+    {
+      "object_id": "cloudsen12__dofa__frozen__deep_ensemble",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy",
+        "valid_mask.npy"
+      ],
+      "uncompressed_npy_bytes": 91527808,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "cloudsen12__dofa__full_finetune__deep_ensemble",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy",
+        "valid_mask.npy"
+      ],
+      "uncompressed_npy_bytes": 91527808,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "cloudsen12__panopticon__frozen__deep_ensemble",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy",
+        "valid_mask.npy"
+      ],
+      "uncompressed_npy_bytes": 91527808,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "cloudsen12__panopticon__full_finetune__deep_ensemble",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy",
+        "valid_mask.npy"
+      ],
+      "uncompressed_npy_bytes": 91527808,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "spacenet7__dofa__frozen__deep_ensemble",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy",
+        "valid_mask.npy"
+      ],
+      "uncompressed_npy_bytes": 52987776,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "spacenet7__dofa__full_finetune__deep_ensemble",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy",
+        "valid_mask.npy"
+      ],
+      "uncompressed_npy_bytes": 52987776,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "spacenet7__panopticon__frozen__deep_ensemble",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy",
+        "valid_mask.npy"
+      ],
+      "uncompressed_npy_bytes": 52987776,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "spacenet7__panopticon__full_finetune__deep_ensemble",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy",
+        "valid_mask.npy"
+      ],
+      "uncompressed_npy_bytes": 52987776,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "cloudsen12__dofa__frozen__mc_dropout__42",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy"
+      ],
+      "uncompressed_npy_bytes": 783555072,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "cloudsen12__dofa__full_finetune__mc_dropout__42",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy"
+      ],
+      "uncompressed_npy_bytes": 783555072,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "cloudsen12__panopticon__frozen__mc_dropout__42",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy"
+      ],
+      "uncompressed_npy_bytes": 783555072,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "cloudsen12__panopticon__full_finetune__mc_dropout__42",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy"
+      ],
+      "uncompressed_npy_bytes": 783555072,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "spacenet7__dofa__frozen__mc_dropout__42",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy"
+      ],
+      "uncompressed_npy_bytes": 398198528,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "spacenet7__dofa__full_finetune__mc_dropout__42",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy"
+      ],
+      "uncompressed_npy_bytes": 398198528,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "spacenet7__panopticon__frozen__mc_dropout__42",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy"
+      ],
+      "uncompressed_npy_bytes": 398198528,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    },
+    {
+      "object_id": "spacenet7__panopticon__full_finetune__mc_dropout__42",
+      "arrays": [
+        "sample_id.npy",
+        "probabilities.npy",
+        "label.npy"
+      ],
+      "uncompressed_npy_bytes": 398198528,
+      "basis": "NPZ member headers for arrays actually read; includes NPY headers"
+    }
+  ],
+  "prediction_compressed_file_bytes": 44680972720,
+  "cost_scope": "sum of per-object processing wall times; excludes implementation, independent review, aggregation, plotting, and packaging; not job elapsed or GPU time",
+  "concurrency": "initial single-object profiles sequential; classification and segmentation subsequently overlapped, each task single process with BLAS/OMP threads=1",
+  "toy_cpu_wall_seconds": 0.19677787646651268
+}

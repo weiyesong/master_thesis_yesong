@@ -1,0 +1,24 @@
+{
+  "enabled_packages": [
+    "A",
+    "E"
+  ],
+  "A_segmentation_extra_seeds": false,
+  "A_segmentation_full_test_DE_decomposition": false,
+  "E_sampling_illustration": false,
+  "timing_benchmark": false,
+  "bootstrap_replicates": 1000,
+  "analysis_seed": 20260926,
+  "coverage_points": [
+    1.0,
+    0.9,
+    0.8,
+    0.5
+  ],
+  "boundary_radius": 1,
+  "status": "exploratory",
+  "model_training": false,
+  "model_inference": false,
+  "protocol_version": 2,
+  "probability_source": "saved_mean_probabilities_float64_arithmetic"
+}

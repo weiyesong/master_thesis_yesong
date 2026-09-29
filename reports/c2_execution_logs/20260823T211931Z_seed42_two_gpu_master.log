@@ -1,0 +1,8 @@
+started_utc=2026-08-23T21:19:31Z
+gate=seed42_only
+gpu0_uuid=GPU-c30885a6-e058-bc7f-1f13-204acdc94f23
+gpu0_queue=cloudsen12_full_finetune,spacenet7_frozen
+gpu1_uuid=GPU-476a65d9-280a-9731-c63c-77e809fb9634
+gpu1_queue=spacenet7_full_finetune,cloudsen12_frozen
+0, GPU-c30885a6-e058-bc7f-1f13-204acdc94f23, 1 MiB, 24576 MiB
+1, GPU-476a65d9-280a-9731-c63c-77e809fb9634, 1 MiB, 24576 MiB

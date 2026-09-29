@@ -1,0 +1,358 @@
+{
+  "scope": "Metadata, path/byte checks and representative actual NPZ headers only; no new metrics, inference, training, or full archive hash audit.",
+  "planned_objects": {
+    "classification": 68,
+    "segmentation": 32
+  },
+  "all_100_representative_paths_exist": true,
+  "euro_mc_seed_sets_direct_from_master": {
+    "dofa/frozen": [
+      42,
+      43,
+      44
+    ],
+    "dofa/full_finetune": [
+      42
+    ],
+    "panopticon/frozen": [
+      42
+    ],
+    "panopticon/full_finetune": [
+      42
+    ]
+  },
+  "representative_headers": [
+    {
+      "role": "classification_mc_raw_passes",
+      "path": "research_data/artifacts/classification/mc_dropout/eurosat/dofa/frozen/seed42/stochastic_outputs.npz",
+      "actual_arrays": {
+        "sample_ids": {
+          "shape": [
+            2714
+          ],
+          "dtype": "<U25",
+          "fortran_order": false
+        },
+        "true_labels": {
+          "shape": [
+            2714
+          ],
+          "dtype": "int64",
+          "fortran_order": false
+        },
+        "logits": {
+          "shape": [
+            2714,
+            30,
+            10
+          ],
+          "dtype": "float32",
+          "fortran_order": false
+        },
+        "probabilities": {
+          "shape": [
+            2714,
+            30,
+            10
+          ],
+          "dtype": "float32",
+          "fortran_order": false
+        }
+      },
+      "matches_manifest_schema": true,
+      "actual_size_bytes": 6086161
+    },
+    {
+      "role": "classification_ensemble_members",
+      "path": "research_data/artifacts/classification/deep_ensemble/eurosat/dofa/frozen/member_outputs.npz",
+      "actual_arrays": {
+        "sample_ids": {
+          "shape": [
+            2714
+          ],
+          "dtype": "object",
+          "fortran_order": false
+        },
+        "true_labels": {
+          "shape": [
+            2714
+          ],
+          "dtype": "int64",
+          "fortran_order": false
+        },
+        "class_names": {
+          "shape": [
+            10
+          ],
+          "dtype": "<U20",
+          "fortran_order": false
+        },
+        "seeds": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "fortran_order": false
+        },
+        "run_ids": {
+          "shape": [
+            3
+          ],
+          "dtype": "<U67",
+          "fortran_order": false
+        },
+        "checkpoint_sha256": {
+          "shape": [
+            3
+          ],
+          "dtype": "<U64",
+          "fortran_order": false
+        },
+        "probabilities": {
+          "shape": [
+            2714,
+            3,
+            10
+          ],
+          "dtype": "float32",
+          "fortran_order": false
+        }
+      },
+      "matches_manifest_schema": true,
+      "actual_size_bytes": 317167
+    },
+    {
+      "role": "segmentation_mc_full_maps",
+      "path": "research_data/artifacts/segmentation/mc_dropout/cloudsen12/dofa/frozen/seed42/aggregate_uncertainty_maps.npz",
+      "actual_arrays": {
+        "sample_id": {
+          "shape": [
+            975
+          ],
+          "dtype": "<U49",
+          "fortran_order": false
+        },
+        "label": {
+          "shape": [
+            975,
+            224,
+            224
+          ],
+          "dtype": "int64",
+          "fortran_order": false
+        },
+        "probabilities": {
+          "shape": [
+            975,
+            4,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "fortran_order": false
+        },
+        "prediction": {
+          "shape": [
+            975,
+            224,
+            224
+          ],
+          "dtype": "int64",
+          "fortran_order": false
+        },
+        "confidence": {
+          "shape": [
+            975,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "fortran_order": false
+        },
+        "predictive_entropy": {
+          "shape": [
+            975,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "fortran_order": false
+        },
+        "expected_predictive_entropy": {
+          "shape": [
+            975,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "fortran_order": false
+        },
+        "mi_style_disagreement": {
+          "shape": [
+            975,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "fortran_order": false
+        },
+        "predictive_variance": {
+          "shape": [
+            975,
+            4,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "fortran_order": false
+        },
+        "valid_mask": {
+          "shape": [
+            975,
+            224,
+            224
+          ],
+          "dtype": "bool",
+          "fortran_order": false
+        }
+      },
+      "matches_manifest_schema": true,
+      "actual_size_bytes": 2096405527
+    },
+    {
+      "role": "segmentation_mc_raw_subset",
+      "path": "research_data/artifacts/segmentation/mc_dropout/cloudsen12/dofa/frozen/seed42/research_subset_stochastic_probabilities.npz",
+      "actual_arrays": {
+        "sample_id": {
+          "shape": [
+            32
+          ],
+          "dtype": "<U49",
+          "fortran_order": false
+        },
+        "label": {
+          "shape": [
+            32,
+            224,
+            224
+          ],
+          "dtype": "int64",
+          "fortran_order": false
+        },
+        "probabilities": {
+          "shape": [
+            32,
+            30,
+            4,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "fortran_order": false
+        },
+        "axes": {
+          "shape": [
+            5
+          ],
+          "dtype": "<U6",
+          "fortran_order": false
+        }
+      },
+      "matches_manifest_schema": true,
+      "actual_size_bytes": 682781814
+    },
+    {
+      "role": "segmentation_ensemble_member_subset",
+      "path": "research_data/artifacts/segmentation/deep_ensemble/cloudsen12/dofa/frozen/research_subset_member_probabilities.npz",
+      "actual_arrays": {
+        "sample_id": {
+          "shape": [
+            32
+          ],
+          "dtype": "<U49",
+          "fortran_order": false
+        },
+        "label": {
+          "shape": [
+            32,
+            224,
+            224
+          ],
+          "dtype": "int64",
+          "fortran_order": false
+        },
+        "valid_mask": {
+          "shape": [
+            32,
+            224,
+            224
+          ],
+          "dtype": "bool",
+          "fortran_order": false
+        },
+        "member_seeds": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "fortran_order": false
+        },
+        "member_run_ids": {
+          "shape": [
+            3
+          ],
+          "dtype": "<U61",
+          "fortran_order": false
+        },
+        "probabilities": {
+          "shape": [
+            32,
+            3,
+            4,
+            224,
+            224
+          ],
+          "dtype": "float32",
+          "fortran_order": false
+        },
+        "axes": {
+          "shape": [
+            5
+          ],
+          "dtype": "<U6",
+          "fortran_order": false
+        }
+      },
+      "matches_manifest_schema": true,
+      "actual_size_bytes": 68169190
+    },
+    {
+      "role": "segmentation_representations",
+      "path": "research_data/artifacts/segmentation/deterministic/cloudsen12/dofa/frozen/seed42/representations.npz",
+      "actual_arrays": {
+        "sample_id": {
+          "shape": [
+            975
+          ],
+          "dtype": "<U49",
+          "fortran_order": false
+        },
+        "representation": {
+          "shape": [
+            975,
+            768
+          ],
+          "dtype": "float32",
+          "fortran_order": false
+        }
+      },
+      "matches_manifest_schema": true,
+      "actual_size_bytes": 2795896
+    }
+  ],
+  "source_sha256": {
+    "research_data/manifest.parquet": "00873ce8ac1d2c83f784f2df05b8573d88eec557c03fcbf3918cbad57217773e",
+    "reports/core_rq_completion_20260921/published/tables/thesis_master_results.csv": "203bd7281f9eb4960c81fa92c7050b630175a90f93313183cabf04002088ed63",
+    "reports/core_rq_completion_20260921/mc_dropout_three_way.csv": "2bb6f4dbcee4a2e0b960dc069ae982ae7113be4a9a4f0b1562bd2ef4f16bedbe"
+  }
+}

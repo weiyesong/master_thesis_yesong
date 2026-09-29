@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-09-23T12:24:55.068807+00:00",
+  "source_files_checked": 2394,
+  "authorized_changed_files": [
+    {
+      "path": "scripts/c6_build_final_results.py",
+      "old": "ce50344187262175ea5ab1f89435d96a8acbf52ddda6be760f2c57f6790d5219",
+      "current": "9c831f3b6e904536e376ca5e8f9ae11c362b89f2fe535b84183dc12d17cbfeb1"
+    }
+  ],
+  "old_audit_artifacts_checked": 104,
+  "old_audit_changes": [],
+  "check_counts": {
+    "PASS": 27,
+    "FAIL": 0,
+    "UNKNOWN": 2,
+    "NA": 0
+  },
+  "new_segmentation_verified": 12,
+  "class_and_seg_same_checkpoint_controls": 24,
+  "paired_effect_rows": 72,
+  "effect_summary_rows": 48,
+  "sensitivity_rows": 24,
+  "unknown_items": [
+    "C01",
+    "C06"
+  ],
+  "new_training_runs": 0
+}

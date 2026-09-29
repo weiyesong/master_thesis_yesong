@@ -1,0 +1,16 @@
+{
+  "dataset": "cloudsen12",
+  "geobench2_commit": "fd9d0b664e6fb0faba54636bdff4906634debd4b",
+  "artifact_path": "/workspace/datasets/cloudsen12/geobench_cloudsen12.tortilla",
+  "artifact_size_bytes": 9944531349,
+  "artifact_sha256": "16b3c03d7b15cf42f6ef0cee6d453b6ad8ebbe7744674c4b58657511f7f5d0c0",
+  "manifest_path": "/workspace/reports/dataset_manifests/cloudsen12_actual_manifest.csv",
+  "manifest_sha256": "af395425e531b213e59f49290bb3101715557583cefb48d6efc7b02465d95f1a",
+  "manifest_rows": 5510,
+  "observed_split_counts": {
+    "train": 4000,
+    "test": 975,
+    "validation": 535
+  },
+  "sample_id_unique": true
+}

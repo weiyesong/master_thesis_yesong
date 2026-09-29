@@ -1,0 +1,111 @@
+{
+  "created_at": "2026-09-26T08:49:47.204942+00:00",
+  "source_inputs_unchanged": 11,
+  "local_references_checked": 49,
+  "missing_references": [],
+  "new_model_training": 0,
+  "new_model_inference": 0,
+  "new_behavior_or_uncertainty_metrics_executed": false,
+  "files": [
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/DOSSIER_ASSESSMENT_AND_EXPERIMENT_ROADMAP.md",
+      "bytes": 28106,
+      "sha256": "d05e83022b44b035c647afc78cce41854cba2d09d30bc9160564d4889a6f99b0"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/REVIEW_RESOLUTION.md",
+      "bytes": 4800,
+      "sha256": "4ccc67659250b65dfed9e90bb349482997e6fc460835507aafec39fef390306a"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/available_selection_exports.json",
+      "bytes": 3808,
+      "sha256": "db82f600530cf38f78cf925e70de039643adc3d50946040537755d3b211fbae6"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/claim_evidence_map.csv",
+      "bytes": 5340,
+      "sha256": "35a7f0451f9b6e1877b9e2c75188ce2dc760c03d8606ff7a1c7fb63b7423b077"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/claude_evidence_trace.jsonl",
+      "bytes": 379573,
+      "sha256": "ee5f7ec0763000f4f945480812babdbeb26d734a6910b55718ed6d86d767a4b2"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/claude_followup.md",
+      "bytes": 3946,
+      "sha256": "5155bf477fe457fab59f8154f1805f6bf3c275a659f22d8315aa2232948ff59c"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/claude_followup_raw.json",
+      "bytes": 5772,
+      "sha256": "bbc52c63f12fb0e6543b8f4c2640648fc39259cea791acefc2c6545b989ef14c"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/claude_followup_request.md",
+      "bytes": 2881,
+      "sha256": "dc13d3cb281224dc45ad173d97011e42b4a0455caf99b8a24ef751cfced71120"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/claude_followup_stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/claude_review.md",
+      "bytes": 11167,
+      "sha256": "21562becd2b852608fcc90a5f1b87739919ef72bb96c337c3cdd942560ef4562"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/claude_review_raw.json",
+      "bytes": 13098,
+      "sha256": "8606a0c327b1de9c67471a19297900b5e8c1c99917b7ca03669c1cebd6ecd7a1"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/claude_review_request.md",
+      "bytes": 3686,
+      "sha256": "5d4cee824035cc557d8d5e3fad29482c7d6eb9478700728bc1761bab944a0bec"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/claude_review_stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/codex_independent_notes.md",
+      "bytes": 4936,
+      "sha256": "9bc7669ee7d3d40629b6eac5f6f39133fd8805cb9ae0cf4bbd2c8ad5caa98349"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/collaboration_metadata.json",
+      "bytes": 1832,
+      "sha256": "ca1e54eef9033265953991b9cc5c2ef03ef53abb69e16a110bf880677fb9faf6"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/compute_cost_evidence.csv",
+      "bytes": 23216,
+      "sha256": "a5efdc3ab2a29429a0fc1d4019897a37633d7a0dd187965b8d8b9a23ac545ce5"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/coverage_matrix_review_view.csv",
+      "bytes": 37125,
+      "sha256": "a5bfe09c12358ceaac90c4f16e9c4dcb3989d89d9a670fffe8c10ff03ca05f75"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/eurosat_calibration_export_check.json",
+      "bytes": 10437,
+      "sha256": "262dec412f71b72808e8547af331b4b100f62aac3cf085d5de347b03d792df52"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/evidence_inventory.json",
+      "bytes": 115825,
+      "sha256": "d2c1141cdc4e35430da39fd419fc292065a2cb1a0ea947e38421a3e9a0bb8b11"
+    },
+    {
+      "path": "reports/thesis_dossier_assessment_20260926/inspect_evidence_inventory.py",
+      "bytes": 5692,
+      "sha256": "dcdc32221d834a1e9571240bce28013f26879a69c0fbd815696e21c7a8a68b44"
+    }
+  ]
+}

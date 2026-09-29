@@ -1,0 +1,9 @@
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+[spacenet7_dofa_full_finetune seed=42] epoch=1 train_loss=0.723205 val_miou=0.295642 best_epoch=1 patience=0/15
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+[spacenet7_panopticon_full_finetune seed=42] epoch=1 train_loss=0.574254 val_miou=0.497967 best_epoch=1 patience=0/15
+Wrote summary to /workspace/results/final_thesis/segmentation/spacenet7_full_finetune/dry_runs/summaries/20260823T212333344054Z_summary_seed42_56178d20.json

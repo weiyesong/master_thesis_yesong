@@ -35,3 +35,26 @@ thesis/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Large data / outputs (local only)
+datasets/
+research_data/
+RS3DBench/
+server_exit_20260929/
+checkpoints/
+models/pretrained_cache/
+eo_uq_experiments/data/
+eo_uq_experiments/outputs/checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.npy
+*.npz
+*.h5
+*.tif
+*.tiff
+.claude/
+.git.backup/
+.git_backup_*/
+.venv/
+.ipynb_checkpoints/

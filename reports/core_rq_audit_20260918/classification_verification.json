@@ -1,0 +1,2308 @@
+[
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9830508474576272,
+      "nll": 0.05810932382339024,
+      "brier": 0.026905956161040682,
+      "macro_f1": 0.9820321179321507,
+      "mean_confidence_minus_accuracy": -0.0018716645135366486,
+      "ece_10": 0.0036530492932987987,
+      "ece_15": 0.004230741814997763,
+      "ece_30": 0.007084720281440718
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -8.586881206085195e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "b46b03329a27a8eff9a9b66c4df52714b5c066d25792120b7cd95ca10687ddd1",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "max_logit_probability_error": 1.8609977814332268e-07
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9841562269712602,
+      "nll": 0.050330715675589256,
+      "brier": 0.024243360452169457,
+      "macro_f1": 0.9831336902774762,
+      "mean_confidence_minus_accuracy": -0.0008377464009104358,
+      "ece_10": 0.002672317147518487,
+      "ece_15": 0.0071251012862563225,
+      "ece_30": 0.007608060416880125
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 0.0
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "f44f9619d7eb2a9df6cf2bf88e2dfc272f858d7577f1ab8e6693221259c3b898",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 2.0959789870378387e-07
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9830508474576272,
+      "nll": 0.05473035796903158,
+      "brier": 0.026847744245377,
+      "macro_f1": 0.9818590980786089,
+      "mean_confidence_minus_accuracy": -0.0019078036288435,
+      "ece_10": 0.0022858886285660983,
+      "ece_15": 0.0036683374344643723,
+      "ece_30": 0.006021997675178854
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 2.220446049250313e-16,
+      "ece_15": 1.1275702593849246e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "2c7f77297da98c634efd09c774de010a13bf1e970034bed3231c8897c03af806",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 2.266903348369098e-07
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "temperature_scaling",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/temperature_scaling/eurosat/dofa/frozen/seed42/test_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9830508474576272,
+      "nll": 0.05809589700905421,
+      "brier": 0.02686524118735821,
+      "macro_f1": 0.9820321179321507,
+      "mean_confidence_minus_accuracy": -0.0013071471559804775,
+      "ece_10": 0.003651726113786447,
+      "ece_15": 0.003991326657091117,
+      "ece_30": 0.006247743429588822
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 7.676151381197371e-16
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "d73c975982110fcb27f05705412edf4f01d789d28108c1300118445d0b682d15",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "positive_scalar_temperature": true,
+      "temperature": 0.9825410741789238,
+      "scaled_logits_max_error": 0.0,
+      "argmax_changes": 0,
+      "calibration_test_disjoint": true,
+      "calibration_ids_exact": true,
+      "raw_test_ids_equal": true,
+      "raw_logits_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "temperature_scaling",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/temperature_scaling/eurosat/dofa/frozen/seed43/test_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9841562269712602,
+      "nll": 0.05034041486129431,
+      "brier": 0.024272071576345002,
+      "macro_f1": 0.9831336902774762,
+      "mean_confidence_minus_accuracy": -0.0012144565743455254,
+      "ece_10": 0.0027121734701665377,
+      "ece_15": 0.0075183842082087865,
+      "ece_30": 0.008106779016241324
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -1.5170156797417178e-15
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "a82ddd7810c37777c2c6945ac0b952250eace6253d43f0849903e0aad956ceab",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "positive_scalar_temperature": true,
+      "temperature": 1.0140271442669744,
+      "scaled_logits_max_error": 0.0,
+      "argmax_changes": 0,
+      "calibration_test_disjoint": true,
+      "calibration_ids_exact": true,
+      "raw_test_ids_equal": true,
+      "raw_logits_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "temperature_scaling",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/temperature_scaling/eurosat/dofa/frozen/seed44/test_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9830508474576272,
+      "nll": 0.05476618106840133,
+      "brier": 0.02678667080429916,
+      "macro_f1": 0.9818590980786089,
+      "mean_confidence_minus_accuracy": -0.0006570297429503232,
+      "ece_10": 0.0031228305889447155,
+      "ece_15": 0.0034400024689060487,
+      "ece_30": 0.0070103485511786665
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 2.220446049250313e-16,
+      "ece_15": -1.0234868508263162e-15
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "b49c6d40009867c997cca00b379dd65867f1f6072947d6f577ed73640e6c3d7d",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "positive_scalar_temperature": true,
+      "temperature": 0.9554395375699883,
+      "scaled_logits_max_error": 0.0,
+      "argmax_changes": 0,
+      "calibration_test_disjoint": true,
+      "calibration_ids_exact": true,
+      "raw_test_ids_equal": true,
+      "raw_logits_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/classification/eurosat/dofa/frozen/seed42/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9852616064848931,
+      "nll": 0.04974346691455073,
+      "brier": 0.024561494445547234,
+      "macro_f1": 0.9843577519639801,
+      "mean_confidence_minus_accuracy": -0.005238080417837566,
+      "ece_10": 0.00590375220635048,
+      "ece_15": 0.00876192858356189,
+      "ece_30": 0.009824027087026075
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 2.2643919378451116e-09,
+      "brier": 1.1541937197656615e-10,
+      "macro_f1": 0.0,
+      "ece_15": -1.7349914699371638e-09
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "2fe51d0c4b39ccda2d1b3ee24ebae78a5c993e7a4dc144727dfd1ab93ad51643",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "stochastic_shape": [
+        2714,
+        30,
+        10
+      ],
+      "passes_30": true,
+      "stochastic_outputs_differ": true,
+      "probability_mean_max_error": 2.145767211692018e-07,
+      "stochastic_ids_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "mc_dropout",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/classification/eurosat/dofa/frozen/seed43/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9834193072955048,
+      "nll": 0.05720961820881597,
+      "brier": 0.028099286916666407,
+      "macro_f1": 0.9824134420635356,
+      "mean_confidence_minus_accuracy": -0.009663616657784166,
+      "ece_10": 0.009945212806421954,
+      "ece_15": 0.011168621595765003,
+      "ece_30": 0.011168621595765003
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": -1.141131980575416e-09,
+      "brier": -5.4955606038076255e-11,
+      "macro_f1": 0.0,
+      "ece_15": -1.0431910890673635e-09
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "0cf8c1592511f6fadeb5edc5d14caf453567e005deb4207eef9a727a790ef6b3",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "stochastic_shape": [
+        2714,
+        30,
+        10
+      ],
+      "passes_30": true,
+      "stochastic_outputs_differ": true,
+      "probability_mean_max_error": 2.086162567138672e-07,
+      "stochastic_ids_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "mc_dropout",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/classification/eurosat/dofa/frozen/seed44/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9819454679439941,
+      "nll": 0.056449221412333855,
+      "brier": 0.026875702065537684,
+      "macro_f1": 0.9808163516206735,
+      "mean_confidence_minus_accuracy": -0.0025522444032094194,
+      "ece_10": 0.004269500207444193,
+      "ece_15": 0.0044236185801934036,
+      "ece_30": 0.009617185957219202
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": -3.7119716328470886e-10,
+      "brier": 1.736462952595108e-10,
+      "macro_f1": 0.0,
+      "ece_15": -6.588576993010742e-11
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "8089ba09ba047610de34b020f72a2582075584e086adfad5363e1b55752a327a",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "stochastic_shape": [
+        2714,
+        30,
+        10
+      ],
+      "passes_30": true,
+      "stochastic_outputs_differ": true,
+      "probability_mean_max_error": 2.0265579225853259e-07,
+      "stochastic_ids_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/dofa_eurosat_ensembles/frozen/ensemble_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9837877671333825,
+      "nll": 0.05199554988384144,
+      "brier": 0.02474792125532968,
+      "macro_f1": 0.9827413914244524,
+      "mean_confidence_minus_accuracy": -0.0028071210915700884,
+      "ece_10": 0.003332052386252194,
+      "ece_15": 0.005501114564060837,
+      "ece_30": 0.0077532537901941825
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 3.8163916471489756e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "f1a16d902dad8dec81feaecb1685af789a9ac792aec8e76f18a3a6f0342f3547",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "member_seeds": null,
+      "distinct_member_run_ids": "see manifest"
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.970891672807664,
+      "nll": 0.083690893234053,
+      "brier": 0.043979038164620635,
+      "macro_f1": 0.9700730838673988,
+      "mean_confidence_minus_accuracy": -0.0007166530423596578,
+      "ece_10": 0.004807878809987225,
+      "ece_15": 0.007804339873764387,
+      "ece_30": 0.010494420501179087
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -8.586881206085195e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "abffc3a6083c562421b9e9a49b68a209e9f4053afbaf5134109037aff71e4bea",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 2.0981669113240287e-07
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9605747973470892,
+      "nll": 0.12139354467006654,
+      "brier": 0.05937078197142694,
+      "macro_f1": 0.9602080708560228,
+      "mean_confidence_minus_accuracy": 0.007047557136813946,
+      "ece_10": 0.00887212427381039,
+      "ece_15": 0.008803532592672237,
+      "ece_30": 0.012969005520763693
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -5.0306980803327406e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "dbb07c1e0fdd259a50e481690a22fc8034398393e4ac17bec719d7def2237ccd",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 1.8622293540548895e-07
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9631540162122328,
+      "nll": 0.11574802638296275,
+      "brier": 0.056458336931848915,
+      "macro_f1": 0.9609621683383477,
+      "mean_confidence_minus_accuracy": 0.016115204114727704,
+      "ece_10": 0.01664373178691133,
+      "ece_15": 0.016743802890324296,
+      "ece_30": 0.01735663784059779
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -2.7755575615628914e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "a2baefb0228b7ddf32b11bc95e1c906192105f4bedea882eedac3dcff433b4d8",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 1.9497501213550095e-07
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "temperature_scaling",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/temperature_scaling/eurosat/dofa/full_finetune/seed42/test_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.970891672807664,
+      "nll": 0.08489295560391845,
+      "brier": 0.044263188941832704,
+      "macro_f1": 0.9700730838673988,
+      "mean_confidence_minus_accuracy": -0.004868393617807987,
+      "ece_10": 0.006829716117580303,
+      "ece_15": 0.007662572638294893,
+      "ece_30": 0.009806648276070341
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 1.6644671751997464e-15
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "e34fd0ca9b33f1f98479ff8b8bbcaf29b6a84300394aadb98f6ecc11f500144f",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "positive_scalar_temperature": true,
+      "temperature": 1.085933429766513,
+      "scaled_logits_max_error": 0.0,
+      "argmax_changes": 0,
+      "calibration_test_disjoint": true,
+      "calibration_ids_exact": true,
+      "raw_test_ids_equal": true,
+      "raw_logits_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "temperature_scaling",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/temperature_scaling/eurosat/dofa/full_finetune/seed43/test_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9605747973470892,
+      "nll": 0.120048087069729,
+      "brier": 0.05932572061588796,
+      "macro_f1": 0.9602080708560228,
+      "mean_confidence_minus_accuracy": -0.00206604181098357,
+      "ece_10": 0.004675436563477703,
+      "ece_15": 0.006851427977126655,
+      "ece_30": 0.009721975810648554
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 8.708311849403572e-16
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "410a3a10dc1c0a576aa6b91609049aa6bf3cd0572f54cd5757f6a49c75beed47",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "positive_scalar_temperature": true,
+      "temperature": 1.1772311109035405,
+      "scaled_logits_max_error": 0.0,
+      "argmax_changes": 0,
+      "calibration_test_disjoint": true,
+      "calibration_ids_exact": true,
+      "raw_test_ids_equal": true,
+      "raw_logits_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "temperature_scaling",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/temperature_scaling/eurosat/dofa/full_finetune/seed44/test_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9631540162122328,
+      "nll": 0.10737727674016523,
+      "brier": 0.054498511708042645,
+      "macro_f1": 0.9609621683383477,
+      "mean_confidence_minus_accuracy": 0.001017962080202366,
+      "ece_10": 0.005012734088752924,
+      "ece_15": 0.0074979919183023516,
+      "ece_30": 0.010380502113097616
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -3.5388358909926865e-16
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "d4b93ff5ab42a0c9249301a1a8afa749f8047dc4bf94b892b73aa72bdd9049d6",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "positive_scalar_temperature": true,
+      "temperature": 1.4094255195999814,
+      "scaled_logits_max_error": 0.0,
+      "argmax_changes": 0,
+      "calibration_test_disjoint": true,
+      "calibration_ids_exact": true,
+      "raw_test_ids_equal": true,
+      "raw_logits_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/classification/eurosat/dofa/full_finetune/seed42/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9587324981577008,
+      "nll": 0.1257321470205775,
+      "brier": 0.06357997024081972,
+      "macro_f1": 0.9569009554780175,
+      "mean_confidence_minus_accuracy": -0.0023303653114230298,
+      "ece_10": 0.0045947021500714665,
+      "ece_15": 0.010823282660942528,
+      "ece_30": 0.01328466402184199
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 4.209663173604383e-10,
+      "brier": -3.8314316996856945e-10,
+      "macro_f1": 0.0,
+      "ece_15": -1.4055627113596092e-09
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "3d8e9a08be0df251db83b61d6208ab912a4fadf5baadebfc8345b859982e3758",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "stochastic_shape": [
+        2714,
+        30,
+        10
+      ],
+      "passes_30": true,
+      "stochastic_outputs_differ": true,
+      "probability_mean_max_error": 2.3047129316111636e-07,
+      "stochastic_ids_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/dofa_eurosat_ensembles/full_finetune/ensemble_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9826823876197495,
+      "nll": 0.06395086285839872,
+      "brier": 0.030502453343070387,
+      "macro_f1": 0.9822833990899695,
+      "mean_confidence_minus_accuracy": -0.025089497876680196,
+      "ece_10": 0.02530643134067479,
+      "ece_15": 0.027278114652000265,
+      "ece_30": 0.027278114651999297
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 1.3461454173580023e-15
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "aab117ab378a860a8119e8be8c8b97e6585d06dcd758fddcb762be0c977c92f6",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "member_seeds": null,
+      "distinct_member_run_ids": "see manifest"
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9837877671333825,
+      "nll": 0.051498536888575,
+      "brier": 0.025838579490714744,
+      "macro_f1": 0.9832295981792253,
+      "mean_confidence_minus_accuracy": 0.004791482953614141,
+      "ece_10": 0.0068974068763068075,
+      "ece_15": 0.007695890551291587,
+      "ece_30": 0.009458219985269675
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -9.540979117872439e-18
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "42f130bd4de8773ba81ecfa82a713ce0a5f1c040c9faa24b32297b9b8e2bf98b",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 1.9277559359931473e-07
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9830508474576272,
+      "nll": 0.046421732448028594,
+      "brier": 0.024619526961733276,
+      "macro_f1": 0.9823087497750616,
+      "mean_confidence_minus_accuracy": 0.0030437788501239123,
+      "ece_10": 0.003986379923676425,
+      "ece_15": 0.003624748968427991,
+      "ece_30": 0.005543769372238687
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -9.540979117872439e-18
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "deb4dcc2c177c79eed38c1ec744344e1733d2209b259953672fe58ab55c53640",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 1.9448056509663303e-07
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260816T004654290690Z_eurosat_panopticon_frozen_bnlinear_seed44_4f21cdf8/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9830508474576272,
+      "nll": 0.05346244245739627,
+      "brier": 0.026447723663292348,
+      "macro_f1": 0.9823891267973742,
+      "mean_confidence_minus_accuracy": 0.005747737081593772,
+      "ece_10": 0.008165129160476943,
+      "ece_15": 0.008542608757974825,
+      "ece_30": 0.0087786788174398
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -4.336808689942018e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "cd41cdc223bff38c34b73cec8c398c5280cec1f231041906dff03d6b6d5a2b21",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 2.0064402206365628e-07
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "temperature_scaling",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/temperature_scaling/eurosat/panopticon/frozen/seed42/test_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9837877671333825,
+      "nll": 0.0501074421416485,
+      "brier": 0.025499589624498994,
+      "macro_f1": 0.9832295981792253,
+      "mean_confidence_minus_accuracy": 0.002345364243769287,
+      "ece_10": 0.004551340907817009,
+      "ece_15": 0.0061023066679455045,
+      "ece_30": 0.007794145531964934
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 6.149594722337781e-16
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "54c00ea4a0627428f9222fda89c530369c9e9390da56de15793e8a5974a21b72",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "positive_scalar_temperature": true,
+      "temperature": 1.1243075033188006,
+      "scaled_logits_max_error": 0.0,
+      "argmax_changes": 0,
+      "calibration_test_disjoint": true,
+      "calibration_ids_exact": true,
+      "raw_test_ids_equal": true,
+      "raw_logits_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "temperature_scaling",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/temperature_scaling/eurosat/panopticon/frozen/seed43/test_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9830508474576272,
+      "nll": 0.0463818549627841,
+      "brier": 0.02459747009415696,
+      "macro_f1": 0.9823087497750616,
+      "mean_confidence_minus_accuracy": 0.0028015897386083803,
+      "ece_10": 0.003746711253441004,
+      "ece_15": 0.0038092362712073193,
+      "ece_30": 0.00497254781963002
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 1.5872719805187785e-16
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "b4903c2d04f3af080c05af3f50cdd674dbbbed840ac63ffa232e92ff9dea8543",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "positive_scalar_temperature": true,
+      "temperature": 1.0106385846073556,
+      "scaled_logits_max_error": 0.0,
+      "argmax_changes": 0,
+      "calibration_test_disjoint": true,
+      "calibration_ids_exact": true,
+      "raw_test_ids_equal": true,
+      "raw_logits_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "temperature_scaling",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/temperature_scaling/eurosat/panopticon/frozen/seed44/test_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9830508474576272,
+      "nll": 0.052006788871372556,
+      "brier": 0.026215767100198423,
+      "macro_f1": 0.9823891267973742,
+      "mean_confidence_minus_accuracy": 0.0034757103693028443,
+      "ece_10": 0.0070555076766811485,
+      "ece_15": 0.007055507676680531,
+      "ece_30": 0.00929627124348019
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -7.320533068622126e-16
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "c0f975eecb9d4e1db477ff631d9d8c9291028441606a62b2dbef5865ed5e7ffa",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "positive_scalar_temperature": true,
+      "temperature": 1.1117153379682674,
+      "scaled_logits_max_error": 0.0,
+      "argmax_changes": 0,
+      "calibration_test_disjoint": true,
+      "calibration_ids_exact": true,
+      "raw_test_ids_equal": true,
+      "raw_logits_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/classification/eurosat/panopticon/frozen/seed42/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9830508474576272,
+      "nll": 0.04868047821739131,
+      "brier": 0.02477291671732937,
+      "macro_f1": 0.9823134616437897,
+      "mean_confidence_minus_accuracy": 0.0032755299227678696,
+      "ece_10": 0.004203157009407274,
+      "ece_15": 0.0046734339670829236,
+      "ece_30": 0.006874202386192654
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 1.3456147307522315e-10,
+      "brier": -5.234614131044424e-11,
+      "macro_f1": 0.0,
+      "ece_15": -6.588585232947253e-11
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "4cc630b64cbacb0a959f06d3c1bf4143a6b24a1172d497d394841530a2417acb",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "stochastic_shape": [
+        2714,
+        30,
+        10
+      ],
+      "passes_30": true,
+      "stochastic_outputs_differ": true,
+      "probability_mean_max_error": 2.0265579225853259e-07,
+      "stochastic_ids_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/deep_ensembles/eurosat/panopticon/frozen/ensemble_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9826823876197495,
+      "nll": 0.04775470874748364,
+      "brier": 0.024902949844082985,
+      "macro_f1": 0.9819535988117798,
+      "mean_confidence_minus_accuracy": 0.004882690757769269,
+      "ece_10": 0.0048826907577717285,
+      "ece_15": 0.006773317908516475,
+      "ece_30": 0.0082220293780991
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 1.826663820203578e-15
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "9a2a3d00a0fe5fac5b04dc995aa574b630d8a2fb5020b39730feebbfd27fc3fa",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "member_seeds": [
+        42,
+        43,
+        44
+      ],
+      "distinct_member_run_ids": true,
+      "member_probability_mean_max_error": 0.0,
+      "member_probability_shape": [
+        2714,
+        3,
+        10
+      ]
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9679439941046426,
+      "nll": 0.09865374542764949,
+      "brier": 0.04820857618290921,
+      "macro_f1": 0.9674469537089507,
+      "mean_confidence_minus_accuracy": 0.004577556382054868,
+      "ece_10": 0.005965332073065491,
+      "ece_15": 0.005855335039344006,
+      "ece_30": 0.010427448094198611
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -7.806255641895632e-18
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "2aabdf8c07ddfe303f561a3d01cf1fc66f7081f309d5fa1019cf5bded79297fc",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 2.188131388303205e-07
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T023205454878Z_eurosat_panopticon_full_finetune_seed43_e304fee6/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9657332350773765,
+      "nll": 0.08418453140077854,
+      "brier": 0.047577100823913226,
+      "macro_f1": 0.9632016801889336,
+      "mean_confidence_minus_accuracy": 0.005071771182202204,
+      "ece_10": 0.005777042636382905,
+      "ece_15": 0.007313713716863268,
+      "ece_30": 0.009799420449254085
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 4.163336342344337e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "7362ed9ce3bddedd44bb34f480465f2030a156cb1284dfd712245d854c32400d",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 2.0208199047466735e-07
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T034514128137Z_eurosat_panopticon_full_finetune_seed44_0883c676/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9543109801031687,
+      "nll": 0.1550083212716363,
+      "brier": 0.07147996395394808,
+      "macro_f1": 0.9515934332109893,
+      "mean_confidence_minus_accuracy": 0.012527838744656865,
+      "ece_10": 0.012936548628434593,
+      "ece_15": 0.015190208614882777,
+      "ece_30": 0.017906849436577225
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 5.724587470723463e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "2ce9ff180734f729c8eaae05e23a9869ff9d853fee208f6a376577bb6903cc31",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 2.1271519812238182e-07
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "temperature_scaling",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/temperature_scaling/eurosat/panopticon/full_finetune/seed42/test_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9679439941046426,
+      "nll": 0.10056250878001864,
+      "brier": 0.04861809170455724,
+      "macro_f1": 0.9674469537089507,
+      "mean_confidence_minus_accuracy": -0.008004668904453454,
+      "ece_10": 0.009479941305837836,
+      "ece_15": 0.009531000889945088,
+      "ece_30": 0.013950147723246832
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -2.3765711620882257e-16
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "ff7f68b38dbbaa24c53bf0f3e6a22dad1ebdd82ce7111138e77b7ce2fb87cd00",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "positive_scalar_temperature": true,
+      "temperature": 1.2383209153504577,
+      "scaled_logits_max_error": 0.0,
+      "argmax_changes": 0,
+      "calibration_test_disjoint": true,
+      "calibration_ids_exact": true,
+      "raw_test_ids_equal": true,
+      "raw_logits_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "temperature_scaling",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/temperature_scaling/eurosat/panopticon/full_finetune/seed43/test_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9657332350773765,
+      "nll": 0.08547836180756138,
+      "brier": 0.04742054941020385,
+      "macro_f1": 0.9632016801889336,
+      "mean_confidence_minus_accuracy": -0.0005769348971699003,
+      "ece_10": 0.00579851152780593,
+      "ece_15": 0.00755353584918848,
+      "ece_30": 0.009348705883563393
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 1.4181364416110398e-15
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "3352222764b5932993275df6a454236881302fd5cc4bb711605cbbe474dcfdb5",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "positive_scalar_temperature": true,
+      "temperature": 1.1243293065188888,
+      "scaled_logits_max_error": 0.0,
+      "argmax_changes": 0,
+      "calibration_test_disjoint": true,
+      "calibration_ids_exact": true,
+      "raw_test_ids_equal": true,
+      "raw_logits_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "temperature_scaling",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/temperature_scaling/eurosat/panopticon/full_finetune/seed44/test_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9543109801031687,
+      "nll": 0.1488235838165442,
+      "brier": 0.07081498140495383,
+      "macro_f1": 0.9515934332109893,
+      "mean_confidence_minus_accuracy": 0.00022814349149557448,
+      "ece_10": 0.006865432421654451,
+      "ece_15": 0.007396426826299959,
+      "ece_30": 0.011407216192737062
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -1.2741543931049648e-15
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "a6ac09bbf8df0d7b359adb738f5751140d238baf5575e9d619d4c627926b0fbc",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "positive_scalar_temperature": true,
+      "temperature": 1.2245838781656326,
+      "scaled_logits_max_error": 0.0,
+      "argmax_changes": 0,
+      "calibration_test_disjoint": true,
+      "calibration_ids_exact": true,
+      "raw_test_ids_equal": true,
+      "raw_logits_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/classification/eurosat/panopticon/full_finetune/seed42/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.9579955784819455,
+      "nll": 0.12214091332958943,
+      "brier": 0.06420438628937478,
+      "macro_f1": 0.9555526271776689,
+      "mean_confidence_minus_accuracy": 0.0034749210100448037,
+      "ece_10": 0.008009758563101424,
+      "ece_15": 0.006935682622667789,
+      "ece_30": 0.010125663233049318
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": -2.8719522593423363e-10,
+      "brier": -1.3777361196343207e-10,
+      "macro_f1": 0.0,
+      "ece_15": 1.4275247477157915e-10
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "d09539832c93e8b15173b27578d102b26c8db9446abbbe979511a4a6b9f22f78",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "stochastic_shape": [
+        2714,
+        30,
+        10
+      ],
+      "passes_30": true,
+      "stochastic_outputs_differ": true,
+      "probability_mean_max_error": 2.0464261374364412e-07,
+      "stochastic_ids_equal": true
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/deep_ensembles/eurosat/panopticon/full_finetune/ensemble_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.976418570375829,
+      "nll": 0.07257433586869622,
+      "brier": 0.036388558744387324,
+      "macro_f1": 0.975289177599783,
+      "mean_confidence_minus_accuracy": -0.019316186441222755,
+      "ece_10": 0.0215832216139379,
+      "ece_15": 0.021987375605371406,
+      "ece_30": 0.02218723880021737
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -3.157196726277789e-16
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "7f984b142c5a276742b09af349865c54f1349194ee7fb4b54493fc792ba34e18",
+      "ordered_labels_sha256": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+      "labels_match_other_methods_models_seeds": true,
+      "member_seeds": [
+        42,
+        43,
+        44
+      ],
+      "distinct_member_run_ids": true,
+      "member_probability_mean_max_error": 0.0,
+      "member_probability_shape": [
+        2714,
+        3,
+        10
+      ]
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260815T202926010453Z_treesatai_dofa_frozen_seed42_3dae0e5b/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.255,
+      "nll": 0.25653112849224985,
+      "brier": 0.07417677748713968,
+      "macro_f1": 0.21952595320890655,
+      "mean_confidence_minus_accuracy": 0.001435850570320716,
+      "ece_10": 0.010478647837757428,
+      "ece_15": 0.00997010348659763,
+      "ece_30": 0.010514641026377346,
+      "pooled_positive_probability_ece_15": 0.010483034920910626,
+      "macro_class_probability_ece_15": 0.027830319028738136
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 4.891920202254596e-16
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "f80d975a442807d49e4a19f308a6574eb0716d766baaf5e537e5941d30ee44e8",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "max_logit_probability_error": 7.791522516065186e-08
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T012149418043Z_treesatai_dofa_frozen_seed43_d484c9b3/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.258,
+      "nll": 0.25505652619165814,
+      "brier": 0.0737731909845718,
+      "macro_f1": 0.2269122959768888,
+      "mean_confidence_minus_accuracy": -0.005574955545364948,
+      "ece_10": 0.011679578425984194,
+      "ece_15": 0.010719108342131828,
+      "ece_30": 0.011901780335605933,
+      "pooled_positive_probability_ece_15": 0.011442316801350183,
+      "macro_class_probability_ece_15": 0.024287422300328473
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 2.7755575615628914e-17,
+      "ece_15": -1.734723475976807e-18
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "2a39e5a024ea14e540cba1b4cd1f55f2aec35d604857cf123e2b068a4c7c1c6b",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 8.272182150381724e-08
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T013516128703Z_treesatai_dofa_frozen_seed44_f16a2a61/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.257,
+      "nll": 0.2559439182346577,
+      "brier": 0.07399353938123633,
+      "macro_f1": 0.22305546606281948,
+      "mean_confidence_minus_accuracy": -0.006858374697133708,
+      "ece_10": 0.011684101469154363,
+      "ece_15": 0.011730424709454443,
+      "ece_30": 0.011730424709454321,
+      "pooled_positive_probability_ece_15": 0.01274511253767728,
+      "macro_class_probability_ece_15": 0.02529378171374336
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 1.5612511283791264e-16
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "6adf6cd6cc34232850ef2b68017f10da13ab5661a1b535372cd2d702198c40ba",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 7.6767067924699e-08
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/classification/treesatai/dofa/frozen/seed42/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.255,
+      "nll": 0.25616549663264737,
+      "brier": 0.07433590163127934,
+      "macro_f1": 0.21624240322757826,
+      "mean_confidence_minus_accuracy": -0.0012080598755002147,
+      "ece_10": 0.008273937171368501,
+      "ece_15": 0.008882509036529517,
+      "ece_30": 0.009383187808263391,
+      "pooled_positive_probability_ece_15": 0.008889896789856739,
+      "macro_class_probability_ece_15": 0.02729706566209477
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": -1.5537138242649462e-10,
+      "brier": -5.2731735644684363e-11,
+      "macro_f1": 0.0,
+      "ece_15": 4.5745773488703456e-11
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "28317b7768c161b6790641fa66fe5b1e2aa84d3bbff0eaf186974c3dd6a24c50",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "stochastic_shape": [
+        2000,
+        30,
+        15
+      ],
+      "passes_30": true,
+      "stochastic_outputs_differ": true,
+      "probability_mean_max_error": 1.5298525490869963e-07,
+      "stochastic_ids_equal": true
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/deep_ensembles/treesatai/dofa/frozen/ensemble_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.2605,
+      "nll": 0.25375122863502764,
+      "brier": 0.07348035078691291,
+      "macro_f1": 0.2240768388172684,
+      "mean_confidence_minus_accuracy": -0.004862142621790141,
+      "ece_10": 0.00989222806760215,
+      "ece_15": 0.010427709272148634,
+      "ece_30": 0.011011710085614405,
+      "pooled_positive_probability_ece_15": 0.010989075018939275,
+      "macro_class_probability_ece_15": 0.02452203182011659
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -1.1744077932362984e-15
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "2d6876a62ac90cebd92c0f29a34e069b12055271450ecc391342f0221c78d824",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "member_seeds": [
+        42,
+        43,
+        44
+      ],
+      "distinct_member_run_ids": true,
+      "member_probability_mean_max_error": 0.0,
+      "member_probability_shape": [
+        2000,
+        3,
+        15
+      ]
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260815T222120553265Z_treesatai_dofa_full_finetune_seed42_9845090f/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.265,
+      "nll": 0.2499352651808189,
+      "brier": 0.07259371298037501,
+      "macro_f1": 0.24827355184214414,
+      "mean_confidence_minus_accuracy": -0.01356731905454775,
+      "ece_10": 0.013653943376882792,
+      "ece_15": 0.014092692175650519,
+      "ece_30": 0.01443244248146196,
+      "pooled_positive_probability_ece_15": 0.019605114359799825,
+      "macro_class_probability_ece_15": 0.03386996801188653
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 1.4224732503009818e-16
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "f9b6687750aab9ff7d9dfda9040aebe5f8208a40a2ce90c4036b27af1aa959eb",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 8.465120870937426e-08
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T050303117850Z_treesatai_dofa_full_finetune_seed43_e40f79f2/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.2655,
+      "nll": 0.2439097361777931,
+      "brier": 0.07065762458783592,
+      "macro_f1": 0.2298206297766517,
+      "mean_confidence_minus_accuracy": 0.00047907714808604853,
+      "ece_10": 0.00747251530900224,
+      "ece_15": 0.008119487144198016,
+      "ece_30": 0.008388041261977135,
+      "pooled_positive_probability_ece_15": 0.008668069202349799,
+      "macro_class_probability_ece_15": 0.028845751068986385
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": -2.8796409701215e-16
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "f90b5b7874da4232363114fce44910f0ac1846bd235961efd7856ade0c7d77c9",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 8.210143676024018e-08
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T051814359617Z_treesatai_dofa_full_finetune_seed44_6a6f8fd9/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.27,
+      "nll": 0.24673070866807678,
+      "brier": 0.07181984030490755,
+      "macro_f1": 0.25337500735077423,
+      "mean_confidence_minus_accuracy": -0.015451789449343535,
+      "ece_10": 0.015451789449343535,
+      "ece_15": 0.015451789449343535,
+      "ece_30": 0.01611030750144467,
+      "pooled_positive_probability_ece_15": 0.01580608531901186,
+      "macro_class_probability_ece_15": 0.03369853370831114
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": -5.551115123125783e-17,
+      "ece_15": 1.214306433183765e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "a13103b4821f3201f88f03ca7c6b7a8a4934ba9c8d428ce28104c615dec393ac",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 8.02159597634855e-08
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/classification/treesatai/dofa/full_finetune/seed42/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.2825,
+      "nll": 0.2479126198368798,
+      "brier": 0.07154349998543406,
+      "macro_f1": 0.23942275273447308,
+      "mean_confidence_minus_accuracy": -0.012116841498241047,
+      "ece_10": 0.01373914100058355,
+      "ece_15": 0.015531915454342743,
+      "ece_30": 0.015531915454342743,
+      "pooled_positive_probability_ece_15": 0.018181468020155807,
+      "macro_class_probability_ece_15": 0.03013730717243901
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 1.1135453670263473e-11,
+      "brier": -3.558867089914486e-11,
+      "macro_f1": -2.7755575615628914e-17,
+      "ece_15": -6.66401569343611e-11
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "1f78e5ea4e6541df322b70da8fe6d21712980d1b469297cb0c4d0539dcbd9f8f",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "stochastic_shape": [
+        2000,
+        30,
+        15
+      ],
+      "passes_30": true,
+      "stochastic_outputs_differ": true,
+      "probability_mean_max_error": 1.748402913559488e-07,
+      "stochastic_ids_equal": true
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/deep_ensembles/treesatai/dofa/full_finetune/ensemble_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.274,
+      "nll": 0.23755279054168166,
+      "brier": 0.06873296205626957,
+      "macro_f1": 0.23764441853435303,
+      "mean_confidence_minus_accuracy": -0.01597581525120041,
+      "ece_10": 0.016859027694557605,
+      "ece_15": 0.01704581256978738,
+      "ece_30": 0.01759672337627661,
+      "pooled_positive_probability_ece_15": 0.017896717159843086,
+      "macro_class_probability_ece_15": 0.025950463646678582
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 2.7755575615628914e-17,
+      "ece_15": 1.2385925618474403e-15
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "412a636db75fd6392218818b0c5673d67d050984d3a17c09cca3f230fa782d04",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "member_seeds": [
+        42,
+        43,
+        44
+      ],
+      "distinct_member_run_ids": true,
+      "member_probability_mean_max_error": 0.0,
+      "member_probability_shape": [
+        2000,
+        3,
+        15
+      ]
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260815T204959852998Z_treesatai_panopticon_frozen_seed42_5c8cc8e4/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.2395,
+      "nll": 0.25819314083634115,
+      "brier": 0.07572142477398956,
+      "macro_f1": 0.2067960209801897,
+      "mean_confidence_minus_accuracy": -0.006247007411099305,
+      "ece_10": 0.008868239890161325,
+      "ece_15": 0.010479455220324962,
+      "ece_30": 0.010935011428220242,
+      "pooled_positive_probability_ece_15": 0.009925278780483373,
+      "macro_class_probability_ece_15": 0.029559852086164875
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 2.7755575615628914e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "da7e538bc57c43eb497a4cf8411323f092fdbca9850323be3f9eb4d1f1bbd437",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 7.988381667267674e-08
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T014811037405Z_treesatai_panopticon_frozen_seed43_baa4ef7a/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.2395,
+      "nll": 0.25458321659831534,
+      "brier": 0.0746615230539549,
+      "macro_f1": 0.2170863143629495,
+      "mean_confidence_minus_accuracy": -0.0026977973509679336,
+      "ece_10": 0.008081028914565832,
+      "ece_15": 0.008726503198459735,
+      "ece_30": 0.008899772953107944,
+      "pooled_positive_probability_ece_15": 0.009871094071979314,
+      "macro_class_probability_ece_15": 0.02692457489399409
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": -2.7755575615628914e-17,
+      "ece_15": -2.949029909160572e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "822fc29049b8cd346f832a55b24ab9a4128a6c789d17c0be987493301ee19685",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 8.051364908112646e-08
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T020829175076Z_treesatai_panopticon_frozen_seed44_341d0eca/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.2345,
+      "nll": 0.2582176728557611,
+      "brier": 0.07574351895939471,
+      "macro_f1": 0.20865760915644568,
+      "mean_confidence_minus_accuracy": -0.0001105743291695641,
+      "ece_10": 0.008638205387421476,
+      "ece_15": 0.009280648868012456,
+      "ece_30": 0.009741233105190622,
+      "pooled_positive_probability_ece_15": 0.010905048277703949,
+      "macro_class_probability_ece_15": 0.0335980010805768
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 3.469446951953614e-18
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "75f5055095da7510c94be38c770fbecb4ff01fd14f14b97fca39d67550867a38",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 8.10128715222902e-08
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/classification/treesatai/panopticon/frozen/seed42/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.238,
+      "nll": 0.25840009994063423,
+      "brier": 0.07579855432941444,
+      "macro_f1": 0.20481881434983984,
+      "mean_confidence_minus_accuracy": -0.007295379774085086,
+      "ece_10": 0.00873331519632399,
+      "ece_15": 0.010089851286697982,
+      "ece_30": 0.010898262002754806,
+      "pooled_positive_probability_ece_15": 0.010137892719793914,
+      "macro_class_probability_ece_15": 0.03000647465422723
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 9.061240646701663e-11,
+      "brier": 2.0750220985910062e-11,
+      "macro_f1": 0.0,
+      "ece_15": 2.2545729172485096e-11
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "dac38508f2cc94883d7fe2b6f20b334e210db218f37c64d139c4e5e484439e14",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "stochastic_shape": [
+        2000,
+        30,
+        15
+      ],
+      "passes_30": true,
+      "stochastic_outputs_differ": true,
+      "probability_mean_max_error": 1.509984334235881e-07,
+      "stochastic_ids_equal": true
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/deep_ensembles/treesatai/panopticon/frozen/ensemble_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.239,
+      "nll": 0.2546931271067963,
+      "brier": 0.07474895853608171,
+      "macro_f1": 0.2074608681363772,
+      "mean_confidence_minus_accuracy": -0.003805703518964785,
+      "ece_10": 0.006959774926459685,
+      "ece_15": 0.008805106203287364,
+      "ece_30": 0.00961848089424817,
+      "pooled_positive_probability_ece_15": 0.009475533542232809,
+      "macro_class_probability_ece_15": 0.02731526366200248
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 5.551115123125783e-17,
+      "ece_15": -8.760353553682876e-16
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "dbb7872d36e4ab8373ba7613d59b50b61ad5d7d4b5f8468fa2d76a88e4c5c760",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "member_seeds": [
+        42,
+        43,
+        44
+      ],
+      "distinct_member_run_ids": true,
+      "member_probability_mean_max_error": 0.0,
+      "member_probability_shape": [
+        2000,
+        3,
+        15
+      ]
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260815T223733845323Z_treesatai_panopticon_full_finetune_seed42_432b3047/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.2835,
+      "nll": 0.24993001678748528,
+      "brier": 0.07284414770273882,
+      "macro_f1": 0.2447009605210901,
+      "mean_confidence_minus_accuracy": 0.000687005740616102,
+      "ece_10": 0.011003725151432931,
+      "ece_15": 0.011266771733972806,
+      "ece_30": 0.011453337757004677,
+      "pooled_positive_probability_ece_15": 0.01880312081596591,
+      "macro_class_probability_ece_15": 0.03369979053169615
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 1.9081958235744878e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "56ece559e5757770e443471dc4fc973eb6240d658a9cf8b817ff301430911cb6",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 8.007811602706028e-08
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T053348883249Z_treesatai_panopticon_full_finetune_seed43_b7ae4087/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.25,
+      "nll": 0.24623769712438703,
+      "brier": 0.07177279995436456,
+      "macro_f1": 0.21852796184352316,
+      "mean_confidence_minus_accuracy": 0.00022139162524739125,
+      "ece_10": 0.0036567401330093465,
+      "ece_15": 0.004157547277253858,
+      "ece_30": 0.004386594777844342,
+      "pooled_positive_probability_ece_15": 0.009053194215935461,
+      "macro_class_probability_ece_15": 0.024745439573985638
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 2.7755575615628914e-17,
+      "ece_15": -1.5612511283791264e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "71f0d7e2b4bd41a1150e50834639f3da765e0b30a7bf956c14f5427e5342fedf",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 7.633553367192292e-08
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deterministic",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T060624868595Z_treesatai_panopticon_full_finetune_seed44_d6d97c6a/predictions/test/deterministic/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.221,
+      "nll": 0.25520544955130714,
+      "brier": 0.07494079566163814,
+      "macro_f1": 0.1960271104495312,
+      "mean_confidence_minus_accuracy": -0.006980663971502024,
+      "ece_10": 0.006980663971502024,
+      "ece_15": 0.007464281140166956,
+      "ece_30": 0.007848663994072316,
+      "pooled_positive_probability_ece_15": 0.009211621763704655,
+      "macro_class_probability_ece_15": 0.03181857046720106
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 1.6479873021779667e-17
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "bd170962c45cece0309284e7e008baefd35578998d2d0c6769b8f53276b426cf",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "max_logit_probability_error": 7.797964562961113e-08
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "mc_dropout",
+    "seed": "42",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/classification/treesatai/panopticon/full_finetune/seed42/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.29,
+      "nll": 0.24983264231158325,
+      "brier": 0.07289724077666669,
+      "macro_f1": 0.25096285118035044,
+      "mean_confidence_minus_accuracy": -0.00039600528698986937,
+      "ece_10": 0.010706022938372431,
+      "ece_15": 0.01106181631861303,
+      "ece_30": 0.01106181631861303,
+      "pooled_positive_probability_ece_15": 0.02151156647581035,
+      "macro_class_probability_ece_15": 0.032956961467191286
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": -2.923348785266455e-10,
+      "brier": -6.969687327273988e-11,
+      "macro_f1": 0.0,
+      "ece_15": 9.967237625529979e-11
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "2dde65113a2ed0caa728e911bc0108d1a2bf796d819921581e6e48d868cf5dd5",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "stochastic_shape": [
+        2000,
+        30,
+        15
+      ],
+      "passes_30": true,
+      "stochastic_outputs_differ": true,
+      "probability_mean_max_error": 1.6689300541550267e-07,
+      "stochastic_ids_equal": true
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "mc_dropout",
+    "seed": "43",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/classification/treesatai/panopticon/full_finetune/seed43/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.251,
+      "nll": 0.2451644384494948,
+      "brier": 0.0714646063111507,
+      "macro_f1": 0.21728427044501541,
+      "mean_confidence_minus_accuracy": 0.0024128968726901804,
+      "ece_10": 0.0036580096871960755,
+      "ece_15": 0.005185668944449087,
+      "ece_30": 0.005542055052648842,
+      "pooled_positive_probability_ece_15": 0.010797588885953883,
+      "macro_class_probability_ece_15": 0.020878510614172164
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 5.44600808893847e-10,
+      "brier": 1.2268822069394503e-10,
+      "macro_f1": 0.0,
+      "ece_15": 4.7714782645813525e-11
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "853c3efb4120d6dbb72565823a1e8c25047898dae28378bee467286b3f5e9d9d",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "stochastic_shape": [
+        2000,
+        30,
+        15
+      ],
+      "passes_30": true,
+      "stochastic_outputs_differ": true,
+      "probability_mean_max_error": 1.748402913559488e-07,
+      "stochastic_ids_equal": true
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "mc_dropout",
+    "seed": "44",
+    "artifact_path": "results/final_thesis/mc_dropout/inference/classification/treesatai/panopticon/full_finetune/seed44/predictions.parquet",
+    "metrics": {
+      "accuracy": 0.263,
+      "nll": 0.2475149923878762,
+      "brier": 0.07253935642059514,
+      "macro_f1": 0.21007490121619632,
+      "mean_confidence_minus_accuracy": 0.0034378385106140436,
+      "ece_10": 0.0056871040323787985,
+      "ece_15": 0.006609981844764358,
+      "ece_30": 0.007113945515512023,
+      "pooled_positive_probability_ece_15": 0.00788004185948909,
+      "macro_class_probability_ece_15": 0.02662511691602801
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": -2.811707533467711e-10,
+      "brier": -1.0555424589941964e-10,
+      "macro_f1": 0.0,
+      "ece_15": -6.7986449803214555e-12
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "6e7924593f784eedc3ad77ceeb4ad12f5c0e573aadd4a632ea91444a45c54c64",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "stochastic_shape": [
+        2000,
+        30,
+        15
+      ],
+      "passes_30": true,
+      "stochastic_outputs_differ": true,
+      "probability_mean_max_error": 1.9470850631808645e-07,
+      "stochastic_ids_equal": true
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "uq_method": "deep_ensemble",
+    "seed": "",
+    "artifact_path": "results/final_thesis/c3_temperature_scaling_and_ensembles/classification/deep_ensembles/treesatai/panopticon/full_finetune/ensemble_predictions.parquet",
+    "metrics": {
+      "accuracy": 0.2655,
+      "nll": 0.24165674308589444,
+      "brier": 0.07043198013744774,
+      "macro_f1": 0.22429829175692684,
+      "mean_confidence_minus_accuracy": -0.009096171452980261,
+      "ece_10": 0.009216428389859872,
+      "ece_15": 0.009754099457841772,
+      "ece_30": 0.010041487079906722,
+      "pooled_positive_probability_ece_15": 0.010322235584306364,
+      "macro_class_probability_ece_15": 0.02363986328153034
+    },
+    "metric_differences": {
+      "accuracy": 0.0,
+      "nll": 0.0,
+      "brier": 0.0,
+      "macro_f1": 0.0,
+      "ece_15": 6.054184931159057e-16
+    },
+    "metric_mismatches_over_2e_6": {},
+    "checks": {
+      "full_test_id_set": true,
+      "unique_ids": true,
+      "finite_probabilities": true,
+      "probability_range": true,
+      "artifact_sha256": "7d5c9e6b10acddd1e673065a2b83c7d149ce4d2a4bec5e667c2a335968eeb5c6",
+      "ordered_labels_sha256": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+      "labels_match_other_methods_models_seeds": true,
+      "member_seeds": [
+        42,
+        43,
+        44
+      ],
+      "distinct_member_run_ids": true,
+      "member_probability_mean_max_error": 0.0,
+      "member_probability_shape": [
+        2000,
+        3,
+        15
+      ]
+    }
+  }
+]

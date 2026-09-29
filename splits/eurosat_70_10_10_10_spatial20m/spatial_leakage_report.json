@@ -1,0 +1,17 @@
+{
+  "total_samples": 27000,
+  "duplicate_content_groups": 0,
+  "duplicate_content_samples": 0,
+  "duplicate_exact_center_groups": 0,
+  "overlapping_footprint_edges": 754,
+  "cross_split_overlapping_footprint_edges": 0,
+  "adjacent_edges_within_20m": 19272,
+  "cross_split_adjacent_edges_within_20m": 0,
+  "source_scene_id_available": false,
+  "interpretation": "Byte-identical files, identical centers, overlapping footprints, and <=20 m adjacency are controlled. Original Sentinel-2 acquisition/product IDs are unavailable, so broader same-source-scene leakage cannot be conclusively excluded.",
+  "official_split_comparison": {
+    "cross_split_overlapping_footprint_edges": 414,
+    "cross_split_adjacent_edges_within_20m": 10812,
+    "note": "The official TorchGeo 60/20/20 split does not control these spatial relationships."
+  }
+}

@@ -1,0 +1,98 @@
+seed: 42
+seeds: [42, 43, 44]
+device: auto
+output_dir: ./results/segmentation/cloudsen12
+results_csv: ./results/segmentation/cloudsen12/results.csv
+
+task: segmentation
+
+data:
+  name: cloudsen12
+  protocol: geobench2_cloudsen12
+  source: GEO-Bench-2@fd9d0b664e6fb0faba54636bdff4906634debd4b
+  root: ./datasets/cloudsen12
+  download: false
+  input_bands: optical
+  channels: [B01, B02, B03, B04, B05, B06, B07, B08, B8A, B09, B11, B12]
+  wavelengths_nm: [443, 490, 560, 665, 705, 740, 783, 842, 865, 945, 1610, 2190]
+  wavelength_source: pinned GeoBenchV2 DatasetBandRegistry.CLOUDSEN12/SENTINEL2
+  native_image_size: 512
+  image_size: 224
+  native_gsd_m: 10
+  mask_resize: nearest
+  num_classes: 4
+  class_names: [clear, thick cloud, thin cloud, cloud shadow]
+  ignore_index: null
+  split_source: embedded_official_manifest
+  num_workers: 4
+
+training:
+  epochs: 50
+  batch_size: 8
+  optimizer: {name: adamw}
+  learning_rate: 0.001
+  backbone_learning_rate: 0.0001
+  head_learning_rate: 0.001
+  weight_decay: 0.01
+  warmup: {enabled: false, epochs: 0, type: linear}
+  checkpoint: {split: val, metric: miou, mode: max}
+  limit_train_batches: null
+  limit_val_batches: null
+
+metrics:
+  n_bins: 15
+
+uq_methods: [{name: none}]
+reproducibility: {deterministic: true, warn_only: false}
+
+dry_run_settings:
+  epochs: 1
+  limit_train_batches: 1
+  limit_val_batches: 1
+  num_workers: 0
+  output_dir: ./results/segmentation/cloudsen12/dry_runs
+
+experiments:
+  - name: cloudsen12_dofa_frozen
+    task: segmentation
+    model:
+      name: dofa
+      size: base
+      pretrained: true
+      adaptation_mode: frozen
+      dofa_root: ./DOFA
+      weights_path: ./DOFA/checkpoints/DOFA_ViT_base_e100.pth
+      decoder: &common_decoder {architecture: unet, channels: [256, 128, 64, 32]}
+  - name: cloudsen12_dofa_full_finetune
+    task: segmentation
+    model:
+      name: dofa
+      size: base
+      pretrained: true
+      adaptation_mode: full_finetune
+      expected_frozen_backbone_parameters: [pos_embed]
+      dofa_root: ./DOFA
+      weights_path: ./DOFA/checkpoints/DOFA_ViT_base_e100.pth
+      decoder: *common_decoder
+  - name: cloudsen12_panopticon_frozen
+    task: segmentation
+    model:
+      name: panopticon
+      size: base
+      pretrained: true
+      weights: VIT_BASE14
+      adaptation_mode: frozen
+      decoder: *common_decoder
+  - name: cloudsen12_panopticon_full_finetune
+    task: segmentation
+    model:
+      name: panopticon
+      size: base
+      pretrained: true
+      weights: VIT_BASE14
+      adaptation_mode: full_finetune
+      expected_frozen_backbone_parameters:
+        - model.patch_embed.chnfus.chnemb.embed_transmit
+        - model.patch_embed.chnfus.chnemb.embed_receive
+        - model.patch_embed.chnfus.chnemb.embed_orbit
+      decoder: *common_decoder

@@ -1,0 +1,1912 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-08-15T23:12:01.777369+00:00",
+  "project_root": "/workspace",
+  "requested_seeds": [
+    42
+  ],
+  "promotion_policy": {
+    "basis": "validation_and_artifact_integrity_only",
+    "test_metrics_used": false,
+    "test_metrics_role": "report_only"
+  },
+  "summary": {
+    "promotable": 6,
+    "blocked": 0,
+    "missing": 0,
+    "ambiguous": 0,
+    "total": 6
+  },
+  "runs": [
+    {
+      "target": {
+        "dataset": "eurosat",
+        "model": "panopticon",
+        "adaptation": "frozen",
+        "experiment": "eurosat_panopticon_frozen_bnlinear",
+        "seed": 42
+      },
+      "target_key": "eurosat|panopticon|frozen|seed42",
+      "run_dir": "/workspace/results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8",
+      "run_id": "20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8",
+      "status": "PROMOTABLE",
+      "promotion_eligible": true,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [],
+      "warnings": [],
+      "code_provenance": {
+        "code_sha256": "d4c7e9d07a9ee2f1b431bd06822fc4648a1f17f4bc6db8352dd65ce8b9e18c67",
+        "file_count": 88,
+        "environment_code_version": "sha256:d4c7e9d07a9ee2f1b431bd06822fc4648a1f17f4bc6db8352dd65ce8b9e18c67"
+      },
+      "artifact_provenance": {
+        "training_protocol": {
+          "path": "/workspace/reports/final_training_protocol.md",
+          "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+          "actual_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711"
+        },
+        "dataset": {
+          "path": "/workspace/data/EuroSATallBands.zip",
+          "expected_sha256": "751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59",
+          "actual_sha256": "751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59"
+        },
+        "split_manifest": {
+          "path": "/workspace/splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv",
+          "expected_sha256": "c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22",
+          "actual_sha256": "c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22"
+        },
+        "pretrained_weights": {
+          "path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+          "expected_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+          "actual_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e"
+        }
+      },
+      "recorded_input_artifacts": {
+        "required": true,
+        "all_verified": true,
+        "records": {
+          "dataset": {
+            "label": "dataset",
+            "path": "/workspace/data/EuroSATallBands.zip",
+            "size_bytes": 2067725275,
+            "sha256": "751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59",
+            "expected_sha256": "751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59",
+            "verified": true
+          },
+          "split_manifest": {
+            "label": "split_manifest",
+            "path": "/workspace/splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv",
+            "size_bytes": 8689654,
+            "sha256": "c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22",
+            "expected_sha256": "c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22",
+            "verified": true
+          },
+          "training_protocol": {
+            "label": "training_protocol",
+            "path": "/workspace/reports/final_training_protocol.md",
+            "size_bytes": 15742,
+            "sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "verified": true
+          },
+          "pretrained_weights": {
+            "label": "panopticon_pretrained_weights",
+            "path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+            "size_bytes": 395965930,
+            "sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+            "expected_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+            "verified": true
+          }
+        }
+      },
+      "validation_curve": {
+        "epochs_completed": 20,
+        "epoch_cap": 50,
+        "best_epoch": 10,
+        "best_validation_nll": 0.061255116015672684,
+        "first_validation_nll": 0.09097848832607269,
+        "last_validation_nll": 0.08489098399877548,
+        "best_validation_accuracy": 0.9804211258888245,
+        "best_validation_macro_f1": null,
+        "termination": "early_stopping"
+      },
+      "epoch_metrics_audit": {
+        "rows": 20,
+        "expected_rows": 20
+      },
+      "batch_audit": {
+        "rows": 5900,
+        "expected_rows": 5900,
+        "batches_per_epoch": 295
+      },
+      "model_gradient_audit": {
+        "model_audit": {
+          "adaptation_mode": "frozen",
+          "total_parameters": 98128138,
+          "trainable_parameters": 7690,
+          "backbone_total_parameters": 98120448,
+          "backbone_trainable_parameters": 0,
+          "backbone_structurally_frozen_parameters": {
+            "model.cls_token": 768,
+            "model.pos_embed": 197376,
+            "model.patch_embed.conv3d.conv3d.weight": 451584,
+            "model.patch_embed.conv3d.conv3d.bias": 2304,
+            "model.patch_embed.chnfus.query": 2304,
+            "model.patch_embed.chnfus.chnemb.embed_transmit": 1536,
+            "model.patch_embed.chnfus.chnemb.embed_receive": 1536,
+            "model.patch_embed.chnfus.chnemb.embed_orbit": 1536,
+            "model.patch_embed.chnfus.xattn.inproj_k.weight": 5308416,
+            "model.patch_embed.chnfus.xattn.inproj_v.weight": 5308416,
+            "model.patch_embed.proj.weight": 1769472,
+            "model.patch_embed.proj.bias": 768,
+            "model.blocks.0.norm1.weight": 768,
+            "model.blocks.0.norm1.bias": 768,
+            "model.blocks.0.attn.qkv.weight": 1769472,
+            "model.blocks.0.attn.qkv.bias": 2304,
+            "model.blocks.0.attn.proj.weight": 589824,
+            "model.blocks.0.attn.proj.bias": 768,
+            "model.blocks.0.ls1.gamma": 768,
+            "model.blocks.0.norm2.weight": 768,
+            "model.blocks.0.norm2.bias": 768,
+            "model.blocks.0.mlp.fc1.weight": 2359296,
+            "model.blocks.0.mlp.fc1.bias": 3072,
+            "model.blocks.0.mlp.fc2.weight": 2359296,
+            "model.blocks.0.mlp.fc2.bias": 768,
+            "model.blocks.0.ls2.gamma": 768,
+            "model.blocks.1.norm1.weight": 768,
+            "model.blocks.1.norm1.bias": 768,
+            "model.blocks.1.attn.qkv.weight": 1769472,
+            "model.blocks.1.attn.qkv.bias": 2304,
+            "model.blocks.1.attn.proj.weight": 589824,
+            "model.blocks.1.attn.proj.bias": 768,
+            "model.blocks.1.ls1.gamma": 768,
+            "model.blocks.1.norm2.weight": 768,
+            "model.blocks.1.norm2.bias": 768,
+            "model.blocks.1.mlp.fc1.weight": 2359296,
+            "model.blocks.1.mlp.fc1.bias": 3072,
+            "model.blocks.1.mlp.fc2.weight": 2359296,
+            "model.blocks.1.mlp.fc2.bias": 768,
+            "model.blocks.1.ls2.gamma": 768,
+            "model.blocks.2.norm1.weight": 768,
+            "model.blocks.2.norm1.bias": 768,
+            "model.blocks.2.attn.qkv.weight": 1769472,
+            "model.blocks.2.attn.qkv.bias": 2304,
+            "model.blocks.2.attn.proj.weight": 589824,
+            "model.blocks.2.attn.proj.bias": 768,
+            "model.blocks.2.ls1.gamma": 768,
+            "model.blocks.2.norm2.weight": 768,
+            "model.blocks.2.norm2.bias": 768,
+            "model.blocks.2.mlp.fc1.weight": 2359296,
+            "model.blocks.2.mlp.fc1.bias": 3072,
+            "model.blocks.2.mlp.fc2.weight": 2359296,
+            "model.blocks.2.mlp.fc2.bias": 768,
+            "model.blocks.2.ls2.gamma": 768,
+            "model.blocks.3.norm1.weight": 768,
+            "model.blocks.3.norm1.bias": 768,
+            "model.blocks.3.attn.qkv.weight": 1769472,
+            "model.blocks.3.attn.qkv.bias": 2304,
+            "model.blocks.3.attn.proj.weight": 589824,
+            "model.blocks.3.attn.proj.bias": 768,
+            "model.blocks.3.ls1.gamma": 768,
+            "model.blocks.3.norm2.weight": 768,
+            "model.blocks.3.norm2.bias": 768,
+            "model.blocks.3.mlp.fc1.weight": 2359296,
+            "model.blocks.3.mlp.fc1.bias": 3072,
+            "model.blocks.3.mlp.fc2.weight": 2359296,
+            "model.blocks.3.mlp.fc2.bias": 768,
+            "model.blocks.3.ls2.gamma": 768,
+            "model.blocks.4.norm1.weight": 768,
+            "model.blocks.4.norm1.bias": 768,
+            "model.blocks.4.attn.qkv.weight": 1769472,
+            "model.blocks.4.attn.qkv.bias": 2304,
+            "model.blocks.4.attn.proj.weight": 589824,
+            "model.blocks.4.attn.proj.bias": 768,
+            "model.blocks.4.ls1.gamma": 768,
+            "model.blocks.4.norm2.weight": 768,
+            "model.blocks.4.norm2.bias": 768,
+            "model.blocks.4.mlp.fc1.weight": 2359296,
+            "model.blocks.4.mlp.fc1.bias": 3072,
+            "model.blocks.4.mlp.fc2.weight": 2359296,
+            "model.blocks.4.mlp.fc2.bias": 768,
+            "model.blocks.4.ls2.gamma": 768,
+            "model.blocks.5.norm1.weight": 768,
+            "model.blocks.5.norm1.bias": 768,
+            "model.blocks.5.attn.qkv.weight": 1769472,
+            "model.blocks.5.attn.qkv.bias": 2304,
+            "model.blocks.5.attn.proj.weight": 589824,
+            "model.blocks.5.attn.proj.bias": 768,
+            "model.blocks.5.ls1.gamma": 768,
+            "model.blocks.5.norm2.weight": 768,
+            "model.blocks.5.norm2.bias": 768,
+            "model.blocks.5.mlp.fc1.weight": 2359296,
+            "model.blocks.5.mlp.fc1.bias": 3072,
+            "model.blocks.5.mlp.fc2.weight": 2359296,
+            "model.blocks.5.mlp.fc2.bias": 768,
+            "model.blocks.5.ls2.gamma": 768,
+            "model.blocks.6.norm1.weight": 768,
+            "model.blocks.6.norm1.bias": 768,
+            "model.blocks.6.attn.qkv.weight": 1769472,
+            "model.blocks.6.attn.qkv.bias": 2304,
+            "model.blocks.6.attn.proj.weight": 589824,
+            "model.blocks.6.attn.proj.bias": 768,
+            "model.blocks.6.ls1.gamma": 768,
+            "model.blocks.6.norm2.weight": 768,
+            "model.blocks.6.norm2.bias": 768,
+            "model.blocks.6.mlp.fc1.weight": 2359296,
+            "model.blocks.6.mlp.fc1.bias": 3072,
+            "model.blocks.6.mlp.fc2.weight": 2359296,
+            "model.blocks.6.mlp.fc2.bias": 768,
+            "model.blocks.6.ls2.gamma": 768,
+            "model.blocks.7.norm1.weight": 768,
+            "model.blocks.7.norm1.bias": 768,
+            "model.blocks.7.attn.qkv.weight": 1769472,
+            "model.blocks.7.attn.qkv.bias": 2304,
+            "model.blocks.7.attn.proj.weight": 589824,
+            "model.blocks.7.attn.proj.bias": 768,
+            "model.blocks.7.ls1.gamma": 768,
+            "model.blocks.7.norm2.weight": 768,
+            "model.blocks.7.norm2.bias": 768,
+            "model.blocks.7.mlp.fc1.weight": 2359296,
+            "model.blocks.7.mlp.fc1.bias": 3072,
+            "model.blocks.7.mlp.fc2.weight": 2359296,
+            "model.blocks.7.mlp.fc2.bias": 768,
+            "model.blocks.7.ls2.gamma": 768,
+            "model.blocks.8.norm1.weight": 768,
+            "model.blocks.8.norm1.bias": 768,
+            "model.blocks.8.attn.qkv.weight": 1769472,
+            "model.blocks.8.attn.qkv.bias": 2304,
+            "model.blocks.8.attn.proj.weight": 589824,
+            "model.blocks.8.attn.proj.bias": 768,
+            "model.blocks.8.ls1.gamma": 768,
+            "model.blocks.8.norm2.weight": 768,
+            "model.blocks.8.norm2.bias": 768,
+            "model.blocks.8.mlp.fc1.weight": 2359296,
+            "model.blocks.8.mlp.fc1.bias": 3072,
+            "model.blocks.8.mlp.fc2.weight": 2359296,
+            "model.blocks.8.mlp.fc2.bias": 768,
+            "model.blocks.8.ls2.gamma": 768,
+            "model.blocks.9.norm1.weight": 768,
+            "model.blocks.9.norm1.bias": 768,
+            "model.blocks.9.attn.qkv.weight": 1769472,
+            "model.blocks.9.attn.qkv.bias": 2304,
+            "model.blocks.9.attn.proj.weight": 589824,
+            "model.blocks.9.attn.proj.bias": 768,
+            "model.blocks.9.ls1.gamma": 768,
+            "model.blocks.9.norm2.weight": 768,
+            "model.blocks.9.norm2.bias": 768,
+            "model.blocks.9.mlp.fc1.weight": 2359296,
+            "model.blocks.9.mlp.fc1.bias": 3072,
+            "model.blocks.9.mlp.fc2.weight": 2359296,
+            "model.blocks.9.mlp.fc2.bias": 768,
+            "model.blocks.9.ls2.gamma": 768,
+            "model.blocks.10.norm1.weight": 768,
+            "model.blocks.10.norm1.bias": 768,
+            "model.blocks.10.attn.qkv.weight": 1769472,
+            "model.blocks.10.attn.qkv.bias": 2304,
+            "model.blocks.10.attn.proj.weight": 589824,
+            "model.blocks.10.attn.proj.bias": 768,
+            "model.blocks.10.ls1.gamma": 768,
+            "model.blocks.10.norm2.weight": 768,
+            "model.blocks.10.norm2.bias": 768,
+            "model.blocks.10.mlp.fc1.weight": 2359296,
+            "model.blocks.10.mlp.fc1.bias": 3072,
+            "model.blocks.10.mlp.fc2.weight": 2359296,
+            "model.blocks.10.mlp.fc2.bias": 768,
+            "model.blocks.10.ls2.gamma": 768,
+            "model.blocks.11.norm1.weight": 768,
+            "model.blocks.11.norm1.bias": 768,
+            "model.blocks.11.attn.qkv.weight": 1769472,
+            "model.blocks.11.attn.qkv.bias": 2304,
+            "model.blocks.11.attn.proj.weight": 589824,
+            "model.blocks.11.attn.proj.bias": 768,
+            "model.blocks.11.ls1.gamma": 768,
+            "model.blocks.11.norm2.weight": 768,
+            "model.blocks.11.norm2.bias": 768,
+            "model.blocks.11.mlp.fc1.weight": 2359296,
+            "model.blocks.11.mlp.fc1.bias": 3072,
+            "model.blocks.11.mlp.fc2.weight": 2359296,
+            "model.blocks.11.mlp.fc2.bias": 768,
+            "model.blocks.11.ls2.gamma": 768,
+            "model.norm.weight": 768,
+            "model.norm.bias": 768
+          },
+          "backbone_expected_trainable_parameters": 0,
+          "all_expected_backbone_parameters_trainable": true,
+          "head_total_parameters": 7690,
+          "head_trainable_parameters": 7690,
+          "backbone_requires_grad_all_false": true,
+          "training_mode_policy": {
+            "wrapper_training": true,
+            "backbone_training": false,
+            "head_training": true,
+            "backbone_batchnorm": "eval; running statistics are not updated",
+            "backbone_layernorm": "eval with frozen affine parameters; LayerNorm has no running statistics",
+            "backbone_dropout": "disabled because backbone is held in eval mode",
+            "head_batchnorm": "train during updates; eval for validation/test",
+            "head_dropout": "absent"
+          },
+          "backbone_module_counts": {
+            "normalization_total": 25,
+            "batchnorm": 0,
+            "layernorm": 25,
+            "groupnorm": 0,
+            "dropout": 50,
+            "drop_path_or_stochastic_depth": 0
+          },
+          "head": "Sequential(\n  (0): BatchNorm1d(768, eps=1e-06, momentum=0.1, affine=False, track_running_stats=True)\n  (1): Linear(in_features=768, out_features=10, bias=True)\n)",
+          "pretrained_load": {
+            "weights": "VIT_BASE14",
+            "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+            "missing_keys": [],
+            "unexpected_keys": []
+          }
+        },
+        "optimizer_group_audit": {
+          "head": {
+            "parameter_tensors": 2,
+            "trainable_parameters": 7690,
+            "base_learning_rate": 0.001,
+            "weight_decay": 0.01
+          }
+        },
+        "gradient_audit": {
+          "performed": true,
+          "expected_parameter_tensors": 2,
+          "all_expected_parameters_received_gradient": true,
+          "missing_gradient_parameters": [],
+          "zero_gradient_parameters": [],
+          "nonfinite_gradient_parameters": [],
+          "epoch": 1
+        }
+      },
+      "checkpoint": {
+        "best": {
+          "path": "/workspace/results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8/best.pt",
+          "sha256": "a97229ae2e460a5c66788968f0329c94e96d99477e7259993f41899eebee1a0e",
+          "size_bytes": 392589311
+        },
+        "last": {
+          "path": "/workspace/results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8/last.pt",
+          "size_bytes": 393498273,
+          "load_valid": true,
+          "epoch": 20,
+          "best_epoch": 10,
+          "epochs_without_improvement": 10,
+          "optimizer_groups": [
+            "head"
+          ]
+        },
+        "path": "/workspace/results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8/best.pt",
+        "sha256": "a97229ae2e460a5c66788968f0329c94e96d99477e7259993f41899eebee1a0e"
+      },
+      "prediction_export": {
+        "path": "/workspace/results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8/predictions/test/deterministic",
+        "validation": {
+          "valid": true,
+          "errors": [],
+          "sample_count": 2714,
+          "sample_ids_unique": true,
+          "classification_type": "multiclass",
+          "schema_version": 2,
+          "probability_sum_max_abs_error": 2.384185791015625e-07,
+          "argmax_matches": true,
+          "finite": true,
+          "stochastic_shape": null,
+          "embedding_shape": [
+            2714,
+            768
+          ]
+        },
+        "sample_count": 2714,
+        "logit_shape": [
+          2714,
+          10
+        ],
+        "representation_shape": [
+          2714,
+          768
+        ],
+        "exact_official_sample_order": true,
+        "exact_official_labels": true
+      },
+      "test_metrics_report_only": {
+        "accuracy": 0.9837877671333825,
+        "macro_f1": 0.9832295981792253,
+        "nll": 0.051498536888575,
+        "brier": 0.025838579490714744,
+        "ece": 0.007695890551291597
+      }
+    },
+    {
+      "target": {
+        "dataset": "eurosat",
+        "model": "panopticon",
+        "adaptation": "full_finetune",
+        "experiment": "eurosat_panopticon_full_finetune",
+        "seed": 42
+      },
+      "target_key": "eurosat|panopticon|full_finetune|seed42",
+      "run_dir": "/workspace/results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a",
+      "run_id": "20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a",
+      "status": "PROMOTABLE",
+      "promotion_eligible": true,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [],
+      "warnings": [
+        "Post-best overfitting heuristic triggered; this does not invalidate the validation-selected checkpoint."
+      ],
+      "code_provenance": {
+        "code_sha256": "d4c7e9d07a9ee2f1b431bd06822fc4648a1f17f4bc6db8352dd65ce8b9e18c67",
+        "file_count": 88,
+        "environment_code_version": "sha256:d4c7e9d07a9ee2f1b431bd06822fc4648a1f17f4bc6db8352dd65ce8b9e18c67"
+      },
+      "artifact_provenance": {
+        "training_protocol": {
+          "path": "/workspace/reports/final_training_protocol.md",
+          "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+          "actual_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711"
+        },
+        "dataset": {
+          "path": "/workspace/data/EuroSATallBands.zip",
+          "expected_sha256": "751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59",
+          "actual_sha256": "751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59"
+        },
+        "split_manifest": {
+          "path": "/workspace/splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv",
+          "expected_sha256": "c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22",
+          "actual_sha256": "c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22"
+        },
+        "pretrained_weights": {
+          "path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+          "expected_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+          "actual_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e"
+        }
+      },
+      "recorded_input_artifacts": {
+        "required": true,
+        "all_verified": true,
+        "records": {
+          "dataset": {
+            "label": "dataset",
+            "path": "/workspace/data/EuroSATallBands.zip",
+            "size_bytes": 2067725275,
+            "sha256": "751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59",
+            "expected_sha256": "751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59",
+            "verified": true
+          },
+          "split_manifest": {
+            "label": "split_manifest",
+            "path": "/workspace/splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv",
+            "size_bytes": 8689654,
+            "sha256": "c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22",
+            "expected_sha256": "c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22",
+            "verified": true
+          },
+          "training_protocol": {
+            "label": "training_protocol",
+            "path": "/workspace/reports/final_training_protocol.md",
+            "size_bytes": 15742,
+            "sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "verified": true
+          },
+          "pretrained_weights": {
+            "label": "panopticon_pretrained_weights",
+            "path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+            "size_bytes": 395965930,
+            "sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+            "expected_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+            "verified": true
+          }
+        }
+      },
+      "validation_curve": {
+        "epochs_completed": 16,
+        "epoch_cap": 100,
+        "best_epoch": 1,
+        "best_validation_nll": 0.12665270268917084,
+        "first_validation_nll": 0.12665270268917084,
+        "last_validation_nll": 0.1998392641544342,
+        "best_validation_accuracy": 0.9527151584625244,
+        "best_validation_macro_f1": null,
+        "termination": "early_stopping"
+      },
+      "epoch_metrics_audit": {
+        "rows": 16,
+        "expected_rows": 16
+      },
+      "batch_audit": {
+        "rows": 4720,
+        "expected_rows": 4720,
+        "batches_per_epoch": 295
+      },
+      "model_gradient_audit": {
+        "model_audit": {
+          "adaptation_mode": "full_finetune",
+          "total_parameters": 98128138,
+          "trainable_parameters": 98123530,
+          "backbone_total_parameters": 98120448,
+          "backbone_trainable_parameters": 98115840,
+          "backbone_structurally_frozen_parameters": {
+            "model.patch_embed.chnfus.chnemb.embed_transmit": 1536,
+            "model.patch_embed.chnfus.chnemb.embed_receive": 1536,
+            "model.patch_embed.chnfus.chnemb.embed_orbit": 1536
+          },
+          "backbone_expected_trainable_parameters": 98115840,
+          "all_expected_backbone_parameters_trainable": true,
+          "head_total_parameters": 7690,
+          "head_trainable_parameters": 7690,
+          "backbone_requires_grad_all_false": false,
+          "training_mode_policy": {
+            "wrapper_training": true,
+            "backbone_training": true,
+            "head_training": true,
+            "backbone_batchnorm": "train",
+            "backbone_layernorm": "train",
+            "backbone_dropout": "enabled in train mode",
+            "head_batchnorm": "train during updates; eval for validation/test",
+            "head_dropout": "absent"
+          },
+          "backbone_module_counts": {
+            "normalization_total": 25,
+            "batchnorm": 0,
+            "layernorm": 25,
+            "groupnorm": 0,
+            "dropout": 50,
+            "drop_path_or_stochastic_depth": 0
+          },
+          "head": "Sequential(\n  (0): BatchNorm1d(768, eps=1e-06, momentum=0.1, affine=False, track_running_stats=True)\n  (1): Linear(in_features=768, out_features=10, bias=True)\n)",
+          "pretrained_load": {
+            "weights": "VIT_BASE14",
+            "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+            "missing_keys": [],
+            "unexpected_keys": []
+          }
+        },
+        "optimizer_group_audit": {
+          "backbone": {
+            "parameter_tensors": 179,
+            "trainable_parameters": 98115840,
+            "base_learning_rate": 0.0004,
+            "weight_decay": 0.0
+          },
+          "head": {
+            "parameter_tensors": 2,
+            "trainable_parameters": 7690,
+            "base_learning_rate": 0.004,
+            "weight_decay": 0.0
+          }
+        },
+        "gradient_audit": {
+          "performed": true,
+          "expected_parameter_tensors": 181,
+          "all_expected_parameters_received_gradient": true,
+          "missing_gradient_parameters": [],
+          "zero_gradient_parameters": [],
+          "nonfinite_gradient_parameters": [],
+          "epoch": 1
+        }
+      },
+      "checkpoint": {
+        "best": {
+          "path": "/workspace/results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a/best.pt",
+          "sha256": "4ba12185c4f2ddd711fec6bf52daad7cd3f86b84787f78404526e10fd4963295",
+          "size_bytes": 392589567
+        },
+        "last": {
+          "path": "/workspace/results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a/last.pt",
+          "size_bytes": 1178382052,
+          "load_valid": true,
+          "epoch": 16,
+          "best_epoch": 1,
+          "epochs_without_improvement": 15,
+          "optimizer_groups": [
+            "backbone",
+            "head"
+          ]
+        },
+        "path": "/workspace/results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a/best.pt",
+        "sha256": "4ba12185c4f2ddd711fec6bf52daad7cd3f86b84787f78404526e10fd4963295"
+      },
+      "prediction_export": {
+        "path": "/workspace/results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a/predictions/test/deterministic",
+        "validation": {
+          "valid": true,
+          "errors": [],
+          "sample_count": 2714,
+          "sample_ids_unique": true,
+          "classification_type": "multiclass",
+          "schema_version": 2,
+          "probability_sum_max_abs_error": 2.384185791015625e-07,
+          "argmax_matches": true,
+          "finite": true,
+          "stochastic_shape": null,
+          "embedding_shape": [
+            2714,
+            768
+          ]
+        },
+        "sample_count": 2714,
+        "logit_shape": [
+          2714,
+          10
+        ],
+        "representation_shape": [
+          2714,
+          768
+        ],
+        "exact_official_sample_order": true,
+        "exact_official_labels": true
+      },
+      "test_metrics_report_only": {
+        "accuracy": 0.9679439941046426,
+        "macro_f1": 0.9674469537089507,
+        "nll": 0.09865374542764949,
+        "brier": 0.04820857618290921,
+        "ece": 0.005855335039344014
+      }
+    },
+    {
+      "target": {
+        "dataset": "treesatai",
+        "model": "dofa",
+        "adaptation": "frozen",
+        "experiment": "treesatai_dofa_frozen",
+        "seed": 42
+      },
+      "target_key": "treesatai|dofa|frozen|seed42",
+      "run_dir": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260815T202926010453Z_treesatai_dofa_frozen_seed42_3dae0e5b",
+      "run_id": "20260815T202926010453Z_treesatai_dofa_frozen_seed42_3dae0e5b",
+      "status": "PROMOTABLE",
+      "promotion_eligible": true,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [],
+      "warnings": [
+        "Post-best overfitting heuristic triggered; this does not invalidate the validation-selected checkpoint."
+      ],
+      "code_provenance": {
+        "code_sha256": "d4c7e9d07a9ee2f1b431bd06822fc4648a1f17f4bc6db8352dd65ce8b9e18c67",
+        "file_count": 88,
+        "environment_code_version": "sha256:d4c7e9d07a9ee2f1b431bd06822fc4648a1f17f4bc6db8352dd65ce8b9e18c67"
+      },
+      "artifact_provenance": {
+        "training_protocol": {
+          "path": "/workspace/reports/final_training_protocol.md",
+          "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+          "actual_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711"
+        },
+        "dataset": {
+          "path": "/workspace/datasets/treesatai/geobench_treesatai.tortilla",
+          "expected_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+          "actual_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee"
+        },
+        "extracted_manifest": {
+          "path": "/workspace/reports/dataset_manifests/treesatai_actual_manifest.csv",
+          "expected_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+          "actual_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54"
+        },
+        "pretrained_weights": {
+          "path": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+          "expected_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+          "actual_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1"
+        }
+      },
+      "recorded_input_artifacts": {
+        "required": true,
+        "all_verified": true,
+        "records": {
+          "dataset": {
+            "label": "dataset",
+            "path": "/workspace/datasets/treesatai/geobench_treesatai.tortilla",
+            "size_bytes": 1771492601,
+            "sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+            "expected_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+            "verified": true
+          },
+          "extracted_manifest": {
+            "label": "extracted_manifest",
+            "path": "/workspace/reports/dataset_manifests/treesatai_actual_manifest.csv",
+            "size_bytes": 1371822,
+            "sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+            "expected_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+            "verified": true
+          },
+          "training_protocol": {
+            "label": "training_protocol",
+            "path": "/workspace/reports/final_training_protocol.md",
+            "size_bytes": 15742,
+            "sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "verified": true
+          },
+          "pretrained_weights": {
+            "label": "dofa_pretrained_weights",
+            "path": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+            "size_bytes": 447669164,
+            "sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+            "expected_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+            "verified": true
+          }
+        }
+      },
+      "validation_curve": {
+        "epochs_completed": 37,
+        "epoch_cap": 50,
+        "best_epoch": 27,
+        "best_validation_nll": 0.26749730110168457,
+        "first_validation_nll": 0.2915988862514496,
+        "last_validation_nll": 0.274722158908844,
+        "best_validation_accuracy": 0.21699999272823334,
+        "best_validation_macro_f1": 0.20079810917377472,
+        "termination": "early_stopping"
+      },
+      "epoch_metrics_audit": {
+        "rows": 37,
+        "expected_rows": 37
+      },
+      "batch_audit": {
+        "rows": 2331,
+        "expected_rows": 2331,
+        "batches_per_epoch": 63
+      },
+      "model_gradient_audit": {
+        "model_audit": {
+          "adaptation_mode": "frozen",
+          "total_parameters": 111323663,
+          "trainable_parameters": 11535,
+          "backbone_total_parameters": 111312128,
+          "backbone_trainable_parameters": 0,
+          "backbone_structurally_frozen_parameters": {
+            "cls_token": 768,
+            "pos_embed": 151296,
+            "norm.weight": 768,
+            "norm.bias": 768,
+            "patch_embed.weight_generator.weight_tokens": 16384,
+            "patch_embed.weight_generator.bias_token": 128,
+            "patch_embed.weight_generator.transformer_encoder.layers.0.self_attn.in_proj_weight": 49152,
+            "patch_embed.weight_generator.transformer_encoder.layers.0.self_attn.in_proj_bias": 384,
+            "patch_embed.weight_generator.transformer_encoder.layers.0.self_attn.out_proj.weight": 16384,
+            "patch_embed.weight_generator.transformer_encoder.layers.0.self_attn.out_proj.bias": 128,
+            "patch_embed.weight_generator.transformer_encoder.layers.0.linear1.weight": 262144,
+            "patch_embed.weight_generator.transformer_encoder.layers.0.linear1.bias": 2048,
+            "patch_embed.weight_generator.transformer_encoder.layers.0.linear2.weight": 262144,
+            "patch_embed.weight_generator.transformer_encoder.layers.0.linear2.bias": 128,
+            "patch_embed.weight_generator.transformer_encoder.layers.0.norm1.weight": 128,
+            "patch_embed.weight_generator.transformer_encoder.layers.0.norm1.bias": 128,
+            "patch_embed.weight_generator.transformer_encoder.layers.0.norm2.weight": 128,
+            "patch_embed.weight_generator.transformer_encoder.layers.0.norm2.bias": 128,
+            "patch_embed.weight_generator.fc_weight.weight": 25165824,
+            "patch_embed.weight_generator.fc_weight.bias": 196608,
+            "patch_embed.weight_generator.fc_bias.weight": 98304,
+            "patch_embed.weight_generator.fc_bias.bias": 768,
+            "patch_embed.fclayer.w1.weight": 16384,
+            "patch_embed.fclayer.w1.bias": 128,
+            "patch_embed.fclayer.w2.weight": 16384,
+            "patch_embed.fclayer.w2.bias": 128,
+            "blocks.0.norm1.weight": 768,
+            "blocks.0.norm1.bias": 768,
+            "blocks.0.attn.qkv.weight": 1769472,
+            "blocks.0.attn.qkv.bias": 2304,
+            "blocks.0.attn.proj.weight": 589824,
+            "blocks.0.attn.proj.bias": 768,
+            "blocks.0.norm2.weight": 768,
+            "blocks.0.norm2.bias": 768,
+            "blocks.0.mlp.fc1.weight": 2359296,
+            "blocks.0.mlp.fc1.bias": 3072,
+            "blocks.0.mlp.fc2.weight": 2359296,
+            "blocks.0.mlp.fc2.bias": 768,
+            "blocks.1.norm1.weight": 768,
+            "blocks.1.norm1.bias": 768,
+            "blocks.1.attn.qkv.weight": 1769472,
+            "blocks.1.attn.qkv.bias": 2304,
+            "blocks.1.attn.proj.weight": 589824,
+            "blocks.1.attn.proj.bias": 768,
+            "blocks.1.norm2.weight": 768,
+            "blocks.1.norm2.bias": 768,
+            "blocks.1.mlp.fc1.weight": 2359296,
+            "blocks.1.mlp.fc1.bias": 3072,
+            "blocks.1.mlp.fc2.weight": 2359296,
+            "blocks.1.mlp.fc2.bias": 768,
+            "blocks.2.norm1.weight": 768,
+            "blocks.2.norm1.bias": 768,
+            "blocks.2.attn.qkv.weight": 1769472,
+            "blocks.2.attn.qkv.bias": 2304,
+            "blocks.2.attn.proj.weight": 589824,
+            "blocks.2.attn.proj.bias": 768,
+            "blocks.2.norm2.weight": 768,
+            "blocks.2.norm2.bias": 768,
+            "blocks.2.mlp.fc1.weight": 2359296,
+            "blocks.2.mlp.fc1.bias": 3072,
+            "blocks.2.mlp.fc2.weight": 2359296,
+            "blocks.2.mlp.fc2.bias": 768,
+            "blocks.3.norm1.weight": 768,
+            "blocks.3.norm1.bias": 768,
+            "blocks.3.attn.qkv.weight": 1769472,
+            "blocks.3.attn.qkv.bias": 2304,
+            "blocks.3.attn.proj.weight": 589824,
+            "blocks.3.attn.proj.bias": 768,
+            "blocks.3.norm2.weight": 768,
+            "blocks.3.norm2.bias": 768,
+            "blocks.3.mlp.fc1.weight": 2359296,
+            "blocks.3.mlp.fc1.bias": 3072,
+            "blocks.3.mlp.fc2.weight": 2359296,
+            "blocks.3.mlp.fc2.bias": 768,
+            "blocks.4.norm1.weight": 768,
+            "blocks.4.norm1.bias": 768,
+            "blocks.4.attn.qkv.weight": 1769472,
+            "blocks.4.attn.qkv.bias": 2304,
+            "blocks.4.attn.proj.weight": 589824,
+            "blocks.4.attn.proj.bias": 768,
+            "blocks.4.norm2.weight": 768,
+            "blocks.4.norm2.bias": 768,
+            "blocks.4.mlp.fc1.weight": 2359296,
+            "blocks.4.mlp.fc1.bias": 3072,
+            "blocks.4.mlp.fc2.weight": 2359296,
+            "blocks.4.mlp.fc2.bias": 768,
+            "blocks.5.norm1.weight": 768,
+            "blocks.5.norm1.bias": 768,
+            "blocks.5.attn.qkv.weight": 1769472,
+            "blocks.5.attn.qkv.bias": 2304,
+            "blocks.5.attn.proj.weight": 589824,
+            "blocks.5.attn.proj.bias": 768,
+            "blocks.5.norm2.weight": 768,
+            "blocks.5.norm2.bias": 768,
+            "blocks.5.mlp.fc1.weight": 2359296,
+            "blocks.5.mlp.fc1.bias": 3072,
+            "blocks.5.mlp.fc2.weight": 2359296,
+            "blocks.5.mlp.fc2.bias": 768,
+            "blocks.6.norm1.weight": 768,
+            "blocks.6.norm1.bias": 768,
+            "blocks.6.attn.qkv.weight": 1769472,
+            "blocks.6.attn.qkv.bias": 2304,
+            "blocks.6.attn.proj.weight": 589824,
+            "blocks.6.attn.proj.bias": 768,
+            "blocks.6.norm2.weight": 768,
+            "blocks.6.norm2.bias": 768,
+            "blocks.6.mlp.fc1.weight": 2359296,
+            "blocks.6.mlp.fc1.bias": 3072,
+            "blocks.6.mlp.fc2.weight": 2359296,
+            "blocks.6.mlp.fc2.bias": 768,
+            "blocks.7.norm1.weight": 768,
+            "blocks.7.norm1.bias": 768,
+            "blocks.7.attn.qkv.weight": 1769472,
+            "blocks.7.attn.qkv.bias": 2304,
+            "blocks.7.attn.proj.weight": 589824,
+            "blocks.7.attn.proj.bias": 768,
+            "blocks.7.norm2.weight": 768,
+            "blocks.7.norm2.bias": 768,
+            "blocks.7.mlp.fc1.weight": 2359296,
+            "blocks.7.mlp.fc1.bias": 3072,
+            "blocks.7.mlp.fc2.weight": 2359296,
+            "blocks.7.mlp.fc2.bias": 768,
+            "blocks.8.norm1.weight": 768,
+            "blocks.8.norm1.bias": 768,
+            "blocks.8.attn.qkv.weight": 1769472,
+            "blocks.8.attn.qkv.bias": 2304,
+            "blocks.8.attn.proj.weight": 589824,
+            "blocks.8.attn.proj.bias": 768,
+            "blocks.8.norm2.weight": 768,
+            "blocks.8.norm2.bias": 768,
+            "blocks.8.mlp.fc1.weight": 2359296,
+            "blocks.8.mlp.fc1.bias": 3072,
+            "blocks.8.mlp.fc2.weight": 2359296,
+            "blocks.8.mlp.fc2.bias": 768,
+            "blocks.9.norm1.weight": 768,
+            "blocks.9.norm1.bias": 768,
+            "blocks.9.attn.qkv.weight": 1769472,
+            "blocks.9.attn.qkv.bias": 2304,
+            "blocks.9.attn.proj.weight": 589824,
+            "blocks.9.attn.proj.bias": 768,
+            "blocks.9.norm2.weight": 768,
+            "blocks.9.norm2.bias": 768,
+            "blocks.9.mlp.fc1.weight": 2359296,
+            "blocks.9.mlp.fc1.bias": 3072,
+            "blocks.9.mlp.fc2.weight": 2359296,
+            "blocks.9.mlp.fc2.bias": 768,
+            "blocks.10.norm1.weight": 768,
+            "blocks.10.norm1.bias": 768,
+            "blocks.10.attn.qkv.weight": 1769472,
+            "blocks.10.attn.qkv.bias": 2304,
+            "blocks.10.attn.proj.weight": 589824,
+            "blocks.10.attn.proj.bias": 768,
+            "blocks.10.norm2.weight": 768,
+            "blocks.10.norm2.bias": 768,
+            "blocks.10.mlp.fc1.weight": 2359296,
+            "blocks.10.mlp.fc1.bias": 3072,
+            "blocks.10.mlp.fc2.weight": 2359296,
+            "blocks.10.mlp.fc2.bias": 768,
+            "blocks.11.norm1.weight": 768,
+            "blocks.11.norm1.bias": 768,
+            "blocks.11.attn.qkv.weight": 1769472,
+            "blocks.11.attn.qkv.bias": 2304,
+            "blocks.11.attn.proj.weight": 589824,
+            "blocks.11.attn.proj.bias": 768,
+            "blocks.11.norm2.weight": 768,
+            "blocks.11.norm2.bias": 768,
+            "blocks.11.mlp.fc1.weight": 2359296,
+            "blocks.11.mlp.fc1.bias": 3072,
+            "blocks.11.mlp.fc2.weight": 2359296,
+            "blocks.11.mlp.fc2.bias": 768
+          },
+          "backbone_expected_trainable_parameters": 0,
+          "all_expected_backbone_parameters_trainable": true,
+          "head_total_parameters": 11535,
+          "head_trainable_parameters": 11535,
+          "backbone_requires_grad_all_false": true,
+          "training_mode_policy": {
+            "wrapper_training": true,
+            "backbone_training": false,
+            "head_training": true,
+            "backbone_batchnorm": "eval; running statistics are not updated",
+            "backbone_layernorm": "eval with frozen affine parameters; LayerNorm has no running statistics",
+            "backbone_dropout": "disabled because backbone is held in eval mode",
+            "head_batchnorm": "train during updates; eval for validation/test",
+            "head_dropout": "configured"
+          },
+          "backbone_module_counts": {
+            "normalization_total": 27,
+            "batchnorm": 0,
+            "layernorm": 27,
+            "groupnorm": 0,
+            "dropout": 52,
+            "drop_path_or_stochastic_depth": 0
+          },
+          "head": "Sequential(\n  (0): Dropout(p=0.0, inplace=False)\n  (1): Linear(in_features=768, out_features=15, bias=True)\n)",
+          "pretrained_load": {
+            "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+            "missing_keys": [],
+            "unexpected_keys": [
+              "mask_token",
+              "projector.weight",
+              "projector.bias"
+            ]
+          }
+        },
+        "optimizer_group_audit": {
+          "head": {
+            "parameter_tensors": 2,
+            "trainable_parameters": 11535,
+            "base_learning_rate": 0.001,
+            "weight_decay": 0.01
+          }
+        },
+        "gradient_audit": {
+          "performed": true,
+          "expected_parameter_tensors": 2,
+          "all_expected_parameters_received_gradient": true,
+          "missing_gradient_parameters": [],
+          "zero_gradient_parameters": [],
+          "nonfinite_gradient_parameters": [],
+          "epoch": 1
+        }
+      },
+      "checkpoint": {
+        "best": {
+          "path": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260815T202926010453Z_treesatai_dofa_frozen_seed42_3dae0e5b/best.pt",
+          "sha256": "53b66d8b46305777f6f3a933c0efc8ced3609b7a5e364c05b632f6ab601eafe8",
+          "size_bytes": 445361802
+        },
+        "last": {
+          "path": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260815T202926010453Z_treesatai_dofa_frozen_seed42_3dae0e5b/last.pt",
+          "size_bytes": 445800620,
+          "load_valid": true,
+          "epoch": 37,
+          "best_epoch": 27,
+          "epochs_without_improvement": 10,
+          "optimizer_groups": [
+            "head"
+          ]
+        },
+        "path": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260815T202926010453Z_treesatai_dofa_frozen_seed42_3dae0e5b/best.pt",
+        "sha256": "53b66d8b46305777f6f3a933c0efc8ced3609b7a5e364c05b632f6ab601eafe8"
+      },
+      "prediction_export": {
+        "path": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260815T202926010453Z_treesatai_dofa_frozen_seed42_3dae0e5b/predictions/test/deterministic",
+        "validation": {
+          "valid": true,
+          "errors": [],
+          "sample_count": 2000,
+          "sample_ids_unique": true,
+          "classification_type": "multilabel",
+          "schema_version": 2,
+          "probability_sum_max_abs_error": null,
+          "argmax_matches": null,
+          "finite": true,
+          "stochastic_shape": null,
+          "embedding_shape": [
+            2000,
+            768
+          ]
+        },
+        "sample_count": 2000,
+        "logit_shape": [
+          2000,
+          15
+        ],
+        "representation_shape": [
+          2000,
+          768
+        ],
+        "exact_official_sample_order": true,
+        "exact_official_labels": true
+      },
+      "test_metrics_report_only": {
+        "accuracy": 0.255,
+        "labelwise_accuracy": 0.9040666666666667,
+        "macro_f1": 0.21952595320890655,
+        "nll": 0.25653112849224985,
+        "brier": 0.07417677748713968,
+        "ece": 0.00997010348659714
+      }
+    },
+    {
+      "target": {
+        "dataset": "treesatai",
+        "model": "dofa",
+        "adaptation": "full_finetune",
+        "experiment": "treesatai_dofa_full_finetune",
+        "seed": 42
+      },
+      "target_key": "treesatai|dofa|full_finetune|seed42",
+      "run_dir": "/workspace/results/final_thesis/classification/treesatai_full_finetune/runs/20260815T222120553265Z_treesatai_dofa_full_finetune_seed42_9845090f",
+      "run_id": "20260815T222120553265Z_treesatai_dofa_full_finetune_seed42_9845090f",
+      "status": "PROMOTABLE",
+      "promotion_eligible": true,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [],
+      "warnings": [
+        "Post-best overfitting heuristic triggered; this does not invalidate the validation-selected checkpoint."
+      ],
+      "code_provenance": {
+        "code_sha256": "82467b95293c2a2459c59405a56e02e6af2eb955db49d3ce642ee0bfb38a61d0",
+        "file_count": 90,
+        "environment_code_version": "sha256:82467b95293c2a2459c59405a56e02e6af2eb955db49d3ce642ee0bfb38a61d0"
+      },
+      "artifact_provenance": {
+        "training_protocol": {
+          "path": "/workspace/reports/final_training_protocol.md",
+          "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+          "actual_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711"
+        },
+        "dataset": {
+          "path": "/workspace/datasets/treesatai/geobench_treesatai.tortilla",
+          "expected_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+          "actual_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee"
+        },
+        "extracted_manifest": {
+          "path": "/workspace/reports/dataset_manifests/treesatai_actual_manifest.csv",
+          "expected_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+          "actual_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54"
+        },
+        "pretrained_weights": {
+          "path": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+          "expected_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+          "actual_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1"
+        }
+      },
+      "recorded_input_artifacts": {
+        "required": true,
+        "all_verified": true,
+        "records": {
+          "dataset": {
+            "label": "dataset",
+            "path": "/workspace/datasets/treesatai/geobench_treesatai.tortilla",
+            "size_bytes": 1771492601,
+            "sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+            "expected_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+            "verified": true
+          },
+          "extracted_manifest": {
+            "label": "extracted_manifest",
+            "path": "/workspace/reports/dataset_manifests/treesatai_actual_manifest.csv",
+            "size_bytes": 1371822,
+            "sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+            "expected_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+            "verified": true
+          },
+          "training_protocol": {
+            "label": "training_protocol",
+            "path": "/workspace/reports/final_training_protocol.md",
+            "size_bytes": 15742,
+            "sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "verified": true
+          },
+          "pretrained_weights": {
+            "label": "dofa_pretrained_weights",
+            "path": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+            "size_bytes": 447669164,
+            "sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+            "expected_sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1",
+            "verified": true
+          }
+        }
+      },
+      "validation_curve": {
+        "epochs_completed": 20,
+        "epoch_cap": 100,
+        "best_epoch": 5,
+        "best_validation_nll": 0.2693428695201874,
+        "first_validation_nll": 0.2737515866756439,
+        "last_validation_nll": 0.7321836352348328,
+        "best_validation_accuracy": 0.20000000298023224,
+        "best_validation_macro_f1": 0.26699408888816833,
+        "termination": "early_stopping"
+      },
+      "epoch_metrics_audit": {
+        "rows": 20,
+        "expected_rows": 20
+      },
+      "batch_audit": {
+        "rows": 1260,
+        "expected_rows": 1260,
+        "batches_per_epoch": 63
+      },
+      "model_gradient_audit": {
+        "model_audit": {
+          "adaptation_mode": "full_finetune",
+          "total_parameters": 111323663,
+          "trainable_parameters": 111172367,
+          "backbone_total_parameters": 111312128,
+          "backbone_trainable_parameters": 111160832,
+          "backbone_structurally_frozen_parameters": {
+            "pos_embed": 151296
+          },
+          "backbone_expected_trainable_parameters": 111160832,
+          "all_expected_backbone_parameters_trainable": true,
+          "head_total_parameters": 11535,
+          "head_trainable_parameters": 11535,
+          "backbone_requires_grad_all_false": false,
+          "training_mode_policy": {
+            "wrapper_training": true,
+            "backbone_training": true,
+            "head_training": true,
+            "backbone_batchnorm": "train",
+            "backbone_layernorm": "train",
+            "backbone_dropout": "enabled in train mode",
+            "head_batchnorm": "train during updates; eval for validation/test",
+            "head_dropout": "configured"
+          },
+          "backbone_module_counts": {
+            "normalization_total": 27,
+            "batchnorm": 0,
+            "layernorm": 27,
+            "groupnorm": 0,
+            "dropout": 52,
+            "drop_path_or_stochastic_depth": 0
+          },
+          "head": "Sequential(\n  (0): Dropout(p=0.0, inplace=False)\n  (1): Linear(in_features=768, out_features=15, bias=True)\n)",
+          "pretrained_load": {
+            "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+            "missing_keys": [],
+            "unexpected_keys": [
+              "mask_token",
+              "projector.weight",
+              "projector.bias"
+            ]
+          }
+        },
+        "optimizer_group_audit": {
+          "backbone": {
+            "parameter_tensors": 169,
+            "trainable_parameters": 111160832,
+            "base_learning_rate": 0.0001,
+            "weight_decay": 0.01
+          },
+          "head": {
+            "parameter_tensors": 2,
+            "trainable_parameters": 11535,
+            "base_learning_rate": 0.001,
+            "weight_decay": 0.01
+          }
+        },
+        "gradient_audit": {
+          "performed": true,
+          "expected_parameter_tensors": 171,
+          "all_expected_parameters_received_gradient": true,
+          "missing_gradient_parameters": [],
+          "zero_gradient_parameters": [],
+          "nonfinite_gradient_parameters": [],
+          "epoch": 1
+        }
+      },
+      "checkpoint": {
+        "best": {
+          "path": "/workspace/results/final_thesis/classification/treesatai_full_finetune/runs/20260815T222120553265Z_treesatai_dofa_full_finetune_seed42_9845090f/best.pt",
+          "sha256": "dfc93f4f70a79ce29b26cc40eea90b8a2bc123850c55d64c1f8fa74faa05b61d",
+          "size_bytes": 445362186
+        },
+        "last": {
+          "path": "/workspace/results/final_thesis/classification/treesatai_full_finetune/runs/20260815T222120553265Z_treesatai_dofa_full_finetune_seed42_9845090f/last.pt",
+          "size_bytes": 1335048133,
+          "load_valid": true,
+          "epoch": 20,
+          "best_epoch": 5,
+          "epochs_without_improvement": 15,
+          "optimizer_groups": [
+            "backbone",
+            "head"
+          ]
+        },
+        "path": "/workspace/results/final_thesis/classification/treesatai_full_finetune/runs/20260815T222120553265Z_treesatai_dofa_full_finetune_seed42_9845090f/best.pt",
+        "sha256": "dfc93f4f70a79ce29b26cc40eea90b8a2bc123850c55d64c1f8fa74faa05b61d"
+      },
+      "prediction_export": {
+        "path": "/workspace/results/final_thesis/classification/treesatai_full_finetune/runs/20260815T222120553265Z_treesatai_dofa_full_finetune_seed42_9845090f/predictions/test/deterministic",
+        "validation": {
+          "valid": true,
+          "errors": [],
+          "sample_count": 2000,
+          "sample_ids_unique": true,
+          "classification_type": "multilabel",
+          "schema_version": 2,
+          "probability_sum_max_abs_error": null,
+          "argmax_matches": null,
+          "finite": true,
+          "stochastic_shape": null,
+          "embedding_shape": [
+            2000,
+            768
+          ]
+        },
+        "sample_count": 2000,
+        "logit_shape": [
+          2000,
+          15
+        ],
+        "representation_shape": [
+          2000,
+          768
+        ],
+        "exact_official_sample_order": true,
+        "exact_official_labels": true
+      },
+      "test_metrics_report_only": {
+        "accuracy": 0.265,
+        "labelwise_accuracy": 0.9062,
+        "macro_f1": 0.24827355184214414,
+        "nll": 0.2499352651808189,
+        "brier": 0.07259371298037501,
+        "ece": 0.014092692175650377
+      }
+    },
+    {
+      "target": {
+        "dataset": "treesatai",
+        "model": "panopticon",
+        "adaptation": "frozen",
+        "experiment": "treesatai_panopticon_frozen",
+        "seed": 42
+      },
+      "target_key": "treesatai|panopticon|frozen|seed42",
+      "run_dir": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260815T204959852998Z_treesatai_panopticon_frozen_seed42_5c8cc8e4",
+      "run_id": "20260815T204959852998Z_treesatai_panopticon_frozen_seed42_5c8cc8e4",
+      "status": "PROMOTABLE",
+      "promotion_eligible": true,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [],
+      "warnings": [
+        "Post-best overfitting heuristic triggered; this does not invalidate the validation-selected checkpoint."
+      ],
+      "code_provenance": {
+        "code_sha256": "d4c7e9d07a9ee2f1b431bd06822fc4648a1f17f4bc6db8352dd65ce8b9e18c67",
+        "file_count": 88,
+        "environment_code_version": "sha256:d4c7e9d07a9ee2f1b431bd06822fc4648a1f17f4bc6db8352dd65ce8b9e18c67"
+      },
+      "artifact_provenance": {
+        "training_protocol": {
+          "path": "/workspace/reports/final_training_protocol.md",
+          "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+          "actual_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711"
+        },
+        "dataset": {
+          "path": "/workspace/datasets/treesatai/geobench_treesatai.tortilla",
+          "expected_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+          "actual_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee"
+        },
+        "extracted_manifest": {
+          "path": "/workspace/reports/dataset_manifests/treesatai_actual_manifest.csv",
+          "expected_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+          "actual_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54"
+        },
+        "pretrained_weights": {
+          "path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+          "expected_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+          "actual_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e"
+        }
+      },
+      "recorded_input_artifacts": {
+        "required": true,
+        "all_verified": true,
+        "records": {
+          "dataset": {
+            "label": "dataset",
+            "path": "/workspace/datasets/treesatai/geobench_treesatai.tortilla",
+            "size_bytes": 1771492601,
+            "sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+            "expected_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+            "verified": true
+          },
+          "extracted_manifest": {
+            "label": "extracted_manifest",
+            "path": "/workspace/reports/dataset_manifests/treesatai_actual_manifest.csv",
+            "size_bytes": 1371822,
+            "sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+            "expected_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+            "verified": true
+          },
+          "training_protocol": {
+            "label": "training_protocol",
+            "path": "/workspace/reports/final_training_protocol.md",
+            "size_bytes": 15742,
+            "sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "verified": true
+          },
+          "pretrained_weights": {
+            "label": "panopticon_pretrained_weights",
+            "path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+            "size_bytes": 395965930,
+            "sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+            "expected_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+            "verified": true
+          }
+        }
+      },
+      "validation_curve": {
+        "epochs_completed": 19,
+        "epoch_cap": 50,
+        "best_epoch": 9,
+        "best_validation_nll": 0.26986947655677795,
+        "first_validation_nll": 0.28984421491622925,
+        "last_validation_nll": 0.27739712595939636,
+        "best_validation_accuracy": 0.21299999952316284,
+        "best_validation_macro_f1": 0.1694696545600891,
+        "termination": "early_stopping"
+      },
+      "epoch_metrics_audit": {
+        "rows": 19,
+        "expected_rows": 19
+      },
+      "batch_audit": {
+        "rows": 1197,
+        "expected_rows": 1197,
+        "batches_per_epoch": 63
+      },
+      "model_gradient_audit": {
+        "model_audit": {
+          "adaptation_mode": "frozen",
+          "total_parameters": 98131983,
+          "trainable_parameters": 11535,
+          "backbone_total_parameters": 98120448,
+          "backbone_trainable_parameters": 0,
+          "backbone_structurally_frozen_parameters": {
+            "model.cls_token": 768,
+            "model.pos_embed": 197376,
+            "model.patch_embed.conv3d.conv3d.weight": 451584,
+            "model.patch_embed.conv3d.conv3d.bias": 2304,
+            "model.patch_embed.chnfus.query": 2304,
+            "model.patch_embed.chnfus.chnemb.embed_transmit": 1536,
+            "model.patch_embed.chnfus.chnemb.embed_receive": 1536,
+            "model.patch_embed.chnfus.chnemb.embed_orbit": 1536,
+            "model.patch_embed.chnfus.xattn.inproj_k.weight": 5308416,
+            "model.patch_embed.chnfus.xattn.inproj_v.weight": 5308416,
+            "model.patch_embed.proj.weight": 1769472,
+            "model.patch_embed.proj.bias": 768,
+            "model.blocks.0.norm1.weight": 768,
+            "model.blocks.0.norm1.bias": 768,
+            "model.blocks.0.attn.qkv.weight": 1769472,
+            "model.blocks.0.attn.qkv.bias": 2304,
+            "model.blocks.0.attn.proj.weight": 589824,
+            "model.blocks.0.attn.proj.bias": 768,
+            "model.blocks.0.ls1.gamma": 768,
+            "model.blocks.0.norm2.weight": 768,
+            "model.blocks.0.norm2.bias": 768,
+            "model.blocks.0.mlp.fc1.weight": 2359296,
+            "model.blocks.0.mlp.fc1.bias": 3072,
+            "model.blocks.0.mlp.fc2.weight": 2359296,
+            "model.blocks.0.mlp.fc2.bias": 768,
+            "model.blocks.0.ls2.gamma": 768,
+            "model.blocks.1.norm1.weight": 768,
+            "model.blocks.1.norm1.bias": 768,
+            "model.blocks.1.attn.qkv.weight": 1769472,
+            "model.blocks.1.attn.qkv.bias": 2304,
+            "model.blocks.1.attn.proj.weight": 589824,
+            "model.blocks.1.attn.proj.bias": 768,
+            "model.blocks.1.ls1.gamma": 768,
+            "model.blocks.1.norm2.weight": 768,
+            "model.blocks.1.norm2.bias": 768,
+            "model.blocks.1.mlp.fc1.weight": 2359296,
+            "model.blocks.1.mlp.fc1.bias": 3072,
+            "model.blocks.1.mlp.fc2.weight": 2359296,
+            "model.blocks.1.mlp.fc2.bias": 768,
+            "model.blocks.1.ls2.gamma": 768,
+            "model.blocks.2.norm1.weight": 768,
+            "model.blocks.2.norm1.bias": 768,
+            "model.blocks.2.attn.qkv.weight": 1769472,
+            "model.blocks.2.attn.qkv.bias": 2304,
+            "model.blocks.2.attn.proj.weight": 589824,
+            "model.blocks.2.attn.proj.bias": 768,
+            "model.blocks.2.ls1.gamma": 768,
+            "model.blocks.2.norm2.weight": 768,
+            "model.blocks.2.norm2.bias": 768,
+            "model.blocks.2.mlp.fc1.weight": 2359296,
+            "model.blocks.2.mlp.fc1.bias": 3072,
+            "model.blocks.2.mlp.fc2.weight": 2359296,
+            "model.blocks.2.mlp.fc2.bias": 768,
+            "model.blocks.2.ls2.gamma": 768,
+            "model.blocks.3.norm1.weight": 768,
+            "model.blocks.3.norm1.bias": 768,
+            "model.blocks.3.attn.qkv.weight": 1769472,
+            "model.blocks.3.attn.qkv.bias": 2304,
+            "model.blocks.3.attn.proj.weight": 589824,
+            "model.blocks.3.attn.proj.bias": 768,
+            "model.blocks.3.ls1.gamma": 768,
+            "model.blocks.3.norm2.weight": 768,
+            "model.blocks.3.norm2.bias": 768,
+            "model.blocks.3.mlp.fc1.weight": 2359296,
+            "model.blocks.3.mlp.fc1.bias": 3072,
+            "model.blocks.3.mlp.fc2.weight": 2359296,
+            "model.blocks.3.mlp.fc2.bias": 768,
+            "model.blocks.3.ls2.gamma": 768,
+            "model.blocks.4.norm1.weight": 768,
+            "model.blocks.4.norm1.bias": 768,
+            "model.blocks.4.attn.qkv.weight": 1769472,
+            "model.blocks.4.attn.qkv.bias": 2304,
+            "model.blocks.4.attn.proj.weight": 589824,
+            "model.blocks.4.attn.proj.bias": 768,
+            "model.blocks.4.ls1.gamma": 768,
+            "model.blocks.4.norm2.weight": 768,
+            "model.blocks.4.norm2.bias": 768,
+            "model.blocks.4.mlp.fc1.weight": 2359296,
+            "model.blocks.4.mlp.fc1.bias": 3072,
+            "model.blocks.4.mlp.fc2.weight": 2359296,
+            "model.blocks.4.mlp.fc2.bias": 768,
+            "model.blocks.4.ls2.gamma": 768,
+            "model.blocks.5.norm1.weight": 768,
+            "model.blocks.5.norm1.bias": 768,
+            "model.blocks.5.attn.qkv.weight": 1769472,
+            "model.blocks.5.attn.qkv.bias": 2304,
+            "model.blocks.5.attn.proj.weight": 589824,
+            "model.blocks.5.attn.proj.bias": 768,
+            "model.blocks.5.ls1.gamma": 768,
+            "model.blocks.5.norm2.weight": 768,
+            "model.blocks.5.norm2.bias": 768,
+            "model.blocks.5.mlp.fc1.weight": 2359296,
+            "model.blocks.5.mlp.fc1.bias": 3072,
+            "model.blocks.5.mlp.fc2.weight": 2359296,
+            "model.blocks.5.mlp.fc2.bias": 768,
+            "model.blocks.5.ls2.gamma": 768,
+            "model.blocks.6.norm1.weight": 768,
+            "model.blocks.6.norm1.bias": 768,
+            "model.blocks.6.attn.qkv.weight": 1769472,
+            "model.blocks.6.attn.qkv.bias": 2304,
+            "model.blocks.6.attn.proj.weight": 589824,
+            "model.blocks.6.attn.proj.bias": 768,
+            "model.blocks.6.ls1.gamma": 768,
+            "model.blocks.6.norm2.weight": 768,
+            "model.blocks.6.norm2.bias": 768,
+            "model.blocks.6.mlp.fc1.weight": 2359296,
+            "model.blocks.6.mlp.fc1.bias": 3072,
+            "model.blocks.6.mlp.fc2.weight": 2359296,
+            "model.blocks.6.mlp.fc2.bias": 768,
+            "model.blocks.6.ls2.gamma": 768,
+            "model.blocks.7.norm1.weight": 768,
+            "model.blocks.7.norm1.bias": 768,
+            "model.blocks.7.attn.qkv.weight": 1769472,
+            "model.blocks.7.attn.qkv.bias": 2304,
+            "model.blocks.7.attn.proj.weight": 589824,
+            "model.blocks.7.attn.proj.bias": 768,
+            "model.blocks.7.ls1.gamma": 768,
+            "model.blocks.7.norm2.weight": 768,
+            "model.blocks.7.norm2.bias": 768,
+            "model.blocks.7.mlp.fc1.weight": 2359296,
+            "model.blocks.7.mlp.fc1.bias": 3072,
+            "model.blocks.7.mlp.fc2.weight": 2359296,
+            "model.blocks.7.mlp.fc2.bias": 768,
+            "model.blocks.7.ls2.gamma": 768,
+            "model.blocks.8.norm1.weight": 768,
+            "model.blocks.8.norm1.bias": 768,
+            "model.blocks.8.attn.qkv.weight": 1769472,
+            "model.blocks.8.attn.qkv.bias": 2304,
+            "model.blocks.8.attn.proj.weight": 589824,
+            "model.blocks.8.attn.proj.bias": 768,
+            "model.blocks.8.ls1.gamma": 768,
+            "model.blocks.8.norm2.weight": 768,
+            "model.blocks.8.norm2.bias": 768,
+            "model.blocks.8.mlp.fc1.weight": 2359296,
+            "model.blocks.8.mlp.fc1.bias": 3072,
+            "model.blocks.8.mlp.fc2.weight": 2359296,
+            "model.blocks.8.mlp.fc2.bias": 768,
+            "model.blocks.8.ls2.gamma": 768,
+            "model.blocks.9.norm1.weight": 768,
+            "model.blocks.9.norm1.bias": 768,
+            "model.blocks.9.attn.qkv.weight": 1769472,
+            "model.blocks.9.attn.qkv.bias": 2304,
+            "model.blocks.9.attn.proj.weight": 589824,
+            "model.blocks.9.attn.proj.bias": 768,
+            "model.blocks.9.ls1.gamma": 768,
+            "model.blocks.9.norm2.weight": 768,
+            "model.blocks.9.norm2.bias": 768,
+            "model.blocks.9.mlp.fc1.weight": 2359296,
+            "model.blocks.9.mlp.fc1.bias": 3072,
+            "model.blocks.9.mlp.fc2.weight": 2359296,
+            "model.blocks.9.mlp.fc2.bias": 768,
+            "model.blocks.9.ls2.gamma": 768,
+            "model.blocks.10.norm1.weight": 768,
+            "model.blocks.10.norm1.bias": 768,
+            "model.blocks.10.attn.qkv.weight": 1769472,
+            "model.blocks.10.attn.qkv.bias": 2304,
+            "model.blocks.10.attn.proj.weight": 589824,
+            "model.blocks.10.attn.proj.bias": 768,
+            "model.blocks.10.ls1.gamma": 768,
+            "model.blocks.10.norm2.weight": 768,
+            "model.blocks.10.norm2.bias": 768,
+            "model.blocks.10.mlp.fc1.weight": 2359296,
+            "model.blocks.10.mlp.fc1.bias": 3072,
+            "model.blocks.10.mlp.fc2.weight": 2359296,
+            "model.blocks.10.mlp.fc2.bias": 768,
+            "model.blocks.10.ls2.gamma": 768,
+            "model.blocks.11.norm1.weight": 768,
+            "model.blocks.11.norm1.bias": 768,
+            "model.blocks.11.attn.qkv.weight": 1769472,
+            "model.blocks.11.attn.qkv.bias": 2304,
+            "model.blocks.11.attn.proj.weight": 589824,
+            "model.blocks.11.attn.proj.bias": 768,
+            "model.blocks.11.ls1.gamma": 768,
+            "model.blocks.11.norm2.weight": 768,
+            "model.blocks.11.norm2.bias": 768,
+            "model.blocks.11.mlp.fc1.weight": 2359296,
+            "model.blocks.11.mlp.fc1.bias": 3072,
+            "model.blocks.11.mlp.fc2.weight": 2359296,
+            "model.blocks.11.mlp.fc2.bias": 768,
+            "model.blocks.11.ls2.gamma": 768,
+            "model.norm.weight": 768,
+            "model.norm.bias": 768
+          },
+          "backbone_expected_trainable_parameters": 0,
+          "all_expected_backbone_parameters_trainable": true,
+          "head_total_parameters": 11535,
+          "head_trainable_parameters": 11535,
+          "backbone_requires_grad_all_false": true,
+          "training_mode_policy": {
+            "wrapper_training": true,
+            "backbone_training": false,
+            "head_training": true,
+            "backbone_batchnorm": "eval; running statistics are not updated",
+            "backbone_layernorm": "eval with frozen affine parameters; LayerNorm has no running statistics",
+            "backbone_dropout": "disabled because backbone is held in eval mode",
+            "head_batchnorm": "train during updates; eval for validation/test",
+            "head_dropout": "configured"
+          },
+          "backbone_module_counts": {
+            "normalization_total": 25,
+            "batchnorm": 0,
+            "layernorm": 25,
+            "groupnorm": 0,
+            "dropout": 50,
+            "drop_path_or_stochastic_depth": 0
+          },
+          "head": "Sequential(\n  (0): Dropout(p=0.0, inplace=False)\n  (1): Linear(in_features=768, out_features=15, bias=True)\n)",
+          "pretrained_load": {
+            "weights": "VIT_BASE14",
+            "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+            "missing_keys": [],
+            "unexpected_keys": []
+          }
+        },
+        "optimizer_group_audit": {
+          "head": {
+            "parameter_tensors": 2,
+            "trainable_parameters": 11535,
+            "base_learning_rate": 0.001,
+            "weight_decay": 0.01
+          }
+        },
+        "gradient_audit": {
+          "performed": true,
+          "expected_parameter_tensors": 2,
+          "all_expected_parameters_received_gradient": true,
+          "missing_gradient_parameters": [],
+          "zero_gradient_parameters": [],
+          "nonfinite_gradient_parameters": [],
+          "epoch": 1
+        }
+      },
+      "checkpoint": {
+        "best": {
+          "path": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260815T204959852998Z_treesatai_panopticon_frozen_seed42_5c8cc8e4/best.pt",
+          "sha256": "ff5d0acdb43f90e74552dfdd7f8f2c79f7301101d526a9d014ab5c6d71eef961",
+          "size_bytes": 392599246
+        },
+        "last": {
+          "path": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260815T204959852998Z_treesatai_panopticon_frozen_seed42_5c8cc8e4/last.pt",
+          "size_bytes": 392870448,
+          "load_valid": true,
+          "epoch": 19,
+          "best_epoch": 9,
+          "epochs_without_improvement": 10,
+          "optimizer_groups": [
+            "head"
+          ]
+        },
+        "path": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260815T204959852998Z_treesatai_panopticon_frozen_seed42_5c8cc8e4/best.pt",
+        "sha256": "ff5d0acdb43f90e74552dfdd7f8f2c79f7301101d526a9d014ab5c6d71eef961"
+      },
+      "prediction_export": {
+        "path": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260815T204959852998Z_treesatai_panopticon_frozen_seed42_5c8cc8e4/predictions/test/deterministic",
+        "validation": {
+          "valid": true,
+          "errors": [],
+          "sample_count": 2000,
+          "sample_ids_unique": true,
+          "classification_type": "multilabel",
+          "schema_version": 2,
+          "probability_sum_max_abs_error": null,
+          "argmax_matches": null,
+          "finite": true,
+          "stochastic_shape": null,
+          "embedding_shape": [
+            2000,
+            768
+          ]
+        },
+        "sample_count": 2000,
+        "logit_shape": [
+          2000,
+          15
+        ],
+        "representation_shape": [
+          2000,
+          768
+        ],
+        "exact_official_sample_order": true,
+        "exact_official_labels": true
+      },
+      "test_metrics_report_only": {
+        "accuracy": 0.2395,
+        "labelwise_accuracy": 0.9038,
+        "macro_f1": 0.2067960209801897,
+        "nll": 0.25819314083634115,
+        "brier": 0.07572142477398956,
+        "ece": 0.010479455220324934
+      }
+    },
+    {
+      "target": {
+        "dataset": "treesatai",
+        "model": "panopticon",
+        "adaptation": "full_finetune",
+        "experiment": "treesatai_panopticon_full_finetune",
+        "seed": 42
+      },
+      "target_key": "treesatai|panopticon|full_finetune|seed42",
+      "run_dir": "/workspace/results/final_thesis/classification/treesatai_full_finetune/runs/20260815T223733845323Z_treesatai_panopticon_full_finetune_seed42_432b3047",
+      "run_id": "20260815T223733845323Z_treesatai_panopticon_full_finetune_seed42_432b3047",
+      "status": "PROMOTABLE",
+      "promotion_eligible": true,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [],
+      "warnings": [
+        "Post-best overfitting heuristic triggered; this does not invalidate the validation-selected checkpoint."
+      ],
+      "code_provenance": {
+        "code_sha256": "82467b95293c2a2459c59405a56e02e6af2eb955db49d3ce642ee0bfb38a61d0",
+        "file_count": 90,
+        "environment_code_version": "sha256:82467b95293c2a2459c59405a56e02e6af2eb955db49d3ce642ee0bfb38a61d0"
+      },
+      "artifact_provenance": {
+        "training_protocol": {
+          "path": "/workspace/reports/final_training_protocol.md",
+          "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+          "actual_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711"
+        },
+        "dataset": {
+          "path": "/workspace/datasets/treesatai/geobench_treesatai.tortilla",
+          "expected_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+          "actual_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee"
+        },
+        "extracted_manifest": {
+          "path": "/workspace/reports/dataset_manifests/treesatai_actual_manifest.csv",
+          "expected_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+          "actual_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54"
+        },
+        "pretrained_weights": {
+          "path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+          "expected_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+          "actual_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e"
+        }
+      },
+      "recorded_input_artifacts": {
+        "required": true,
+        "all_verified": true,
+        "records": {
+          "dataset": {
+            "label": "dataset",
+            "path": "/workspace/datasets/treesatai/geobench_treesatai.tortilla",
+            "size_bytes": 1771492601,
+            "sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+            "expected_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+            "verified": true
+          },
+          "extracted_manifest": {
+            "label": "extracted_manifest",
+            "path": "/workspace/reports/dataset_manifests/treesatai_actual_manifest.csv",
+            "size_bytes": 1371822,
+            "sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+            "expected_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+            "verified": true
+          },
+          "training_protocol": {
+            "label": "training_protocol",
+            "path": "/workspace/reports/final_training_protocol.md",
+            "size_bytes": 15742,
+            "sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "verified": true
+          },
+          "pretrained_weights": {
+            "label": "panopticon_pretrained_weights",
+            "path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+            "size_bytes": 395965930,
+            "sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+            "expected_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+            "verified": true
+          }
+        }
+      },
+      "validation_curve": {
+        "epochs_completed": 18,
+        "epoch_cap": 100,
+        "best_epoch": 3,
+        "best_validation_nll": 0.269486665725708,
+        "first_validation_nll": 0.2709207534790039,
+        "last_validation_nll": 0.7022727727890015,
+        "best_validation_accuracy": 0.23000000417232513,
+        "best_validation_macro_f1": 0.2241242378950119,
+        "termination": "early_stopping"
+      },
+      "epoch_metrics_audit": {
+        "rows": 18,
+        "expected_rows": 18
+      },
+      "batch_audit": {
+        "rows": 1134,
+        "expected_rows": 1134,
+        "batches_per_epoch": 63
+      },
+      "model_gradient_audit": {
+        "model_audit": {
+          "adaptation_mode": "full_finetune",
+          "total_parameters": 98131983,
+          "trainable_parameters": 98127375,
+          "backbone_total_parameters": 98120448,
+          "backbone_trainable_parameters": 98115840,
+          "backbone_structurally_frozen_parameters": {
+            "model.patch_embed.chnfus.chnemb.embed_transmit": 1536,
+            "model.patch_embed.chnfus.chnemb.embed_receive": 1536,
+            "model.patch_embed.chnfus.chnemb.embed_orbit": 1536
+          },
+          "backbone_expected_trainable_parameters": 98115840,
+          "all_expected_backbone_parameters_trainable": true,
+          "head_total_parameters": 11535,
+          "head_trainable_parameters": 11535,
+          "backbone_requires_grad_all_false": false,
+          "training_mode_policy": {
+            "wrapper_training": true,
+            "backbone_training": true,
+            "head_training": true,
+            "backbone_batchnorm": "train",
+            "backbone_layernorm": "train",
+            "backbone_dropout": "enabled in train mode",
+            "head_batchnorm": "train during updates; eval for validation/test",
+            "head_dropout": "configured"
+          },
+          "backbone_module_counts": {
+            "normalization_total": 25,
+            "batchnorm": 0,
+            "layernorm": 25,
+            "groupnorm": 0,
+            "dropout": 50,
+            "drop_path_or_stochastic_depth": 0
+          },
+          "head": "Sequential(\n  (0): Dropout(p=0.0, inplace=False)\n  (1): Linear(in_features=768, out_features=15, bias=True)\n)",
+          "pretrained_load": {
+            "weights": "VIT_BASE14",
+            "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+            "missing_keys": [],
+            "unexpected_keys": []
+          }
+        },
+        "optimizer_group_audit": {
+          "backbone": {
+            "parameter_tensors": 179,
+            "trainable_parameters": 98115840,
+            "base_learning_rate": 0.0001,
+            "weight_decay": 0.01
+          },
+          "head": {
+            "parameter_tensors": 2,
+            "trainable_parameters": 11535,
+            "base_learning_rate": 0.001,
+            "weight_decay": 0.01
+          }
+        },
+        "gradient_audit": {
+          "performed": true,
+          "expected_parameter_tensors": 181,
+          "all_expected_parameters_received_gradient": true,
+          "missing_gradient_parameters": [],
+          "zero_gradient_parameters": [],
+          "nonfinite_gradient_parameters": [],
+          "epoch": 1
+        }
+      },
+      "checkpoint": {
+        "best": {
+          "path": "/workspace/results/final_thesis/classification/treesatai_full_finetune/runs/20260815T223733845323Z_treesatai_panopticon_full_finetune_seed42_432b3047/best.pt",
+          "sha256": "8578473a57c2c54eeb0a89b8da120cf98bd256607c157c6cfadb3f78077f6409",
+          "size_bytes": 392599630
+        },
+        "last": {
+          "path": "/workspace/results/final_thesis/classification/treesatai_full_finetune/runs/20260815T223733845323Z_treesatai_panopticon_full_finetune_seed42_432b3047/last.pt",
+          "size_bytes": 1177914099,
+          "load_valid": true,
+          "epoch": 18,
+          "best_epoch": 3,
+          "epochs_without_improvement": 15,
+          "optimizer_groups": [
+            "backbone",
+            "head"
+          ]
+        },
+        "path": "/workspace/results/final_thesis/classification/treesatai_full_finetune/runs/20260815T223733845323Z_treesatai_panopticon_full_finetune_seed42_432b3047/best.pt",
+        "sha256": "8578473a57c2c54eeb0a89b8da120cf98bd256607c157c6cfadb3f78077f6409"
+      },
+      "prediction_export": {
+        "path": "/workspace/results/final_thesis/classification/treesatai_full_finetune/runs/20260815T223733845323Z_treesatai_panopticon_full_finetune_seed42_432b3047/predictions/test/deterministic",
+        "validation": {
+          "valid": true,
+          "errors": [],
+          "sample_count": 2000,
+          "sample_ids_unique": true,
+          "classification_type": "multilabel",
+          "schema_version": 2,
+          "probability_sum_max_abs_error": null,
+          "argmax_matches": null,
+          "finite": true,
+          "stochastic_shape": null,
+          "embedding_shape": [
+            2000,
+            768
+          ]
+        },
+        "sample_count": 2000,
+        "logit_shape": [
+          2000,
+          15
+        ],
+        "representation_shape": [
+          2000,
+          768
+        ],
+        "exact_official_sample_order": true,
+        "exact_official_labels": true
+      },
+      "test_metrics_report_only": {
+        "accuracy": 0.2835,
+        "labelwise_accuracy": 0.9071,
+        "macro_f1": 0.2447009605210901,
+        "nll": 0.24993001678748528,
+        "brier": 0.07284414770273882,
+        "ece": 0.011266771733972787
+      }
+    }
+  ]
+}

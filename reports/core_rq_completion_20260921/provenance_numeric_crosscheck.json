@@ -1,0 +1,3292 @@
+{
+  "created_utc": "2026-09-22T13:59:35.081635+00:00",
+  "script_path": "reports/core_rq_completion_20260921/provenance_numeric_crosscheck.py",
+  "script_sha256": "3a9ad15676720198f6d6f589255cbc7c7364fae379175b2b83061e9afb60872a",
+  "command": "python reports/core_rq_completion_20260921/provenance_numeric_crosscheck.py",
+  "scope": "24 full classification prediction replays; 24 original segmentation metric/confusion checks; 48 deterministic ECE-15 bin reconstructions",
+  "not_claimed": "This is not a second full segmentation probability replay or recovery of training-time source.",
+  "tolerance": 1e-06,
+  "source_tables": [
+    {
+      "path": "reports/core_rq_audit_20260918/classification_recomputed_metrics.csv",
+      "sha256": "3ea5d374096e2e7550ef1b40cae239c68e08bd8a1649d982e9603c283d36fba1"
+    },
+    {
+      "path": "reports/core_rq_audit_20260918/segmentation_recomputed_metrics.csv",
+      "sha256": "1dbb38b51dadd2bcc05e262da3859575241fa0fbba20928d863542340d4aab91"
+    },
+    {
+      "path": "reports/core_rq_audit_20260918/classification_reliability_bins.csv",
+      "sha256": "24642b160bc7aba257f374c72e324b3e56fce24f6ae80ce6fc0cabf9149c6191"
+    },
+    {
+      "path": "reports/core_rq_audit_20260918/segmentation_reliability_bins.csv",
+      "sha256": "f700c54122a0a1ea293127ea20389281c2f757dd67aea4be05e24b1b02599297"
+    }
+  ],
+  "classification": [
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "b46b03329a27a8eff9a9b66c4df52714b5c066d25792120b7cd95ca10687ddd1",
+      "sample_count": 2714,
+      "calculated": {
+        "accuracy": 0.9830508474576272,
+        "macro_f1": 0.9820321179321507,
+        "nll": 0.05810932382339024,
+        "brier": 0.026905956161040682,
+        "ece_15": 0.004230741814997763,
+        "mean_confidence_minus_accuracy": -0.0018716645135366486
+      },
+      "reference": {
+        "accuracy": 0.9830508474576272,
+        "macro_f1": 0.9820321179321507,
+        "nll": 0.05810932382339024,
+        "brier": 0.026905956161040682,
+        "ece_15": 0.004230741814997763,
+        "mean_confidence_minus_accuracy": -0.0018716645135366486
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "f44f9619d7eb2a9df6cf2bf88e2dfc272f858d7577f1ab8e6693221259c3b898",
+      "sample_count": 2714,
+      "calculated": {
+        "accuracy": 0.9841562269712602,
+        "macro_f1": 0.9831336902774762,
+        "nll": 0.050330715675589256,
+        "brier": 0.024243360452169457,
+        "ece_15": 0.0071251012862563225,
+        "mean_confidence_minus_accuracy": -0.0008377464009104358
+      },
+      "reference": {
+        "accuracy": 0.9841562269712602,
+        "macro_f1": 0.9831336902774762,
+        "nll": 0.050330715675589256,
+        "brier": 0.024243360452169457,
+        "ece_15": 0.0071251012862563225,
+        "mean_confidence_minus_accuracy": -0.0008377464009104358
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "2c7f77297da98c634efd09c774de010a13bf1e970034bed3231c8897c03af806",
+      "sample_count": 2714,
+      "calculated": {
+        "accuracy": 0.9830508474576272,
+        "macro_f1": 0.9818590980786089,
+        "nll": 0.05473035796903158,
+        "brier": 0.026847744245377,
+        "ece_15": 0.0036683374344643723,
+        "mean_confidence_minus_accuracy": -0.0019078036288435
+      },
+      "reference": {
+        "accuracy": 0.9830508474576272,
+        "macro_f1": 0.9818590980786089,
+        "nll": 0.05473035796903158,
+        "brier": 0.026847744245377,
+        "ece_15": 0.0036683374344643723,
+        "mean_confidence_minus_accuracy": -0.0019078036288435
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "abffc3a6083c562421b9e9a49b68a209e9f4053afbaf5134109037aff71e4bea",
+      "sample_count": 2714,
+      "calculated": {
+        "accuracy": 0.970891672807664,
+        "macro_f1": 0.9700730838673988,
+        "nll": 0.083690893234053,
+        "brier": 0.043979038164620635,
+        "ece_15": 0.007804339873764387,
+        "mean_confidence_minus_accuracy": -0.0007166530423596578
+      },
+      "reference": {
+        "accuracy": 0.970891672807664,
+        "macro_f1": 0.9700730838673988,
+        "nll": 0.083690893234053,
+        "brier": 0.043979038164620635,
+        "ece_15": 0.007804339873764387,
+        "mean_confidence_minus_accuracy": -0.0007166530423596578
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "dbb07c1e0fdd259a50e481690a22fc8034398393e4ac17bec719d7def2237ccd",
+      "sample_count": 2714,
+      "calculated": {
+        "accuracy": 0.9605747973470892,
+        "macro_f1": 0.9602080708560228,
+        "nll": 0.12139354467006654,
+        "brier": 0.05937078197142694,
+        "ece_15": 0.008803532592672237,
+        "mean_confidence_minus_accuracy": 0.007047557136813946
+      },
+      "reference": {
+        "accuracy": 0.9605747973470892,
+        "macro_f1": 0.9602080708560228,
+        "nll": 0.12139354467006654,
+        "brier": 0.05937078197142694,
+        "ece_15": 0.008803532592672237,
+        "mean_confidence_minus_accuracy": 0.007047557136813946
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "a2baefb0228b7ddf32b11bc95e1c906192105f4bedea882eedac3dcff433b4d8",
+      "sample_count": 2714,
+      "calculated": {
+        "accuracy": 0.9631540162122328,
+        "macro_f1": 0.9609621683383477,
+        "nll": 0.11574802638296275,
+        "brier": 0.056458336931848915,
+        "ece_15": 0.016743802890324296,
+        "mean_confidence_minus_accuracy": 0.016115204114727704
+      },
+      "reference": {
+        "accuracy": 0.9631540162122328,
+        "macro_f1": 0.9609621683383477,
+        "nll": 0.11574802638296275,
+        "brier": 0.056458336931848915,
+        "ece_15": 0.016743802890324296,
+        "mean_confidence_minus_accuracy": 0.016115204114727704
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "42f130bd4de8773ba81ecfa82a713ce0a5f1c040c9faa24b32297b9b8e2bf98b",
+      "sample_count": 2714,
+      "calculated": {
+        "accuracy": 0.9837877671333825,
+        "macro_f1": 0.9832295981792253,
+        "nll": 0.051498536888575,
+        "brier": 0.025838579490714744,
+        "ece_15": 0.007695890551291587,
+        "mean_confidence_minus_accuracy": 0.004791482953614141
+      },
+      "reference": {
+        "accuracy": 0.9837877671333825,
+        "macro_f1": 0.9832295981792253,
+        "nll": 0.051498536888575,
+        "brier": 0.025838579490714744,
+        "ece_15": 0.007695890551291587,
+        "mean_confidence_minus_accuracy": 0.004791482953614141
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "deb4dcc2c177c79eed38c1ec744344e1733d2209b259953672fe58ab55c53640",
+      "sample_count": 2714,
+      "calculated": {
+        "accuracy": 0.9830508474576272,
+        "macro_f1": 0.9823087497750616,
+        "nll": 0.046421732448028594,
+        "brier": 0.024619526961733276,
+        "ece_15": 0.003624748968427991,
+        "mean_confidence_minus_accuracy": 0.0030437788501239123
+      },
+      "reference": {
+        "accuracy": 0.9830508474576272,
+        "macro_f1": 0.9823087497750616,
+        "nll": 0.046421732448028594,
+        "brier": 0.024619526961733276,
+        "ece_15": 0.003624748968427991,
+        "mean_confidence_minus_accuracy": 0.0030437788501239123
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260816T004654290690Z_eurosat_panopticon_frozen_bnlinear_seed44_4f21cdf8/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "cd41cdc223bff38c34b73cec8c398c5280cec1f231041906dff03d6b6d5a2b21",
+      "sample_count": 2714,
+      "calculated": {
+        "accuracy": 0.9830508474576272,
+        "macro_f1": 0.9823891267973742,
+        "nll": 0.05346244245739627,
+        "brier": 0.026447723663292348,
+        "ece_15": 0.008542608757974825,
+        "mean_confidence_minus_accuracy": 0.005747737081593772
+      },
+      "reference": {
+        "accuracy": 0.9830508474576272,
+        "macro_f1": 0.9823891267973742,
+        "nll": 0.05346244245739627,
+        "brier": 0.026447723663292348,
+        "ece_15": 0.008542608757974825,
+        "mean_confidence_minus_accuracy": 0.005747737081593772
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "2aabdf8c07ddfe303f561a3d01cf1fc66f7081f309d5fa1019cf5bded79297fc",
+      "sample_count": 2714,
+      "calculated": {
+        "accuracy": 0.9679439941046426,
+        "macro_f1": 0.9674469537089507,
+        "nll": 0.09865374542764949,
+        "brier": 0.04820857618290921,
+        "ece_15": 0.005855335039344006,
+        "mean_confidence_minus_accuracy": 0.004577556382054868
+      },
+      "reference": {
+        "accuracy": 0.9679439941046426,
+        "macro_f1": 0.9674469537089507,
+        "nll": 0.09865374542764949,
+        "brier": 0.04820857618290921,
+        "ece_15": 0.005855335039344006,
+        "mean_confidence_minus_accuracy": 0.004577556382054868
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T023205454878Z_eurosat_panopticon_full_finetune_seed43_e304fee6/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "7362ed9ce3bddedd44bb34f480465f2030a156cb1284dfd712245d854c32400d",
+      "sample_count": 2714,
+      "calculated": {
+        "accuracy": 0.9657332350773765,
+        "macro_f1": 0.9632016801889336,
+        "nll": 0.08418453140077854,
+        "brier": 0.047577100823913226,
+        "ece_15": 0.007313713716863268,
+        "mean_confidence_minus_accuracy": 0.005071771182202204
+      },
+      "reference": {
+        "accuracy": 0.9657332350773765,
+        "macro_f1": 0.9632016801889336,
+        "nll": 0.08418453140077854,
+        "brier": 0.047577100823913226,
+        "ece_15": 0.007313713716863268,
+        "mean_confidence_minus_accuracy": 0.005071771182202204
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T034514128137Z_eurosat_panopticon_full_finetune_seed44_0883c676/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "2ce9ff180734f729c8eaae05e23a9869ff9d853fee208f6a376577bb6903cc31",
+      "sample_count": 2714,
+      "calculated": {
+        "accuracy": 0.9543109801031687,
+        "macro_f1": 0.9515934332109893,
+        "nll": 0.1550083212716363,
+        "brier": 0.07147996395394808,
+        "ece_15": 0.015190208614882777,
+        "mean_confidence_minus_accuracy": 0.012527838744656865
+      },
+      "reference": {
+        "accuracy": 0.9543109801031687,
+        "macro_f1": 0.9515934332109893,
+        "nll": 0.1550083212716363,
+        "brier": 0.07147996395394808,
+        "ece_15": 0.015190208614882777,
+        "mean_confidence_minus_accuracy": 0.012527838744656865
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260815T202926010453Z_treesatai_dofa_frozen_seed42_3dae0e5b/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "f80d975a442807d49e4a19f308a6574eb0716d766baaf5e537e5941d30ee44e8",
+      "sample_count": 2000,
+      "calculated": {
+        "accuracy": 0.255,
+        "macro_f1": 0.21952595320890655,
+        "nll": 0.25653112849224985,
+        "brier": 0.07417677748713968,
+        "ece_15": 0.009970103486597172,
+        "mean_confidence_minus_accuracy": 0.001435850570320716
+      },
+      "reference": {
+        "accuracy": 0.255,
+        "macro_f1": 0.21952595320890655,
+        "nll": 0.25653112849224985,
+        "brier": 0.07417677748713968,
+        "ece_15": 0.00997010348659763,
+        "mean_confidence_minus_accuracy": 0.001435850570320716
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": -4.579669976578771e-16,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T012149418043Z_treesatai_dofa_frozen_seed43_d484c9b3/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "2a39e5a024ea14e540cba1b4cd1f55f2aec35d604857cf123e2b068a4c7c1c6b",
+      "sample_count": 2000,
+      "calculated": {
+        "accuracy": 0.258,
+        "macro_f1": 0.2269122959768888,
+        "nll": 0.25505652619165814,
+        "brier": 0.0737731909845718,
+        "ece_15": 0.010719108342131842,
+        "mean_confidence_minus_accuracy": -0.005574955545364948
+      },
+      "reference": {
+        "accuracy": 0.258,
+        "macro_f1": 0.2269122959768888,
+        "nll": 0.25505652619165814,
+        "brier": 0.0737731909845718,
+        "ece_15": 0.010719108342131828,
+        "mean_confidence_minus_accuracy": -0.005574955545364948
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 1.3877787807814457e-17,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T013516128703Z_treesatai_dofa_frozen_seed44_f16a2a61/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "6adf6cd6cc34232850ef2b68017f10da13ab5661a1b535372cd2d702198c40ba",
+      "sample_count": 2000,
+      "calculated": {
+        "accuracy": 0.257,
+        "macro_f1": 0.22305546606281948,
+        "nll": 0.2559439182346577,
+        "brier": 0.07399353938123633,
+        "ece_15": 0.01173042470945437,
+        "mean_confidence_minus_accuracy": -0.006858374697133708
+      },
+      "reference": {
+        "accuracy": 0.257,
+        "macro_f1": 0.22305546606281948,
+        "nll": 0.2559439182346577,
+        "brier": 0.07399353938123633,
+        "ece_15": 0.011730424709454443,
+        "mean_confidence_minus_accuracy": -0.006858374697133708
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": -7.28583859910259e-17,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260815T222120553265Z_treesatai_dofa_full_finetune_seed42_9845090f/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "f9b6687750aab9ff7d9dfda9040aebe5f8208a40a2ce90c4036b27af1aa959eb",
+      "sample_count": 2000,
+      "calculated": {
+        "accuracy": 0.265,
+        "macro_f1": 0.24827355184214414,
+        "nll": 0.2499352651808189,
+        "brier": 0.07259371298037501,
+        "ece_15": 0.014092692175650401,
+        "mean_confidence_minus_accuracy": -0.01356731905454775
+      },
+      "reference": {
+        "accuracy": 0.265,
+        "macro_f1": 0.24827355184214414,
+        "nll": 0.2499352651808189,
+        "brier": 0.07259371298037501,
+        "ece_15": 0.014092692175650519,
+        "mean_confidence_minus_accuracy": -0.01356731905454775
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": -1.1796119636642288e-16,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T050303117850Z_treesatai_dofa_full_finetune_seed43_e40f79f2/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "f90b5b7874da4232363114fce44910f0ac1846bd235961efd7856ade0c7d77c9",
+      "sample_count": 2000,
+      "calculated": {
+        "accuracy": 0.2655,
+        "macro_f1": 0.2298206297766517,
+        "nll": 0.2439097361777931,
+        "brier": 0.07065762458783592,
+        "ece_15": 0.008119487144198237,
+        "mean_confidence_minus_accuracy": 0.00047907714808604853
+      },
+      "reference": {
+        "accuracy": 0.2655,
+        "macro_f1": 0.2298206297766517,
+        "nll": 0.2439097361777931,
+        "brier": 0.07065762458783592,
+        "ece_15": 0.008119487144198016,
+        "mean_confidence_minus_accuracy": 0.00047907714808604853
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 2.203098814490545e-16,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T051814359617Z_treesatai_dofa_full_finetune_seed44_6a6f8fd9/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "a13103b4821f3201f88f03ca7c6b7a8a4934ba9c8d428ce28104c615dec393ac",
+      "sample_count": 2000,
+      "calculated": {
+        "accuracy": 0.27,
+        "macro_f1": 0.25337500735077423,
+        "nll": 0.24673070866807678,
+        "brier": 0.07181984030490755,
+        "ece_15": 0.015451789449343535,
+        "mean_confidence_minus_accuracy": -0.015451789449343535
+      },
+      "reference": {
+        "accuracy": 0.27,
+        "macro_f1": 0.25337500735077423,
+        "nll": 0.24673070866807678,
+        "brier": 0.07181984030490755,
+        "ece_15": 0.015451789449343535,
+        "mean_confidence_minus_accuracy": -0.015451789449343535
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260815T204959852998Z_treesatai_panopticon_frozen_seed42_5c8cc8e4/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "da7e538bc57c43eb497a4cf8411323f092fdbca9850323be3f9eb4d1f1bbd437",
+      "sample_count": 2000,
+      "calculated": {
+        "accuracy": 0.2395,
+        "macro_f1": 0.2067960209801897,
+        "nll": 0.25819314083634115,
+        "brier": 0.07572142477398956,
+        "ece_15": 0.010479455220324962,
+        "mean_confidence_minus_accuracy": -0.006247007411099305
+      },
+      "reference": {
+        "accuracy": 0.2395,
+        "macro_f1": 0.2067960209801897,
+        "nll": 0.25819314083634115,
+        "brier": 0.07572142477398956,
+        "ece_15": 0.010479455220324962,
+        "mean_confidence_minus_accuracy": -0.006247007411099305
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T014811037405Z_treesatai_panopticon_frozen_seed43_baa4ef7a/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "822fc29049b8cd346f832a55b24ab9a4128a6c789d17c0be987493301ee19685",
+      "sample_count": 2000,
+      "calculated": {
+        "accuracy": 0.2395,
+        "macro_f1": 0.2170863143629495,
+        "nll": 0.25458321659831534,
+        "brier": 0.0746615230539549,
+        "ece_15": 0.008726503198459735,
+        "mean_confidence_minus_accuracy": -0.0026977973509679336
+      },
+      "reference": {
+        "accuracy": 0.2395,
+        "macro_f1": 0.2170863143629495,
+        "nll": 0.25458321659831534,
+        "brier": 0.0746615230539549,
+        "ece_15": 0.008726503198459735,
+        "mean_confidence_minus_accuracy": -0.0026977973509679336
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T020829175076Z_treesatai_panopticon_frozen_seed44_341d0eca/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "75f5055095da7510c94be38c770fbecb4ff01fd14f14b97fca39d67550867a38",
+      "sample_count": 2000,
+      "calculated": {
+        "accuracy": 0.2345,
+        "macro_f1": 0.20865760915644568,
+        "nll": 0.2582176728557611,
+        "brier": 0.07574351895939471,
+        "ece_15": 0.009280648868012456,
+        "mean_confidence_minus_accuracy": -0.0001105743291695641
+      },
+      "reference": {
+        "accuracy": 0.2345,
+        "macro_f1": 0.20865760915644568,
+        "nll": 0.2582176728557611,
+        "brier": 0.07574351895939471,
+        "ece_15": 0.009280648868012456,
+        "mean_confidence_minus_accuracy": -0.0001105743291695641
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260815T223733845323Z_treesatai_panopticon_full_finetune_seed42_432b3047/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "56ece559e5757770e443471dc4fc973eb6240d658a9cf8b817ff301430911cb6",
+      "sample_count": 2000,
+      "calculated": {
+        "accuracy": 0.2835,
+        "macro_f1": 0.2447009605210901,
+        "nll": 0.24993001678748528,
+        "brier": 0.07284414770273882,
+        "ece_15": 0.011266771733972806,
+        "mean_confidence_minus_accuracy": 0.000687005740616102
+      },
+      "reference": {
+        "accuracy": 0.2835,
+        "macro_f1": 0.2447009605210901,
+        "nll": 0.24993001678748528,
+        "brier": 0.07284414770273882,
+        "ece_15": 0.011266771733972806,
+        "mean_confidence_minus_accuracy": 0.000687005740616102
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T053348883249Z_treesatai_panopticon_full_finetune_seed43_b7ae4087/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "71f0d7e2b4bd41a1150e50834639f3da765e0b30a7bf956c14f5427e5342fedf",
+      "sample_count": 2000,
+      "calculated": {
+        "accuracy": 0.25,
+        "macro_f1": 0.21852796184352316,
+        "nll": 0.24623769712438703,
+        "brier": 0.07177279995436456,
+        "ece_15": 0.004157547277253858,
+        "mean_confidence_minus_accuracy": 0.00022139162524739125
+      },
+      "reference": {
+        "accuracy": 0.25,
+        "macro_f1": 0.21852796184352316,
+        "nll": 0.24623769712438703,
+        "brier": 0.07177279995436456,
+        "ece_15": 0.004157547277253858,
+        "mean_confidence_minus_accuracy": 0.00022139162524739125
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T060624868595Z_treesatai_panopticon_full_finetune_seed44_d6d97c6a/predictions/test/deterministic/predictions.parquet",
+      "basis": "full saved parquet probabilities and true labels",
+      "artifact_sha256": "bd170962c45cece0309284e7e008baefd35578998d2d0c6769b8f53276b426cf",
+      "sample_count": 2000,
+      "calculated": {
+        "accuracy": 0.221,
+        "macro_f1": 0.1960271104495312,
+        "nll": 0.25520544955130714,
+        "brier": 0.07494079566163814,
+        "ece_15": 0.007464281140166956,
+        "mean_confidence_minus_accuracy": -0.006980663971502024
+      },
+      "reference": {
+        "accuracy": 0.221,
+        "macro_f1": 0.1960271104495312,
+        "nll": 0.25520544955130714,
+        "brier": 0.07494079566163814,
+        "ece_15": 0.007464281140166956,
+        "mean_confidence_minus_accuracy": -0.006980663971502024
+      },
+      "difference": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "nll": 0.0,
+        "brier": 0.0,
+        "ece_15": 0.0,
+        "mean_confidence_minus_accuracy": 0.0
+      },
+      "pass": true
+    }
+  ],
+  "segmentation": [
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260823T212554430984Z_cloudsen12_dofa_frozen_seed42_5d8edd5b/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260823T212554430984Z_cloudsen12_dofa_frozen_seed42_5d8edd5b/test_metrics.json",
+      "source_sha256": "13d39271e98c254df820502b1b3970e01fa1aeabd1370b9e922553cbfb01e2c3",
+      "confusion_matrix": [
+        [
+          23531282,
+          777030,
+          926151,
+          787489
+        ],
+        [
+          896048,
+          12098515,
+          422664,
+          606282
+        ],
+        [
+          1182675,
+          805909,
+          2026618,
+          203863
+        ],
+        [
+          788004,
+          635780,
+          175072,
+          3058218
+        ]
+      ],
+      "calculated": {
+        "nll": 0.46254816890698586,
+        "brier": 0.24074333346619897,
+        "ece_15": 0.01929482401537257,
+        "miou": 0.6003162432776954,
+        "pixel_accuracy": 0.8322424654958137
+      },
+      "reference": {
+        "nll": 0.4625481666175915,
+        "brier": 0.24074333193531652,
+        "ece_15": 0.019294824558505758,
+        "miou": 0.6003162432776954,
+        "pixel_accuracy": 0.8322424654958137
+      },
+      "difference": {
+        "nll": 2.2893943407709116e-09,
+        "brier": 1.5308824485860129e-09,
+        "ece_15": -5.431331877303602e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T063305175307Z_cloudsen12_dofa_frozen_seed43_d20a830e/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T063305175307Z_cloudsen12_dofa_frozen_seed43_d20a830e/test_metrics.json",
+      "source_sha256": "4093c3a330e5eeb9837bd7a1a7b954dbb1c4b822c5ad15fa9eb9ceeabebd2e77",
+      "confusion_matrix": [
+        [
+          23615714,
+          718846,
+          938200,
+          749192
+        ],
+        [
+          804920,
+          12167045,
+          628728,
+          422816
+        ],
+        [
+          1180488,
+          671525,
+          2201587,
+          165465
+        ],
+        [
+          784280,
+          772625,
+          171457,
+          2928712
+        ]
+      ],
+      "calculated": {
+        "nll": 0.4722835036536775,
+        "brier": 0.23934912481462686,
+        "ece_15": 0.050078844744017,
+        "miou": 0.6075052712185145,
+        "pixel_accuracy": 0.8362984448587127
+      },
+      "reference": {
+        "nll": 0.4722835050278589,
+        "brier": 0.23934912449420223,
+        "ece_15": 0.050078845177803914,
+        "miou": 0.6075052712185145,
+        "pixel_accuracy": 0.8362984448587127
+      },
+      "difference": {
+        "nll": -1.3741813797985003e-09,
+        "brier": 3.204246312726866e-10,
+        "ece_15": -4.337869161097352e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T135116679838Z_cloudsen12_dofa_frozen_seed44_2cce2dc4/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T135116679838Z_cloudsen12_dofa_frozen_seed44_2cce2dc4/test_metrics.json",
+      "source_sha256": "feaeff6cd435deb87342e842cdb16028a3f0bda527676dea4f1388d8a9bb604f",
+      "confusion_matrix": [
+        [
+          23926153,
+          516838,
+          796612,
+          782349
+        ],
+        [
+          939438,
+          11490462,
+          1003512,
+          590097
+        ],
+        [
+          1349708,
+          397487,
+          2292184,
+          179686
+        ],
+        [
+          847940,
+          543284,
+          214259,
+          3051591
+        ]
+      ],
+      "calculated": {
+        "nll": 0.48494382002913844,
+        "brier": 0.2456242040038296,
+        "ece_15": 0.05067139544184878,
+        "miou": 0.6054874516766118,
+        "pixel_accuracy": 0.8331777783228677
+      },
+      "reference": {
+        "nll": 0.4849438210815431,
+        "brier": 0.2456242040360217,
+        "ece_15": 0.05067139588559947,
+        "miou": 0.6054874516766118,
+        "pixel_accuracy": 0.8331777783228677
+      },
+      "difference": {
+        "nll": -1.052404663415274e-09,
+        "brier": -3.2192110088757886e-11,
+        "ece_15": -4.437506889720666e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260823T224711552022Z_cloudsen12_dofa_full_finetune_seed42_9e2211d7/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260823T224711552022Z_cloudsen12_dofa_full_finetune_seed42_9e2211d7/test_metrics.json",
+      "source_sha256": "d61fb4680bb8ee0914952f632e5b2274e3d58b0a22fdc2bb18502ad75e8b6fff",
+      "confusion_matrix": [
+        [
+          24175275,
+          519250,
+          821828,
+          505599
+        ],
+        [
+          625430,
+          12440229,
+          644770,
+          313080
+        ],
+        [
+          976185,
+          573581,
+          2540797,
+          128502
+        ],
+        [
+          879939,
+          568533,
+          141492,
+          3067110
+        ]
+      ],
+      "calculated": {
+        "nll": 0.49520065411418474,
+        "brier": 0.21245527122733107,
+        "ece_15": 0.06801835375829582,
+        "miou": 0.656148945112433,
+        "pixel_accuracy": 0.8630831984236003
+      },
+      "reference": {
+        "nll": 0.4952006490683634,
+        "brier": 0.21245527007407783,
+        "ece_15": 0.0680183540384278,
+        "miou": 0.656148945112433,
+        "pixel_accuracy": 0.8630831984236003
+      },
+      "difference": {
+        "nll": 5.0458213163295795e-09,
+        "brier": 1.1532532429026077e-09,
+        "ece_15": -2.801319870515684e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T041629083560Z_cloudsen12_dofa_full_finetune_seed43_6547906a/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T041629083560Z_cloudsen12_dofa_full_finetune_seed43_6547906a/test_metrics.json",
+      "source_sha256": "9cb475ff5c9b6a54501780ef823085c02507f80c46cb313c7e00a3a8aaf52a16",
+      "confusion_matrix": [
+        [
+          24256719,
+          495459,
+          726984,
+          542790
+        ],
+        [
+          577509,
+          12397725,
+          694516,
+          353759
+        ],
+        [
+          994198,
+          544007,
+          2561061,
+          119799
+        ],
+        [
+          750568,
+          551261,
+          157402,
+          3197843
+        ]
+      ],
+      "calculated": {
+        "nll": 0.47862184110329076,
+        "brier": 0.20720312776271116,
+        "ece_15": 0.06389968967468308,
+        "miou": 0.6637905518125411,
+        "pixel_accuracy": 0.8669656756933543
+      },
+      "reference": {
+        "nll": 0.47862183940895986,
+        "brier": 0.20720312873556643,
+        "ece_15": 0.06389968995745479,
+        "miou": 0.6637905518125411,
+        "pixel_accuracy": 0.8669656756933543
+      },
+      "difference": {
+        "nll": 1.6943308978056848e-09,
+        "brier": -9.72855268566164e-10,
+        "ece_15": -2.827717088260684e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T084553296954Z_cloudsen12_dofa_full_finetune_seed44_9c298bb6/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T084553296954Z_cloudsen12_dofa_full_finetune_seed44_9c298bb6/test_metrics.json",
+      "source_sha256": "28a393435339dc605cb9ffa8c7576a4478dcb0d67219f2ea17d6cfcb28c44c8d",
+      "confusion_matrix": [
+        [
+          24060199,
+          375829,
+          950668,
+          635256
+        ],
+        [
+          769763,
+          12073511,
+          756604,
+          423631
+        ],
+        [
+          912671,
+          509630,
+          2631792,
+          164972
+        ],
+        [
+          794187,
+          508098,
+          165364,
+          3189425
+        ]
+      ],
+      "calculated": {
+        "nll": 0.4650155132619078,
+        "brier": 0.21682125273204986,
+        "ece_15": 0.05913048014070104,
+        "miou": 0.6504371006704472,
+        "pixel_accuracy": 0.8575951522435897
+      },
+      "reference": {
+        "nll": 0.4650155097413431,
+        "brier": 0.21682125436775673,
+        "ece_15": 0.059130500917446475,
+        "miou": 0.6504370791990615,
+        "pixel_accuracy": 0.8575951318027211
+      },
+      "difference": {
+        "nll": 3.5205647286318253e-09,
+        "brier": -1.6357068755024073e-09,
+        "ece_15": -2.0776745435213684e-08,
+        "miou": 2.1471385780458263e-08,
+        "pixel_accuracy": 2.0440868664373113e-08
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T024636502649Z_cloudsen12_panopticon_frozen_seed42_987db5bf/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T024636502649Z_cloudsen12_panopticon_frozen_seed42_987db5bf/test_metrics.json",
+      "source_sha256": "bed08d8a11c36ad1ef1a7eb8bfb8d6ab96d000abd186f0310799b2ff66aa4230",
+      "confusion_matrix": [
+        [
+          23834747,
+          492630,
+          1006518,
+          688057
+        ],
+        [
+          615490,
+          12187383,
+          574153,
+          646483
+        ],
+        [
+          769118,
+          555933,
+          2720431,
+          173583
+        ],
+        [
+          670951,
+          484540,
+          211438,
+          3290145
+        ]
+      ],
+      "calculated": {
+        "nll": 0.43782046778672407,
+        "brier": 0.2107019651403981,
+        "ece_15": 0.04996056951260599,
+        "miou": 0.654634748638508,
+        "pixel_accuracy": 0.859185022566719
+      },
+      "reference": {
+        "nll": 0.4378204701065929,
+        "brier": 0.21070196581135395,
+        "ece_15": 0.04996056987018257,
+        "miou": 0.654634748638508,
+        "pixel_accuracy": 0.859185022566719
+      },
+      "difference": {
+        "nll": -2.3198688525738476e-09,
+        "brier": -6.709558464379484e-10,
+        "ece_15": -3.5757657945723054e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T073937493619Z_cloudsen12_panopticon_frozen_seed43_9688327e/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T073937493619Z_cloudsen12_panopticon_frozen_seed43_9688327e/test_metrics.json",
+      "source_sha256": "261500dd2057def9f33a4aaadbc9f745b366b30d47210102b8140e861a2f0fa1",
+      "confusion_matrix": [
+        [
+          24131122,
+          454040,
+          907115,
+          529675
+        ],
+        [
+          680937,
+          12224122,
+          634759,
+          483691
+        ],
+        [
+          835204,
+          519862,
+          2697983,
+          166016
+        ],
+        [
+          800795,
+          582016,
+          201574,
+          3072689
+        ]
+      ],
+      "calculated": {
+        "nll": 0.4063239772603002,
+        "brier": 0.2042486899638912,
+        "ece_15": 0.038444691733151404,
+        "miou": 0.6537769566901619,
+        "pixel_accuracy": 0.8610903159340659
+      },
+      "reference": {
+        "nll": 0.4063239765377326,
+        "brier": 0.20424868896168966,
+        "ece_15": 0.03844469212351427,
+        "miou": 0.6537769566901619,
+        "pixel_accuracy": 0.8610903159340659
+      },
+      "difference": {
+        "nll": 7.225675613398153e-10,
+        "brier": 1.0022015439759002e-09,
+        "ece_15": -3.9036286703098e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T150154916514Z_cloudsen12_panopticon_frozen_seed44_953e2ce2/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T150154916514Z_cloudsen12_panopticon_frozen_seed44_953e2ce2/test_metrics.json",
+      "source_sha256": "d55e25501e95ec1600da460a7a896b3cdb8454fb74080e95aa0ccbfc060dd0dd",
+      "confusion_matrix": [
+        [
+          24044785,
+          384509,
+          805318,
+          787340
+        ],
+        [
+          761155,
+          12143728,
+          515966,
+          602660
+        ],
+        [
+          843874,
+          631745,
+          2587350,
+          156096
+        ],
+        [
+          603274,
+          535686,
+          191714,
+          3326400
+        ]
+      ],
+      "calculated": {
+        "nll": 0.3969944031783762,
+        "brier": 0.2034180249623888,
+        "ece_15": 0.03645374066748667,
+        "miou": 0.6547583055295483,
+        "pixel_accuracy": 0.8606068280677656
+      },
+      "reference": {
+        "nll": 0.3969944022239774,
+        "brier": 0.2034180244304211,
+        "ece_15": 0.03645374106977747,
+        "miou": 0.6547583055295483,
+        "pixel_accuracy": 0.8606068280677656
+      },
+      "difference": {
+        "nll": 9.543987822269173e-10,
+        "brier": 5.319677198745154e-10,
+        "ece_15": -4.022908048351148e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T002903622341Z_cloudsen12_panopticon_full_finetune_seed42_797a0b89/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T002903622341Z_cloudsen12_panopticon_full_finetune_seed42_797a0b89/test_metrics.json",
+      "source_sha256": "7b797a8c8d362d67e08179cffe53eb79af5e78113d16cc9785572b2228eacd83",
+      "confusion_matrix": [
+        [
+          24328547,
+          354240,
+          797575,
+          541590
+        ],
+        [
+          646357,
+          12337647,
+          603698,
+          435807
+        ],
+        [
+          871626,
+          561720,
+          2666681,
+          119038
+        ],
+        [
+          796931,
+          442981,
+          184092,
+          3233070
+        ]
+      ],
+      "calculated": {
+        "nll": 0.39547800739793365,
+        "brier": 0.19282784530344213,
+        "ece_15": 0.042889382507435625,
+        "miou": 0.6704898254541842,
+        "pixel_accuracy": 0.8700848909275248
+      },
+      "reference": {
+        "nll": 0.39547800780183434,
+        "brier": 0.1928278449242537,
+        "ece_15": 0.04288938285007745,
+        "miou": 0.6704898254541842,
+        "pixel_accuracy": 0.8700848909275248
+      },
+      "difference": {
+        "nll": -4.039006906708664e-10,
+        "brier": 3.791884306547644e-10,
+        "ece_15": -3.426418246355034e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T055703693822Z_cloudsen12_panopticon_full_finetune_seed43_8e8dc6a5/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T055703693822Z_cloudsen12_panopticon_full_finetune_seed43_8e8dc6a5/test_metrics.json",
+      "source_sha256": "9bdfed810f46e1f509d9af6c6130c35d4c83feadbedc3b348814f67d38651431",
+      "confusion_matrix": [
+        [
+          24223095,
+          406803,
+          838202,
+          553852
+        ],
+        [
+          577340,
+          12409720,
+          561229,
+          475220
+        ],
+        [
+          739695,
+          583627,
+          2743058,
+          152685
+        ],
+        [
+          737915,
+          454786,
+          155259,
+          3309114
+        ]
+      ],
+      "calculated": {
+        "nll": 0.37083503783029886,
+        "brier": 0.18728583878337993,
+        "ece_15": 0.038051154255801294,
+        "miou": 0.6767050537278565,
+        "pixel_accuracy": 0.8725182128139718
+      },
+      "reference": {
+        "nll": 0.370835032750112,
+        "brier": 0.1872858405875459,
+        "ece_15": 0.03805115461159726,
+        "miou": 0.6767050537278565,
+        "pixel_accuracy": 0.8725182128139718
+      },
+      "difference": {
+        "nll": 5.0801868822780705e-09,
+        "brier": -1.8041659832768175e-09,
+        "ece_15": -3.557959690758672e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T102603117304Z_cloudsen12_panopticon_full_finetune_seed44_fde03f5e/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T102603117304Z_cloudsen12_panopticon_full_finetune_seed44_fde03f5e/test_metrics.json",
+      "source_sha256": "6715750541500cec5df0c3cc9001fbeddf0852edb4553c6f9788fd6582531991",
+      "confusion_matrix": [
+        [
+          24122347,
+          321861,
+          796674,
+          781070
+        ],
+        [
+          623632,
+          12224751,
+          535491,
+          639635
+        ],
+        [
+          742785,
+          645840,
+          2610003,
+          220437
+        ],
+        [
+          625916,
+          370801,
+          112613,
+          3547744
+        ]
+      ],
+      "calculated": {
+        "nll": 0.39788461251011825,
+        "brier": 0.1941329623890572,
+        "ece_15": 0.045530404049373426,
+        "miou": 0.6702407495033659,
+        "pixel_accuracy": 0.868835953852695
+      },
+      "reference": {
+        "nll": 0.39788461143072523,
+        "brier": 0.19413296361293264,
+        "ece_15": 0.045530404393033144,
+        "miou": 0.6702407495033659,
+        "pixel_accuracy": 0.868835953852695
+      },
+      "difference": {
+        "nll": 1.0793930194097356e-09,
+        "brier": -1.2238754454330092e-09,
+        "ece_15": -3.436597187378432e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260823T212554554121Z_spacenet7_dofa_frozen_seed42_bb178c28/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260823T212554554121Z_spacenet7_dofa_frozen_seed42_bb178c28/test_metrics.json",
+      "source_sha256": "870eac3faacdc9fcf837f3084f2a86c395f7de7cbb2e2a49f3738be76969780d",
+      "confusion_matrix": [
+        [
+          53332028,
+          443216
+        ],
+        [
+          3805652,
+          221856
+        ]
+      ],
+      "calculated": {
+        "nll": 0.2822775555913951,
+        "brier": 0.12770506722721653,
+        "ece_15": 0.03568138192662232,
+        "miou": 0.4879173171132102,
+        "pixel_accuracy": 0.9264936728272039
+      },
+      "reference": {
+        "nll": 0.28227755431969476,
+        "brier": 0.1277050676206929,
+        "ece_15": 0.03568138187143702,
+        "miou": 0.4879173171132102,
+        "pixel_accuracy": 0.9264936728272039
+      },
+      "difference": {
+        "nll": 1.2717003561313334e-09,
+        "brier": -3.93476362603451e-10,
+        "ece_15": 5.5185300773530344e-11,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T084249767853Z_spacenet7_dofa_frozen_seed43_30065f6d/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T084249767853Z_spacenet7_dofa_frozen_seed43_30065f6d/test_metrics.json",
+      "source_sha256": "3daa203e25630e73de9390d3ae3c3bd13aaf5280bd2c21452421a57cc114a04d",
+      "confusion_matrix": [
+        [
+          53249440,
+          525804
+        ],
+        [
+          3797989,
+          229519
+        ]
+      ],
+      "calculated": {
+        "nll": 0.31876527516344505,
+        "brier": 0.13050134097333668,
+        "ece_15": 0.04029268547281213,
+        "miou": 0.48765314699430373,
+        "pixel_accuracy": 0.9251974542665373
+      },
+      "reference": {
+        "nll": 0.3187652716224418,
+        "brier": 0.13050134121784923,
+        "ece_15": 0.040292685403145,
+        "miou": 0.48765314699430373,
+        "pixel_accuracy": 0.9251974542665373
+      },
+      "difference": {
+        "nll": 3.5410032683813597e-09,
+        "brier": -2.445125490968536e-10,
+        "ece_15": 6.966713317346773e-11,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T131025872125Z_spacenet7_dofa_frozen_seed44_505d5ab5/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T131025872125Z_spacenet7_dofa_frozen_seed44_505d5ab5/test_metrics.json",
+      "source_sha256": "90579ef353ebacc8ec03f3bed38f249321312c0eb625821dee23eabbe8c2ac6c",
+      "confusion_matrix": [
+        [
+          53050846,
+          724398
+        ],
+        [
+          3759212,
+          268296
+        ]
+      ],
+      "calculated": {
+        "nll": 0.3359400002526588,
+        "brier": 0.13403904617947787,
+        "ece_15": 0.041426583792783106,
+        "miou": 0.48926579228719774,
+        "pixel_accuracy": 0.9224325859087125
+      },
+      "reference": {
+        "nll": 0.33593999934919155,
+        "brier": 0.13403904610929349,
+        "ece_15": 0.041426583706489384,
+        "miou": 0.48926579228719774,
+        "pixel_accuracy": 0.9224325859087125
+      },
+      "difference": {
+        "nll": 9.03467245461087e-10,
+        "brier": 7.018438608064059e-11,
+        "ece_15": 8.629372216795161e-11,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T223417473200Z_spacenet7_dofa_full_finetune_seed42_6349d2a1/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T223417473200Z_spacenet7_dofa_full_finetune_seed42_6349d2a1/test_metrics.json",
+      "source_sha256": "e96312e4081d9be8e0cc908cf83151ce9c52ded38c3f8b4d784ba8fe0e7bc614",
+      "confusion_matrix": [
+        [
+          53036046,
+          739198
+        ],
+        [
+          3686813,
+          340695
+        ]
+      ],
+      "calculated": {
+        "nll": 0.5600019962338904,
+        "brier": 0.13685077811483623,
+        "ece_15": 0.056913276554604625,
+        "miou": 0.4972244771571725,
+        "pixel_accuracy": 0.9234290609554369
+      },
+      "reference": {
+        "nll": 0.560001991066894,
+        "brier": 0.1368507791273619,
+        "ece_15": 0.056913276639448576,
+        "miou": 0.4972244771571725,
+        "pixel_accuracy": 0.9234290609554369
+      },
+      "difference": {
+        "nll": 5.166996386307687e-09,
+        "brier": -1.0125256744153432e-09,
+        "ece_15": -8.484395130903266e-11,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T041628970344Z_spacenet7_dofa_full_finetune_seed43_2a812094/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T041628970344Z_spacenet7_dofa_full_finetune_seed43_2a812094/test_metrics.json",
+      "source_sha256": "73b4405f48ac3580bd50c42cc8c2c8ee202727cef9af6b062084dccb1baa8184",
+      "confusion_matrix": [
+        [
+          53172390,
+          602854
+        ],
+        [
+          3711846,
+          315662
+        ]
+      ],
+      "calculated": {
+        "nll": 0.4127928893379614,
+        "brier": 0.12959177625659102,
+        "ece_15": 0.04499762448793472,
+        "miou": 0.4965585476640966,
+        "pixel_accuracy": 0.9253547651156817
+      },
+      "reference": {
+        "nll": 0.41279288707068484,
+        "brier": 0.12959177672140496,
+        "ece_15": 0.04499762440365385,
+        "miou": 0.4965585476640966,
+        "pixel_accuracy": 0.9253547651156817
+      },
+      "difference": {
+        "nll": 2.2672765331854805e-09,
+        "brier": -4.648139373397697e-10,
+        "ece_15": 8.42808670076245e-11,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T105029720150Z_spacenet7_dofa_full_finetune_seed44_0e9c0a7e/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T105029720150Z_spacenet7_dofa_full_finetune_seed44_0e9c0a7e/test_metrics.json",
+      "source_sha256": "02d918f17cbe318e8d49544d5f801144f0e255fee24dad6e7572c4e94d573b64",
+      "confusion_matrix": [
+        [
+          52825703,
+          949541
+        ],
+        [
+          3633768,
+          393740
+        ]
+      ],
+      "calculated": {
+        "nll": 0.4374349503154928,
+        "brier": 0.13578613398094025,
+        "ece_15": 0.047032242616038694,
+        "miou": 0.4996375408123507,
+        "pixel_accuracy": 0.9207077718375761
+      },
+      "reference": {
+        "nll": 0.43743494525417453,
+        "brier": 0.1357861339435857,
+        "ece_15": 0.047032265706370695,
+        "miou": 0.4996375408123507,
+        "pixel_accuracy": 0.9207077718375761
+      },
+      "difference": {
+        "nll": 5.061318253396507e-09,
+        "brier": 3.73545361309624e-11,
+        "ece_15": -2.309033200059707e-08,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T012909480544Z_spacenet7_panopticon_frozen_seed42_5bc79e91/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T012909480544Z_spacenet7_panopticon_frozen_seed42_5bc79e91/test_metrics.json",
+      "source_sha256": "f4d798cb94556aafe6348d245dbda779c8f6dbdcc4a20e732b0cd75f34df1519",
+      "confusion_matrix": [
+        [
+          52674450,
+          1100794
+        ],
+        [
+          3605744,
+          421764
+        ]
+      ],
+      "calculated": {
+        "nll": 0.3544837553349752,
+        "brier": 0.13681828346348404,
+        "ece_15": 0.04109475440113128,
+        "miou": 0.5001099117069657,
+        "pixel_accuracy": 0.9185758837226297
+      },
+      "reference": {
+        "nll": 0.35448375268828003,
+        "brier": 0.1368182836351938,
+        "ece_15": 0.041094754292284826,
+        "miou": 0.5001099117069657,
+        "pixel_accuracy": 0.9185758837226297
+      },
+      "difference": {
+        "nll": 2.6466951963399765e-09,
+        "brier": -1.717097575237858e-10,
+        "ece_15": 1.0884645268438575e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T093212435964Z_spacenet7_panopticon_frozen_seed43_7a04c439/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T093212435964Z_spacenet7_panopticon_frozen_seed43_7a04c439/test_metrics.json",
+      "source_sha256": "d34fc7ae0509b05170f76364a5c00845c29bb5b955f661b3d409045b99ba0c9c",
+      "confusion_matrix": [
+        [
+          52651052,
+          1124192
+        ],
+        [
+          3574239,
+          453269
+        ]
+      ],
+      "calculated": {
+        "nll": 0.35586715582547,
+        "brier": 0.13548095634971616,
+        "ece_15": 0.04118314223250291,
+        "miou": 0.503029026895774,
+        "pixel_accuracy": 0.9187161365604184
+      },
+      "reference": {
+        "nll": 0.3558671532638373,
+        "brier": 0.1354809571213309,
+        "ece_15": 0.04118314228947831,
+        "miou": 0.503029026895774,
+        "pixel_accuracy": 0.9187161365604184
+      },
+      "difference": {
+        "nll": 2.56163273926191e-09,
+        "brier": -7.716147443215249e-10,
+        "ece_15": -5.697539662286033e-11,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T140818811757Z_spacenet7_panopticon_frozen_seed44_0f56f5e4/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T140818811757Z_spacenet7_panopticon_frozen_seed44_0f56f5e4/test_metrics.json",
+      "source_sha256": "4ad566fc7b834fef6a7b5d16fa9baa985d9e6d1056895e821d12f63aa70ddd68",
+      "confusion_matrix": [
+        [
+          52670035,
+          1105209
+        ],
+        [
+          3597879,
+          429629
+        ]
+      ],
+      "calculated": {
+        "nll": 0.3542412441401255,
+        "brier": 0.13655739534401298,
+        "ece_15": 0.041564901733727094,
+        "miou": 0.5008651482694175,
+        "pixel_accuracy": 0.9186355694621599
+      },
+      "reference": {
+        "nll": 0.35424124042336647,
+        "brier": 0.13655739606068348,
+        "ece_15": 0.04156490162737913,
+        "miou": 0.5008651482694175,
+        "pixel_accuracy": 0.9186355694621599
+      },
+      "difference": {
+        "nll": 3.716759011673787e-09,
+        "brier": -7.166705007222163e-10,
+        "ece_15": 1.0634796515640588e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T233635521819Z_spacenet7_panopticon_full_finetune_seed42_b6b452b4/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T233635521819Z_spacenet7_panopticon_full_finetune_seed42_b6b452b4/test_metrics.json",
+      "source_sha256": "f215620800e40f6468d2d5cda50a8cb57a3a966a9087b35c7d3956d478192016",
+      "confusion_matrix": [
+        [
+          52199296,
+          1575948
+        ],
+        [
+          3435569,
+          591939
+        ]
+      ],
+      "calculated": {
+        "nll": 0.48019576140271836,
+        "brier": 0.14463169776460752,
+        "ece_15": 0.05290978657139847,
+        "miou": 0.5090204123518141,
+        "pixel_accuracy": 0.9132996816483755
+      },
+      "reference": {
+        "nll": 0.4801957556420711,
+        "brier": 0.1446316983426356,
+        "ece_15": 0.052909786716539196,
+        "miou": 0.5090204123518141,
+        "pixel_accuracy": 0.9132996816483755
+      },
+      "difference": {
+        "nll": 5.760647237007532e-09,
+        "brier": -5.78028069853076e-10,
+        "ece_15": -1.4514072582683113e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T050749487080Z_spacenet7_panopticon_full_finetune_seed43_efe0a455/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T050749487080Z_spacenet7_panopticon_full_finetune_seed43_efe0a455/test_metrics.json",
+      "source_sha256": "c594007128591cf1a2ec9b3d92cbe2520cd0644879047cb52fe0dc0eb81390fe",
+      "confusion_matrix": [
+        [
+          52749252,
+          1025992
+        ],
+        [
+          3574968,
+          452540
+        ]
+      ],
+      "calculated": {
+        "nll": 0.4821234617779314,
+        "brier": 0.13587866013113603,
+        "ece_15": 0.04954686862378916,
+        "miou": 0.5046620663506325,
+        "pixel_accuracy": 0.9204024057539683
+      },
+      "reference": {
+        "nll": 0.4821234588831329,
+        "brier": 0.1358786603901058,
+        "ece_15": 0.049546868754512,
+        "miou": 0.5046620663506325,
+        "pixel_accuracy": 0.9204024057539683
+      },
+      "difference": {
+        "nll": 2.8947985120097997e-09,
+        "brier": -2.5896976230121993e-10,
+        "ece_15": -1.3072284227311215e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T115507474539Z_spacenet7_panopticon_full_finetune_seed44_f73c1ae1/predictions/test/deterministic/predictions.npz",
+      "basis": "original test_metrics.json and independent confusion arithmetic",
+      "source_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T115507474539Z_spacenet7_panopticon_full_finetune_seed44_f73c1ae1/test_metrics.json",
+      "source_sha256": "e5c7dae5cd6b7530d4ca51b1542f2a8b3f7c083cd952b29ebb24d0234c134bd1",
+      "confusion_matrix": [
+        [
+          52463084,
+          1312160
+        ],
+        [
+          3580007,
+          447501
+        ]
+      ],
+      "calculated": {
+        "nll": 0.33318347782910274,
+        "brier": 0.14300713774298324,
+        "ece_15": 0.03376175287487407,
+        "miou": 0.49925550450079287,
+        "pixel_accuracy": 0.9153644622318329
+      },
+      "reference": {
+        "nll": 0.3331834745356621,
+        "brier": 0.14300713822537547,
+        "ece_15": 0.03376175267643199,
+        "miou": 0.49925550450079287,
+        "pixel_accuracy": 0.9153644622318329
+      },
+      "difference": {
+        "nll": 3.293440631324529e-09,
+        "brier": -4.823922372665379e-10,
+        "ece_15": 1.9844207527208724e-10,
+        "miou": 0.0,
+        "pixel_accuracy": 0.0
+      },
+      "pass": true
+    }
+  ],
+  "direction_per_run": [
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260823T212554430984Z_cloudsen12_dofa_frozen_seed42_5d8edd5b/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 48921600,
+      "weighted_gap": 0.019294438592290696,
+      "ece_15_from_bins": 0.019294824558505758,
+      "nonempty_bins": 12,
+      "overconfident_bins": 11,
+      "underconfident_bins": 1,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T063305175307Z_cloudsen12_dofa_frozen_seed43_d20a830e/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 48921600,
+      "weighted_gap": 0.050078845177803914,
+      "ece_15_from_bins": 0.050078845177803914,
+      "nonempty_bins": 12,
+      "overconfident_bins": 12,
+      "underconfident_bins": 0,
+      "both_signs_present": false,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T135116679838Z_cloudsen12_dofa_frozen_seed44_2cce2dc4/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 48921600,
+      "weighted_gap": 0.05067139588559947,
+      "ece_15_from_bins": 0.05067139588559947,
+      "nonempty_bins": 12,
+      "overconfident_bins": 12,
+      "underconfident_bins": 0,
+      "both_signs_present": false,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260823T224711552022Z_cloudsen12_dofa_full_finetune_seed42_9e2211d7/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 48921600,
+      "weighted_gap": 0.0680183540384278,
+      "ece_15_from_bins": 0.0680183540384278,
+      "nonempty_bins": 12,
+      "overconfident_bins": 12,
+      "underconfident_bins": 0,
+      "both_signs_present": false,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T041629083560Z_cloudsen12_dofa_full_finetune_seed43_6547906a/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 48921600,
+      "weighted_gap": 0.06389967744508117,
+      "ece_15_from_bins": 0.06389968995745479,
+      "nonempty_bins": 12,
+      "overconfident_bins": 11,
+      "underconfident_bins": 1,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T084553296954Z_cloudsen12_dofa_full_finetune_seed44_9c298bb6/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 48921600,
+      "weighted_gap": 0.059130500917446475,
+      "ece_15_from_bins": 0.059130500917446475,
+      "nonempty_bins": 12,
+      "overconfident_bins": 12,
+      "underconfident_bins": 0,
+      "both_signs_present": false,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T024636502649Z_cloudsen12_panopticon_frozen_seed42_987db5bf/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 48921600,
+      "weighted_gap": 0.04996056987018257,
+      "ece_15_from_bins": 0.04996056987018257,
+      "nonempty_bins": 12,
+      "overconfident_bins": 12,
+      "underconfident_bins": 0,
+      "both_signs_present": false,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T073937493619Z_cloudsen12_panopticon_frozen_seed43_9688327e/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 48921600,
+      "weighted_gap": 0.03844469212351427,
+      "ece_15_from_bins": 0.03844469212351427,
+      "nonempty_bins": 12,
+      "overconfident_bins": 12,
+      "underconfident_bins": 0,
+      "both_signs_present": false,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T150154916514Z_cloudsen12_panopticon_frozen_seed44_953e2ce2/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 48921600,
+      "weighted_gap": 0.0364534143294535,
+      "ece_15_from_bins": 0.03645374106977747,
+      "nonempty_bins": 12,
+      "overconfident_bins": 11,
+      "underconfident_bins": 1,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T002903622341Z_cloudsen12_panopticon_full_finetune_seed42_797a0b89/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 48921600,
+      "weighted_gap": 0.04288938285007745,
+      "ece_15_from_bins": 0.04288938285007745,
+      "nonempty_bins": 12,
+      "overconfident_bins": 12,
+      "underconfident_bins": 0,
+      "both_signs_present": false,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T055703693822Z_cloudsen12_panopticon_full_finetune_seed43_8e8dc6a5/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 48921600,
+      "weighted_gap": 0.03805115461159726,
+      "ece_15_from_bins": 0.03805115461159726,
+      "nonempty_bins": 12,
+      "overconfident_bins": 12,
+      "underconfident_bins": 0,
+      "both_signs_present": false,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T102603117304Z_cloudsen12_panopticon_full_finetune_seed44_fde03f5e/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 48921600,
+      "weighted_gap": 0.04553030588056513,
+      "ece_15_from_bins": 0.045530404393033144,
+      "nonempty_bins": 12,
+      "overconfident_bins": 11,
+      "underconfident_bins": 1,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 2714,
+      "weighted_gap": -0.0018716645135366486,
+      "ece_15_from_bins": 0.004230741814997763,
+      "nonempty_bins": 11,
+      "overconfident_bins": 5,
+      "underconfident_bins": 6,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 2714,
+      "weighted_gap": -0.0008377464009104358,
+      "ece_15_from_bins": 0.0071251012862563225,
+      "nonempty_bins": 8,
+      "overconfident_bins": 3,
+      "underconfident_bins": 5,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 2714,
+      "weighted_gap": -0.0019078036288435,
+      "ece_15_from_bins": 0.0036683374344643723,
+      "nonempty_bins": 11,
+      "overconfident_bins": 5,
+      "underconfident_bins": 6,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 2714,
+      "weighted_gap": -0.0007166530423596578,
+      "ece_15_from_bins": 0.007804339873764387,
+      "nonempty_bins": 10,
+      "overconfident_bins": 4,
+      "underconfident_bins": 6,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 2714,
+      "weighted_gap": 0.007047557136813946,
+      "ece_15_from_bins": 0.008803532592672237,
+      "nonempty_bins": 11,
+      "overconfident_bins": 8,
+      "underconfident_bins": 3,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 2714,
+      "weighted_gap": 0.016115204114727704,
+      "ece_15_from_bins": 0.016743802890324296,
+      "nonempty_bins": 11,
+      "overconfident_bins": 9,
+      "underconfident_bins": 2,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 2714,
+      "weighted_gap": 0.004791482953614141,
+      "ece_15_from_bins": 0.007695890551291587,
+      "nonempty_bins": 10,
+      "overconfident_bins": 6,
+      "underconfident_bins": 4,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 2714,
+      "weighted_gap": 0.0030437788501239123,
+      "ece_15_from_bins": 0.003624748968427991,
+      "nonempty_bins": 10,
+      "overconfident_bins": 7,
+      "underconfident_bins": 3,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260816T004654290690Z_eurosat_panopticon_frozen_bnlinear_seed44_4f21cdf8/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 2714,
+      "weighted_gap": 0.005747737081593772,
+      "ece_15_from_bins": 0.008542608757974825,
+      "nonempty_bins": 10,
+      "overconfident_bins": 8,
+      "underconfident_bins": 2,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 2714,
+      "weighted_gap": 0.004577556382054868,
+      "ece_15_from_bins": 0.005855335039344006,
+      "nonempty_bins": 10,
+      "overconfident_bins": 7,
+      "underconfident_bins": 3,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T023205454878Z_eurosat_panopticon_full_finetune_seed43_e304fee6/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 2714,
+      "weighted_gap": 0.005071771182202204,
+      "ece_15_from_bins": 0.007313713716863268,
+      "nonempty_bins": 10,
+      "overconfident_bins": 8,
+      "underconfident_bins": 2,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T034514128137Z_eurosat_panopticon_full_finetune_seed44_0883c676/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 2714,
+      "weighted_gap": 0.012527838744656865,
+      "ece_15_from_bins": 0.015190208614882777,
+      "nonempty_bins": 11,
+      "overconfident_bins": 8,
+      "underconfident_bins": 3,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260823T212554554121Z_spacenet7_dofa_frozen_seed42_bb178c28/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 57802752,
+      "weighted_gap": 0.030106709128242586,
+      "ece_15_from_bins": 0.03568138187143702,
+      "nonempty_bins": 8,
+      "overconfident_bins": 3,
+      "underconfident_bins": 5,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T084249767853Z_spacenet7_dofa_frozen_seed43_30065f6d/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 57802752,
+      "weighted_gap": 0.034266784342611455,
+      "ece_15_from_bins": 0.040292685403145,
+      "nonempty_bins": 8,
+      "overconfident_bins": 3,
+      "underconfident_bins": 5,
+      "both_signs_present": true,
+      "difference": {
+        "gap": -6.938893903907228e-18,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T131025872125Z_spacenet7_dofa_frozen_seed44_505d5ab5/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 57802752,
+      "weighted_gap": 0.035783752374499114,
+      "ece_15_from_bins": 0.041426583706489384,
+      "nonempty_bins": 8,
+      "overconfident_bins": 3,
+      "underconfident_bins": 5,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 6.938893903907228e-18,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T223417473200Z_spacenet7_dofa_full_finetune_seed42_6349d2a1/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 57802752,
+      "weighted_gap": 0.056913276639448576,
+      "ece_15_from_bins": 0.056913276639448576,
+      "nonempty_bins": 8,
+      "overconfident_bins": 8,
+      "underconfident_bins": 0,
+      "both_signs_present": false,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T041628970344Z_spacenet7_dofa_full_finetune_seed43_2a812094/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 57802752,
+      "weighted_gap": 0.04248857823910247,
+      "ece_15_from_bins": 0.04499762440365385,
+      "nonempty_bins": 8,
+      "overconfident_bins": 4,
+      "underconfident_bins": 4,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T105029720150Z_spacenet7_dofa_full_finetune_seed44_0e9c0a7e/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 57802752,
+      "weighted_gap": 0.04660732903889591,
+      "ece_15_from_bins": 0.047032265706370695,
+      "nonempty_bins": 8,
+      "overconfident_bins": 5,
+      "underconfident_bins": 3,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T012909480544Z_spacenet7_panopticon_frozen_seed42_5bc79e91/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 57802752,
+      "weighted_gap": 0.03898228397477555,
+      "ece_15_from_bins": 0.041094754292284826,
+      "nonempty_bins": 8,
+      "overconfident_bins": 4,
+      "underconfident_bins": 4,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T093212435964Z_spacenet7_panopticon_frozen_seed43_7a04c439/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 57802752,
+      "weighted_gap": 0.04113609356842854,
+      "ece_15_from_bins": 0.04118314228947831,
+      "nonempty_bins": 8,
+      "overconfident_bins": 6,
+      "underconfident_bins": 2,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T140818811757Z_spacenet7_panopticon_frozen_seed44_0f56f5e4/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 57802752,
+      "weighted_gap": 0.040342248293726,
+      "ece_15_from_bins": 0.04156490162737913,
+      "nonempty_bins": 8,
+      "overconfident_bins": 4,
+      "underconfident_bins": 4,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T233635521819Z_spacenet7_panopticon_full_finetune_seed42_b6b452b4/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 57802752,
+      "weighted_gap": 0.052909786716539196,
+      "ece_15_from_bins": 0.052909786716539196,
+      "nonempty_bins": 8,
+      "overconfident_bins": 8,
+      "underconfident_bins": 0,
+      "both_signs_present": false,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T050749487080Z_spacenet7_panopticon_full_finetune_seed43_efe0a455/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 57802752,
+      "weighted_gap": 0.049546868754512,
+      "ece_15_from_bins": 0.049546868754512,
+      "nonempty_bins": 8,
+      "overconfident_bins": 8,
+      "underconfident_bins": 0,
+      "both_signs_present": false,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T115507474539Z_spacenet7_panopticon_full_finetune_seed44_f73c1ae1/predictions/test/deterministic/predictions.npz",
+      "kind": "decision_15",
+      "count": 57802752,
+      "weighted_gap": 0.0212190831525814,
+      "ece_15_from_bins": 0.03376175267643199,
+      "nonempty_bins": 8,
+      "overconfident_bins": 2,
+      "underconfident_bins": 6,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260815T202926010453Z_treesatai_dofa_frozen_seed42_3dae0e5b/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 30000,
+      "weighted_gap": 0.0014358505703211753,
+      "ece_15_from_bins": 0.00997010348659763,
+      "nonempty_bins": 8,
+      "overconfident_bins": 2,
+      "underconfident_bins": 6,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 4.592680402648597e-16,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T012149418043Z_treesatai_dofa_frozen_seed43_d484c9b3/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 30000,
+      "weighted_gap": -0.005574955545364962,
+      "ece_15_from_bins": 0.010719108342131828,
+      "nonempty_bins": 8,
+      "overconfident_bins": 1,
+      "underconfident_bins": 7,
+      "both_signs_present": true,
+      "difference": {
+        "gap": -1.3877787807814457e-17,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T013516128703Z_treesatai_dofa_frozen_seed44_f16a2a61/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 30000,
+      "weighted_gap": -0.006858374697133634,
+      "ece_15_from_bins": 0.011730424709454443,
+      "nonempty_bins": 8,
+      "overconfident_bins": 1,
+      "underconfident_bins": 7,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 7.37257477290143e-17,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260815T222120553265Z_treesatai_dofa_full_finetune_seed42_9845090f/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 30000,
+      "weighted_gap": -0.013567319054547868,
+      "ece_15_from_bins": 0.014092692175650519,
+      "nonempty_bins": 8,
+      "overconfident_bins": 1,
+      "underconfident_bins": 7,
+      "both_signs_present": true,
+      "difference": {
+        "gap": -1.1796119636642288e-16,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T050303117850Z_treesatai_dofa_full_finetune_seed43_e40f79f2/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 30000,
+      "weighted_gap": 0.0004790771480858287,
+      "ece_15_from_bins": 0.008119487144198016,
+      "nonempty_bins": 8,
+      "overconfident_bins": 2,
+      "underconfident_bins": 6,
+      "both_signs_present": true,
+      "difference": {
+        "gap": -2.1982199047143602e-16,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T051814359617Z_treesatai_dofa_full_finetune_seed44_6a6f8fd9/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 30000,
+      "weighted_gap": -0.015451789449343535,
+      "ece_15_from_bins": 0.015451789449343535,
+      "nonempty_bins": 8,
+      "overconfident_bins": 0,
+      "underconfident_bins": 8,
+      "both_signs_present": false,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260815T204959852998Z_treesatai_panopticon_frozen_seed42_5c8cc8e4/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 30000,
+      "weighted_gap": -0.006247007411099305,
+      "ece_15_from_bins": 0.010479455220324962,
+      "nonempty_bins": 8,
+      "overconfident_bins": 1,
+      "underconfident_bins": 7,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T014811037405Z_treesatai_panopticon_frozen_seed43_baa4ef7a/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 30000,
+      "weighted_gap": -0.0026977973509679336,
+      "ece_15_from_bins": 0.008726503198459735,
+      "nonempty_bins": 8,
+      "overconfident_bins": 2,
+      "underconfident_bins": 6,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T020829175076Z_treesatai_panopticon_frozen_seed44_341d0eca/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 30000,
+      "weighted_gap": -0.0001105743291695641,
+      "ece_15_from_bins": 0.009280648868012456,
+      "nonempty_bins": 8,
+      "overconfident_bins": 1,
+      "underconfident_bins": 7,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260815T223733845323Z_treesatai_panopticon_full_finetune_seed42_432b3047/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 30000,
+      "weighted_gap": 0.000687005740616101,
+      "ece_15_from_bins": 0.011266771733972806,
+      "nonempty_bins": 8,
+      "overconfident_bins": 2,
+      "underconfident_bins": 6,
+      "both_signs_present": true,
+      "difference": {
+        "gap": -9.75781955236954e-19,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T053348883249Z_treesatai_panopticon_full_finetune_seed43_b7ae4087/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 30000,
+      "weighted_gap": 0.00022139162524739125,
+      "ece_15_from_bins": 0.004157547277253858,
+      "nonempty_bins": 8,
+      "overconfident_bins": 4,
+      "underconfident_bins": 4,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "artifact_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T060624868595Z_treesatai_panopticon_full_finetune_seed44_d6d97c6a/predictions/test/deterministic/predictions.parquet",
+      "kind": "decision_15",
+      "count": 30000,
+      "weighted_gap": -0.006980663971502024,
+      "ece_15_from_bins": 0.007464281140166956,
+      "nonempty_bins": 8,
+      "overconfident_bins": 1,
+      "underconfident_bins": 7,
+      "both_signs_present": true,
+      "difference": {
+        "gap": 0.0,
+        "ece_15": 0.0
+      },
+      "pass": true
+    }
+  ],
+  "direction_summaries": [
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": 0.04001489321856469,
+      "gap_min": 0.019294438592290696,
+      "gap_max": 0.05067139588559947,
+      "overall_positive_seeds": 3,
+      "overall_negative_seeds": 0,
+      "seeds_with_mixed_bin_signs": 1
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": 0.06368284413365181,
+      "gap_min": 0.059130500917446475,
+      "gap_max": 0.0680183540384278,
+      "overall_positive_seeds": 3,
+      "overall_negative_seeds": 0,
+      "seeds_with_mixed_bin_signs": 1
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": 0.04161955877438345,
+      "gap_min": 0.0364534143294535,
+      "gap_max": 0.04996056987018257,
+      "overall_positive_seeds": 3,
+      "overall_negative_seeds": 0,
+      "seeds_with_mixed_bin_signs": 1
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": 0.04215694778074661,
+      "gap_min": 0.03805115461159726,
+      "gap_max": 0.04553030588056513,
+      "overall_positive_seeds": 3,
+      "overall_negative_seeds": 0,
+      "seeds_with_mixed_bin_signs": 1
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": -0.001539071514430195,
+      "gap_min": -0.0019078036288435,
+      "gap_max": -0.0008377464009104358,
+      "overall_positive_seeds": 0,
+      "overall_negative_seeds": 3,
+      "seeds_with_mixed_bin_signs": 3
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": 0.00748203606972733,
+      "gap_min": -0.0007166530423596578,
+      "gap_max": 0.016115204114727704,
+      "overall_positive_seeds": 2,
+      "overall_negative_seeds": 1,
+      "seeds_with_mixed_bin_signs": 3
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": 0.004527666295110608,
+      "gap_min": 0.0030437788501239123,
+      "gap_max": 0.005747737081593772,
+      "overall_positive_seeds": 3,
+      "overall_negative_seeds": 0,
+      "seeds_with_mixed_bin_signs": 3
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": 0.007392388769637978,
+      "gap_min": 0.004577556382054868,
+      "gap_max": 0.012527838744656865,
+      "overall_positive_seeds": 3,
+      "overall_negative_seeds": 0,
+      "seeds_with_mixed_bin_signs": 3
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": 0.03338574861511772,
+      "gap_min": 0.030106709128242586,
+      "gap_max": 0.035783752374499114,
+      "overall_positive_seeds": 3,
+      "overall_negative_seeds": 0,
+      "seeds_with_mixed_bin_signs": 3
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": 0.04866972797248232,
+      "gap_min": 0.04248857823910247,
+      "gap_max": 0.056913276639448576,
+      "overall_positive_seeds": 3,
+      "overall_negative_seeds": 0,
+      "seeds_with_mixed_bin_signs": 2
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": 0.04015354194564336,
+      "gap_min": 0.03898228397477555,
+      "gap_max": 0.04113609356842854,
+      "overall_positive_seeds": 3,
+      "overall_negative_seeds": 0,
+      "seeds_with_mixed_bin_signs": 3
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": 0.041225246207877535,
+      "gap_min": 0.0212190831525814,
+      "gap_max": 0.052909786716539196,
+      "overall_positive_seeds": 3,
+      "overall_negative_seeds": 0,
+      "seeds_with_mixed_bin_signs": 1
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": -0.0036658265573924734,
+      "gap_min": -0.006858374697133634,
+      "gap_max": 0.0014358505703211753,
+      "overall_positive_seeds": 1,
+      "overall_negative_seeds": 2,
+      "seeds_with_mixed_bin_signs": 3
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": -0.009513343785268524,
+      "gap_min": -0.015451789449343535,
+      "gap_max": 0.0004790771480858287,
+      "overall_positive_seeds": 1,
+      "overall_negative_seeds": 2,
+      "seeds_with_mixed_bin_signs": 2
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": -0.0030184596970789343,
+      "gap_min": -0.006247007411099305,
+      "gap_max": -0.0001105743291695641,
+      "overall_positive_seeds": 0,
+      "overall_negative_seeds": 3,
+      "seeds_with_mixed_bin_signs": 3
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seeds": [
+        "42",
+        "43",
+        "44"
+      ],
+      "gap_mean": -0.002024088868546177,
+      "gap_min": -0.006980663971502024,
+      "gap_max": 0.000687005740616101,
+      "overall_positive_seeds": 2,
+      "overall_negative_seeds": 1,
+      "seeds_with_mixed_bin_signs": 3
+    }
+  ],
+  "all_pass": true
+}

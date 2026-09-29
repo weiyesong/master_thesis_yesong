@@ -1,0 +1,108 @@
+seed: 42
+seeds: [42, 43, 44]
+device: auto
+output_dir: ./results/baselines/dofa_eurosat_frozen_bnlinear
+results_csv: ./results/baselines/dofa_eurosat_frozen_bnlinear/results.csv
+
+task: classification
+
+data:
+  name: eurosat
+  input_bands: rgb
+  channels: [B04, B03, B02]
+  wavelengths_nm: [665, 560, 490]
+  source: torchgeo_all_bands
+  root: ./data
+  split_manifest: ./splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv
+  augmentations:
+    train: none
+    val: none
+    calibration: none
+    test: none
+  download: false
+  image_size: 224
+  normalize: true
+  num_classes: 10
+  class_names:
+    - AnnualCrop
+    - Forest
+    - HerbaceousVegetation
+    - Highway
+    - Industrial
+    - Pasture
+    - PermanentCrop
+    - Residential
+    - River
+    - SeaLake
+  num_workers: 4
+
+training:
+  epochs: 50
+  batch_size: 64
+  optimizer:
+    name: adamw
+  learning_rate: 1.0e-3
+  backbone_learning_rate: 1.0e-3
+  head_learning_rate: 1.0e-3
+  weight_decay: 0.01
+  early_stopping:
+    enabled: true
+    patience: 10
+    min_delta: 0.0
+  checkpoint:
+    split: val
+    metric: nll
+    mode: min
+  limit_train_batches: null
+  limit_val_batches: null
+
+metrics:
+  n_bins: 15
+
+reproducibility:
+  deterministic: true
+
+prediction_export:
+  enabled: true
+  splits: [test]
+  save_backbone_representation: true
+  save_embeddings: true
+  format: parquet
+  stochastic_format: compressed_npz
+  corruption_type: none
+  corruption_severity: 0
+
+dry_run_settings:
+  epochs: 1
+  limit_train_batches: 1
+  limit_val_batches: 1
+  num_workers: 0
+  output_dir: ./results/baselines/dofa_eurosat_frozen_bnlinear/dry_runs
+
+visualization:
+  enabled: true
+  update_every_epochs: 1
+  track_gradient_norm: true
+
+uq_methods:
+  - name: none
+
+experiments:
+  - name: eurosat_dofa_frozen_bnlinear
+    task: classification
+    model:
+      name: dofa
+      actual_wavelengths: [0.665, 0.560, 0.490]
+      actual_wavelength_units: micrometers
+      size: base
+      pretrained: true
+      drop_rate: 0.0
+      adaptation_mode: frozen
+      head:
+        architecture: batchnorm_linear
+        batchnorm_affine: false
+        batchnorm_eps: 1.0e-6
+        dropout: 0.0
+      global_pool: false
+      dofa_root: ./DOFA
+      weights_path: ./DOFA/checkpoints/DOFA_ViT_base_e100.pth

@@ -1,0 +1,439 @@
+{
+  "direct_pairs": [
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "43",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "44",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "eurosat",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "eurosat",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "treesatai",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "treesatai",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "43",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "44",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "cloudsen12",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 20
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "frozen",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 24
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 24
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "43",
+      "max_abs_error": 0.0,
+      "equations_checked": 24
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "dofa",
+      "adaptation": "full_finetune",
+      "seed": "44",
+      "max_abs_error": 0.0,
+      "equations_checked": 24
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "frozen",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 24
+    },
+    {
+      "dataset": "spacenet7",
+      "model": "panopticon",
+      "adaptation": "full_finetune",
+      "seed": "42",
+      "max_abs_error": 0.0,
+      "equations_checked": 24
+    }
+  ],
+  "summaries": [
+    {
+      "key": "eurosat/dofa/frozen/MC_minus_Off",
+      "n": 3,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "eurosat/dofa/frozen/Off_minus_D",
+      "n": 3,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "eurosat/dofa/frozen/MC_minus_D",
+      "n": 3,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "eurosat/dofa/full_finetune/MC_minus_Off",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "eurosat/dofa/full_finetune/Off_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "eurosat/dofa/full_finetune/MC_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "eurosat/panopticon/frozen/MC_minus_Off",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "eurosat/panopticon/frozen/Off_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "eurosat/panopticon/frozen/MC_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "eurosat/panopticon/full_finetune/MC_minus_Off",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "eurosat/panopticon/full_finetune/Off_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "eurosat/panopticon/full_finetune/MC_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "treesatai/dofa/frozen/MC_minus_Off",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "treesatai/dofa/frozen/Off_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "treesatai/dofa/frozen/MC_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "treesatai/dofa/full_finetune/MC_minus_Off",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "treesatai/dofa/full_finetune/Off_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "treesatai/dofa/full_finetune/MC_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "treesatai/panopticon/frozen/MC_minus_Off",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "treesatai/panopticon/frozen/Off_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "treesatai/panopticon/frozen/MC_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "treesatai/panopticon/full_finetune/MC_minus_Off",
+      "n": 3,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "treesatai/panopticon/full_finetune/Off_minus_D",
+      "n": 3,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "treesatai/panopticon/full_finetune/MC_minus_D",
+      "n": 3,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "cloudsen12/dofa/frozen/MC_minus_Off",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "cloudsen12/dofa/frozen/Off_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "cloudsen12/dofa/frozen/MC_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "cloudsen12/dofa/full_finetune/MC_minus_Off",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "cloudsen12/dofa/full_finetune/Off_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "cloudsen12/dofa/full_finetune/MC_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "cloudsen12/panopticon/frozen/MC_minus_Off",
+      "n": 3,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "cloudsen12/panopticon/frozen/Off_minus_D",
+      "n": 3,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "cloudsen12/panopticon/frozen/MC_minus_D",
+      "n": 3,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "cloudsen12/panopticon/full_finetune/MC_minus_Off",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "cloudsen12/panopticon/full_finetune/Off_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "cloudsen12/panopticon/full_finetune/MC_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "spacenet7/dofa/frozen/MC_minus_Off",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "spacenet7/dofa/frozen/Off_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "spacenet7/dofa/frozen/MC_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "spacenet7/dofa/full_finetune/MC_minus_Off",
+      "n": 3,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "spacenet7/dofa/full_finetune/Off_minus_D",
+      "n": 3,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "spacenet7/dofa/full_finetune/MC_minus_D",
+      "n": 3,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "spacenet7/panopticon/frozen/MC_minus_Off",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "spacenet7/panopticon/frozen/Off_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "spacenet7/panopticon/frozen/MC_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "spacenet7/panopticon/full_finetune/MC_minus_Off",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "spacenet7/panopticon/full_finetune/Off_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    },
+    {
+      "key": "spacenet7/panopticon/full_finetune/MC_minus_D",
+      "n": 1,
+      "max_abs_error": 0.0
+    }
+  ],
+  "all_passed": true
+}

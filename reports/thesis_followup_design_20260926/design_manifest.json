@@ -1,0 +1,247 @@
+{
+  "created_at": "2026-09-26T22:55:51.798057+00:00",
+  "purpose": "Design and complete prompt only",
+  "source_inputs_unchanged": [
+    "reports/core_rq_completion_20260921/EO_UQ_Thesis_Conversation_Dossier_for_Codex.md",
+    "EO_FM_UQ_Core_RQ_Audit_Standard.md",
+    "research_data/manifest.parquet",
+    "research_data/README.md",
+    "reports/pre_uq_protocol_freeze.md",
+    "reports/core_rq_completion_20260921/checks.csv",
+    "reports/core_rq_completion_20260921/coverage_matrix.csv",
+    "reports/core_rq_completion_20260921/published/tables/thesis_master_results.csv",
+    "reports/core_rq_completion_20260921/mc_dropout_three_way.csv",
+    "reports/core_rq_completion_20260921/provenance_followup.md",
+    "reports/thesis_readiness_20260926/independent_evidence_check.json"
+  ],
+  "local_link_checks": [
+    {
+      "source": "reports/thesis_followup_design_20260926/DESIGN_AND_WORKLOAD.md",
+      "href": "EXECUTION_PROMPT.md",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/DESIGN_AND_WORKLOAD.md",
+      "href": "historical_training_costs.csv",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/DESIGN_AND_WORKLOAD.md",
+      "href": "compute_workload.py",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/DESIGN_AND_WORKLOAD.md",
+      "href": "workload_estimates.json",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/DESIGN_AND_WORKLOAD.md",
+      "href": "planned_A_prediction_objects.csv",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/DESIGN_AND_WORKLOAD.md",
+      "href": "design_input_checks.json",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/DESIGN_AND_WORKLOAD.md",
+      "href": "fixed_subset_id_checks.json",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/DESIGN_AND_WORKLOAD.md",
+      "href": "../../scripts/c5_mc_dropout_inference.py:380",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/DESIGN_AND_WORKLOAD.md",
+      "href": "../../scripts/c5_mc_dropout_inference.py:623",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/DESIGN_AND_WORKLOAD.md",
+      "href": "REVIEW_RESOLUTION.md",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/REVIEW_RESOLUTION.md",
+      "href": "claude_design_review.md",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/REVIEW_RESOLUTION.md",
+      "href": "claude_followup.md",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/REVIEW_RESOLUTION.md",
+      "href": "claude_design_tool_trace.json",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/REVIEW_RESOLUTION.md",
+      "href": "workload_estimates.json",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/REVIEW_RESOLUTION.md",
+      "href": "planned_A_prediction_objects.csv",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/REVIEW_RESOLUTION.md",
+      "href": "design_input_checks.json",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/REVIEW_RESOLUTION.md",
+      "href": "fixed_subset_id_checks.json",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/REVIEW_RESOLUTION.md",
+      "href": "embedding_semantics_check.json",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/REVIEW_RESOLUTION.md",
+      "href": "../../scripts/c5_mc_dropout_inference.py:260",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/REVIEW_RESOLUTION.md",
+      "href": "../../scripts/c5_mc_dropout_inference.py:496",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/REVIEW_RESOLUTION.md",
+      "href": "../final_training_protocol.md:68",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/REVIEW_RESOLUTION.md",
+      "href": "../../scripts/prediction_export.py:250",
+      "exists": true
+    },
+    {
+      "source": "reports/thesis_followup_design_20260926/REVIEW_RESOLUTION.md",
+      "href": "../../scripts/prediction_export.py:721",
+      "exists": true
+    }
+  ],
+  "new_training": 0,
+  "new_model_inference": 0,
+  "new_research_metrics_executed": false,
+  "direct_validation": "100 planned prediction-object paths, 6 representative actual NPZ schemas, 20 actual fixed-subset ID arrays, 3 representative embedding alias identities, stored cost arithmetic",
+  "code_checks": "Both metadata/cost scripts executed successfully and py_compile passed",
+  "claude_session_id": "5cf1f601-8904-4e8c-b643-7deba2098e15",
+  "files": [
+    {
+      "path": "reports/thesis_followup_design_20260926/DESIGN_AND_WORKLOAD.md",
+      "bytes": 12233,
+      "sha256": "cf57c9fe28fe24172ae4e2d9a28e863cfa7a9437a7dce7760e668dfd357c9dc2"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/EXECUTION_PROMPT.md",
+      "bytes": 32177,
+      "sha256": "f2621e5fccb8382de8a5270878295599e5cde1e5ca4c74f78b318168c5a17b2f"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/REVIEW_RESOLUTION.md",
+      "bytes": 4574,
+      "sha256": "74b292cc83bda7d10a9723b664b898a28bf4b6388df4e2e11b0d859791b6b93b"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/claude_design_raw.json",
+      "bytes": 15181,
+      "sha256": "01c4fcbeb2b704ae137d2f8e1ccd8c6e1ad1d01a329c9654690eb72ccced7eb4"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/claude_design_request.md",
+      "bytes": 4776,
+      "sha256": "dc60b1bb293dc0da7a50c5d6a41473d05fa7d3fb2091405a9bf962a44e4e44b2"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/claude_design_review.md",
+      "bytes": 13250,
+      "sha256": "b50b6fedcef2b0b63ca457560301885a71d266afbe003de66610ca50b9bedabe"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/claude_design_stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/claude_design_tool_trace.json",
+      "bytes": 26903,
+      "sha256": "4134a8ce3bab1d9e905c5a7353a4d22e9282216db4da25c71baae94da353e087"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/claude_followup.md",
+      "bytes": 3766,
+      "sha256": "0d0aaf4291b38659fc206366bea83b8cc622dcaef6df8054c1c2e86a5262c61c"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/claude_followup_raw.json",
+      "bytes": 5601,
+      "sha256": "ca8ab4800181f9202f38eeaa22c8fb85498cf62e2be3bfa5646cf4542e44c693"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/claude_followup_request.md",
+      "bytes": 2571,
+      "sha256": "b21676cc8b0221d67a4124c661f1591d36ecaf8f05c76c1ec36fa546d300ed43"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/claude_followup_stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/claude_session_metadata.json",
+      "bytes": 1550,
+      "sha256": "2d31953036dc807f10b887ee03ba41749bb9019399ec98081b8289eb181273da"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/compute_workload.py",
+      "bytes": 7510,
+      "sha256": "f879634bf79e79e9d111108dcccce0b65e822386d9c41aec831a62bc9b6513ad"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/design_input_checks.json",
+      "bytes": 8396,
+      "sha256": "b8de41e92521dde028d1e7a1bc3ade9392afdabf83927db27aaf949a7631a059"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/embedding_semantics_check.json",
+      "bytes": 897,
+      "sha256": "e8c7a2a668fdcbdd20d25cbe2a252893c961e770307f6f1fbc25455ac0a20d46"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/fixed_subset_id_checks.json",
+      "bytes": 6097,
+      "sha256": "1b58cc5be9854ea2ce8fd9956b1f43f283140b1caf2cc08e1348e2447a651592"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/historical_training_costs.csv",
+      "bytes": 1857,
+      "sha256": "7108e3e57481fcf1b120308aa84c98c0ee910d764db4e5b1f510cb0cadf99f42"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/inspect_design_inputs.py",
+      "bytes": 5493,
+      "sha256": "bd102b634c535e24904e3f6cb1d51435ccd94a514d24bea43ed385c5df2e88e8"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/planned_A_prediction_objects.csv",
+      "bytes": 22353,
+      "sha256": "39334632eb4040791354731416cb2f386bb30c542732b26e6a256194a1ae5451"
+    },
+    {
+      "path": "reports/thesis_followup_design_20260926/workload_estimates.json",
+      "bytes": 13078,
+      "sha256": "acf5f528ab9fc7d65af3844b10b7f13ec2f8a672903ff97555c820235ddebc9c"
+    }
+  ]
+}

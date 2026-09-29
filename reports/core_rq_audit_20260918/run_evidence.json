@@ -1,0 +1,4388 @@
+[
+  {
+    "run_id": "20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700",
+    "method": "deterministic",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 7,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {},
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/run_summary.json",
+    "history_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/training_history.json",
+    "history_type": "list",
+    "history_length": 17,
+    "input_artifacts_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/input_artifacts.json",
+    "run_code_revision": "UNKNOWN: no run code_snapshot.json"
+  },
+  {
+    "run_id": "20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c",
+    "method": "deterministic",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 11,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {},
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/run_summary.json",
+    "history_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/training_history.json",
+    "history_type": "list",
+    "history_length": 21,
+    "input_artifacts_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/input_artifacts.json",
+    "run_code_revision": "UNKNOWN: no run code_snapshot.json"
+  },
+  {
+    "run_id": "20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49",
+    "method": "deterministic",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 9,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {},
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/run_summary.json",
+    "history_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/training_history.json",
+    "history_type": "list",
+    "history_length": 19,
+    "input_artifacts_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/input_artifacts.json",
+    "run_code_revision": "UNKNOWN: no run code_snapshot.json"
+  },
+  {
+    "run_id": "20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700",
+    "method": "temperature_scaling",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 7,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {},
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/run_summary.json",
+    "history_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/training_history.json",
+    "history_type": "list",
+    "history_length": 17,
+    "input_artifacts_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/input_artifacts.json",
+    "run_code_revision": "UNKNOWN: no run code_snapshot.json"
+  },
+  {
+    "run_id": "20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c",
+    "method": "temperature_scaling",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 11,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {},
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/run_summary.json",
+    "history_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/training_history.json",
+    "history_type": "list",
+    "history_length": 21,
+    "input_artifacts_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/input_artifacts.json",
+    "run_code_revision": "UNKNOWN: no run code_snapshot.json"
+  },
+  {
+    "run_id": "20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49",
+    "method": "temperature_scaling",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 9,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {},
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/run_summary.json",
+    "history_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/training_history.json",
+    "history_type": "list",
+    "history_length": 19,
+    "input_artifacts_path": "results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/input_artifacts.json",
+    "run_code_revision": "UNKNOWN: no run code_snapshot.json"
+  },
+  {
+    "run_id": "20260826T071945460412Z_c5_mcd_eurosat_dofa_frozen_seed42_f8504b02",
+    "method": "mc_dropout",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 14,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/classification/eurosat/dofa/frozen/runs/20260826T071945460412Z_c5_mcd_eurosat_dofa_frozen_seed42_f8504b02/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/classification/eurosat/dofa/frozen/runs/20260826T071945460412Z_c5_mcd_eurosat_dofa_frozen_seed42_f8504b02/training_history.json",
+    "history_type": "list",
+    "history_length": 24,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/classification/eurosat/dofa/frozen/runs/20260826T071945460412Z_c5_mcd_eurosat_dofa_frozen_seed42_f8504b02/input_artifacts.json",
+    "run_code_revision": "df93ce2e979426f3bbe928a0a79969487f3c225c84a38bb313b8c7362e034bac"
+  },
+  {
+    "run_id": "20260826T111327093147Z_c5_mcd_eurosat_dofa_frozen_seed43_436609ea",
+    "method": "mc_dropout",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 6,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/classification/eurosat/dofa/frozen/runs/20260826T111327093147Z_c5_mcd_eurosat_dofa_frozen_seed43_436609ea/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/classification/eurosat/dofa/frozen/runs/20260826T111327093147Z_c5_mcd_eurosat_dofa_frozen_seed43_436609ea/training_history.json",
+    "history_type": "list",
+    "history_length": 16,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/classification/eurosat/dofa/frozen/runs/20260826T111327093147Z_c5_mcd_eurosat_dofa_frozen_seed43_436609ea/input_artifacts.json",
+    "run_code_revision": "3f02889656dfd2c6c3cb99e5cc1760c5eceaa842095f26884230a89ef4df913b"
+  },
+  {
+    "run_id": "20260826T112829704413Z_c5_mcd_eurosat_dofa_frozen_seed44_1ebcff7b",
+    "method": "mc_dropout",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 10,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/classification/eurosat/dofa/frozen/runs/20260826T112829704413Z_c5_mcd_eurosat_dofa_frozen_seed44_1ebcff7b/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/classification/eurosat/dofa/frozen/runs/20260826T112829704413Z_c5_mcd_eurosat_dofa_frozen_seed44_1ebcff7b/training_history.json",
+    "history_type": "list",
+    "history_length": 20,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/classification/eurosat/dofa/frozen/runs/20260826T112829704413Z_c5_mcd_eurosat_dofa_frozen_seed44_1ebcff7b/input_artifacts.json",
+    "run_code_revision": "3f02889656dfd2c6c3cb99e5cc1760c5eceaa842095f26884230a89ef4df913b"
+  },
+  {
+    "run_id": "20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00",
+    "method": "deterministic",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 1,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 111168522,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "backbone_expected_trainable_parameters": 111160832,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 171,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/run_summary.json",
+    "history_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/training_history.json",
+    "history_type": "list",
+    "history_length": 16,
+    "input_artifacts_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/input_artifacts.json",
+    "run_code_revision": "UNKNOWN: no run code_snapshot.json"
+  },
+  {
+    "run_id": "20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069",
+    "method": "deterministic",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 7,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 111168522,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "backbone_expected_trainable_parameters": 111160832,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 171,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/run_summary.json",
+    "history_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/training_history.json",
+    "history_type": "list",
+    "history_length": 22,
+    "input_artifacts_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/input_artifacts.json",
+    "run_code_revision": "UNKNOWN: no run code_snapshot.json"
+  },
+  {
+    "run_id": "20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9",
+    "method": "deterministic",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 10,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 111168522,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "backbone_expected_trainable_parameters": 111160832,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 171,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/run_summary.json",
+    "history_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/training_history.json",
+    "history_type": "list",
+    "history_length": 25,
+    "input_artifacts_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/input_artifacts.json",
+    "run_code_revision": "UNKNOWN: no run code_snapshot.json"
+  },
+  {
+    "run_id": "20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00",
+    "method": "temperature_scaling",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 1,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 111168522,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "backbone_expected_trainable_parameters": 111160832,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 171,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/run_summary.json",
+    "history_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/training_history.json",
+    "history_type": "list",
+    "history_length": 16,
+    "input_artifacts_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/input_artifacts.json",
+    "run_code_revision": "UNKNOWN: no run code_snapshot.json"
+  },
+  {
+    "run_id": "20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069",
+    "method": "temperature_scaling",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 7,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 111168522,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "backbone_expected_trainable_parameters": 111160832,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 171,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/run_summary.json",
+    "history_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/training_history.json",
+    "history_type": "list",
+    "history_length": 22,
+    "input_artifacts_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/input_artifacts.json",
+    "run_code_revision": "UNKNOWN: no run code_snapshot.json"
+  },
+  {
+    "run_id": "20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9",
+    "method": "temperature_scaling",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 10,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 111168522,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "backbone_expected_trainable_parameters": 111160832,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 171,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/run_summary.json",
+    "history_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/training_history.json",
+    "history_type": "list",
+    "history_length": 25,
+    "input_artifacts_path": "results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/input_artifacts.json",
+    "run_code_revision": "UNKNOWN: no run code_snapshot.json"
+  },
+  {
+    "run_id": "20260826T114721092234Z_c5_mcd_eurosat_dofa_full_finetune_seed42_9d07512e",
+    "method": "mc_dropout",
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 3,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111319818,
+      "trainable_parameters": 111168522,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "backbone_expected_trainable_parameters": 111160832,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 171,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/classification/eurosat/dofa/full_finetune/runs/20260826T114721092234Z_c5_mcd_eurosat_dofa_full_finetune_seed42_9d07512e/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/classification/eurosat/dofa/full_finetune/runs/20260826T114721092234Z_c5_mcd_eurosat_dofa_full_finetune_seed42_9d07512e/training_history.json",
+    "history_type": "list",
+    "history_length": 18,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/classification/eurosat/dofa/full_finetune/runs/20260826T114721092234Z_c5_mcd_eurosat_dofa_full_finetune_seed42_9d07512e/input_artifacts.json",
+    "run_code_revision": "3f02889656dfd2c6c3cb99e5cc1760c5eceaa842095f26884230a89ef4df913b"
+  },
+  {
+    "run_id": "20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8",
+    "method": "deterministic",
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 10,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98128138,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8/run_summary.json",
+    "history_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8/training_history.json",
+    "history_type": "list",
+    "history_length": 20,
+    "input_artifacts_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8/input_artifacts.json",
+    "run_code_revision": "d4c7e9d07a9ee2f1b431bd06822fc4648a1f17f4bc6db8352dd65ce8b9e18c67"
+  },
+  {
+    "run_id": "20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d",
+    "method": "deterministic",
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 6,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98128138,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/run_summary.json",
+    "history_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/training_history.json",
+    "history_type": "list",
+    "history_length": 16,
+    "input_artifacts_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/input_artifacts.json",
+    "run_code_revision": "82467b95293c2a2459c59405a56e02e6af2eb955db49d3ce642ee0bfb38a61d0"
+  },
+  {
+    "run_id": "20260816T004654290690Z_eurosat_panopticon_frozen_bnlinear_seed44_4f21cdf8",
+    "method": "deterministic",
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 9,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98128138,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260816T004654290690Z_eurosat_panopticon_frozen_bnlinear_seed44_4f21cdf8/run_summary.json",
+    "history_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260816T004654290690Z_eurosat_panopticon_frozen_bnlinear_seed44_4f21cdf8/training_history.json",
+    "history_type": "list",
+    "history_length": 19,
+    "input_artifacts_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260816T004654290690Z_eurosat_panopticon_frozen_bnlinear_seed44_4f21cdf8/input_artifacts.json",
+    "run_code_revision": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+  },
+  {
+    "run_id": "20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8",
+    "method": "temperature_scaling",
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 10,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98128138,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8/run_summary.json",
+    "history_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8/training_history.json",
+    "history_type": "list",
+    "history_length": 20,
+    "input_artifacts_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T195254997519Z_eurosat_panopticon_frozen_bnlinear_seed42_74d738b8/input_artifacts.json",
+    "run_code_revision": "d4c7e9d07a9ee2f1b431bd06822fc4648a1f17f4bc6db8352dd65ce8b9e18c67"
+  },
+  {
+    "run_id": "20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d",
+    "method": "temperature_scaling",
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 6,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98128138,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/run_summary.json",
+    "history_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/training_history.json",
+    "history_type": "list",
+    "history_length": 16,
+    "input_artifacts_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/input_artifacts.json",
+    "run_code_revision": "82467b95293c2a2459c59405a56e02e6af2eb955db49d3ce642ee0bfb38a61d0"
+  },
+  {
+    "run_id": "20260816T004654290690Z_eurosat_panopticon_frozen_bnlinear_seed44_4f21cdf8",
+    "method": "temperature_scaling",
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 9,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98128138,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260816T004654290690Z_eurosat_panopticon_frozen_bnlinear_seed44_4f21cdf8/run_summary.json",
+    "history_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260816T004654290690Z_eurosat_panopticon_frozen_bnlinear_seed44_4f21cdf8/training_history.json",
+    "history_type": "list",
+    "history_length": 19,
+    "input_artifacts_path": "results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260816T004654290690Z_eurosat_panopticon_frozen_bnlinear_seed44_4f21cdf8/input_artifacts.json",
+    "run_code_revision": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+  },
+  {
+    "run_id": "20260826T130252227124Z_c5_mcd_eurosat_panopticon_frozen_seed42_ba0d13ac",
+    "method": "mc_dropout",
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 10,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98128138,
+      "trainable_parameters": 7690,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/classification/eurosat/panopticon/frozen/runs/20260826T130252227124Z_c5_mcd_eurosat_panopticon_frozen_seed42_ba0d13ac/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/classification/eurosat/panopticon/frozen/runs/20260826T130252227124Z_c5_mcd_eurosat_panopticon_frozen_seed42_ba0d13ac/training_history.json",
+    "history_type": "list",
+    "history_length": 20,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/classification/eurosat/panopticon/frozen/runs/20260826T130252227124Z_c5_mcd_eurosat_panopticon_frozen_seed42_ba0d13ac/input_artifacts.json",
+    "run_code_revision": "3f02889656dfd2c6c3cb99e5cc1760c5eceaa842095f26884230a89ef4df913b"
+  },
+  {
+    "run_id": "20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a",
+    "method": "deterministic",
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 1,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98128138,
+      "trainable_parameters": 98123530,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "backbone_expected_trainable_parameters": 98115840,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 181,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a/run_summary.json",
+    "history_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a/training_history.json",
+    "history_type": "list",
+    "history_length": 16,
+    "input_artifacts_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a/input_artifacts.json",
+    "run_code_revision": "d4c7e9d07a9ee2f1b431bd06822fc4648a1f17f4bc6db8352dd65ce8b9e18c67"
+  },
+  {
+    "run_id": "20260816T023205454878Z_eurosat_panopticon_full_finetune_seed43_e304fee6",
+    "method": "deterministic",
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 1,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98128138,
+      "trainable_parameters": 98123530,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "backbone_expected_trainable_parameters": 98115840,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 181,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T023205454878Z_eurosat_panopticon_full_finetune_seed43_e304fee6/run_summary.json",
+    "history_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T023205454878Z_eurosat_panopticon_full_finetune_seed43_e304fee6/training_history.json",
+    "history_type": "list",
+    "history_length": 16,
+    "input_artifacts_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T023205454878Z_eurosat_panopticon_full_finetune_seed43_e304fee6/input_artifacts.json",
+    "run_code_revision": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+  },
+  {
+    "run_id": "20260816T034514128137Z_eurosat_panopticon_full_finetune_seed44_0883c676",
+    "method": "deterministic",
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 2,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98128138,
+      "trainable_parameters": 98123530,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "backbone_expected_trainable_parameters": 98115840,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 181,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T034514128137Z_eurosat_panopticon_full_finetune_seed44_0883c676/run_summary.json",
+    "history_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T034514128137Z_eurosat_panopticon_full_finetune_seed44_0883c676/training_history.json",
+    "history_type": "list",
+    "history_length": 17,
+    "input_artifacts_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T034514128137Z_eurosat_panopticon_full_finetune_seed44_0883c676/input_artifacts.json",
+    "run_code_revision": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+  },
+  {
+    "run_id": "20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a",
+    "method": "temperature_scaling",
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 1,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98128138,
+      "trainable_parameters": 98123530,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "backbone_expected_trainable_parameters": 98115840,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 181,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a/run_summary.json",
+    "history_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a/training_history.json",
+    "history_type": "list",
+    "history_length": 16,
+    "input_artifacts_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260815T210816909227Z_eurosat_panopticon_full_finetune_seed42_d280d48a/input_artifacts.json",
+    "run_code_revision": "d4c7e9d07a9ee2f1b431bd06822fc4648a1f17f4bc6db8352dd65ce8b9e18c67"
+  },
+  {
+    "run_id": "20260816T023205454878Z_eurosat_panopticon_full_finetune_seed43_e304fee6",
+    "method": "temperature_scaling",
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 1,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98128138,
+      "trainable_parameters": 98123530,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "backbone_expected_trainable_parameters": 98115840,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 181,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T023205454878Z_eurosat_panopticon_full_finetune_seed43_e304fee6/run_summary.json",
+    "history_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T023205454878Z_eurosat_panopticon_full_finetune_seed43_e304fee6/training_history.json",
+    "history_type": "list",
+    "history_length": 16,
+    "input_artifacts_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T023205454878Z_eurosat_panopticon_full_finetune_seed43_e304fee6/input_artifacts.json",
+    "run_code_revision": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+  },
+  {
+    "run_id": "20260816T034514128137Z_eurosat_panopticon_full_finetune_seed44_0883c676",
+    "method": "temperature_scaling",
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 2,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98128138,
+      "trainable_parameters": 98123530,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "backbone_expected_trainable_parameters": 98115840,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 181,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T034514128137Z_eurosat_panopticon_full_finetune_seed44_0883c676/run_summary.json",
+    "history_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T034514128137Z_eurosat_panopticon_full_finetune_seed44_0883c676/training_history.json",
+    "history_type": "list",
+    "history_length": 17,
+    "input_artifacts_path": "results/baselines/panopticon_eurosat_full_finetune/runs/20260816T034514128137Z_eurosat_panopticon_full_finetune_seed44_0883c676/input_artifacts.json",
+    "run_code_revision": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+  },
+  {
+    "run_id": "20260826T121529608269Z_c5_mcd_eurosat_panopticon_full_finetune_seed42_25cdb219",
+    "method": "mc_dropout",
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 2,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98128138,
+      "trainable_parameters": 98123530,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "backbone_expected_trainable_parameters": 98115840,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 7690,
+      "head_trainable_parameters": 7690
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 181,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/classification/eurosat/panopticon/full_finetune/runs/20260826T121529608269Z_c5_mcd_eurosat_panopticon_full_finetune_seed42_25cdb219/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/classification/eurosat/panopticon/full_finetune/runs/20260826T121529608269Z_c5_mcd_eurosat_panopticon_full_finetune_seed42_25cdb219/training_history.json",
+    "history_type": "list",
+    "history_length": 17,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/classification/eurosat/panopticon/full_finetune/runs/20260826T121529608269Z_c5_mcd_eurosat_panopticon_full_finetune_seed42_25cdb219/input_artifacts.json",
+    "run_code_revision": "3f02889656dfd2c6c3cb99e5cc1760c5eceaa842095f26884230a89ef4df913b"
+  },
+  {
+    "run_id": "20260815T202926010453Z_treesatai_dofa_frozen_seed42_3dae0e5b",
+    "method": "deterministic",
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 27,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111323663,
+      "trainable_parameters": 11535,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/classification/treesatai_frozen/runs/20260815T202926010453Z_treesatai_dofa_frozen_seed42_3dae0e5b/run_summary.json",
+    "history_path": "results/final_thesis/classification/treesatai_frozen/runs/20260815T202926010453Z_treesatai_dofa_frozen_seed42_3dae0e5b/training_history.json",
+    "history_type": "list",
+    "history_length": 37,
+    "input_artifacts_path": "results/final_thesis/classification/treesatai_frozen/runs/20260815T202926010453Z_treesatai_dofa_frozen_seed42_3dae0e5b/input_artifacts.json",
+    "run_code_revision": "d4c7e9d07a9ee2f1b431bd06822fc4648a1f17f4bc6db8352dd65ce8b9e18c67"
+  },
+  {
+    "run_id": "20260816T012149418043Z_treesatai_dofa_frozen_seed43_d484c9b3",
+    "method": "deterministic",
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 14,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111323663,
+      "trainable_parameters": 11535,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T012149418043Z_treesatai_dofa_frozen_seed43_d484c9b3/run_summary.json",
+    "history_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T012149418043Z_treesatai_dofa_frozen_seed43_d484c9b3/training_history.json",
+    "history_type": "list",
+    "history_length": 24,
+    "input_artifacts_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T012149418043Z_treesatai_dofa_frozen_seed43_d484c9b3/input_artifacts.json",
+    "run_code_revision": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+  },
+  {
+    "run_id": "20260816T013516128703Z_treesatai_dofa_frozen_seed44_f16a2a61",
+    "method": "deterministic",
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 13,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111323663,
+      "trainable_parameters": 11535,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T013516128703Z_treesatai_dofa_frozen_seed44_f16a2a61/run_summary.json",
+    "history_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T013516128703Z_treesatai_dofa_frozen_seed44_f16a2a61/training_history.json",
+    "history_type": "list",
+    "history_length": 23,
+    "input_artifacts_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T013516128703Z_treesatai_dofa_frozen_seed44_f16a2a61/input_artifacts.json",
+    "run_code_revision": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+  },
+  {
+    "run_id": "20260826T133122444037Z_c5_mcd_treesatai_dofa_frozen_seed42_1b4cab86",
+    "method": "mc_dropout",
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 27,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111323663,
+      "trainable_parameters": 11535,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/classification/treesatai/dofa/frozen/runs/20260826T133122444037Z_c5_mcd_treesatai_dofa_frozen_seed42_1b4cab86/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/classification/treesatai/dofa/frozen/runs/20260826T133122444037Z_c5_mcd_treesatai_dofa_frozen_seed42_1b4cab86/training_history.json",
+    "history_type": "list",
+    "history_length": 37,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/classification/treesatai/dofa/frozen/runs/20260826T133122444037Z_c5_mcd_treesatai_dofa_frozen_seed42_1b4cab86/input_artifacts.json",
+    "run_code_revision": "3f02889656dfd2c6c3cb99e5cc1760c5eceaa842095f26884230a89ef4df913b"
+  },
+  {
+    "run_id": "20260815T222120553265Z_treesatai_dofa_full_finetune_seed42_9845090f",
+    "method": "deterministic",
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 5,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111323663,
+      "trainable_parameters": 111172367,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "backbone_expected_trainable_parameters": 111160832,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 171,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260815T222120553265Z_treesatai_dofa_full_finetune_seed42_9845090f/run_summary.json",
+    "history_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260815T222120553265Z_treesatai_dofa_full_finetune_seed42_9845090f/training_history.json",
+    "history_type": "list",
+    "history_length": 20,
+    "input_artifacts_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260815T222120553265Z_treesatai_dofa_full_finetune_seed42_9845090f/input_artifacts.json",
+    "run_code_revision": "82467b95293c2a2459c59405a56e02e6af2eb955db49d3ce642ee0bfb38a61d0"
+  },
+  {
+    "run_id": "20260816T050303117850Z_treesatai_dofa_full_finetune_seed43_e40f79f2",
+    "method": "deterministic",
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 4,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111323663,
+      "trainable_parameters": 111172367,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "backbone_expected_trainable_parameters": 111160832,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 171,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T050303117850Z_treesatai_dofa_full_finetune_seed43_e40f79f2/run_summary.json",
+    "history_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T050303117850Z_treesatai_dofa_full_finetune_seed43_e40f79f2/training_history.json",
+    "history_type": "list",
+    "history_length": 19,
+    "input_artifacts_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T050303117850Z_treesatai_dofa_full_finetune_seed43_e40f79f2/input_artifacts.json",
+    "run_code_revision": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+  },
+  {
+    "run_id": "20260816T051814359617Z_treesatai_dofa_full_finetune_seed44_6a6f8fd9",
+    "method": "deterministic",
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 4,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111323663,
+      "trainable_parameters": 111172367,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "backbone_expected_trainable_parameters": 111160832,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 171,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T051814359617Z_treesatai_dofa_full_finetune_seed44_6a6f8fd9/run_summary.json",
+    "history_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T051814359617Z_treesatai_dofa_full_finetune_seed44_6a6f8fd9/training_history.json",
+    "history_type": "list",
+    "history_length": 19,
+    "input_artifacts_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T051814359617Z_treesatai_dofa_full_finetune_seed44_6a6f8fd9/input_artifacts.json",
+    "run_code_revision": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+  },
+  {
+    "run_id": "20260826T123202780258Z_c5_mcd_treesatai_dofa_full_finetune_seed42_617d7518",
+    "method": "mc_dropout",
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 3,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 111323663,
+      "trainable_parameters": 111172367,
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "backbone_expected_trainable_parameters": 111160832,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 171,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/classification/treesatai/dofa/full_finetune/runs/20260826T123202780258Z_c5_mcd_treesatai_dofa_full_finetune_seed42_617d7518/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/classification/treesatai/dofa/full_finetune/runs/20260826T123202780258Z_c5_mcd_treesatai_dofa_full_finetune_seed42_617d7518/training_history.json",
+    "history_type": "list",
+    "history_length": 18,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/classification/treesatai/dofa/full_finetune/runs/20260826T123202780258Z_c5_mcd_treesatai_dofa_full_finetune_seed42_617d7518/input_artifacts.json",
+    "run_code_revision": "3f02889656dfd2c6c3cb99e5cc1760c5eceaa842095f26884230a89ef4df913b"
+  },
+  {
+    "run_id": "20260815T204959852998Z_treesatai_panopticon_frozen_seed42_5c8cc8e4",
+    "method": "deterministic",
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 9,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98131983,
+      "trainable_parameters": 11535,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/final_thesis/classification/treesatai_frozen/runs/20260815T204959852998Z_treesatai_panopticon_frozen_seed42_5c8cc8e4/run_summary.json",
+    "history_path": "results/final_thesis/classification/treesatai_frozen/runs/20260815T204959852998Z_treesatai_panopticon_frozen_seed42_5c8cc8e4/training_history.json",
+    "history_type": "list",
+    "history_length": 19,
+    "input_artifacts_path": "results/final_thesis/classification/treesatai_frozen/runs/20260815T204959852998Z_treesatai_panopticon_frozen_seed42_5c8cc8e4/input_artifacts.json",
+    "run_code_revision": "d4c7e9d07a9ee2f1b431bd06822fc4648a1f17f4bc6db8352dd65ce8b9e18c67"
+  },
+  {
+    "run_id": "20260816T014811037405Z_treesatai_panopticon_frozen_seed43_baa4ef7a",
+    "method": "deterministic",
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 12,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98131983,
+      "trainable_parameters": 11535,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T014811037405Z_treesatai_panopticon_frozen_seed43_baa4ef7a/run_summary.json",
+    "history_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T014811037405Z_treesatai_panopticon_frozen_seed43_baa4ef7a/training_history.json",
+    "history_type": "list",
+    "history_length": 22,
+    "input_artifacts_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T014811037405Z_treesatai_panopticon_frozen_seed43_baa4ef7a/input_artifacts.json",
+    "run_code_revision": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+  },
+  {
+    "run_id": "20260816T020829175076Z_treesatai_panopticon_frozen_seed44_341d0eca",
+    "method": "deterministic",
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 15,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98131983,
+      "trainable_parameters": 11535,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T020829175076Z_treesatai_panopticon_frozen_seed44_341d0eca/run_summary.json",
+    "history_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T020829175076Z_treesatai_panopticon_frozen_seed44_341d0eca/training_history.json",
+    "history_type": "list",
+    "history_length": 25,
+    "input_artifacts_path": "results/final_thesis/classification/treesatai_frozen/runs/20260816T020829175076Z_treesatai_panopticon_frozen_seed44_341d0eca/input_artifacts.json",
+    "run_code_revision": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+  },
+  {
+    "run_id": "20260826T124630941184Z_c5_mcd_treesatai_panopticon_frozen_seed42_4f216ca7",
+    "method": "mc_dropout",
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 9,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98131983,
+      "trainable_parameters": 11535,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "backbone_expected_trainable_parameters": 0,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 2,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/classification/treesatai/panopticon/frozen/runs/20260826T124630941184Z_c5_mcd_treesatai_panopticon_frozen_seed42_4f216ca7/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/classification/treesatai/panopticon/frozen/runs/20260826T124630941184Z_c5_mcd_treesatai_panopticon_frozen_seed42_4f216ca7/training_history.json",
+    "history_type": "list",
+    "history_length": 19,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/classification/treesatai/panopticon/frozen/runs/20260826T124630941184Z_c5_mcd_treesatai_panopticon_frozen_seed42_4f216ca7/input_artifacts.json",
+    "run_code_revision": "3f02889656dfd2c6c3cb99e5cc1760c5eceaa842095f26884230a89ef4df913b"
+  },
+  {
+    "run_id": "20260815T223733845323Z_treesatai_panopticon_full_finetune_seed42_432b3047",
+    "method": "deterministic",
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 3,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98131983,
+      "trainable_parameters": 98127375,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "backbone_expected_trainable_parameters": 98115840,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 181,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260815T223733845323Z_treesatai_panopticon_full_finetune_seed42_432b3047/run_summary.json",
+    "history_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260815T223733845323Z_treesatai_panopticon_full_finetune_seed42_432b3047/training_history.json",
+    "history_type": "list",
+    "history_length": 18,
+    "input_artifacts_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260815T223733845323Z_treesatai_panopticon_full_finetune_seed42_432b3047/input_artifacts.json",
+    "run_code_revision": "82467b95293c2a2459c59405a56e02e6af2eb955db49d3ce642ee0bfb38a61d0"
+  },
+  {
+    "run_id": "20260816T053348883249Z_treesatai_panopticon_full_finetune_seed43_b7ae4087",
+    "method": "deterministic",
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 2,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98131983,
+      "trainable_parameters": 98127375,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "backbone_expected_trainable_parameters": 98115840,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 181,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T053348883249Z_treesatai_panopticon_full_finetune_seed43_b7ae4087/run_summary.json",
+    "history_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T053348883249Z_treesatai_panopticon_full_finetune_seed43_b7ae4087/training_history.json",
+    "history_type": "list",
+    "history_length": 17,
+    "input_artifacts_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T053348883249Z_treesatai_panopticon_full_finetune_seed43_b7ae4087/input_artifacts.json",
+    "run_code_revision": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+  },
+  {
+    "run_id": "20260816T060624868595Z_treesatai_panopticon_full_finetune_seed44_d6d97c6a",
+    "method": "deterministic",
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 1,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98131983,
+      "trainable_parameters": 98127375,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "backbone_expected_trainable_parameters": 98115840,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 181,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T060624868595Z_treesatai_panopticon_full_finetune_seed44_d6d97c6a/run_summary.json",
+    "history_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T060624868595Z_treesatai_panopticon_full_finetune_seed44_d6d97c6a/training_history.json",
+    "history_type": "list",
+    "history_length": 16,
+    "input_artifacts_path": "results/final_thesis/classification/treesatai_full_finetune/runs/20260816T060624868595Z_treesatai_panopticon_full_finetune_seed44_d6d97c6a/input_artifacts.json",
+    "run_code_revision": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+  },
+  {
+    "run_id": "20260826T074610277789Z_c5_mcd_treesatai_panopticon_full_finetune_seed42_c06b6282",
+    "method": "mc_dropout",
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 3,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98131983,
+      "trainable_parameters": 98127375,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "backbone_expected_trainable_parameters": 98115840,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 181,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/classification/treesatai/panopticon/full_finetune/runs/20260826T074610277789Z_c5_mcd_treesatai_panopticon_full_finetune_seed42_c06b6282/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/classification/treesatai/panopticon/full_finetune/runs/20260826T074610277789Z_c5_mcd_treesatai_panopticon_full_finetune_seed42_c06b6282/training_history.json",
+    "history_type": "list",
+    "history_length": 18,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/classification/treesatai/panopticon/full_finetune/runs/20260826T074610277789Z_c5_mcd_treesatai_panopticon_full_finetune_seed42_c06b6282/input_artifacts.json",
+    "run_code_revision": "df93ce2e979426f3bbe928a0a79969487f3c225c84a38bb313b8c7362e034bac"
+  },
+  {
+    "run_id": "20260826T111326975579Z_c5_mcd_treesatai_panopticon_full_finetune_seed43_a5ddbffa",
+    "method": "mc_dropout",
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 2,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98131983,
+      "trainable_parameters": 98127375,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "backbone_expected_trainable_parameters": 98115840,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 181,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/classification/treesatai/panopticon/full_finetune/runs/20260826T111326975579Z_c5_mcd_treesatai_panopticon_full_finetune_seed43_a5ddbffa/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/classification/treesatai/panopticon/full_finetune/runs/20260826T111326975579Z_c5_mcd_treesatai_panopticon_full_finetune_seed43_a5ddbffa/training_history.json",
+    "history_type": "list",
+    "history_length": 17,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/classification/treesatai/panopticon/full_finetune/runs/20260826T111326975579Z_c5_mcd_treesatai_panopticon_full_finetune_seed43_a5ddbffa/input_artifacts.json",
+    "run_code_revision": "3f02889656dfd2c6c3cb99e5cc1760c5eceaa842095f26884230a89ef4df913b"
+  },
+  {
+    "run_id": "20260826T114425744236Z_c5_mcd_treesatai_panopticon_full_finetune_seed44_4db2cd96",
+    "method": "mc_dropout",
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 2,
+    "selection": {
+      "split": "val",
+      "metric": "nll",
+      "mode": "min"
+    },
+    "test_access_during_training_or_selection": "not recorded",
+    "trainable": {
+      "total_parameters": 98131983,
+      "trainable_parameters": 98127375,
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "backbone_expected_trainable_parameters": 98115840,
+      "all_expected_backbone_parameters_trainable": true,
+      "head_total_parameters": 11535,
+      "head_trainable_parameters": 11535
+    },
+    "gradient_audit": {
+      "performed": true,
+      "expected_parameter_tensors": 181,
+      "all_expected_parameters_received_gradient": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "nonfinite_gradient_parameters": [],
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+      "missing_keys": [],
+      "unexpected_keys": []
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/classification/treesatai/panopticon/full_finetune/runs/20260826T114425744236Z_c5_mcd_treesatai_panopticon_full_finetune_seed44_4db2cd96/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/classification/treesatai/panopticon/full_finetune/runs/20260826T114425744236Z_c5_mcd_treesatai_panopticon_full_finetune_seed44_4db2cd96/training_history.json",
+    "history_type": "list",
+    "history_length": 17,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/classification/treesatai/panopticon/full_finetune/runs/20260826T114425744236Z_c5_mcd_treesatai_panopticon_full_finetune_seed44_4db2cd96/input_artifacts.json",
+    "run_code_revision": "3f02889656dfd2c6c3cb99e5cc1760c5eceaa842095f26884230a89ef4df913b"
+  },
+  {
+    "run_id": "20260823T212554430984Z_cloudsen12_dofa_frozen_seed42_5d8edd5b",
+    "method": "deterministic",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 16,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.24101898074150085,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260823T212554430984Z_cloudsen12_dofa_frozen_seed42_5d8edd5b/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260823T212554430984Z_cloudsen12_dofa_frozen_seed42_5d8edd5b/training_history.json",
+    "history_type": "list",
+    "history_length": 26,
+    "input_artifacts_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260823T212554430984Z_cloudsen12_dofa_frozen_seed42_5d8edd5b/input_artifacts.json",
+    "run_code_revision": "b84b35625bc2314ded05274b716be24ac69dbb2f267a28e3c664b028ad033dec"
+  },
+  {
+    "run_id": "20260824T063305175307Z_cloudsen12_dofa_frozen_seed43_d20a830e",
+    "method": "deterministic",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 24,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.25963491201400757,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T063305175307Z_cloudsen12_dofa_frozen_seed43_d20a830e/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T063305175307Z_cloudsen12_dofa_frozen_seed43_d20a830e/training_history.json",
+    "history_type": "list",
+    "history_length": 34,
+    "input_artifacts_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T063305175307Z_cloudsen12_dofa_frozen_seed43_d20a830e/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260824T135116679838Z_cloudsen12_dofa_frozen_seed44_2cce2dc4",
+    "method": "deterministic",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 24,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.3797353208065033,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T135116679838Z_cloudsen12_dofa_frozen_seed44_2cce2dc4/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T135116679838Z_cloudsen12_dofa_frozen_seed44_2cce2dc4/training_history.json",
+    "history_type": "list",
+    "history_length": 34,
+    "input_artifacts_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T135116679838Z_cloudsen12_dofa_frozen_seed44_2cce2dc4/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260826T053857477078Z_c5_mcd_cloudsen12_dofa_frozen_seed42_03adea4b",
+    "method": "mc_dropout",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 23,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.24046814441680908,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/dofa/frozen/runs/20260826T053857477078Z_c5_mcd_cloudsen12_dofa_frozen_seed42_03adea4b/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/dofa/frozen/runs/20260826T053857477078Z_c5_mcd_cloudsen12_dofa_frozen_seed42_03adea4b/training_history.json",
+    "history_type": "list",
+    "history_length": 33,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/dofa/frozen/runs/20260826T053857477078Z_c5_mcd_cloudsen12_dofa_frozen_seed42_03adea4b/input_artifacts.json",
+    "run_code_revision": "df93ce2e979426f3bbe928a0a79969487f3c225c84a38bb313b8c7362e034bac"
+  },
+  {
+    "run_id": "20260823T224711552022Z_cloudsen12_dofa_full_finetune_seed42_9e2211d7",
+    "method": "deterministic",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 50,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 169,
+          "gradient_parameter_tensors": 169,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.02623957209289074,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.24101898074150085,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260823T224711552022Z_cloudsen12_dofa_full_finetune_seed42_9e2211d7/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260823T224711552022Z_cloudsen12_dofa_full_finetune_seed42_9e2211d7/training_history.json",
+    "history_type": "list",
+    "history_length": 50,
+    "input_artifacts_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260823T224711552022Z_cloudsen12_dofa_full_finetune_seed42_9e2211d7/input_artifacts.json",
+    "run_code_revision": "bd306bfff952eafc584a9a4c7d63827400fcc575af0a81971755f8813a8f88f2"
+  },
+  {
+    "run_id": "20260824T041629083560Z_cloudsen12_dofa_full_finetune_seed43_6547906a",
+    "method": "deterministic",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 49,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 169,
+          "gradient_parameter_tensors": 169,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.03923055902123451,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.25963491201400757,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T041629083560Z_cloudsen12_dofa_full_finetune_seed43_6547906a/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T041629083560Z_cloudsen12_dofa_full_finetune_seed43_6547906a/training_history.json",
+    "history_type": "list",
+    "history_length": 50,
+    "input_artifacts_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T041629083560Z_cloudsen12_dofa_full_finetune_seed43_6547906a/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260824T084553296954Z_cloudsen12_dofa_full_finetune_seed44_9c298bb6",
+    "method": "deterministic",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 42,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 169,
+          "gradient_parameter_tensors": 169,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.05386839807033539,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.3797353208065033,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T084553296954Z_cloudsen12_dofa_full_finetune_seed44_9c298bb6/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T084553296954Z_cloudsen12_dofa_full_finetune_seed44_9c298bb6/training_history.json",
+    "history_type": "list",
+    "history_length": 50,
+    "input_artifacts_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T084553296954Z_cloudsen12_dofa_full_finetune_seed44_9c298bb6/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260826T005937744917Z_c5_mcd_cloudsen12_dofa_full_finetune_seed42_c6f6480b",
+    "method": "mc_dropout",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 50,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 169,
+          "gradient_parameter_tensors": 169,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.03997187688946724,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.24046814441680908,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/dofa/full_finetune/runs/20260826T005937744917Z_c5_mcd_cloudsen12_dofa_full_finetune_seed42_c6f6480b/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/dofa/full_finetune/runs/20260826T005937744917Z_c5_mcd_cloudsen12_dofa_full_finetune_seed42_c6f6480b/training_history.json",
+    "history_type": "list",
+    "history_length": 50,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/dofa/full_finetune/runs/20260826T005937744917Z_c5_mcd_cloudsen12_dofa_full_finetune_seed42_c6f6480b/input_artifacts.json",
+    "run_code_revision": "af54d7cdb1cf41288503e70d19c16d68a12a90214a7682ed466326a7814cbcc5"
+  },
+  {
+    "run_id": "20260824T024636502649Z_cloudsen12_panopticon_frozen_seed42_987db5bf",
+    "method": "deterministic",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 29,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.19385284185409546,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T024636502649Z_cloudsen12_panopticon_frozen_seed42_987db5bf/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T024636502649Z_cloudsen12_panopticon_frozen_seed42_987db5bf/training_history.json",
+    "history_type": "list",
+    "history_length": 39,
+    "input_artifacts_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T024636502649Z_cloudsen12_panopticon_frozen_seed42_987db5bf/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260824T073937493619Z_cloudsen12_panopticon_frozen_seed43_9688327e",
+    "method": "deterministic",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 21,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.18387092649936676,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T073937493619Z_cloudsen12_panopticon_frozen_seed43_9688327e/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T073937493619Z_cloudsen12_panopticon_frozen_seed43_9688327e/training_history.json",
+    "history_type": "list",
+    "history_length": 31,
+    "input_artifacts_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T073937493619Z_cloudsen12_panopticon_frozen_seed43_9688327e/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260824T150154916514Z_cloudsen12_panopticon_frozen_seed44_953e2ce2",
+    "method": "deterministic",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 16,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.3109310567378998,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T150154916514Z_cloudsen12_panopticon_frozen_seed44_953e2ce2/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T150154916514Z_cloudsen12_panopticon_frozen_seed44_953e2ce2/training_history.json",
+    "history_type": "list",
+    "history_length": 26,
+    "input_artifacts_path": "results/final_thesis/segmentation/cloudsen12_frozen/runs/20260824T150154916514Z_cloudsen12_panopticon_frozen_seed44_953e2ce2/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260826T005938295761Z_c5_mcd_cloudsen12_panopticon_frozen_seed42_ddbc39b9",
+    "method": "mc_dropout",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 11,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.19465039670467377,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/panopticon/frozen/runs/20260826T005938295761Z_c5_mcd_cloudsen12_panopticon_frozen_seed42_ddbc39b9/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/panopticon/frozen/runs/20260826T005938295761Z_c5_mcd_cloudsen12_panopticon_frozen_seed42_ddbc39b9/training_history.json",
+    "history_type": "list",
+    "history_length": 21,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/panopticon/frozen/runs/20260826T005938295761Z_c5_mcd_cloudsen12_panopticon_frozen_seed42_ddbc39b9/input_artifacts.json",
+    "run_code_revision": "af54d7cdb1cf41288503e70d19c16d68a12a90214a7682ed466326a7814cbcc5"
+  },
+  {
+    "run_id": "20260826T014423173137Z_c5_mcd_cloudsen12_panopticon_frozen_seed43_c2d49439",
+    "method": "mc_dropout",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 20,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.1900268793106079,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/panopticon/frozen/runs/20260826T014423173137Z_c5_mcd_cloudsen12_panopticon_frozen_seed43_c2d49439/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/panopticon/frozen/runs/20260826T014423173137Z_c5_mcd_cloudsen12_panopticon_frozen_seed43_c2d49439/training_history.json",
+    "history_type": "list",
+    "history_length": 30,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/panopticon/frozen/runs/20260826T014423173137Z_c5_mcd_cloudsen12_panopticon_frozen_seed43_c2d49439/input_artifacts.json",
+    "run_code_revision": "df93ce2e979426f3bbe928a0a79969487f3c225c84a38bb313b8c7362e034bac"
+  },
+  {
+    "run_id": "20260826T024651151376Z_c5_mcd_cloudsen12_panopticon_frozen_seed44_48328b8b",
+    "method": "mc_dropout",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 21,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.3150746524333954,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/panopticon/frozen/runs/20260826T024651151376Z_c5_mcd_cloudsen12_panopticon_frozen_seed44_48328b8b/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/panopticon/frozen/runs/20260826T024651151376Z_c5_mcd_cloudsen12_panopticon_frozen_seed44_48328b8b/training_history.json",
+    "history_type": "list",
+    "history_length": 31,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/panopticon/frozen/runs/20260826T024651151376Z_c5_mcd_cloudsen12_panopticon_frozen_seed44_48328b8b/input_artifacts.json",
+    "run_code_revision": "df93ce2e979426f3bbe928a0a79969487f3c225c84a38bb313b8c7362e034bac"
+  },
+  {
+    "run_id": "20260824T002903622341Z_cloudsen12_panopticon_full_finetune_seed42_797a0b89",
+    "method": "deterministic",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 44,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 179,
+          "gradient_parameter_tensors": 179,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.03809090331196785,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.19385284185409546,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T002903622341Z_cloudsen12_panopticon_full_finetune_seed42_797a0b89/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T002903622341Z_cloudsen12_panopticon_full_finetune_seed42_797a0b89/training_history.json",
+    "history_type": "list",
+    "history_length": 50,
+    "input_artifacts_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T002903622341Z_cloudsen12_panopticon_full_finetune_seed42_797a0b89/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260824T055703693822Z_cloudsen12_panopticon_full_finetune_seed43_8e8dc6a5",
+    "method": "deterministic",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 39,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 179,
+          "gradient_parameter_tensors": 179,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.02993231639266014,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.18387092649936676,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T055703693822Z_cloudsen12_panopticon_full_finetune_seed43_8e8dc6a5/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T055703693822Z_cloudsen12_panopticon_full_finetune_seed43_8e8dc6a5/training_history.json",
+    "history_type": "list",
+    "history_length": 50,
+    "input_artifacts_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T055703693822Z_cloudsen12_panopticon_full_finetune_seed43_8e8dc6a5/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260824T102603117304Z_cloudsen12_panopticon_full_finetune_seed44_fde03f5e",
+    "method": "deterministic",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 44,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 179,
+          "gradient_parameter_tensors": 179,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.014834116213023663,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.3109310567378998,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T102603117304Z_cloudsen12_panopticon_full_finetune_seed44_fde03f5e/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T102603117304Z_cloudsen12_panopticon_full_finetune_seed44_fde03f5e/training_history.json",
+    "history_type": "list",
+    "history_length": 50,
+    "input_artifacts_path": "results/final_thesis/segmentation/cloudsen12_full_finetune/runs/20260824T102603117304Z_cloudsen12_panopticon_full_finetune_seed44_fde03f5e/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260826T035216258322Z_c5_mcd_cloudsen12_panopticon_full_finetune_seed42_ce5ec096",
+    "method": "mc_dropout",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 30,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "decoder_total_parameters": 2941956,
+      "decoder_trainable_parameters": 2941956
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 179,
+          "gradient_parameter_tensors": 179,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.04297659918665886,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.19465039670467377,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/panopticon/full_finetune/runs/20260826T035216258322Z_c5_mcd_cloudsen12_panopticon_full_finetune_seed42_ce5ec096/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/panopticon/full_finetune/runs/20260826T035216258322Z_c5_mcd_cloudsen12_panopticon_full_finetune_seed42_ce5ec096/training_history.json",
+    "history_type": "list",
+    "history_length": 45,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/segmentation/cloudsen12/panopticon/full_finetune/runs/20260826T035216258322Z_c5_mcd_cloudsen12_panopticon_full_finetune_seed42_ce5ec096/input_artifacts.json",
+    "run_code_revision": "df93ce2e979426f3bbe928a0a79969487f3c225c84a38bb313b8c7362e034bac"
+  },
+  {
+    "run_id": "20260823T212554554121Z_spacenet7_dofa_frozen_seed42_bb178c28",
+    "method": "deterministic",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 23,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.3711104989051819,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260823T212554554121Z_spacenet7_dofa_frozen_seed42_bb178c28/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260823T212554554121Z_spacenet7_dofa_frozen_seed42_bb178c28/training_history.json",
+    "history_type": "list",
+    "history_length": 33,
+    "input_artifacts_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260823T212554554121Z_spacenet7_dofa_frozen_seed42_bb178c28/input_artifacts.json",
+    "run_code_revision": "b84b35625bc2314ded05274b716be24ac69dbb2f267a28e3c664b028ad033dec"
+  },
+  {
+    "run_id": "20260824T084249767853Z_spacenet7_dofa_frozen_seed43_30065f6d",
+    "method": "deterministic",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 31,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.4521857500076294,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T084249767853Z_spacenet7_dofa_frozen_seed43_30065f6d/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T084249767853Z_spacenet7_dofa_frozen_seed43_30065f6d/training_history.json",
+    "history_type": "list",
+    "history_length": 41,
+    "input_artifacts_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T084249767853Z_spacenet7_dofa_frozen_seed43_30065f6d/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260824T131025872125Z_spacenet7_dofa_frozen_seed44_505d5ab5",
+    "method": "deterministic",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 44,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.44517982006073,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T131025872125Z_spacenet7_dofa_frozen_seed44_505d5ab5/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T131025872125Z_spacenet7_dofa_frozen_seed44_505d5ab5/training_history.json",
+    "history_type": "list",
+    "history_length": 50,
+    "input_artifacts_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T131025872125Z_spacenet7_dofa_frozen_seed44_505d5ab5/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260826T064233375001Z_c5_mcd_spacenet7_dofa_frozen_seed42_cbb9d838",
+    "method": "mc_dropout",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 23,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.37094563245773315,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/dofa/frozen/runs/20260826T064233375001Z_c5_mcd_spacenet7_dofa_frozen_seed42_cbb9d838/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/dofa/frozen/runs/20260826T064233375001Z_c5_mcd_spacenet7_dofa_frozen_seed42_cbb9d838/training_history.json",
+    "history_type": "list",
+    "history_length": 33,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/dofa/frozen/runs/20260826T064233375001Z_c5_mcd_spacenet7_dofa_frozen_seed42_cbb9d838/input_artifacts.json",
+    "run_code_revision": "df93ce2e979426f3bbe928a0a79969487f3c225c84a38bb313b8c7362e034bac"
+  },
+  {
+    "run_id": "20260823T223417473200Z_spacenet7_dofa_full_finetune_seed42_6349d2a1",
+    "method": "deterministic",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 23,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 169,
+          "gradient_parameter_tensors": 169,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.022969916462898254,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.3711104989051819,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T223417473200Z_spacenet7_dofa_full_finetune_seed42_6349d2a1/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T223417473200Z_spacenet7_dofa_full_finetune_seed42_6349d2a1/training_history.json",
+    "history_type": "list",
+    "history_length": 38,
+    "input_artifacts_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T223417473200Z_spacenet7_dofa_full_finetune_seed42_6349d2a1/input_artifacts.json",
+    "run_code_revision": "bd306bfff952eafc584a9a4c7d63827400fcc575af0a81971755f8813a8f88f2"
+  },
+  {
+    "run_id": "20260824T041628970344Z_spacenet7_dofa_full_finetune_seed43_2a812094",
+    "method": "deterministic",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 16,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 169,
+          "gradient_parameter_tensors": 169,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.02423999086022377,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.4521857500076294,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T041628970344Z_spacenet7_dofa_full_finetune_seed43_2a812094/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T041628970344Z_spacenet7_dofa_full_finetune_seed43_2a812094/training_history.json",
+    "history_type": "list",
+    "history_length": 31,
+    "input_artifacts_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T041628970344Z_spacenet7_dofa_full_finetune_seed43_2a812094/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260824T105029720150Z_spacenet7_dofa_full_finetune_seed44_0e9c0a7e",
+    "method": "deterministic",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 24,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 169,
+          "gradient_parameter_tensors": 169,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.014623782597482204,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.44517982006073,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T105029720150Z_spacenet7_dofa_full_finetune_seed44_0e9c0a7e/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T105029720150Z_spacenet7_dofa_full_finetune_seed44_0e9c0a7e/training_history.json",
+    "history_type": "list",
+    "history_length": 39,
+    "input_artifacts_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T105029720150Z_spacenet7_dofa_full_finetune_seed44_0e9c0a7e/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260826T023619555012Z_c5_mcd_spacenet7_dofa_full_finetune_seed42_d7cd73ff",
+    "method": "mc_dropout",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 5,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 169,
+          "gradient_parameter_tensors": 169,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.02384890615940094,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.37094563245773315,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/dofa/full_finetune/runs/20260826T023619555012Z_c5_mcd_spacenet7_dofa_full_finetune_seed42_d7cd73ff/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/dofa/full_finetune/runs/20260826T023619555012Z_c5_mcd_spacenet7_dofa_full_finetune_seed42_d7cd73ff/training_history.json",
+    "history_type": "list",
+    "history_length": 20,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/dofa/full_finetune/runs/20260826T023619555012Z_c5_mcd_spacenet7_dofa_full_finetune_seed42_d7cd73ff/input_artifacts.json",
+    "run_code_revision": "df93ce2e979426f3bbe928a0a79969487f3c225c84a38bb313b8c7362e034bac"
+  },
+  {
+    "run_id": "20260826T030824004411Z_c5_mcd_spacenet7_dofa_full_finetune_seed43_331db539",
+    "method": "mc_dropout",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 10,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 169,
+          "gradient_parameter_tensors": 169,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.035616371780633926,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.46322715282440186,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/dofa/full_finetune/runs/20260826T030824004411Z_c5_mcd_spacenet7_dofa_full_finetune_seed43_331db539/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/dofa/full_finetune/runs/20260826T030824004411Z_c5_mcd_spacenet7_dofa_full_finetune_seed43_331db539/training_history.json",
+    "history_type": "list",
+    "history_length": 25,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/dofa/full_finetune/runs/20260826T030824004411Z_c5_mcd_spacenet7_dofa_full_finetune_seed43_331db539/input_artifacts.json",
+    "run_code_revision": "df93ce2e979426f3bbe928a0a79969487f3c225c84a38bb313b8c7362e034bac"
+  },
+  {
+    "run_id": "20260826T034830012709Z_c5_mcd_spacenet7_dofa_full_finetune_seed44_51fdda93",
+    "method": "mc_dropout",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 14,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 111312128,
+      "backbone_trainable_parameters": 111160832,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 169,
+          "gradient_parameter_tensors": 169,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.01962786354124546,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.3642791509628296,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "checkpoint": "/workspace/DOFA/checkpoints/DOFA_ViT_base_e100.pth",
+      "missing_keys": [],
+      "unexpected_keys": [
+        "mask_token",
+        "projector.weight",
+        "projector.bias"
+      ]
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/dofa/full_finetune/runs/20260826T034830012709Z_c5_mcd_spacenet7_dofa_full_finetune_seed44_51fdda93/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/dofa/full_finetune/runs/20260826T034830012709Z_c5_mcd_spacenet7_dofa_full_finetune_seed44_51fdda93/training_history.json",
+    "history_type": "list",
+    "history_length": 29,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/dofa/full_finetune/runs/20260826T034830012709Z_c5_mcd_spacenet7_dofa_full_finetune_seed44_51fdda93/input_artifacts.json",
+    "run_code_revision": "df93ce2e979426f3bbe928a0a79969487f3c225c84a38bb313b8c7362e034bac"
+  },
+  {
+    "run_id": "20260824T012909480544Z_spacenet7_panopticon_frozen_seed42_5bc79e91",
+    "method": "deterministic",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 43,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.2596259117126465,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T012909480544Z_spacenet7_panopticon_frozen_seed42_5bc79e91/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T012909480544Z_spacenet7_panopticon_frozen_seed42_5bc79e91/training_history.json",
+    "history_type": "list",
+    "history_length": 50,
+    "input_artifacts_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T012909480544Z_spacenet7_panopticon_frozen_seed42_5bc79e91/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260824T093212435964Z_spacenet7_panopticon_frozen_seed43_7a04c439",
+    "method": "deterministic",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 50,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.35451552271842957,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T093212435964Z_spacenet7_panopticon_frozen_seed43_7a04c439/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T093212435964Z_spacenet7_panopticon_frozen_seed43_7a04c439/training_history.json",
+    "history_type": "list",
+    "history_length": 50,
+    "input_artifacts_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T093212435964Z_spacenet7_panopticon_frozen_seed43_7a04c439/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260824T140818811757Z_spacenet7_panopticon_frozen_seed44_0f56f5e4",
+    "method": "deterministic",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 49,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.4509288966655731,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T140818811757Z_spacenet7_panopticon_frozen_seed44_0f56f5e4/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T140818811757Z_spacenet7_panopticon_frozen_seed44_0f56f5e4/training_history.json",
+    "history_type": "list",
+    "history_length": 50,
+    "input_artifacts_path": "results/final_thesis/segmentation/spacenet7_frozen/runs/20260824T140818811757Z_spacenet7_panopticon_frozen_seed44_0f56f5e4/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260826T043459352021Z_c5_mcd_spacenet7_panopticon_frozen_seed42_6a5475ee",
+    "method": "mc_dropout",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 33,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 0,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 0,
+          "gradient_parameter_tensors": 0,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.0,
+          "any_nonzero_gradient": false
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.26311203837394714,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/panopticon/frozen/runs/20260826T043459352021Z_c5_mcd_spacenet7_panopticon_frozen_seed42_6a5475ee/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/panopticon/frozen/runs/20260826T043459352021Z_c5_mcd_spacenet7_panopticon_frozen_seed42_6a5475ee/training_history.json",
+    "history_type": "list",
+    "history_length": 43,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/panopticon/frozen/runs/20260826T043459352021Z_c5_mcd_spacenet7_panopticon_frozen_seed42_6a5475ee/input_artifacts.json",
+    "run_code_revision": "df93ce2e979426f3bbe928a0a79969487f3c225c84a38bb313b8c7362e034bac"
+  },
+  {
+    "run_id": "20260823T233635521819Z_spacenet7_panopticon_full_finetune_seed42_b6b452b4",
+    "method": "deterministic",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 40,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 179,
+          "gradient_parameter_tensors": 179,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.009307303465902805,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.2596259117126465,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T233635521819Z_spacenet7_panopticon_full_finetune_seed42_b6b452b4/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T233635521819Z_spacenet7_panopticon_full_finetune_seed42_b6b452b4/training_history.json",
+    "history_type": "list",
+    "history_length": 50,
+    "input_artifacts_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260823T233635521819Z_spacenet7_panopticon_full_finetune_seed42_b6b452b4/input_artifacts.json",
+    "run_code_revision": "bd306bfff952eafc584a9a4c7d63827400fcc575af0a81971755f8813a8f88f2"
+  },
+  {
+    "run_id": "20260824T050749487080Z_spacenet7_panopticon_full_finetune_seed43_efe0a455",
+    "method": "deterministic",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "43",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 23,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 179,
+          "gradient_parameter_tensors": 179,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.007595086470246315,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.35451552271842957,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T050749487080Z_spacenet7_panopticon_full_finetune_seed43_efe0a455/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T050749487080Z_spacenet7_panopticon_full_finetune_seed43_efe0a455/training_history.json",
+    "history_type": "list",
+    "history_length": 38,
+    "input_artifacts_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T050749487080Z_spacenet7_panopticon_full_finetune_seed43_efe0a455/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260824T115507474539Z_spacenet7_panopticon_full_finetune_seed44_f73c1ae1",
+    "method": "deterministic",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "44",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 42,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 179,
+          "gradient_parameter_tensors": 179,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.005281959660351276,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.4509288966655731,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T115507474539Z_spacenet7_panopticon_full_finetune_seed44_f73c1ae1/run_summary.json",
+    "history_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T115507474539Z_spacenet7_panopticon_full_finetune_seed44_f73c1ae1/training_history.json",
+    "history_type": "list",
+    "history_length": 50,
+    "input_artifacts_path": "results/final_thesis/segmentation/spacenet7_full_finetune/runs/20260824T115507474539Z_spacenet7_panopticon_full_finetune_seed44_f73c1ae1/input_artifacts.json",
+    "run_code_revision": "b5ae435f7c427ac50dd43c68fbc8e95ac81639393a99d47e946348015d5d9f93"
+  },
+  {
+    "run_id": "20260826T062053387434Z_c5_mcd_spacenet7_panopticon_full_finetune_seed42_a9cabedd",
+    "method": "mc_dropout",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "status": "completed",
+    "dry_run": false,
+    "best_epoch": 23,
+    "selection": {
+      "split": "val",
+      "metric": "miou",
+      "mode": "max"
+    },
+    "test_access_during_training_or_selection": false,
+    "trainable": {
+      "backbone_total_parameters": 98120448,
+      "backbone_trainable_parameters": 98115840,
+      "decoder_total_parameters": 2941890,
+      "decoder_trainable_parameters": 2941890
+    },
+    "gradient_audit": {
+      "batch_index": 0,
+      "groups": {
+        "backbone": {
+          "trainable_parameter_tensors": 179,
+          "gradient_parameter_tensors": 179,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.00908227264881134,
+          "any_nonzero_gradient": true
+        },
+        "head": {
+          "trainable_parameter_tensors": 26,
+          "gradient_parameter_tensors": 26,
+          "all_trainable_parameters_have_gradients": true,
+          "all_gradients_finite": true,
+          "maximum_absolute_gradient": 0.26311203837394714,
+          "any_nonzero_gradient": true
+        }
+      },
+      "epoch": 1
+    },
+    "pretrained_load": {
+      "weights": "VIT_BASE14",
+      "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth"
+    },
+    "run_summary_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/panopticon/full_finetune/runs/20260826T062053387434Z_c5_mcd_spacenet7_panopticon_full_finetune_seed42_a9cabedd/run_summary.json",
+    "history_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/panopticon/full_finetune/runs/20260826T062053387434Z_c5_mcd_spacenet7_panopticon_full_finetune_seed42_a9cabedd/training_history.json",
+    "history_type": "list",
+    "history_length": 38,
+    "input_artifacts_path": "results/final_thesis/mc_dropout/segmentation/spacenet7/panopticon/full_finetune/runs/20260826T062053387434Z_c5_mcd_spacenet7_panopticon_full_finetune_seed42_a9cabedd/input_artifacts.json",
+    "run_code_revision": "df93ce2e979426f3bbe928a0a79969487f3c225c84a38bb313b8c7362e034bac"
+  }
+]

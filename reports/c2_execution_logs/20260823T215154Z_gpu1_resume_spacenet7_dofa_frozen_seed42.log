@@ -1,0 +1,15 @@
+GPU=1 resume=results/final_thesis/segmentation/spacenet7_frozen/runs/20260823T212554554121Z_spacenet7_dofa_frozen_seed42_bb178c28 start=2026-08-23T21:51:54Z
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scripts/run_experiments.py", line 2919, in <module>
+    main()
+  File "/workspace/scripts/run_experiments.py", line 2894, in main
+    results.append(run_experiment(config, experiments[0], resume_run_dir=args.resume_run_dir))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scripts/run_experiments.py", line 2788, in run_experiment
+    return run_segmentation_experiment(config, experiment, resume_run_dir=resume_run_dir)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scripts/run_experiments.py", line 2481, in run_segmentation_experiment
+    raise ValueError("Code/config snapshot changed since segmentation run started; exact resume refused")
+ValueError: Code/config snapshot changed since segmentation run started; exact resume refused

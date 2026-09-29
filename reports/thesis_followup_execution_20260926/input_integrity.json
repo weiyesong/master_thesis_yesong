@@ -1,0 +1,24 @@
+{
+  "snapshot_sources_unchanged": [
+    "EO_FM_UQ_Core_RQ_Audit_Standard.md",
+    "reports/core_rq_completion_20260921/checks.csv",
+    "reports/core_rq_completion_20260921/published/tables/thesis_master_results.csv",
+    "reports/core_rq_completion_20260921/mc_dropout_three_way.csv",
+    "research_data/manifest.parquet",
+    "reports/thesis_followup_design_20260926/EXECUTION_PROMPT.md",
+    "reports/final_dataset_protocols.md",
+    "reports/final_training_protocol.md",
+    "reports/pre_uq_protocol_freeze.md",
+    "reports/mc_dropout_protocol.md"
+  ],
+  "prediction_files_size_and_mtime_unchanged": 100,
+  "original_source_hash_checks": 10,
+  "grouping_sources_hash_unchanged": [
+    "splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv",
+    "reports/dataset_manifests/treesatai_actual_manifest.csv",
+    "reports/dataset_manifests/cloudsen12_actual_manifest.csv",
+    "reports/dataset_manifests/spacenet7_actual_manifest.csv"
+  ],
+  "frozen_protocol_hash_unchanged": true,
+  "full_archive_rehashed": false
+}

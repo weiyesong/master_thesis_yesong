@@ -1,0 +1,54 @@
+{
+  "session_id": "5cf1f601-8904-4e8c-b643-7deba2098e15",
+  "rounds": [
+    {
+      "round": "independent_design",
+      "is_error": false,
+      "num_turns": 49,
+      "duration_ms": 615329,
+      "modelUsage": {
+        "claude-fable-5-1": {
+          "inputTokens": 290,
+          "outputTokens": 32655,
+          "cacheReadInputTokens": 681857,
+          "cacheCreationInputTokens": 116114,
+          "webSearchRequests": 0,
+          "costUSD": 3.2575392499999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 14829,
+          "canonicalModel": "claude-fable-5-1",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "permission_denials": [],
+      "total_cost_usd": 3.2575392499999998
+    },
+    {
+      "round": "final_prompt_review",
+      "is_error": false,
+      "num_turns": 5,
+      "duration_ms": 113751,
+      "modelUsage": {
+        "claude-fable-5-1": {
+          "inputTokens": 356,
+          "outputTokens": 39530,
+          "thinkingTokens": 18893,
+          "cacheReadInputTokens": 988886,
+          "cacheCreationInputTokens": 280343,
+          "webSearchRequests": 0,
+          "costUSD": 5.7315689999999995,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "canonicalModel": "claude-fable-5-1",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "permission_denials": [],
+      "total_cost_usd": 5.7315689999999995
+    }
+  ],
+  "public_tool_calls_saved": 52
+}

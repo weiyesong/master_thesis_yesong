@@ -1,0 +1,242 @@
+[
+  {
+    "status": "MISSING",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": 43,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": 44,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": 43,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": 44,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": 43,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "cloudsen12",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": 44,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": 43,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "cloudsen12",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": 44,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": 43,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": 44,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": 43,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": 44,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": 43,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "spacenet7",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": 44,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": 43,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  },
+  {
+    "status": "MISSING",
+    "dataset": "spacenet7",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": 44,
+    "run_id": null,
+    "run_dir": null,
+    "best_epoch": null,
+    "incomplete_attempts": [],
+    "noncandidate_attempts": [],
+    "errors": [
+      "no completed candidate found"
+    ]
+  }
+]

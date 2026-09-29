@@ -1,0 +1,73 @@
+{
+  "artifact_path": "results/final_thesis/core_rq_completion_20260921/segmentation/spacenet7/panopticon/full_finetune/seed42/predictions.npz",
+  "torch_version": "2.5.1+cu124",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "dtype": "float32",
+  "replay_batch_size": 8,
+  "full_test_images": 1152,
+  "valid_pixels": 57802752,
+  "max_cpu_replay_vs_export_probability_error": 0.0,
+  "max_cpu_cuda_probability_error": 1.1920928955078125e-07,
+  "argmax_difference_count": 1,
+  "difference_pixels": [
+    {
+      "sample_index": 873,
+      "sample_id": "sample_5025",
+      "row": 79,
+      "column": 123,
+      "label": 0,
+      "logits": [
+        -0.013092570938169956,
+        -0.013092494569718838
+      ],
+      "logit_difference_building_minus_background": 7.636845111846924e-08,
+      "exported_cpu_probabilities": [
+        0.4999999701976776,
+        0.5
+      ],
+      "replayed_cpu_probabilities": [
+        0.4999999701976776,
+        0.5
+      ],
+      "replayed_cuda_probabilities": [
+        0.5,
+        0.5
+      ],
+      "exported_prediction": 1,
+      "cuda_prediction": 0
+    }
+  ],
+  "exported_cpu_confusion_matrix": [
+    [
+      52967930,
+      807314
+    ],
+    [
+      3640568,
+      386940
+    ]
+  ],
+  "replayed_cuda_confusion_matrix": [
+    [
+      52967931,
+      807313
+    ],
+    [
+      3640568,
+      386940
+    ]
+  ],
+  "original_metrics_confusion_matrix": [
+    [
+      52967931,
+      807313
+    ],
+    [
+      3640568,
+      386940
+    ]
+  ],
+  "cuda_replay_matches_original_confusion_matrix": true,
+  "exported_cpu_replay_exact": true,
+  "scope": "Replay of existing logits only. No model inference or training. Original metric and prediction files unchanged."
+}

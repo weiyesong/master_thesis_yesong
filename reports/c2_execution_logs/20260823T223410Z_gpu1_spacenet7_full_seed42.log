@@ -1,0 +1,97 @@
+GPU=1 config=spacenet7_full_finetune_final seed=42 start=2026-08-23T22:34:10Z
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+[spacenet7_dofa_full_finetune seed=42] epoch=1 train_loss=0.222922 val_miou=0.466837 best_epoch=1 patience=0/15
+[spacenet7_dofa_full_finetune seed=42] epoch=2 train_loss=0.151973 val_miou=0.478441 best_epoch=2 patience=0/15
+[spacenet7_dofa_full_finetune seed=42] epoch=3 train_loss=0.139925 val_miou=0.476257 best_epoch=2 patience=1/15
+[spacenet7_dofa_full_finetune seed=42] epoch=4 train_loss=0.131921 val_miou=0.481490 best_epoch=4 patience=0/15
+[spacenet7_dofa_full_finetune seed=42] epoch=5 train_loss=0.121489 val_miou=0.488441 best_epoch=5 patience=0/15
+[spacenet7_dofa_full_finetune seed=42] epoch=6 train_loss=0.114662 val_miou=0.488616 best_epoch=6 patience=0/15
+[spacenet7_dofa_full_finetune seed=42] epoch=7 train_loss=0.107844 val_miou=0.483409 best_epoch=6 patience=1/15
+[spacenet7_dofa_full_finetune seed=42] epoch=8 train_loss=0.100602 val_miou=0.488503 best_epoch=6 patience=2/15
+[spacenet7_dofa_full_finetune seed=42] epoch=9 train_loss=0.094363 val_miou=0.491095 best_epoch=9 patience=0/15
+[spacenet7_dofa_full_finetune seed=42] epoch=10 train_loss=0.091477 val_miou=0.487424 best_epoch=9 patience=1/15
+[spacenet7_dofa_full_finetune seed=42] epoch=11 train_loss=0.083396 val_miou=0.489540 best_epoch=9 patience=2/15
+[spacenet7_dofa_full_finetune seed=42] epoch=12 train_loss=0.083317 val_miou=0.486849 best_epoch=9 patience=3/15
+[spacenet7_dofa_full_finetune seed=42] epoch=13 train_loss=0.074891 val_miou=0.495211 best_epoch=13 patience=0/15
+[spacenet7_dofa_full_finetune seed=42] epoch=14 train_loss=0.070789 val_miou=0.493271 best_epoch=13 patience=1/15
+[spacenet7_dofa_full_finetune seed=42] epoch=15 train_loss=0.065946 val_miou=0.490402 best_epoch=13 patience=2/15
+[spacenet7_dofa_full_finetune seed=42] epoch=16 train_loss=0.062715 val_miou=0.488108 best_epoch=13 patience=3/15
+[spacenet7_dofa_full_finetune seed=42] epoch=17 train_loss=0.059046 val_miou=0.491011 best_epoch=13 patience=4/15
+[spacenet7_dofa_full_finetune seed=42] epoch=18 train_loss=0.055518 val_miou=0.496983 best_epoch=18 patience=0/15
+[spacenet7_dofa_full_finetune seed=42] epoch=19 train_loss=0.051968 val_miou=0.493691 best_epoch=18 patience=1/15
+[spacenet7_dofa_full_finetune seed=42] epoch=20 train_loss=0.049072 val_miou=0.494395 best_epoch=18 patience=2/15
+[spacenet7_dofa_full_finetune seed=42] epoch=21 train_loss=0.045642 val_miou=0.495433 best_epoch=18 patience=3/15
+[spacenet7_dofa_full_finetune seed=42] epoch=22 train_loss=0.042714 val_miou=0.494023 best_epoch=18 patience=4/15
+[spacenet7_dofa_full_finetune seed=42] epoch=23 train_loss=0.041969 val_miou=0.503568 best_epoch=23 patience=0/15
+[spacenet7_dofa_full_finetune seed=42] epoch=24 train_loss=0.042174 val_miou=0.490764 best_epoch=23 patience=1/15
+[spacenet7_dofa_full_finetune seed=42] epoch=25 train_loss=0.043087 val_miou=0.481996 best_epoch=23 patience=2/15
+[spacenet7_dofa_full_finetune seed=42] epoch=26 train_loss=0.033462 val_miou=0.478807 best_epoch=23 patience=3/15
+[spacenet7_dofa_full_finetune seed=42] epoch=27 train_loss=0.031084 val_miou=0.486447 best_epoch=23 patience=4/15
+[spacenet7_dofa_full_finetune seed=42] epoch=28 train_loss=0.029592 val_miou=0.483787 best_epoch=23 patience=5/15
+[spacenet7_dofa_full_finetune seed=42] epoch=29 train_loss=0.028089 val_miou=0.487546 best_epoch=23 patience=6/15
+[spacenet7_dofa_full_finetune seed=42] epoch=30 train_loss=0.027469 val_miou=0.485616 best_epoch=23 patience=7/15
+[spacenet7_dofa_full_finetune seed=42] epoch=31 train_loss=0.025739 val_miou=0.487623 best_epoch=23 patience=8/15
+[spacenet7_dofa_full_finetune seed=42] epoch=32 train_loss=0.024606 val_miou=0.487392 best_epoch=23 patience=9/15
+[spacenet7_dofa_full_finetune seed=42] epoch=33 train_loss=0.023261 val_miou=0.486278 best_epoch=23 patience=10/15
+[spacenet7_dofa_full_finetune seed=42] epoch=34 train_loss=0.022919 val_miou=0.489783 best_epoch=23 patience=11/15
+[spacenet7_dofa_full_finetune seed=42] epoch=35 train_loss=0.021169 val_miou=0.483664 best_epoch=23 patience=12/15
+[spacenet7_dofa_full_finetune seed=42] epoch=36 train_loss=0.023865 val_miou=0.479945 best_epoch=23 patience=13/15
+[spacenet7_dofa_full_finetune seed=42] epoch=37 train_loss=0.020963 val_miou=0.477814 best_epoch=23 patience=14/15
+[spacenet7_dofa_full_finetune seed=42] epoch=38 train_loss=0.019242 val_miou=0.491693 best_epoch=23 patience=15/15
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+[spacenet7_panopticon_full_finetune seed=42] epoch=1 train_loss=0.201347 val_miou=0.485584 best_epoch=1 patience=0/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=2 train_loss=0.152724 val_miou=0.486665 best_epoch=2 patience=0/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=3 train_loss=0.141518 val_miou=0.489483 best_epoch=3 patience=0/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=4 train_loss=0.134287 val_miou=0.499563 best_epoch=4 patience=0/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=5 train_loss=0.124459 val_miou=0.491956 best_epoch=4 patience=1/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=6 train_loss=0.116767 val_miou=0.487996 best_epoch=4 patience=2/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=7 train_loss=0.110495 val_miou=0.494331 best_epoch=4 patience=3/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=8 train_loss=0.104339 val_miou=0.493069 best_epoch=4 patience=4/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=9 train_loss=0.098295 val_miou=0.497512 best_epoch=4 patience=5/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=10 train_loss=0.096744 val_miou=0.501544 best_epoch=10 patience=0/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=11 train_loss=0.088724 val_miou=0.504416 best_epoch=11 patience=0/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=12 train_loss=0.083824 val_miou=0.500285 best_epoch=11 patience=1/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=13 train_loss=0.079853 val_miou=0.499841 best_epoch=11 patience=2/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=14 train_loss=0.076381 val_miou=0.500057 best_epoch=11 patience=3/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=15 train_loss=0.072431 val_miou=0.502344 best_epoch=11 patience=4/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=16 train_loss=0.069445 val_miou=0.507779 best_epoch=16 patience=0/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=17 train_loss=0.066485 val_miou=0.515927 best_epoch=17 patience=0/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=18 train_loss=0.077916 val_miou=0.504946 best_epoch=17 patience=1/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=19 train_loss=0.064089 val_miou=0.499653 best_epoch=17 patience=2/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=20 train_loss=0.057676 val_miou=0.503821 best_epoch=17 patience=3/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=21 train_loss=0.054642 val_miou=0.499659 best_epoch=17 patience=4/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=22 train_loss=0.053093 val_miou=0.509453 best_epoch=17 patience=5/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=23 train_loss=0.050248 val_miou=0.507310 best_epoch=17 patience=6/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=24 train_loss=0.047907 val_miou=0.506249 best_epoch=17 patience=7/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=25 train_loss=0.045378 val_miou=0.516521 best_epoch=25 patience=0/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=26 train_loss=0.043815 val_miou=0.508261 best_epoch=25 patience=1/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=27 train_loss=0.041078 val_miou=0.514318 best_epoch=25 patience=2/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=28 train_loss=0.039390 val_miou=0.505889 best_epoch=25 patience=3/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=29 train_loss=0.047317 val_miou=0.495843 best_epoch=25 patience=4/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=30 train_loss=0.036709 val_miou=0.501199 best_epoch=25 patience=5/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=31 train_loss=0.032511 val_miou=0.503479 best_epoch=25 patience=6/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=32 train_loss=0.030881 val_miou=0.500281 best_epoch=25 patience=7/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=33 train_loss=0.029618 val_miou=0.509368 best_epoch=25 patience=8/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=34 train_loss=0.028717 val_miou=0.509293 best_epoch=25 patience=9/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=35 train_loss=0.027413 val_miou=0.503511 best_epoch=25 patience=10/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=36 train_loss=0.026260 val_miou=0.502725 best_epoch=25 patience=11/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=37 train_loss=0.024575 val_miou=0.507601 best_epoch=25 patience=12/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=38 train_loss=0.023842 val_miou=0.506050 best_epoch=25 patience=13/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=39 train_loss=0.030720 val_miou=0.509860 best_epoch=25 patience=14/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=40 train_loss=0.022816 val_miou=0.524184 best_epoch=40 patience=0/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=41 train_loss=0.021057 val_miou=0.503546 best_epoch=40 patience=1/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=42 train_loss=0.018944 val_miou=0.503724 best_epoch=40 patience=2/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=43 train_loss=0.018175 val_miou=0.510875 best_epoch=40 patience=3/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=44 train_loss=0.017713 val_miou=0.503014 best_epoch=40 patience=4/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=45 train_loss=0.017656 val_miou=0.505869 best_epoch=40 patience=5/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=46 train_loss=0.016532 val_miou=0.505216 best_epoch=40 patience=6/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=47 train_loss=0.016667 val_miou=0.507312 best_epoch=40 patience=7/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=48 train_loss=0.015722 val_miou=0.508094 best_epoch=40 patience=8/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=49 train_loss=0.014592 val_miou=0.505101 best_epoch=40 patience=9/15
+[spacenet7_panopticon_full_finetune seed=42] epoch=50 train_loss=0.015093 val_miou=0.503838 best_epoch=40 patience=10/15
+Wrote summary to /workspace/results/final_thesis/segmentation/spacenet7_full_finetune/summaries/20260824T012803627656Z_summary_seed42_df3debb9.json
+GPU=1 config_complete=2026-08-24T01:28:04Z

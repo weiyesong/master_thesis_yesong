@@ -1,0 +1,6 @@
+started_utc=2026-08-23T21:18:20Z
+gpu0_uuid=GPU-c30885a6-e058-bc7f-1f13-204acdc94f23
+gpu1_uuid=GPU-476a65d9-280a-9731-c63c-77e809fb9634
+gpu0_config=configs/cloudsen12_frozen_final.yaml
+gpu1_config=configs/spacenet7_frozen_final.yaml
+gpu0_exit=0 gpu1_exit=0 finished_utc=2026-08-23T21:18:59Z

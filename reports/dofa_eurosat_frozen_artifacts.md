@@ -1,0 +1,26 @@
+# DOFA–EuroSAT final artifact freeze manifest
+
+Created: 2026-08-09T16:51:14.491898+00:00
+
+The six validation-NLL-selected `best.pt` checkpoints and their complete deterministic test exports below are the frozen final thesis artifacts. Historical run directories are immutable: do not overwrite, resume, or replace them. `last.pt` is not a final artifact.
+
+The authoritative machine-readable freeze record is `reports/dofa_eurosat_final_manifest.json`. In addition to the fields shown below, it records each resolved config path/hash and each test Parquet hash. All files and directories inside the six run roots have had every write bit removed.
+
+| Run ID | Checkpoint path | Checkpoint SHA-256 | Prediction path | Adaptation | Seed | Accuracy | Macro-F1 | NLL | Brier | ECE-15 |
+|---|---|---|---|---|---:|---:|---:|---:|---:|---:|
+| `20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700` | `/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/best.pt` | `7cb285a3e45dcf6acb67c58e474d0b2bfed1aa78ddb6139ecd1dc261c84b54d0` | `/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/predictions/test/deterministic/predictions.parquet` | frozen | 42 | 0.983050847458 | 0.982032117932 | 0.058109323823 | 0.026905956161 | 0.004230741815 |
+| `20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c` | `/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/best.pt` | `67b3eb2be1b5f7bd2fb280fd975ac0583fc83bc3d4b3bc0eed2fb9f64c0b7960` | `/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T104927933179Z_eurosat_dofa_frozen_bnlinear_seed43_3567033c/predictions/test/deterministic/predictions.parquet` | frozen | 43 | 0.984156226971 | 0.983133690277 | 0.050330715676 | 0.024243360452 | 0.007125101286 |
+| `20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49` | `/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/best.pt` | `22e7fa5dae5d6e50606fc2c0e0707db513962efc13d62d6d71b22e2fe506a0b7` | `/workspace/results/baselines/dofa_eurosat_frozen_bnlinear/runs/20260807T110954653187Z_eurosat_dofa_frozen_bnlinear_seed44_36c48b49/predictions/test/deterministic/predictions.parquet` | frozen | 44 | 0.983050847458 | 0.981859098079 | 0.054730357969 | 0.026847744245 | 0.003668337434 |
+| `20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00` | `/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/best.pt` | `dc5cbeaaada0ae763de0b916fa9de099613c0ca495156b4984c09105e7010ae6` | `/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T211626550846Z_eurosat_dofa_full_finetune_seed42_466f9f00/predictions/test/deterministic/predictions.parquet` | full_finetune | 42 | 0.970891672808 | 0.970073083867 | 0.083690893234 | 0.043979038165 | 0.007804339874 |
+| `20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069` | `/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/best.pt` | `87635a994bd56920a2f0eab0dd1cddde528b2e6a277d57476c7d1dd67eb3d719` | `/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T215707981044Z_eurosat_dofa_full_finetune_seed43_53c8b069/predictions/test/deterministic/predictions.parquet` | full_finetune | 43 | 0.960574797347 | 0.960208070856 | 0.121393544670 | 0.059370781971 | 0.008803532593 |
+| `20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9` | `/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/best.pt` | `db55348289cad41a30a36365f96585b9dd1d98d877919cacdbc4b65b253fa730` | `/workspace/results/baselines/dofa_eurosat_full_finetune/runs/20260808T225252226548Z_eurosat_dofa_full_finetune_seed44_a9291cb9/predictions/test/deterministic/predictions.parquet` | full_finetune | 44 | 0.963154016212 | 0.960962168338 | 0.115748026383 | 0.056458336932 | 0.016743802890 |
+
+## Verification
+
+- All six checkpoint byte hashes match both this allowlist and the corresponding prediction manifest.
+- Every export is a validated, non-partial test export with 2,714 unique samples and 10-class probabilities.
+- Sample IDs, labels, row order, and class mappings match within each three-member ensemble.
+- The listed metrics were recomputed from the saved probabilities and match the existing metric artifacts.
+- Ensemble-analysis code snapshot: `sha256:5929b18c3a13d36d3407fa0c54373cdf1ee3cf5eb7a01b26bb349615bd145621` (79 files).
+- A fresh post-hoc source snapshot for the provenance-deficient historical runs is stored read-only at `/workspace/results/final_thesis/dofa_eurosat_freeze_20260810/code_snapshot.json`: `sha256:c99c1409e6a01bd4c4e2aca5208e847548b487e3ab8b84a798c796d1e16baa01` (77 files). It describes the repository state at freeze time and is not represented as the unavailable training-time source state.
+- No model was loaded, trained, fine-tuned, or used for inference; no Temperature Scaling was performed.

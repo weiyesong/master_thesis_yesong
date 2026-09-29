@@ -1,0 +1,5 @@
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+[spacenet7_dofa_frozen seed=42] epoch=1 train_loss=0.229672 val_miou=0.471254 best_epoch=1 patience=0/10
+[spacenet7_dofa_frozen seed=42] epoch=2 train_loss=0.167133 val_miou=0.470984 best_epoch=1 patience=1/10

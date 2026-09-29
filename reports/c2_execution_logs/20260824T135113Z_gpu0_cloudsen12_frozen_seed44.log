@@ -1,0 +1,69 @@
+GPU=0 config=configs/cloudsen12_frozen_final.yaml seed=44 start=2026-08-24T13:51:13Z
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+[cloudsen12_dofa_frozen seed=44] epoch=1 train_loss=0.821106 val_miou=0.477268 best_epoch=1 patience=0/10
+[cloudsen12_dofa_frozen seed=44] epoch=2 train_loss=0.601362 val_miou=0.550945 best_epoch=2 patience=0/10
+[cloudsen12_dofa_frozen seed=44] epoch=3 train_loss=0.540014 val_miou=0.578620 best_epoch=3 patience=0/10
+[cloudsen12_dofa_frozen seed=44] epoch=4 train_loss=0.489790 val_miou=0.566614 best_epoch=3 patience=1/10
+[cloudsen12_dofa_frozen seed=44] epoch=5 train_loss=0.469398 val_miou=0.586873 best_epoch=5 patience=0/10
+[cloudsen12_dofa_frozen seed=44] epoch=6 train_loss=0.440054 val_miou=0.576211 best_epoch=5 patience=1/10
+[cloudsen12_dofa_frozen seed=44] epoch=7 train_loss=0.430369 val_miou=0.571964 best_epoch=5 patience=2/10
+[cloudsen12_dofa_frozen seed=44] epoch=8 train_loss=0.411179 val_miou=0.583860 best_epoch=5 patience=3/10
+[cloudsen12_dofa_frozen seed=44] epoch=9 train_loss=0.396722 val_miou=0.589948 best_epoch=9 patience=0/10
+[cloudsen12_dofa_frozen seed=44] epoch=10 train_loss=0.392701 val_miou=0.595215 best_epoch=10 patience=0/10
+[cloudsen12_dofa_frozen seed=44] epoch=11 train_loss=0.382788 val_miou=0.590628 best_epoch=10 patience=1/10
+[cloudsen12_dofa_frozen seed=44] epoch=12 train_loss=0.361853 val_miou=0.603421 best_epoch=12 patience=0/10
+[cloudsen12_dofa_frozen seed=44] epoch=13 train_loss=0.359033 val_miou=0.595641 best_epoch=12 patience=1/10
+[cloudsen12_dofa_frozen seed=44] epoch=14 train_loss=0.357383 val_miou=0.583385 best_epoch=12 patience=2/10
+[cloudsen12_dofa_frozen seed=44] epoch=15 train_loss=0.341793 val_miou=0.603034 best_epoch=12 patience=3/10
+[cloudsen12_dofa_frozen seed=44] epoch=16 train_loss=0.333153 val_miou=0.606976 best_epoch=16 patience=0/10
+[cloudsen12_dofa_frozen seed=44] epoch=17 train_loss=0.327631 val_miou=0.603480 best_epoch=16 patience=1/10
+[cloudsen12_dofa_frozen seed=44] epoch=18 train_loss=0.322196 val_miou=0.608250 best_epoch=18 patience=0/10
+[cloudsen12_dofa_frozen seed=44] epoch=19 train_loss=0.315458 val_miou=0.601116 best_epoch=18 patience=1/10
+[cloudsen12_dofa_frozen seed=44] epoch=20 train_loss=0.318554 val_miou=0.609970 best_epoch=20 patience=0/10
+[cloudsen12_dofa_frozen seed=44] epoch=21 train_loss=0.301507 val_miou=0.612797 best_epoch=21 patience=0/10
+[cloudsen12_dofa_frozen seed=44] epoch=22 train_loss=0.295135 val_miou=0.605906 best_epoch=21 patience=1/10
+[cloudsen12_dofa_frozen seed=44] epoch=23 train_loss=0.303556 val_miou=0.611620 best_epoch=21 patience=2/10
+[cloudsen12_dofa_frozen seed=44] epoch=24 train_loss=0.287764 val_miou=0.615345 best_epoch=24 patience=0/10
+[cloudsen12_dofa_frozen seed=44] epoch=25 train_loss=0.276746 val_miou=0.602050 best_epoch=24 patience=1/10
+[cloudsen12_dofa_frozen seed=44] epoch=26 train_loss=0.281995 val_miou=0.607710 best_epoch=24 patience=2/10
+[cloudsen12_dofa_frozen seed=44] epoch=27 train_loss=0.273786 val_miou=0.612292 best_epoch=24 patience=3/10
+[cloudsen12_dofa_frozen seed=44] epoch=28 train_loss=0.271539 val_miou=0.602342 best_epoch=24 patience=4/10
+[cloudsen12_dofa_frozen seed=44] epoch=29 train_loss=0.264380 val_miou=0.598195 best_epoch=24 patience=5/10
+[cloudsen12_dofa_frozen seed=44] epoch=30 train_loss=0.268242 val_miou=0.606684 best_epoch=24 patience=6/10
+[cloudsen12_dofa_frozen seed=44] epoch=31 train_loss=0.268698 val_miou=0.605330 best_epoch=24 patience=7/10
+[cloudsen12_dofa_frozen seed=44] epoch=32 train_loss=0.253305 val_miou=0.611080 best_epoch=24 patience=8/10
+[cloudsen12_dofa_frozen seed=44] epoch=33 train_loss=0.247207 val_miou=0.614573 best_epoch=24 patience=9/10
+[cloudsen12_dofa_frozen seed=44] epoch=34 train_loss=0.251287 val_miou=0.608270 best_epoch=24 patience=10/10
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+Initializing normalizer from class: ZScoreNormalizer
+[cloudsen12_panopticon_frozen seed=44] epoch=1 train_loss=0.702722 val_miou=0.563178 best_epoch=1 patience=0/10
+[cloudsen12_panopticon_frozen seed=44] epoch=2 train_loss=0.468842 val_miou=0.624774 best_epoch=2 patience=0/10
+[cloudsen12_panopticon_frozen seed=44] epoch=3 train_loss=0.414043 val_miou=0.633767 best_epoch=3 patience=0/10
+[cloudsen12_panopticon_frozen seed=44] epoch=4 train_loss=0.381439 val_miou=0.635980 best_epoch=4 patience=0/10
+[cloudsen12_panopticon_frozen seed=44] epoch=5 train_loss=0.362834 val_miou=0.629013 best_epoch=4 patience=1/10
+[cloudsen12_panopticon_frozen seed=44] epoch=6 train_loss=0.338799 val_miou=0.646332 best_epoch=6 patience=0/10
+[cloudsen12_panopticon_frozen seed=44] epoch=7 train_loss=0.328826 val_miou=0.650649 best_epoch=7 patience=0/10
+[cloudsen12_panopticon_frozen seed=44] epoch=8 train_loss=0.311833 val_miou=0.653225 best_epoch=8 patience=0/10
+[cloudsen12_panopticon_frozen seed=44] epoch=9 train_loss=0.299539 val_miou=0.634652 best_epoch=8 patience=1/10
+[cloudsen12_panopticon_frozen seed=44] epoch=10 train_loss=0.290188 val_miou=0.649308 best_epoch=8 patience=2/10
+[cloudsen12_panopticon_frozen seed=44] epoch=11 train_loss=0.279778 val_miou=0.653459 best_epoch=11 patience=0/10
+[cloudsen12_panopticon_frozen seed=44] epoch=12 train_loss=0.270188 val_miou=0.651055 best_epoch=11 patience=1/10
+[cloudsen12_panopticon_frozen seed=44] epoch=13 train_loss=0.260032 val_miou=0.660308 best_epoch=13 patience=0/10
+[cloudsen12_panopticon_frozen seed=44] epoch=14 train_loss=0.251869 val_miou=0.660595 best_epoch=14 patience=0/10
+[cloudsen12_panopticon_frozen seed=44] epoch=15 train_loss=0.250087 val_miou=0.664493 best_epoch=15 patience=0/10
+[cloudsen12_panopticon_frozen seed=44] epoch=16 train_loss=0.244074 val_miou=0.670419 best_epoch=16 patience=0/10
+[cloudsen12_panopticon_frozen seed=44] epoch=17 train_loss=0.243204 val_miou=0.664495 best_epoch=16 patience=1/10
+[cloudsen12_panopticon_frozen seed=44] epoch=18 train_loss=0.237867 val_miou=0.668151 best_epoch=16 patience=2/10
+[cloudsen12_panopticon_frozen seed=44] epoch=19 train_loss=0.227824 val_miou=0.660634 best_epoch=16 patience=3/10
+[cloudsen12_panopticon_frozen seed=44] epoch=20 train_loss=0.228736 val_miou=0.659548 best_epoch=16 patience=4/10
+[cloudsen12_panopticon_frozen seed=44] epoch=21 train_loss=0.219222 val_miou=0.665950 best_epoch=16 patience=5/10
+[cloudsen12_panopticon_frozen seed=44] epoch=22 train_loss=0.216720 val_miou=0.656785 best_epoch=16 patience=6/10
+[cloudsen12_panopticon_frozen seed=44] epoch=23 train_loss=0.219317 val_miou=0.654473 best_epoch=16 patience=7/10
+[cloudsen12_panopticon_frozen seed=44] epoch=24 train_loss=0.213627 val_miou=0.668915 best_epoch=16 patience=8/10
+[cloudsen12_panopticon_frozen seed=44] epoch=25 train_loss=0.208362 val_miou=0.656679 best_epoch=16 patience=9/10
+[cloudsen12_panopticon_frozen seed=44] epoch=26 train_loss=0.221722 val_miou=0.661607 best_epoch=16 patience=10/10
+Wrote summary to /workspace/results/final_thesis/segmentation/cloudsen12_frozen/summaries/20260824T160458015573Z_summary_seed44_5e9eb133.json
+GPU=0 config=configs/cloudsen12_frozen_final.yaml seed=44 complete=2026-08-24T16:04:59Z

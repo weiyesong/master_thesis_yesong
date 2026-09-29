@@ -1,0 +1,53 @@
+{
+  "temperature": 1.2245838781656326,
+  "label_hash": "8165918951ff11179f23378ad48ed5600d46a9a4acf5dfc608fd2a7f4db4f9f8",
+  "ids_hash": "a0cd43df59b97d7158bcf86d28580e8aff146770b4463c2bb0749762037bf17e",
+  "n_samples": 2714,
+  "actual_core_metrics": {
+    "accuracy": 0.9543109801031687,
+    "brier": 0.07081498140495383,
+    "nll": 0.1488235838165442,
+    "nll_logits": 0.1488235838165442
+  },
+  "core_checks": [
+    {
+      "metric": "accuracy",
+      "actual": 0.9543109801031687,
+      "expected": 0.9543109801031687,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "brier",
+      "actual": 0.07081498140495383,
+      "expected": 0.07081498140495383,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "nll",
+      "actual": 0.1488235838165442,
+      "expected": 0.1488235838165442,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    }
+  ],
+  "validation": [
+    {
+      "check": "TS_scaled_logits_raw_over_T",
+      "max_abs_error": 0.0,
+      "tolerance": 2e-05,
+      "status": "PASS"
+    }
+  ],
+  "pmax_exactly_one": 0,
+  "pmax_one_errors": 0,
+  "load_seconds": 0.04626709036529064,
+  "ranking_bootstrap_seconds": 0.6000937223434448,
+  "total_seconds": 0.7342712711542845,
+  "peak_rss_GiB": 0.6045074462890625,
+  "status": "COMPLETE"
+}

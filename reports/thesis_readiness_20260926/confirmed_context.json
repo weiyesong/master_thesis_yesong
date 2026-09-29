@@ -1,0 +1,23 @@
+{
+  "date_utc": "2026-09-26T00:50:50.255449+00:00",
+  "degree": "Master",
+  "field": "Remote sensing",
+  "title": "Uncertainty for foundation models of earth observation",
+  "user_reported_requirements": "No explicit requirements currently known",
+  "interpretation": "No promised new method; wishes to contribute original thinking; limited remaining time",
+  "assumptions": [
+    "User wording 并为承诺 understood as 并未承诺",
+    "Two uncertainty types understood as aleatoric and epistemic"
+  ],
+  "not_provided": [
+    "institutional criteria",
+    "exact deadline",
+    "complete dissertation"
+  ],
+  "research_verdict": "READY_FOR_SCOPED_EMPIRICAL_THESIS_WRITING",
+  "formal_acceptance": "UNKNOWN",
+  "new_training_required_for_current_claims": false,
+  "new_primary_metric_recalculation_required": false,
+  "new_evaluation_required_for_current_claims": false,
+  "optional_analysis": "Existing classification MC tensors; exploratory proxy/error association only; not run this turn"
+}

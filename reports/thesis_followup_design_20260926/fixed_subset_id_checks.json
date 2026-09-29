@@ -1,0 +1,162 @@
+[
+  {
+    "path": "research_data/artifacts/segmentation/deep_ensemble/cloudsen12/dofa/frozen/research_subset_member_probabilities.npz",
+    "role": "segmentation_ensemble_member_subset",
+    "dataset": "cloudsen12",
+    "seed": null,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/deep_ensemble/cloudsen12/dofa/full_finetune/research_subset_member_probabilities.npz",
+    "role": "segmentation_ensemble_member_subset",
+    "dataset": "cloudsen12",
+    "seed": null,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/deep_ensemble/cloudsen12/panopticon/frozen/research_subset_member_probabilities.npz",
+    "role": "segmentation_ensemble_member_subset",
+    "dataset": "cloudsen12",
+    "seed": null,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/deep_ensemble/cloudsen12/panopticon/full_finetune/research_subset_member_probabilities.npz",
+    "role": "segmentation_ensemble_member_subset",
+    "dataset": "cloudsen12",
+    "seed": null,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/deep_ensemble/spacenet7/dofa/frozen/research_subset_member_probabilities.npz",
+    "role": "segmentation_ensemble_member_subset",
+    "dataset": "spacenet7",
+    "seed": null,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/deep_ensemble/spacenet7/dofa/full_finetune/research_subset_member_probabilities.npz",
+    "role": "segmentation_ensemble_member_subset",
+    "dataset": "spacenet7",
+    "seed": null,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/deep_ensemble/spacenet7/panopticon/frozen/research_subset_member_probabilities.npz",
+    "role": "segmentation_ensemble_member_subset",
+    "dataset": "spacenet7",
+    "seed": null,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/deep_ensemble/spacenet7/panopticon/full_finetune/research_subset_member_probabilities.npz",
+    "role": "segmentation_ensemble_member_subset",
+    "dataset": "spacenet7",
+    "seed": null,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/mc_dropout/cloudsen12/dofa/frozen/seed42/research_subset_stochastic_probabilities.npz",
+    "role": "segmentation_mc_raw_subset",
+    "dataset": "cloudsen12",
+    "seed": 42,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/mc_dropout/cloudsen12/dofa/full_finetune/seed42/research_subset_stochastic_probabilities.npz",
+    "role": "segmentation_mc_raw_subset",
+    "dataset": "cloudsen12",
+    "seed": 42,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/mc_dropout/cloudsen12/panopticon/frozen/seed42/research_subset_stochastic_probabilities.npz",
+    "role": "segmentation_mc_raw_subset",
+    "dataset": "cloudsen12",
+    "seed": 42,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/mc_dropout/cloudsen12/panopticon/frozen/seed43/research_subset_stochastic_probabilities.npz",
+    "role": "segmentation_mc_raw_subset",
+    "dataset": "cloudsen12",
+    "seed": 43,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/mc_dropout/cloudsen12/panopticon/frozen/seed44/research_subset_stochastic_probabilities.npz",
+    "role": "segmentation_mc_raw_subset",
+    "dataset": "cloudsen12",
+    "seed": 44,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/mc_dropout/cloudsen12/panopticon/full_finetune/seed42/research_subset_stochastic_probabilities.npz",
+    "role": "segmentation_mc_raw_subset",
+    "dataset": "cloudsen12",
+    "seed": 42,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/mc_dropout/spacenet7/dofa/frozen/seed42/research_subset_stochastic_probabilities.npz",
+    "role": "segmentation_mc_raw_subset",
+    "dataset": "spacenet7",
+    "seed": 42,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/mc_dropout/spacenet7/dofa/full_finetune/seed42/research_subset_stochastic_probabilities.npz",
+    "role": "segmentation_mc_raw_subset",
+    "dataset": "spacenet7",
+    "seed": 42,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/mc_dropout/spacenet7/dofa/full_finetune/seed43/research_subset_stochastic_probabilities.npz",
+    "role": "segmentation_mc_raw_subset",
+    "dataset": "spacenet7",
+    "seed": 43,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/mc_dropout/spacenet7/dofa/full_finetune/seed44/research_subset_stochastic_probabilities.npz",
+    "role": "segmentation_mc_raw_subset",
+    "dataset": "spacenet7",
+    "seed": 44,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/mc_dropout/spacenet7/panopticon/frozen/seed42/research_subset_stochastic_probabilities.npz",
+    "role": "segmentation_mc_raw_subset",
+    "dataset": "spacenet7",
+    "seed": 42,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  },
+  {
+    "path": "research_data/artifacts/segmentation/mc_dropout/spacenet7/panopticon/full_finetune/seed42/research_subset_stochastic_probabilities.npz",
+    "role": "segmentation_mc_raw_subset",
+    "dataset": "spacenet7",
+    "seed": 42,
+    "ordered_ids_match_fixed_definition": true,
+    "count": 32
+  }
+]

@@ -1,0 +1,23 @@
+benchmark:
+  name: GEO-Bench-2
+  distribution: GeoBenchV2
+  package_version: "0.9"
+  repository: https://github.com/The-AI-Alliance/GEO-Bench-2.git
+  git_commit: fd9d0b664e6fb0faba54636bdff4906634debd4b
+  install_spec: GeoBenchV2 @ git+https://github.com/The-AI-Alliance/GEO-Bench-2.git@fd9d0b664e6fb0faba54636bdff4906634debd4b
+  artifact_policy: official_geo_bench_2_benchmark_artifacts_only
+  split_policy: inspect_downloaded_embedded_manifests_do_not_hardcode_counts
+
+spectral_invariant:
+  canonical_dataset_field: wavelengths_nm
+  canonical_dataset_units: nanometers
+  optical_range_assertion_nm: [300.0, 2500.0]
+  model_adapters:
+    dofa:
+      conversion: nm_to_micrometers
+      actual_units: micrometers
+      optical_range_assertion: [0.3, 2.5]
+    panopticon:
+      conversion: identity
+      actual_units: nanometers
+      optical_range_assertion: [300.0, 2500.0]

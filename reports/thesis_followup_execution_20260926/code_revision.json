@@ -1,0 +1,20 @@
+{
+  "git_head": null,
+  "git_head_status": "unborn repository; no tracked files; no historical diff is available",
+  "files_sha256": {
+    "code/aggregate.py": "d15895ce82a8a73eda404817ac407b3865c8544d74d5474127b1d21b3201135f",
+    "code/analyze.py": "a30ed0ae25c4463cf4ef9cbff18573ad2bd412782506355d90d5d8cc40313e0e",
+    "code/checks.py": "3dab52a8efdbe3efceecd571d5f27b872ddac011fd369b398b0adf62b7871382",
+    "code/common.py": "d04310a46fd54e7b8f40b48e11dd07d8fc7e2e8c277100aab8f8d498fe859880",
+    "code/export_review.py": "0d64e449daa6c7857db8b74bac4d31d10f2d2ad1159496bb1a25fc5746a74fee",
+    "code/figures.py": "8cc34ae0c07533e9875dad37807ab02f2254df7d0efe7c72f3e4b8ddbd88697d",
+    "code/finalize.py": "753d6187b4e072aea529aa09231fce72dbccd16214bde3626b80cf19079418c3",
+    "code/metrics.py": "281029c38e84080b1fead4c3eee3bb2ec808cb92b6bd8871e9056db1433ced00",
+    "code/provenance.py": "f92854aa65921111258365de93d48c82fa7a5da1a2c5ab421e393331bb139f27",
+    "code/test_metrics.py": "2b1c10e82f32ad4ae7180e7a599ec3faba333042841504f42c15b23f94f39ce0",
+    "code/toy.py": "9a1ae046c70089e632a55e00e9af913deac0d30cdf3cc49a605f5815f6deb92c",
+    "code/verify_and_extend.py": "5d9ed00b00b5fa53d002cbf972e5544f5caa6eb856de67edff62f5e52a91548a"
+  },
+  "revision_basis": "content hashes of complete delivered analysis source",
+  "frozen_protocol_sha256": "c9d8aef040d70a5c340b2d85f775fe553e5cbfea6adae895a5ffc82dcc324654"
+}

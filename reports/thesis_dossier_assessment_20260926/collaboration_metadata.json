@@ -1,0 +1,55 @@
+{
+  "cli": "/home/yesong/.vscode-server/extensions/anthropic.claude-code-2.1.283-linux-x64/resources/native-binary/claude",
+  "reviews": [
+    {
+      "stage": "review",
+      "session_id": "2b6ecc7f-85f6-4a80-b847-2e48eaa4e6eb",
+      "is_error": false,
+      "num_turns": 36,
+      "duration_ms": 400859,
+      "model_usage": {
+        "claude-fable-5-1": {
+          "inputTokens": 194,
+          "outputTokens": 23384,
+          "cacheReadInputTokens": 520001,
+          "cacheCreationInputTokens": 182223,
+          "webSearchRequests": 0,
+          "costUSD": 3.5789277500000005,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 10495,
+          "canonicalModel": "claude-fable-5-1",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "raw_sha256": "8606a0c327b1de9c67471a19297900b5e8c1c99917b7ca03669c1cebd6ecd7a1"
+    },
+    {
+      "stage": "followup",
+      "session_id": "2b6ecc7f-85f6-4a80-b847-2e48eaa4e6eb",
+      "is_error": false,
+      "num_turns": 3,
+      "duration_ms": 50244,
+      "model_usage": {
+        "claude-fable-5-1": {
+          "inputTokens": 260,
+          "outputTokens": 25619,
+          "thinkingTokens": 10568,
+          "cacheReadInputTokens": 910500,
+          "cacheCreationInputTokens": 372636,
+          "webSearchRequests": 0,
+          "costUSD": 6.169125,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "canonicalModel": "claude-fable-5-1",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "raw_sha256": "bbc52c63f12fb0e6543b8f4c2640648fc39259cea791acefc2c6545b989ef14c"
+    }
+  ],
+  "tool_trace_records": 74,
+  "note": "Actual Claude Code CLI collaboration; tool calls/results retained, no private thinking export."
+}

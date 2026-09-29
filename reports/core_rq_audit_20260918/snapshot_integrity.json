@@ -1,0 +1,9 @@
+{
+  "checked_at_utc": "2026-09-19T07:32:33.728530+00:00",
+  "snapshot_id": "sha256:af23e14b2d75b8e64a69f582c35734075b5316873fc12c1f6e32af5e9e5890df",
+  "checked_files": 2394,
+  "changed": [],
+  "missing": [],
+  "historical_code_configs_reports_metadata_unchanged": true,
+  "large_binaries": "Independently read and hashed in prediction/checkpoint verification JSON; no writes to source experiment artifacts."
+}

@@ -1,0 +1,34 @@
+{
+  "design": {
+    "session_id": "b863b03a-db4d-49f9-9ab5-3d248fb85cf1",
+    "actual_model": [
+      "claude-fable-5-1"
+    ],
+    "result_type": "result",
+    "stop_reason": "end_turn",
+    "duration_api_ms": 447476,
+    "tool_counts": {
+      "Read": 18,
+      "tool_result": 43,
+      "Glob": 1,
+      "Bash": 19,
+      "Grep": 5
+    },
+    "permission_denials_count": 1,
+    "note": "One denied summary-pipeline command was nonessential; direct evidence reads and independent checks completed. See raw result and trace."
+  },
+  "final": {
+    "session_id": "ec6b0ddf-a6ea-4232-8ad1-aae9a3507e82",
+    "actual_model": [
+      "claude-fable-5-1"
+    ],
+    "duration_api_ms": 348750,
+    "stop_reason": "end_turn",
+    "tool_counts": {
+      "Bash": 26,
+      "tool_result": 40,
+      "Read": 14
+    },
+    "permission_denials_count": 0
+  }
+}

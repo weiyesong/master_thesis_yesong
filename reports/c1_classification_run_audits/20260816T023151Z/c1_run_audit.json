@@ -1,0 +1,535 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-08-16T02:31:51.035721+00:00",
+  "project_root": "/workspace",
+  "requested_seeds": [
+    44
+  ],
+  "promotion_policy": {
+    "basis": "validation_and_artifact_integrity_only",
+    "test_metrics_used": false,
+    "test_metrics_role": "report_only"
+  },
+  "summary": {
+    "promotable": 1,
+    "blocked": 0,
+    "missing": 5,
+    "ambiguous": 0,
+    "total": 6
+  },
+  "runs": [
+    {
+      "target": {
+        "dataset": "eurosat",
+        "model": "panopticon",
+        "adaptation": "frozen",
+        "experiment": "eurosat_panopticon_frozen_bnlinear",
+        "seed": 44
+      },
+      "target_key": "eurosat|panopticon|frozen|seed44",
+      "run_dir": null,
+      "run_id": null,
+      "status": "MISSING",
+      "promotion_eligible": false,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [
+        "No completed non-dry-run candidate was discovered or supplied."
+      ],
+      "warnings": [],
+      "test_metrics_report_only": {}
+    },
+    {
+      "target": {
+        "dataset": "eurosat",
+        "model": "panopticon",
+        "adaptation": "full_finetune",
+        "experiment": "eurosat_panopticon_full_finetune",
+        "seed": 44
+      },
+      "target_key": "eurosat|panopticon|full_finetune|seed44",
+      "run_dir": null,
+      "run_id": null,
+      "status": "MISSING",
+      "promotion_eligible": false,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [
+        "No completed non-dry-run candidate was discovered or supplied."
+      ],
+      "warnings": [],
+      "test_metrics_report_only": {}
+    },
+    {
+      "target": {
+        "dataset": "treesatai",
+        "model": "dofa",
+        "adaptation": "frozen",
+        "experiment": "treesatai_dofa_frozen",
+        "seed": 44
+      },
+      "target_key": "treesatai|dofa|frozen|seed44",
+      "run_dir": null,
+      "run_id": null,
+      "status": "MISSING",
+      "promotion_eligible": false,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [
+        "No completed non-dry-run candidate was discovered or supplied."
+      ],
+      "warnings": [],
+      "test_metrics_report_only": {}
+    },
+    {
+      "target": {
+        "dataset": "treesatai",
+        "model": "dofa",
+        "adaptation": "full_finetune",
+        "experiment": "treesatai_dofa_full_finetune",
+        "seed": 44
+      },
+      "target_key": "treesatai|dofa|full_finetune|seed44",
+      "run_dir": null,
+      "run_id": null,
+      "status": "MISSING",
+      "promotion_eligible": false,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [
+        "No completed non-dry-run candidate was discovered or supplied."
+      ],
+      "warnings": [],
+      "test_metrics_report_only": {}
+    },
+    {
+      "target": {
+        "dataset": "treesatai",
+        "model": "panopticon",
+        "adaptation": "frozen",
+        "experiment": "treesatai_panopticon_frozen",
+        "seed": 44
+      },
+      "target_key": "treesatai|panopticon|frozen|seed44",
+      "run_dir": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260816T020829175076Z_treesatai_panopticon_frozen_seed44_341d0eca",
+      "run_id": "20260816T020829175076Z_treesatai_panopticon_frozen_seed44_341d0eca",
+      "status": "PROMOTABLE",
+      "promotion_eligible": true,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [],
+      "warnings": [
+        "Post-best overfitting heuristic triggered; this does not invalidate the validation-selected checkpoint."
+      ],
+      "code_provenance": {
+        "code_sha256": "a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667",
+        "file_count": 90,
+        "environment_code_version": "sha256:a034ccdfa6ce19ee6dbb5df1ed4cceb8cc1e568b2f8f54863b71e3d12a803667"
+      },
+      "artifact_provenance": {
+        "training_protocol": {
+          "path": "/workspace/reports/final_training_protocol.md",
+          "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+          "actual_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711"
+        },
+        "dataset": {
+          "path": "/workspace/datasets/treesatai/geobench_treesatai.tortilla",
+          "expected_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+          "actual_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee"
+        },
+        "extracted_manifest": {
+          "path": "/workspace/reports/dataset_manifests/treesatai_actual_manifest.csv",
+          "expected_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+          "actual_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54"
+        },
+        "pretrained_weights": {
+          "path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+          "expected_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+          "actual_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e"
+        }
+      },
+      "recorded_input_artifacts": {
+        "required": true,
+        "all_verified": true,
+        "records": {
+          "dataset": {
+            "label": "dataset",
+            "path": "/workspace/datasets/treesatai/geobench_treesatai.tortilla",
+            "size_bytes": 1771492601,
+            "sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+            "expected_sha256": "0ddb8068720242ad4f5931ea91f3459ed695ad490bbaa48905afe72dd9623aee",
+            "verified": true
+          },
+          "extracted_manifest": {
+            "label": "extracted_manifest",
+            "path": "/workspace/reports/dataset_manifests/treesatai_actual_manifest.csv",
+            "size_bytes": 1371822,
+            "sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+            "expected_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54",
+            "verified": true
+          },
+          "training_protocol": {
+            "label": "training_protocol",
+            "path": "/workspace/reports/final_training_protocol.md",
+            "size_bytes": 15742,
+            "sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "verified": true
+          },
+          "pretrained_weights": {
+            "label": "panopticon_pretrained_weights",
+            "path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+            "size_bytes": 395965930,
+            "sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+            "expected_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+            "verified": true
+          }
+        }
+      },
+      "validation_curve": {
+        "epochs_completed": 25,
+        "epoch_cap": 50,
+        "best_epoch": 15,
+        "best_validation_nll": 0.268398642539978,
+        "first_validation_nll": 0.2877243161201477,
+        "last_validation_nll": 0.2797602117061615,
+        "best_validation_accuracy": 0.22599999606609344,
+        "best_validation_macro_f1": 0.1984139382839203,
+        "termination": "early_stopping"
+      },
+      "epoch_metrics_audit": {
+        "rows": 25,
+        "expected_rows": 25
+      },
+      "batch_audit": {
+        "rows": 1575,
+        "expected_rows": 1575,
+        "batches_per_epoch": 63
+      },
+      "model_gradient_audit": {
+        "model_audit": {
+          "adaptation_mode": "frozen",
+          "total_parameters": 98131983,
+          "trainable_parameters": 11535,
+          "backbone_total_parameters": 98120448,
+          "backbone_trainable_parameters": 0,
+          "backbone_structurally_frozen_parameters": {
+            "model.cls_token": 768,
+            "model.pos_embed": 197376,
+            "model.patch_embed.conv3d.conv3d.weight": 451584,
+            "model.patch_embed.conv3d.conv3d.bias": 2304,
+            "model.patch_embed.chnfus.query": 2304,
+            "model.patch_embed.chnfus.chnemb.embed_transmit": 1536,
+            "model.patch_embed.chnfus.chnemb.embed_receive": 1536,
+            "model.patch_embed.chnfus.chnemb.embed_orbit": 1536,
+            "model.patch_embed.chnfus.xattn.inproj_k.weight": 5308416,
+            "model.patch_embed.chnfus.xattn.inproj_v.weight": 5308416,
+            "model.patch_embed.proj.weight": 1769472,
+            "model.patch_embed.proj.bias": 768,
+            "model.blocks.0.norm1.weight": 768,
+            "model.blocks.0.norm1.bias": 768,
+            "model.blocks.0.attn.qkv.weight": 1769472,
+            "model.blocks.0.attn.qkv.bias": 2304,
+            "model.blocks.0.attn.proj.weight": 589824,
+            "model.blocks.0.attn.proj.bias": 768,
+            "model.blocks.0.ls1.gamma": 768,
+            "model.blocks.0.norm2.weight": 768,
+            "model.blocks.0.norm2.bias": 768,
+            "model.blocks.0.mlp.fc1.weight": 2359296,
+            "model.blocks.0.mlp.fc1.bias": 3072,
+            "model.blocks.0.mlp.fc2.weight": 2359296,
+            "model.blocks.0.mlp.fc2.bias": 768,
+            "model.blocks.0.ls2.gamma": 768,
+            "model.blocks.1.norm1.weight": 768,
+            "model.blocks.1.norm1.bias": 768,
+            "model.blocks.1.attn.qkv.weight": 1769472,
+            "model.blocks.1.attn.qkv.bias": 2304,
+            "model.blocks.1.attn.proj.weight": 589824,
+            "model.blocks.1.attn.proj.bias": 768,
+            "model.blocks.1.ls1.gamma": 768,
+            "model.blocks.1.norm2.weight": 768,
+            "model.blocks.1.norm2.bias": 768,
+            "model.blocks.1.mlp.fc1.weight": 2359296,
+            "model.blocks.1.mlp.fc1.bias": 3072,
+            "model.blocks.1.mlp.fc2.weight": 2359296,
+            "model.blocks.1.mlp.fc2.bias": 768,
+            "model.blocks.1.ls2.gamma": 768,
+            "model.blocks.2.norm1.weight": 768,
+            "model.blocks.2.norm1.bias": 768,
+            "model.blocks.2.attn.qkv.weight": 1769472,
+            "model.blocks.2.attn.qkv.bias": 2304,
+            "model.blocks.2.attn.proj.weight": 589824,
+            "model.blocks.2.attn.proj.bias": 768,
+            "model.blocks.2.ls1.gamma": 768,
+            "model.blocks.2.norm2.weight": 768,
+            "model.blocks.2.norm2.bias": 768,
+            "model.blocks.2.mlp.fc1.weight": 2359296,
+            "model.blocks.2.mlp.fc1.bias": 3072,
+            "model.blocks.2.mlp.fc2.weight": 2359296,
+            "model.blocks.2.mlp.fc2.bias": 768,
+            "model.blocks.2.ls2.gamma": 768,
+            "model.blocks.3.norm1.weight": 768,
+            "model.blocks.3.norm1.bias": 768,
+            "model.blocks.3.attn.qkv.weight": 1769472,
+            "model.blocks.3.attn.qkv.bias": 2304,
+            "model.blocks.3.attn.proj.weight": 589824,
+            "model.blocks.3.attn.proj.bias": 768,
+            "model.blocks.3.ls1.gamma": 768,
+            "model.blocks.3.norm2.weight": 768,
+            "model.blocks.3.norm2.bias": 768,
+            "model.blocks.3.mlp.fc1.weight": 2359296,
+            "model.blocks.3.mlp.fc1.bias": 3072,
+            "model.blocks.3.mlp.fc2.weight": 2359296,
+            "model.blocks.3.mlp.fc2.bias": 768,
+            "model.blocks.3.ls2.gamma": 768,
+            "model.blocks.4.norm1.weight": 768,
+            "model.blocks.4.norm1.bias": 768,
+            "model.blocks.4.attn.qkv.weight": 1769472,
+            "model.blocks.4.attn.qkv.bias": 2304,
+            "model.blocks.4.attn.proj.weight": 589824,
+            "model.blocks.4.attn.proj.bias": 768,
+            "model.blocks.4.ls1.gamma": 768,
+            "model.blocks.4.norm2.weight": 768,
+            "model.blocks.4.norm2.bias": 768,
+            "model.blocks.4.mlp.fc1.weight": 2359296,
+            "model.blocks.4.mlp.fc1.bias": 3072,
+            "model.blocks.4.mlp.fc2.weight": 2359296,
+            "model.blocks.4.mlp.fc2.bias": 768,
+            "model.blocks.4.ls2.gamma": 768,
+            "model.blocks.5.norm1.weight": 768,
+            "model.blocks.5.norm1.bias": 768,
+            "model.blocks.5.attn.qkv.weight": 1769472,
+            "model.blocks.5.attn.qkv.bias": 2304,
+            "model.blocks.5.attn.proj.weight": 589824,
+            "model.blocks.5.attn.proj.bias": 768,
+            "model.blocks.5.ls1.gamma": 768,
+            "model.blocks.5.norm2.weight": 768,
+            "model.blocks.5.norm2.bias": 768,
+            "model.blocks.5.mlp.fc1.weight": 2359296,
+            "model.blocks.5.mlp.fc1.bias": 3072,
+            "model.blocks.5.mlp.fc2.weight": 2359296,
+            "model.blocks.5.mlp.fc2.bias": 768,
+            "model.blocks.5.ls2.gamma": 768,
+            "model.blocks.6.norm1.weight": 768,
+            "model.blocks.6.norm1.bias": 768,
+            "model.blocks.6.attn.qkv.weight": 1769472,
+            "model.blocks.6.attn.qkv.bias": 2304,
+            "model.blocks.6.attn.proj.weight": 589824,
+            "model.blocks.6.attn.proj.bias": 768,
+            "model.blocks.6.ls1.gamma": 768,
+            "model.blocks.6.norm2.weight": 768,
+            "model.blocks.6.norm2.bias": 768,
+            "model.blocks.6.mlp.fc1.weight": 2359296,
+            "model.blocks.6.mlp.fc1.bias": 3072,
+            "model.blocks.6.mlp.fc2.weight": 2359296,
+            "model.blocks.6.mlp.fc2.bias": 768,
+            "model.blocks.6.ls2.gamma": 768,
+            "model.blocks.7.norm1.weight": 768,
+            "model.blocks.7.norm1.bias": 768,
+            "model.blocks.7.attn.qkv.weight": 1769472,
+            "model.blocks.7.attn.qkv.bias": 2304,
+            "model.blocks.7.attn.proj.weight": 589824,
+            "model.blocks.7.attn.proj.bias": 768,
+            "model.blocks.7.ls1.gamma": 768,
+            "model.blocks.7.norm2.weight": 768,
+            "model.blocks.7.norm2.bias": 768,
+            "model.blocks.7.mlp.fc1.weight": 2359296,
+            "model.blocks.7.mlp.fc1.bias": 3072,
+            "model.blocks.7.mlp.fc2.weight": 2359296,
+            "model.blocks.7.mlp.fc2.bias": 768,
+            "model.blocks.7.ls2.gamma": 768,
+            "model.blocks.8.norm1.weight": 768,
+            "model.blocks.8.norm1.bias": 768,
+            "model.blocks.8.attn.qkv.weight": 1769472,
+            "model.blocks.8.attn.qkv.bias": 2304,
+            "model.blocks.8.attn.proj.weight": 589824,
+            "model.blocks.8.attn.proj.bias": 768,
+            "model.blocks.8.ls1.gamma": 768,
+            "model.blocks.8.norm2.weight": 768,
+            "model.blocks.8.norm2.bias": 768,
+            "model.blocks.8.mlp.fc1.weight": 2359296,
+            "model.blocks.8.mlp.fc1.bias": 3072,
+            "model.blocks.8.mlp.fc2.weight": 2359296,
+            "model.blocks.8.mlp.fc2.bias": 768,
+            "model.blocks.8.ls2.gamma": 768,
+            "model.blocks.9.norm1.weight": 768,
+            "model.blocks.9.norm1.bias": 768,
+            "model.blocks.9.attn.qkv.weight": 1769472,
+            "model.blocks.9.attn.qkv.bias": 2304,
+            "model.blocks.9.attn.proj.weight": 589824,
+            "model.blocks.9.attn.proj.bias": 768,
+            "model.blocks.9.ls1.gamma": 768,
+            "model.blocks.9.norm2.weight": 768,
+            "model.blocks.9.norm2.bias": 768,
+            "model.blocks.9.mlp.fc1.weight": 2359296,
+            "model.blocks.9.mlp.fc1.bias": 3072,
+            "model.blocks.9.mlp.fc2.weight": 2359296,
+            "model.blocks.9.mlp.fc2.bias": 768,
+            "model.blocks.9.ls2.gamma": 768,
+            "model.blocks.10.norm1.weight": 768,
+            "model.blocks.10.norm1.bias": 768,
+            "model.blocks.10.attn.qkv.weight": 1769472,
+            "model.blocks.10.attn.qkv.bias": 2304,
+            "model.blocks.10.attn.proj.weight": 589824,
+            "model.blocks.10.attn.proj.bias": 768,
+            "model.blocks.10.ls1.gamma": 768,
+            "model.blocks.10.norm2.weight": 768,
+            "model.blocks.10.norm2.bias": 768,
+            "model.blocks.10.mlp.fc1.weight": 2359296,
+            "model.blocks.10.mlp.fc1.bias": 3072,
+            "model.blocks.10.mlp.fc2.weight": 2359296,
+            "model.blocks.10.mlp.fc2.bias": 768,
+            "model.blocks.10.ls2.gamma": 768,
+            "model.blocks.11.norm1.weight": 768,
+            "model.blocks.11.norm1.bias": 768,
+            "model.blocks.11.attn.qkv.weight": 1769472,
+            "model.blocks.11.attn.qkv.bias": 2304,
+            "model.blocks.11.attn.proj.weight": 589824,
+            "model.blocks.11.attn.proj.bias": 768,
+            "model.blocks.11.ls1.gamma": 768,
+            "model.blocks.11.norm2.weight": 768,
+            "model.blocks.11.norm2.bias": 768,
+            "model.blocks.11.mlp.fc1.weight": 2359296,
+            "model.blocks.11.mlp.fc1.bias": 3072,
+            "model.blocks.11.mlp.fc2.weight": 2359296,
+            "model.blocks.11.mlp.fc2.bias": 768,
+            "model.blocks.11.ls2.gamma": 768,
+            "model.norm.weight": 768,
+            "model.norm.bias": 768
+          },
+          "backbone_expected_trainable_parameters": 0,
+          "all_expected_backbone_parameters_trainable": true,
+          "head_total_parameters": 11535,
+          "head_trainable_parameters": 11535,
+          "backbone_requires_grad_all_false": true,
+          "training_mode_policy": {
+            "wrapper_training": true,
+            "backbone_training": false,
+            "head_training": true,
+            "backbone_batchnorm": "eval; running statistics are not updated",
+            "backbone_layernorm": "eval with frozen affine parameters; LayerNorm has no running statistics",
+            "backbone_dropout": "disabled because backbone is held in eval mode",
+            "head_batchnorm": "train during updates; eval for validation/test",
+            "head_dropout": "configured"
+          },
+          "backbone_module_counts": {
+            "normalization_total": 25,
+            "batchnorm": 0,
+            "layernorm": 25,
+            "groupnorm": 0,
+            "dropout": 50,
+            "drop_path_or_stochastic_depth": 0
+          },
+          "head": "Sequential(\n  (0): Dropout(p=0.0, inplace=False)\n  (1): Linear(in_features=768, out_features=15, bias=True)\n)",
+          "pretrained_load": {
+            "weights": "VIT_BASE14",
+            "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+            "missing_keys": [],
+            "unexpected_keys": []
+          }
+        },
+        "optimizer_group_audit": {
+          "head": {
+            "parameter_tensors": 2,
+            "trainable_parameters": 11535,
+            "base_learning_rate": 0.001,
+            "weight_decay": 0.01
+          }
+        },
+        "gradient_audit": {
+          "performed": true,
+          "expected_parameter_tensors": 2,
+          "all_expected_parameters_received_gradient": true,
+          "missing_gradient_parameters": [],
+          "zero_gradient_parameters": [],
+          "nonfinite_gradient_parameters": [],
+          "epoch": 1
+        }
+      },
+      "checkpoint": {
+        "best": {
+          "path": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260816T020829175076Z_treesatai_panopticon_frozen_seed44_341d0eca/best.pt",
+          "sha256": "82d85a4a1819fe7f7220171707d513df66a66ce7796e32c2e5b3f8f522789f26",
+          "size_bytes": 392611710
+        },
+        "last": {
+          "path": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260816T020829175076Z_treesatai_panopticon_frozen_seed44_341d0eca/last.pt",
+          "size_bytes": 392957685,
+          "sha256": "225ce72bb71e039d67afb176963110313dacc02b74a5b5326f16d5cf121c85ac",
+          "load_valid": true,
+          "epoch": 25,
+          "best_epoch": 15,
+          "epochs_without_improvement": 10,
+          "optimizer_groups": [
+            "head"
+          ]
+        },
+        "path": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260816T020829175076Z_treesatai_panopticon_frozen_seed44_341d0eca/best.pt",
+        "sha256": "82d85a4a1819fe7f7220171707d513df66a66ce7796e32c2e5b3f8f522789f26"
+      },
+      "resume_provenance": {
+        "resumed": false,
+        "event_count": 0
+      },
+      "prediction_export": {
+        "path": "/workspace/results/final_thesis/classification/treesatai_frozen/runs/20260816T020829175076Z_treesatai_panopticon_frozen_seed44_341d0eca/predictions/test/deterministic",
+        "validation": {
+          "valid": true,
+          "errors": [],
+          "sample_count": 2000,
+          "sample_ids_unique": true,
+          "classification_type": "multilabel",
+          "schema_version": 2,
+          "probability_sum_max_abs_error": null,
+          "argmax_matches": null,
+          "finite": true,
+          "stochastic_shape": null,
+          "embedding_shape": [
+            2000,
+            768
+          ]
+        },
+        "sample_count": 2000,
+        "logit_shape": [
+          2000,
+          15
+        ],
+        "representation_shape": [
+          2000,
+          768
+        ],
+        "exact_official_sample_order": true,
+        "exact_official_labels": true
+      },
+      "test_metrics_report_only": {
+        "accuracy": 0.2345,
+        "labelwise_accuracy": 0.9014,
+        "macro_f1": 0.20865760915644568,
+        "nll": 0.2582176728557611,
+        "brier": 0.07574351895939471,
+        "ece": 0.009280648868012453
+      }
+    },
+    {
+      "target": {
+        "dataset": "treesatai",
+        "model": "panopticon",
+        "adaptation": "full_finetune",
+        "experiment": "treesatai_panopticon_full_finetune",
+        "seed": 44
+      },
+      "target_key": "treesatai|panopticon|full_finetune|seed44",
+      "run_dir": null,
+      "run_id": null,
+      "status": "MISSING",
+      "promotion_eligible": false,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [
+        "No completed non-dry-run candidate was discovered or supplied."
+      ],
+      "warnings": [],
+      "test_metrics_report_only": {}
+    }
+  ]
+}

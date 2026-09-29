@@ -1,0 +1,17 @@
+{
+  "current_published_text_unchanged": true,
+  "checks": [
+    {
+      "role": "current_published_stage",
+      "status": "PASS"
+    },
+    {
+      "role": "default_output_stage",
+      "status": "PASS"
+    },
+    {
+      "role": "arbitrary_nested_output",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "eurosat": {
+    "images": 2714,
+    "groups": 786,
+    "minimum_group_images": 1,
+    "maximum_group_images": 93,
+    "basis": "provided spatial_group",
+    "source_sha256": "c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22"
+  },
+  "treesatai": {
+    "images": 2000,
+    "groups": 2000,
+    "minimum_group_images": 1,
+    "maximum_group_images": 1,
+    "basis": "image; all test coordinates distinct; nearby correlation unknown",
+    "source_sha256": "b958ada672e7aeaa29652731af814834e9dae4fbe1c53d2edc92802ff18eae54"
+  },
+  "cloudsen12": {
+    "images": 975,
+    "groups": 184,
+    "minimum_group_images": 5,
+    "maximum_group_images": 15,
+    "basis": "full-manifest roi/equi/product connected components",
+    "source_sha256": "af395425e531b213e59f49290bb3101715557583cefb48d6efc7b02465d95f1a"
+  },
+  "spacenet7": {
+    "images": 1152,
+    "groups": 12,
+    "minimum_group_images": 84,
+    "maximum_group_images": 100,
+    "basis": "AOI",
+    "source_sha256": "ef5b1d89883d1cdee9fca81c2c37989f661d93fd21bdfda6dc333204aeefa5ce"
+  }
+}

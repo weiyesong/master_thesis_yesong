@@ -1,0 +1,75 @@
+审查完成。以下为独立第一轮结论，全部基于快照 `reports/core_rq_audit_20260918/snapshot.json`（snapshot_id `sha256:af23e14b…890df`，仓库无 commit）。未读取 Codex 草稿；所有 PASS 均以直接证据或本人重算为据，未引用任何 agent 总结。本轮未训练、未修改源代码或旧产物；重算仅在 CPU 上读取已保存的 parquet/NPZ/checkpoint 权重。
+
+## 一、覆盖表与总体判断
+
+**已声明 vs 实际矩阵**（依据 `final_training_protocol.md` L11-18、`pre_uq_protocol_freeze.md` §5.2 L146-169、§2 L72-87）
+
+| 维度 | 已声明 | 实际 | 证据 | 缺失/不适用说明 |
+|---|---|---|---|---|
+| 模型 | DOFA ViT-B (DOFA_ViT_base_e100, sha 4720985e…)、Panopticon VIT_BASE14 (sha 55024f41…) | 同 | `configs/treesatai_frozen_final.yaml`；run `model_audit.json.pretrained_load` | 无 |
+| 数据/任务 | EuroSAT RGB 10 类多分类；TreeSatAI 12 波段 15 标签多标签；CloudSEN12 12 波段 4 类分割；SpaceNet7 RGB 二类分割 | 同 | `final_dataset_protocols.md` L17-20, L120, L163, L216-217 | TreeSatAI 为 T=1 静态 |
+| 适配 | frozen（仅 head/decoder）与 full_finetune | 同；full 下 Panopticon 3 个 SAR 通道嵌入结构性冻结（4,608 参数） | `model_audit.json`：frozen backbone_trainable=0；full 98,115,840/98,120,448 | 已披露 |
+| 确定性 seed | 16 cell × 3 seed = 48 | 48，全部 PROMOTABLE | C1 audit 18/18 + `dofa_eurosat_final_manifest.json` 6；C2 `20260824T162250Z/audit.csv` 24/24 | 两个零 epoch 初始化目录记录为 NONCANDIDATE |
+| TS | 分类 8 cell | EuroSAT 4 cell × 3 seed（专用 calibration split）完成；TreeSatAI 4 cell 产物存在（val 拟合）但**状态在两套最终产物中相反**；分割 8 cell N/A | `c3_classification_results.csv`；`thesis_master_results.csv` NOT_APPLICABLE ×4；`final_thesis_tables/classification_results.csv` COMPLETE ×4 | 见 C09/R3.2 |
+| MC Dropout | 16 cell seed 42 + 4 cell 加 seed 43/44 = 24 新训练 | 24，C5 审计全部通过 | `results/final_thesis/mc_dropout/run_registry.json`；`mc_dropout_results.csv` 24 行 | 12 cell 单 seed |
+| Deep Ensemble | 16 cell，各一个 3 成员集成 | 16 | `c3_classification_results.csv`；`c3_segmentation_ensemble_results.csv` | 每 cell 仅一个集成 |
+
+**数值一致性抽查（本人重算）**：master 表 24 个 MEAN_STD 行的 135 个均值/标准差与逐 seed 行完全一致；最终表 273 个数值与 master 一致；`mc_dropout_results.csv` 与 master 一致。从保存预测重算 EuroSAT DOFA frozen s42、TreeSatAI PAN full s42、MC EuroSAT DOFA frozen s42、MC SpaceNet7 DOFA full s42 四组指标，与报告值一致到 1e-9 量级。
+
+**总体判断**：证据链完整、可追溯，实现层面未发现使结果无效的缺陷。存在 3 个直接影响 RQ3/RQ1 结论强度的 FAIL（MC 同权重 dropout-off 基线缺失且我已量化其影响；TreeSatAI TS 在最终产物间状态矛盾且排除决定发生于看到不利测试结果之后；TreeSatAI 校准指标命名与类条件证据不足），以及若干可用现有预测补齐的分析缺口。不需要新训练。
+
+## 二、29 项逐项检查
+
+所有行的 code_revision 均为 snapshot `af23e14b…`；各 run 的代码快照：DOFA-EuroSAT `c99c1409`（事后快照）、C1 `d4c7e9d0`/`82467b95`、C3 `4b7c4058`/`aae9032c`、C5 `df93ce29`。owner 写在“最小补救”括号内。
+
+| ID | RQ | 适用范围 | 状态 | 直接证据 | 发现与对答案的影响 | 最小补救 | 验收证据 |
+|---|---|---|---|---|---|---|---|
+| C01 | 全部 | 全矩阵 | PASS | `final_training_protocol.md` §8 L111-117；C1 audit 字段 `test_metrics_used_for_promotion=false`（`c6_build_final_results.py` L193 强制）；C5 `_training_audit` L205-206 `test_evaluation_disabled`；MC 配置 `evaluation.test_enabled: false` | 选 checkpoint 只用 val；EuroSAT TS 用 calibration split；MC 训练期无 test 评估。注意：checkpoint 选择规则于 8-25 被"确认"时测试结果已知，但规则本身 8-15 已冻结，不构成泄漏 | 无 | 已有 |
+| C02 | RQ3 | TS | PASS（附披露要求） | EuroSAT：`metrics_and_manifest.json` `fit_split=calibration, fit_sample_count=2713`；TreeSatAI：`c3_treesatai_temperature_scaling.md` L5 承认 val 双重用途 | 分离正确。TreeSatAI val 复用按本标准"披露即可"，不必然无效；当前处理为排除，见 C09 | 在文稿中写明 TreeSatAI/分割无独立 calibration split | 文稿披露段落 |
+| C03 | 全部 | TreeSatAI 多标签 | PASS（命名 FAIL 归 R1.2） | `run_experiments.py` L1108 `binary_cross_entropy_with_logits`；`prediction_export.py` L54 sigmoid、L71 阈值 0.5、L537 exact-match；配置 `multilabel_threshold: 0.5`；checkpoint 选 val BCE-NLL | 损失/输出/决策规则一致。但阈值 0.5 下平均预测 1.22 标签/样本 vs 真值 1.89，9.85% 样本无任何预测标签，5/15 类 F1=0（本人重算 PAN full s42） | 文稿说明阈值与后果 | 见 R1.2 |
+| C04 | 全部 | 全矩阵 | PASS | `model_audit.json`（treesatai_dofa_frozen_s42：backbone_trainable=0，`backbone_dropout: disabled`；treesatai_pan_full_s42：3 个 chnemb 结构冻结）；`gradient_audit.json` 全部参数有有限梯度；DOFA 载入 unexpected_keys 仅 `mask_token/projector.*`（预训练专用）；`segmentation_pipeline.py` L277-311 冻结不变量 | 与声明一致。抽查 2 个分类 run；C5 对 24 个 MC run 的 13 项检查全部通过（`c5_audit.json.passed`） | 无 | 已有 |
+| C05 | 全部 | 全部指标 | PASS（含跨任务不可比披露） | 分类 ECE `prediction_export.py` L606-611（top-label，15 等宽，(lo,hi]，空箱跳过，样本比例加权）；多标签 ECE L541-552（决策置信度 max(p,1−p)，展平）；多分类 Brier L603 逐类求和，多标签 Brier L540 逐 sample-label 求均值；分割 `segmentation_pipeline.py` L410-436 同分箱、L479-481 统一 ignore、L548-549 逐有效像素 | 定义明确且实现一致。但 Brier 归一化在 EuroSAT（类求和）与 TreeSatAI（均值）不同；TreeSatAI "ECE" 为决策级而非标签概率级 | 在指标定义节明写两种归一化与 TreeSatAI ECE 语义（作者） | 定义表 |
+| C06 | 全部 | 全矛盾 | PASS | master 表每行含 run_id、checkpoint_sha256、source_paths；本人重算 4 组产物与表值一致（见上）；C5 推理前后校验 MC 与确定性 checkpoint 哈希 | 可独立重算 | 无 | 本审查重算记录 |
+| C07 | 全部 | 全部 | PASS | master 84 INDIVIDUAL_SEED 行保留；`rq_effect_summary.md` L11、L26 说明 std 来自逐 seed 差值；`build_rq_effect_tables.py` L400-441 集成不派生 std | 单位正确。限制：12 个 MC cell 单 seed；每 cell 仅一个集成；无评估样本区间 | 无 | 已有 |
+| C08 | 全部 | 四数据集 | PASS（附限制） | `splits/…/spatial_leakage_report.json`：跨 split 重叠/20 m 邻接边=0，源景 ID 不可得；`final_dataset_protocols.md` L172-176 三个 S2 产品跨 split；SpaceNet7 test 仅 12 个 AOI（manifest 重算，每 AOI 84–100 个月度 patch） | 泄漏控制与目标一致并披露。因未报告任何评估样本区间，无"像素当独立样本"问题；但 SpaceNet7 test 有效独立单元≈12 AOI，任何跨 cell 的小差异都不应被解读为稳定 | 文稿写明 12 AOI 与像素相关性（作者） | 披露段落 |
+| C09 | 全部 | TreeSatAI TS；版本链 | **FAIL** | `final_thesis_results.md` L10、L42/46/50/54 及 `final_thesis_tables/classification_results.csv`（8-26）标 COMPLETE；`pre_uq_protocol_freeze.md` §2.1 L72-83（8-25）与 `thesis_master_results.csv`/`rq3_uq_effects.csv`（8-27）标 N/A；`c3_treesatai_temperature_scaling.md`（8-24）显示 TS 使 ECE 变差 11/12、NLL 变差 10/12 | 排除决定在不利测试结果可见之后作出，且"最终包"与"效应表"互相矛盾。给出的理由（无独立 calibration split）是合理的先验理由，但时序令其看似选择性删除。其他排除项（零 epoch 目录、CloudSEN12 一像素）记录良好 | 二选一并只保留一个权威版本：建议按 C02 将 TreeSatAI val 拟合 TS 作为"已披露的次级结果"报告（结论即"无改善/略变差"），并在文稿写明决策时序；重跑 `c6_build_final_results.py` 以 master 表为输入（Codex/作者） | 最终包、master、效应表三者状态一致；文稿含时序说明 |
+| R1.1 | RQ1 | EuroSAT DOFA vs PAN | PASS（结论须限定） | `final_training_protocol.md` L85、L90：DOFA 历史常数 [1136.89,…] vs PAN 训练集统计 [936.09,…]；波长 665/560/490 vs 664.63/…；DOFA run 为 schema v1 旧代码；MC DOFA 配置沿用历史常数（`configs/c5_mc_dropout/eurosat_dofa_frozen.yaml` 无 normalization 块，走 `run_experiments.py` L94 默认值） | 其余三数据集两模型输入张量相同。EuroSAT 的模型差异只能表述为"整套配置差异" | 无补跑；措辞限定（作者） | 文稿限定语 |
+| R1.2 | RQ1 | 全部；重点 TreeSatAI | **FAIL**（命名/类条件） | `final_thesis_results.md` L39 列名 "Accuracy/ECE-15" 与 EuroSAT 同列；本人重算 PAN full s42：决策 ECE 0.0113，其中 91.9% 决策为负类预测（负决策 ECE 0.016，正决策 ECE 0.050）；标签概率-频率 ECE 0.0188；逐类 ECE 均值 0.034，Quercus 0.123、Larix 0.080 | 单标签/分割指标齐备（mIoU、逐类 IoU、像素精度、NLL/Brier/ECE）。TreeSatAI 的"ECE-15"主要反映大量高置信负预测，掩盖正类概率的过度自信（reliability 图中中段频率低于对角线）；表中未给标签级/逐类校准 | 用现有 parquet 增加：标签级 ECE、逐类 ECE 与 F1、正/负决策 ECE；列名改为 exact-match accuracy、decision-ECE（Codex 重算，作者改表） | 新表 + 定义 |
+| R1.3 | RQ1 | 全部 | **FAIL**（可用现有预测修复） | `c6_build_final_results.py` L471-484 `reliability_points` 返回 count 但 L500 未绘制；`figures/final/classification_reliability_grid.png` 低置信箱出现 0/1 点：EuroSAT DOFA frozen s42 置信度 <0.53 的箱各仅 1–3 样本，2523/2714 在顶箱；L479 用左闭分箱而 ECE 用右闭 | 图无每箱样本数与置信度分布，无法判断偏离方向的可信度；ECE 无方向，需 signed gap（重算：EuroSAT DOFA frozen s42 −0.0019 轻微不足自信；SpaceNet7 DOFA full s42 MC +0.0127 过度自信，顶箱 0.994 vs 0.977） | 补每箱计数/比例子图或表，补 signed confidence−accuracy gap；统一分箱边界（Codex 重算） | 新图/表 |
+| R1.4 | RQ1 | SpaceNet7；TreeSatAI | PASS（附补充要求） | `segmentation_pipeline.py` L509-521：foreground ECE = 全有效像素上 p(building) vs 建筑指示，定义正确；L504-507 one-vs-rest；`mc_dropout_summary.md` L36-39；本人重算 DOFA full s42 MC：建筑 IoU 0.049，recall@0.5 0.052，precision 0.530，建筑像素上平均 p(building)=0.189，fg ECE 0.023 由 0 号箱 42.2M/57.8M 像素主导，高概率箱 0.961 vs 0.842 过度自信 | 关键类未被总分掩盖（建筑 IoU 已列出），但类条件对应关系（召回/建筑像素上的概率分布/逐箱）未进包；"Building ECE"、"Classwise bg"、"Classwise building" 三列在二类下按构造恒等 | 补建筑类逐箱表与召回/精度；表中合并恒等列并注明原因；TreeSatAI 见 R1.2（Codex） | 补充表 |
+| R1.5 | RQ1 | 全部 | PASS | master 逐 seed 行；`thesis_evidence_matrix.md` L29-60 含 ±std；跨数据集未合并排名（`pre_uq_protocol_freeze.md` §6.3 L193-212 禁止） | 差异幅度与 seed 变化已给。示例：EuroSAT frozen DOFA/PAN ECE 0.0050±0.0019 vs 0.0066±0.0026，差异在 seed 噪声内；TreeSatAI PAN full acc std 0.031 | 无 | 已有 |
+| R1.6 | RQ1 | 正文 | UNKNOWN | 仓库仅 `thesis/experiment_1_dofa_rgb_record.md`；`thesis_evidence_matrix.md` 为描述性表格与限制 | 无正文可审。要求正文写明：哪些 FM/任务/适配偏向过度或不足自信（方向证据见 R1.3）、排序是否随条件变化 | 撰写后复审（作者） | 正文段落 |
+| R2.1 | RQ2 | 16 cell | PASS | 同 C04；`run_experiments.py` L1759-1775 冻结不变量；`optimizer_group_audit.json` 存在 | frozen 实际冻结，full 实际更新 | 无 | 已有 |
+| R2.2 | RQ2 | 全部 | PASS（附因果措辞限制） | `final_training_protocol.md` L24-33：EuroSAT full WD 0.0 vs frozen 0.01、5 epoch warmup、epoch 上限 100/50、patience 15/10、backbone LR 1e-4 或 4e-4；相同 split/输入/标签/head/无增强/同评估代码；`c1_classification_deterministic_completion.md` L73：full 存在最优点后退化 | 混杂已记录；估计的是"所采用适配配方"差异，不能声称冻结/解冻本身的因果 | 措辞限定（作者） | 文稿 |
+| R2.3 | RQ2 | 8 cell×3 seed | PASS | `rq2_adaptation_effects.csv` 24 PAIRED_SEED + 8 PAIRED_MEAN_STD；`build_rq_effect_tables.py` L209-283 同 seed 配对，std 来自逐 seed 差 | 配对正确 | 无 | 已有 |
+| R2.4 | RQ2 | 全部 | PASS | `rq_effect_summary.md` L13-22 同时给 Δperf、ΔNLL、ΔBrier、ΔECE | 结果：EuroSAT 两模型 full 同时降 acc（−0.019/−0.021）并升 NLL/Brier/ECE；TreeSatAI full 升 acc、降 NLL/Brier，ECE 方向不定（+0.0017±0.0038 / −0.0019±0.0027）；CloudSEN12 full 升 mIoU、降 Brier、ECE 升（DOFA +0.024±0.022）；SpaceNet7 full mIoU 微升、NLL 大升（DOFA +0.158±0.104） | 无 | 已有 |
+| R2.5 | RQ2 | 全部 | PASS（措辞待正文） | 同上，四数据集方向不一致已在表中呈现 | 只能得出"影响因任务/数据集而异"，不能写成普遍规律 | 正文汇总一致/反例（作者） | 正文 |
+| R3.1 | RQ3 | TS/MC/DE | PASS（MC 见 R3.4） | `build_rq_effect_tables.py` L305-312 TS 同 checkpoint、MC 同 seed 配对；相同 test 集/指标/mask（C5 复用 `classification_metrics`/`SegmentationMetricAccumulator`） | 对照存在且样本/指标一致 | — | — |
+| R3.2 | RQ3 | TS | PASS（EuroSAT）/ 见 C09（TreeSatAI） | `fit_positive_temperature` L194-236 目标=calibration split 多分类 NLL；manifest 记录 fit/test 样本数与 T | 拟合集外评估成立 | — | — |
+| R3.3 | RQ3 | TS EuroSAT | PASS | T=exp(logT)>0（L222，manifest `parameterization`）；`c6` L264-270 强制 accuracy 前后一致；T 范围 0.955–1.409 | argmax 保持；frozen cell T≈1 因而"无改善"是有效结果；full cell NLL/ECE 改善（DOFA s44 ECE 0.0167→0.0075） | 无 | 已有 |
+| R3.4 | RQ3 | MC 16 cell | **FAIL** | `c5_mc_dropout_inference.py` L351/L794-806：对照仅为另一独立训练的零 dropout 模型；无 dropout-off 测试评估（`test_enabled: false`）。本人用保存的 embeddings + `best.pt` head 权重在 CPU 重算同权重 dropout-off：EuroSAT DOFA frozen s42 acc 0.9849 / NLL 0.0504 / Brier 0.0242 / ECE 0.0043，对比 MC T=30 0.9853 / 0.0497 / 0.0246 / 0.0088，对比独立确定性 0.9831 / 0.0581 / 0.0269 / 0.0042；TreeSatAI PAN full s42 三者差 ≤0.002 | 训练时 dropout、p=0.10、位置、T=30、BN 冻结、逐 pass 不同、概率平均均已验证通过（`c5_audit.json` 13 项）。但缺同权重 dropout-off 对照，导致 MC "效应"混合了两种来源：EuroSAT 例中 NLL 改善几乎全部来自不同训练轨迹，MC 积分本身使 ECE 翻倍；TreeSatAI 例中 MC 积分几乎无作用 | 对 24 个 MC checkpoint 补 dropout-off 单次测试评估：12 个分类 cell 可由已保存 embeddings+head 权重在 CPU 完成（无需 GPU/新推理）；12 个分割 cell 需一次确定性前向（新推理，非训练）。三方并列报告（Codex 执行，作者改表） | 24 行三方表；本报告数字可作交叉验证 |
+| R3.5 | RQ3 | DE 16 cell | PASS | `c3_calibration_ensembles.py` L652 成员概率算术平均；L636-641 样本 ID/标签对齐校验；成员为 seeds 42/43/44 独立下游训练；分割 L1315-1336 同法 | 真集成预测。注意 EuroSAT full 集成 ECE 变差（0.011→0.027）而 NLL 改善，已如实列出 | 无 | 已有 |
+| R3.6 | RQ3 | 全部 | PASS | `rq3_uq_effects.csv` 36+8+16 行均含 Δperf 与 ΔNLL/ΔBrier/ΔECE；反例保留（MC EuroSAT full acc −0.012/−0.010；CloudSEN12 PAN full MC mIoU −0.021；SpaceNet7 MC/DE mIoU 均下降 0.003–0.011） | 完整 | — | — |
+| R3.7 | RQ3 | MC/DE | PASS | `mc_dropout_robustness.md` L3、L71；`rq_effect_summary.md` L86-88 | 层级正确；seed 稳健性只限 4 cell | 无 | 已有 |
+| R3.8 | RQ3 | 全部 | PASS（措辞待正文） | 同 R3.6；指标冲突可见（DE 分类：NLL↓ECE↑；MC EuroSAT DOFA frozen：NLL↓ECE↑） | 表格未选择性概括；正文须逐指标陈述 | 正文（作者） | 正文 |
+| R3.9 | RQ3 | 全部 | UNKNOWN（正文）/ 证据 PARTIAL | 无预定义容忍幅度；无评估样本区间；n=3 或 n=1 | 现有证据只能支持"报告实际差值"，不能写"无损失"。归类草案：TS-EuroSAT=校准改善或不变且性能严格保持；DE-分类=性能↑、NLL/Brier↓、ECE 方向不一；DE-分割=CloudSEN12 全面改善，SpaceNet7 mIoU 下降但概率指标改善（权衡）；MC=依 cell 而异且受 R3.4 混杂 | 正文按标准第 6 节六类逐方法归类（作者）；R3.4 补齐后重新归类 | 正文 |
+
+## 三、RQ 结论、后续任务与范围外事项
+
+**RQ1：PARTIAL。** 比较块有效、48 个确定性 run 全部有性能与概率指标，模型差异带 seed 范围。缺口全部可用已保存预测修复：reliability 图无每箱样本数与方向；TreeSatAI 的"ECE/Accuracy"命名掩盖标签级过度自信与 5 个零 F1 类；SpaceNet7 缺建筑类条件表（召回 5%，建筑像素平均概率 0.19）。当前可回答：在 EuroSAT 上两模型 frozen 均接近校准（ECE ≈0.005–0.007，轻微不足自信），full 微幅变差；TreeSatAI 决策级 ECE ≈0.01 但正类概率过度自信；CloudSEN12 与 SpaceNet7 为过度自信且随适配/模型变化。EuroSAT 跨模型结论须限定为整套配置差异。不需要新训练。
+
+**RQ2：ANSWERED（描述性，限于所采用适配配方）。** 24 组同 seed 配对完整、混杂已披露。答案：full fine-tuning 对校准无一致方向，EuroSAT 上性能与校准同时变差，TreeSatAI 上 NLL/Brier 改善而 ECE 不稳，分割上 mIoU 提升伴随 ECE/NLL 变差或不变。前提是正文不得作因果归因，并说明 EuroSAT full 的最优点后退化现象。
+
+**RQ3：PARTIAL。** TS（EuroSAT）与 Deep Ensemble 部分可直接回答。MC Dropout 部分受 R3.4 混杂影响：报告的 MC 效应无法区分"带 dropout 重训"与"MC 积分"两种来源，我的两处重算显示后者贡献可为负（ECE 翻倍）或接近零。TreeSatAI TS 因 C09 矛盾暂无单一权威结论。补齐 dropout-off 三方表（分类部分零 GPU 成本）与统一 TS 状态后可升为 ANSWERED，任何结果方向均可接受。
+
+**必需后续任务**
+
+| 类别 | 任务 | 对应 | 验收 |
+|---|---|---|---|
+| 修表述/流程 | 统一 TreeSatAI TS 状态并说明决策时序；重跑 C6 以 master 为输入；文稿写明 Brier 归一化差异、TreeSatAI 指标语义、EuroSAT 预处理差异、12 AOI 限制、RQ2 非因果 | C09, C05, R1.1, C08, R2.2 | 三套最终产物一致 |
+| 已有结果重分析 | 分类 12 个 MC checkpoint 的 dropout-off 指标（embeddings+head）；reliability 逐箱计数与 signed gap；TreeSatAI 标签级/逐类 ECE；SpaceNet7 建筑类逐箱与召回 | R3.4, R1.3, R1.2, R1.4 | 新表与图 |
+| 补评估（推理） | 分割 12 个 MC checkpoint 的 dropout-off 单次前向 | R3.4 | 三方表 24 行 |
+| 修代码 | 无模型/指标代码缺陷；仅 C6 汇总脚本需改为消费 master 表并绘制箱计数 | C09, R1.3 | 脚本更新 |
+| 新训练 | **不需要** | — | — |
+
+**单列的探索项**：保存的 backbone representation、MC 熵/互信息分解、不确定性地图（`mc_dropout_summary.md` L52-56）属描述性；仓库内无 OOD、corruption、CKA、AU/EU 分解或机制性主张，故不纳入三问。若正文后续提出此类主张，需另行补证据。分割 TS 的 N/A 目前仅写"协议排除"（`method_applicability.csv`），建议补充理由"无独立 calibration split"以与 TreeSatAI 处理一致。

@@ -1,0 +1,15 @@
+skip eurosat__dofa__frozen__deep_ensemble
+done eurosat__dofa__full_finetune__deep_ensemble seconds 1.19
+Traceback (most recent call last):
+  File "/workspace/reports/thesis_followup_execution_20260926/code/analyze.py", line 213, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/reports/thesis_followup_execution_20260926/code/analyze.py", line 208, in main
+    if args.task=='classification':analyze_classification(r)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/reports/thesis_followup_execution_20260926/code/analyze.py", line 143, in analyze_classification
+    with np.load(archive_path(r,'classification_ensemble_members'),allow_pickle=True) as d:names=d['class_names'].astype(str).tolist()
+                                                                                                 ~^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/numpy/lib/_npyio_impl.py", line 265, in __getitem__
+    raise KeyError(f"{key} is not a file in the archive")
+KeyError: 'class_names is not a file in the archive'

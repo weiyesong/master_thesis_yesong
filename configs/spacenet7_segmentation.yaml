@@ -1,0 +1,106 @@
+seed: 42
+seeds: [42, 43, 44]
+device: auto
+output_dir: ./results/segmentation/spacenet7
+results_csv: ./results/segmentation/spacenet7/results.csv
+
+task: segmentation
+
+data:
+  name: spacenet7
+  protocol: geobench2_spacenet7_static
+  source: GEO-Bench-2@fd9d0b664e6fb0faba54636bdff4906634debd4b
+  root: ./datasets/spacenet7
+  download: false
+  input_bands: rgb
+  channels: [red, green, blue]
+  wavelengths_nm: [665, 560, 490]
+  wavelength_source: pinned GeoBenchV2 generic RGB registry
+  temporal_modeling: false
+  native_image_size: 512
+  image_size: 224
+  native_gsd_m: 4.777314267
+  crop_rule: official_nonoverlapping_512x512_patches
+  mask_resize: nearest
+  num_classes: 2
+  class_names: [background, building]
+  source_label_mapping: {1: background, 2: building, 0: ignore}
+  foreground_class_index: 1
+  ignore_index: 255
+  split_source: embedded_official_aoi_disjoint_manifest
+  num_workers: 4
+
+training:
+  epochs: 50
+  batch_size: 8
+  optimizer: {name: adamw}
+  learning_rate: 0.001
+  backbone_learning_rate: 0.0001
+  head_learning_rate: 0.001
+  weight_decay: 0.01
+  warmup: {enabled: false, epochs: 0, type: linear}
+  checkpoint: {split: val, metric: miou, mode: max}
+  limit_train_batches: null
+  limit_val_batches: null
+
+metrics:
+  n_bins: 15
+  boundary_radius: 1
+  foreground_metrics: [ece, nll, brier]
+  classwise_calibration: true
+  boundary_calibration: true
+
+uq_methods: [{name: none}]
+reproducibility: {deterministic: true, warn_only: false}
+
+dry_run_settings:
+  epochs: 1
+  limit_train_batches: 1
+  limit_val_batches: 1
+  num_workers: 0
+  output_dir: ./results/segmentation/spacenet7/dry_runs
+
+experiments:
+  - name: spacenet7_dofa_frozen
+    task: segmentation
+    model:
+      name: dofa
+      size: base
+      pretrained: true
+      adaptation_mode: frozen
+      dofa_root: ./DOFA
+      weights_path: ./DOFA/checkpoints/DOFA_ViT_base_e100.pth
+      decoder: &common_decoder {architecture: unet, channels: [256, 128, 64, 32]}
+  - name: spacenet7_dofa_full_finetune
+    task: segmentation
+    model:
+      name: dofa
+      size: base
+      pretrained: true
+      adaptation_mode: full_finetune
+      expected_frozen_backbone_parameters: [pos_embed]
+      dofa_root: ./DOFA
+      weights_path: ./DOFA/checkpoints/DOFA_ViT_base_e100.pth
+      decoder: *common_decoder
+  - name: spacenet7_panopticon_frozen
+    task: segmentation
+    model:
+      name: panopticon
+      size: base
+      pretrained: true
+      weights: VIT_BASE14
+      adaptation_mode: frozen
+      decoder: *common_decoder
+  - name: spacenet7_panopticon_full_finetune
+    task: segmentation
+    model:
+      name: panopticon
+      size: base
+      pretrained: true
+      weights: VIT_BASE14
+      adaptation_mode: full_finetune
+      expected_frozen_backbone_parameters:
+        - model.patch_embed.chnfus.chnemb.embed_transmit
+        - model.patch_embed.chnfus.chnemb.embed_receive
+        - model.patch_embed.chnfus.chnemb.embed_orbit
+      decoder: *common_decoder

@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/workspace/reports/thesis_followup_execution_20260926/code/aggregate.py", line 121, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/reports/thesis_followup_execution_20260926/code/aggregate.py", line 40, in main
+    with np.load(dest/'derived.npz',allow_pickle=False) as z:derived[r['object_id']]={a:z[a] for a in z.files}
+                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/reports/thesis_followup_execution_20260926/code/aggregate.py", line 40, in <dictcomp>
+    with np.load(dest/'derived.npz',allow_pickle=False) as z:derived[r['object_id']]={a:z[a] for a in z.files}
+                                                                                        ~^^^
+  File "/opt/conda/lib/python3.11/site-packages/numpy/lib/_npyio_impl.py", line 258, in __getitem__
+    return format.read_array(bytes,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/numpy/lib/format.py", line 822, in read_array
+    raise ValueError("Object arrays cannot be loaded when "
+ValueError: Object arrays cannot be loaded when allow_pickle=False

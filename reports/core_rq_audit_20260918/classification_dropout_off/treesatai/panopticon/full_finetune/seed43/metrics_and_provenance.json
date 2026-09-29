@@ -1,0 +1,57 @@
+{
+  "dataset": "treesatai",
+  "model": "panopticon",
+  "adaptation": "full_finetune",
+  "seed": "43",
+  "run_id": "20260826T111326975579Z_c5_mcd_treesatai_panopticon_full_finetune_seed43_a5ddbffa",
+  "checkpoint_path": "/workspace/results/final_thesis/mc_dropout/classification/treesatai/panopticon/full_finetune/runs/20260826T111326975579Z_c5_mcd_treesatai_panopticon_full_finetune_seed43_a5ddbffa/best.pt",
+  "checkpoint_sha256": "b0d232222fcf3b963cddf85b64e6913180b96ff23b769b97b23a487a0dfb2fff",
+  "feature_artifact_path": "results/final_thesis/mc_dropout/inference/classification/treesatai/panopticon/full_finetune/seed43/predictions.parquet",
+  "output_path": "reports/core_rq_audit_20260918/classification_dropout_off/treesatai/panopticon/full_finetune/seed43/predictions.parquet",
+  "method": "same_checkpoint_dropout_off",
+  "evaluation": "CPU saved backbone representations + eval BatchNorm where present + final Linear; dropout disabled; no backbone inference",
+  "same_checkpoint_as_mc": true,
+  "feature_ids_and_values_match_saved_embeddings": true,
+  "metrics": {
+    "accuracy": 0.2505,
+    "macro_f1": 0.21703494832531717,
+    "nll": 0.24509898292337098,
+    "brier": 0.07143228598871777,
+    "ece_15": 0.005690662329040546
+  },
+  "mc_metrics": {
+    "accuracy": 0.251,
+    "macro_f1": 0.21728427044501541,
+    "nll": 0.2451644384494948,
+    "brier": 0.0714646063111507,
+    "ece_15": 0.005185668944449087
+  },
+  "original_p0_metrics": {
+    "accuracy": 0.25,
+    "macro_f1": 0.21852796184352316,
+    "nll": 0.24623769712438703,
+    "brier": 0.07177279995436456,
+    "ece_15": 0.004157547277253858
+  },
+  "delta_mc_minus_same_weight_off": {
+    "accuracy": 0.0005000000000000004,
+    "macro_f1": 0.0002493221196982476,
+    "nll": 6.545552612380323e-05,
+    "brier": 3.2320322432929927e-05,
+    "ece_15": -0.000504993384591459
+  },
+  "delta_off_minus_original_p0": {
+    "accuracy": 0.0005000000000000004,
+    "macro_f1": -0.0014930135182059934,
+    "nll": -0.00113871420101605,
+    "brier": -0.0003405139656467854,
+    "ece_15": 0.0015331150517866876
+  },
+  "delta_mc_minus_original_p0": {
+    "accuracy": 0.0010000000000000009,
+    "macro_f1": -0.0012436913985077458,
+    "nll": -0.0010732586748922468,
+    "brier": -0.00030819364321385545,
+    "ece_15": 0.0010281216671952286
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "actual_core_metrics": {
+    "pixel_accuracy": 0.8644089522828362,
+    "miou": 0.6588689792370271,
+    "nll": 0.4794648601011766,
+    "brier": 0.2072402876970558,
+    "iou_clear": 0.8532131262386966,
+    "iou_thick_cloud": 0.7900589818707877,
+    "iou_thin_cloud": 0.4348692393579709,
+    "iou_cloud_shadow": 0.5573345694806534
+  },
+  "core_checks": [
+    {
+      "metric": "pixel_accuracy",
+      "actual": 0.8644089522828362,
+      "expected": 0.8644089522828362,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "miou",
+      "actual": 0.6588689792370271,
+      "expected": 0.6588689792370271,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "nll",
+      "actual": 0.4794648601011766,
+      "expected": 0.47946486268974237,
+      "difference": -2.588565750638594e-09,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "brier",
+      "actual": 0.2072402876970558,
+      "expected": 0.20724028790452478,
+      "difference": -2.074689864350887e-10,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    }
+  ],
+  "validation": [],
+  "n_samples": 975,
+  "subset_images": 32,
+  "ids_hash": "1b3ebef1b7b058cf14f8cee947805bd054fdacaae83b3e6cc9215ca5aa8d91d7",
+  "label_hash": "b8aa2ee3aa2def284879a55a5f6faa76842e6cb452efbfdb215fb76e72d4a52d",
+  "mask_hash": "46d54e9b78c4dc4fcc11f6587d51a80a9e2b1a1d5bfeb401337f873feaa0818e",
+  "saved_prediction_mismatches": 0,
+  "load_seconds": 5.23528260178864,
+  "decompression_seconds": 5.219394903630018,
+  "uncompressed_bytes_read": 1614604540,
+  "image_aggregation_seconds": 10.925227167084813,
+  "pixel_ranking_seconds": 2.472910216078162,
+  "ranking_bootstrap_seconds": 0.19112610630691051,
+  "total_seconds": 18.951927483081818,
+  "peak_rss_GiB": 3.6677207946777344,
+  "status": "COMPLETE"
+}

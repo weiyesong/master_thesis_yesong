@@ -1,0 +1,106 @@
+{
+  "schema_version": 2,
+  "scope": "C6 aggregation and visualization only; no model training or inference",
+  "output_root": "/workspace/reports/core_rq_completion_20260921/published",
+  "validated_source_count": 74,
+  "classification_rows": 32,
+  "segmentation_rows": 32,
+  "mc_robustness_rows": 4,
+  "generated_artifacts": [
+    {
+      "path": "final_thesis_results.md",
+      "sha256": "d662c8f9a68ba10a0c4613601c113924649dd550cbd8e2a798a00a16f6d162ba",
+      "size_bytes": 20253
+    },
+    {
+      "path": "tables/classification_results.csv",
+      "sha256": "797c86c94047efc3188811eb6977b6c6d5577f79d180ea0755f572d51c3094d2",
+      "size_bytes": 10124
+    },
+    {
+      "path": "tables/historical_treesatai_temperature_scaling.csv",
+      "sha256": "85f500e7af541e10f4d8b6fa97db5741f68d42348fe0274c2f381a202444bab7",
+      "size_bytes": 8239
+    },
+    {
+      "path": "tables/mc_dropout_robustness.csv",
+      "sha256": "b92ee493e1587f13fde4586004912e99ce2ec01a10657184823faab8bac7d0a3",
+      "size_bytes": 2715
+    },
+    {
+      "path": "tables/method_applicability.csv",
+      "sha256": "0f3d80fa4314401ff23fcc7ffc8a5eafc8ae16b53368bbda6718abaa2b659267",
+      "size_bytes": 12045
+    },
+    {
+      "path": "tables/package_validation.json",
+      "sha256": "44eb8c0ea75bce082e9016609e1f4cca4ed9128a984dfcfe9150c3a18efbd530",
+      "size_bytes": 29064
+    },
+    {
+      "path": "tables/segmentation_results.csv",
+      "sha256": "aba47d238d3667cfdaa95df3024450783f90fe53aa4cb6710a6351ca49a56bd2",
+      "size_bytes": 15445
+    },
+    {
+      "path": "tables/source_provenance.csv",
+      "sha256": "4d3eeefb98813a8209880e69b86836afa58d8307dac9d50bf71743f3554087b5",
+      "size_bytes": 14591
+    },
+    {
+      "path": "tables/thesis_master_results.csv",
+      "sha256": "203bd7281f9eb4960c81fa92c7050b630175a90f93313183cabf04002088ed63",
+      "size_bytes": 151558
+    },
+    {
+      "path": "figures/classification_accuracy_vs_ece.png",
+      "sha256": "ea87d2287ce4de468aa8b47ddd38d5c7734f6af741ab722320a2b659b34062b9",
+      "size_bytes": 228684
+    },
+    {
+      "path": "figures/classification_reliability_grid.csv",
+      "sha256": "d1b2272a62a08b20f4385d931e7c3f42cf50ab7f8e7b95cbb276ea7f6430c774",
+      "size_bytes": 55150
+    },
+    {
+      "path": "figures/classification_reliability_grid.png",
+      "sha256": "8b7e8b665b00ce124703bf0b591a2b1581a6704a9cd756051f9d09f12e9ed320",
+      "size_bytes": 788946
+    },
+    {
+      "path": "figures/cloudsen12_mc_uncertainty_maps.png",
+      "sha256": "bcb3494c618069ffddd7228fb8eefd1a52fd61e24a7564382494c170d492096c",
+      "size_bytes": 893464
+    },
+    {
+      "path": "figures/segmentation_miou_vs_ece.png",
+      "sha256": "a00aad38150225bc635a6ae13a441c8adc9fca61ce4eb635d21812008c701834",
+      "size_bytes": 220936
+    },
+    {
+      "path": "figures/segmentation_reliability_grid.csv",
+      "sha256": "74605b528d8cde180e3b10f534593f66d82ea77acf0597bc7fc23a42a7312ae4",
+      "size_bytes": 49923
+    },
+    {
+      "path": "figures/segmentation_reliability_grid.png",
+      "sha256": "ae8ca588d12343fadbfeddcac0f5bcf431691de121d5168f51bd3820638d3b69",
+      "size_bytes": 727845
+    },
+    {
+      "path": "figures/spacenet7_mc_uncertainty_maps.png",
+      "sha256": "7559cc8bc64104fc0ebb7c7f3640eea814605ec13bd40141d1876d6196d45258",
+      "size_bytes": 942865
+    },
+    {
+      "path": "figures/treesatai_positive_label_diagnostic.csv",
+      "sha256": "02f4de8b6f162c3c06929ff8cdce212d802b4e17da64fa5356c229e6b07918c0",
+      "size_bytes": 29200
+    },
+    {
+      "path": "figures/treesatai_positive_label_diagnostic.png",
+      "sha256": "a83caa1f5c171004b2ab4e6291c09e55f63c4032e97988958b343d121f5cbf88",
+      "size_bytes": 357562
+    }
+  ]
+}

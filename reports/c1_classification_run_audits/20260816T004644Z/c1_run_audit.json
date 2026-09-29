@@ -1,0 +1,562 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-08-16T00:46:44.485942+00:00",
+  "project_root": "/workspace",
+  "requested_seeds": [
+    43
+  ],
+  "promotion_policy": {
+    "basis": "validation_and_artifact_integrity_only",
+    "test_metrics_used": false,
+    "test_metrics_role": "report_only"
+  },
+  "summary": {
+    "promotable": 1,
+    "blocked": 0,
+    "missing": 5,
+    "ambiguous": 0,
+    "total": 6
+  },
+  "runs": [
+    {
+      "target": {
+        "dataset": "eurosat",
+        "model": "panopticon",
+        "adaptation": "frozen",
+        "experiment": "eurosat_panopticon_frozen_bnlinear",
+        "seed": 43
+      },
+      "target_key": "eurosat|panopticon|frozen|seed43",
+      "run_dir": "/workspace/results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d",
+      "run_id": "20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d",
+      "status": "PROMOTABLE",
+      "promotion_eligible": true,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [],
+      "warnings": [],
+      "code_provenance": {
+        "code_sha256": "82467b95293c2a2459c59405a56e02e6af2eb955db49d3ce642ee0bfb38a61d0",
+        "file_count": 90,
+        "environment_code_version": "sha256:82467b95293c2a2459c59405a56e02e6af2eb955db49d3ce642ee0bfb38a61d0"
+      },
+      "artifact_provenance": {
+        "training_protocol": {
+          "path": "/workspace/reports/final_training_protocol.md",
+          "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+          "actual_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711"
+        },
+        "dataset": {
+          "path": "/workspace/data/EuroSATallBands.zip",
+          "expected_sha256": "751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59",
+          "actual_sha256": "751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59"
+        },
+        "split_manifest": {
+          "path": "/workspace/splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv",
+          "expected_sha256": "c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22",
+          "actual_sha256": "c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22"
+        },
+        "pretrained_weights": {
+          "path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+          "expected_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+          "actual_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e"
+        }
+      },
+      "recorded_input_artifacts": {
+        "required": true,
+        "all_verified": true,
+        "records": {
+          "dataset": {
+            "label": "dataset",
+            "path": "/workspace/data/EuroSATallBands.zip",
+            "size_bytes": 2067725275,
+            "sha256": "751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59",
+            "expected_sha256": "751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59",
+            "verified": true
+          },
+          "split_manifest": {
+            "label": "split_manifest",
+            "path": "/workspace/splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv",
+            "size_bytes": 8689654,
+            "sha256": "c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22",
+            "expected_sha256": "c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22",
+            "verified": true
+          },
+          "training_protocol": {
+            "label": "training_protocol",
+            "path": "/workspace/reports/final_training_protocol.md",
+            "size_bytes": 15742,
+            "sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "expected_sha256": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+            "verified": true
+          },
+          "pretrained_weights": {
+            "label": "panopticon_pretrained_weights",
+            "path": "/home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth",
+            "size_bytes": 395965930,
+            "sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+            "expected_sha256": "55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e",
+            "verified": true
+          }
+        }
+      },
+      "validation_curve": {
+        "epochs_completed": 16,
+        "epoch_cap": 50,
+        "best_epoch": 6,
+        "best_validation_nll": 0.06154154986143112,
+        "first_validation_nll": 0.08267071098089218,
+        "last_validation_nll": 0.07460855692625046,
+        "best_validation_accuracy": 0.9785740375518799,
+        "best_validation_macro_f1": null,
+        "termination": "early_stopping"
+      },
+      "epoch_metrics_audit": {
+        "rows": 16,
+        "expected_rows": 16
+      },
+      "batch_audit": {
+        "rows": 4720,
+        "expected_rows": 4720,
+        "batches_per_epoch": 295
+      },
+      "model_gradient_audit": {
+        "model_audit": {
+          "adaptation_mode": "frozen",
+          "total_parameters": 98128138,
+          "trainable_parameters": 7690,
+          "backbone_total_parameters": 98120448,
+          "backbone_trainable_parameters": 0,
+          "backbone_structurally_frozen_parameters": {
+            "model.cls_token": 768,
+            "model.pos_embed": 197376,
+            "model.patch_embed.conv3d.conv3d.weight": 451584,
+            "model.patch_embed.conv3d.conv3d.bias": 2304,
+            "model.patch_embed.chnfus.query": 2304,
+            "model.patch_embed.chnfus.chnemb.embed_transmit": 1536,
+            "model.patch_embed.chnfus.chnemb.embed_receive": 1536,
+            "model.patch_embed.chnfus.chnemb.embed_orbit": 1536,
+            "model.patch_embed.chnfus.xattn.inproj_k.weight": 5308416,
+            "model.patch_embed.chnfus.xattn.inproj_v.weight": 5308416,
+            "model.patch_embed.proj.weight": 1769472,
+            "model.patch_embed.proj.bias": 768,
+            "model.blocks.0.norm1.weight": 768,
+            "model.blocks.0.norm1.bias": 768,
+            "model.blocks.0.attn.qkv.weight": 1769472,
+            "model.blocks.0.attn.qkv.bias": 2304,
+            "model.blocks.0.attn.proj.weight": 589824,
+            "model.blocks.0.attn.proj.bias": 768,
+            "model.blocks.0.ls1.gamma": 768,
+            "model.blocks.0.norm2.weight": 768,
+            "model.blocks.0.norm2.bias": 768,
+            "model.blocks.0.mlp.fc1.weight": 2359296,
+            "model.blocks.0.mlp.fc1.bias": 3072,
+            "model.blocks.0.mlp.fc2.weight": 2359296,
+            "model.blocks.0.mlp.fc2.bias": 768,
+            "model.blocks.0.ls2.gamma": 768,
+            "model.blocks.1.norm1.weight": 768,
+            "model.blocks.1.norm1.bias": 768,
+            "model.blocks.1.attn.qkv.weight": 1769472,
+            "model.blocks.1.attn.qkv.bias": 2304,
+            "model.blocks.1.attn.proj.weight": 589824,
+            "model.blocks.1.attn.proj.bias": 768,
+            "model.blocks.1.ls1.gamma": 768,
+            "model.blocks.1.norm2.weight": 768,
+            "model.blocks.1.norm2.bias": 768,
+            "model.blocks.1.mlp.fc1.weight": 2359296,
+            "model.blocks.1.mlp.fc1.bias": 3072,
+            "model.blocks.1.mlp.fc2.weight": 2359296,
+            "model.blocks.1.mlp.fc2.bias": 768,
+            "model.blocks.1.ls2.gamma": 768,
+            "model.blocks.2.norm1.weight": 768,
+            "model.blocks.2.norm1.bias": 768,
+            "model.blocks.2.attn.qkv.weight": 1769472,
+            "model.blocks.2.attn.qkv.bias": 2304,
+            "model.blocks.2.attn.proj.weight": 589824,
+            "model.blocks.2.attn.proj.bias": 768,
+            "model.blocks.2.ls1.gamma": 768,
+            "model.blocks.2.norm2.weight": 768,
+            "model.blocks.2.norm2.bias": 768,
+            "model.blocks.2.mlp.fc1.weight": 2359296,
+            "model.blocks.2.mlp.fc1.bias": 3072,
+            "model.blocks.2.mlp.fc2.weight": 2359296,
+            "model.blocks.2.mlp.fc2.bias": 768,
+            "model.blocks.2.ls2.gamma": 768,
+            "model.blocks.3.norm1.weight": 768,
+            "model.blocks.3.norm1.bias": 768,
+            "model.blocks.3.attn.qkv.weight": 1769472,
+            "model.blocks.3.attn.qkv.bias": 2304,
+            "model.blocks.3.attn.proj.weight": 589824,
+            "model.blocks.3.attn.proj.bias": 768,
+            "model.blocks.3.ls1.gamma": 768,
+            "model.blocks.3.norm2.weight": 768,
+            "model.blocks.3.norm2.bias": 768,
+            "model.blocks.3.mlp.fc1.weight": 2359296,
+            "model.blocks.3.mlp.fc1.bias": 3072,
+            "model.blocks.3.mlp.fc2.weight": 2359296,
+            "model.blocks.3.mlp.fc2.bias": 768,
+            "model.blocks.3.ls2.gamma": 768,
+            "model.blocks.4.norm1.weight": 768,
+            "model.blocks.4.norm1.bias": 768,
+            "model.blocks.4.attn.qkv.weight": 1769472,
+            "model.blocks.4.attn.qkv.bias": 2304,
+            "model.blocks.4.attn.proj.weight": 589824,
+            "model.blocks.4.attn.proj.bias": 768,
+            "model.blocks.4.ls1.gamma": 768,
+            "model.blocks.4.norm2.weight": 768,
+            "model.blocks.4.norm2.bias": 768,
+            "model.blocks.4.mlp.fc1.weight": 2359296,
+            "model.blocks.4.mlp.fc1.bias": 3072,
+            "model.blocks.4.mlp.fc2.weight": 2359296,
+            "model.blocks.4.mlp.fc2.bias": 768,
+            "model.blocks.4.ls2.gamma": 768,
+            "model.blocks.5.norm1.weight": 768,
+            "model.blocks.5.norm1.bias": 768,
+            "model.blocks.5.attn.qkv.weight": 1769472,
+            "model.blocks.5.attn.qkv.bias": 2304,
+            "model.blocks.5.attn.proj.weight": 589824,
+            "model.blocks.5.attn.proj.bias": 768,
+            "model.blocks.5.ls1.gamma": 768,
+            "model.blocks.5.norm2.weight": 768,
+            "model.blocks.5.norm2.bias": 768,
+            "model.blocks.5.mlp.fc1.weight": 2359296,
+            "model.blocks.5.mlp.fc1.bias": 3072,
+            "model.blocks.5.mlp.fc2.weight": 2359296,
+            "model.blocks.5.mlp.fc2.bias": 768,
+            "model.blocks.5.ls2.gamma": 768,
+            "model.blocks.6.norm1.weight": 768,
+            "model.blocks.6.norm1.bias": 768,
+            "model.blocks.6.attn.qkv.weight": 1769472,
+            "model.blocks.6.attn.qkv.bias": 2304,
+            "model.blocks.6.attn.proj.weight": 589824,
+            "model.blocks.6.attn.proj.bias": 768,
+            "model.blocks.6.ls1.gamma": 768,
+            "model.blocks.6.norm2.weight": 768,
+            "model.blocks.6.norm2.bias": 768,
+            "model.blocks.6.mlp.fc1.weight": 2359296,
+            "model.blocks.6.mlp.fc1.bias": 3072,
+            "model.blocks.6.mlp.fc2.weight": 2359296,
+            "model.blocks.6.mlp.fc2.bias": 768,
+            "model.blocks.6.ls2.gamma": 768,
+            "model.blocks.7.norm1.weight": 768,
+            "model.blocks.7.norm1.bias": 768,
+            "model.blocks.7.attn.qkv.weight": 1769472,
+            "model.blocks.7.attn.qkv.bias": 2304,
+            "model.blocks.7.attn.proj.weight": 589824,
+            "model.blocks.7.attn.proj.bias": 768,
+            "model.blocks.7.ls1.gamma": 768,
+            "model.blocks.7.norm2.weight": 768,
+            "model.blocks.7.norm2.bias": 768,
+            "model.blocks.7.mlp.fc1.weight": 2359296,
+            "model.blocks.7.mlp.fc1.bias": 3072,
+            "model.blocks.7.mlp.fc2.weight": 2359296,
+            "model.blocks.7.mlp.fc2.bias": 768,
+            "model.blocks.7.ls2.gamma": 768,
+            "model.blocks.8.norm1.weight": 768,
+            "model.blocks.8.norm1.bias": 768,
+            "model.blocks.8.attn.qkv.weight": 1769472,
+            "model.blocks.8.attn.qkv.bias": 2304,
+            "model.blocks.8.attn.proj.weight": 589824,
+            "model.blocks.8.attn.proj.bias": 768,
+            "model.blocks.8.ls1.gamma": 768,
+            "model.blocks.8.norm2.weight": 768,
+            "model.blocks.8.norm2.bias": 768,
+            "model.blocks.8.mlp.fc1.weight": 2359296,
+            "model.blocks.8.mlp.fc1.bias": 3072,
+            "model.blocks.8.mlp.fc2.weight": 2359296,
+            "model.blocks.8.mlp.fc2.bias": 768,
+            "model.blocks.8.ls2.gamma": 768,
+            "model.blocks.9.norm1.weight": 768,
+            "model.blocks.9.norm1.bias": 768,
+            "model.blocks.9.attn.qkv.weight": 1769472,
+            "model.blocks.9.attn.qkv.bias": 2304,
+            "model.blocks.9.attn.proj.weight": 589824,
+            "model.blocks.9.attn.proj.bias": 768,
+            "model.blocks.9.ls1.gamma": 768,
+            "model.blocks.9.norm2.weight": 768,
+            "model.blocks.9.norm2.bias": 768,
+            "model.blocks.9.mlp.fc1.weight": 2359296,
+            "model.blocks.9.mlp.fc1.bias": 3072,
+            "model.blocks.9.mlp.fc2.weight": 2359296,
+            "model.blocks.9.mlp.fc2.bias": 768,
+            "model.blocks.9.ls2.gamma": 768,
+            "model.blocks.10.norm1.weight": 768,
+            "model.blocks.10.norm1.bias": 768,
+            "model.blocks.10.attn.qkv.weight": 1769472,
+            "model.blocks.10.attn.qkv.bias": 2304,
+            "model.blocks.10.attn.proj.weight": 589824,
+            "model.blocks.10.attn.proj.bias": 768,
+            "model.blocks.10.ls1.gamma": 768,
+            "model.blocks.10.norm2.weight": 768,
+            "model.blocks.10.norm2.bias": 768,
+            "model.blocks.10.mlp.fc1.weight": 2359296,
+            "model.blocks.10.mlp.fc1.bias": 3072,
+            "model.blocks.10.mlp.fc2.weight": 2359296,
+            "model.blocks.10.mlp.fc2.bias": 768,
+            "model.blocks.10.ls2.gamma": 768,
+            "model.blocks.11.norm1.weight": 768,
+            "model.blocks.11.norm1.bias": 768,
+            "model.blocks.11.attn.qkv.weight": 1769472,
+            "model.blocks.11.attn.qkv.bias": 2304,
+            "model.blocks.11.attn.proj.weight": 589824,
+            "model.blocks.11.attn.proj.bias": 768,
+            "model.blocks.11.ls1.gamma": 768,
+            "model.blocks.11.norm2.weight": 768,
+            "model.blocks.11.norm2.bias": 768,
+            "model.blocks.11.mlp.fc1.weight": 2359296,
+            "model.blocks.11.mlp.fc1.bias": 3072,
+            "model.blocks.11.mlp.fc2.weight": 2359296,
+            "model.blocks.11.mlp.fc2.bias": 768,
+            "model.blocks.11.ls2.gamma": 768,
+            "model.norm.weight": 768,
+            "model.norm.bias": 768
+          },
+          "backbone_expected_trainable_parameters": 0,
+          "all_expected_backbone_parameters_trainable": true,
+          "head_total_parameters": 7690,
+          "head_trainable_parameters": 7690,
+          "backbone_requires_grad_all_false": true,
+          "training_mode_policy": {
+            "wrapper_training": true,
+            "backbone_training": false,
+            "head_training": true,
+            "backbone_batchnorm": "eval; running statistics are not updated",
+            "backbone_layernorm": "eval with frozen affine parameters; LayerNorm has no running statistics",
+            "backbone_dropout": "disabled because backbone is held in eval mode",
+            "head_batchnorm": "train during updates; eval for validation/test",
+            "head_dropout": "absent"
+          },
+          "backbone_module_counts": {
+            "normalization_total": 25,
+            "batchnorm": 0,
+            "layernorm": 25,
+            "groupnorm": 0,
+            "dropout": 50,
+            "drop_path_or_stochastic_depth": 0
+          },
+          "head": "Sequential(\n  (0): BatchNorm1d(768, eps=1e-06, momentum=0.1, affine=False, track_running_stats=True)\n  (1): Linear(in_features=768, out_features=10, bias=True)\n)",
+          "pretrained_load": {
+            "weights": "VIT_BASE14",
+            "source": "https://hf.co/lewaldm/panopticon/resolve/c8c2bb9555819e8b2bcedf5b3b00e3bf531554e7/panopticon_vitb14_teacher.pth",
+            "missing_keys": [],
+            "unexpected_keys": []
+          }
+        },
+        "optimizer_group_audit": {
+          "head": {
+            "parameter_tensors": 2,
+            "trainable_parameters": 7690,
+            "base_learning_rate": 0.001,
+            "weight_decay": 0.01
+          }
+        },
+        "gradient_audit": {
+          "performed": true,
+          "expected_parameter_tensors": 2,
+          "all_expected_parameters_received_gradient": true,
+          "missing_gradient_parameters": [],
+          "zero_gradient_parameters": [],
+          "nonfinite_gradient_parameters": [],
+          "epoch": 1
+        }
+      },
+      "checkpoint": {
+        "best": {
+          "path": "/workspace/results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/best.pt",
+          "sha256": "c89698200b444602c05ca7366858f7dca30aa48eee3674cdc1d36c09134d2c00",
+          "size_bytes": 392601723
+        },
+        "last": {
+          "path": "/workspace/results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/last.pt",
+          "size_bytes": 393377007,
+          "sha256": "65763f60b883e91c7fb2d77228753350eaabdd858e9b1b906df2c34a7db7d4bf",
+          "load_valid": true,
+          "epoch": 16,
+          "best_epoch": 6,
+          "epochs_without_improvement": 10,
+          "optimizer_groups": [
+            "head"
+          ]
+        },
+        "path": "/workspace/results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/best.pt",
+        "sha256": "c89698200b444602c05ca7366858f7dca30aa48eee3674cdc1d36c09134d2c00"
+      },
+      "resume_provenance": {
+        "resumed": true,
+        "event_count": 1,
+        "event_dir": "/workspace/results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/resume_events/20260816T001604775918Z",
+        "source_checkpoint": {
+          "path": "/workspace/results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/resume_events/20260816T001604775918Z/source_last_epoch5.pt",
+          "sha256": "d04e6be4b2a78f07f8cd67884d45c5267a8dca63c3b7fe2abd166bc84483a818",
+          "epoch": 5,
+          "run_id_verified": true
+        },
+        "original_code_sha256": "82467b95293c2a2459c59405a56e02e6af2eb955db49d3ce642ee0bfb38a61d0",
+        "resume_code_sha256": "21331b29de8f0afb3401f2946693dcd3c8f29fc9f2687fa162cebe19f6857b3e",
+        "allowed_code_changes": [
+          "scripts/run_experiments.py",
+          "tests/test_experiment_configuration.py"
+        ],
+        "protected_provenance_verified": {
+          "resolved_config.yaml": true,
+          "code_snapshot.json": true,
+          "environment.json": true,
+          "input_artifacts.json": true,
+          "model_audit.json": true,
+          "optimizer_group_audit.json": true,
+          "gradient_audit.json": true
+        },
+        "generator_restore_method": "legacy_exact_sampler_fast_forward",
+        "train_generator_state_sha256": "3a1d82cd9cdcd35b58f07f114e70d5d404ebcd98be512a823c75961df7331904",
+        "next_epoch": 6,
+        "completion_status": "completed",
+        "combined_history_valid": true,
+        "combined_batches_valid": true,
+        "test_access": false,
+        "test_access_during_promotion": false
+      },
+      "prediction_export": {
+        "path": "/workspace/results/baselines/panopticon_eurosat_frozen_bnlinear/runs/20260815T231227548291Z_eurosat_panopticon_frozen_bnlinear_seed43_743e193d/predictions/test/deterministic",
+        "validation": {
+          "valid": true,
+          "errors": [],
+          "sample_count": 2714,
+          "sample_ids_unique": true,
+          "classification_type": "multiclass",
+          "schema_version": 2,
+          "probability_sum_max_abs_error": 2.384185791015625e-07,
+          "argmax_matches": true,
+          "finite": true,
+          "stochastic_shape": null,
+          "embedding_shape": [
+            2714,
+            768
+          ]
+        },
+        "sample_count": 2714,
+        "logit_shape": [
+          2714,
+          10
+        ],
+        "representation_shape": [
+          2714,
+          768
+        ],
+        "exact_official_sample_order": true,
+        "exact_official_labels": true
+      },
+      "test_metrics_report_only": {
+        "accuracy": 0.9830508474576272,
+        "macro_f1": 0.9823087497750616,
+        "nll": 0.046421732448028594,
+        "brier": 0.024619526961733276,
+        "ece": 0.0036247489684280007
+      }
+    },
+    {
+      "target": {
+        "dataset": "eurosat",
+        "model": "panopticon",
+        "adaptation": "full_finetune",
+        "experiment": "eurosat_panopticon_full_finetune",
+        "seed": 43
+      },
+      "target_key": "eurosat|panopticon|full_finetune|seed43",
+      "run_dir": null,
+      "run_id": null,
+      "status": "MISSING",
+      "promotion_eligible": false,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [
+        "No completed non-dry-run candidate was discovered or supplied."
+      ],
+      "warnings": [],
+      "test_metrics_report_only": {}
+    },
+    {
+      "target": {
+        "dataset": "treesatai",
+        "model": "dofa",
+        "adaptation": "frozen",
+        "experiment": "treesatai_dofa_frozen",
+        "seed": 43
+      },
+      "target_key": "treesatai|dofa|frozen|seed43",
+      "run_dir": null,
+      "run_id": null,
+      "status": "MISSING",
+      "promotion_eligible": false,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [
+        "No completed non-dry-run candidate was discovered or supplied."
+      ],
+      "warnings": [],
+      "test_metrics_report_only": {}
+    },
+    {
+      "target": {
+        "dataset": "treesatai",
+        "model": "dofa",
+        "adaptation": "full_finetune",
+        "experiment": "treesatai_dofa_full_finetune",
+        "seed": 43
+      },
+      "target_key": "treesatai|dofa|full_finetune|seed43",
+      "run_dir": null,
+      "run_id": null,
+      "status": "MISSING",
+      "promotion_eligible": false,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [
+        "No completed non-dry-run candidate was discovered or supplied."
+      ],
+      "warnings": [],
+      "test_metrics_report_only": {}
+    },
+    {
+      "target": {
+        "dataset": "treesatai",
+        "model": "panopticon",
+        "adaptation": "frozen",
+        "experiment": "treesatai_panopticon_frozen",
+        "seed": 43
+      },
+      "target_key": "treesatai|panopticon|frozen|seed43",
+      "run_dir": null,
+      "run_id": null,
+      "status": "MISSING",
+      "promotion_eligible": false,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [
+        "No completed non-dry-run candidate was discovered or supplied."
+      ],
+      "warnings": [],
+      "test_metrics_report_only": {}
+    },
+    {
+      "target": {
+        "dataset": "treesatai",
+        "model": "panopticon",
+        "adaptation": "full_finetune",
+        "experiment": "treesatai_panopticon_full_finetune",
+        "seed": 43
+      },
+      "target_key": "treesatai|panopticon|full_finetune|seed43",
+      "run_dir": null,
+      "run_id": null,
+      "status": "MISSING",
+      "promotion_eligible": false,
+      "promotion_basis": "validation_and_artifact_integrity_only",
+      "test_metrics_used_for_promotion": false,
+      "errors": [
+        "No completed non-dry-run candidate was discovered or supplied."
+      ],
+      "warnings": [],
+      "test_metrics_report_only": {}
+    }
+  ]
+}

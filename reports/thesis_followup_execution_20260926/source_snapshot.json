@@ -1,0 +1,16 @@
+{
+  "created_at": "2026-09-27T09:37:47.947337+00:00",
+  "sha256": {
+    "EO_FM_UQ_Core_RQ_Audit_Standard.md": "f4ac14fc1999265ad96be8816733c6e60806149650786bb813647e971c448ec6",
+    "reports/core_rq_completion_20260921/checks.csv": "e2f86cdb0597c78ca5166eaef7336f417c42f9e3deae6b6e3f008c0da1dcdcb8",
+    "reports/core_rq_completion_20260921/published/tables/thesis_master_results.csv": "203bd7281f9eb4960c81fa92c7050b630175a90f93313183cabf04002088ed63",
+    "reports/core_rq_completion_20260921/mc_dropout_three_way.csv": "2bb6f4dbcee4a2e0b960dc069ae982ae7113be4a9a4f0b1562bd2ef4f16bedbe",
+    "research_data/manifest.parquet": "00873ce8ac1d2c83f784f2df05b8573d88eec557c03fcbf3918cbad57217773e",
+    "reports/thesis_followup_design_20260926/EXECUTION_PROMPT.md": "f2621e5fccb8382de8a5270878295599e5cde1e5ca4c74f78b318168c5a17b2f",
+    "reports/final_dataset_protocols.md": "4bd00de7c7baa263e12d48fd4c3eba738103ac4c63cfd3d10a12aa5da16c0331",
+    "reports/final_training_protocol.md": "cd569a938552f5cb85573d335d4f1a4c9b0815445a999853226b8052f099d711",
+    "reports/pre_uq_protocol_freeze.md": "150caf72c6085e4082a9e8ad619b604cdcbeb93b795226b1b9ec80b1d640d956",
+    "reports/mc_dropout_protocol.md": "5d528c67546bee3faffc48cfd268a9aacce332575af8c23df6beb1b4966d4e17"
+  },
+  "protocol_sha256": "c9d8aef040d70a5c340b2d85f775fe553e5cbfea6adae895a5ffc82dcc324654"
+}

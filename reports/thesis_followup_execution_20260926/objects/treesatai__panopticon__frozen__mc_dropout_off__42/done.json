@@ -1,0 +1,54 @@
+{
+  "label_hash": "78bee1acdea813270329a5d298f8cea95d9188571ed8caa7be8badf7df02de9f",
+  "ids_hash": "09bb43cf20bc6d861a4cb1be55f245658da1c487a6ac0e7e4c1f80e8b003bd13",
+  "n_samples": 2000,
+  "actual_core_metrics": {
+    "accuracy": 0.238,
+    "brier": 0.07570317346546063,
+    "nll": 0.25816758160880465,
+    "nll_logits": 0.2581675815789535,
+    "macro_f1": 0.2057995545164342
+  },
+  "core_checks": [
+    {
+      "metric": "accuracy",
+      "actual": 0.238,
+      "expected": 0.238,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "brier",
+      "actual": 0.07570317346546063,
+      "expected": 0.07570317346546063,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "nll",
+      "actual": 0.25816758160880465,
+      "expected": 0.25816758160880465,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    },
+    {
+      "metric": "macro_f1",
+      "actual": 0.2057995545164342,
+      "expected": 0.2057995545164342,
+      "difference": 0.0,
+      "tolerance": 2e-06,
+      "status": "PASS"
+    }
+  ],
+  "validation": [],
+  "pmax_exactly_one": 0,
+  "pmax_one_errors": null,
+  "load_seconds": 0.017702283337712288,
+  "ranking_bootstrap_seconds": 2.376732712611556,
+  "total_seconds": 2.574672879651189,
+  "peak_rss_GiB": 0.6130332946777344,
+  "status": "COMPLETE"
+}

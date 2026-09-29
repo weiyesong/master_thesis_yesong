@@ -1,0 +1,21 @@
+test_boolean_correlation_and_boundary_contract (test_metrics.ScientificTests.test_boolean_correlation_and_boundary_contract) ... /workspace/reports/thesis_followup_execution_20260926/code/common.py:12: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/reports/core_rq_completion_20260921/published/tables/thesis_master_results.csv' mode='r' encoding='UTF-8'>
+  MASTER=list(csv.DictReader((ROOT/'reports/core_rq_completion_20260921/published/tables/thesis_master_results.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/reports/thesis_followup_execution_20260926/code/common.py:13: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/reports/core_rq_completion_20260921/mc_dropout_three_way.csv' mode='r' encoding='UTF-8'>
+  OFF=list(csv.DictReader((ROOT/'reports/core_rq_completion_20260921/mc_dropout_three_way.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_centered_logit_gauge_and_ignore_mask (test_metrics.ScientificTests.test_centered_logit_gauge_and_ignore_mask) ... ok
+test_constant_target_is_explicit_na (test_metrics.ScientificTests.test_constant_target_is_explicit_na) ... ok
+test_decomposition_and_multilabel (test_metrics.ScientificTests.test_decomposition_and_multilabel) ... ok
+test_fractional_workpoint_preserves_expected_tie_risk (test_metrics.ScientificTests.test_fractional_workpoint_preserves_expected_tie_risk) ... ok
+test_group_repeats_share_multiplicity (test_metrics.ScientificTests.test_group_repeats_share_multiplicity) ... ok
+test_id_mismatch_and_permutation (test_metrics.ScientificTests.test_id_mismatch_and_permutation) ... ok
+test_perfect_reverse_and_ties (test_metrics.ScientificTests.test_perfect_reverse_and_ties) ... ok
+test_tie_area_matches_exhaustive_random_order (test_metrics.ScientificTests.test_tie_area_matches_exhaustive_random_order) ... ok
+test_weighted_matches_expanded_and_sklearn (test_metrics.ScientificTests.test_weighted_matches_expanded_and_sklearn) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.088s
+
+OK

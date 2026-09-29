@@ -1,0 +1,136 @@
+seed: 42
+seeds:
+- 42
+device: auto
+output_dir: /workspace/results/final_thesis/mc_dropout/classification/eurosat/panopticon/frozen
+results_csv: /workspace/results/final_thesis/mc_dropout/classification/eurosat/panopticon/frozen/results.csv
+task: classification
+provenance:
+  require_input_hashes: true
+  protocol_id: C5-FINAL-MCD-2026-08-26-v1
+  protocol_path: /workspace/reports/mc_dropout_protocol.md
+  protocol_sha256: 5d528c67546bee3faffc48cfd268a9aacce332575af8c23df6beb1b4966d4e17
+data:
+  name: eurosat
+  input_bands: rgb
+  channels:
+  - B04
+  - B03
+  - B02
+  wavelengths_nm:
+  - 664.6300422881802
+  - 559.5987534818435
+  - 492.9971095687347
+  wavelength_source: https://github.com/geobreeze/geobreeze/blob/main/geobreeze/datasets/metadata/sensors/sentinel2.yaml
+  source: torchgeo_all_bands
+  artifact_path: ./data/EuroSATallBands.zip
+  artifact_sha256: 751f070f9bffa2eed48b24ca2dd0b02959280c08837e8c9a5532a67ba611df59
+  root: ./data
+  split_manifest: ./splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv
+  split_manifest_sha256: c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22
+  augmentations:
+    train: none
+    val: none
+    calibration: none
+    test: none
+  download: false
+  image_size: 224
+  normalize: true
+  normalization:
+    method: channelwise_standardization
+    statistics_split: train
+    statistics_manifest: ./splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv
+    raw_units: Sentinel-2_L2A_DN
+    mean:
+    - 936.085209866211
+    - 1031.3388562784282
+    - 1111.4795678522003
+    std:
+    - 589.387623763833
+    - 388.3087839027959
+    - 327.14241012761033
+    sample_count: 18866
+    pixel_count_per_channel: 77275136
+  num_classes: 10
+  class_names:
+  - AnnualCrop
+  - Forest
+  - HerbaceousVegetation
+  - Highway
+  - Industrial
+  - Pasture
+  - PermanentCrop
+  - Residential
+  - River
+  - SeaLake
+  num_workers: 4
+training:
+  epochs: 50
+  batch_size: 64
+  optimizer:
+    name: adamw
+  learning_rate: 0.001
+  backbone_learning_rate: 0.001
+  head_learning_rate: 0.001
+  weight_decay: 0.01
+  early_stopping:
+    enabled: true
+    patience: 10
+    min_delta: 0.0
+  checkpoint:
+    split: val
+    metric: nll
+    mode: min
+  limit_train_batches: null
+  limit_val_batches: null
+metrics:
+  n_bins: 15
+reproducibility:
+  deterministic: true
+prediction_export:
+  enabled: false
+dry_run_settings:
+  epochs: 1
+  limit_train_batches: 1
+  limit_val_batches: 1
+  num_workers: 0
+  output_dir: ./results/baselines/panopticon_eurosat_frozen_bnlinear/dry_runs
+visualization:
+  enabled: false
+  track_gradient_norm: true
+uq_methods:
+- name: downstream_mc_dropout
+  dropout_probability: 0.1
+  stochastic_passes: 30
+  aggregation: arithmetic_mean_probabilities
+experiments:
+- name: c5_mcd_eurosat_panopticon_frozen
+  task: classification
+  model:
+    name: panopticon
+    actual_wavelengths:
+    - 664.6300422881802
+    - 559.5987534818435
+    - 492.9971095687347
+    actual_wavelength_units: nanometers
+    size: base
+    pretrained: true
+    weights: VIT_BASE14
+    weights_cache_path: /home/yesong/.cache/torch/hub/checkpoints/panopticon_vitb14_teacher.pth
+    weights_sha256: 55024f411a7f383ed1a646d9b833b65683a4443846603fc7d37591d5afe9d26e
+    adaptation_mode: frozen
+    head:
+      architecture: batchnorm_linear
+      batchnorm_affine: false
+      batchnorm_eps: 1.0e-06
+      dropout: 0.1
+evaluation:
+  test_enabled: false
+c5_frozen_protocol:
+  pre_uq_protocol_path: /workspace/reports/pre_uq_protocol_freeze.md
+  pre_uq_protocol_sha256: 150caf72c6085e4082a9e8ad619b604cdcbeb93b795226b1b9ec80b1d640d956
+  pilot_validation_path: /workspace/reports/mc_dropout_pilot_validation.md
+  pilot_validation_sha256: 7a4c7c9390460bd20a8a20f9fc5ff56c40ab65de2151921a11c963835c7e4aae
+  source_deterministic_config: /workspace/configs/eurosat_panopticon_frozen_baseline.yaml
+  source_deterministic_config_sha256: 7fb2e230cb325697ff253bab5cb7ffdc31a7799aa1563cf29e8176a0f302437f
+  test_embargo_during_training: true

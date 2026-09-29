@@ -1,0 +1,51 @@
+experiment:
+  name: eurosat_dofa_rgb
+  seed: 42
+  device: auto
+
+data:
+  name: eurosat_rgb
+  channels: [B04, B03, B02]
+  wavelengths_nm: [665, 560, 490]
+  root: ./data
+  download: true
+  # Work around local Python CA-chain issues during torchvision downloads.
+  allow_insecure_ssl: true
+  image_size: 224
+  val_fraction: 0.2
+  num_workers: 4
+
+model:
+  name: dofa
+  model_size: base
+  pretrained: true
+  freeze_backbone: true
+  num_classes: 10
+  actual_wavelengths: [0.665, 0.560, 0.490]
+  actual_wavelength_units: micrometers
+  # The local pretrained DOFA_ViT_base_e100 checkpoint contains the standard
+  # ViT final norm weights, so this keeps the backbone fully pretrained.
+  global_pool: false
+  # Local DOFA checkout and pretrained checkpoint. These paths are relative to
+  # this config file, so the command works from inside eo_uq_experiments/ or
+  # from the repository/workspace root.
+  dofa_root: ../../DOFA
+  checkpoint_path: ../../DOFA/checkpoints/DOFA_ViT_base_e100.pth
+
+training:
+  epochs: 20
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  # Keep these null for full runs. Set small integers for quick local smoke tests.
+  limit_train_batches: null
+  limit_val_batches: null
+
+metrics:
+  ece_bins: 15
+
+outputs:
+  root: ./outputs
+  checkpoint_dir: ./outputs/checkpoints
+  log_dir: ./outputs/logs
+  results_csv: ./outputs/results.csv

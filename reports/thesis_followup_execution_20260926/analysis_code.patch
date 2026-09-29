@@ -1,0 +1,1442 @@
+--- /dev/null
++++ code/aggregate.py
+@@ -0,0 +1,122 @@
++"""Combine completed A/E results and construct paired, fixed-model contrasts."""
++from __future__ import annotations
++import argparse,json
++import numpy as np
++import pandas as pd
++from common import OUT,get_inputs,dump,csvout
++from metrics import interval,bootstrap_group_counts
++
++METRICS=['base_risk','aurc','auroc','average_precision','risk_at_1','risk_at_0.9','risk_at_0.8','risk_at_0.5']
++
++
++def k(r,method=None,seed=None,adaptation=None,model=None):
++    return (r['dataset'],model or r['model'],adaptation or r['adaptation'],method or r['method'],str(r['seed'] if seed is None else seed))
++
++
++def readcsv(path):
++    try:return pd.read_csv(path)
++    except pd.errors.EmptyDataError:return pd.DataFrame()
++
++
++def main():
++    parser=argparse.ArgumentParser();parser.add_argument('--allow-partial',action='store_true');args=parser.parse_args()
++    rows=get_inputs();done=[r for r in rows if (OUT/'objects'/r['object_id']/'done.json').exists()]
++    if len(done)!=len(rows) and not args.allow_partial:raise RuntimeError(f'Only {len(done)}/{len(rows)} complete')
++    lookup={k(r):r for r in done};metadata={r['object_id']:r for r in done};point={};replicates={};derived={}
++    tables={name:[] for name in ['metrics','curves','class_coverage','label_metrics','label_macro','scale','precision_sensitivity','proxy_means','proxy_correlations','pixel_summary']}
++    checks=[];profiles=[];alignment=[]
++    for r in done:
++        dest=OUT/'objects'/r['object_id'];summary=json.loads((dest/'done.json').read_text())
++        for name in tables:
++            path=dest/(name+'.csv')
++            if not path.exists():continue
++            frame=readcsv(path)
++            if frame.empty:continue
++            for field in ['object_id','task','dataset','model','adaptation','method','seed']:frame[field]=r[field]
++            frame['scope']='exploratory_fixed_predictions';tables[name].append(frame)
++        frame=readcsv(dest/'metrics.csv')
++        point[r['object_id']]={(v['analysis_unit'],v['score']):v for v in frame.to_dict('records')}
++        with np.load(dest/'bootstrap.npz',allow_pickle=False) as z:replicates[r['object_id']]={a:z[a] for a in z.files}
++        # Early execution-owned tables serialized group IDs as object strings.
++        with np.load(dest/'derived.npz',allow_pickle=True) as z:derived[r['object_id']]={a:z[a] for a in z.files}
++        for check in summary.get('core_checks',[])+summary.get('validation',[]):checks.append({'object_id':r['object_id'],'dataset':r['dataset'],**check})
++        profiles.append({**{f:r[f] for f in ['object_id','task','dataset','method']},**{key:value for key,value in summary.items() if key.endswith('_seconds') or key in ['peak_rss_GiB','uncompressed_bytes_read','n_samples']}})
++    for name,frames in tables.items():
++        if frames:pd.concat(frames,ignore_index=True).to_csv(OUT/(name+'.csv'),index=False)
++    # Verify every object's actual derived ID/label identity against same-task reference.
++    for ds in sorted({r['dataset'] for r in done}):
++        rs=[r for r in done if r['dataset']==ds];reference=rs[0];ref=derived[reference['object_id']]
++        refdone=json.loads((OUT/'objects'/reference['object_id']/'done.json').read_text())
++        for r in rs:
++            d=derived[r['object_id']];sd=json.loads((OUT/'objects'/r['object_id']/'done.json').read_text())
++            idok=np.array_equal(d['sample_id'],ref['sample_id']);groupok=np.array_equal(d['group_id'],ref['group_id'])
++            labelok=np.array_equal(d['label'],ref['label']) if 'label' in d else sd['label_hash']==refdone['label_hash']
++            maskok=True if 'label' in d else sd['mask_hash']==refdone['mask_hash']
++            assert idok and groupok and labelok and maskok,(r['object_id'],'alignment')
++            alignment.append({'object_id':r['object_id'],'reference_object':reference['object_id'],'ids_equal':idok,'groups_equal':groupok,'labels_equal':labelok,'masks_equal':maskok,'status':'PASS'})
++    contrasts=[]
++    def add(r,targets,name):
++        if all(t in lookup for t in targets):contrasts.append((r,[lookup[t] for t in targets],name))
++    for r in done:
++        if r['method']=='temperature_scaling':add(r,[k(r,method='deterministic')],'TS_minus_D')
++        if r['method']=='mc_dropout':
++            add(r,[k(r,method='mc_dropout_off')],'MC_minus_Off');add(r,[k(r,method='deterministic')],'MC_minus_D')
++        if r['method']=='mc_dropout_off':add(r,[k(r,method='deterministic')],'Off_minus_D')
++        if r['method']=='deep_ensemble':
++            add(r,[k(r,method='deterministic',seed='42')],'DE_minus_D42')
++            add(r,[k(r,method='deterministic',seed=str(s)) for s in [42,43,44]],'DE_minus_mean_D_members')
++        if r['adaptation']=='full_finetune':add(r,[k(r,adaptation='frozen')],'full_recipe_minus_frozen_recipe')
++        if r['model']=='panopticon':add(r,[k(r,model='dofa')],'Pan_configuration_minus_DOFA_configuration')
++    paired=[];proxy=[]
++    for r,baselines,contrast in contrasts:
++        oid=r['object_id'];bids=[b['object_id'] for b in baselines]
++        for (unit,score),row in point[oid].items():
++            if not all((unit,score) in point[b] for b in bids):continue
++            for metric in METRICS:
++                bvalue=float(np.mean([point[b][(unit,score)][metric] for b in bids]));value=row[metric]-bvalue
++                rk=f'{unit}___{score}___{metric}';dist=replicates[oid][rk]-np.mean([replicates[b][rk] for b in bids],axis=0)
++                lo,hi,n=interval(dist)
++                paired.append({'object_id':oid,'baseline_object_ids':';'.join(bids),'dataset':r['dataset'],'model':r['model'],'adaptation':r['adaptation'],'method':r['method'],'seed':r['seed'],
++                               'contrast':contrast,'analysis_unit':unit,'score':score,'metric':metric,'point_difference':value,'ci_low':lo,'ci_high':hi,'valid_bootstraps':n,'estimand':'fixed predictors; evaluation-group bootstrap'})
++        d=derived[oid];w,_=bootstrap_group_counts(d['group_id'])
++        for name in d:
++            if not name.startswith('score_') or not all(name in derived[b] for b in bids):continue
++            a=d[name];a=a.mean(axis=1) if a.ndim==2 else a
++            b=[]
++            for bid in bids:
++                v=derived[bid][name];b.append(v.mean(axis=1) if v.ndim==2 else v)
++            delta=a-np.mean(b,axis=0);dist=(w@delta)/w.sum(axis=1);lo,hi,n=interval(dist)
++            proxy.append({'object_id':oid,'baseline_object_ids':';'.join(bids),'dataset':r['dataset'],'model':r['model'],'adaptation':r['adaptation'],'method':r['method'],'seed':r['seed'],'contrast':contrast,'score':name[6:],'mean_difference':delta.mean(),'ci_low':lo,'ci_high':hi,'valid_bootstraps':n,'interpretation':'model/estimator-dependent proxy; no source identification'})
++    within=[]
++    for r in done:
++        oid=r['object_id']
++        for (unit,score),row in point[oid].items():
++            if score=='msp':continue
++            base=point[oid][(unit,'msp')]
++            for metric in METRICS:
++                dist=replicates[oid][f'{unit}___{score}___{metric}']-replicates[oid][f'{unit}___msp___{metric}']
++                lo,hi,n=interval(dist)
++                within.append({'object_id':oid,'dataset':r['dataset'],'model':r['model'],'adaptation':r['adaptation'],'method':r['method'],'seed':r['seed'],'analysis_unit':unit,'score':score,'baseline_score':'msp','metric':metric,'point_difference':row[metric]-base[metric],'ci_low':lo,'ci_high':hi,'valid_bootstraps':n,'estimand':'same predictor, paired evaluation groups'})
++    # Pixel comparisons use intersection of finite per-image metrics for each pair.
++    pixelpairs=[]
++    for r,baselines,contrast in contrasts:
++        if r['task']!='segmentation' or len(baselines)!=1:continue
++        a=readcsv(OUT/'objects'/r['object_id']/'pixel_metrics.csv');b=readcsv(OUT/'objects'/baselines[0]['object_id']/'pixel_metrics.csv')
++        merged=a.merge(b,on=['sample_id','score'],suffixes=('_a','_b'),validate='one_to_one')
++        for score,g in merged.groupby('score'):
++            for metric in METRICS:
++                valid=np.isfinite(g[metric+'_a'])&np.isfinite(g[metric+'_b']);v=g[valid].sort_values('sample_id')
++                if not len(v):continue
++                w,ug=bootstrap_group_counts(v.group_id_a.to_numpy());delta=v[metric+'_a'].to_numpy()-v[metric+'_b'].to_numpy();dist=(w@delta)/w.sum(axis=1);lo,hi,n=interval(dist)
++                pixelpairs.append({'object_id':r['object_id'],'baseline_object_id':baselines[0]['object_id'],'dataset':r['dataset'],'contrast':contrast,'score':score,'metric':metric,'mean_paired_difference':float(delta.mean()),'ci_low':lo,'ci_high':hi,'valid_bootstraps':n,'common_valid_images':len(v),'total_subset_images':len(g),'groups':len(ug),'estimand':'common-valid fixed32 images; paired group-bootstrap mean of per-image pixel metrics'})
++    csvout(OUT/'core_metric_verification.csv',checks);csvout(OUT/'resource_profile.csv',profiles);csvout(OUT/'alignment_verification.csv',alignment)
++    csvout(OUT/'paired_effects.csv',paired);csvout(OUT/'within_predictor_score_effects.csv',within);csvout(OUT/'proxy_paired_effects.csv',proxy);csvout(OUT/'pixel_paired_effects.csv',pixelpairs)
++    # Seed summaries are descriptive. Ensembles are not multiplied into 3 replicates.
++    metrics=pd.concat(tables['metrics'],ignore_index=True)
++    seedsummary=metrics.groupby(['dataset','model','adaptation','method','analysis_unit','score'])[METRICS].agg(['mean','std','min','max','count'])
++    seedsummary.columns=['_'.join(c) for c in seedsummary.columns];seedsummary.reset_index().to_csv(OUT/'seed_descriptive_summary.csv',index=False)
++    dump(OUT/'aggregation_summary.json',{'complete_objects':len(done),'planned_objects':len(rows),'paired_effect_rows':len(paired),'score_effect_rows':len(within),'pixel_effect_rows':len(pixelpairs),'all_completed_objects_id_label_mask_alignment':True})
++    print('Aggregated',len(done),'objects;',len(paired),'paired effects')
++
++
++if __name__=='__main__':main()
+--- /dev/null
++++ code/analyze.py
+@@ -0,0 +1,353 @@
++"""A: saved-prediction analyses only. Never imports a model or Torch."""
++from __future__ import annotations
++import argparse, csv, gc, json, time, warnings
++from pathlib import Path
++import numpy as np
++import pandas as pd
++import pyarrow.parquet as pq
++import yaml
++from scipy.special import logsumexp, expit, softmax
++from scipy.stats import spearmanr
++from scipy.ndimage import maximum_filter
++from common import (ROOT,OUT,PARAMS,ARCHIVE,MASTER,get_inputs,expected_row,archive_path,
++                    LazyNPZ,dump,csvout,arrhash,groups_for,rss_gib,matrix_col)
++from metrics import RankPlan,base_scores,decomposition,entropy,align_indices,interval,bootstrap_group_counts,COVERAGES
++
++BOOT=PARAMS['bootstrap_replicates']
++CURVE_Q=np.arange(1,101)/100
++
++
++def correlation(x,y):
++    x=np.asarray(x,dtype=np.float64);y=np.asarray(y,dtype=np.float64)
++    if np.ptp(x)==0 or np.ptp(y)==0:return np.nan
++    return float(spearmanr(x,y).statistic)
++
++
++def read_classification(r):
++    path=ROOT/r['prediction_path'];z=None;raw_z=None;extra={};binary=r['dataset']=='treesatai'
++    if path.suffix=='.parquet':
++        available=pq.read_schema(path).names
++        wanted=[n for n in ['sample_id','label','true_label','probabilities','logits','scaled_logits','raw_logits','temperature'] if n in available]
++        d=pq.read_table(path,columns=wanted).to_pandas();ids=d.sample_id.to_numpy().astype(str)
++        labelcol='label' if 'label' in d else 'true_label';y=matrix_col(d,labelcol) if binary else d[labelcol].to_numpy()
++        p=matrix_col(d,'probabilities').astype(np.float64)
++        if 'logits' in d:z=matrix_col(d,'logits').astype(np.float64)
++        if 'scaled_logits' in d:z=matrix_col(d,'scaled_logits').astype(np.float64);raw_z=matrix_col(d,'raw_logits').astype(np.float64);extra['temperature']=float(d.temperature.iloc[0])
++    else:
++        with np.load(path,allow_pickle=True) as d:
++            ids=d['sample_id' if 'sample_id' in d else 'sample_ids'].astype(str)
++            y=d['label' if 'label' in d else 'true_labels']
++            p=np.asarray(d['mean_probabilities' if 'mean_probabilities' in d else 'probabilities'],dtype=np.float64)
++    order=np.argsort(ids);ids=ids[order];p=p[order];y=y[order]
++    if z is not None:z=z[order]
++    if raw_z is not None:raw_z=raw_z[order]
++    if not np.isfinite(p).all() or p.min()<0 or p.max()>1:raise ValueError('invalid probabilities')
++    if not binary and np.max(abs(p.sum(axis=-1)-1))>2e-6:raise ValueError('probabilities not normalized')
++    scores=base_scores(p,binary);validation=[]
++    if r['raw_path']:
++        with np.load(ROOT/r['raw_path'],allow_pickle=True) as raw:
++            raw_ids=raw['sample_id' if 'sample_id' in raw else 'sample_ids'].astype(str)
++            raw_order=align_indices(raw_ids,ids)
++            draws=raw['probabilities'][raw_order]
++            raw_y=raw['true_labels' if 'true_labels' in raw else 'label'][raw_order]
++            if not np.array_equal(raw_y,y):raise ValueError('raw labels differ')
++            mean,dec=decomposition(draws,binary)
++            diff=float(np.max(abs(mean-p)))
++            if diff>2e-6:raise ValueError(('mean probabilities mismatch',diff))
++            residual=float(np.max(abs(dec['gini_total']-dec['gini_expected']-dec['gini_disagreement'])))
++            assert residual<2e-12
++            validation.append({'check':'raw_mean_vs_saved','max_abs_error':diff,'tolerance':2e-6,'status':'PASS'})
++            validation.append({'check':'raw_gini_identity','max_abs_error':residual,'tolerance':2e-12,'status':'PASS'})
++            extra['decomposition_tu_vs_saved_tu_max_abs']=float(np.max(abs(dec['entropy']-scores['entropy'])))
++            for name in ['expected_entropy','mutual_information','gini_expected','gini_disagreement']:scores[name]=dec[name]
++            extra['draw_count']=draws.shape[1]
++    extra.update(label_hash=arrhash(y),ids_hash=arrhash(ids),n_samples=len(ids))
++    return ids,p,y,z,raw_z,scores,extra,validation
++
++
++def analyze_rank_unit(r,unit,loss,scores,groups,bootstrap=True,labels=None,label_names=None):
++    records=[];curves=[];composition=[];repout={};cache={}
++    weights,_=bootstrap_group_counts(groups,BOOT,PARAMS['analysis_seed']) if bootstrap else (None,None)
++    oracle=RankPlan(loss,loss).evaluate()['aurc'][0]
++    for name,u in scores.items():
++        plan=RankPlan(u,loss);point=plan.evaluate()
++        token=(arrhash(plan.order),arrhash(plan.starts))
++        if bootstrap and token in cache:rep=cache[token]
++        elif bootstrap:
++            batches=[]
++            for lo in range(0,BOOT,32):batches.append(plan.evaluate(weights[lo:lo+32]))
++            rep={k:np.concatenate([b[k] for b in batches]) for k in batches[0]};cache[token]=rep
++        else:rep={}
++        curve=plan.evaluate(coverages=CURVE_Q)
++        unique,counts=np.unique(u,return_counts=True)
++        row={'object_id':r['object_id'],'dataset':r['dataset'],'model':r['model'],'adaptation':r['adaptation'],'method':r['method'],'seed':r['seed'],
++             'analysis_unit':unit,'score':name,'n_units':len(loss),'n_groups':len(np.unique(groups)),
++             'n_errors':int(np.sum(loss)) if plan.binary else np.nan,'binary_error_target':plan.binary,
++             'auroc_ap_na_reason':'' if plan.binary and 0<np.sum(loss)<len(loss) else ('continuous_image_loss' if not plan.binary else 'constant_error_target'),
++             'mean_uncertainty':float(np.mean(u)),'spearman_uncertainty_loss':correlation(u,loss),'oracle_aurc':oracle,
++             'unique_scores':len(unique),'largest_tie':int(counts.max()),'tied_observation_fraction':float(counts[counts>1].sum()/len(u)),
++             'evaluation_scope':'exploratory_fixed_models'}
++        for metric,values in point.items():
++            row[metric]=float(values[0])
++            if bootstrap:
++                lower,upper,nvalid=interval(rep[metric]);row[metric+'_ci_low']=lower;row[metric+'_ci_high']=upper;row[metric+'_valid_bootstraps']=nvalid
++                repout[f'{unit}___{name}___{metric}']=rep[metric]
++        records.append(row)
++        for q in CURVE_Q:curves.append({'object_id':r['object_id'],'analysis_unit':unit,'score':name,'coverage':q,'risk':curve[f'risk_at_{q:g}'][0],'random_risk':point['base_risk'][0]})
++        if labels is not None:
++            for q in COVERAGES:
++                accepted=plan.acceptance(q)
++                if labels.ndim==1:
++                    for c in range(len(label_names)):
++                        mask=labels==c;support=int(mask.sum());ac=float(accepted[mask].sum())
++                        composition.append({'object_id':r['object_id'],'analysis_unit':unit,'score':name,'coverage':q,'label':label_names[c],'positive_support':support,
++                                            'accepted_mass':ac,'rejected_mass':support-ac,'within_class_acceptance':ac/support if support else np.nan})
++                else:
++                    for c in range(labels.shape[1]):
++                        mask=labels[:,c]==1;support=int(mask.sum());ac=float(accepted[mask].sum())
++                        composition.append({'object_id':r['object_id'],'analysis_unit':unit,'score':name,'coverage':q,'label':label_names[c],'positive_support':support,
++                                            'accepted_mass':ac,'rejected_mass':support-ac,'within_class_acceptance':ac/support if support else np.nan})
++    return records,curves,composition,repout
++
++
++def core_class_metrics(p,y,z,binary):
++    if binary:
++        pred=p>=.5;err=pred!=y
++        clipped=np.clip(p,np.finfo(np.float64).tiny,1-1e-15)
++        prob_nll=float(-(y*np.log(clipped)+(1-y)*np.log1p(-clipped)).mean())
++        metrics={'accuracy':float((~err).all(axis=1).mean()),'brier':float(((p-y)**2).mean()),'nll':prob_nll}
++        if z is not None:metrics['nll_logits']=float((np.logaddexp(0,z)-y*z).mean())
++        tp=np.sum(pred&(y==1),axis=0);fp=np.sum(pred&(y==0),axis=0);fn=np.sum(~pred&(y==1),axis=0)
++        metrics['macro_f1']=float(np.divide(2*tp,2*tp+fp+fn,out=np.zeros(len(tp),dtype=float),where=2*tp+fp+fn>0).mean())
++    else:
++        pred=p.argmax(axis=1);err=pred!=y
++        metrics={'accuracy':float((~err).mean()),'brier':float(((p-np.eye(p.shape[1])[y])**2).sum(axis=1).mean()),
++                 'nll':float(-np.log(np.clip(p[np.arange(len(y)),y],np.finfo(np.float64).tiny,1)).mean())}
++        if z is not None:metrics['nll_logits']=float((logsumexp(z,axis=1)-z[np.arange(len(y)),y]).mean())
++    return metrics,err
++
++
++def compare_core(r,actual):
++    expected,_=expected_row(r);rows=[]
++    for name,value in actual.items():
++        if name not in expected or expected[name]=='':continue
++        old=float(expected[name]);delta=value-old
++        rows.append({'metric':name,'actual':value,'expected':old,'difference':delta,'tolerance':2e-6,'status':'PASS' if abs(delta)<=2e-6 else 'INVESTIGATE'})
++    return rows
++
++
++def analyze_classification(r):
++    dest=OUT/'objects'/r['object_id']
++    if (dest/'done.json').exists():print('skip',r['object_id'],flush=True);return
++    dest.mkdir(parents=True,exist_ok=True);start=time.perf_counter()
++    ids,p,y,z,raw_z,scores,extra,validation=read_classification(r);loaded=time.perf_counter()
++    groups=groups_for(r['dataset'],ids);binary=y.ndim==2
++    if binary:
++        names=yaml.safe_load((ROOT/'configs/treesatai_frozen_final.yaml').read_text())['data']['class_names']
++    else:
++        config=ROOT/f"configs/eurosat_{r['model']}_frozen_baseline.yaml"
++        names=yaml.safe_load(config.read_text())['data']['class_names']
++        with np.load(archive_path(r,'classification_ensemble_members'),allow_pickle=True) as d:
++            if 'class_names' in d:assert names==d['class_names'].astype(str).tolist()
++    actual,err=core_class_metrics(p,y,z,binary);checks=compare_core(r,actual)
++    records=[];curves=[];composition=[];reps={};labelmetrics=[]
++    if binary:
++        image_loss=err.mean(axis=1);image_scores={k:v.mean(axis=1) for k,v in scores.items()}
++        rr,cc,co,rp=analyze_rank_unit(r,'image_hamming',image_loss,image_scores,groups,True,y,names);records+=rr;curves+=cc;composition+=co;reps.update(rp)
++        rr,cc,co,rp=analyze_rank_unit(r,'micro_label_decision',err.ravel(),{k:v.ravel() for k,v in scores.items()},np.repeat(groups,y.shape[1]),True);records+=rr;curves+=cc;reps.update(rp)
++        for c,name in enumerate(names):
++            for score,u in scores.items():
++                plan=RankPlan(u[:,c],err[:,c]);m=plan.evaluate()
++                labelmetrics.append({'object_id':r['object_id'],'label_index':c,'label':name,'score':score,'n_images':len(y),'positive_labels':int(y[:,c].sum()),'negative_labels':int(len(y)-y[:,c].sum()),
++                                     'error_count':int(err[:,c].sum()),'correct_count':int((~err[:,c]).sum()),'auroc_ap_na_reason':'constant_error_target' if err[:,c].min()==err[:,c].max() else '',**{k:float(v[0]) for k,v in m.items()}})
++        ld=pd.DataFrame(labelmetrics)
++        macro=ld.groupby('score')[['auroc','average_precision','aurc','base_risk']].agg(['mean','count'])
++        macro.columns=['_'.join(c) for c in macro.columns];macro.reset_index().to_csv(dest/'label_macro.csv',index=False)
++        csvout(dest/'label_metrics.csv',labelmetrics)
++    else:
++        image_loss=err.astype(float);image_scores=scores
++        rr,cc,co,rp=analyze_rank_unit(r,'image_top1',image_loss,scores,groups,True,y,names);records+=rr;curves+=cc;composition+=co;reps.update(rp)
++    analysis_end=time.perf_counter()
++    derived=dict(sample_id=ids,group_id=groups,label=y,probabilities=p,loss=image_loss,**{'score_'+k:v for k,v in scores.items()})
++    if z is not None:derived['logits']=z
++    if raw_z is not None:derived['raw_logits']=raw_z
++    np.savez_compressed(dest/'derived.npz',**derived)
++    np.savez_compressed(dest/'bootstrap.npz',**reps)
++    csvout(dest/'metrics.csv',records);csvout(dest/'curves.csv',curves);csvout(dest/'class_coverage.csv',composition)
++    scale=[];precision=[]
++    if z is not None:
++        if binary:
++            for c,name in enumerate(names):scale.append({'label':name,'mean_log_odds':float(z[:,c].mean()),'mean_abs_log_odds':float(abs(z[:,c]).mean()),'spearman_abs_log_odds_error':correlation(abs(z[:,c]),err[:,c])})
++        else:
++            centered=z-z.mean(axis=1,keepdims=True);norm=np.linalg.norm(centered,axis=1);top=np.partition(z,-2,axis=1)[:,-2:];margin=top[:,1]-top[:,0]
++            for name,values in [('centered_logit_norm',norm),('top1_top2_logit_margin',margin)]:
++                scale.append({'measure':name,'mean':float(values.mean()),'mean_correct':float(values[~err].mean()),'mean_wrong':float(values[err].mean()),'spearman_error':correlation(values,err),'spearman_confidence':correlation(values,p.max(axis=1))})
++            if r['method'] in ['deterministic','temperature_scaling']:
++                reconstructed=softmax(z,axis=1);new_scores=base_scores(reconstructed)
++                for name,u in new_scores.items():
++                    old=RankPlan(scores[name],err).evaluate();new=RankPlan(u,err).evaluate()
++                    precision.append({'score':name,'probability_max_abs_difference':float(np.max(abs(reconstructed-p))),'argmax_changes':int(np.sum(reconstructed.argmax(axis=1)!=p.argmax(axis=1))),
++                                      **{k+'_saved':float(v[0]) for k,v in old.items()},**{k+'_logits64':float(v[0]) for k,v in new.items()}})
++        if raw_z is not None:
++            delta=float(np.max(abs(z-raw_z/extra['temperature'])));assert delta<2e-5
++            validation.append({'check':'TS_scaled_logits_raw_over_T','max_abs_error':delta,'tolerance':2e-5,'status':'PASS'})
++    csvout(dest/'scale.csv',scale);csvout(dest/'precision_sensitivity.csv',precision)
++    decomposition_means=[{'score':name,'mean':float(v.mean()),'std_across_samples':float((v.mean(axis=1) if binary else v).std()),'score_semantics':'Bernoulli per-label then mean' if binary else 'categorical'} for name,v in scores.items()]
++    proxy_correlations=[]
++    for a in scores:
++        for b in scores:
++            if a>=b:continue
++            aa=scores[a].mean(axis=1) if binary else scores[a];bb=scores[b].mean(axis=1) if binary else scores[b]
++            proxy_correlations.append({'score_a':a,'score_b':b,'spearman':correlation(aa,bb),'interpretation':'proxy association, not source coupling'})
++    csvout(dest/'proxy_means.csv',decomposition_means);csvout(dest/'proxy_correlations.csv',proxy_correlations)
++    extra.update(actual_core_metrics=actual,core_checks=checks,validation=validation,
++                 pmax_exactly_one=int(np.sum(p.max(axis=1)==1)) if not binary else int(np.sum((p==0)|(p==1))),
++                 pmax_one_errors=int(np.sum(err[p.max(axis=1)==1])) if not binary else None,
++                 load_seconds=loaded-start,ranking_bootstrap_seconds=analysis_end-loaded,total_seconds=time.perf_counter()-start,peak_rss_GiB=rss_gib(),status='COMPLETE')
++    dump(dest/'done.json',extra)
++    print('done',r['object_id'],'seconds',round(extra['total_seconds'],2),flush=True)
++
++
++def boundary_mask(y,valid):
++    b=np.zeros_like(valid)
++    h=valid[:,1:]&valid[:,:-1]&(y[:,1:]!=y[:,:-1]);b[:,1:]|=h;b[:,:-1]|=h
++    v=valid[1:,:]&valid[:-1,:]&(y[1:,:]!=y[:-1,:]);b[1:,:]|=v;b[:-1,:]|=v
++    return maximum_filter(b,size=2*PARAMS['boundary_radius']+1,mode='constant')&valid
++
++
++def analyze_segmentation(r):
++    dest=OUT/'objects'/r['object_id']
++    if (dest/'done.json').exists():print('skip',r['object_id'],flush=True);return
++    dest.mkdir(parents=True,exist_ok=True);start=time.perf_counter()
++    subset_manifest=json.loads((ROOT/'reports/mc_dropout_segmentation_research_subset_ids.json').read_text())
++    subset_ids=subset_manifest['datasets'][r['dataset']]['final_test_research_subset_ids'];subset_set=set(subset_ids)
++    names=['clear','thick_cloud','thin_cloud','cloud_shadow'] if r['dataset']=='cloudsen12' else ['background','building'];classes=len(names)
++    confusion=np.zeros((classes,classes),dtype=np.int64);sums=dict(n=0,nll=0.,brier=0.)
++    images=[];classrows=[];pixelrows=[];pixelstrata=[];pixelcurve=[];validation=[]
++    raw=None;rawmap={};raw_mean_max=0.;gini_max=0.;saved_prediction_mismatches=0;full_var_mean_diff=0.;subset_label_matches=0
++    with LazyNPZ(ROOT/r['prediction_path'],r['object_id']) as full:
++        ids=full['sample_id'].astype(str);order=np.argsort(ids);ids=ids[order];groups=groups_for(r['dataset'],ids)
++        # Numeric arrays are file-backed; only one image is converted to float64.
++        pp=full['probabilities'];yy=full['label'];vv=full['valid_mask'];savedpred=full['prediction']
++        mc_arrays={}
++        if r['method']=='mc_dropout':
++            for name,keyname in [('expected_entropy','expected_predictive_entropy'),('mutual_information','mi_style_disagreement'),('variance','predictive_variance')]:mc_arrays[name]=full[keyname]
++        if r['raw_path']:
++            raw=LazyNPZ(ROOT/r['raw_path'],r['object_id']+'_raw')
++            rawids=raw['sample_id'].astype(str);rawmap={sid:i for i,sid in enumerate(rawids)}
++            if list(rawids)!=subset_ids:raise ValueError('raw subset IDs differ from fixed definition')
++            rawp=raw['probabilities'];rawy=raw['label'];rawv=raw['valid_mask'] if 'valid_mask' in raw else None
++        loaded=time.perf_counter();sort_seconds=0.;aggregate_start=time.perf_counter()
++        for j,i in enumerate(order):
++            sid=ids[j];y=np.asarray(yy[i]);valid=np.asarray(vv[i],dtype=bool)
++            if not np.array_equal(valid,y!=255):raise ValueError('saved valid mask differs from label-ignore contract')
++            q=np.moveaxis(np.asarray(pp[i],dtype=np.float64),0,-1)[valid]
++            lab=y[valid].astype(np.int64)
++            if not len(lab):raise ValueError('image contains no valid pixels')
++            if not np.isfinite(q).all() or q.min()<0 or q.max()>1 or np.max(abs(q.sum(axis=1)-1))>2e-6:raise ValueError('invalid segmentation probability')
++            pred=q.argmax(axis=1);loss=(pred!=lab).astype(float);n=len(lab)
++            saved_prediction_mismatches+=int(np.sum(pred!=np.asarray(savedpred[i])[valid]))
++            scores=base_scores(q)
++            if mc_arrays:
++                scores['expected_entropy']=np.asarray(mc_arrays['expected_entropy'][i],dtype=np.float64)[valid]
++                scores['mutual_information']=np.asarray(mc_arrays['mutual_information'][i],dtype=np.float64)[valid]
++                scores['gini_disagreement']=np.moveaxis(np.asarray(mc_arrays['variance'][i],dtype=np.float64),0,-1)[valid].sum(axis=1)
++                scores['gini_expected']=scores['gini_total']-scores['gini_disagreement']
++            cm=np.bincount(classes*lab+pred,minlength=classes**2).reshape(classes,classes);confusion+=cm
++            nll=float(-np.log(np.maximum(q[np.arange(n),lab],1e-12)).sum());brier=float(((q-np.eye(classes)[lab])**2).sum())
++            sums['n']+=n;sums['nll']+=nll;sums['brier']+=brier
++            images.append({'sample_id':sid,'group_id':groups[j],'valid_pixels':n,'pixel_error_rate':float(loss.mean()),'label_hash':arrhash(y),'valid_mask_hash':arrhash(valid),
++                           'nll':nll/n,'brier':brier/n,**{'score_'+k:float(a.mean()) for k,a in scores.items()}})
++            support=cm.sum(axis=1);intersection=cm.diagonal();union=cm.sum(axis=0)+support-intersection
++            for c,name in enumerate(names):classrows.append({'sample_id':sid,'class_index':c,'class_name':name,'support':int(support[c]),'iou':intersection[c]/union[c] if union[c] else np.nan,
++                                                            'recall':intersection[c]/support[c] if support[c] else np.nan,'union':int(union[c]),'na_reason':'absent_true_and_predicted_class' if union[c]==0 else ('no_true_class_for_recall' if support[c]==0 else '')})
++            if sid not in subset_set:continue
++            if raw is not None:
++                k=rawmap[sid]
++                if not np.array_equal(np.asarray(rawy[k]),y):raise ValueError('raw subset labels differ')
++                rv=np.asarray(rawv[k],dtype=bool) if rawv is not None else (np.asarray(rawy[k])!=255)
++                if not np.array_equal(rv,valid):raise ValueError('raw subset valid mask differs')
++                subset_label_matches+=1
++                pdraw=np.asarray(rawp[k]).transpose(2,3,0,1).reshape(-1,rawp.shape[1],classes)[valid.ravel()]
++                mean,dec=decomposition(pdraw)
++                diff=float(np.max(abs(mean-q)));raw_mean_max=max(raw_mean_max,diff)
++                if diff>2e-6:raise ValueError(('subset mean mismatch',diff))
++                gini_max=max(gini_max,float(np.max(abs(dec['gini_total']-dec['gini_expected']-dec['gini_disagreement']))))
++                if mc_arrays:
++                    full_var_mean_diff=max(full_var_mean_diff,float(np.max(abs(scores['gini_disagreement']-dec['gini_disagreement']))))
++                    for name in ['expected_entropy','mutual_information']:
++                        er=float(np.max(abs(scores[name]-dec[name])))
++                        if er>2e-6:raise ValueError(('saved entropy mismatch',name,er))
++                for name in ['expected_entropy','mutual_information','gini_expected','gini_disagreement']:scores[name]=dec[name]
++                del pdraw,mean,dec
++            bound=boundary_mask(y,valid)[valid]
++            strata=[('boundary',bound),('nonboundary',~bound)]+[(name,lab==c) for c,name in enumerate(names)]
++            t=time.perf_counter()
++            for name,u in scores.items():
++                plan=RankPlan(u,loss);m=plan.evaluate();curve=plan.evaluate(coverages=CURVE_Q)
++                pixelrows.append({'sample_id':sid,'group_id':groups[j],'score':name,'valid_pixels':n,'errors':int(loss.sum()),'na_reason':'constant_error_target' if loss.min()==loss.max() else '',**{k:float(v[0]) for k,v in m.items()}})
++                pixelcurve.append({'sample_id':sid,'score':name,**{f'{qv:.2f}':float(curve[f'risk_at_{qv:g}'][0]) for qv in CURVE_Q}})
++                accepts={qv:plan.acceptance(qv) for qv in COVERAGES}
++                for stratum,mask in strata:
++                    count=int(mask.sum())
++                    row={'sample_id':sid,'score':name,'stratum':stratum,'support':count,'error_rate':float(loss[mask].mean()) if count else np.nan,'mean_uncertainty':float(u[mask].mean()) if count else np.nan,'na_reason':'' if count else 'no_pixels_in_stratum'}
++                    for qv,ac in accepts.items():row[f'accepted_mass_at_{qv:g}']=float(ac[mask].sum());row[f'within_stratum_coverage_at_{qv:g}']=float(ac[mask].mean()) if count else np.nan
++                    pixelstrata.append(row)
++            sort_seconds+=time.perf_counter()-t
++        del pp,yy,vv,savedpred,mc_arrays
++        if raw is not None:
++            del rawp,rawy,rawv
++            raw_seconds=raw.seconds;raw.close()
++        else:raw_seconds=0.
++        decompress_seconds=full.seconds+raw_seconds
++        input_uncompressed=full.uncompressed_bytes
++    aggregation_seconds=time.perf_counter()-aggregate_start-sort_seconds
++    frame=pd.DataFrame(images);loss=frame.pixel_error_rate.to_numpy();image_scores={k[6:]:frame[k].to_numpy() for k in frame if k.startswith('score_')}
++    bt=time.perf_counter();records,curves,composition,reps=analyze_rank_unit(r,'image_pixel_error_fraction',loss,image_scores,groups,True)
++    bootstrap_seconds=time.perf_counter()-bt
++    inter=confusion.diagonal();union=confusion.sum(axis=0)+confusion.sum(axis=1)-inter
++    iou=np.divide(inter,union,out=np.full(classes,np.nan),where=union>0)
++    actual={'pixel_accuracy':float(inter.sum()/sums['n']),'miou':float(np.nanmean(iou)),'nll':sums['nll']/sums['n'],'brier':sums['brier']/sums['n']}
++    actual.update({f'iou_{name}':float(iou[c]) for c,name in enumerate(names)})
++    checks=compare_core(r,actual)
++    if raw is not None:
++        assert subset_label_matches==32 and gini_max<2e-12 and full_var_mean_diff<2e-6
++        validation=[{'check':'raw_subset_label_and_mask_alignment','matched_images':subset_label_matches,'status':'PASS'},
++                    {'check':'raw_subset_mean_vs_full','max_abs_error':raw_mean_max,'tolerance':2e-6,'status':'PASS'},
++                    {'check':'raw_gini_identity','max_abs_error':gini_max,'tolerance':2e-12,'status':'PASS'},
++                    {'check':'full_MC_variance_vs_raw','max_abs_error':full_var_mean_diff,'tolerance':2e-6,'status':'PASS' if r['method']=='mc_dropout' else 'NA'}]
++    np.savez_compressed(dest/'derived.npz',sample_id=ids,group_id=groups,loss=loss,**{'score_'+k:v for k,v in image_scores.items()})
++    np.savez_compressed(dest/'bootstrap.npz',**reps)
++    frame.to_csv(dest/'per_image.csv',index=False);csvout(dest/'per_image_class.csv',classrows)
++    csvout(dest/'metrics.csv',records);csvout(dest/'curves.csv',curves);csvout(dest/'pixel_metrics.csv',pixelrows);csvout(dest/'pixel_strata.csv',pixelstrata)
++    pc=pd.DataFrame(pixelcurve);pc.groupby('score').mean(numeric_only=True).to_csv(dest/'pixel_mean_curves.csv')
++    ppix=pd.DataFrame(pixelrows);summaries=[];pixel_boot={}
++    for score,g in ppix.groupby('score'):
++        g=g.sort_values('sample_id');w,ug=bootstrap_group_counts(g.group_id.to_numpy(),BOOT,PARAMS['analysis_seed'])
++        for metric in ['base_risk','aurc','auroc','average_precision']+[f'risk_at_{q:g}' for q in COVERAGES]:
++            a=g[metric].to_numpy();valid=np.isfinite(a);numerator=w[:,valid]@a[valid];denominator=w[:,valid].sum(axis=1)
++            draws=np.divide(numerator,denominator,out=np.full(BOOT,np.nan),where=denominator>0);lo,hi,nvalid=interval(draws)
++            summaries.append({'object_id':r['object_id'],'score':score,'metric':metric,'mean':float(np.nanmean(a)) if valid.any() else np.nan,'total_images':len(g),'valid_images':int(valid.sum()),'groups':len(ug),'ci_low':lo,'ci_high':hi,'valid_bootstraps':nvalid,'scope':'fixed32_mean_of_per_image_pixel_metrics'})
++            pixel_boot[f'{score}___{metric}']=draws
++    csvout(dest/'pixel_summary.csv',summaries);np.savez_compressed(dest/'pixel_bootstrap.npz',**pixel_boot)
++    proxy=[{'score':name,'mean':float(v.mean()),'std_across_samples':float(v.std()),'score_semantics':'mean over valid pixels, then images'} for name,v in image_scores.items()]
++    csvout(dest/'proxy_means.csv',proxy)
++    proxycor=[{'score_a':a,'score_b':b,'spearman':correlation(image_scores[a],image_scores[b]),'interpretation':'proxy association, not source coupling'} for a in image_scores for b in image_scores if a<b]
++    csvout(dest/'proxy_correlations.csv',proxycor)
++    done=dict(actual_core_metrics=actual,core_checks=checks,validation=validation,n_samples=len(ids),subset_images=32,ids_hash=arrhash(ids),label_hash=arrhash(frame.label_hash.to_numpy().astype(str)),mask_hash=arrhash(frame.valid_mask_hash.to_numpy().astype(str)),
++              saved_prediction_mismatches=saved_prediction_mismatches,load_seconds=loaded-start,decompression_seconds=decompress_seconds,uncompressed_bytes_read=input_uncompressed,
++              image_aggregation_seconds=aggregation_seconds,pixel_ranking_seconds=sort_seconds,ranking_bootstrap_seconds=bootstrap_seconds,total_seconds=time.perf_counter()-start,peak_rss_GiB=rss_gib(),status='COMPLETE')
++    dump(dest/'done.json',done);print('done',r['object_id'],'seconds',round(done['total_seconds'],2),flush=True)
++
++
++def main():
++    parser=argparse.ArgumentParser();parser.add_argument('--task',choices=['classification','segmentation'],default='classification');parser.add_argument('--limit',type=int);args=parser.parse_args()
++    rows=[r for r in get_inputs() if r['task']==args.task]
++    if args.limit:rows=rows[:args.limit]
++    for r in rows:
++        if args.task=='classification':analyze_classification(r)
++        else:analyze_segmentation(r)
++        gc.collect()
++
++
++if __name__=='__main__':main()
+--- /dev/null
++++ code/checks.py
+@@ -0,0 +1,78 @@
++import json,csv,hashlib
++import pandas as pd
++from common import ROOT,OUT,get_inputs,csvout,dump,sha
++
++
++def main():
++    rows=get_inputs();application=[]
++    for r in rows:
++        scopes=['classification_full'] if r['task']=='classification' else ['segmentation_full_image','segmentation_fixed32_pixel']
++        for scope in scopes:
++            for score in ['msp','entropy','negative_margin','gini_total','expected_entropy','mutual_information','gini_expected','gini_disagreement']:
++                component=score in ['expected_entropy','mutual_information','gini_expected','gini_disagreement']
++                available=not component or r['method']=='mc_dropout' or (r['method']=='deep_ensemble' and scope!='segmentation_full_image')
++                reason='' if available else ('no empirical prediction-distribution decomposition for a single deterministic prediction' if r['method']!='deep_ensemble' else 'full-test DE decomposition intentionally disabled; available on common fixed32 subset')
++                application.append({'object_id':r['object_id'],'scope':scope,'quantity':score,'status':'PASS' if available else 'NA','reason':reason,'evidence_path':f"objects/{r['object_id']}/metrics.csv" if scope!='segmentation_fixed32_pixel' else f"objects/{r['object_id']}/pixel_metrics.csv"})
++            if scope=='segmentation_full_image' or r['dataset']=='treesatai':
++                application.append({'object_id':r['object_id'],'scope':scope,'quantity':'image_level_AUROC_AP','status':'NA','reason':'image loss is continuous Hamming/pixel-error fraction; binary error AUROC not its estimand','evidence_path':f"objects/{r['object_id']}/metrics.csv"})
++    for evidence, part in pd.DataFrame(application).query("status == 'PASS'").groupby('evidence_path'):
++        present=set(pd.read_csv(OUT/evidence).score)
++        assert set(part.quantity).issubset(present),(evidence,set(part.quantity)-present)
++    csvout(OUT/'analysis_applicability.csv',application)
++    with (ROOT/'reports/core_rq_completion_20260921/checks.csv').open() as f:
++        old=list(csv.DictReader(f))
++    additional={
++        'C01':'ANALYSIS_PROTOCOL.md;source_snapshot.json',
++        'C02':'TS_same_checkpoint_verification.csv;inputs_manifest.csv',
++        'C03':'scientific_tests.log;label_metrics.csv;analysis_applicability.csv',
++        'C05':'core_metric_verification.csv;scientific_tests.log;precision_sensitivity.csv',
++        'C06':'alignment_verification.csv;auxiliary_inputs_manifest.csv;eurosat_original_label_verification.csv',
++        'C07':'ANALYSIS_PROTOCOL.md;seed_descriptive_summary.csv;paired_effects.csv',
++        'C08':'sample_groups.csv;grouping_summary.json',
++        'C09':'analysis_applicability.csv;ANALYSIS_PROTOCOL.md',
++        'R1.4':'full_image_class_coverage.csv;label_metrics.csv',
++        'R3.1':'inputs_manifest.csv;alignment_verification.csv;paired_effects.csv',
++        'R3.3':'TS_same_checkpoint_verification.csv;TS_calibration_behavior.csv',
++        'R3.4':'raw_classification_MC_verification.csv;core_metric_verification.csv',
++        'R3.5':'DE_versus_three_member_core_metrics.csv;core_metric_verification.csv',
++        'R3.7':'seed_descriptive_summary.csv;ANALYSIS_PROTOCOL.md'}
++    output=[]
++    for r in old:
++        cid=r.get('check_id',r.get('id'));evidence=r.get('evidence_path','')
++        output.append({'check_id':cid,'rq':r.get('rq',''),'status':r['status'],
++                       'evidence_path':additional.get(cid,'../core_rq_completion_20260921/checks.csv'),
++                       'legacy_direct_evidence_reference':'../core_rq_completion_20260921/checks.csv#'+str(cid),
++                       'legacy_evidence_paths':evidence,
++                       'review_basis':'new direct analysis plus preserved prior evidence' if cid in additional else 'unchanged prior direct evidence; not rerun this phase',
++                       'finding':r.get('finding',''),'impact_on_answer':'DOFA–EuroSAT historical provenance remains bounded UNKNOWN' if cid in ['C01','C06'] else 'Original core RQ scope unchanged; see new A/E findings separately',
++                       'minimal_resolution':r['minimal_resolution'],
++                       'legacy_impact_on_answer':r['impact_on_answer'],
++                       'legacy_acceptance_evidence':r['acceptance_evidence'],
++                       'owner':'Codex; Claude independent sample review'})
++    extras=[
++        ('FUP01','A coverage','PASS','inputs_manifest.csv;aggregation_summary.json','68 classification + 32 primary segmentation objects completed','none'),
++        ('FUP02','A measurement','PASS','scientific_tests.log;core_metric_verification.csv;claude_code_review.md','Mathematical tests, direct primary-metric reconstruction, and independent sample checks','none'),
++        ('FUP03','A pairing','PASS','alignment_verification.csv;TS_same_checkpoint_verification.csv;raw_classification_MC_verification.csv','Direct IDs/labels/masks/means and same-checkpoint TS verified','none'),
++        ('FUP04','A inference scope','PASS','grouping_summary.json;paired_effects.csv;pixel_paired_effects.csv','Conditional fixed-model group bootstrap; pixel pairs use common-valid images','none'),
++        ('FUP05','A source and definition precision','PASS','precision_sensitivity.csv;analysis_applicability.csv;ANALYSIS_PROTOCOL.md','Saved float32 tie structure retained; logits64 sensitivity separately labeled; task-specific NA','none'),
++        ('FUP06','E analytic validity','PASS','toy/verification.json;toy/condition_means.csv;toy/interactions.csv','888 weighted terms, four conditions; identities and quadrature agree','none'),
++        ('FUP07','A/E claim boundaries','PASS','FOLLOWUP_COMPLETION_REPORT.md;THESIS_RESULTS_DRAFT.md','No error-ranking champion, physical source-coupling or novel-theory claim inferred','none'),
++        ('FUP08','unselected packages','NA','parameters.json;ANALYSIS_PROTOCOL.md','B/C/D/F, extra segmentation seeds, full-test DE decomposition, inference benchmark disabled','Enable a separate branch only if a new claim requires it')]
++    for cid,rq,status,ev,finding,remedy in extras:output.append({'check_id':cid,'rq':rq,'status':status,'evidence_path':ev,'legacy_direct_evidence_reference':'','legacy_evidence_paths':'','review_basis':'this execution direct evidence','finding':finding,'impact_on_answer':rq,'minimal_resolution':remedy,'owner':'Codex; Claude independent sample review'})
++    for item in output:
++        item['evidence_path']=item['evidence_path'].replace('scientific_tests.log','scientific_tests_final.log')
++    csvout(OUT/'checks_delta.csv',output)
++    snapshot=json.loads((OUT/'source_snapshot.json').read_text());unchanged=[]
++    for path,digest in snapshot['sha256'].items():assert sha(ROOT/path)==digest,path;unchanged.append(path)
++    for r in rows:
++        p=ROOT/r['prediction_path'];assert p.stat().st_size==int(r['bytes']) and p.stat().st_mtime_ns==int(r['mtime_ns']),str(p)
++    assert sha(OUT/'ANALYSIS_PROTOCOL.md')==snapshot['protocol_sha256'],'Frozen protocol changed'
++    group_sources=[]
++    for dataset,entry in json.loads((OUT/'grouping_summary.json').read_text()).items():
++        path='splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv' if dataset=='eurosat' else f'reports/dataset_manifests/{dataset}_actual_manifest.csv'
++        assert sha(ROOT/path)==entry['source_sha256'];group_sources.append(path)
++    dump(OUT/'input_integrity.json',{'snapshot_sources_unchanged':unchanged,'prediction_files_size_and_mtime_unchanged':len(rows),'original_source_hash_checks':len(unchanged),'grouping_sources_hash_unchanged':group_sources,'frozen_protocol_hash_unchanged':True,'full_archive_rehashed':False})
++    print('Wrote',len(output),'audit delta rows')
++
++
++if __name__=='__main__':main()
+--- /dev/null
++++ code/common.py
+@@ -0,0 +1,164 @@
++from __future__ import annotations
++import csv, hashlib, json, os, shutil, time, zipfile, resource
++from pathlib import Path
++import numpy as np
++import pandas as pd
++import pyarrow.parquet as pq
++
++ROOT=Path('/workspace')
++OUT=Path(__file__).resolve().parents[1]
++PARAMS=json.loads((OUT/'parameters.json').read_text())
++ARCHIVE=pq.read_table(ROOT/'research_data/manifest.parquet').to_pylist()
++with (ROOT/'reports/core_rq_completion_20260921/published/tables/thesis_master_results.csv').open() as _f:
++    MASTER=list(csv.DictReader(_f))
++with (ROOT/'reports/core_rq_completion_20260921/mc_dropout_three_way.csv').open() as _f:
++    OFF=list(csv.DictReader(_f))
++
++
++def dump(path,obj):
++    path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
++    tmp=path.with_suffix(path.suffix+'.tmp');tmp.write_text(json.dumps(obj,ensure_ascii=False,indent=2,default=lambda x:x.item() if isinstance(x,np.generic) else str(x))+'\n');os.replace(tmp,path)
++
++
++def csvout(path,rows):
++    path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
++    pd.DataFrame(rows).to_csv(path,index=False)
++
++
++def sha(path):
++    h=hashlib.sha256()
++    with Path(path).open('rb') as f:
++        for b in iter(lambda:f.read(8*1024*1024),b''):h.update(b)
++    return h.hexdigest()
++
++
++def arrhash(a):
++    return hashlib.sha256(np.ascontiguousarray(a).tobytes()).hexdigest()
++
++
++def key(r):
++    return tuple(str(r[k]) for k in ['dataset','model','adaptation','seed'])
++
++
++def slug(r):
++    return '__'.join(str(r[k]) for k in ['dataset','model','adaptation','method','seed']).rstrip('_')
++
++
++def archive_match(r,role):
++    xs=[x for x in ARCHIVE if x['role']==role and all(str(x[k])==str(r[k]) for k in ['dataset','model','adaptation'])
++        and (x['seed'] is None or str(x['seed'])==str(r['seed']))]
++    if len(xs)!=1:raise ValueError((role,r,len(xs)))
++    return xs[0]
++
++
++def archive_path(r,role):
++    return ROOT/'research_data'/archive_match(r,role)['archive_path']
++
++
++def expected_row(r):
++    if r['method']=='mc_dropout_off':
++        x=next(x for x in OFF if key(x)==key(r))
++        return {k[4:]:v for k,v in x.items() if k.startswith('Off_')},x
++    rs=[x for x in MASTER if x['record_type'] in ['INDIVIDUAL_SEED','ENSEMBLE'] and x['uq_method']==r['method']
++        and all(str(x[k])==str(r[k]) for k in ['dataset','model','adaptation'])
++        and (x['record_type']=='ENSEMBLE' or x['seed']==str(r['seed']))]
++    if len(rs)!=1:raise ValueError((r,rs))
++    return rs[0],rs[0]
++
++
++def build_inputs():
++    with (ROOT/'reports/thesis_followup_design_20260926/planned_A_prediction_objects.csv').open() as f:
++        rows=list(csv.DictReader(f))
++    out=[]
++    for r in rows:
++        p=ROOT/r['representative_prediction_path'];expect,source=expected_row(r)
++        raw=''
++        if r['method']=='mc_dropout':raw=str(archive_path(r,'classification_mc_raw_passes' if r['task']=='classification' else 'segmentation_mc_raw_subset').relative_to(ROOT))
++        if r['method']=='deep_ensemble':raw=str(archive_path(r,'classification_ensemble_members' if r['task']=='classification' else 'segmentation_ensemble_member_subset').relative_to(ROOT))
++        a=next((x for x in ARCHIVE if 'research_data/'+x['archive_path']==str(p.relative_to(ROOT))),None)
++        digest=a['sha256'] if a else sha(p)
++        out.append({**r,'object_id':slug(r),'prediction_path':str(p.relative_to(ROOT)),'raw_path':raw,
++                    'checkpoint_path':source.get('checkpoint_path',''),'run_id':source.get('run_id',''),
++                    'sha256':digest,'hash_basis':'archive_manifest_expected_hash; bytes checked' if a else 'computed_this_execution',
++                    'bytes':p.stat().st_size,'mtime_ns':p.stat().st_mtime_ns,'split':'test',
++                    'analysis_scope':'classification_full' if r['task']=='classification' else 'full_image_and_fixed32_pixel',
++                    'decomposition_scope':'full' if r['method']=='mc_dropout' or (r['method']=='deep_ensemble' and r['task']=='classification') else ('fixed32_only' if r['method']=='deep_ensemble' else 'NA_single_distribution'),
++                    'status':'READY','missing_reason':''})
++    csvout(OUT/'inputs_manifest.csv',out)
++    return out
++
++
++def get_inputs():
++    with (OUT/'inputs_manifest.csv').open() as f:
++        return list(csv.DictReader(f))
++
++
++def build_groups():
++    allrows=[];summary={}
++    for ds in ['eurosat','treesatai','cloudsen12','spacenet7']:
++        path=(ROOT/'splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv' if ds=='eurosat' else ROOT/f'reports/dataset_manifests/{ds}_actual_manifest.csv')
++        df=pd.read_csv(path); test=df[df.split=='test'].copy()
++        if ds=='eurosat':test['group_id']=test.spatial_group.astype(str);basis='provided spatial_group'
++        elif ds=='treesatai':test['group_id']=test.sample_id;basis='image; all test coordinates distinct; nearby correlation unknown'
++        elif ds=='spacenet7':test['group_id']=test.aoi;basis='AOI'
++        else:
++            parent=list(range(len(df)))
++            def find(x):
++                while parent[x]!=x:parent[x]=parent[parent[x]];x=parent[x]
++                return x
++            for col in ['roi_id','equi_id','sentinel2_product_id']:
++                seen={}
++                for i,v in enumerate(df[col]):
++                    if pd.isna(v):continue
++                    if v in seen:parent[find(i)]=find(seen[v])
++                    else:seen[v]=i
++            test['group_id']=['source_cc_'+str(find(i)) for i in test.index];basis='full-manifest roi/equi/product connected components'
++        for _,r in test.iterrows():allrows.append({'dataset':ds,'sample_id':str(r.sample_id),'group_id':str(r.group_id),'group_basis':basis,'source_path':str(path.relative_to(ROOT))})
++        sizes=test.groupby('group_id').size()
++        summary[ds]={'images':len(test),'groups':len(sizes),'minimum_group_images':int(sizes.min()),'maximum_group_images':int(sizes.max()),'basis':basis,'source_sha256':sha(path)}
++    csvout(OUT/'sample_groups.csv',allrows);dump(OUT/'grouping_summary.json',summary)
++
++
++def groups_for(ds,ids):
++    d=pd.read_csv(OUT/'sample_groups.csv',dtype=str);d=d[d.dataset==ds].set_index('sample_id')
++    if set(ids)!=set(d.index):raise ValueError(('group IDs differ',ds))
++    return d.loc[ids].group_id.to_numpy(dtype=str)
++
++
++class LazyNPZ:
++    """Decompress numeric arrays once to execution-owned NPY scratch memmaps."""
++    def __init__(self,path,tag):
++        self.path=Path(path);self.z=zipfile.ZipFile(path);self.dir=OUT/'scratch'/tag
++        self.dir.mkdir(parents=True,exist_ok=True);self.cache={};self.seconds=0.;self.uncompressed_bytes=0
++        self.files=[p[:-4] for p in self.z.namelist() if p.endswith('.npy')]
++    def __contains__(self,k):return k in self.files
++    def __getitem__(self,k):
++        if k not in self.cache:
++            t=time.perf_counter();p=self.dir/(k+'.npy')
++            with self.z.open(k+'.npy') as src,p.open('wb') as dst:shutil.copyfileobj(src,dst,length=8*1024*1024)
++            self.uncompressed_bytes+=p.stat().st_size
++            try:self.cache[k]=np.load(p,mmap_mode='r',allow_pickle=False)
++            except ValueError as e:
++                if 'Python objects' not in str(e):raise
++                # Legacy local ensemble IDs are documented trusted object arrays.
++                self.cache[k]=np.load(p,allow_pickle=True)
++            self.seconds+=time.perf_counter()-t
++        return self.cache[k]
++    def close(self):
++        for a in self.cache.values():
++            if hasattr(a,'_mmap') and a._mmap is not None:a._mmap.close()
++        self.cache.clear();self.z.close();shutil.rmtree(self.dir)
++    def __enter__(self):return self
++    def __exit__(self,*args):self.close()
++
++
++def rss_gib():return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024**2
++
++
++def matrix_col(df,name):return np.stack(df[name].to_numpy())
++
++
++if __name__=='__main__':
++    t=time.perf_counter();rows=build_inputs();build_groups()
++    dump(OUT/'preparation_summary.json',{'objects':len(rows),'seconds':time.perf_counter()-t,'peak_rss_GiB':rss_gib()})
++    print('Prepared',len(rows),'objects and actual metadata groups')
+--- /dev/null
++++ code/export_review.py
+@@ -0,0 +1,46 @@
++"""Export actual Claude public responses and tool evidence, never hidden reasoning."""
++import json
++from collections import Counter
++from datetime import datetime,timezone
++from pathlib import Path
++from common import OUT,dump,sha
++
++SESSION='5afb33d9-4dac-4ed1-8d17-2e1ec2a65b13'
++TRANSCRIPT=Path('/home/yesong/.claude/projects/-workspace')/(SESSION+'.jsonl')
++
++
++def main():
++    rounds=[]
++    for name in ['protocol','code','final']:
++        raw=OUT/f'claude_{name}_raw.json';data=json.loads(raw.read_text())
++        assert data['session_id']==SESSION and data['subtype']=='success' and not data['is_error']
++        (OUT/f'claude_{name}_review.md').write_text(data['result'].strip()+'\n')
++        rounds.append({'round':name,'request':f'claude_{name}_request.md','response_path':raw.name,'response_sha256':sha(raw),
++                       **{key:data.get(key) for key in ['session_id','subtype','is_error','num_turns','duration_ms','duration_api_ms','total_cost_usd']}})
++    evidence=[];tools=Counter();models=set();versions=set()
++    for line in TRANSCRIPT.open():
++        event=json.loads(line);content=event.get('message',{}).get('content',[])
++        if event.get('version'):versions.add(event['version'])
++        if event.get('message',{}).get('model'):models.add(event['message']['model'])
++        if not isinstance(content,list):continue
++        for block in content:
++            if block.get('type') not in ['tool_use','tool_result']:continue
++            evidence.append({'timestamp':event.get('timestamp'),'session_id':SESSION,'message_uuid':event.get('uuid'),'block':block})
++            if block['type']=='tool_use':tools[block['name']]+=1
++    with (OUT/'claude_evidence_trace.jsonl').open('w') as f:
++        for item in evidence:f.write(json.dumps(item,ensure_ascii=False)+'\n')
++    calls={r['block']['id']:r for r in evidence if r['block']['type']=='tool_use'}
++    index=[{'tool_use_id':key,'tool':r['block']['name'],'timestamp':r['timestamp'],
++            'target':r['block']['input'].get('file_path',r['block']['input'].get('description',r['block']['input'].get('pattern','')))} for key,r in calls.items()]
++    dump(OUT/'claude_tool_index.json',index)
++    dump(OUT/'claude_session_metadata.json',{'provider':'actual Anthropic Claude Code CLI','session_id':SESSION,'cli_versions_observed':sorted(versions),'models_observed':sorted(models),
++         'cli_path':'/home/yesong/.vscode-server/extensions/anthropic.claude-code-2.1.283-linux-x64/resources/native-binary/claude',
++         'transcript_source':str(TRANSCRIPT),'transcript_sha256_at_export':sha(TRANSCRIPT),'exported_utc':datetime.now(timezone.utc).isoformat(),
++         'public_blocks':len(evidence),'tool_calls':dict(tools),'rounds':rounds,'final_resume_request':'claude_final_resume_request.md',
++         'interrupted_attempt_record':'claude_final_attempt1_status.json','final_exit':json.loads((OUT/'claude_final_exit.json').read_text()),
++         'evidence_policy':'Only public tool_use/tool_result blocks plus public final responses are exported. No hidden reasoning blocks.',
++         'review_scope':'independent selected original-array calculations, mathematical tests, control and claim review; not duplicate execution of all 100 objects'})
++    print('Exported',len(evidence),'public tool blocks and three successful public reviews')
++
++
++if __name__=='__main__':main()
+--- /dev/null
++++ code/figures.py
+@@ -0,0 +1,115 @@
++"""Standalone thesis figures, with source tables and explicit evaluation units."""
++import json
++import numpy as np
++import pandas as pd
++import matplotlib
++matplotlib.use('Agg')
++import matplotlib.pyplot as plt
++from matplotlib.lines import Line2D
++from matplotlib.ticker import NullLocator, NullFormatter
++from common import OUT,MASTER,get_inputs,dump
++
++COLORS={'deterministic':'#2c6caa','temperature_scaling':'#4a9c5b','mc_dropout':'#e38b22','mc_dropout_off':'#8b79ad','deep_ensemble':'#c94f52'}
++LABELS={'deterministic':'D','temperature_scaling':'TS','mc_dropout':'MC (T=30)','mc_dropout_off':'MC Off','deep_ensemble':'DE (M=3)'}
++CONFIG_MARKERS={('dofa','frozen'):'o',('dofa','full_finetune'):'^',('panopticon','frozen'):'s',('panopticon','full_finetune'):'D'}
++
++
++def proxy_legend(fig):
++    handles=[Line2D([],[],ls='',marker=marker,color='gray',label=f'{model} / {adapt}') for (model,adapt),marker in CONFIG_MARKERS.items()]
++    handles += [Line2D([],[],ls='',marker='o',color=COLORS[method],label=LABELS[method]) for method in ['mc_dropout','deep_ensemble']]
++    fig.legend(handles=handles,loc='lower center',ncol=3,fontsize=9)
++
++
++def main():
++    dest=OUT/'figures';dest.mkdir(exist_ok=True);manifest=[]
++    def save(fig,name,sources,caption):
++        fig.savefig(dest/(name+'.pdf'),bbox_inches='tight');fig.savefig(dest/(name+'.png'),dpi=180,bbox_inches='tight');plt.close(fig)
++        manifest.append({'figure':name,'sources':sources,'caption':caption})
++    plt.rcParams.update({'font.size':10,'axes.spines.top':False,'axes.spines.right':False,'pdf.fonttype':42})
++    curves=pd.read_csv(OUT/'curves.csv');metrics=pd.read_csv(OUT/'metrics.csv');pairs=pd.read_csv(OUT/'paired_effects.csv')
++    for ds in ['eurosat','treesatai','cloudsen12','spacenet7']:
++        unit={'eurosat':'image_top1','treesatai':'image_hamming','cloudsen12':'image_pixel_error_fraction','spacenet7':'image_pixel_error_fraction'}[ds]
++        fig,axes=plt.subplots(2,2,figsize=(10,7),sharex=True,sharey=True)
++        for ax,(model,adapt) in zip(axes.flat,[(m,a) for m in ['dofa','panopticon'] for a in ['frozen','full_finetune']]):
++            d=curves[(curves.dataset==ds)&(curves.model==model)&(curves.adaptation==adapt)&(curves.analysis_unit==unit)&(curves.score=='msp')&((curves.seed==42)|curves.seed.isna())]
++            for method,g in d.groupby('method'):
++                g=g.sort_values('coverage');ax.plot(g.coverage,g.risk,color=COLORS[method],label=LABELS[method],lw=1.6 if method=='mc_dropout_off' else 1.9,ls=':' if method=='mc_dropout_off' else '-',alpha=.9 if method=='mc_dropout_off' else 1)
++                if method=='deterministic':ax.axhline(g.random_risk.iloc[0],color=COLORS[method],ls=':',alpha=.7,label='D random ordering')
++            ax.set_title(f'{model.upper()} / {adapt.replace("_"," ")}');ax.set_xlabel('Retained image coverage');ax.set_ylabel('Selective risk');ax.grid(alpha=.15)
++        handles,labels=axes[0,0].get_legend_handles_labels();fig.legend(handles,labels,loc='lower center',ncol=3,bbox_to_anchor=(.5,-.035));fig.suptitle(f'{ds}: MSP image rejection\nseed 42 predictors; one three-member ensemble; exploratory');fig.tight_layout(rect=(0,.045,1,.92))
++        save(fig,'risk_coverage_'+ds,['curves.csv'],f'{ds}; {unit}; all test images; lower risk is better; curves compare different predictors as well as rankings. MC and MC Off curves can overlap closely; Off is dotted. No training-seed confidence claim.')
++    # TS calibration and behavior are distinct axes on identical checkpoints.
++    t=pairs[(pairs.contrast=='TS_minus_D')&(pairs.score=='msp')&(pairs.metric=='auroc')].copy();master=pd.DataFrame(MASTER)
++    master=master[master.record_type=='INDIVIDUAL_SEED']
++    changes=[]
++    for _,r in t.iterrows():
++        b=master[(master.dataset==r.dataset)&(master.model==r.model)&(master.adaptation==r.adaptation)&(master.seed==str(int(r.seed)))]
++        de=float(b[b.uq_method=='temperature_scaling'].ece_15.iloc[0])-float(b[b.uq_method=='deterministic'].ece_15.iloc[0]);changes.append(de)
++    t['delta_ece']=changes;t.to_csv(OUT/'TS_calibration_behavior.csv',index=False)
++    fig,ax=plt.subplots(figsize=(7,5))
++    for (model,adapt),g in t.groupby(['model','adaptation']):
++        ax.errorbar(g.delta_ece,g.point_difference,yerr=np.stack([g.point_difference-g.ci_low,g.ci_high-g.point_difference]),fmt='o' if model=='dofa' else 's',capsize=2,label=f'{model} / {adapt}',color='#2c6caa' if adapt=='frozen' else '#d87522',alpha=.85)
++        for _,r in g.iterrows():ax.annotate(str(int(r.seed)),(r.delta_ece,r.point_difference),xytext=(4,3),textcoords='offset points',fontsize=8)
++    ax.axhline(0,color='gray',lw=.8);ax.axvline(0,color='gray',lw=.8);ax.set(xlabel='TS - D: ECE-15 (lower is better)',ylabel='TS - D: MSP error AUROC (higher is better)',title='EuroSAT: calibration and error ranking need not move together');ax.legend(fontsize=8);fig.tight_layout()
++    save(fig,'TS_calibration_and_error_ranking',['TS_calibration_behavior.csv','TS_same_checkpoint_verification.csv'],'Twelve same-checkpoint pairs; all argmax decisions unchanged. Bars are paired spatial-group bootstrap intervals for fixed trained models, not across-seed intervals.')
++    # Scale diagnostics from saved logits; show all fixed D/TS seed pairs.
++    scale=pd.read_csv(OUT/'scale.csv');fig,axes=plt.subplots(1,2,figsize=(11,4.5))
++    for ax,measure in zip(axes,['centered_logit_norm','top1_top2_logit_margin']):
++        d=scale[(scale.dataset=='eurosat')&(scale.measure==measure)&scale.method.isin(['deterministic','temperature_scaling'])]
++        for (model,adapt),g in d.groupby(['model','adaptation']):
++            pivot=g.pivot(index='seed',columns='method',values='mean')
++            ax.scatter(pivot.deterministic,pivot.temperature_scaling,marker='o' if model=='dofa' else 's',color='#2c6caa' if adapt=='frozen' else '#d87522',label=f'{model} / {adapt}')
++            for seed,row in pivot.iterrows():ax.annotate(str(int(seed)),(row.deterministic,row.temperature_scaling),xytext=(4,3),textcoords='offset points',fontsize=8)
++        high=float(d['mean'].max())*1.08;ax.plot([0,high],[0,high],ls=':',color='gray');ax.set(xlim=(0,high),ylim=(0,high),xlabel='D: test-image mean',ylabel='TS: test-image mean',title=measure.replace('_',' '));ax.grid(alpha=.15)
++    axes[0].legend(fontsize=8);fig.suptitle('EuroSAT: saved-logit scale under the existing temperatures\n12 same-checkpoint pairs; descriptive, exploratory');fig.tight_layout(rect=(0,0,1,.90))
++    save(fig,'TS_logit_scale',['scale.csv','TS_same_checkpoint_verification.csv'],'Means over 2714 test images per object. Centered norms remove common logit-shift arbitrariness; logit margins are distinct from probability margins. No causal mediation claim.')
++    # Fixed-predictor MI vs MSP avoids interpreting a change of error set as a score effect.
++    within=pd.read_csv(OUT/'within_predictor_score_effects.csv');fig,axes=plt.subplots(1,2,figsize=(12,5))
++    for ax,ds,unit in zip(axes,['eurosat','treesatai'],['image_top1','micro_label_decision']):
++        d=within[(within.dataset==ds)&(within.analysis_unit==unit)&(within.metric=='auroc')&(within.score=='mutual_information')&((within.seed==42)|within.seed.isna())].sort_values(['model','adaptation','method'])
++        xx=np.arange(len(d));ax.errorbar(d.point_difference,xx,xerr=np.stack([d.point_difference-d.ci_low,d.ci_high-d.point_difference]),fmt='o',capsize=3,color='#8b4a84');ax.axvline(0,color='gray',lw=.8)
++        ax.set_yticks(xx,[f'{r.model[:4]} / {"F" if r.adaptation=="frozen" else "Full"} / {LABELS[r.method]}' for r in d.itertuples()]);ax.set_xlabel('Error AUROC: MI - MSP');ax.set_title(ds+' / '+unit);ax.grid(axis='x',alpha=.15)
++    fig.suptitle('Same predictor, two uncertainty scores (seed 42 / one DE group)');fig.tight_layout(rect=(0,0,1,.94))
++    save(fig,'MI_vs_MSP_error_ranking',['within_predictor_score_effects.csv'],'Fixed-predictor score contrasts. Conditional group-bootstrap intervals; no universal score ranking is inferred.')
++    # Full image-level rejection may disproportionately remove building pixels.
++    cc=pd.read_csv(OUT/'full_image_class_coverage.csv');d=cc[(cc.dataset=='spacenet7')&(cc.class_name=='building')&(cc.score=='msp')&(cc.image_coverage==.5)]
++    fig,ax=plt.subplots(figsize=(9,4));labels=[f'{r.model[:4]} {"F" if r.adaptation=="frozen" else "Full"} {LABELS[r.method]}' for r in d.itertuples()]
++    ax.bar(np.arange(len(d)),d.class_pixel_retention,color=[COLORS[m] for m in d.method]);ax.axhline(.5,color='gray',ls='--',label='50% class retention reference');ax.set_xticks(np.arange(len(d)),labels,rotation=65,ha='right');ax.set(ylabel='Fraction of true building pixels retained',title='SpaceNet7: retain 50% of images using MSP');ax.legend();fig.tight_layout()
++    save(fig,'spacenet_building_retention',['full_image_class_coverage.csv'],'Ground truth is used only to diagnose selected image content. Improvement in all-pixel risk is not a building-detection guarantee.')
++    # Conditional proxy response in an exactly enumerated known generative model.
++    toy=pd.read_csv(OUT/'toy/condition_means.csv');fig,axes=plt.subplots(2,3,figsize=(12,7))
++    for ax,name in zip(axes.flat,['shannon_tu','shannon_ee','shannon_mi','gini_tu','gini_ee','gini_eu']):
++        for a,g in toy.groupby('ambiguity'):
++            g=g.sort_values('n_per_stratum');color='#2c6caa' if a==.1 else '#d87522'
++            ax.plot(g.n_per_stratum,g[name],marker='o',color=color,label=f'a={a:g}')
++            if name=='shannon_ee':ax.axhline(g.oracle_entropy.iloc[0],color=color,ls=':',alpha=.8)
++            if name=='gini_ee':ax.axhline(g.oracle_gini.iloc[0],color=color,ls=':',alpha=.8)
++        ax.set(xscale='log',xticks=[20,200],xticklabels=['20','200'],xlabel='Labels per X stratum',ylabel='nats' if name.startswith('shannon') else 'binary categorical Gini',title=name.replace('_',' ').upper());ax.grid(alpha=.15)
++        ax.xaxis.set_minor_locator(NullLocator());ax.xaxis.set_minor_formatter(NullFormatter())
++    axes[0,0].legend();fig.suptitle('Analytic reference: conditional quantities, then equal average over X\nDotted EE references use the known generating distribution; no FM training');fig.tight_layout(rect=(0,0,1,.9))
++    save(fig,'analytic_proxy_reference',['toy/condition_means.csv','toy/verification.json'],'Exact binomial-weighted posterior expectations under Beta(1,1); four conditions, two mirror X strata. Nonadditivity does not identify physical AU/EU coupling.')
++    # Per-method proxy means for classification; no crossing task units.
++    pm=pd.read_csv(OUT/'proxy_means.csv');fig,axes=plt.subplots(1,2,figsize=(10,4))
++    for ax,ds in zip(axes,['eurosat','treesatai']):
++        d=pm[(pm.dataset==ds)&pm.method.isin(['mc_dropout','deep_ensemble'])&((pm.seed==42)|pm.seed.isna())]
++        pivot=d.pivot(index=['model','adaptation','method'],columns='score',values='mean').reset_index()
++        for r in pivot.itertuples():ax.scatter(r.expected_entropy,r.mutual_information,color=COLORS[r.method],marker=CONFIG_MARKERS[(r.model,r.adaptation)],s=58,edgecolors='white',linewidths=.4)
++        ax.set(xlabel='Mean expected entropy',ylabel='Mean MI-style disagreement',title=ds+(' (categorical nats)' if ds=='eurosat' else ' (mean Bernoulli nats)'));ax.grid(alpha=.15)
++    fig.suptitle('Saved-prediction proxies; seed 42 / one DE group; exploratory');proxy_legend(fig);fig.tight_layout(rect=(0,.16,1,.93))
++    save(fig,'classification_proxy_means',['proxy_means.csv'],'MC T=30 and DE M=3 describe different empirical prediction distributions. Separate panels have different task semantics.')
++    fig,axes=plt.subplots(2,3,figsize=(12,7))
++    for row,ds in enumerate(['eurosat','treesatai']):
++        d=pm[(pm.dataset==ds)&pm.method.isin(['mc_dropout','deep_ensemble'])&((pm.seed==42)|pm.seed.isna())]
++        pivot=d.pivot(index=['model','adaptation','method'],columns='score',values='mean').reset_index()
++        for col,(shannon,gini,title) in enumerate([('entropy','gini_total','Total'),('expected_entropy','gini_expected','Expected component'),('mutual_information','gini_disagreement','Disagreement component')]):
++            ax=axes[row,col]
++            for r in pivot.to_dict('records'):
++                ax.scatter(r[shannon],r[gini],color=COLORS[r['method']],marker=CONFIG_MARKERS[(r['model'],r['adaptation'])],s=58,edgecolors='white',linewidths=.4)
++            ax.set(xlabel='Shannon (nats)',ylabel='Categorical Gini' if ds=='eurosat' else 'Mean Bernoulli Gini',title=ds+' / '+title);ax.grid(alpha=.15)
++    fig.suptitle('Different functionals of the same saved prediction sets\nseed 42 / one DE group; exploratory');proxy_legend(fig);fig.tight_layout(rect=(0,.09,1,.90))
++    save(fig,'Shannon_Gini_classification',['proxy_means.csv'],'Full-test sample means: EuroSAT 2714 images; TreeSat 2000 images, mean over 15 Bernoulli labels. Axes have different scales/units; neither agreement nor differences identify physical uncertainty sources.')
++    dump(dest/'figure_manifest.json',manifest)
++    print('Created',len(manifest),'standalone figures (PDF + PNG)')
++
++
++if __name__=='__main__':main()
+--- /dev/null
++++ code/finalize.py
+@@ -0,0 +1,85 @@
++"""Verify the completed delivery and seal file hashes after independent review."""
++import json,re,py_compile
++from collections import Counter
++from datetime import datetime,timezone
++from pathlib import Path
++import numpy as np
++import pandas as pd
++from common import ROOT,OUT,PARAMS,get_inputs,csvout,dump,sha
++
++
++def main():
++    rows=get_inputs();assert len(rows)==100
++    assert Counter(r['task'] for r in rows)=={'classification':68,'segmentation':32}
++    assert set(PARAMS['enabled_packages'])=={'A','E'}
++    for flag in ['A_segmentation_extra_seeds','A_segmentation_full_test_DE_decomposition','E_sampling_illustration','timing_benchmark']:
++        assert PARAMS[flag] is False,flag
++    for r in rows:assert json.loads((OUT/'objects'/r['object_id']/'done.json').read_text())['status']=='COMPLETE'
++    core=pd.read_csv(OUT/'core_metric_verification.csv',keep_default_na=False)
++    assert Counter(core.status)=={'PASS':544,'NA':8}
++    scalar=core[core.metric!=''];assert len(scalar)==436
++    maxerr=float(pd.to_numeric(scalar.difference).abs().max())
++    assert maxerr<2e-6
++    alignment=pd.read_csv(OUT/'alignment_verification.csv');assert len(alignment)==100 and (alignment.status=='PASS').all()
++    mc=pd.read_csv(OUT/'raw_classification_MC_verification.csv');assert len(mc)==60 and (mc.status=='PASS').all()
++    ts=pd.read_csv(OUT/'TS_same_checkpoint_verification.csv');assert len(ts)==12 and (ts.status=='PASS').all() and ts.argmax_changes.sum()==0
++    truth=pd.read_csv(OUT/'eurosat_original_label_verification.csv');assert len(truth)==40 and truth.labels_match_original_test_manifest.all() and truth.all_split_test.all()
++    assert len(pd.read_csv(OUT/'inputs_lineage.csv'))==100
++    legacy=pd.read_csv(ROOT/'reports/core_rq_completion_20260921/checks.csv',keep_default_na=False)
++    delta=pd.read_csv(OUT/'checks_delta.csv',keep_default_na=False)
++    assert dict(zip(legacy.check_id,legacy.status))==dict(zip(delta.check_id[:29],delta.status[:29]))
++    assert Counter(delta.status[:29])=={'PASS':27,'UNKNOWN':2}
++    assert Counter(delta.status[29:])=={'PASS':7,'NA':1}
++    tests=(OUT/'scientific_tests_final.log').read_text();assert 'Ran 10 tests' in tests and tests.rstrip().endswith('OK')
++    for p in (OUT/'code').glob('*.py'):py_compile.compile(str(p),doraise=True)
++    figs=json.loads((OUT/'figures/figure_manifest.json').read_text());assert len(figs)==11
++    for f in figs:
++        for suffix in ['pdf','png']:assert (OUT/'figures'/f"{f['figure']}.{suffix}").stat().st_size>1000
++        for source in f['sources']:assert (OUT/source).is_file()
++    review=json.loads((OUT/'claude_final_raw.json').read_text());assert not review['is_error'] and review['subtype']=='success'
++    assert review['session_id']=='5afb33d9-4dac-4ed1-8d17-2e1ec2a65b13'
++    assert (OUT/'claude_final_review.md').read_text().strip()==review['result'].strip()
++    trace=[json.loads(l) for l in (OUT/'claude_evidence_trace.jsonl').read_text().splitlines()]
++    assert all(r['block']['type'] in ['tool_use','tool_result'] for r in trace)
++    links=[]
++    for p in OUT.glob('*.md'):
++        for target in re.findall(r'\]\(([^)]+)\)',p.read_text()):
++            if '://' in target or target.startswith('#'):continue
++            clean=target.split('#',1)[0];clean=re.sub(r':\d+$','',clean).strip('<>')
++            q=p.parent/clean
++            links.append({'document':p.name,'target':target,'exists':q.exists()})
++    assert all(x['exists'] for x in links),[x for x in links if not x['exists']]
++    csvout(OUT/'artifact_link_verification.csv',links)
++    m=pd.read_csv(OUT/'metrics.csv');wi=pd.read_csv(OUT/'within_predictor_score_effects.csv')
++    retention=pd.read_csv(OUT/'full_image_class_coverage.csv')
++    ret=retention[(retention.dataset=='spacenet7')&(retention.score=='msp')&(retention.image_coverage==.5)&(retention.class_name=='building')]
++    assert len(ret)==16
++    mi=wi[(wi.dataset=='treesatai')&(wi.analysis_unit=='micro_label_decision')&(wi.score=='mutual_information')&(wi.metric=='auroc')]
++    assert len(mi)==10 and (mi.point_difference<0).all() and (mi.ci_high<0).all()
++    tc=pd.read_csv(OUT/'TS_calibration_behavior.csv');assert len(tc)==12 and (tc.delta_ece<0).sum()==8
++    facts={'created_utc':datetime.now(timezone.utc).isoformat(),'objects':len(rows),'coverage_by_dataset_method':{str(k):int(v) for k,v in pd.DataFrame(rows).groupby(['dataset','method']).size().items()},
++           'scalar_checks':len(scalar),'maximum_primary_metric_difference':maxerr,'core_verification_status':dict(Counter(core.status)),
++           'alignment_objects':len(alignment),'MC_raw_classification_checks':len(mc),'TS_same_checkpoint_pairs':len(ts),'EuroSAT_original_truth_objects':len(truth),'scientific_tests':10,'standalone_figures':len(figs),
++           'TreeSat_MI_minus_MSP_micro_AUROC_range':[float(mi.point_difference.min()),float(mi.point_difference.max())],
++           'SpaceNet7_building_retention_at_half_image_coverage_range':[float(ret.class_pixel_retention.min()),float(ret.class_pixel_retention.max())],
++           'TS_ECE_improved_pairs':int((tc.delta_ece<0).sum()),'markdown_links_checked':len(links),'all_links_exist':True,
++           'old_checks':dict(Counter(delta.status[:29])),'new_checks':dict(Counter(delta.status[29:])),'model_training_runs':0,'model_forward_runs':0}
++    dump(OUT/'final_verification.json',facts)
++    required=['ANALYSIS_PROTOCOL.md','parameters.json','inputs_manifest.csv','inputs_lineage.csv','analysis_applicability.csv','source_snapshot.json','input_integrity.json','code_revision.json',
++              'analysis_code.patch','implementation_changes.patch','PROTOCOL_CHANGELOG.md','DATA_DICTIONARY.md','FOLLOWUP_COMPLETION_REPORT.md','THESIS_RESULTS_DRAFT.md','REVIEW_RESOLUTION.md',
++              'checks_delta.csv','resource_profile.csv','resource_summary.json','execution_environment.json','claude_session_metadata.json','claude_evidence_trace.jsonl','final_verification.json','README.md']
++    assert all((OUT/p).is_file() for p in required)
++    assert not list((OUT/'scratch').iterdir()),'Analysis scratch not empty'
++    own_review_scratch=OUT/'claude_validation/scratch'
++    assert not own_review_scratch.exists() or not list(own_review_scratch.iterdir()),'Review scratch not empty'
++    outputs=[]
++    for p in sorted(OUT.rglob('*')):
++        if not p.is_file() or '__pycache__' in p.parts or p.name=='completion_manifest.json':continue
++        outputs.append({'path':str(p.relative_to(OUT)),'bytes':p.stat().st_size,'sha256':sha(p)})
++    dump(OUT/'completion_manifest.json',{'created_utc':datetime.now(timezone.utc).isoformat(),'status':'COMPLETE_A_E_WITH_DECLARED_HISTORICAL_LIMITATIONS',
++         'required_deliverables':required,'file_count':len(outputs),'total_bytes':sum(x['bytes'] for x in outputs),'files':outputs,'manifest_self_hash_excluded':True,
++         'independent_review_scope':'actual Claude CLI independent representative raw-data checks; not a second full run of all objects'})
++    print(json.dumps(facts,ensure_ascii=False,indent=2))
++
++
++if __name__=='__main__':main()
+--- /dev/null
++++ code/metrics.py
+@@ -0,0 +1,148 @@
++"""Checkpoint-free scientific measures. Larger scores mean more uncertain."""
++from __future__ import annotations
++import numpy as np
++from scipy.special import xlogy
++
++COVERAGES = (1., .9, .8, .5)
++
++
++def entropy(p, binary=False):
++    p = np.asarray(p, dtype=np.float64)
++    if binary:
++        return -xlogy(p, p) - xlogy(1-p, 1-p)
++    return -xlogy(p, p).sum(axis=-1)
++
++
++def decomposition(draws, binary=False):
++    """[N,draw,C] or [pixels,draw,C]; Bernoulli output retains C labels."""
++    p = np.asarray(draws, dtype=np.float64)
++    mean = p.mean(axis=1)
++    if binary:
++        tu = entropy(mean, True)
++        ee = entropy(p, True).mean(axis=1)
++        gt = mean*(1-mean)
++        ge = (p*(1-p)).mean(axis=1)
++        gu = p.var(axis=1, ddof=0)
++    else:
++        tu = entropy(mean)
++        ee = entropy(p).mean(axis=1)
++        gt = 1-(mean**2).sum(axis=-1)
++        ge = (1-(p**2).sum(axis=-1)).mean(axis=1)
++        gu = p.var(axis=1, ddof=0).sum(axis=-1)
++    return mean, dict(entropy=tu, expected_entropy=ee, mutual_information=tu-ee,
++                      gini_total=gt, gini_expected=ge, gini_disagreement=gu)
++
++
++def base_scores(p, binary=False):
++    p = np.asarray(p, dtype=np.float64)
++    if binary:
++        return dict(msp=1-np.maximum(p, 1-p), entropy=entropy(p, True),
++                    negative_margin=-np.abs(2*p-1), gini_total=p*(1-p))
++    two = np.partition(p, -2, axis=-1)[..., -2:]
++    return dict(msp=1-p.max(axis=-1), entropy=entropy(p),
++                negative_margin=two[..., 0]-two[..., 1], gini_total=1-(p*p).sum(axis=-1))
++
++
++def align_indices(ids, reference):
++    ids = np.asarray(ids).astype(str)
++    reference = np.asarray(reference).astype(str)
++    if len(set(ids)) != len(ids) or len(set(reference)) != len(reference):
++        raise ValueError('duplicate sample IDs')
++    if set(ids) != set(reference):
++        raise ValueError('sample ID sets differ')
++    index = {v:i for i,v in enumerate(ids)}
++    return np.array([index[v] for v in reference], dtype=np.int64)
++
++
++class RankPlan:
++    """Exact tie-aware binary rankings and expected random-within-tie RC.
++
++    Bootstrap weights are nonnegative integer multiplicities, not survey weights.
++    Discrete AURC averages expected selective risk at k/N, k=1..N.
++    """
++    def __init__(self, uncertainty, loss):
++        score = np.asarray(uncertainty, dtype=np.float64).reshape(-1)
++        self.loss = np.asarray(loss, dtype=np.float64).reshape(-1)
++        if score.shape != self.loss.shape or not len(score):
++            raise ValueError('score/loss must have equal nonempty shape')
++        if not np.isfinite(score).all() or not np.isfinite(self.loss).all():
++            raise ValueError('nonfinite score/loss')
++        if self.loss.min() < 0 or self.loss.max() > 1:
++            raise ValueError('loss outside [0,1]')
++        self.order = np.argsort(score, kind='stable')
++        self.sorted_loss = self.loss[self.order]
++        ss = score[self.order]
++        self.starts = np.r_[0, np.flatnonzero(np.diff(ss) != 0)+1]
++        self.binary = bool(np.isin(self.loss, [0,1]).all())
++        self.n = len(score)
++
++    def evaluate(self, weights=None, coverages=COVERAGES):
++        if weights is None:
++            weights = np.ones((1, self.n), dtype=np.int64)
++        w = np.asarray(weights)
++        if w.ndim == 1:
++            w = w[None]
++        if w.shape[1] != self.n or np.any(w<0) or not np.equal(w, np.floor(w)).all():
++            raise ValueError('bootstrap weights must be nonnegative integer counts')
++        sorted_w = w[:,self.order]
++        count = np.add.reduceat(sorted_w, self.starts, axis=1).astype(np.int64)
++        mass = np.add.reduceat(sorted_w*self.sorted_loss, self.starts, axis=1)
++        cum_n = np.cumsum(count, axis=1)
++        cum_e = np.cumsum(mass, axis=1)
++        n = cum_n[:,-1]
++        e = cum_e[:,-1]
++        if np.any(n == 0):
++            raise ValueError('empty bootstrap draw')
++        prev_n = cum_n-count
++        prev_e = cum_e-mass
++        avg = np.divide(mass, count, out=np.zeros_like(mass), where=count>0)
++        h = np.r_[0., np.cumsum(1/np.arange(1, int(n.max())+1, dtype=np.float64))]
++        area = np.sum(avg*count + (prev_e-avg*prev_n)*(h[cum_n]-h[prev_n]), axis=1)/n
++        out = dict(base_risk=e/n, aurc=area)
++        if self.binary:
++            neg = count-mass
++            below_neg = prev_n-prev_e
++            denominator = e*(n-e)
++            numerator = (mass*(below_neg+.5*neg)).sum(axis=1)
++            auc = np.divide(numerator, denominator, out=np.full_like(e,np.nan), where=denominator>0)
++            high_e = e[:,None]-prev_e
++            high_n = n[:,None]-prev_n
++            precision = np.divide(high_e, high_n, out=np.zeros_like(high_e), where=high_n>0)
++            ap_num = (mass*precision).sum(axis=1)
++            ap = np.divide(ap_num,e,out=np.full_like(e,np.nan),where=(e>0)&(e<n))
++            out.update(auroc=auc, average_precision=ap)
++        else:
++            out.update(auroc=np.full(len(n),np.nan), average_precision=np.full(len(n),np.nan))
++        for q in coverages:
++            target = q*n
++            idx = np.minimum(np.sum(cum_n<target[:,None],axis=1),count.shape[1]-1)
++            b = np.arange(len(n))
++            selected_mass = prev_e[b,idx] + (target-prev_n[b,idx])*avg[b,idx]
++            out[f'risk_at_{q:g}'] = selected_mass/target
++        return out
++
++    def acceptance(self, coverage):
++        """Label-independent fractional tie membership in original sample order."""
++        count = np.diff(np.r_[self.starts,self.n])
++        previous = np.r_[0,np.cumsum(count)[:-1]]
++        frac = np.clip((coverage*self.n-previous)/count,0,1)
++        out = np.empty(self.n)
++        out[self.order] = np.repeat(frac,count)
++        return out
++
++
++def interval(x):
++    a = np.asarray(x,dtype=np.float64)
++    a = a[np.isfinite(a)]
++    if not len(a):
++        return np.nan,np.nan,0
++    return *np.quantile(a,[.025,.975]),len(a)
++
++
++def bootstrap_group_counts(groups, replicates=1000, seed=20260926):
++    groups = np.asarray(groups).astype(str)
++    unique,inverse = np.unique(groups,return_inverse=True)
++    rng = np.random.default_rng(seed)
++    # Same group universe and seed -> same draws for all matched predictors.
++    counts = rng.multinomial(len(unique),np.ones(len(unique))/len(unique),size=replicates)
++    return counts[:,inverse].astype(np.int32), unique
+--- /dev/null
++++ code/provenance.py
+@@ -0,0 +1,74 @@
++"""Package metadata only: no neural evaluation or new scientific estimand."""
++import csv,json,os,platform,subprocess,sys,zipfile,difflib
++from datetime import datetime,timezone
++from importlib.metadata import version
++from pathlib import Path
++import pandas as pd
++import pyarrow.parquet as pq
++import yaml
++from common import ROOT,OUT,MASTER,get_inputs,sha,csvout,dump
++
++
++def main():
++    inputs=get_inputs();lineage=[];raw_bytes=[]
++    groups=pd.read_csv(OUT/'sample_groups.csv')
++    for r in inputs:
++        p=ROOT/r['prediction_path']
++        if p.suffix=='.parquet':fields=pq.read_schema(p).names
++        else:
++            with zipfile.ZipFile(p) as z:fields=[n[:-4] for n in z.namelist() if n.endswith('.npy')]
++        label=next(n for n in ['label','true_label','true_labels'] if n in fields)
++        idfield=next(n for n in ['sample_id','sample_ids'] if n in fields)
++        prob=next(n for n in ['mean_probabilities','probabilities'] if n in fields)
++        if r['dataset']=='eurosat':config=f"configs/eurosat_{r['model']}_frozen_baseline.yaml"
++        else:config=f"configs/{r['dataset']}_frozen_final.yaml"
++        names=yaml.safe_load((ROOT/config).read_text())['data']['class_names']
++        if r['method']=='deep_ensemble':
++            refs=[m for m in MASTER if m['record_type']=='INDIVIDUAL_SEED' and m['uq_method']=='deterministic' and all(m[f]==r[f] for f in ['dataset','model','adaptation'])]
++            assert len(refs)==3
++        else:
++            meth='mc_dropout' if r['method']=='mc_dropout_off' else r['method']
++            refs=[m for m in MASTER if m['record_type']=='INDIVIDUAL_SEED' and m['uq_method']==meth and all(m[f]==r[f] for f in ['dataset','model','adaptation','seed'])]
++            assert len(refs)==1
++            assert refs[0]['checkpoint_path']==r['checkpoint_path']
++        paths=[x['checkpoint_path'] for x in refs]
++        assert all((ROOT/x).is_file() for x in paths)
++        lineage.append({'object_id':r['object_id'],'prediction_path':r['prediction_path'],'label_path':r['prediction_path'],'id_field':idfield,'label_field':label,'probability_field':prob,'valid_mask_field':'valid_mask' if 'valid_mask' in fields else 'NA_classification',
++                        'class_names_json':json.dumps(names),'class_order_source':config,'class_order_source_sha256':sha(ROOT/config),
++                        'groups_path':str((OUT/'sample_groups.csv').relative_to(ROOT)),'group_metadata_source':groups.loc[groups.dataset==r['dataset'],'source_path'].iloc[0],
++                        'run_ids_json':json.dumps([x['run_id'] for x in refs]),'checkpoint_paths_json':json.dumps(paths),'member_seeds_json':json.dumps([x['seed'] for x in refs]),
++                        'lineage_source':'reports/core_rq_completion_20260921/published/tables/thesis_master_results.csv','checkpoint_lineage_status':'PASS_paths_and_existing_registry; historical provenance limitations unchanged'})
++        if r['task']=='segmentation' and r['raw_path']:
++            with zipfile.ZipFile(ROOT/r['raw_path']) as z:
++                selected=[n for n in ['sample_id.npy','probabilities.npy','label.npy','valid_mask.npy'] if n in z.namelist()]
++                raw_bytes.append({'object_id':r['object_id'],'arrays':selected,'uncompressed_npy_bytes':sum(z.getinfo(n).file_size for n in selected),'basis':'NPZ member headers for arrays actually read; includes NPY headers'})
++    csvout(OUT/'inputs_lineage.csv',lineage)
++    rp=pd.read_csv(OUT/'resource_profile.csv')
++    dump(OUT/'resource_summary.json',{'sum_object_wall_seconds':float(rp.total_seconds.sum()),'by_task_wall_seconds':rp.groupby('task').total_seconds.sum().to_dict(),
++         'peak_process_rss_GiB':float(rp.peak_rss_GiB.max()),'segmentation_primary_uncompressed_npy_bytes':int(rp.uncompressed_bytes_read.sum()),
++         'segmentation_raw_uncompressed_npy_bytes':sum(x['uncompressed_npy_bytes'] for x in raw_bytes),'raw_byte_details':raw_bytes,
++         'prediction_compressed_file_bytes':sum(int(r['bytes']) for r in inputs),'cost_scope':'sum of per-object processing wall times; excludes implementation, independent review, aggregation, plotting, and packaging; not job elapsed or GPU time',
++         'concurrency':'initial single-object profiles sequential; classification and segmentation subsequently overlapped, each task single process with BLAS/OMP threads=1',
++         'toy_cpu_wall_seconds':json.loads((OUT/'toy/verification.json').read_text())['seconds']})
++    env={'captured_utc':datetime.now(timezone.utc).isoformat(),'python':sys.version,'platform':platform.platform(),'cpu_count':os.cpu_count(),
++         'packages':{n:version(n) for n in ['numpy','scipy','pandas','pyarrow','matplotlib','scikit-learn','PyYAML']},
++         'thread_env_expected':{'OPENBLAS_NUM_THREADS':'1','OMP_NUM_THREADS':'1'},'model_training_runs':0,'model_forward_runs':0}
++    env['cpu_model']=next((l.split(':',1)[1].strip() for l in Path('/proc/cpuinfo').read_text().splitlines() if l.startswith('model name')),None)
++    env['physical_memory_kB']=int(next(l for l in Path('/proc/meminfo').read_text().splitlines() if l.startswith('MemTotal:')).split()[1])
++    dump(OUT/'execution_environment.json',env)
++    git=subprocess.run(['git','rev-parse','--verify','HEAD'],cwd=ROOT,capture_output=True,text=True)
++    status=subprocess.run(['git','status','--porcelain=v1','--untracked-files=normal'],cwd=ROOT,capture_output=True,text=True)
++    (OUT/'workspace_git_status.txt').write_text(status.stdout+status.stderr)
++    files=sorted((OUT/'code').glob('*.py'));revision={str(p.relative_to(OUT)):sha(p) for p in files}
++    dump(OUT/'code_revision.json',{'git_head':git.stdout.strip() if git.returncode==0 else None,'git_head_status':'available' if git.returncode==0 else 'unborn repository; no tracked files; no historical diff is available',
++         'files_sha256':revision,'revision_basis':'content hashes of complete delivered analysis source','frozen_protocol_sha256':sha(OUT/'ANALYSIS_PROTOCOL.md')})
++    patches=[];changes=[]
++    for p in files:
++        rel=str(p.relative_to(OUT));patches.extend(difflib.unified_diff([],p.read_text().splitlines(True),fromfile='/dev/null',tofile=rel))
++        before=OUT/'code_versions/pre_bool_correlation_fix'/p.name
++        if before.is_file():changes.extend(difflib.unified_diff(before.read_text().splitlines(True),p.read_text().splitlines(True),fromfile=str(before.relative_to(OUT)),tofile=rel))
++    (OUT/'analysis_code.patch').write_text(''.join(patches));(OUT/'implementation_changes.patch').write_text(''.join(changes))
++    print('Wrote lineage for',len(lineage),'objects; source revisions and execution metadata')
++
++
++if __name__=='__main__':main()
+--- /dev/null
++++ code/test_metrics.py
+@@ -0,0 +1,85 @@
++import itertools
++import unittest
++import numpy as np
++from numpy.testing import assert_allclose
++from sklearn.metrics import roc_auc_score, average_precision_score
++from metrics import RankPlan, decomposition, align_indices, base_scores, bootstrap_group_counts
++
++
++class ScientificTests(unittest.TestCase):
++    def test_perfect_reverse_and_ties(self):
++        y=np.array([0,0,1,1.])
++        self.assertEqual(RankPlan(y,y).evaluate()['auroc'][0],1.)
++        self.assertEqual(RankPlan(-y,y).evaluate()['auroc'][0],0.)
++        m=RankPlan(np.ones(4),y).evaluate()
++        self.assertEqual(m['auroc'][0],.5)
++        self.assertEqual(m['average_precision'][0],.5)
++        self.assertEqual(m['aurc'][0],.5)
++
++    def test_tie_area_matches_exhaustive_random_order(self):
++        score=np.array([0,1,1,1,2.]);loss=np.array([0,.1,.8,1.,1])
++        areas=[]
++        for perm in itertools.permutations([1,2,3]):
++            order=[0,*perm,4]
++            areas.append(np.mean(np.cumsum(loss[order])/np.arange(1,6)))
++        assert_allclose(RankPlan(score,loss).evaluate()['aurc'][0],np.mean(areas),atol=1e-14)
++
++    def test_weighted_matches_expanded_and_sklearn(self):
++        score=np.array([.1,.2,.2,.5,.9]);y=np.array([0,1,0,1,1.]);w=np.array([3,0,2,4,1])
++        a=RankPlan(score,y).evaluate(w)
++        ss=np.repeat(score,w); yy=np.repeat(y,w)
++        b=RankPlan(ss,yy).evaluate()
++        for k in a:assert_allclose(a[k],b[k],atol=2e-14)
++        assert_allclose(a['auroc'][0],roc_auc_score(yy,ss))
++        assert_allclose(a['average_precision'][0],average_precision_score(yy,ss))
++
++    def test_constant_target_is_explicit_na(self):
++        for y in [np.zeros(3),np.ones(3)]:
++            m=RankPlan([0,1,2],y).evaluate()
++            self.assertTrue(np.isnan(m['auroc'][0]))
++            self.assertTrue(np.isnan(m['average_precision'][0]))
++
++    def test_decomposition_and_multilabel(self):
++        p=np.array([[[.2,.8],[.6,.4]],[[.1,.9],[.7,.3]]])
++        for binary in [False,True]:
++            mean,d=decomposition(p,binary)
++            assert_allclose(d['entropy'],d['expected_entropy']+d['mutual_information'])
++            assert_allclose(d['gini_total'],d['gini_expected']+d['gini_disagreement'],atol=1e-15)
++        p=np.array([[.8,.7,.1],[.2,.6,.9]])
++        y=np.array([[1,0,0],[0,1,1]])
++        err=((p>=.5)!=y)
++        assert_allclose(err.mean(axis=1),[1/3,0])
++        self.assertEqual(base_scores(p,True)['msp'].shape,(2,3))
++
++    def test_id_mismatch_and_permutation(self):
++        assert_allclose(align_indices(['b','a'],['a','b']),[1,0])
++        with self.assertRaises(ValueError):align_indices(['a','c'],['a','b'])
++        with self.assertRaises(ValueError):align_indices(['a','a'],['a','b'])
++
++    def test_centered_logit_gauge_and_ignore_mask(self):
++        z=np.array([[1.,4.,-1.],[2.,-2.,3.]])
++        shifted=z+np.array([[9.],[-10.]])
++        assert_allclose(z-z.mean(axis=1,keepdims=True),shifted-shifted.mean(axis=1,keepdims=True))
++        label=np.array([0,1,255,1]);pred=np.array([0,0,0,1]);valid=label!=255
++        self.assertEqual(np.mean(pred[valid]!=label[valid]),1/3)
++        self.assertFalse(np.any(label[valid]==2))
++
++    def test_group_repeats_share_multiplicity(self):
++        w,g=bootstrap_group_counts(['x','x','y'],20,1)
++        assert_allclose(w[:,0],w[:,1])
++        assert_allclose(w[:,0]+w[:,2],2)
++
++    def test_fractional_workpoint_preserves_expected_tie_risk(self):
++        p=RankPlan([0,1,1,1,2,3],[0,0,1,1,1,1])
++        assert_allclose(p.acceptance(.5),[1,2/3,2/3,2/3,0,0])
++        assert_allclose(p.evaluate(coverages=[.5])['risk_at_0.5'],[4/9])
++
++    def test_boolean_correlation_and_boundary_contract(self):
++        from analyze import correlation,boundary_mask
++        self.assertTrue(np.isnan(correlation([0,1,2],[False,False,False])))
++        assert_allclose(correlation([0,1,2],[False,True,True]),np.sqrt(3)/2)
++        y=np.array([[0,0,255],[0,1,255],[0,1,1]]);valid=y!=255
++        assert_allclose(boundary_mask(y,valid),valid)
++
++
++if __name__=='__main__':unittest.main()
+--- /dev/null
++++ code/toy.py
+@@ -0,0 +1,60 @@
++"""E: exact conditional Beta-Binomial reference, no sampled training."""
++import time
++import numpy as np
++from scipy.special import digamma
++from scipy.stats import binom, beta as beta_dist
++from scipy.integrate import quad
++from common import OUT, csvout, dump
++from metrics import entropy
++
++
++def moments(alpha,beta):
++    s=alpha+beta;m=alpha/s
++    tu=entropy(m,True)
++    ee=digamma(s+1)-(alpha*digamma(alpha+1)+beta*digamma(beta+1))/s
++    return dict(shannon_tu=tu,shannon_ee=ee,shannon_mi=tu-ee,
++                gini_tu=2*m*(1-m),gini_ee=2*alpha*beta/(s*(s+1)),
++                gini_eu=2*alpha*beta/(s*s*(s+1)))
++
++
++def main():
++    start=time.perf_counter();terms=[];summaries=[];valid=[]
++    for a in [.1,.4]:
++        for n in [20,200]:
++            strata=[]
++            for x,p in [(-1,a),(1,1-a)]:
++                k=np.arange(n+1);w=binom.pmf(k,n,p);alpha=1+k;beta=1+n-k
++                m=moments(alpha,beta);oracle=float(entropy(p,True))
++                assert abs(w.sum()-1)<1e-12
++                sr=float(np.max(abs(m['shannon_tu']-m['shannon_ee']-m['shannon_mi'])))
++                gr=float(np.max(abs(m['gini_tu']-m['gini_ee']-m['gini_eu'])))
++                assert max(sr,gr)<1e-12
++                summary={'ambiguity':a,'n_per_stratum':n,'x':x,'oracle_entropy':oracle,'oracle_gini':2*p*(1-p),
++                         **{name:float(np.dot(w,v)) for name,v in m.items()}}
++                summary['ee_minus_oracle']=summary['shannon_ee']-oracle
++                summary['expected_absolute_ee_error']=float(np.dot(w,abs(m['shannon_ee']-oracle)))
++                summary['expected_squared_ee_error']=float(np.dot(w,(m['shannon_ee']-oracle)**2))
++                strata.append(summary)
++                valid.append({'a':a,'n':n,'x':x,'weight_sum':float(w.sum()),'shannon_identity_residual':sr,'gini_identity_residual':gr})
++                for i in range(n+1):terms.append({'ambiguity':a,'n_per_stratum':n,'x':x,'k':int(k[i]),'binomial_weight':w[i],**{name:v[i] for name,v in m.items()}})
++            merged={name:float(np.mean([s[name] for s in strata])) for name in strata[0] if name not in ['x','ambiguity','n_per_stratum']}
++            merged.update(ambiguity=a,n_per_stratum=n,total_labels=2*n,scope='X-conditional quantities, then equal X average',status='exploratory')
++            summaries.append(merged)
++    integration=[]
++    for alpha,beta in [(1,1),(3,19),(9,13),(21,181),(81,121)]:
++        ee=quad(lambda p:float(entropy(p,True))*beta_dist.pdf(p,alpha,beta),0,1,epsabs=1e-12,epsrel=1e-12)[0]
++        ge=quad(lambda p:2*p*(1-p)*beta_dist.pdf(p,alpha,beta),0,1,epsabs=1e-12,epsrel=1e-12)[0]
++        m=moments(alpha,beta);err=max(abs(ee-m['shannon_ee']),abs(ge-m['gini_ee']))
++        assert err<1e-10
++        integration.append({'alpha':alpha,'beta':beta,'numerical_EH':ee,'analytic_EH':float(m['shannon_ee']),'maximum_abs_error':float(err)})
++    lookup={(s['ambiguity'],s['n_per_stratum']):s for s in summaries};interactions=[]
++    for name in ['oracle_entropy','shannon_tu','shannon_ee','shannon_mi','gini_tu','gini_ee','gini_eu','ee_minus_oracle']:
++        value=lookup[(.4,200)][name]-lookup[(.4,20)][name]-lookup[(.1,200)][name]+lookup[(.1,20)][name]
++        interactions.append({'metric':name,'difference_in_differences':value,'contrast':'U(.4,200)-U(.4,20)-U(.1,200)+U(.1,20)','interpretation':'nonadditivity of this estimator and scale; not physical source coupling'})
++    assert len(terms)==888
++    csvout(OUT/'toy/posterior_terms.csv',terms);csvout(OUT/'toy/condition_means.csv',summaries);csvout(OUT/'toy/interactions.csv',interactions)
++    dump(OUT/'toy/verification.json',{'terms':len(terms),'conditions':len(summaries),'strata_checks':valid,'quadrature_checks':integration,'seconds':time.perf_counter()-start,'FM_training':0,'model_inference':0,'independent_evidence_warning':'two X strata are mirror constructions, not independent experimental replicates'})
++    print('E complete: 888 weighted posterior terms, 4 conditions')
++
++
++if __name__=='__main__':main()
+--- /dev/null
++++ code/verify_and_extend.py
+@@ -0,0 +1,76 @@
++"""Direct saved-array verification and prespecified diagnostic summaries."""
++import json,time
++import numpy as np
++import pandas as pd
++from common import ROOT,OUT,ARCHIVE,MASTER,get_inputs,csvout,dump,sha,arrhash
++from metrics import decomposition,RankPlan,align_indices,COVERAGES
++
++
++def main():
++    rows=get_inputs();mc_checks=[];ts_checks=[];aux=[];coverage=[];core_de=[]
++    for r in rows:
++        dest=OUT/'objects'/r['object_id']
++        if not (dest/'done.json').exists():raise RuntimeError(('missing object',r['object_id']))
++        if r['raw_path']:
++            p=ROOT/r['raw_path'];a=next(x for x in ARCHIVE if 'research_data/'+x['archive_path']==r['raw_path'])
++            assert p.stat().st_size==a['size_bytes']
++            aux.append({'object_id':r['object_id'],'path':r['raw_path'],'role':a['role'],'bytes':p.stat().st_size,'sha256_expected':a['sha256'],'hash_basis':'archive manifest; actual size and previously validated raw schema; NPZ CRC checked while reading'})
++        if r['task']=='classification' and r['method']=='mc_dropout':
++            binary=r['dataset']=='treesatai'
++            with np.load(ROOT/r['raw_path'],allow_pickle=False) as raw,np.load(ROOT/r['prediction_path'],allow_pickle=False) as saved:
++                rid=raw['sample_ids'].astype(str);sid=saved['sample_id'].astype(str);ix=align_indices(rid,sid);p=raw['probabilities'][ix]
++                mean,d=decomposition(p,binary)
++                comparisons={'mean_probabilities':mean,'predictive_variance':np.var(p.astype(np.float64),axis=1,ddof=0),
++                             'predictive_entropy':d['entropy'].sum(axis=1) if binary else d['entropy'],
++                             'expected_predictive_entropy':d['expected_entropy'].sum(axis=1) if binary else d['expected_entropy'],
++                             'mi_style_disagreement':d['mutual_information'].sum(axis=1) if binary else d['mutual_information']}
++                for name,values in comparisons.items():
++                    delta=float(np.max(abs(values-saved[name])));assert delta<2e-6
++                    mc_checks.append({'object_id':r['object_id'],'field':name,'max_abs_error':delta,'status':'PASS'})
++        with np.load(dest/'derived.npz',allow_pickle=True) as z:
++            data={name:z[name] for name in z.files}
++        if r['method']=='temperature_scaling':
++            drow=next(x for x in rows if x['dataset']==r['dataset'] and x['model']==r['model'] and x['adaptation']==r['adaptation'] and x['seed']==r['seed'] and x['method']=='deterministic')
++            with np.load(OUT/'objects'/drow['object_id']/'derived.npz',allow_pickle=True) as d:
++                assert np.array_equal(data['sample_id'],d['sample_id']) and np.array_equal(data['label'],d['label'])
++                diff=float(np.max(abs(data['raw_logits']-d['logits'])));changes=int(np.sum(data['probabilities'].argmax(axis=1)!=d['probabilities'].argmax(axis=1)))
++                assert diff<2e-6 and changes==0
++                ts_checks.append({'object_id':r['object_id'],'baseline_object_id':drow['object_id'],'raw_logits_max_abs_error':diff,'argmax_changes':changes,'status':'PASS'})
++        if r['task']=='segmentation':
++            classes=pd.read_csv(dest/'per_image_class.csv')
++            for sk,u in data.items():
++                if not sk.startswith('score_'):continue
++                plan=RankPlan(u,data['loss'])
++                for q in COVERAGES:
++                    accepted=plan.acceptance(q)
++                    for name,g in classes.groupby('class_name'):
++                        g=g.set_index('sample_id').loc[data['sample_id']];support=g.support.to_numpy();union=g.union.to_numpy()
++                        tp=np.nan_to_num(g.iou.to_numpy())*union
++                        s=float((support*accepted).sum());den=float((union*accepted).sum())
++                        coverage.append({'object_id':r['object_id'],'dataset':r['dataset'],'model':r['model'],'adaptation':r['adaptation'],'method':r['method'],'score':sk[6:],'image_coverage':q,'class_name':name,
++                                         'class_pixel_support':int(support.sum()),'retained_class_pixel_mass':s,'class_pixel_retention':s/support.sum() if support.sum() else np.nan,
++                                         'retained_expected_confusion_iou':float((tp*accepted).sum()/den) if den else np.nan,
++                                         'meaning':'fractional image acceptance; class diagnostics use ground truth only in evaluation'})
++        if r['method']=='deep_ensemble':
++            members=[x for x in MASTER if x['record_type']=='INDIVIDUAL_SEED' and x['uq_method']=='deterministic' and all(x[f]==r[f] for f in ['dataset','model','adaptation'])]
++            ens=next(x for x in MASTER if x['record_type']=='ENSEMBLE' and all(x[f]==r[f] for f in ['dataset','model','adaptation']))
++            assert len(members)==3
++            for metric in ['accuracy','macro_f1','miou','pixel_accuracy','nll','brier','ece_15','iou_building']:
++                if ens.get(metric,'')=='':continue
++                vals=[float(m[metric]) for m in members]
++                core_de.append({'object_id':r['object_id'],'dataset':r['dataset'],'model':r['model'],'adaptation':r['adaptation'],'metric':metric,'ensemble_value':float(ens[metric]),'mean_single_member_metric':np.mean(vals),'ensemble_minus_member_mean':float(ens[metric])-np.mean(vals),'member_seed_values':json.dumps(dict(zip([m['seed'] for m in members],vals))),'source':'reports/core_rq_completion_20260921/published/tables/thesis_master_results.csv','interpretation':'existing task/probability-quality metrics, not new member-mean RC'})
++    csvout(OUT/'raw_classification_MC_verification.csv',mc_checks);csvout(OUT/'TS_same_checkpoint_verification.csv',ts_checks);csvout(OUT/'auxiliary_inputs_manifest.csv',aux)
++    csvout(OUT/'full_image_class_coverage.csv',coverage);csvout(OUT/'DE_versus_three_member_core_metrics.csv',core_de)
++    # Direct truth check against original EuroSAT split manifest.
++    split=pd.read_csv(ROOT/'splits/eurosat_70_10_10_10_spatial20m/eurosat_splits.csv').set_index('sample_id');truth=[]
++    for r in rows:
++        if r['dataset']!='eurosat':continue
++        with np.load(OUT/'objects'/r['object_id']/'derived.npz',allow_pickle=True) as z:
++            match=np.array_equal(z['label'],split.loc[z['sample_id']].class_index.to_numpy());assert match
++            truth.append({'object_id':r['object_id'],'labels_match_original_test_manifest':True,'all_split_test':bool((split.loc[z['sample_id']].split=='test').all())})
++    csvout(OUT/'eurosat_original_label_verification.csv',truth)
++    dump(OUT/'additional_verification_summary.json',{'MC_raw_summary_checks':len(mc_checks),'TS_same_checkpoint_pairs':len(ts_checks),'EuroSAT_truth_checks':len(truth),'all_passed':True,'auxiliary_paths':len(aux),'segmentation_member_mean_RC_scope':'Not executed beyond primary seed42. Three-member comparisons use existing core metrics; classification new RC has all three members.'})
++    print('Additional direct verifications complete')
++
++
++if __name__=='__main__':main()

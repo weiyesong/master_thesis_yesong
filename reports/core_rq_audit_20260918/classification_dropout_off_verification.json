@@ -1,0 +1,686 @@
+[
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "42",
+    "run_id": "20260826T071945460412Z_c5_mcd_eurosat_dofa_frozen_seed42_f8504b02",
+    "checkpoint_path": "/workspace/results/final_thesis/mc_dropout/classification/eurosat/dofa/frozen/runs/20260826T071945460412Z_c5_mcd_eurosat_dofa_frozen_seed42_f8504b02/best.pt",
+    "checkpoint_sha256": "ec70e79875dc95a24e5190ea7c94af1e547365823fc4f99c1d8207044decf8dc",
+    "feature_artifact_path": "results/final_thesis/mc_dropout/inference/classification/eurosat/dofa/frozen/seed42/predictions.parquet",
+    "output_path": "reports/core_rq_audit_20260918/classification_dropout_off/eurosat/dofa/frozen/seed42/predictions.parquet",
+    "method": "same_checkpoint_dropout_off",
+    "evaluation": "CPU saved backbone representations + eval BatchNorm where present + final Linear; dropout disabled; no backbone inference",
+    "same_checkpoint_as_mc": true,
+    "feature_ids_and_values_match_saved_embeddings": true,
+    "metrics": {
+      "accuracy": 0.9848931466470154,
+      "macro_f1": 0.9839362598194341,
+      "nll": 0.05041435805050112,
+      "brier": 0.02416876736827269,
+      "ece_15": 0.00433919448666302
+    },
+    "mc_metrics": {
+      "accuracy": 0.9852616064848931,
+      "macro_f1": 0.9843577519639801,
+      "nll": 0.04974346691455073,
+      "brier": 0.024561494445547234,
+      "ece_15": 0.00876192858356189
+    },
+    "original_p0_metrics": {
+      "accuracy": 0.9830508474576272,
+      "macro_f1": 0.9820321179321507,
+      "nll": 0.05810932382339024,
+      "brier": 0.026905956161040682,
+      "ece_15": 0.004230741814997763
+    },
+    "delta_mc_minus_same_weight_off": {
+      "accuracy": 0.0003684598378776993,
+      "macro_f1": 0.0004214921445460096,
+      "nll": -0.0006708911359503897,
+      "brier": 0.00039272707727454337,
+      "ece_15": 0.00442273409689887
+    },
+    "delta_off_minus_original_p0": {
+      "accuracy": 0.0018422991893882745,
+      "macro_f1": 0.0019041418872833837,
+      "nll": -0.007694965772889126,
+      "brier": -0.0027371887927679917,
+      "ece_15": 0.0001084526716652566
+    },
+    "delta_mc_minus_original_p0": {
+      "accuracy": 0.002210759027265974,
+      "macro_f1": 0.0023256340318293933,
+      "nll": -0.008365856908839515,
+      "brier": -0.0023444617154934483,
+      "ece_15": 0.004531186768564127
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "43",
+    "run_id": "20260826T111327093147Z_c5_mcd_eurosat_dofa_frozen_seed43_436609ea",
+    "checkpoint_path": "/workspace/results/final_thesis/mc_dropout/classification/eurosat/dofa/frozen/runs/20260826T111327093147Z_c5_mcd_eurosat_dofa_frozen_seed43_436609ea/best.pt",
+    "checkpoint_sha256": "a8998a85797d9681deed58ac129f57e9a8ce0ffc29bd11a9be02f0a896ff9ef3",
+    "feature_artifact_path": "results/final_thesis/mc_dropout/inference/classification/eurosat/dofa/frozen/seed43/predictions.parquet",
+    "output_path": "reports/core_rq_audit_20260918/classification_dropout_off/eurosat/dofa/frozen/seed43/predictions.parquet",
+    "method": "same_checkpoint_dropout_off",
+    "evaluation": "CPU saved backbone representations + eval BatchNorm where present + final Linear; dropout disabled; no backbone inference",
+    "same_checkpoint_as_mc": true,
+    "feature_ids_and_values_match_saved_embeddings": true,
+    "metrics": {
+      "accuracy": 0.9837877671333825,
+      "macro_f1": 0.9827860729140916,
+      "nll": 0.05592556898154856,
+      "brier": 0.02743667566201197,
+      "ece_15": 0.007141713994605276
+    },
+    "mc_metrics": {
+      "accuracy": 0.9834193072955048,
+      "macro_f1": 0.9824134420635356,
+      "nll": 0.05720961820881597,
+      "brier": 0.028099286916666407,
+      "ece_15": 0.011168621595765003
+    },
+    "original_p0_metrics": {
+      "accuracy": 0.9841562269712602,
+      "macro_f1": 0.9831336902774762,
+      "nll": 0.050330715675589256,
+      "brier": 0.024243360452169457,
+      "ece_15": 0.0071251012862563225
+    },
+    "delta_mc_minus_same_weight_off": {
+      "accuracy": -0.0003684598378776993,
+      "macro_f1": -0.0003726308505559439,
+      "nll": 0.0012840492272674087,
+      "brier": 0.0006626112546544369,
+      "ece_15": 0.004026907601159728
+    },
+    "delta_off_minus_original_p0": {
+      "accuracy": -0.0003684598378776993,
+      "macro_f1": -0.00034761736338462246,
+      "nll": 0.005594853305959303,
+      "brier": 0.0031933152098425135,
+      "ece_15": 1.661270834895333e-05
+    },
+    "delta_mc_minus_original_p0": {
+      "accuracy": -0.0007369196757553986,
+      "macro_f1": -0.0007202482139405664,
+      "nll": 0.006878902533226712,
+      "brier": 0.0038559264644969504,
+      "ece_15": 0.004043520309508681
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "44",
+    "run_id": "20260826T112829704413Z_c5_mcd_eurosat_dofa_frozen_seed44_1ebcff7b",
+    "checkpoint_path": "/workspace/results/final_thesis/mc_dropout/classification/eurosat/dofa/frozen/runs/20260826T112829704413Z_c5_mcd_eurosat_dofa_frozen_seed44_1ebcff7b/best.pt",
+    "checkpoint_sha256": "c3898274172c2c1e488db2941679120bcc03621e6ba8e343a4d1c28991c9a4e0",
+    "feature_artifact_path": "results/final_thesis/mc_dropout/inference/classification/eurosat/dofa/frozen/seed44/predictions.parquet",
+    "output_path": "reports/core_rq_audit_20260918/classification_dropout_off/eurosat/dofa/frozen/seed44/predictions.parquet",
+    "method": "same_checkpoint_dropout_off",
+    "evaluation": "CPU saved backbone representations + eval BatchNorm where present + final Linear; dropout disabled; no backbone inference",
+    "same_checkpoint_as_mc": true,
+    "feature_ids_and_values_match_saved_embeddings": true,
+    "metrics": {
+      "accuracy": 0.9819454679439941,
+      "macro_f1": 0.9807736931310576,
+      "nll": 0.055843841632827074,
+      "brier": 0.026170982295867017,
+      "ece_15": 0.005216304407720629
+    },
+    "mc_metrics": {
+      "accuracy": 0.9819454679439941,
+      "macro_f1": 0.9808163516206735,
+      "nll": 0.056449221412333855,
+      "brier": 0.026875702065537684,
+      "ece_15": 0.0044236185801934036
+    },
+    "original_p0_metrics": {
+      "accuracy": 0.9830508474576272,
+      "macro_f1": 0.9818590980786089,
+      "nll": 0.05473035796903158,
+      "brier": 0.026847744245377,
+      "ece_15": 0.0036683374344643723
+    },
+    "delta_mc_minus_same_weight_off": {
+      "accuracy": 0.0,
+      "macro_f1": 4.2658489615932105e-05,
+      "nll": 0.0006053797795067817,
+      "brier": 0.000704719769670667,
+      "ece_15": -0.0007926858275272251
+    },
+    "delta_off_minus_original_p0": {
+      "accuracy": -0.001105379513633098,
+      "macro_f1": -0.0010854049475513827,
+      "nll": 0.0011134836637954962,
+      "brier": -0.0006767619495099825,
+      "ece_15": 0.0015479669732562564
+    },
+    "delta_mc_minus_original_p0": {
+      "accuracy": -0.001105379513633098,
+      "macro_f1": -0.0010427464579354506,
+      "nll": 0.0017188634433022779,
+      "brier": 2.7957820160684488e-05,
+      "ece_15": 0.0007552811457290313
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "run_id": "20260826T114721092234Z_c5_mcd_eurosat_dofa_full_finetune_seed42_9d07512e",
+    "checkpoint_path": "/workspace/results/final_thesis/mc_dropout/classification/eurosat/dofa/full_finetune/runs/20260826T114721092234Z_c5_mcd_eurosat_dofa_full_finetune_seed42_9d07512e/best.pt",
+    "checkpoint_sha256": "c6edf6fbf49ca6ab343322c259e41b99b0bd58bccf70bbf54b1d21652ed45a8a",
+    "feature_artifact_path": "results/final_thesis/mc_dropout/inference/classification/eurosat/dofa/full_finetune/seed42/predictions.parquet",
+    "output_path": "reports/core_rq_audit_20260918/classification_dropout_off/eurosat/dofa/full_finetune/seed42/predictions.parquet",
+    "method": "same_checkpoint_dropout_off",
+    "evaluation": "CPU saved backbone representations + eval BatchNorm where present + final Linear; dropout disabled; no backbone inference",
+    "same_checkpoint_as_mc": true,
+    "feature_ids_and_values_match_saved_embeddings": true,
+    "metrics": {
+      "accuracy": 0.9594694178334562,
+      "macro_f1": 0.9576807367535556,
+      "nll": 0.12581067048974515,
+      "brier": 0.0635652524578164,
+      "ece_15": 0.009908886279089976
+    },
+    "mc_metrics": {
+      "accuracy": 0.9587324981577008,
+      "macro_f1": 0.9569009554780175,
+      "nll": 0.1257321470205775,
+      "brier": 0.06357997024081972,
+      "ece_15": 0.010823282660942528
+    },
+    "original_p0_metrics": {
+      "accuracy": 0.970891672807664,
+      "macro_f1": 0.9700730838673988,
+      "nll": 0.083690893234053,
+      "brier": 0.043979038164620635,
+      "ece_15": 0.007804339873764387
+    },
+    "delta_mc_minus_same_weight_off": {
+      "accuracy": -0.0007369196757553986,
+      "macro_f1": -0.0007797812755381273,
+      "nll": -7.852346916764619e-05,
+      "brier": 1.4717783003326268e-05,
+      "ece_15": 0.0009143963818525527
+    },
+    "delta_off_minus_original_p0": {
+      "accuracy": -0.01142225497420779,
+      "macro_f1": -0.012392347113843183,
+      "nll": 0.042119777255692145,
+      "brier": 0.019586214293195764,
+      "ece_15": 0.0021045464053255887
+    },
+    "delta_mc_minus_original_p0": {
+      "accuracy": -0.01215917464996319,
+      "macro_f1": -0.01317212838938131,
+      "nll": 0.0420412537865245,
+      "brier": 0.01960093207619909,
+      "ece_15": 0.0030189427871781414
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "42",
+    "run_id": "20260826T130252227124Z_c5_mcd_eurosat_panopticon_frozen_seed42_ba0d13ac",
+    "checkpoint_path": "/workspace/results/final_thesis/mc_dropout/classification/eurosat/panopticon/frozen/runs/20260826T130252227124Z_c5_mcd_eurosat_panopticon_frozen_seed42_ba0d13ac/best.pt",
+    "checkpoint_sha256": "f7461b047946cf1ee7868bff7dfea5e61ceff54794f3e08f3cdbd6721c02b9fc",
+    "feature_artifact_path": "results/final_thesis/mc_dropout/inference/classification/eurosat/panopticon/frozen/seed42/predictions.parquet",
+    "output_path": "reports/core_rq_audit_20260918/classification_dropout_off/eurosat/panopticon/frozen/seed42/predictions.parquet",
+    "method": "same_checkpoint_dropout_off",
+    "evaluation": "CPU saved backbone representations + eval BatchNorm where present + final Linear; dropout disabled; no backbone inference",
+    "same_checkpoint_as_mc": true,
+    "feature_ids_and_values_match_saved_embeddings": true,
+    "metrics": {
+      "accuracy": 0.9834193072955048,
+      "macro_f1": 0.9827184808714058,
+      "nll": 0.049354962279264836,
+      "brier": 0.024888530664932382,
+      "ece_15": 0.0065032686041661195
+    },
+    "mc_metrics": {
+      "accuracy": 0.9830508474576272,
+      "macro_f1": 0.9823134616437897,
+      "nll": 0.04868047821739131,
+      "brier": 0.02477291671732937,
+      "ece_15": 0.0046734339670829236
+    },
+    "original_p0_metrics": {
+      "accuracy": 0.9837877671333825,
+      "macro_f1": 0.9832295981792253,
+      "nll": 0.051498536888575,
+      "brier": 0.025838579490714744,
+      "ece_15": 0.007695890551291587
+    },
+    "delta_mc_minus_same_weight_off": {
+      "accuracy": -0.0003684598378775883,
+      "macro_f1": -0.0004050192276160436,
+      "nll": -0.0006744840618735232,
+      "brier": -0.00011561394760301394,
+      "ece_15": -0.001829834637083196
+    },
+    "delta_off_minus_original_p0": {
+      "accuracy": -0.0003684598378776993,
+      "macro_f1": -0.0005111173078194975,
+      "nll": -0.002143574609310167,
+      "brier": -0.0009500488257823611,
+      "ece_15": -0.001192621947125468
+    },
+    "delta_mc_minus_original_p0": {
+      "accuracy": -0.0007369196757552876,
+      "macro_f1": -0.0009161365354355411,
+      "nll": -0.0028180586711836902,
+      "brier": -0.001065662773385375,
+      "ece_15": -0.003022456584208664
+    }
+  },
+  {
+    "dataset": "eurosat",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "run_id": "20260826T121529608269Z_c5_mcd_eurosat_panopticon_full_finetune_seed42_25cdb219",
+    "checkpoint_path": "/workspace/results/final_thesis/mc_dropout/classification/eurosat/panopticon/full_finetune/runs/20260826T121529608269Z_c5_mcd_eurosat_panopticon_full_finetune_seed42_25cdb219/best.pt",
+    "checkpoint_sha256": "9ef59ec99f4d56df19e39d6ab9d4bed3b308950e79c29d02782aef78422b2a57",
+    "feature_artifact_path": "results/final_thesis/mc_dropout/inference/classification/eurosat/panopticon/full_finetune/seed42/predictions.parquet",
+    "output_path": "reports/core_rq_audit_20260918/classification_dropout_off/eurosat/panopticon/full_finetune/seed42/predictions.parquet",
+    "method": "same_checkpoint_dropout_off",
+    "evaluation": "CPU saved backbone representations + eval BatchNorm where present + final Linear; dropout disabled; no backbone inference",
+    "same_checkpoint_as_mc": true,
+    "feature_ids_and_values_match_saved_embeddings": true,
+    "metrics": {
+      "accuracy": 0.9576271186440678,
+      "macro_f1": 0.9551425706476799,
+      "nll": 0.12223473054343428,
+      "brier": 0.06423987215799508,
+      "ece_15": 0.008298320208477816
+    },
+    "mc_metrics": {
+      "accuracy": 0.9579955784819455,
+      "macro_f1": 0.9555526271776689,
+      "nll": 0.12214091332958943,
+      "brier": 0.06420438628937478,
+      "ece_15": 0.006935682622667789
+    },
+    "original_p0_metrics": {
+      "accuracy": 0.9679439941046426,
+      "macro_f1": 0.9674469537089507,
+      "nll": 0.09865374542764949,
+      "brier": 0.04820857618290921,
+      "ece_15": 0.005855335039344006
+    },
+    "delta_mc_minus_same_weight_off": {
+      "accuracy": 0.0003684598378776993,
+      "macro_f1": 0.0004100565299889336,
+      "nll": -9.381721384485453e-05,
+      "brier": -3.548586862030245e-05,
+      "ece_15": -0.001362637585810027
+    },
+    "delta_off_minus_original_p0": {
+      "accuracy": -0.010316875460574804,
+      "macro_f1": -0.012304383061270796,
+      "nll": 0.023580985115784797,
+      "brier": 0.016031295975085867,
+      "ece_15": 0.00244298516913381
+    },
+    "delta_mc_minus_original_p0": {
+      "accuracy": -0.009948415622697104,
+      "macro_f1": -0.011894326531281862,
+      "nll": 0.023487167901939943,
+      "brier": 0.015995810106465565,
+      "ece_15": 0.001080347583323783
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "frozen",
+    "seed": "42",
+    "run_id": "20260826T133122444037Z_c5_mcd_treesatai_dofa_frozen_seed42_1b4cab86",
+    "checkpoint_path": "/workspace/results/final_thesis/mc_dropout/classification/treesatai/dofa/frozen/runs/20260826T133122444037Z_c5_mcd_treesatai_dofa_frozen_seed42_1b4cab86/best.pt",
+    "checkpoint_sha256": "40210cd7dfa2141d5e97afc4dc3e928b7cc0e53ff35c0479748a44d672f552dc",
+    "feature_artifact_path": "results/final_thesis/mc_dropout/inference/classification/treesatai/dofa/frozen/seed42/predictions.parquet",
+    "output_path": "reports/core_rq_audit_20260918/classification_dropout_off/treesatai/dofa/frozen/seed42/predictions.parquet",
+    "method": "same_checkpoint_dropout_off",
+    "evaluation": "CPU saved backbone representations + eval BatchNorm where present + final Linear; dropout disabled; no backbone inference",
+    "same_checkpoint_as_mc": true,
+    "feature_ids_and_values_match_saved_embeddings": true,
+    "metrics": {
+      "accuracy": 0.2545,
+      "macro_f1": 0.21730577579670343,
+      "nll": 0.2562544721989711,
+      "brier": 0.07422286760541173,
+      "ece_15": 0.00819985163617821
+    },
+    "mc_metrics": {
+      "accuracy": 0.255,
+      "macro_f1": 0.21624240322757826,
+      "nll": 0.25616549663264737,
+      "brier": 0.07433590163127934,
+      "ece_15": 0.008882509036529517
+    },
+    "original_p0_metrics": {
+      "accuracy": 0.255,
+      "macro_f1": 0.21952595320890655,
+      "nll": 0.25653112849224985,
+      "brier": 0.07417677748713968,
+      "ece_15": 0.00997010348659763
+    },
+    "delta_mc_minus_same_weight_off": {
+      "accuracy": 0.0005000000000000004,
+      "macro_f1": -0.0010633725691251705,
+      "nll": -8.89755663237013e-05,
+      "brier": 0.00011303402586761158,
+      "ece_15": 0.0006826574003513074
+    },
+    "delta_off_minus_original_p0": {
+      "accuracy": -0.0005000000000000004,
+      "macro_f1": -0.0022201774122031226,
+      "nll": -0.0002766562932787764,
+      "brier": 4.6090118272057445e-05,
+      "ece_15": -0.0017702518504194194
+    },
+    "delta_mc_minus_original_p0": {
+      "accuracy": 0.0,
+      "macro_f1": -0.003283549981328293,
+      "nll": -0.0003656318596024777,
+      "brier": 0.00015912414413966902,
+      "ece_15": -0.001087594450068112
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "dofa",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "run_id": "20260826T123202780258Z_c5_mcd_treesatai_dofa_full_finetune_seed42_617d7518",
+    "checkpoint_path": "/workspace/results/final_thesis/mc_dropout/classification/treesatai/dofa/full_finetune/runs/20260826T123202780258Z_c5_mcd_treesatai_dofa_full_finetune_seed42_617d7518/best.pt",
+    "checkpoint_sha256": "0ef90605e41fa791f76f2753960e4839b368e7b0f8c825ff1e42e2b38d71b674",
+    "feature_artifact_path": "results/final_thesis/mc_dropout/inference/classification/treesatai/dofa/full_finetune/seed42/predictions.parquet",
+    "output_path": "reports/core_rq_audit_20260918/classification_dropout_off/treesatai/dofa/full_finetune/seed42/predictions.parquet",
+    "method": "same_checkpoint_dropout_off",
+    "evaluation": "CPU saved backbone representations + eval BatchNorm where present + final Linear; dropout disabled; no backbone inference",
+    "same_checkpoint_as_mc": true,
+    "feature_ids_and_values_match_saved_embeddings": true,
+    "metrics": {
+      "accuracy": 0.284,
+      "macro_f1": 0.2392380955961864,
+      "nll": 0.24783262935875058,
+      "brier": 0.07151831092126501,
+      "ece_15": 0.015022881318525591
+    },
+    "mc_metrics": {
+      "accuracy": 0.2825,
+      "macro_f1": 0.23942275273447308,
+      "nll": 0.2479126198368798,
+      "brier": 0.07154349998543406,
+      "ece_15": 0.015531915454342743
+    },
+    "original_p0_metrics": {
+      "accuracy": 0.265,
+      "macro_f1": 0.24827355184214414,
+      "nll": 0.2499352651808189,
+      "brier": 0.07259371298037501,
+      "ece_15": 0.014092692175650519
+    },
+    "delta_mc_minus_same_weight_off": {
+      "accuracy": -0.0015000000000000013,
+      "macro_f1": 0.0001846571382866924,
+      "nll": 7.99904781292049e-05,
+      "brier": 2.5189064169053865e-05,
+      "ece_15": 0.0005090341358171512
+    },
+    "delta_off_minus_original_p0": {
+      "accuracy": 0.01899999999999996,
+      "macro_f1": -0.009035456245957751,
+      "nll": -0.0021026358220683217,
+      "brier": -0.0010754020591099978,
+      "ece_15": 0.0009301891428750726
+    },
+    "delta_mc_minus_original_p0": {
+      "accuracy": 0.01749999999999996,
+      "macro_f1": -0.008850799107671059,
+      "nll": -0.0020226453439391168,
+      "brier": -0.0010502129949409439,
+      "ece_15": 0.0014392232786922237
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "frozen",
+    "seed": "42",
+    "run_id": "20260826T124630941184Z_c5_mcd_treesatai_panopticon_frozen_seed42_4f216ca7",
+    "checkpoint_path": "/workspace/results/final_thesis/mc_dropout/classification/treesatai/panopticon/frozen/runs/20260826T124630941184Z_c5_mcd_treesatai_panopticon_frozen_seed42_4f216ca7/best.pt",
+    "checkpoint_sha256": "e0d2a139da59b22feb08f9685a78698a2dc88af6de9379d7387b3edf7f44ca47",
+    "feature_artifact_path": "results/final_thesis/mc_dropout/inference/classification/treesatai/panopticon/frozen/seed42/predictions.parquet",
+    "output_path": "reports/core_rq_audit_20260918/classification_dropout_off/treesatai/panopticon/frozen/seed42/predictions.parquet",
+    "method": "same_checkpoint_dropout_off",
+    "evaluation": "CPU saved backbone representations + eval BatchNorm where present + final Linear; dropout disabled; no backbone inference",
+    "same_checkpoint_as_mc": true,
+    "feature_ids_and_values_match_saved_embeddings": true,
+    "metrics": {
+      "accuracy": 0.238,
+      "macro_f1": 0.2057995545164342,
+      "nll": 0.25816758160880465,
+      "brier": 0.07570317346546063,
+      "ece_15": 0.009663506353984
+    },
+    "mc_metrics": {
+      "accuracy": 0.238,
+      "macro_f1": 0.20481881434983984,
+      "nll": 0.25840009994063423,
+      "brier": 0.07579855432941444,
+      "ece_15": 0.010089851286697982
+    },
+    "original_p0_metrics": {
+      "accuracy": 0.2395,
+      "macro_f1": 0.2067960209801897,
+      "nll": 0.25819314083634115,
+      "brier": 0.07572142477398956,
+      "ece_15": 0.010479455220324962
+    },
+    "delta_mc_minus_same_weight_off": {
+      "accuracy": 0.0,
+      "macro_f1": -0.0009807401665943571,
+      "nll": 0.0002325183318295787,
+      "brier": 9.538086395381729e-05,
+      "ece_15": 0.0004263449327139811
+    },
+    "delta_off_minus_original_p0": {
+      "accuracy": -0.0015000000000000013,
+      "macro_f1": -0.0009964664637555076,
+      "nll": -2.5559227536497975e-05,
+      "brier": -1.8251308528935417e-05,
+      "ece_15": -0.0008159488663409611
+    },
+    "delta_mc_minus_original_p0": {
+      "accuracy": -0.0015000000000000013,
+      "macro_f1": -0.0019772066303498648,
+      "nll": 0.00020695910429308073,
+      "brier": 7.712955542488187e-05,
+      "ece_15": -0.00038960393362698006
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "42",
+    "run_id": "20260826T074610277789Z_c5_mcd_treesatai_panopticon_full_finetune_seed42_c06b6282",
+    "checkpoint_path": "/workspace/results/final_thesis/mc_dropout/classification/treesatai/panopticon/full_finetune/runs/20260826T074610277789Z_c5_mcd_treesatai_panopticon_full_finetune_seed42_c06b6282/best.pt",
+    "checkpoint_sha256": "c4a09583c92002c1417be2a2d643e1bca2861f1620e9b1d5acd30f9ca81eb2cb",
+    "feature_artifact_path": "results/final_thesis/mc_dropout/inference/classification/treesatai/panopticon/full_finetune/seed42/predictions.parquet",
+    "output_path": "reports/core_rq_audit_20260918/classification_dropout_off/treesatai/panopticon/full_finetune/seed42/predictions.parquet",
+    "method": "same_checkpoint_dropout_off",
+    "evaluation": "CPU saved backbone representations + eval BatchNorm where present + final Linear; dropout disabled; no backbone inference",
+    "same_checkpoint_as_mc": true,
+    "feature_ids_and_values_match_saved_embeddings": true,
+    "metrics": {
+      "accuracy": 0.288,
+      "macro_f1": 0.2510174493914784,
+      "nll": 0.24985625509037113,
+      "brier": 0.07287571630383478,
+      "ece_15": 0.011065863116318846
+    },
+    "mc_metrics": {
+      "accuracy": 0.29,
+      "macro_f1": 0.25096285118035044,
+      "nll": 0.24983264231158325,
+      "brier": 0.07289724077666669,
+      "ece_15": 0.01106181631861303
+    },
+    "original_p0_metrics": {
+      "accuracy": 0.2835,
+      "macro_f1": 0.2447009605210901,
+      "nll": 0.24993001678748528,
+      "brier": 0.07284414770273882,
+      "ece_15": 0.011266771733972806
+    },
+    "delta_mc_minus_same_weight_off": {
+      "accuracy": 0.0020000000000000018,
+      "macro_f1": -5.459821112796526e-05,
+      "nll": -2.361277878787371e-05,
+      "brier": 2.1524472831907504e-05,
+      "ece_15": -4.046797705815203e-06
+    },
+    "delta_off_minus_original_p0": {
+      "accuracy": 0.004500000000000004,
+      "macro_f1": 0.006316488870388298,
+      "nll": -7.37616971141497e-05,
+      "brier": 3.156860109596038e-05,
+      "ece_15": -0.0002009086176539606
+    },
+    "delta_mc_minus_original_p0": {
+      "accuracy": 0.006500000000000006,
+      "macro_f1": 0.006261890659260333,
+      "nll": -9.737447590202342e-05,
+      "brier": 5.3093073927867884e-05,
+      "ece_15": -0.0002049554153597758
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "43",
+    "run_id": "20260826T111326975579Z_c5_mcd_treesatai_panopticon_full_finetune_seed43_a5ddbffa",
+    "checkpoint_path": "/workspace/results/final_thesis/mc_dropout/classification/treesatai/panopticon/full_finetune/runs/20260826T111326975579Z_c5_mcd_treesatai_panopticon_full_finetune_seed43_a5ddbffa/best.pt",
+    "checkpoint_sha256": "b0d232222fcf3b963cddf85b64e6913180b96ff23b769b97b23a487a0dfb2fff",
+    "feature_artifact_path": "results/final_thesis/mc_dropout/inference/classification/treesatai/panopticon/full_finetune/seed43/predictions.parquet",
+    "output_path": "reports/core_rq_audit_20260918/classification_dropout_off/treesatai/panopticon/full_finetune/seed43/predictions.parquet",
+    "method": "same_checkpoint_dropout_off",
+    "evaluation": "CPU saved backbone representations + eval BatchNorm where present + final Linear; dropout disabled; no backbone inference",
+    "same_checkpoint_as_mc": true,
+    "feature_ids_and_values_match_saved_embeddings": true,
+    "metrics": {
+      "accuracy": 0.2505,
+      "macro_f1": 0.21703494832531717,
+      "nll": 0.24509898292337098,
+      "brier": 0.07143228598871777,
+      "ece_15": 0.005690662329040546
+    },
+    "mc_metrics": {
+      "accuracy": 0.251,
+      "macro_f1": 0.21728427044501541,
+      "nll": 0.2451644384494948,
+      "brier": 0.0714646063111507,
+      "ece_15": 0.005185668944449087
+    },
+    "original_p0_metrics": {
+      "accuracy": 0.25,
+      "macro_f1": 0.21852796184352316,
+      "nll": 0.24623769712438703,
+      "brier": 0.07177279995436456,
+      "ece_15": 0.004157547277253858
+    },
+    "delta_mc_minus_same_weight_off": {
+      "accuracy": 0.0005000000000000004,
+      "macro_f1": 0.0002493221196982476,
+      "nll": 6.545552612380323e-05,
+      "brier": 3.2320322432929927e-05,
+      "ece_15": -0.000504993384591459
+    },
+    "delta_off_minus_original_p0": {
+      "accuracy": 0.0005000000000000004,
+      "macro_f1": -0.0014930135182059934,
+      "nll": -0.00113871420101605,
+      "brier": -0.0003405139656467854,
+      "ece_15": 0.0015331150517866876
+    },
+    "delta_mc_minus_original_p0": {
+      "accuracy": 0.0010000000000000009,
+      "macro_f1": -0.0012436913985077458,
+      "nll": -0.0010732586748922468,
+      "brier": -0.00030819364321385545,
+      "ece_15": 0.0010281216671952286
+    }
+  },
+  {
+    "dataset": "treesatai",
+    "model": "panopticon",
+    "adaptation": "full_finetune",
+    "seed": "44",
+    "run_id": "20260826T114425744236Z_c5_mcd_treesatai_panopticon_full_finetune_seed44_4db2cd96",
+    "checkpoint_path": "/workspace/results/final_thesis/mc_dropout/classification/treesatai/panopticon/full_finetune/runs/20260826T114425744236Z_c5_mcd_treesatai_panopticon_full_finetune_seed44_4db2cd96/best.pt",
+    "checkpoint_sha256": "c884b87b6a017f63d03a5d4ddb8beefae7fc251613b375bf248513c13754bcb6",
+    "feature_artifact_path": "results/final_thesis/mc_dropout/inference/classification/treesatai/panopticon/full_finetune/seed44/predictions.parquet",
+    "output_path": "reports/core_rq_audit_20260918/classification_dropout_off/treesatai/panopticon/full_finetune/seed44/predictions.parquet",
+    "method": "same_checkpoint_dropout_off",
+    "evaluation": "CPU saved backbone representations + eval BatchNorm where present + final Linear; dropout disabled; no backbone inference",
+    "same_checkpoint_as_mc": true,
+    "feature_ids_and_values_match_saved_embeddings": true,
+    "metrics": {
+      "accuracy": 0.264,
+      "macro_f1": 0.20937212601631927,
+      "nll": 0.24740998980800516,
+      "brier": 0.07249595144790848,
+      "ece_15": 0.006815041908218215
+    },
+    "mc_metrics": {
+      "accuracy": 0.263,
+      "macro_f1": 0.21007490121619632,
+      "nll": 0.2475149923878762,
+      "brier": 0.07253935642059514,
+      "ece_15": 0.006609981844764358
+    },
+    "original_p0_metrics": {
+      "accuracy": 0.221,
+      "macro_f1": 0.1960271104495312,
+      "nll": 0.25520544955130714,
+      "brier": 0.07494079566163814,
+      "ece_15": 0.007464281140166956
+    },
+    "delta_mc_minus_same_weight_off": {
+      "accuracy": -0.0010000000000000009,
+      "macro_f1": 0.0007027751998770482,
+      "nll": 0.00010500257987103301,
+      "brier": 4.340497268666421e-05,
+      "ece_15": -0.00020506006345385672
+    },
+    "delta_off_minus_original_p0": {
+      "accuracy": 0.04300000000000001,
+      "macro_f1": 0.013345015566788077,
+      "nll": -0.00779545974330198,
+      "brier": -0.0024448442137296605,
+      "ece_15": -0.0006492392319487408
+    },
+    "delta_mc_minus_original_p0": {
+      "accuracy": 0.04200000000000001,
+      "macro_f1": 0.014047790766665125,
+      "nll": -0.007690457163430947,
+      "brier": -0.0024014392410429963,
+      "ece_15": -0.0008542992954025976
+    }
+  }
+]
