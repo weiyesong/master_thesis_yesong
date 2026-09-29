@@ -1,223 +1,111 @@
 # Uncertainty Quantification for Earth Observation Foundation Models
 
-本仓库是硕士论文实验代码。当前主实验为 **DOFA + EuroSAT 图像分类**，已完成固定数据划分、统一配置与结果管理、逐样本预测导出，以及 frozen-backbone 和 full fine-tuning 两组 3-seed deterministic baselines。
+本仓库是硕士论文的实验代码与结果文档。研究对象是 EO foundation model（**DOFA**、**Panopticon**）在下游适配后的概率校准与不确定性量化（UQ）。
 
-当前状态更新于 **2026-08-09**。详细证据、代码位置和风险清单见 [代码审计报告](reports/code_audit.md)。
+**状态（更新于 2026-09-29）：全部计划实验已完成，论文进入写作阶段。** 16 个 dataset × model × adaptation 单元、72 次训练、Temperature Scaling / MC Dropout / Deep Ensemble 评估、审计与补充分析（A/E）均已完成；不需要再补训练或模型前向。
 
-## 当前实验协议
+## 研究问题
 
-| 项目 | 设置 |
+- **RQ1**：不同 EO foundation model 在下游适配后，预测概率的校准程度如何？
+- **RQ2**：不同 fine-tuning 方式（frozen vs. full fine-tuning）是否、以及怎样影响校准和任务性能？
+- **RQ3**：Temperature Scaling、MC Dropout、Deep Ensemble 能否改善校准，是否以任务性能下降为代价？
+
+审计标准见 [EO_FM_UQ_Core_RQ_Audit_Standard.md](EO_FM_UQ_Core_RQ_Audit_Standard.md)。
+
+## 从哪里开始读
+
+| 文档 | 内容 |
 |---|---|
-| Model | DOFA ViT-Base，预训练权重 `DOFA/checkpoints/DOFA_ViT_base_e100.pth` |
-| Dataset | EuroSAT，27,000 张 Sentinel-2 patch |
-| Input | RGB `B04/B03/B02`，224 × 224 |
-| Split | train 70% / validation 10% / calibration 10% / test 10% |
-| Seeds | 42、43、44 |
-| Head | `BatchNorm1d(768, affine=False, eps=1e-6) -> Linear(768, 10)` |
-| Checkpoint selection | 最低 validation NLL |
-| Test | 每个 seed 的 best checkpoint 做一次 clean deterministic evaluation |
-| Metrics | accuracy、macro-F1、per-class precision/recall/F1、NLL、multiclass Brier、ECE-15 |
-| Prediction export | Parquet 主表；随机采样预留 compressed NPZ；embedding 默认关闭 |
+| [最终结果包](reports/core_rq_completion_20260921/published/final_thesis_results.md) | 全部正式表格、reliability diagram、性能–校准图、分割不确定性图 |
+| [RQ1–RQ3 结果正文](reports/core_rq_completion_20260921/RESULTS_SECTION.md) | 每个 RQ 的回答、反例和结论边界 |
+| [审计完成记录](reports/core_rq_completion_20260921/COMPLETION_REPORT.md) | 29 项检查：27 PASS、2 UNKNOWN（均为历史来源问题） |
+| [A/E 补充研究报告](reports/thesis_followup_execution_20260926/FOLLOWUP_COMPLETION_REPORT.md) | 错误识别/拒识、置信度尺度、UQ 代理量、解析参照实验 |
+| [论文结果草稿](reports/thesis_followup_execution_20260926/THESIS_RESULTS_DRAFT.md) | 可直接用于结果章的段落 |
+| [论文准备与大纲](reports/thesis_readiness_20260926/THESIS_READINESS_AND_OUTLINE.md) | 章节结构与完成度评估 |
+| [训练协议](reports/final_training_protocol.md) / [数据协议](reports/final_dataset_protocols.md) / [UQ 前协议冻结](reports/pre_uq_protocol_freeze.md) | 冻结的实验设置 |
+| [证据矩阵](reports/thesis_evidence_matrix.md) | 每个结论对应的证据文件 |
 
-训练、验证、校准和测试职责严格分离：只有 train 用于梯度更新，validation 用于 early stopping 和 best checkpoint 选择，calibration 预留给后处理校准，test 只用于冻结协议后的最终评估。
+## 实验矩阵
 
-## 已完成工作
+| 维度 | 设置 |
+|---|---|
+| Foundation models | DOFA ViT-Base、Panopticon ViT-B/14 |
+| 数据集 | EuroSAT（10 类分类）、TreeSatAI（15 标签多标签分类）、CloudSEN12（4 类云分割）、SpaceNet7（建筑物分割） |
+| 适配方式 | frozen backbone（只训练 head/decoder）、full fine-tuning |
+| Seeds | 42、43、44（全部报告，不挑 seed） |
+| UQ 方法 | Deterministic、Temperature Scaling（仅 EuroSAT，在专用 calibration split 上拟合）、MC Dropout（head-only，p=0.1，T=30）、Deep Ensemble（3 个 seed 成员的概率平均） |
+| Checkpoint 选择 | 分类：最低 validation NLL；分割：最高 validation mIoU |
+| 指标 | 分类：accuracy、Macro-F1、NLL、Brier、ECE-15；分割：mIoU、per-class IoU、pixel accuracy、NLL、Brier、ECE-15；SpaceNet7 另有 building/boundary ECE |
 
-- 统一 YAML 配置、唯一 `run_id`、resolved config、环境与运行时间记录。
-- 统一固定随机种子：Python、NumPy、PyTorch CPU/CUDA、DataLoader generator/worker。
-- 建立不可覆盖的 EuroSAT 固定 split CSV/JSON，并完成样本、文件哈希和 20 m 空间组检查。
-- DataLoader 强制读取保存的 manifest；只有 train shuffle；四个 split 当前均使用确定性预处理。
-- 支持 frozen 和 full fine-tuning；保存 best/last checkpoint、训练历史、参数和梯度审计。
-- 逐样本导出 logits、probabilities、label、sample ID、置信度、margin、entropy 和实验元数据。
-- 可从保存的预测文件重新计算全部 deterministic 指标，无需重新加载模型。
-- 已完成 frozen 与 full fine-tuning 各 3 个 seed 的正式 baseline。
-- 当前单元测试共 17 项，全部通过。
+共 64 个方法单元：52 个有结果，12 个 Temperature Scaling 单元按协议记为 N/A（TreeSatAI 与分割）。另有 24 组同权重的 MC vs. dropout-off 对照。
 
-尚未执行 temperature scaling、MC Dropout 或 deep ensemble。代码中的 stochastic 三维数组格式只是为后续 UQ 实验预留，不能当作已经完成的 UQ 结果。
+数据划分：
 
-## 数据划分
+- EuroSAT 使用项目自建的 70/10/10/10 空间分组划分（[splits/eurosat_70_10_10_10_spatial20m/](splits/eurosat_70_10_10_10_spatial20m/)）。
+- TreeSatAI、CloudSEN12、SpaceNet7 使用 GEO-Bench-2 官方划分。
 
-固定 manifest 位于：
+## 主要结果（摘要）
 
-```text
-splits/eurosat_70_10_10_10_spatial20m/
-├── eurosat_splits.csv
-├── eurosat_splits.json
-├── class_distribution.csv
-├── spatial_leakage_report.json
-└── validation_report.json
-```
+完整数值见[最终结果包](reports/core_rq_completion_20260921/published/final_thesis_results.md)。EuroSAT deterministic，mean ± SD（3 seeds）：
 
-| Split | 样本数 | 比例 |
-|---|---:|---:|
-| train | 18,866 | 69.87% |
-| validation (`val`) | 2,707 | 10.03% |
-| calibration | 2,713 | 10.05% |
-| test | 2,714 | 10.05% |
-| total | 27,000 | 100% |
+| Model | Adaptation | Accuracy | NLL ↓ | ECE-15 ↓ |
+|---|---|---:|---:|---:|
+| DOFA | frozen | 0.9834 ± 0.0006 | 0.0544 ± 0.0039 | 0.0050 ± 0.0019 |
+| DOFA | full | 0.9649 ± 0.0054 | 0.1069 ± 0.0203 | 0.0111 ± 0.0049 |
+| Panopticon | frozen | 0.9833 ± 0.0004 | 0.0505 ± 0.0036 | 0.0066 ± 0.0026 |
+| Panopticon | full | 0.9627 ± 0.0073 | 0.1126 ± 0.0374 | 0.0095 ± 0.0050 |
 
-划分使用 seed `20260803`。它在类别约束之外，将 20 m 内的空间相邻 patch 合并为同一 group 后再分配，从而避免已检测到的空间近邻跨 split。当前验证结果：无重复 sample ID、无重复路径、无缺失文件、split 两两无交集、无跨 split 相同内容哈希、无跨 split 空间组。CSV SHA-256 为：
+核心结论（均限于已声明的配置范围）：
 
-```text
-c5cadc7936394f0678307f7db25c55a2dc19f73ddb93891b772c16221e8abf22
-```
+- **RQ1**：FM 的校准排序随任务、适配方式、指标和分箱而变化，没有跨全部条件一致的"校准冠军"。总体 ECE 低，不代表每个类别都校准良好。
+- **RQ2**：frozen → full 的性能和校准变化因条件而异，方向不稳定本身就是结果。EuroSAT 上 full fine-tuning 更差；CloudSEN12 与 TreeSatAI 上 full 更好。两种方案的学习率和训练日程不同，不能把差异单独归因于"是否冻结"。
+- **RQ3**：Temperature Scaling 不改变预测（argmax 不变），能降低部分 ECE/NLL。Deep Ensemble 在分割上提高 mIoU 并降低 NLL/Brier，但 EuroSAT full 的 ECE 变差。MC Dropout 相对 dropout-off 在分割上改善 ECE/NLL/Brier，在分类上收益不一致。
+- **补充 A/E**：MSP 用于错误识别和拒识有效（EuroSAT 错误识别 AUROC 0.92–0.98）。但在 TreeSatAI 上 MI 的错误排序全面不如 MSP；校准改善也不保证错误排序改善。解析参照实验（E）表明，posterior expected entropy 不能直接等同于数据生成的条件熵。
+- **已知边界**：DOFA–EuroSAT 历史归一化常数的统计来源无法追溯（2 项 UNKNOWN）；分割 Deep Ensemble 只有一组；MC Dropout 只在 head 上启用。
 
-重新验证现有 manifest，不会生成或覆盖 split：
-
-```bash
-python scripts/create_eurosat_splits.py \
-  --data-root data \
-  --output-dir splits/eurosat_70_10_10_10_spatial20m \
-  --validate-only
-```
-
-## 正式 baseline 结果
-
-以下均为 clean test deterministic evaluation，数值是 seeds 42/43/44 的 mean ± sample standard deviation。
-
-| Adaptation | Accuracy | Macro-F1 | NLL ↓ | Brier ↓ | ECE-15 ↓ |
-|---|---:|---:|---:|---:|---:|
-| Frozen backbone | 0.98342 ± 0.00064 | 0.98234 ± 0.00069 | 0.05439 ± 0.00390 | 0.02600 ± 0.00152 | 0.00501 ± 0.00185 |
-| Full fine-tuning | 0.96487 ± 0.00537 | 0.96375 ± 0.00549 | 0.10694 ± 0.02033 | 0.05327 ± 0.00818 | 0.01112 ± 0.00490 |
-
-这是描述性汇总，不是最终统计结论。当前协议下 full fine-tuning 的平均 accuracy 比 frozen 低 1.855 个百分点，而且三个 full fine-tuning run 均出现明显的 post-best validation instability。差异主要集中在 `PermanentCrop` 与 `HerbaceousVegetation` 的混淆；不能据此用 test 结果反向调参。
-
-汇总文件：
-
-- Frozen：[aggregate_test_metrics.json](results/baselines/dofa_eurosat_frozen_bnlinear/aggregate_test_metrics.json)
-- Full fine-tuning：[aggregate_test_metrics.json](results/baselines/dofa_eurosat_full_finetune/aggregate_test_metrics.json)
-- 描述性对照：[comparison_frozen_vs_full.json](results/baselines/dofa_eurosat_full_finetune/comparison_frozen_vs_full.json)
-
-## 运行命令
-
-### 配置检查和 dry-run
-
-`--dry-run` 会把训练改成 1 epoch、少量 batch，并写入独立 `dry_runs/` 目录。它仍会加载模型、数据和 checkpoint，因此可验证完整 pipeline，但不会启动正式训练。
-
-```bash
-python scripts/run_experiments.py \
-  --config configs/eurosat_dofa_frozen_baseline.yaml \
-  --dry-run
-
-python scripts/run_experiments.py \
-  --config configs/eurosat_dofa_full_finetune.yaml \
-  --dry-run
-```
-
-### 正式训练模板
-
-以下命令会依次执行配置中的 seeds 42、43、44，耗时较长。已有正式结果存在时，不要仅为了检查环境重复启动。
-
-```bash
-python scripts/run_experiments.py \
-  --config configs/eurosat_dofa_frozen_baseline.yaml
-
-python scripts/run_experiments.py \
-  --config configs/eurosat_dofa_full_finetune.yaml
-```
-
-`main.py` 仍可作为兼容入口，但必须显式传配置：
-
-```bash
-python main.py --config configs/eurosat_dofa_frozen_baseline.yaml --dry-run
-```
-
-不带 `--config` 的 `python main.py` 当前默认走 RS3DBench depth 配置，不是 EuroSAT 主实验。
-
-## 每个 run 的输出
+## 代码结构
 
 ```text
-results/baselines/<experiment>/runs/<run_id>/
-├── resolved_config.yaml
-├── environment.json
-├── model_audit.json
-├── optimizer_group_audit.json       # full fine-tuning
-├── gradient_audit.json
-├── training_history.json
-├── training_metrics.csv
-├── batch_metrics.csv
-├── validation_metrics.json
-├── best.pt
-├── last.pt
-├── run_summary.json
-├── results.json
-├── training_dashboard.png
-├── reliability.png
-└── predictions/test/deterministic/
-    ├── predictions.parquet
-    ├── manifest.json
-    ├── validation_report.json
-    ├── metrics.json
-    ├── per_class_metrics.json
-    ├── confusion_matrix.npy
-    └── confusion_matrix.csv
-```
-
-`environment.json` 记录 Python、PyTorch、CUDA、包版本、hostname 和 GPU。当前工作区的 Git 元数据不完整，`git rev-parse HEAD` 失败，因此已有 run 的 `git_commit` 为 `null`；这是待修复的 provenance 风险。
-
-## 读取预测并重算指标
-
-```python
-from scripts.prediction_export import (
-    load_prediction_export,
-    recompute_metrics,
-    validate_prediction_export,
-)
-
-prediction_dir = (
-    "results/baselines/dofa_eurosat_frozen_bnlinear/runs/"
-    "20260807T103233022656Z_eurosat_dofa_frozen_bnlinear_seed42_338e2700/"
-    "predictions/test/deterministic"
-)
-
-bundle = load_prediction_export(prediction_dir)
-report = validate_prediction_export(prediction_dir, expected_count=2714)
-metrics = recompute_metrics(prediction_dir, n_bins=15)
-
-print(bundle.table[["sample_id", "true_label", "predicted_label"]].head())
-print(report["valid"], metrics)
-```
-
-Parquet 中保存每个样本的完整 logits 和 probabilities；`manifest.json` 保存 class-index mapping、数组 shape/dtype、checkpoint SHA-256 与数据来源。后续 MC Dropout/deep ensemble 的每次 pass/member 原始值应保存为 `[sample, pass_or_member, class]` 的 compressed NPZ，不能只保留均值。
-
-## 关键代码与配置
-
-```text
-configs/
-├── eurosat_dofa_frozen_baseline.yaml
-└── eurosat_dofa_full_finetune.yaml
-
+configs/                  # 16 个单元的正式 YAML（*_final.yaml、eurosat_*）与 c5_mc_dropout/
 scripts/
+├── run_experiments.py              # 分类训练/评估入口
+├── segmentation_pipeline.py        # 分割训练/评估
+├── geobench_datasets.py            # TreeSatAI/CloudSEN12/SpaceNet7 数据加载
+├── create_eurosat_splits.py        # EuroSAT 固定 split 生成与验证
 ├── experiment_manager.py           # config、run_id、seed、环境元数据
-├── create_eurosat_splits.py        # 固定 split 生成和验证
-├── run_experiments.py              # canonical 训练/评估入口
-├── prediction_export.py            # 逐样本导出、读取、验证、重算指标
-└── export_checkpoint_predictions.py
-
-models/calibration.py               # NLL、Brier、ECE 和 reliability diagram
-reports/code_audit.md               # 当前审计报告
-tests/                              # 最小测试
+├── prediction_export.py            # 逐样本预测导出、读取与指标重算
+├── c3_calibration_ensembles.py     # Temperature Scaling 与 Deep Ensemble
+├── c4_mc_dropout_pilots.py / c5_*  # MC Dropout 准备与推理
+├── complete_segmentation_dropout_off.py
+├── c6_build_final_results.py       # 生成最终结果表和图
+└── build_*.py / audit_*.py         # 效应表、证据矩阵、审计
+models/calibration.py     # NLL、Brier、ECE、reliability diagram
+reports/                  # 协议、审计、结果与补充分析（见上表）
+tests/                    # 单元测试
+DOFA/                     # DOFA 上游代码（权重不入库）
 ```
 
-## 已知限制与实验纪律
-
-- test 已被用于当前两组 baseline 的描述性评估；后续不得依据这些 test 结果选择学习率、正则化或 UQ 超参数。
-- calibration split 尚未用于任何正式后处理；temperature scaling 结果当前不存在。
-- deterministic baseline 的 head dropout 为 0，因此它本身不能直接产生有意义的 MC Dropout 随机性。
-- deep ensemble 尚未接入端到端评估；三个训练 seed 目前是独立重复，不应自动等同于 ensemble 结果。
-- full fine-tuning 使用指定的高学习率协议并出现 validation instability；任何新协议都应只基于 train/validation 决定，并以新实验名保存。
-- DOFA checkpoint 使用 `strict=False` 加载；当前正式 run 无 missing keys，unexpected keys 仅为预训练阶段的 `mask_token`、`projector.weight`、`projector.bias`。未来仍应保留允许列表审计。
-- DOFA `pos_embed` 是固定 sin/cos positional embedding，151,296 个参数在 full fine-tuning 中仍为 `requires_grad=False`，不是误冻结。
-- `results/first_stage_rgb/`、`thesis/experiment_1_dofa_rgb_record.md` 和旧配置属于历史协议，不应与当前 70/10/10/10 baseline 合并统计。
-
-## 测试
+## 运行
 
 ```bash
+# 分类（例：EuroSAT Panopticon frozen，依次跑 seeds 42/43/44）
+python scripts/run_experiments.py --config configs/eurosat_panopticon_frozen_baseline.yaml
+# 加 --dry-run 仅验证 pipeline（1 epoch、少量 batch，写入 dry_runs/）
+
+# 验证 EuroSAT split（不覆盖）
+python scripts/create_eurosat_splits.py --data-root data \
+  --output-dir splits/eurosat_70_10_10_10_spatial20m --validate-only
+
+# 测试
 python -m unittest discover -s tests -v
 ```
 
-当前记录：17 tests passed。测试覆盖配置约束、seed/run 元数据、固定 split、manifest DataLoader、预测导出与无模型重算指标。
+A/E 补充分析的复跑步骤见 [reports/thesis_followup_execution_20260926/README.md](reports/thesis_followup_execution_20260926/README.md)。这部分只需 CPU。
 
-## 其他任务
+## 未入库的内容
 
-仓库还保留 RS3DBench depth estimation 和若干早期/备用训练管线。它们不是当前 DOFA + EuroSAT baseline 的 canonical implementation。开始新实验前应确认使用上述两份正式 YAML，避免把不同 split、归一化或输出 schema 的旧结果混在一起。
+数据集、checkpoint、原始预测和训练输出体积太大（数百 GB），没有放进 Git，仅保存在本地：`data/`、`datasets/`、`research_data/`、`results/`、`checkpoints/`、`RS3DBench/` 以及所有 `*.pt`/`*.pth`/`*.npy`。仓库中的报告以 SHA256 记录了这些产物的身份。
+
+## 其他
+
+`RS3DBench/` 深度估计、`eo_uq_experiments/`、`results/first_stage_rgb/` 和早期配置（如 `config.yaml`、`eurosat_dofa_rgb.yaml`）属于历史或备用管线，不属于论文的正式协议，不应与正式结果合并统计。
